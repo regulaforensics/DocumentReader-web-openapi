@@ -1,0 +1,90 @@
+openapi: 3.0.3
+components:
+  schemas:
+
+    PageIndex:
+      description: "Index of image from input list"
+      type: integer
+
+    Source:
+      description: "Document data sources"
+      type: integer
+      enum:
+        - 3
+        - 17
+        - 18
+        - 102
+      x-enum-varnames:
+        - 'MRZ'
+        - 'VISUAL'
+        - 'BARCODE'
+        - 'RFID'
+
+    CheckResult:
+      type: integer
+      enum:
+        - 0
+        - 1
+        - 2
+      x-enum-varnames:
+        - 'ERROR'
+        - 'OK'
+        - 'WAS_NOT_DONE'
+      x-enum-descriptions:
+        - 'Check was performed and result is negative'
+        - 'Check was performed and result is positive'
+        - 'Check was not performed'
+
+    # todo update x-enum-descriptions
+    Scenario:
+      type: string
+      description: "Scenario determines completeness of document processing"
+      enum:
+        - "Mrz"
+        - "Barcode"
+        - "Locate"
+        - "Ocr"
+        - "DocType"
+        - "MrzOrBarcode"
+        - "MrzOrLocate"
+        - "MrzAndLocate"
+        - "MrzOrOcr"
+        - "MrzOrBarcodeOrOcr"
+        - "LocateVisual_And_MrzOrOcr"
+        - "FullProcess"
+        - "FullAuth"
+        - "Id3Rus"
+        - "RusStamp"
+        - "OcrFree"
+        - "CreditCard"
+        - "Capture"
+      x-enum-varnames:
+        - "MRZ"
+        - "BARCODE"
+        - "LOCATE"
+        - "OCR"
+        - "DOCTYPE"
+        - "MRZ_OR_BARCODE"
+        - "MRZ_OR_LOCATE"
+        - "MRZ_AND_LOCATE"
+        - "MRZ_OR_OCR"
+        - "MRZ_OR_BARCODE_OR_OCR"
+        - "LOCATE_VISUAL_AND_MRZ_OR_OCR"
+        - "FULL_PROCESS"
+        - "FULL_AUTH"
+        - "ID3RUS"
+        - "RUS_STAMP"
+        - "OCR_FREE"
+        - "CREDIT_CARD"
+        - "CAPTURE"
+    #      x-enum-descriptions:
+
+    ImageData:
+      type: object
+      required:
+        - image
+      properties:
+        image:
+          description: "base64 encoded image"
+          type: string
+          format: byte

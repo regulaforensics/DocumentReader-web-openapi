@@ -1,0 +1,820 @@
+openapi: 3.0.3
+## add mark models as deprecated
+info:
+  version: 5.1.0
+  title: Regula Document Reader Web API
+  description: Regula Document Reader Web API
+
+servers:
+  - url: http://localhost:8080/
+    description: Local on-premise installation
+  - url: https://api.regulaforensics.com/
+    description: Regula document reader SaaS
+  - url: https://test-api.regulaforensics.com/
+    description: Regula document reader test SaaS
+
+
+paths:
+  "/api/process":
+    post:
+      summary: Process list of documents images and return extracted data
+      operationId: api-process
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ProcessRequest"
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProcessResponse'
+
+
+components:
+  schemas:
+
+    #############################
+    ############################# Requests objects
+
+    # - General Enums -------------------------------------------------------------------------------------------------
+
+
+
+    # todo мб переименовать RAW_IMAGE в NORMALAIZED_IMAGE или в что-то похожее
+    Result:
+      type: integer
+      description: "Describes possible extracted data types from documents"
+      enum:
+        - 1
+        - 36
+        - 3
+        - 17
+        - 18
+        - 102
+        - 15
+        - 6
+        - 19
+        - 103
+        - 8
+        - 9
+      x-enum-descriptions:
+        - 'Returns cropped and rotated image of document. Most of coordinates in other types defined on that image'
+        - 'Returns document textual fields from all sources(mrz,rfid,visual,barcode) with validity and cross-source compare checks'
+        - 'Reading MRZ text fields'
+        - 'Reading text fields from visual document area'
+        - 'Reading barcode text fields'
+        - 'Reading RFID text fields'
+        - 'Lexical data analysis allows you to compare the results of reading the text data of the MRZ,
+           the document filling area, barcodes and data from the memory of the RFID chip for an additional
+           assessment of the authenticity of the document'
+        - 'Extract graphics fields from visual document area'
+        - 'Extract graphics fields from document barcode'
+        - 'Extract graphics fields from document rfid'
+        - 'Lists document type candidates with their probabilities and descriptions'
+        - 'Returns description of determined document type, if any'
+      x-enum-varnames:
+        - RAW_IMAGE
+        - TEXT
+        - MRZ_TEXT
+        - VISUAL_TEXT
+        - BARCODE_TEXT
+        - RFID_TEXT
+        - LEXICAL_ANALYSIS
+        - VISUAL_GRAPHICS
+        - BARCODE_GRAPHICS
+        - RFID_GRAPHICS
+        - DOCUMENT_TYPE_CANDIDATES
+        - DOCUMENT_TYPE
+
+    # todo different image input types
+    ProcessRequest:
+      type: object
+      properties:
+        processParam:
+          $ref: '#/components/schemas/ProcessParams'
+        List:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProcessRequestImage'
+      required:
+        - processParam
+        - List
+
+    # todo add other options https://github.com/regulaforensics/api/issues/102
+    ProcessParams:
+      type: object
+      properties:
+        scenario:
+          $ref: './common.yml#/components/schemas/Scenario'
+        resultTypeOutput:
+          description: "Types of results to extract. See 'Result' enum for available options."
+          type: array
+          items:
+            $ref: '#/components/schemas/Result'
+      required:
+        - scenario
+      example:
+        scenario: "FullProcess"
+        resultTypeOutput: [1,6,9,15]
+
+    ProcessRequestImage:
+      type: object
+      required:
+        - ImageData
+      properties:
+        ImageData:
+          $ref: './common.yml#/components/schemas/ImageData'
+        LightIndex:
+          $ref: '#/components/schemas/Light'
+        page_idx:
+          description: "page/image number"
+          type: integer
+          default: 0
+      example:
+        LightIndex: 6
+        page_idx: 0
+        ImageData:
+          image: "<base46 image>"
+
+    Light:
+      type: integer
+      description: "image light index"
+      enum:
+        - 0
+        - 6
+        - 24
+        - 128
+      x-enum-descriptions:
+        - 'No Light'
+        - 'White'
+        - 'Infrared'
+        - 'Ultraviolet'
+      x-enum-varnames:
+        - "OFF"
+        - "WHITE"
+        - "IR"
+        - "UV"
+
+
+    #############################
+    ############################# Response objects
+    ProcessResponse:
+      type: object
+      required:
+        - ProcessingFinished
+        - ContainerList
+        - TransactionInfo
+        - ChipPage
+      properties:
+        ChipPage:
+          $ref: "#/components/schemas/RfidLocation"
+        ProcessingFinished:
+          $ref: "#/components/schemas/ProcessingStatus"
+        ContainerList:
+          $ref: "#/components/schemas/ContainerList"
+        TransactionInfo:
+          $ref: "#/components/schemas/TransactionInfo"
+
+    ProcessingStatus:
+      type: integer
+      enum:
+        - 0
+        - 1
+      x-enum-descriptions:
+        - 'Processing not finished yet'
+        - 'Processing already finished'
+      x-enum-varnames:
+        - 'NOT_FINISHED'
+        - 'FINISHED'
+
+    TransactionInfo:
+      type: object
+      properties:
+        ComputerName:
+          type: string
+        DateTime:
+          type: string
+        TransactionID:
+          type: string
+        UserName:
+          type: string
+      example:
+        ComputerName: "7cded6852d20"
+        "DateTime": "2020-05-27T08:17:03.247Z"
+        "TransactionID": "dc5eb444-ad6e-4ebc-8102-d62d5bb56a4e"
+        "UserName": "user"
+
+    ContainerList:
+      type: object
+      description: "list with result objects"
+      required:
+        - List
+      properties:
+        List:
+          type: array
+          items:
+            anyOf:
+              - $ref: "#/components/schemas/RawImageResult"
+              - $ref: "#/components/schemas/MrzOcrExtendedResult"
+              - $ref: "#/components/schemas/GraphicsResult"
+              - $ref: "#/components/schemas/LexicalAnalysisResult"
+              - $ref: "#/components/schemas/VisualOcrExtendedResult"
+              - $ref: "#/components/schemas/BarcodeTextDataResult"
+              - $ref: "#/components/schemas/RfidTextDataResult"
+              - $ref: "#/components/schemas/ChosenDocumentTypeResult"
+              - $ref: "#/components/schemas/DocumentTypesCandidatesResult"
+              - $ref: "#/components/schemas/TextResult"
+
+    ResultItem:
+      type: object
+      description: "Common fields for all results objects"
+      required:
+        - result_type
+      properties:
+        buf_length:
+          type: integer
+        light:
+          type: integer
+        list_idx:
+          type: integer
+        page_idx:
+          type: integer
+        result_type:
+          type: integer
+      discriminator:
+        propertyName: result_type
+        mapping:
+          1: "#/components/schemas/RawImageResult"
+          3: "#/components/schemas/MrzOcrExtendedResult"
+          6: "#/components/schemas/GraphicsResult"
+          8: "#/components/schemas/DocumentTypesCandidatesResult"
+          9: "#/components/schemas/ChosenDocumentTypeResult"
+          15: "#/components/schemas/LexicalAnalysisResult"
+          17: "#/components/schemas/VisualOcrExtendedResult"
+          18: "#/components/schemas/BarcodeTextDataResult"
+          19: "#/components/schemas/GraphicsResult"
+          36: "#/components/schemas/TextResult"
+          102: "#/components/schemas/RfidTextDataResult"
+          103: "#/components/schemas/GraphicsResult"
+
+    # todo create generator issue
+    TextResult:
+      $ref: "./rtText.yml#/components/schemas/TextResult"
+
+    # -----------------------------------------------------------------------------------------------------------------
+    # ----------Text---------------------------------------------------------------------------------------------------
+    # -----------------------------------------------------------------------------------------------------------------
+    LexicalAnalysisResult:
+      description: |
+        Lexical data analysis allows you to compare the results of reading the text data of the MRZ,
+        the document filling area, barcodes and data from the memory of the RFID chip for an additional
+        assessment of the authenticity of the document
+      allOf:
+        - $ref: '#/components/schemas/ResultItem'
+        - type: object
+          properties:
+            ListVerifiedFields:
+              $ref: '#/components/schemas/ListVerifiedFields'
+
+    FieldSource:
+      type: string
+      enum:
+        - 'MRZ'
+        - 'RFID'
+        - 'BARCODE'
+        - 'VISUAL'
+
+    ListVerifiedFields:
+      type: object
+      properties:
+        pFieldMaps:
+          type: array
+          items:
+            $ref: '#/components/schemas/VerifiedFieldMap'
+
+    VerifiedFieldMap:
+      type: object
+      properties:
+        wFieldType:
+          $ref: "#/components/schemas/TextFieldType"
+        Field_MRZ:
+          description: "Field data extracted from mrz(machine readable zone)"
+          type: string
+        Field_Visual:
+          description: "Field data extracted from visual zone"
+          type: string
+        Field_Barcode:
+          description: "Field data extracted from barcode"
+          type: string
+        Field_RFID:
+          description: "Field data extracted from rfid chip"
+          type: string
+        Matrix:
+          $ref: '#/components/schemas/ComparisonMatrix'
+        wLCID:
+          $ref: "./lcid.yml#/components/schemas/LCID"
+      example:
+        {FieldType: 185, Field_MRZ: "37", Field_Visual: "37", Matrix: [1,0,0,0,0,3,0,0,0,0]}
+
+    ComparisonMatrix:
+      type: array
+      minItems: 10
+      maxItems: 10
+      description: "results comparison matrix.
+      Elements of the matrix with indices 0, 1, 2, 3 take one of the values Disabled(0), Verified(1) or Not_Verified(2),
+      elements with indices 4, 5, 6, 7, 8 are one of the values Disabled(0), Compare_Match(3) or Compare_Not_Match(4).
+      Elements of the Matrix matrix have the following semantic meaning:
+
+         - element with index 0 –– the result of verification of data from the MRZ;
+         - 1 –– the result of verification of data from the RFID microcircuit;
+         - 2 –– the result of verification of data from text areas of the document;
+         - 3 –– the result of verification data from barcodes;
+         - 4 - the result of comparing MRZ data and RFID microcircuits;
+         - 5 - the result of comparing MRZ data and text areas of document filling;
+         - 6 - the result of comparing MRZ data and bar codes;
+         - 7 - the result of comparing the data of text areas of the document and the RFID chip;
+         - 8 - the result of comparing the data of the text areas of the document and barcodes;
+         - 9 - the result of comparing the data of the RFID chip and barcodes."
+      items:
+        $ref: '#/components/schemas/VerificationResult'
+      example: [1,0,0,0,0,3,0,0,0,0]
+
+    VerificationResult:
+      type: integer
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+      x-enum-descriptions:
+        - 'Comparison result unknown'
+        - 'Verification passed'
+        - 'Verification failed'
+        - 'Positive comparison result'
+        - 'Negative comparison result'
+      x-enum-varnames:
+        - 'DISABLED'
+        - 'VERIFIED'
+        - 'NOT_VERIFIED'
+        - 'COMPARE_MATCH'
+        - 'COMPARE_NOT_MATCH'
+
+    RfidLocation:
+      type: integer
+      description: "Determines the presence and location of an RFID chip in a particular type of document"
+      enum:
+        - 0
+        - 1
+        - 2
+      x-enum-descriptions:
+        - 'There is no RFID chip in the document'
+        - 'The RFID chip is located in the document data page'
+        - 'The RFID chip is located in the back end of the document'
+      x-enum-varnames:
+        - 'NONE'
+        - 'MAIN_PAGE'
+        - 'BACK_PAGE'
+
+    TextFieldType:
+      $ref: "./TextFieldType.yml#/components/schemas/TextFieldType"
+
+    # -----------------------------------------------------------------------------------------------------------------
+    # ----------Graphics-----------------------------------------------------------------------------------------------
+    # -----------------------------------------------------------------------------------------------------------------
+
+    RawImageContainer:
+      type: object
+      properties:
+        format:
+          type: string
+        image:
+          description: 'base64 encoded image'
+          type: string
+          format: byte
+      example:
+        RawImageContainer:
+          format: ".jpg"
+          image: "<base64image>"
+
+    RawImageResult:
+      allOf:
+        - $ref: '#/components/schemas/ResultItem'
+        - type: object
+          description: "raw image result (result_type 1)"
+          properties:
+            RawImageContainer:
+              $ref: "#/components/schemas/RawImageContainer"
+          example:
+            RawImageContainer:
+              format: ".jpg"
+              image: "<base64image>"
+      required:
+        - RawImageContainer
+
+    GraphicFieldType:
+      type: integer
+      enum:
+        - 201
+        - 202
+        - 203
+        - 204
+        - 205
+        - 206
+        - 207
+        - 208
+        - 209
+        - 210
+        - 211
+        - 250
+        - 300
+        - 301
+        - 302
+        - 303
+        - 304
+        - 305
+        - 306
+        - 307
+        - 308
+        - 309
+      x-enum-descriptions:
+        - 'Document holder photo'
+        - 'Fingerprint of document holder'
+        - 'Image of the iris of document holder'
+        - 'Signature of document holder'
+        - 'Barcode image'
+        - 'Image of document confirming owner citizenship'
+        - 'Image of the front side of the document'
+        - 'Image of the rear side of the document'
+        - 'Area with dynamic color change'
+        - 'Additional Portrait'
+        - 'Stamp'
+        - 'Undefined image type'
+        - 'Fingerprint (thumb, left hand)'
+        - 'Fingerprint (index, left hand)'
+        - 'Fingerprint (middle, left hand)'
+        - 'Fingerprint (ring, left hand)'
+        - 'Fingerprint (little, left hand)'
+        - 'Fingerprint (thumb, right hand)'
+        - 'Fingerprint (index, right hand)'
+        - 'Fingerprint (middle, right hand)'
+        - 'Fingerprint (ring, right hand)'
+        - 'Fingerprint (little, right hand)'
+      x-enum-varnames:
+        - 'PORTRAIT'
+        - 'FINGERPRINT'
+        - 'EYE'
+        - 'SIGNATURE'
+        - 'BAR_CODE'
+        - 'PROOF_OF_CITIZENSHIP'
+        - 'DOCUMENT_FRONT'
+        - 'DOCUMENT_REAR'
+        - 'COLOR_DYNAMIC'
+        - 'GHOST_PORTRAIT'
+        - 'STAMP'
+        - 'OTHER'
+        - 'FINGER_LEFT_THUMB'
+        - 'FINGER_LEFT_INDEX'
+        - 'FINGER_LEFT_MIDDLE'
+        - 'FINGER_LEFT_RING'
+        - 'FINGER_LEFT_LITTLE'
+        - 'FINGER_RIGHT_THUMB'
+        - 'FINGER_RIGHT_INDEX'
+        - 'FINGER_RIGHT_MIDDLE'
+        - 'FINGER_RIGHT_RING'
+        - 'FINGER_RIGHT_LITTLE'
+
+    GraphicsResult:
+      allOf:
+        - $ref: '#/components/schemas/ResultItem'
+        - type: object
+          properties:
+            DocGraphicsInfo:
+              $ref: "#/components/schemas/GraphicFieldsList"
+
+    GraphicFieldsList:
+      type: object
+      properties:
+        pArrayFields:
+          type: array
+          items:
+            $ref: "#/components/schemas/GraphicField"
+
+    GraphicField:
+      type: object
+      properties:
+        FieldRect:
+          description: "Coordinates of the graphic field in the normalized image (result type 1) of the document"
+          $ref: "#/components/schemas/RectangleCoordinates"
+        FieldType:
+          $ref: "#/components/schemas/GraphicFieldType"
+        image:
+          $ref: "#/components/schemas/RawImageContainer"
+
+    MrzOcrExtendedResult:
+      description: "Text fields extracted from the document MRZ region"
+      allOf:
+        - $ref: '#/components/schemas/ResultItem'
+        - type: object
+          properties:
+            DocVisualExtendedInfo:
+              $ref: "#/components/schemas/DocVisualExtendedInfo"
+
+    VisualOcrExtendedResult:
+      description: "Text fields from document OCR with symbol probabilities"
+      allOf:
+        - $ref: '#/components/schemas/ResultItem'
+        - type: object
+          properties:
+            DocVisualExtendedInfo:
+              $ref: "#/components/schemas/DocVisualExtendedInfo"
+
+    BarcodeTextDataResult:
+      description: "Text fields extracted from document barcode"
+      allOf:
+        - $ref: '#/components/schemas/ResultItem'
+        - type: object
+          properties:
+            DocVisualExtendedInfo:
+              $ref: "#/components/schemas/DocVisualExtendedInfo"
+
+    RfidTextDataResult:
+      description: "Text fields extracted from document RFID chip"
+      allOf:
+        - $ref: '#/components/schemas/ResultItem'
+        - type: object
+          properties:
+            DocVisualExtendedInfo:
+              $ref: "#/components/schemas/DocVisualExtendedInfo"
+
+    # add to client methods for extracting fields and probabilities
+    DocVisualExtendedInfo:
+      type: object
+      description: "Container for extracted text fields. Fields are identified by type and language"
+      properties:
+        pArrayFields:
+          type: array
+          items:
+            oneOf:
+              - $ref: "#/components/schemas/ExtendedTextField"
+              - $ref: "#/components/schemas/ExtendedVisualTextField"
+              - $ref: "#/components/schemas/ExtendedRfidTextField"
+
+    ExtendedTextField:
+      type: object
+      properties:
+        wFieldType:
+          $ref: "#/components/schemas/TextFieldType"
+        wLCID:
+          $ref: "./lcid.yml#/components/schemas/LCID"
+        StringsResult:
+          type: array
+          description: "Array of recognizing probabilities for a each line of text field"
+          items:
+            $ref: "#/components/schemas/StringRecognitionResult"
+        Buf_Text:
+          type: string
+          description: "Text field data in UTF8 format.
+          Results of reading different lines of a multiline field are separated by “^”"
+
+    ExtendedVisualTextField:
+      allOf:
+        - $ref: '#/components/schemas/ExtendedTextField'
+        - type: object
+          properties:
+            FieldRect:
+              description: "Coordinates of the text field in the normalized image (result type 1) of the document"
+              $ref: "#/components/schemas/RectangleCoordinates"
+
+    ExtendedRfidTextField:
+      allOf:
+        - $ref: '#/components/schemas/ExtendedTextField'
+        - type: object
+          properties:
+            RFID_OriginDG:
+              description: "Information data group"
+              type: integer
+            RFID_OriginTagEntry:
+              type: integer
+              description: "Index of the text field record in information data group"
+
+    StringRecognitionResult:
+      type: object
+      description: "Describes recognizing a single row in multi-line text field of a document"
+      properties:
+        StringResult:
+          type: array
+          description: "Array of recognition results for individual characters of a string"
+          items:
+            $ref: "#/components/schemas/SymbolRecognitionResult"
+
+    SymbolRecognitionResult:
+      type: object
+      description: "Describes the result of recognizing a single character in text field line"
+      properties:
+        SymbolRect:
+          description: "Coordinates of the symbol in the normalized image (result type 1) of the document"
+          $ref: "#/components/schemas/RectangleCoordinates"
+        ListOfCandidates:
+          type: array
+          description: "Array of candidate characters. Sorted in decreasing order of recognition probabilities
+          (the first element has highest probability)"
+          items:
+            $ref: "#/components/schemas/SymbolCandidate"
+
+    SymbolCandidate:
+      type: object
+      description: "Describes the result of recognizing an individual character in the string field of the document"
+      properties:
+        SymbolCode:
+          type: integer
+          description: "ASCII symbol code"
+        SymbolProbability:
+          type: integer
+          description: "character recognition probability (0–100,%)"
+          minimum: 0
+          maximum: 100
+
+    RectangleCoordinates:
+      type: object
+      properties:
+        top:
+          type: integer
+        bottom:
+          type: integer
+        left:
+          type: integer
+        right:
+          type: integer
+
+    ChosenDocumentTypeResult:
+      description: "Contains information about the type of document that was determined
+      based on the analysis of the provided image"
+      allOf:
+        - $ref: '#/components/schemas/ResultItem'
+        - type: object
+          properties:
+            OneCandidate:
+              $ref: "#/components/schemas/OneCandidate"
+
+    DocumentTypesCandidatesResult:
+      allOf:
+        - $ref: '#/components/schemas/ResultItem'
+        - type: object
+          properties:
+            CandidatesList:
+              $ref: "#/components/schemas/DocumentTypesCandidatesList"
+
+    DocumentTypesCandidatesList:
+      type: object
+      properties:
+        RecResult:
+          description: "Overall recognition result"
+          $ref: "#/components/schemas/DocumentTypeRecognitionResult"
+        Candidates:
+          type: array
+          items:
+            $ref: "#/components/schemas/OneCandidate"
+
+    DocumentTypeRecognitionResult:
+      type: integer
+      enum:
+        - 0
+        - 15
+        - 29
+      x-enum-descriptions:
+        - 'Document type determined. The first element in candidates array is recognition result'
+        - 'Document type was not determined. Ongoing processing is not possible'
+        - 'To determine document type user should provide more images with different light sources (UV, for example)'
+      x-enum-varnames:
+        - 'OK'
+        - 'UNKNOWN'
+        - 'NEED_MORE_IMAGES'
+
+
+    OneCandidate:
+      type: object
+      description: "Contains information about one document type candidate"
+      properties:
+        DocumentName:
+          type: string
+          description: "Document name"
+        ID:
+          type: integer
+          description: "Unique document type template identifier (Regula's internal numeric code)"
+        P:
+          type: number
+          description: "A measure of the likelihood of correct recognition in the analysis of this type of document"
+          example: 0.9913095831871032
+          minimum: 0
+          maximum: 1
+        RFID_Presence:
+          description: "Indication of the presence of an RFID chip in the document (electronic document indicator)"
+          $ref: "#/components/schemas/RfidLocation"
+        FDSIDList:
+          $ref: "#/components/schemas/TFDSIDList"
+        NecessaryLights:
+          type: integer
+          description: "Combination of lighting scheme identifiers (Light enum) required to conduct OCR for this type of document"
+        CheckAuthenticity:
+          type: integer
+          description: "Set of authentication options provided for this type of document (combination of Authenticity enum)"
+        UVExp:
+          type: integer
+          description: "The required exposure value of the camera when receiving images of a document
+           of this type for a UV lighting scheme"
+        AuthenticityNecessaryLights:
+          type: integer
+          description: "Combination of lighting scheme identifiers (combination of Light enum) needed
+           to perform all authenticity checks specified in CheckAuthenticity"
+
+    DocumentType:
+      $ref: "./DocumentType.yml#/components/schemas/DocumentType"
+
+
+    TFDSIDList:
+      description: "Extended document type info and Regula's 'Information Reference Systems' links"
+      type: object
+      properties:
+        ICAO:
+          type: string
+          minLength: 4
+          maxLength: 4
+          description: "ICAO code of the issuing country"
+        List:
+          type: array
+          items:
+            type: integer
+          description: "Document identifiers in 'Information Reference Systems'"
+        dType:
+          $ref: "#/components/schemas/DocumentType"
+        dFormat:
+          $ref: "#/components/schemas/DocumentFormat"
+        dMRZ:
+          type: boolean
+          description: "Flag indicating the presence of MRZ on the document"
+        dDescription:
+          type: string
+          description: "Document description"
+        dYear:
+          type: string
+          description: "Year of publication of the document"
+        dCountryName:
+          type: string
+          description: "Issuing country name"
+        dStateCode:
+          type: string
+          description: "Issuing state code"
+        dStateName:
+          type: string
+          description: "Issuing state name"
+
+    DocumentFormat:
+      type: integer
+      description: "Defining the geometric format of documents in accordance with ISO / IEC 7810"
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 10
+        - 11
+        - 12
+        - 13
+        - 14
+        - 1000
+        - 1002
+      x-enum-descriptions:
+        - 'ID1 document format'
+        - 'ID2 document format'
+        - 'ID3 document format'
+        - 'Undefined document format'
+        - 'A4 document format'
+        - 'ID3 double document format'
+        - 'ID1 format document rotated 90 °'
+        - 'ID1 format document rotated 180 °'
+        - 'ID1 format document rotated 270 °'
+        - 'ID2 format document rotated 90 °'
+        - 'ID3 format document rotated 180 °'
+        - 'Arbitrary format'
+        - 'Flexible format. Standard formats can be resized during cropping, depending on various factors: light, background...'
+      x-enum-varnames:
+        - 'ID1'
+        - 'ID2'
+        - 'ID3'
+        - 'NON'
+        - 'A4'
+        - 'ID3_X2'
+        - 'ID1_90'
+        - 'ID1_180'
+        - 'ID1_270'
+        - 'ID2_180'
+        - 'ID3_180'
+        - 'CUSTOM'
+        - 'FLEXIBLE'
