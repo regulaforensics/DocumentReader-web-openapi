@@ -1,0 +1,141 @@
+openapi: 3.0.3
+components:
+  schemas:
+
+    TextResult:
+      allOf:
+        - $ref: './index.yml#/components/schemas/ResultItem'
+        - type: object
+          required:
+            - Text
+          properties:
+            Text:
+              $ref: '#/components/schemas/Text'
+
+    Text:
+      type: object
+      description: "Contains all document textual fields with validity and cross-source compare checks"
+      required:
+        - status
+        - validityStatus
+        - comparisonStatus
+        - fieldList
+        - availableSourceList
+      properties:
+        status:
+          description: "Overall status of all checks from all fields"
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        validityStatus:
+          description: "Overall status of validity from all fields from all sources"
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        comparisonStatus:
+          description: "Overall status of comparing data from different sources for each field"
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        fieldList:
+          type: array
+          items:
+            $ref: "#/components/schemas/TextField"
+        availableSourceList:
+          type: array
+          items:
+            $ref: "#/components/schemas/AvailableSource"
+
+    TextField:
+      type: object
+      required:
+        - fieldType
+        - status
+        - validityStatus
+        - comparisonStatus
+        - valueList
+        - validityList
+        - comparisonList
+      properties:
+        fieldType:
+          $ref: "./TextFieldType.yml#/components/schemas/TextFieldType"
+        lcid:
+          $ref: "./lcid.yml#/components/schemas/LCID"
+        status:
+          description: "Overall status of all checks from all values"
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        validityStatus:
+          description: "Overall status of validity from all values from all sources"
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        comparisonStatus:
+          description: "Overall status of comparing data from different sources"
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        valueList:
+          type: array
+          items:
+            $ref: "#/components/schemas/TextFieldValue"
+        validityList:
+          description: "Validity of all field values for given source.
+          If there are two values on different pages for one field-source pair,
+          than validity also will include logical match checking.
+          If such values do not match, validity will return error."
+          type: array
+          items:
+            $ref: "#/components/schemas/SourceValidity"
+        comparisonList:
+          type: array
+          items:
+            $ref: "#/components/schemas/CrossSourceValueComparison"
+
+
+    TextFieldValue:
+      type: object
+      required:
+        - source
+        - value
+        - pageIndex
+      properties:
+        value:
+          type: string
+        originalValue:
+          type: string
+        pageIndex:
+          $ref: "./common.yml#/components/schemas/PageIndex"
+        source:
+          $ref: "./common.yml#/components/schemas/Source"
+        probability:
+          description: "Value correct recognition probability. Combined probability from single characters probabilities"
+          type: integer
+          minimum: 0
+          maximum: 100
+
+    SourceValidity:
+      type: object
+      required:
+        - source
+        - status
+      properties:
+        source:
+          $ref: "./common.yml#/components/schemas/Source"
+        status:
+          $ref: "./common.yml#/components/schemas/CheckResult"
+
+    CrossSourceValueComparison:
+      type: object
+      required:
+        - sourceLeft
+        - sourceRight
+        - status
+      properties:
+        sourceLeft:
+          $ref: "./common.yml#/components/schemas/Source"
+        sourceRight:
+          $ref: "./common.yml#/components/schemas/Source"
+        status:
+          $ref: "./common.yml#/components/schemas/CheckResult"
+
+    AvailableSource:
+      type: object
+      required:
+        - source
+        - validityStatus
+      properties:
+        source:
+          $ref: "./common.yml#/components/schemas/Source"
+        validityStatus:
+          description: "Overall status of validity from all fields for given source"
+          $ref: "./common.yml#/components/schemas/CheckResult"
