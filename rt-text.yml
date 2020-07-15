@@ -52,9 +52,9 @@ components:
         - comparisonList
       properties:
         fieldType:
-          $ref: "./TextFieldType.yml#/components/schemas/TextFieldType"
+          $ref: "./e-text-field-type.yml#/components/schemas/TextFieldType"
         lcid:
-          $ref: "./lcid.yml#/components/schemas/LCID"
+          $ref: "./e-lcid.yml#/components/schemas/LCID"
         status:
           description: "Overall status of all checks from all values"
           $ref: "./common.yml#/components/schemas/CheckResult"
