@@ -263,106 +263,10 @@ components:
 
     # todo create generator issue
     TextResult:
-      $ref: "./rtText.yml#/components/schemas/TextResult"
+      $ref: "./rt-text.yml#/components/schemas/TextResult"
 
-    # -----------------------------------------------------------------------------------------------------------------
-    # ----------Text---------------------------------------------------------------------------------------------------
-    # -----------------------------------------------------------------------------------------------------------------
     LexicalAnalysisResult:
-      description: |
-        Lexical data analysis allows you to compare the results of reading the text data of the MRZ,
-        the document filling area, barcodes and data from the memory of the RFID chip for an additional
-        assessment of the authenticity of the document
-      allOf:
-        - $ref: '#/components/schemas/ResultItem'
-        - type: object
-          properties:
-            ListVerifiedFields:
-              $ref: '#/components/schemas/ListVerifiedFields'
-
-    FieldSource:
-      type: string
-      enum:
-        - 'MRZ'
-        - 'RFID'
-        - 'BARCODE'
-        - 'VISUAL'
-
-    ListVerifiedFields:
-      type: object
-      properties:
-        pFieldMaps:
-          type: array
-          items:
-            $ref: '#/components/schemas/VerifiedFieldMap'
-
-    VerifiedFieldMap:
-      type: object
-      properties:
-        wFieldType:
-          $ref: "#/components/schemas/TextFieldType"
-        Field_MRZ:
-          description: "Field data extracted from mrz(machine readable zone)"
-          type: string
-        Field_Visual:
-          description: "Field data extracted from visual zone"
-          type: string
-        Field_Barcode:
-          description: "Field data extracted from barcode"
-          type: string
-        Field_RFID:
-          description: "Field data extracted from rfid chip"
-          type: string
-        Matrix:
-          $ref: '#/components/schemas/ComparisonMatrix'
-        wLCID:
-          $ref: "./lcid.yml#/components/schemas/LCID"
-      example:
-        {FieldType: 185, Field_MRZ: "37", Field_Visual: "37", Matrix: [1,0,0,0,0,3,0,0,0,0]}
-
-    ComparisonMatrix:
-      type: array
-      minItems: 10
-      maxItems: 10
-      description: "results comparison matrix.
-      Elements of the matrix with indices 0, 1, 2, 3 take one of the values Disabled(0), Verified(1) or Not_Verified(2),
-      elements with indices 4, 5, 6, 7, 8 are one of the values Disabled(0), Compare_Match(3) or Compare_Not_Match(4).
-      Elements of the Matrix matrix have the following semantic meaning:
-
-         - element with index 0 –– the result of verification of data from the MRZ;
-         - 1 –– the result of verification of data from the RFID microcircuit;
-         - 2 –– the result of verification of data from text areas of the document;
-         - 3 –– the result of verification data from barcodes;
-         - 4 - the result of comparing MRZ data and RFID microcircuits;
-         - 5 - the result of comparing MRZ data and text areas of document filling;
-         - 6 - the result of comparing MRZ data and bar codes;
-         - 7 - the result of comparing the data of text areas of the document and the RFID chip;
-         - 8 - the result of comparing the data of the text areas of the document and barcodes;
-         - 9 - the result of comparing the data of the RFID chip and barcodes."
-      items:
-        $ref: '#/components/schemas/VerificationResult'
-      example: [1,0,0,0,0,3,0,0,0,0]
-
-    VerificationResult:
-      type: integer
-      enum:
-        - 0
-        - 1
-        - 2
-        - 3
-        - 4
-      x-enum-descriptions:
-        - 'Comparison result unknown'
-        - 'Verification passed'
-        - 'Verification failed'
-        - 'Positive comparison result'
-        - 'Negative comparison result'
-      x-enum-varnames:
-        - 'DISABLED'
-        - 'VERIFIED'
-        - 'NOT_VERIFIED'
-        - 'COMPARE_MATCH'
-        - 'COMPARE_NOT_MATCH'
+      $ref: "./rt-ocr-lexical-analisis.yml#/components/schemas/LexicalAnalysisResult"
 
     RfidLocation:
       type: integer
@@ -379,9 +283,6 @@ components:
         - 'NONE'
         - 'MAIN_PAGE'
         - 'BACK_PAGE'
-
-    TextFieldType:
-      $ref: "./TextFieldType.yml#/components/schemas/TextFieldType"
 
     # -----------------------------------------------------------------------------------------------------------------
     # ----------Graphics-----------------------------------------------------------------------------------------------
@@ -568,9 +469,9 @@ components:
       type: object
       properties:
         wFieldType:
-          $ref: "#/components/schemas/TextFieldType"
+          $ref: "./e-text-field-type.yml#/components/schemas/TextFieldType"
         wLCID:
-          $ref: "./lcid.yml#/components/schemas/LCID"
+          $ref: "./e-lcid.yml#/components/schemas/LCID"
         StringsResult:
           type: array
           description: "Array of recognizing probabilities for a each line of text field"
@@ -733,7 +634,7 @@ components:
            to perform all authenticity checks specified in CheckAuthenticity"
 
     DocumentType:
-      $ref: "./DocumentType.yml#/components/schemas/DocumentType"
+      $ref: "./e-document-type.yml#/components/schemas/DocumentType"
 
 
     TFDSIDList:
