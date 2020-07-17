@@ -8,17 +8,13 @@ components:
 
     Source:
       description: "Document data sources"
-      type: integer
+      type: string
       enum:
-        - 3
-        - 17
-        - 18
-        - 102
-      x-enum-varnames:
         - 'MRZ'
         - 'VISUAL'
         - 'BARCODE'
         - 'RFID'
+        - 'MAGNETIC'
 
     CheckResult:
       type: integer

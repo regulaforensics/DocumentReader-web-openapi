@@ -1,0 +1,99 @@
+openapi: 3.0.3
+components:
+  schemas:
+
+    StatusResult:
+      allOf:
+        - $ref: './index.yml#/components/schemas/ResultItem'
+        - type: object
+          required:
+            - Status
+          properties:
+            Status:
+              $ref: '#/components/schemas/Status'
+
+    # $ref with description doesnt work right now, waiting for OAS 3.1 (comming soon)
+    # allOf should be used here to replace description from CheckResult
+    # see https://github.com/OAI/OpenAPI-Specification/issues/556#issuecomment-192007034
+    # but java codegen produce invalid code for allOf `int complete=null`
+    Status:
+      type: object
+      required:
+        - complete
+        - optical
+        - portrait
+        - rfid
+        - stopList
+        - detailsRFID
+        - detailsOptical
+      properties:
+        complete:
+          description: "Overall checks status. Root status."
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        optical:
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        portrait:
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        rfid:
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        stopList:
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        detailsRFID:
+          $ref: "#/components/schemas/detailsRFID"
+        detailsOptical:
+          $ref: "#/components/schemas/detailsOptical"
+
+    detailsOptical:
+      type: object
+      required:
+        - overallStatus
+        - docType
+        - expiry
+        - imageQA
+        - mrz
+        - pagesCount
+        - security
+        - text
+      properties:
+        overallStatus:
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        docType:
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        expiry:
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        imageQA:
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        mrz:
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        pagesCount:
+          type: integer
+        security:
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        text:
+          $ref: "./common.yml#/components/schemas/CheckResult"
+
+    detailsRFID:
+      type: object
+      required:
+        - overallStatus
+        - AA
+        - BAC
+        - CA
+        - PA
+        - PACE
+        - TA
+      properties:
+        overallStatus:
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        AA:
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        BAC:
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        CA:
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        PA:
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        PACE:
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        TA:
+          $ref: "./common.yml#/components/schemas/CheckResult"
