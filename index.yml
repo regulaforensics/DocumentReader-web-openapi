@@ -50,6 +50,7 @@ components:
       description: "Describes possible extracted data types from documents"
       enum:
         - 1
+        - 33
         - 36
         - 3
         - 17
@@ -63,6 +64,7 @@ components:
         - 9
       x-enum-descriptions:
         - 'Returns cropped and rotated image of document. Most of coordinates in other types defined on that image'
+        - 'Returns check statuses with detailes, grouped by source'
         - 'Returns document textual fields from all sources(mrz,rfid,visual,barcode) with validity and cross-source compare checks'
         - 'Reading MRZ text fields'
         - 'Reading text fields from visual document area'
@@ -78,6 +80,7 @@ components:
         - 'Returns description of determined document type, if any'
       x-enum-varnames:
         - RAW_IMAGE
+        - STATUS
         - TEXT
         - MRZ_TEXT
         - VISUAL_TEXT
@@ -228,6 +231,7 @@ components:
               - $ref: "#/components/schemas/ChosenDocumentTypeResult"
               - $ref: "#/components/schemas/DocumentTypesCandidatesResult"
               - $ref: "#/components/schemas/TextResult"
+              - $ref: "#/components/schemas/StatusResult"
 
     ResultItem:
       type: object
@@ -257,9 +261,13 @@ components:
           17: "#/components/schemas/VisualOcrExtendedResult"
           18: "#/components/schemas/BarcodeTextDataResult"
           19: "#/components/schemas/GraphicsResult"
+          33: "#/components/schemas/StatusResult"
           36: "#/components/schemas/TextResult"
           102: "#/components/schemas/RfidTextDataResult"
           103: "#/components/schemas/GraphicsResult"
+
+    StatusResult:
+      $ref: "./rt-status.yml#/components/schemas/StatusResult"
 
     # todo create generator issue
     TextResult:
