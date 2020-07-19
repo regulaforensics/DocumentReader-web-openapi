@@ -1,0 +1,127 @@
+openapi: 3.0.3
+components:
+  schemas:
+
+    Result:
+      type: integer
+      description: "Describes possible extracted data types from documents"
+      enum:
+        - 1
+        - 33
+        - 36
+        - 3
+        - 17
+        - 18
+        - 102
+        - 15
+        - 6
+        - 19
+        - 103
+        - 8
+        - 9
+      x-enum-descriptions:
+        - 'Returns cropped and rotated image of document. Most of coordinates in other types defined on that image'
+        - 'Returns check statuses with details, grouped by source'
+        - 'Returns document textual fields from all sources(mrz,rfid,visual,barcode) with validity and cross-source compare checks'
+        - 'Reading MRZ text fields'
+        - 'Reading text fields from visual document area'
+        - 'Reading barcode text fields'
+        - 'Reading RFID text fields'
+        - "Deprecated, use TEXT type. Lexical data analysis allows you to compare the results of reading the text data of the MRZ,
+           the document filling area, barcodes and data from the memory of the RFID chip for an additional
+           assessment of the authenticity of the document"
+        - 'Extract graphics fields from visual document area'
+        - 'Extract graphics fields from document barcode'
+        - 'Extract graphics fields from document rfid'
+        - 'Lists document type candidates with their probabilities and descriptions'
+        - 'Returns description of determined document type, if any'
+      x-enum-varnames:
+        - RAW_IMAGE
+        - STATUS
+        - TEXT
+        - MRZ_TEXT
+        - VISUAL_TEXT
+        - BARCODE_TEXT
+        - RFID_TEXT
+        - LEXICAL_ANALYSIS
+        - VISUAL_GRAPHICS
+        - BARCODE_GRAPHICS
+        - RFID_GRAPHICS
+        - DOCUMENT_TYPE_CANDIDATES
+        - DOCUMENT_TYPE
+
+    ResultItem:
+      type: object
+      description: "Common fields for all results objects"
+      required:
+        - result_type
+      properties:
+        buf_length:
+          type: integer
+        light:
+          type: integer
+        list_idx:
+          type: integer
+        page_idx:
+          type: integer
+        result_type:
+          type: integer
+      discriminator:
+        propertyName: result_type
+        mapping:
+          1: "RawImageResult"
+          3: "TextDataResult"
+          6: "GraphicsResult"
+          8: "DocumentTypesCandidatesResult"
+          9: "ChosenDocumentTypeResult"
+          15: "LexicalAnalysisResult"
+          17: "TextDataResult"
+          18: "TextDataResult"
+          19: "GraphicsResult"
+          33: "StatusResult"
+          36: "TextResult"
+          102: "TextDataResult"
+          103: "GraphicsResult"
+
+    ContainerList:
+      type: object
+      description: "list with result objects"
+      required:
+        - List
+      properties:
+        List:
+          type: array
+          items:
+            anyOf:
+              - $ref: "#/components/schemas/RawImageResult"
+              - $ref: "#/components/schemas/TextResult"
+              - $ref: "#/components/schemas/StatusResult"
+              - $ref: "#/components/schemas/TextDataResult"
+              - $ref: "#/components/schemas/GraphicsResult"
+              - $ref: "#/components/schemas/LexicalAnalysisResult"
+              - $ref: "#/components/schemas/ChosenDocumentTypeResult"
+              - $ref: "#/components/schemas/DocumentTypesCandidatesResult"
+
+    RawImageResult:
+      $ref: "./rt-raw-image.yml#/components/schemas/RawImageResult"
+
+    StatusResult:
+      $ref: "./rt-status.yml#/components/schemas/StatusResult"
+
+    TextResult:
+      $ref: "./rt-text.yml#/components/schemas/TextResult"
+
+    LexicalAnalysisResult:
+      $ref: "./rt-ocr-lexical-analisis.yml#/components/schemas/LexicalAnalysisResult"
+
+    TextDataResult:
+      $ref: "./rt-text-data.yml#/components/schemas/TextDataResult"
+
+    GraphicsResult:
+      $ref: "./rt-image-data.yml#/components/schemas/GraphicsResult"
+
+    DocumentTypesCandidatesResult:
+      $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentTypesCandidatesResult"
+
+    ChosenDocumentTypeResult:
+      $ref: "./rt-doc-type-old.yml#/components/schemas/ChosenDocumentTypeResult"

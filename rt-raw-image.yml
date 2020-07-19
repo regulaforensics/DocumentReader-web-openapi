@@ -1,0 +1,15 @@
+openapi: 3.0.3
+components:
+  schemas:
+
+    RawImageResult:
+      allOf:
+        - $ref: './rt.yml#/components/schemas/ResultItem'
+        - type: object
+          description: "Returns cropped and rotated image of document.
+          Most of coordinates in other types defined on that image"
+          required:
+            - RawImageContainer
+          properties:
+            RawImageContainer:
+              $ref: "./common.yml#/components/schemas/ImageData"

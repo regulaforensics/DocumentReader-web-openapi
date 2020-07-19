@@ -1,6 +1,4 @@
 openapi: 3.0.3
-info:
-path:
 components:
   schemas:
 
@@ -731,15 +729,15 @@ components:
         - 'OCR number'
         - 'Federal elections'
         - 'Reference number'
-        - 'Optional data checksum' #todo not found in docs (194)
-        - 'Optional data check digit' #todo not found in docs (195)
+        - 'Optional data checksum'
+        - 'Optional data check digit'
         - 'Visa number'
         - 'Visa number checksum'
         - 'Visa number check digit'
         - 'Voter'
         - 'Type\number of previous document'
-        - 'Field from MRZ' #todo not found in docs (220)
-        - 'Current date' #todo not found in docs (221)
+        - 'Field from MRZ'
+        - 'Current date'
         - 'Status expiration date'
         - 'bank note number'
         - 'Code of customer service center'
@@ -776,7 +774,7 @@ components:
         - 'Degree of kindred'
         - 'US Citizenship and Immigration Services Alien Registration Number'
         - 'Category'
-        - 'Remainder term' #todo not found in docs (195)
+        - 'Remainder term'
         - 'Conditions'
         - 'Identifier'
         - 'Configuration'

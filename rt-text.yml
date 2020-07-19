@@ -4,7 +4,7 @@ components:
 
     TextResult:
       allOf:
-        - $ref: './index.yml#/components/schemas/ResultItem'
+        - $ref: './rt.yml#/components/schemas/ResultItem'
         - type: object
           required:
             - Text

@@ -1,0 +1,102 @@
+openapi: 3.0.3
+components:
+  schemas:
+
+    TextDataResult:
+      deprecated: true
+      description: "Text fields extracted from one the document source.
+      Returns separate results for each provided page."
+      allOf:
+        - $ref: './rt.yml#/components/schemas/ResultItem'
+        - type: object
+          properties:
+            DocVisualExtendedInfo:
+              $ref: "#/components/schemas/DocVisualExtendedInfo"
+
+    DocVisualExtendedInfo:
+      type: object
+      description: "Container for extracted text fields. Fields are identified by type and language"
+      required:
+        - pArrayFields
+      properties:
+        pArrayFields:
+          type: array
+          items:
+            $ref: "#/components/schemas/DocVisualExtendedField"
+
+    DocVisualExtendedField:
+      type: object
+      required:
+        - wFieldType
+        - wLCID
+        - Buf_Text
+      properties:
+        wFieldType:
+          $ref: "./e-text-field-type.yml#/components/schemas/TextFieldType"
+        wLCID:
+          $ref: "./e-lcid.yml#/components/schemas/LCID"
+        StringsResult:
+          type: array
+          description: "Array of recognizing probabilities for a each line of text field.
+          Only for Result.VISUAL_TEXT and Result.MRZ_TEXT results."
+          items:
+            $ref: "#/components/schemas/StringRecognitionResult"
+        Buf_Text:
+          type: string
+          description: "Text field data in UTF8 format.
+          Results of reading different lines of a multiline field are separated by “^”"
+        FieldRect:
+          description: "Coordinates of the text field in the normalized image (result type 1) of the document.
+          Only for Result.VISUAL_TEXT and Result.MRZ_TEXT results."
+          $ref: "./common.yml#/components/schemas/RectangleCoordinates"
+        RFID_OriginDG:
+          description: "Information data group. Only for Result.RFID_TEXT results."
+          type: integer
+        RFID_OriginTagEntry:
+          type: integer
+          description: "Index of the text field record in information data group. Only for Result.RFID_TEXT results."
+
+    StringRecognitionResult:
+      type: object
+      description: "Describes recognizing a single row in multi-line text field of a document"
+      required:
+        - StringResult
+      properties:
+        StringResult:
+          type: array
+          description: "Array of recognition results for individual characters of a string"
+          items:
+            $ref: "#/components/schemas/SymbolRecognitionResult"
+
+    SymbolRecognitionResult:
+      type: object
+      description: "Describes the result of recognizing a single character in text field line"
+      required:
+        - SymbolRect
+        - ListOfCandidates
+      properties:
+        SymbolRect:
+          description: "Coordinates of the symbol in the normalized image (result type 1) of the document"
+          $ref: "./common.yml#/components/schemas/RectangleCoordinates"
+        ListOfCandidates:
+          type: array
+          description: "Array of candidate characters. Sorted in decreasing order of recognition probabilities
+          (the first element has highest probability)"
+          items:
+            $ref: "#/components/schemas/SymbolCandidate"
+
+    SymbolCandidate:
+      required:
+        - SymbolCode
+        - SymbolProbability
+      type: object
+      description: "Describes the result of recognizing an individual character in the string field of the document"
+      properties:
+        SymbolCode:
+          type: integer
+          description: "ASCII symbol code"
+        SymbolProbability:
+          type: integer
+          description: "character recognition probability (0–100,%)"
+          minimum: 0
+          maximum: 100
