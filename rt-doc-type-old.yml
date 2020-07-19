@@ -1,0 +1,167 @@
+openapi: 3.0.3
+components:
+  schemas:
+
+    ChosenDocumentTypeResult:
+      description: "Contains information about the type of document that was determined
+      based on the analysis of the provided image"
+      allOf:
+        - $ref: './rt.yml#/components/schemas/ResultItem'
+        - type: object
+          properties:
+            OneCandidate:
+              $ref: "#/components/schemas/OneCandidate"
+
+    DocumentTypesCandidatesResult:
+      allOf:
+        - $ref: './rt.yml#/components/schemas/ResultItem'
+        - type: object
+          properties:
+            CandidatesList:
+              $ref: "#/components/schemas/DocumentTypesCandidatesList"
+
+    DocumentTypesCandidatesList:
+      type: object
+      properties:
+        RecResult:
+          description: "Overall recognition result"
+          $ref: "#/components/schemas/DocumentTypeRecognitionResult"
+        Candidates:
+          type: array
+          items:
+            $ref: "#/components/schemas/OneCandidate"
+
+    DocumentTypeRecognitionResult:
+      type: integer
+      enum:
+        - 0
+        - 15
+        - 29
+      x-enum-descriptions:
+        - 'Document type determined. The first element in candidates array is recognition result'
+        - 'Document type was not determined. Ongoing processing is not possible'
+        - 'To determine document type user should provide more images with different light sources (UV, for example)'
+      x-enum-varnames:
+        - 'OK'
+        - 'UNKNOWN'
+        - 'NEED_MORE_IMAGES'
+
+
+    OneCandidate:
+      type: object
+      description: "Contains information about one document type candidate"
+      properties:
+        DocumentName:
+          type: string
+          description: "Document name"
+        ID:
+          type: integer
+          description: "Unique document type template identifier (Regula's internal numeric code)"
+        P:
+          type: number
+          description: "A measure of the likelihood of correct recognition in the analysis of this type of document"
+          example: 0.9913095831871032
+          minimum: 0
+          maximum: 1
+        RFID_Presence:
+          description: "Indication of the presence of an RFID chip in the document (electronic document indicator)"
+          $ref: "./common.yml#/components/schemas/RfidLocation"
+        FDSIDList:
+          $ref: "#/components/schemas/TFDSIDList"
+        NecessaryLights:
+          type: integer
+          description: "Combination of lighting scheme identifiers (Light enum) required to conduct OCR for this type of document"
+        CheckAuthenticity:
+          type: integer
+          description: "Set of authentication options provided for this type of document (combination of Authenticity enum)"
+        UVExp:
+          type: integer
+          description: "The required exposure value of the camera when receiving images of a document
+           of this type for a UV lighting scheme"
+        AuthenticityNecessaryLights:
+          type: integer
+          description: "Combination of lighting scheme identifiers (combination of Light enum) needed
+           to perform all authenticity checks specified in CheckAuthenticity"
+
+    TFDSIDList:
+      description: "Extended document type info and Regula's 'Information Reference Systems' links"
+      type: object
+      properties:
+        ICAO:
+          type: string
+          minLength: 4
+          maxLength: 4
+          description: "ICAO code of the issuing country"
+        List:
+          type: array
+          items:
+            type: integer
+          description: "Document identifiers in 'Information Reference Systems'"
+        dType:
+          $ref: "./e-document-type.yml#/components/schemas/DocumentType"
+        dFormat:
+          $ref: "#/components/schemas/DocumentFormat"
+        dMRZ:
+          type: boolean
+          description: "Flag indicating the presence of MRZ on the document"
+        dDescription:
+          type: string
+          description: "Document description"
+        dYear:
+          type: string
+          description: "Year of publication of the document"
+        dCountryName:
+          type: string
+          description: "Issuing country name"
+        dStateCode:
+          type: string
+          description: "Issuing state code"
+        dStateName:
+          type: string
+          description: "Issuing state name"
+
+    DocumentFormat:
+      type: integer
+      description: "Defining the geometric format of documents in accordance with ISO / IEC 7810"
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 10
+        - 11
+        - 12
+        - 13
+        - 14
+        - 1000
+        - 1002
+      x-enum-descriptions:
+        - 'ID1 document format'
+        - 'ID2 document format'
+        - 'ID3 document format'
+        - 'Undefined document format'
+        - 'A4 document format'
+        - 'ID3 double document format'
+        - 'ID1 format document rotated 90 °'
+        - 'ID1 format document rotated 180 °'
+        - 'ID1 format document rotated 270 °'
+        - 'ID2 format document rotated 90 °'
+        - 'ID3 format document rotated 180 °'
+        - 'Arbitrary format'
+        - 'Flexible format. Standard formats can be resized during cropping, depending on various factors: light, background...'
+      x-enum-varnames:
+        - 'ID1'
+        - 'ID2'
+        - 'ID3'
+        - 'NON'
+        - 'A4'
+        - 'ID3_X2'
+        - 'ID1_90'
+        - 'ID1_180'
+        - 'ID1_270'
+        - 'ID2_180'
+        - 'ID3_180'
+        - 'CUSTOM'
+        - 'FLEXIBLE'

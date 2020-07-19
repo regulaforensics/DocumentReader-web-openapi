@@ -1,0 +1,54 @@
+openapi: 3.0.3
+components:
+  schemas:
+
+    GraphicsResult:
+      description: "Graphics fields extracted from one the document source.
+      Returns separate results for each provided page."
+      required:
+        - DocGraphicsInfo
+      allOf:
+        - $ref: './rt.yml#/components/schemas/ResultItem'
+        - type: object
+          properties:
+            DocGraphicsInfo:
+              $ref: "#/components/schemas/GraphicFieldsList"
+
+    GraphicFieldsList:
+      type: object
+      required:
+        - pArrayFields
+      properties:
+        pArrayFields:
+          type: array
+          items:
+            $ref: "#/components/schemas/GraphicField"
+
+    GraphicField:
+      type: object
+      required:
+        - FieldType
+        - image
+      properties:
+        FieldType:
+          $ref: "./e-graphic-field-type.yml#/components/schemas/GraphicFieldType"
+        image:
+          $ref: "./common.yml#/components/schemas/ImageData"
+        FieldRect:
+          description: "Coordinates of the graphic field in the normalized image (result type 1) of the document.
+          Only for Result.MRZ_TEXT result."
+          $ref: "./common.yml#/components/schemas/RectangleCoordinates"
+        # todo maybe add some link for bio rfid standard?
+        RFID_OriginDG:
+          description: "Information data group. Only for Result.RFID_TEXT results."
+          type: integer
+        RFID_OriginDGTag:
+          description: "Index of the source record of the image with biometric information
+          in the information data group. Only for Result.RFID_TEXT results."
+          type: integer
+        RFID_OriginTagEntry:
+          type: integer
+          description: "Index of the text field record in information data group. Only for Result.RFID_TEXT results."
+        RFID_OriginEntryView:
+          type: integer
+          description: "Biometric sample variant index. Only for Result.RFID_TEXT results."

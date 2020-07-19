@@ -73,7 +73,6 @@ components:
         - "OCR_FREE"
         - "CREDIT_CARD"
         - "CAPTURE"
-    #      x-enum-descriptions:
 
     ImageData:
       type: object
@@ -84,3 +83,57 @@ components:
           description: "base64 encoded image"
           type: string
           format: byte
+
+    RectangleCoordinates:
+      description: "Coordinates of the rectangle region in the normalized image (result type 1) of the document.
+      Result is inner rectangle of 4 lines that || to x/y axios(document borders)."
+      type: object
+      required:
+        - top
+        - bottom
+        - left
+        - right
+      properties:
+        top:
+          type: integer
+        bottom:
+          type: integer
+        left:
+          type: integer
+        right:
+          type: integer
+
+    RfidLocation:
+      type: integer
+      description: "Determines the presence and location of an RFID chip in a particular type of document"
+      enum:
+        - 0
+        - 1
+        - 2
+      x-enum-descriptions:
+        - 'There is no RFID chip in the document'
+        - 'The RFID chip is located in the document data page'
+        - 'The RFID chip is located in the back end of the document'
+      x-enum-varnames:
+        - 'NONE'
+        - 'MAIN_PAGE'
+        - 'BACK_PAGE'
+
+    Light:
+      type: integer
+      description: "image light index"
+      enum:
+        - 0
+        - 6
+        - 24
+        - 128
+      x-enum-descriptions:
+        - 'No Light'
+        - 'White'
+        - 'Infrared'
+        - 'Ultraviolet'
+      x-enum-varnames:
+        - "OFF"
+        - "WHITE"
+        - "IR"
+        - "UV"
