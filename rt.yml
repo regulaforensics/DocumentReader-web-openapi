@@ -20,21 +20,21 @@ components:
         - 8
         - 9
       x-enum-descriptions:
-        - 'Returns cropped and rotated image of document. Most of coordinates in other types defined on that image'
-        - 'Returns check statuses with details, grouped by source'
-        - 'Returns document textual fields from all sources(mrz,rfid,visual,barcode) with validity and cross-source compare checks'
-        - 'Reading MRZ text fields'
-        - 'Reading text fields from visual document area'
-        - 'Reading barcode text fields'
-        - 'Reading RFID text fields'
-        - "Deprecated, use TEXT type. Lexical data analysis allows you to compare the results of reading the text data of the MRZ,
-           the document filling area, barcodes and data from the memory of the RFID chip for an additional
-           assessment of the authenticity of the document"
-        - 'Extract graphics fields from visual document area'
-        - 'Extract graphics fields from document barcode'
-        - 'Extract graphics fields from document rfid'
-        - 'Lists document type candidates with their probabilities and descriptions'
-        - 'Returns description of determined document type, if any'
+        - 'Contains cropped and rotated image of document. Most of coordinates in other types defined on that image'
+        - 'Contains check statuses with details, grouped by source'
+        - 'Contains document textual fields from all sources (mrz, rfid, visual, barcode) with validity and cross-source compare checks'
+        - 'Contains MRZ OCR results'
+        - 'Contains Visual zone OCR results'
+        - 'Contains barcode parsing result with text fields'
+        - 'Contains RFID parsing result with text fields'
+        - "Contains lexical data analysis results that allow you to compare MRZ OCR results,
+           Visual zone OCR results, barcodes and RFID chip data for an additional
+           assessment of the authenticity of the document (this is an old format, better use TEXT type)"
+        - 'Contains cropped graphic fields from Visual zone'
+        - 'Contains barcode parsing result with graphic fields'
+        - 'Contains RFID parsing result with graphic fields'
+        - 'Contains list of document type candidates with their probabilities and descriptions'
+        - 'Contains description of determined document type, if any'
       x-enum-varnames:
         - RAW_IMAGE
         - STATUS
@@ -52,7 +52,7 @@ components:
 
     ResultItem:
       type: object
-      description: "Common fields for all results objects"
+      description: "Common fields for all result objects"
       required:
         - result_type
       properties:

@@ -3,7 +3,7 @@ components:
   schemas:
 
     PageIndex:
-      description: "Index of image from input list"
+      description: "Page index of the image from input list"
       type: integer
 
     Source:
@@ -27,14 +27,14 @@ components:
         - 'OK'
         - 'WAS_NOT_DONE'
       x-enum-descriptions:
-        - 'Check was performed and result is negative'
-        - 'Check was performed and result is positive'
-        - 'Check was not performed'
+        - 'Check was performed and result is NEGATIVE'
+        - 'Check was performed and result is POSITIVE'
+        - 'Check was NOT PERFORMED'
 
     # todo update x-enum-descriptions
     Scenario:
       type: string
-      description: "Scenario determines completeness of document processing"
+      description: "Document processing scenario"
       enum:
         - "Mrz"
         - "Barcode"
@@ -85,27 +85,26 @@ components:
           format: byte
 
     RectangleCoordinates:
-      description: "Coordinates of the rectangle region in the normalized image (result type 1) of the document.
-      Result is inner rectangle of 4 lines that || to x/y axios(document borders)."
+      description: "Coordinates of the rectangle region in the normalized image of the document."
       type: object
       required:
-        - top
-        - bottom
         - left
+        - top
         - right
+        - bottom
       properties:
-        top:
-          type: integer
-        bottom:
-          type: integer
         left:
           type: integer
+        top:
+          type: integer
         right:
+          type: integer
+        bottom:
           type: integer
 
     RfidLocation:
       type: integer
-      description: "Determines the presence and location of an RFID chip in a particular type of document"
+      description: "Determines the presence and location of an RFID chip in a document"
       enum:
         - 0
         - 1
@@ -113,7 +112,7 @@ components:
       x-enum-descriptions:
         - 'There is no RFID chip in the document'
         - 'The RFID chip is located in the document data page'
-        - 'The RFID chip is located in the back end of the document'
+        - 'The RFID chip is located in the back page or inlay of the document'
       x-enum-varnames:
         - 'NONE'
         - 'MAIN_PAGE'
