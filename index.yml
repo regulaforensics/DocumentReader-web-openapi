@@ -32,7 +32,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProcessResponse'
-
+        #todo other responses
 
 components:
   schemas:
@@ -50,6 +50,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ProcessRequestImage'
+        systemInfo:
+          $ref: '#/components/schemas/ProcessSystemInfo'
       required:
         - processParam
         - List
@@ -61,7 +63,7 @@ components:
         scenario:
           $ref: './common.yml#/components/schemas/Scenario'
         resultTypeOutput:
-          description: "Types of results to extract. See 'Result' enum for available options."
+          description: "Types of results to return in response. See 'Result' enum for available options."
           type: array
           items:
             $ref: './rt.yml#/components/schemas/Result'
@@ -88,7 +90,14 @@ components:
         LightIndex: 6
         page_idx: 0
         ImageData:
-          image: "<base46 image>"
+          image: "<base64 image>"
+
+    ProcessSystemInfo:
+      type: object
+      properties:
+        license:
+          description: "Base64 encoded license file"
+          type: string
 
 
     #############################
@@ -115,12 +124,15 @@ components:
       enum:
         - 0
         - 1
+        - 2
       x-enum-descriptions:
-        - 'Processing not finished yet'
-        - 'Processing already finished'
+        - 'Processing was not finished'
+        - 'Processing finished'
+        - 'Processing finished by timeout'
       x-enum-varnames:
         - 'NOT_FINISHED'
         - 'FINISHED'
+        - 'TIMEOUT'
 
     TransactionInfo:
       type: object
