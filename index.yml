@@ -32,7 +32,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProcessResponse'
-
+        #todo other responses
 
 components:
   schemas:
@@ -61,7 +61,7 @@ components:
         scenario:
           $ref: './common.yml#/components/schemas/Scenario'
         resultTypeOutput:
-          description: "Types of results to extract. See 'Result' enum for available options."
+          description: "Types of results to return in response. See 'Result' enum for available options."
           type: array
           items:
             $ref: './rt.yml#/components/schemas/Result'

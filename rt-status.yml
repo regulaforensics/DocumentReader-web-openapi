@@ -21,26 +21,28 @@ components:
       required:
         - complete
         - optical
-        - portrait
-        - rfid
-        - stopList
-        - detailsRFID
         - detailsOptical
       properties:
         complete:
           description: "Overall checks status. Root status."
           $ref: "./common.yml#/components/schemas/CheckResult"
         optical:
+          description: "Overall optical checks combined status"
           $ref: "./common.yml#/components/schemas/CheckResult"
         portrait:
+          description: "Portrait comparison status"
           $ref: "./common.yml#/components/schemas/CheckResult"
         rfid:
+          description: "Overall RFID checks combined status"
           $ref: "./common.yml#/components/schemas/CheckResult"
         stopList:
+          description: "Stop list check status"
           $ref: "./common.yml#/components/schemas/CheckResult"
         detailsRFID:
+          description: "Details on performed RFID checks"
           $ref: "#/components/schemas/detailsRFID"
         detailsOptical:
+          description: "Details on performed optical checks"
           $ref: "#/components/schemas/detailsOptical"
 
     detailsOptical:
@@ -56,20 +58,28 @@ components:
         - text
       properties:
         overallStatus:
+          description: "Overall optical checks combined status"
           $ref: "./common.yml#/components/schemas/CheckResult"
         docType:
+          description: "Status of document type recognition"
           $ref: "./common.yml#/components/schemas/CheckResult"
         expiry:
+          description: "Status of document expiration"
           $ref: "./common.yml#/components/schemas/CheckResult"
         imageQA:
+          description: "Status of document image quality check"
           $ref: "./common.yml#/components/schemas/CheckResult"
         mrz:
+          description: "Status of document MRZ"
           $ref: "./common.yml#/components/schemas/CheckResult"
         pagesCount:
+          description: "Number of processed pages in the document"
           type: integer
         security:
+          description: "Status of document MRZ"
           $ref: "./common.yml#/components/schemas/CheckResult"
         text:
+          description: "Status of text fields analysis"
           $ref: "./common.yml#/components/schemas/CheckResult"
 
     detailsRFID:
@@ -84,16 +94,23 @@ components:
         - TA
       properties:
         overallStatus:
+          description: "Overall RFID checks combined status"
           $ref: "./common.yml#/components/schemas/CheckResult"
         AA:
+          description: "Active Authentication status"
           $ref: "./common.yml#/components/schemas/CheckResult"
         BAC:
+          description: "Basic Access Control (BAC) status"
           $ref: "./common.yml#/components/schemas/CheckResult"
         CA:
+          description: "Chip Authentication status"
           $ref: "./common.yml#/components/schemas/CheckResult"
         PA:
+          description: "Passive Authentication status"
           $ref: "./common.yml#/components/schemas/CheckResult"
         PACE:
+          description: "Password Authenticated Connection Establishment (PACE) status"
           $ref: "./common.yml#/components/schemas/CheckResult"
         TA:
+          description: "Terminal Authentication status"
           $ref: "./common.yml#/components/schemas/CheckResult"

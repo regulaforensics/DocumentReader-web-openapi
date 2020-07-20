@@ -14,7 +14,7 @@ components:
 
     Text:
       type: object
-      description: "Contains all document textual fields with validity and cross-source compare checks"
+      description: "Contains all document text fields data with validity and cross-source compare checks"
       required:
         - status
         - validityStatus
@@ -23,13 +23,13 @@ components:
         - availableSourceList
       properties:
         status:
-          description: "Overall status of all checks from all fields"
+          description: "Overall status of all checks from all text fields"
           $ref: "./common.yml#/components/schemas/CheckResult"
         validityStatus:
-          description: "Overall status of validity from all fields from all sources"
+          description: "Overall status of validity from all text fields from all sources"
           $ref: "./common.yml#/components/schemas/CheckResult"
         comparisonStatus:
-          description: "Overall status of comparing data from different sources for each field"
+          description: "Overall status of data comparison from different sources for each text field"
           $ref: "./common.yml#/components/schemas/CheckResult"
         fieldList:
           type: array
@@ -59,10 +59,10 @@ components:
           description: "Overall status of all checks from all values"
           $ref: "./common.yml#/components/schemas/CheckResult"
         validityStatus:
-          description: "Overall status of validity from all values from all sources"
+          description: "Overall status of validity from all values"
           $ref: "./common.yml#/components/schemas/CheckResult"
         comparisonStatus:
-          description: "Overall status of comparing data from different sources"
+          description: "Overall status of data comparison from different sources"
           $ref: "./common.yml#/components/schemas/CheckResult"
         valueList:
           type: array
@@ -71,7 +71,7 @@ components:
         validityList:
           description: "Validity of all field values for given source.
           If there are two values on different pages for one field-source pair,
-          than validity also will include logical match checking.
+          then validity also will include logical match checking.
           If such values do not match, validity will return error."
           type: array
           items:
@@ -85,20 +85,22 @@ components:
     TextFieldValue:
       type: object
       required:
-        - source
         - value
         - pageIndex
+        - source
       properties:
         value:
+          description: "Parsed/processed value. Date format converted for output, delimiters removed"
           type: string
         originalValue:
+          description: "Original value as seen in the document"
           type: string
         pageIndex:
           $ref: "./common.yml#/components/schemas/PageIndex"
         source:
           $ref: "./common.yml#/components/schemas/Source"
         probability:
-          description: "Value correct recognition probability. Combined probability from single characters probabilities"
+          description: "Min recognition probability. Combined minimum probability from single characters probabilities"
           type: integer
           minimum: 0
           maximum: 100
