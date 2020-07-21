@@ -870,60 +870,60 @@ components:
         - 'identity card checksum'
         - 'identity card check digit'
         - 'Veteran'
-        - 'Validity date of A1 driver`s license'
-        - 'Expiration date of A1 driver`s license'
-        - 'Restrictions for A1 driver`s license'
-        - 'Validity date of A driver`s license'
-        - 'Expiration date of A driver`s license'
-        - 'Restrictions for A driver`s license'
-        - 'Validity date of B driver`s license'
-        - 'Expiration date of B driver`s license'
-        - 'Restrictions for B driver`s license'
-        - 'Validity date of C1 driver`s license'
-        - 'Expiration date of C1 driver`s license'
-        - 'Restrictions for C1 driver`s license'
-        - 'Validity date of C driver`s license'
-        - 'Expiration date of C driver`s license'
-        - 'Restrictions for C driver`s license'
-        - 'Validity date of D1 driver`s license'
-        - 'Expiration date of D1 driver`s license'
-        - 'Restrictions for D1 driver`s license'
-        - 'Validity date of D driver`s license'
-        - 'Expiration date of D driver`s license'
-        - 'Restrictions for D driver`s license'
-        - 'Validity date of BE driver`s license'
-        - 'Expiration date of BE driver`s license'
-        - 'Restrictions for BE driver`s license'
-        - 'Validity date of C1E driver`s license'
-        - 'Expiration date of C1E driver`s license'
-        - 'Restrictions for C1E driver`s license'
-        - 'Validity date of CE driver`s license'
-        - 'Expiration date of CE driver`s license'
-        - 'Restrictions for CE driver`s license'
-        - 'Validity date of D1E driver`s license'
-        - 'Expiration date of D1E driver`s license'
-        - 'Restrictions for D1E driver`s license'
-        - 'Validity date of DE driver`s license'
-        - 'Expiration date of DE driver`s license'
-        - 'Restrictions for DE driver`s license'
-        - 'Validity date of M driver`s license'
-        - 'Expiration date of M driver`s license'
-        - 'Restrictions for M driver`s license'
-        - 'Validity date of L driver`s license'
-        - 'Expiration date of L driver`s license'
-        - 'Restrictions for L driver`s license'
-        - 'Validity date of T driver`s license'
-        - 'Expiration date of T driver`s license'
-        - 'Restrictions for T driver`s license'
-        - 'Validity date of AM driver`s license'
-        - 'Expiration date of AM driver`s license'
-        - 'Restrictions for AM driver`s license'
-        - 'Validity date of A2 driver`s license'
-        - 'Expiration date of A2 driver`s license'
-        - 'Restrictions for A2 driver`s license'
-        - 'Validity date of B1 driver`s license'
-        - 'Expiration date of B1 driver`s license'
-        - 'Restrictions for B1 driver`s license'
+        - 'Validity date of A1 driver’s license'
+        - 'Expiration date of A1 driver’s license'
+        - 'Restrictions for A1 driver’s license'
+        - 'Validity date of A driver’s license'
+        - 'Expiration date of A driver’s license'
+        - 'Restrictions for A driver’s license'
+        - 'Validity date of B driver’s license'
+        - 'Expiration date of B driver’s license'
+        - 'Restrictions for B driver’s license'
+        - 'Validity date of C1 driver’s license'
+        - 'Expiration date of C1 driver’s license'
+        - 'Restrictions for C1 driver’s license'
+        - 'Validity date of C driver’s license'
+        - 'Expiration date of C driver’s license'
+        - 'Restrictions for C driver’s license'
+        - 'Validity date of D1 driver’s license'
+        - 'Expiration date of D1 driver’s license'
+        - 'Restrictions for D1 driver’s license'
+        - 'Validity date of D driver’s license'
+        - 'Expiration date of D driver’s license'
+        - 'Restrictions for D driver’s license'
+        - 'Validity date of BE driver’s license'
+        - 'Expiration date of BE driver’s license'
+        - 'Restrictions for BE driver’s license'
+        - 'Validity date of C1E driver’s license'
+        - 'Expiration date of C1E driver’s license'
+        - 'Restrictions for C1E driver’s license'
+        - 'Validity date of CE driver’s license'
+        - 'Expiration date of CE driver’s license'
+        - 'Restrictions for CE driver’s license'
+        - 'Validity date of D1E driver’s license'
+        - 'Expiration date of D1E driver’s license'
+        - 'Restrictions for D1E driver’s license'
+        - 'Validity date of DE driver’s license'
+        - 'Expiration date of DE driver’s license'
+        - 'Restrictions for DE driver’s license'
+        - 'Validity date of M driver’s license'
+        - 'Expiration date of M driver’s license'
+        - 'Restrictions for M driver’s license'
+        - 'Validity date of L driver’s license'
+        - 'Expiration date of L driver’s license'
+        - 'Restrictions for L driver’s license'
+        - 'Validity date of T driver’s license'
+        - 'Expiration date of T driver’s license'
+        - 'Restrictions for T driver’s license'
+        - 'Validity date of AM driver’s license'
+        - 'Expiration date of AM driver’s license'
+        - 'Restrictions for AM driver’s license'
+        - 'Validity date of A2 driver’s license'
+        - 'Expiration date of A2 driver’s license'
+        - 'Restrictions for A2 driver’s license'
+        - 'Validity date of B1 driver’s license'
+        - 'Expiration date of B1 driver’s license'
+        - 'Restrictions for B1 driver’s license'
         - 'Last name at birth'
         - 'Civil status'
         - 'Number of seats'
@@ -961,30 +961,30 @@ components:
         - 'Card issues count checksum'
         - 'Card issues count check digit'
         - 'Birth century'
-        - 'Validity date of A3 driver`s license'
-        - 'Expiration date of A3 driver`s license'
-        - 'Restrictions for A3 driver`s license'
-        - 'Validity date of C2 driver`s license'
-        - 'Expiration date of C2 driver`s license'
-        - 'Restrictions for C2 driver`s license'
-        - 'Validity date of B2 driver`s license'
-        - 'Expiration date of B2 driver`s license'
-        - 'Restrictions for B2 driver`s license'
-        - 'Validity date of D2 driver`s license'
-        - 'Expiration date of D2 driver`s license'
-        - 'Restrictions for D2 driver`s license'
-        - 'Validity date of B2E driver`s license'
-        - 'Expiration date of B2E driver`s license'
-        - 'Restrictions for B2E driver`s license'
-        - 'Validity date of G driver`s license'
-        - 'Expiration date of G driver`s license'
-        - 'Restrictions for G driver`s license'
-        - 'Validity date of J driver`s license'
-        - 'Expiration date of J driver`s license'
-        - 'Restrictions for J driver`s license'
-        - 'Validity date of LC driver`s license'
-        - 'Expiration date of LC driver`s license'
-        - 'Restrictions for LC driver`s license'
+        - 'Validity date of A3 driver’s license'
+        - 'Expiration date of A3 driver’s license'
+        - 'Restrictions for A3 driver’s license'
+        - 'Validity date of C2 driver’s license'
+        - 'Expiration date of C2 driver’s license'
+        - 'Restrictions for C2 driver’s license'
+        - 'Validity date of B2 driver’s license'
+        - 'Expiration date of B2 driver’s license'
+        - 'Restrictions for B2 driver’s license'
+        - 'Validity date of D2 driver’s license'
+        - 'Expiration date of D2 driver’s license'
+        - 'Restrictions for D2 driver’s license'
+        - 'Validity date of B2E driver’s license'
+        - 'Expiration date of B2E driver’s license'
+        - 'Restrictions for B2E driver’s license'
+        - 'Validity date of G driver’s license'
+        - 'Expiration date of G driver’s license'
+        - 'Restrictions for G driver’s license'
+        - 'Validity date of J driver’s license'
+        - 'Expiration date of J driver’s license'
+        - 'Restrictions for J driver’s license'
+        - 'Validity date of LC driver’s license'
+        - 'Expiration date of LC driver’s license'
+        - 'Restrictions for LC driver’s license'
         - 'Bank card number'
         - 'Bank card validity'
         - 'Tax number'
@@ -1016,80 +1016,78 @@ components:
         - 'Professional id number'
         - 'Age at issue'
         - 'Years since issue'
-#todo missing descriptions for old and new fields
-#        ft_DLClassCode_BTP_From = 524,
-#        ft_DLClassCode_BTP_Notes = 525,
-#        ft_DLClassCode_BTP_To = 526,
-#        ft_DLClassCode_C3_From = 527,
-#        ft_DLClassCode_C3_Notes = 528,
-#        ft_DLClassCode_C3_To = 529,
-#        ft_DLClassCode_E_From = 530,
-#        ft_DLClassCode_E_Notes = 531,
-#        ft_DLClassCode_E_To = 532,
-#        ft_DLClassCode_F_From = 533,
-#        ft_DLClassCode_F_Notes = 534,
-#        ft_DLClassCode_F_To = 535,
-#        ft_DLClassCode_FA_From = 536,
-#        ft_DLClassCode_FA_Notes = 537,
-#        ft_DLClassCode_FA_To = 538,
-#        ft_DLClassCode_FA1_From = 539,
-#        ft_DLClassCode_FA1_Notes = 540,
-#        ft_DLClassCode_FA1_To = 541,
-#        ft_DLClassCode_FB_From = 542,
-#        ft_DLClassCode_FB_Notes = 543,
-#        ft_DLClassCode_FB_To = 544,
-#        ft_DLClassCode_G1_From = 545,
-#        ft_DLClassCode_G1_Notes = 546,
-#        ft_DLClassCode_G1_To = 547,
-#        ft_DLClassCode_H_From = 548,
-#        ft_DLClassCode_H_Notes = 549,
-#        ft_DLClassCode_H_To = 550,
-#        ft_DLClassCode_I_From = 551,
-#        ft_DLClassCode_I_Notes = 552,
-#        ft_DLClassCode_I_To = 553,
-#        ft_DLClassCode_K_From = 554,
-#        ft_DLClassCode_K_Notes = 555,
-#        ft_DLClassCode_K_To = 556,
-#        ft_DLClassCode_LK_From = 557,
-#        ft_DLClassCode_LK_Notes = 558,
-#        ft_DLClassCode_LK_To = 559,
-#        ft_DLClassCode_N_From = 560,
-#        ft_DLClassCode_N_Notes = 561,
-#        ft_DLClassCode_N_To = 562,
-#        ft_DLClassCode_S_From = 563,
-#        ft_DLClassCode_S_Notes = 564,
-#        ft_DLClassCode_S_To = 565,
-#        ft_DLClassCode_TB_From = 566,
-#        ft_DLClassCode_TB_Notes = 567,
-#        ft_DLClassCode_TB_To = 568,
-#        ft_DLClassCode_TM_From = 569,
-#        ft_DLClassCode_TM_Notes = 570,
-#        ft_DLClassCode_TM_To = 571,
-#        ft_DLClassCode_TR_From = 572,
-#        ft_DLClassCode_TR_Notes = 573,
-#        ft_DLClassCode_TR_To = 574,
-#        ft_DLClassCode_TV_From = 575,
-#        ft_DLClassCode_TV_Notes = 576,
-#        ft_DLClassCode_TV_To = 577,
-#        ft_DLClassCode_V_From = 578,
-#        ft_DLClassCode_V_Notes = 579,
-#        ft_DLClassCode_V_To = 580,
-#        ft_DLClassCode_W_From = 581,
-#        ft_DLClassCode_W_Notes = 582,
-#        ft_DLClassCode_W_To = 583,
-#        ft_URL = 584,
-#        ft_Caliber = 585,
-#        ft_Model = 586,
-#        ft_Make = 587,
-#            ft_NumberOfCylinders = 588,
-#            ft_SurnameOfHusbandAfterRegistration = 589,
-#            ft_SurnameOfWifeAfterRegistration = 590,
-#            ft_DateOfBirthOfWife = 591,
-#            ft_DateOfBirthOfHusband = 592,
-#            ft_CitizenshipOfFirstPerson = 593,
-#            ft_CitizenshipOfSecondPerson = 594,
-#            ft_CVV = 595,
-
+        - 'Validity date of BTP driver’s license'
+        - 'Restrictions for BTP driver’s license'
+        - 'Expiration date of BTP driver’s license'
+        - 'Validity date of C3 driver’s license'
+        - 'Restrictions for C3 driver’s license'
+        - 'Expiration date of C3 driver’s license'
+        - 'Validity date of E driver’s license'
+        - 'Restrictions for E driver’s license'
+        - 'Expiration date of E driver’s license'
+        - 'Validity date of F driver’s license'
+        - 'Restrictions for F driver’s license'
+        - 'Expiration date of F driver’s license'
+        - 'Validity date of FA driver’s license'
+        - 'Restrictions for FA driver’s license'
+        - 'Expiration date of FA driver’s license'
+        - 'Validity date of FA1 driver’s license'
+        - 'Restrictions for FA1 driver’s license'
+        - 'Expiration date of FA1 driver’s license'
+        - 'Validity date of FB driver’s license'
+        - 'Restrictions for FB driver’s license'
+        - 'Expiration date of FB driver’s license'
+        - 'Validity date of G1 driver’s license'
+        - 'Restrictions for G1 driver’s license'
+        - 'Expiration date of G1 driver’s license'
+        - 'Validity date of H driver’s license'
+        - 'Restrictions for H driver’s license'
+        - 'Expiration date of H driver’s license'
+        - 'Validity date of I driver’s license'
+        - 'Restrictions for I driver’s license'
+        - 'Expiration date of I driver’s license'
+        - 'Validity date of K driver’s license'
+        - 'Restrictions for K driver’s license'
+        - 'Expiration date of K driver’s license'
+        - 'Validity date of LK driver’s license'
+        - 'Restrictions for LK driver’s license'
+        - 'Expiration date of LK driver’s license'
+        - 'Validity date of N driver’s license'
+        - 'Restrictions for N driver’s license'
+        - 'Expiration date of N driver’s license'
+        - 'Validity date of S driver’s license'
+        - 'Restrictions for S driver’s license'
+        - 'Expiration date of S driver’s license'
+        - 'Validity date of TB driver’s license'
+        - 'Restrictions for TB driver’s license'
+        - 'Expiration date of TB driver’s license'
+        - 'Validity date of TM driver’s license'
+        - 'Restrictions for TM driver’s license'
+        - 'Expiration date of TM driver’s license'
+        - 'Validity date of TR driver’s license'
+        - 'Restrictions for TR driver’s license'
+        - 'Expiration date of TR driver’s license'
+        - 'Validity date of TV driver’s license'
+        - 'Restrictions for TV driver’s license'
+        - 'Expiration date of TV driver’s license'
+        - 'Validity date of V driver’s license'
+        - 'Restrictions for V driver’s license'
+        - 'Expiration date of V driver’s license'
+        - 'Validity date of W driver’s license'
+        - 'Restrictions for W driver’s license'
+        - 'Expiration date of W driver’s license'
+        - 'URL'
+        - 'Caliber'
+        - 'Model'
+        - 'Make'
+        - 'Number of cylinders'
+        - 'Surname of husband after registration'
+        - 'Surname of wife after registration'
+        - 'Date of birth of wife'
+        - 'Date of birth of husband'
+        - 'Citizenship of first person'
+        - 'Citizenship of second person'
+        - 'CVV code'
       x-enum-varnames:
         - 'DOCUMENT_CLASS_CODE'
         - 'ISSUING_STATE_CODE'
