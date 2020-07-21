@@ -538,6 +538,14 @@ components:
         - 585
         - 586
         - 587
+        - 588
+        - 589
+        - 590
+        - 591
+        - 592
+        - 593
+        - 594
+        - 595
       x-enum-descriptions:
         - 'Document class code'
         - 'Issuing country document code in accordance with the standard ISO 3166-1 (ICAO, document 9303)'
@@ -1008,6 +1016,80 @@ components:
         - 'Professional id number'
         - 'Age at issue'
         - 'Years since issue'
+#todo missing descriptions for old and new fields
+#        ft_DLClassCode_BTP_From = 524,
+#        ft_DLClassCode_BTP_Notes = 525,
+#        ft_DLClassCode_BTP_To = 526,
+#        ft_DLClassCode_C3_From = 527,
+#        ft_DLClassCode_C3_Notes = 528,
+#        ft_DLClassCode_C3_To = 529,
+#        ft_DLClassCode_E_From = 530,
+#        ft_DLClassCode_E_Notes = 531,
+#        ft_DLClassCode_E_To = 532,
+#        ft_DLClassCode_F_From = 533,
+#        ft_DLClassCode_F_Notes = 534,
+#        ft_DLClassCode_F_To = 535,
+#        ft_DLClassCode_FA_From = 536,
+#        ft_DLClassCode_FA_Notes = 537,
+#        ft_DLClassCode_FA_To = 538,
+#        ft_DLClassCode_FA1_From = 539,
+#        ft_DLClassCode_FA1_Notes = 540,
+#        ft_DLClassCode_FA1_To = 541,
+#        ft_DLClassCode_FB_From = 542,
+#        ft_DLClassCode_FB_Notes = 543,
+#        ft_DLClassCode_FB_To = 544,
+#        ft_DLClassCode_G1_From = 545,
+#        ft_DLClassCode_G1_Notes = 546,
+#        ft_DLClassCode_G1_To = 547,
+#        ft_DLClassCode_H_From = 548,
+#        ft_DLClassCode_H_Notes = 549,
+#        ft_DLClassCode_H_To = 550,
+#        ft_DLClassCode_I_From = 551,
+#        ft_DLClassCode_I_Notes = 552,
+#        ft_DLClassCode_I_To = 553,
+#        ft_DLClassCode_K_From = 554,
+#        ft_DLClassCode_K_Notes = 555,
+#        ft_DLClassCode_K_To = 556,
+#        ft_DLClassCode_LK_From = 557,
+#        ft_DLClassCode_LK_Notes = 558,
+#        ft_DLClassCode_LK_To = 559,
+#        ft_DLClassCode_N_From = 560,
+#        ft_DLClassCode_N_Notes = 561,
+#        ft_DLClassCode_N_To = 562,
+#        ft_DLClassCode_S_From = 563,
+#        ft_DLClassCode_S_Notes = 564,
+#        ft_DLClassCode_S_To = 565,
+#        ft_DLClassCode_TB_From = 566,
+#        ft_DLClassCode_TB_Notes = 567,
+#        ft_DLClassCode_TB_To = 568,
+#        ft_DLClassCode_TM_From = 569,
+#        ft_DLClassCode_TM_Notes = 570,
+#        ft_DLClassCode_TM_To = 571,
+#        ft_DLClassCode_TR_From = 572,
+#        ft_DLClassCode_TR_Notes = 573,
+#        ft_DLClassCode_TR_To = 574,
+#        ft_DLClassCode_TV_From = 575,
+#        ft_DLClassCode_TV_Notes = 576,
+#        ft_DLClassCode_TV_To = 577,
+#        ft_DLClassCode_V_From = 578,
+#        ft_DLClassCode_V_Notes = 579,
+#        ft_DLClassCode_V_To = 580,
+#        ft_DLClassCode_W_From = 581,
+#        ft_DLClassCode_W_Notes = 582,
+#        ft_DLClassCode_W_To = 583,
+#        ft_URL = 584,
+#        ft_Caliber = 585,
+#        ft_Model = 586,
+#        ft_Make = 587,
+#            ft_NumberOfCylinders = 588,
+#            ft_SurnameOfHusbandAfterRegistration = 589,
+#            ft_SurnameOfWifeAfterRegistration = 590,
+#            ft_DateOfBirthOfWife = 591,
+#            ft_DateOfBirthOfHusband = 592,
+#            ft_CitizenshipOfFirstPerson = 593,
+#            ft_CitizenshipOfSecondPerson = 594,
+#            ft_CVV = 595,
+
       x-enum-varnames:
         - 'DOCUMENT_CLASS_CODE'
         - 'ISSUING_STATE_CODE'
@@ -1542,3 +1624,11 @@ components:
         - 'CALIBER'
         - 'MODEL'
         - 'MAKE'
+        - 'NUMBER_OF_CYLINDERS'
+        - 'SURNAME_OF_HUSBAND_AFTER_REGISTRATION'
+        - 'SURNAME_OF_WIFE_AFTER_REGISTRATION'
+        - 'DATE_OF_BIRTH_OF_WIFE'
+        - 'DATE_OF_BIRTH_OF_HUSBAND'
+        - 'CITIZENSHIP_OF_FIRST_PERSON'
+        - 'CITIZENSHIP_OF_SECOND_PERSON'
+        - 'CVV'
