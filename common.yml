@@ -16,6 +16,9 @@ components:
         - 'RFID'
         - 'MAGNETIC'
 
+    ContainerType:
+      type: integer
+
     CheckResult:
       type: integer
       enum:
@@ -80,9 +83,12 @@ components:
         - image
       properties:
         image:
-          description: "base64 encoded image"
-          type: string
-          format: byte
+          $ref: "#/components/schemas/ImageBase64"
+
+    ImageBase64:
+      description: "Image base64 into byte format."
+      type: string
+      format: byte
 
     RectangleCoordinates:
       description: "Coordinates of the rectangle region in the normalized image of the document."

@@ -2,6 +2,9 @@ openapi: 3.0.3
 components:
   schemas:
 
+    GraphicFieldName:
+      type: string
+
     GraphicFieldType:
       type: integer
       enum:
