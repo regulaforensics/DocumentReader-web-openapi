@@ -50,6 +50,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ProcessRequestImage'
+        systemInfo:
+          $ref: '#/components/schemas/ProcessSystemInfo'
       required:
         - processParam
         - List
@@ -88,7 +90,14 @@ components:
         LightIndex: 6
         page_idx: 0
         ImageData:
-          image: "<base46 image>"
+          image: "<base64 image>"
+
+    ProcessSystemInfo:
+      type: object
+      properties:
+        license:
+          description: "License in base64 format"
+          type: string
 
 
     #############################
