@@ -96,10 +96,8 @@ components:
       type: object
       properties:
         license:
-          description: "Document reader license."
+          description: "License in base64 format"
           type: string
-      example:
-        license: "<base64 license>"
 
 
     #############################
