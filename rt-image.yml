@@ -1,0 +1,78 @@
+openapi: 3.0.3
+components:
+  schemas:
+
+    ImagesResult:
+      allOf:
+        - $ref: './rt.yml#/components/schemas/ResultItem'
+        - type: object
+          required:
+            - Images
+          properties:
+            Images:
+              $ref: '#/components/schemas/Images'
+
+    Images:
+      type: object
+      required:
+        - availableSourceList
+        - fieldList
+      properties:
+        availableSourceList:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImagesAvailableSource'
+        fieldList:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImagesField'
+
+    ImagesAvailableSource:
+      type: object
+      required:
+        - source
+        - sourceName
+      properties:
+        containerType:
+          $ref: './common.yml#/components/schemas/ContainerType'
+        source:
+          $ref: './common.yml#/components/schemas/Source'
+
+    ImagesField:
+      type: object
+      required:
+        - fieldName
+        - fieldType
+        - valueList
+      properties:
+        fieldName:
+          $ref: "./e-graphic-field-type.yml#/components/schemas/GraphicFieldName"
+        fieldType:
+          $ref: "./e-graphic-field-type.yml#/components/schemas/GraphicFieldType"
+        valueList:
+          type: array
+          items:
+            $ref: "#/components/schemas/ImagesFieldValue"
+
+    ImagesFieldValue:
+      type: object
+      required:
+        - containerType
+        - fieldRect
+        - lightIndex
+        - pageIndex
+        - source
+        - value
+      properties:
+        containerType:
+          $ref: "./common.yml#/components/schemas/ContainerType"
+        fieldRect:
+          $ref: "./common.yml#/components/schemas/RectangleCoordinates"
+        lightIndex:
+          $ref: './common.yml#/components/schemas/Light'
+        pageIndex:
+          $ref: './common.yml#/components/schemas/PageIndex'
+        source:
+          $ref: './common.yml#/components/schemas/Source'
+        value:
+          $ref: './common.yml#/components/schemas/ImageBase64'

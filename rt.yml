@@ -19,6 +19,7 @@ components:
         - 103
         - 8
         - 9
+        - 37
       x-enum-descriptions:
         - 'Returns cropped and rotated image of document. Most of coordinates in other types defined on that image'
         - 'Returns check statuses with details, grouped by source'
@@ -35,6 +36,7 @@ components:
         - 'Extract graphics fields from document rfid'
         - 'Lists document type candidates with their probabilities and descriptions'
         - 'Returns description of determined document type, if any'
+        - 'Extract images from document rfid and barcode'
       x-enum-varnames:
         - RAW_IMAGE
         - STATUS
@@ -49,6 +51,7 @@ components:
         - RFID_GRAPHICS
         - DOCUMENT_TYPE_CANDIDATES
         - DOCUMENT_TYPE
+        - IMAGES
 
     ResultItem:
       type: object
@@ -80,6 +83,7 @@ components:
           19: "GraphicsResult"
           33: "StatusResult"
           36: "TextResult"
+          37: "ImagesResult"
           102: "TextDataResult"
           103: "GraphicsResult"
 
@@ -101,6 +105,7 @@ components:
               - $ref: "#/components/schemas/LexicalAnalysisResult"
               - $ref: "#/components/schemas/ChosenDocumentTypeResult"
               - $ref: "#/components/schemas/DocumentTypesCandidatesResult"
+              - $ref: "#/components/schemas/ImagesResult"
 
     RawImageResult:
       $ref: "./rt-raw-image.yml#/components/schemas/RawImageResult"
@@ -125,3 +130,6 @@ components:
 
     ChosenDocumentTypeResult:
       $ref: "./rt-doc-type-old.yml#/components/schemas/ChosenDocumentTypeResult"
+
+    ImagesResult:
+      $ref: "./rt-image.yml#/components/schemas/ImagesResult"
