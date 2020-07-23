@@ -38,7 +38,7 @@ components:
         availableSourceList:
           type: array
           items:
-            $ref: "#/components/schemas/AvailableSource"
+            $ref: "#/components/schemas/TextAvailableSource"
 
     TextField:
       type: object
@@ -81,7 +81,7 @@ components:
           items:
             $ref: "#/components/schemas/CrossSourceValueComparison"
 
-
+    # todo originalValidity очн путает, может в validityList сделать validityList = originalValidity && validityList
     TextFieldValue:
       type: object
       required:
@@ -89,21 +89,46 @@ components:
         - pageIndex
         - source
       properties:
+        source:
+          $ref: "./common.yml#/components/schemas/Source"
         value:
           description: "Parsed/processed value. Date format converted for output, delimiters removed"
           type: string
         originalValue:
           description: "Original value as seen in the document"
           type: string
+        originalSymbols:
+          type: array
+          items:
+            $ref: "#/components/schemas/OriginalSymbol"
         pageIndex:
           $ref: "./common.yml#/components/schemas/PageIndex"
-        source:
-          $ref: "./common.yml#/components/schemas/Source"
         probability:
           description: "Min recognition probability. Combined minimum probability from single characters probabilities"
           type: integer
           minimum: 0
           maximum: 100
+        fieldRect:
+          description: "Coordinates of the text field in the normalized image of the document. Only for visual and mrz results."
+          $ref: "./common.yml#/components/schemas/RectangleCoordinates"
+        rfidOrigin:
+          description: "Only for rfid images. Text location in rfid chip."
+          $ref: "./common.yml#/components/schemas/RfidOrigin"
+
+    OriginalSymbol:
+      type: object
+      properties:
+        code:
+          description: "Unicode symbol code"
+          type: integer
+        probability:
+          description: "Probability of correctness reading of a single character"
+          type: integer
+          minimum: 0
+          maximum: 100
+        rect:
+          description: "Coordinates of the symbol in the normalized image of the document"
+          $ref: "./common.yml#/components/schemas/RectangleCoordinates"
 
     SourceValidity:
       type: object
@@ -130,7 +155,7 @@ components:
         status:
           $ref: "./common.yml#/components/schemas/CheckResult"
 
-    AvailableSource:
+    TextAvailableSource:
       type: object
       required:
         - source
@@ -141,3 +166,5 @@ components:
         validityStatus:
           description: "Overall status of validity from all fields for given source"
           $ref: "./common.yml#/components/schemas/CheckResult"
+        containerType:
+          $ref: './rt.yml#/components/schemas/ContainerType'
