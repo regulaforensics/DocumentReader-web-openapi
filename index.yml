@@ -98,7 +98,9 @@ components:
         license:
           description: "License in base64 format"
           type: string
-
+        recaptcha_token:
+          description: "For internal use. Demo-sites recaptcha token."
+          type: string
 
     #############################
     ############################# Response objects

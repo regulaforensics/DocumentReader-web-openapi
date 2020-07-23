@@ -2,6 +2,10 @@ openapi: 3.0.3
 components:
   schemas:
 
+    ContainerType:
+      type: integer
+      description: "Same as Result type, but used for safe parsing of not-described values. See Result type."
+
     Result:
       type: integer
       description: "Describes possible extracted data types from documents"
@@ -9,6 +13,7 @@ components:
         - 1
         - 33
         - 36
+        - 37
         - 3
         - 17
         - 18
@@ -19,11 +24,11 @@ components:
         - 103
         - 8
         - 9
-        - 37
       x-enum-descriptions:
         - 'Returns cropped and rotated image of document. Most of coordinates in other types defined on that image'
         - 'Returns check statuses with details, grouped by source'
         - 'Returns document textual fields from all sources(mrz,rfid,visual,barcode) with validity and cross-source compare checks'
+        - 'Returns images from all document sources(mrz,rfid,visual,barcode)'
         - 'Reading MRZ text fields'
         - 'Reading text fields from visual document area'
         - 'Reading barcode text fields'
@@ -36,11 +41,12 @@ components:
         - 'Extract graphics fields from document rfid'
         - 'Lists document type candidates with their probabilities and descriptions'
         - 'Returns description of determined document type, if any'
-        - 'Extract images from document rfid and barcode'
+
       x-enum-varnames:
         - RAW_IMAGE
         - STATUS
         - TEXT
+        - IMAGES
         - MRZ_TEXT
         - VISUAL_TEXT
         - BARCODE_TEXT
@@ -51,7 +57,6 @@ components:
         - RFID_GRAPHICS
         - DOCUMENT_TYPE_CANDIDATES
         - DOCUMENT_TYPE
-        - IMAGES
 
     ResultItem:
       type: object
@@ -68,7 +73,7 @@ components:
         page_idx:
           type: integer
         result_type:
-          type: integer
+          $ref: "#/components/schemas/ContainerType"
       discriminator:
         propertyName: result_type
         mapping:
@@ -116,6 +121,9 @@ components:
     TextResult:
       $ref: "./rt-text.yml#/components/schemas/TextResult"
 
+    ImagesResult:
+      $ref: "./rt-images.yml#/components/schemas/ImagesResult"
+
     LexicalAnalysisResult:
       $ref: "./rt-ocr-lexical-analisis.yml#/components/schemas/LexicalAnalysisResult"
 
@@ -130,6 +138,3 @@ components:
 
     ChosenDocumentTypeResult:
       $ref: "./rt-doc-type-old.yml#/components/schemas/ChosenDocumentTypeResult"
-
-    ImagesResult:
-      $ref: "./rt-image.yml#/components/schemas/ImagesResult"
