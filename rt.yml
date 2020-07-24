@@ -28,7 +28,7 @@ components:
         - 'Returns cropped and rotated image of document. Most of coordinates in other types defined on that image'
         - 'Returns check statuses with details, grouped by source'
         - 'Returns document textual fields from all sources(mrz,rfid,visual,barcode) with validity and cross-source compare checks'
-        - 'Returns images from all document sources(mrz,rfid,visual,barcode)'
+        - 'Contains images from all document sources(mrz,rfid,visual,barcode)'
         - 'Reading MRZ text fields'
         - 'Reading text fields from visual document area'
         - 'Reading barcode text fields'
