@@ -16,9 +16,6 @@ components:
         - 'RFID'
         - 'MAGNETIC'
 
-    ContainerType:
-      type: integer
-
     CheckResult:
       type: integer
       enum:
@@ -86,12 +83,12 @@ components:
           $ref: "#/components/schemas/ImageBase64"
 
     ImageBase64:
-      description: "Image base64 into byte format."
+      description: "Base64 encoded image"
       type: string
       format: byte
 
     RectangleCoordinates:
-      description: "Coordinates of the rectangle region in the normalized image of the document."
+      description: "Coordinates of the rectangle region in the normalized image of the document"
       type: object
       required:
         - left
@@ -124,9 +121,28 @@ components:
         - 'MAIN_PAGE'
         - 'BACK_PAGE'
 
+    RfidOrigin:
+      type: object
+      description: "Location of data in RFID chip"
+      required:
+        - dg
+      properties:
+        dg:
+          description: "Source data group file"
+          type: integer
+        dgTag:
+          description: "Index of the source record of the image with biometric information in the information data group"
+          type: integer
+        tagEntry:
+          description: "Index of the template in the record with biometric data"
+          type: integer
+        entryView:
+          description: "Index of the variant of the biometric data template"
+          type: integer
+
     Light:
       type: integer
-      description: "image light index"
+      description: "Image light index"
       enum:
         - 0
         - 6

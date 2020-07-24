@@ -3,7 +3,7 @@ components:
   schemas:
 
     GraphicsResult:
-      description: "Graphics fields extracted from one the document source.
+      description: "Graphic fields extracted from one of the document sources.
       Returns separate results for each provided page."
       required:
         - DocGraphicsInfo
@@ -35,20 +35,17 @@ components:
         image:
           $ref: "./common.yml#/components/schemas/ImageData"
         FieldRect:
-          description: "Coordinates of the graphic field in the normalized image (result type 1) of the document.
-          Only for Result.MRZ_TEXT result."
+          description: "Coordinates of the graphic field in the normalized image of the document"
           $ref: "./common.yml#/components/schemas/RectangleCoordinates"
-        # todo maybe add some link for bio rfid standard?
         RFID_OriginDG:
-          description: "Information data group. Only for Result.RFID_TEXT results."
+          description: "Source data group file. Only for Result.RFID_GRAPHICS result."
           type: integer
         RFID_OriginDGTag:
-          description: "Index of the source record of the image with biometric information
-          in the information data group. Only for Result.RFID_TEXT results."
+          description: "Index of the source record of the image with biometric information in the information data group. Only for Result.RFID_GRAPHICS result."
           type: integer
         RFID_OriginTagEntry:
           type: integer
-          description: "Index of the text field record in information data group. Only for Result.RFID_TEXT results."
+          description: "Index of the template in the record with biometric data. Only for Result.RFID_GRAPHICS result."
         RFID_OriginEntryView:
           type: integer
-          description: "Biometric sample variant index. Only for Result.RFID_TEXT results."
+          description: "Index of the variant of the biometric data template. Only for Result.RFID_GRAPHICS result."
