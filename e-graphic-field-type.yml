@@ -3,7 +3,7 @@ components:
   schemas:
 
     GraphicFieldName:
-      description: "Human readable field name. Do not depend on this name - use GraphicFieldType instead."
+      description: "Human readable field name. Do not bind to this name - use GraphicFieldType instead."
       type: string
 
     GraphicFieldType:
