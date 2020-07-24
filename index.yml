@@ -1,5 +1,4 @@
 openapi: 3.0.3
-## add mark models as deprecated
 info:
   version: 5.1.0
   title: Regula Document Reader Web API
@@ -59,22 +58,141 @@ components:
         - processParam
         - List
 
-    # todo add other options https://github.com/regulaforensics/api/issues/102
     ProcessParams:
       type: object
       properties:
         scenario:
           $ref: './common.yml#/components/schemas/Scenario'
         resultTypeOutput:
-          description: "Types of results to return in response. See 'Result' enum for available options."
+          description: "Types of results to return in response. See 'Result' enum for available options"
           type: array
           items:
             $ref: './rt.yml#/components/schemas/Result'
+        doublePageSpread:
+          description: "This option can be set to true if the image you provide contains double page spread
+          of the passport and you want to process both pages in one go. It makes sense to use it for documents
+          that have meaningful information on both pages, like Russian domestic passport,  or some others"
+          type: boolean
+        multipageProcessing:
+          # todo а какой ответ вернется если true и нужно 2 раз вызвать?
+          description: "???"
+          type: boolean
+        fieldTypesFilter:
+          description: "List of field types to extract. If empty, all fields will be extracted"
+          type: array
+          items:
+             $ref: './e-text-field-type.yml#/components/schemas/TextFieldType'
+        documentIdList:
+          description: "List of the document types to process. If empty, documents of all types will be processed"
+          type: array
+          items:
+            type: integer
+        dateFormat:
+          description: "This option allows you to set dates format so that solution will return dates in this format.
+          For example, if you supply 'MM/DD/YYYY', and document have printed date
+          '09 JUL 2020' for the date os issue, you will get '07/09/2020' as a result.
+          By default it is set to system locale default (where the service is running)"
+          type: string
+          example: "MM/dd/yyyy"
+        disableFocusingCheck:
+          description: "This option applies only to mobile SDK use case,
+          in service single image processing mode it is not active"
+          type: boolean
+        imageDpiOutMax:
+          description: "This option controls max dpi of input images"
+          type: integer
+        alreadyCropped:
+          description: "This option can be set to true if you know for sure that the image you provide contains
+          already cropped document by its edges. this was designed to process on the
+          server side images captured and cropped on mobile"
+          type: boolean
+        log:
+          # todo а их сейчас в ответе как-то можно получить или просто на сервере будут логи сохраняться?
+          description: "???"
+          type: boolean
+        faceMetadata:
+          # todo а как вообще это работает? тут координаты в картине до нормализации?
+          description: "???"
+          type: array
+          items:
+            $ref: '#/components/schemas/InputFaceMetadata'
+        imageInputParam:
+          $ref: '#/components/schemas/InputImageParams'
+        recpassParam:
+          $ref: '#/components/schemas/InputRecpassParam'
+        customParams:
+          type: object
+          additionalProperties: true
       required:
         - scenario
-      example:
-        scenario: "FullProcess"
-        resultTypeOutput: [1,6,9,15]
+
+    # todo добавить описания
+    # todo height & width должны быть float или все-таки int?
+    InputImageParams:
+      description: "???"
+      type: object
+      required: ['type', 'frameBottom', 'frameLeft', 'frameRight', 'frameTop', 'height', 'width']
+      properties:
+        type:
+          description: "???"
+          type: integer
+        frameBottom:
+          description: "???"
+          type: integer
+        frameLeft:
+          description: "???"
+          type: integer
+        frameRight:
+          description: "???"
+          type: integer
+        frameTop:
+          description: "???"
+          type: integer
+        height:
+          description: "???"
+          type: number
+        width:
+          description: "???"
+          type: number
+
+    # todo добавить описания
+    InputFaceMetadata:
+      type: object
+      required: ['ID', 'rollAngle', 'bounds']
+      properties:
+        ID:
+          description: "???"
+          type: integer
+        rollAngle:
+          description: "???"
+          type: integer
+        bounds:
+          description: "???"
+          type: object
+          required: ['height', 'width', 'x', 'y']
+          properties:
+            height:
+              description: "???"
+              type: integer
+            width:
+              description: "???"
+              type: integer
+            x:
+              description: "???"
+              type: integer
+            y:
+              description: "???"
+              type: integer
+
+    # todo добавить описания
+    InputRecpassParam:
+      description: "???"
+      type: object
+      required: ['docIdFilter']
+      properties:
+        docIdFilter:
+          description: "???"
+          type: string
 
     ProcessRequestImage:
       type: object
