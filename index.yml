@@ -27,12 +27,15 @@ paths:
         required: true
       responses:
         "200":
-          description: OK
+          description: "Document reading result"
           content:
             application/json:
               schema:
                 $ref: '#/components/schemas/ProcessResponse'
-        #todo other responses
+        "400":
+          description: "Bad request. Check your input data. Currently do not return hints"
+        "403":
+          description: "Bad license. Either server or request contains not-valid license"
 
 components:
   schemas:
