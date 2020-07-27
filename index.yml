@@ -32,9 +32,9 @@ paths:
               schema:
                 $ref: '#/components/schemas/ProcessResponse'
         "400":
-          description: "Bad request. Check your input data. Currently do not return hints"
+          description: "Bad request. Check your input data."
         "403":
-          description: "Bad license. Either server or request contains not-valid license"
+          description: "Bad license. Either server or request does not contain valid license."
 
 components:
   schemas:
@@ -71,128 +71,38 @@ components:
         doublePageSpread:
           description: "This option can be set to true if the image you provide contains double page spread
           of the passport and you want to process both pages in one go. It makes sense to use it for documents
-          that have meaningful information on both pages, like Russian domestic passport,  or some others"
-          type: boolean
-        multipageProcessing:
-          # todo а какой ответ вернется если true и нужно 2 раз вызвать?
-          description: "???"
+          that have meaningful information on both pages, like Russian domestic passport, or some others.
+          By default is set to false."
           type: boolean
         fieldTypesFilter:
-          description: "List of field types to extract. If empty, all fields will be extracted"
+          description: "List of text field types to extract. If empty, all text fields from template will be extracted.
+          Narrowing the list can shorten processing time. By default is empty."
           type: array
           items:
              $ref: './e-text-field-type.yml#/components/schemas/TextFieldType'
-        documentIdList:
-          description: "List of the document types to process. If empty, documents of all types will be processed"
-          type: array
-          items:
-            type: integer
         dateFormat:
           description: "This option allows you to set dates format so that solution will return dates in this format.
-          For example, if you supply 'MM/DD/YYYY', and document have printed date
-          '09 JUL 2020' for the date os issue, you will get '07/09/2020' as a result.
-          By default it is set to system locale default (where the service is running)"
+          For example, if you supply 'MM/dd/yyyy', and document have printed date '09 JUL 2020' for the date os issue,
+          you will get '07/09/2020' as a result.
+          By default it is set to system locale default (where the service is running)."
           type: string
           example: "MM/dd/yyyy"
-        disableFocusingCheck:
-          description: "This option applies only to mobile SDK use case,
-          in service single image processing mode it is not active"
-          type: boolean
         imageDpiOutMax:
-          description: "This option controls max dpi of input images"
+          description: "This option controls maximum resolution in dpi of output images. Resolution will remain original
+          in case 0 is supplied. By default is set to return images in response with resolution not greater than 300 dpi."
           type: integer
         alreadyCropped:
           description: "This option can be set to true if you know for sure that the image you provide contains
-          already cropped document by its edges. this was designed to process on the
-          server side images captured and cropped on mobile"
+          already cropped document by its edges. This was designed to process on the
+          server side images captured and cropped on mobile. By default is set to false."
           type: boolean
-        log:
-          # todo а их сейчас в ответе как-то можно получить или просто на сервере будут логи сохраняться?
-          description: "???"
-          type: boolean
-        faceMetadata:
-          # todo а как вообще это работает? тут координаты в картине до нормализации?
-          description: "???"
-          type: array
-          items:
-            $ref: '#/components/schemas/InputFaceMetadata'
-        imageInputParam:
-          $ref: '#/components/schemas/InputImageParams'
-        recpassParam:
-          $ref: '#/components/schemas/InputRecpassParam'
         customParams:
+          description: "This option allows to pass custom processing parameters that can be implemented in future without
+          changing API."
           type: object
           additionalProperties: true
       required:
         - scenario
-
-    # todo добавить описания
-    # todo height & width должны быть float или все-таки int?
-    InputImageParams:
-      description: "???"
-      type: object
-      required: ['type', 'frameBottom', 'frameLeft', 'frameRight', 'frameTop', 'height', 'width']
-      properties:
-        type:
-          description: "???"
-          type: integer
-        frameBottom:
-          description: "???"
-          type: integer
-        frameLeft:
-          description: "???"
-          type: integer
-        frameRight:
-          description: "???"
-          type: integer
-        frameTop:
-          description: "???"
-          type: integer
-        height:
-          description: "???"
-          type: number
-        width:
-          description: "???"
-          type: number
-
-    # todo добавить описания
-    InputFaceMetadata:
-      type: object
-      required: ['ID', 'rollAngle', 'bounds']
-      properties:
-        ID:
-          description: "???"
-          type: integer
-        rollAngle:
-          description: "???"
-          type: integer
-        bounds:
-          description: "???"
-          type: object
-          required: ['height', 'width', 'x', 'y']
-          properties:
-            height:
-              description: "???"
-              type: integer
-            width:
-              description: "???"
-              type: integer
-            x:
-              description: "???"
-              type: integer
-            y:
-              description: "???"
-              type: integer
-
-    # todo добавить описания
-    InputRecpassParam:
-      description: "???"
-      type: object
-      required: ['docIdFilter']
-      properties:
-        docIdFilter:
-          description: "???"
-          type: string
 
     ProcessRequestImage:
       type: object
