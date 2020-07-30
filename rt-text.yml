@@ -47,6 +47,7 @@ components:
         - status
         - validityStatus
         - comparisonStatus
+        - value
         - valueList
         - validityList
         - comparisonList
@@ -64,6 +65,9 @@ components:
         comparisonStatus:
           description: "Overall status of data comparison from different sources"
           $ref: "./common.yml#/components/schemas/CheckResult"
+        value:
+          description: "The most confidence value, selected from valueList"
+          type: string
         valueList:
           type: array
           items:
