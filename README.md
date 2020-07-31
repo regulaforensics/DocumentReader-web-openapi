@@ -1,6 +1,10 @@
-# Regula Document Reader OPENAPI definitions
+# Regula Document Reader OpenAPI definitions
 
 ## Clients
+
+[JavaScript](https://github.com/regulaforensics/DocumentReader-web-js-client)
+[Java](https://github.com/regulaforensics/DocumentReader-web-java-client)
+[Python](https://github.com/regulaforensics/DocumentReader-web-python-client)
 
 ## Structure
 
