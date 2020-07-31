@@ -2,9 +2,9 @@
 
 ## Clients
 
-[JavaScript](https://github.com/regulaforensics/DocumentReader-web-js-client)
-[Java](https://github.com/regulaforensics/DocumentReader-web-java-client)
-[Python](https://github.com/regulaforensics/DocumentReader-web-python-client)
+* [JavaScript](https://github.com/regulaforensics/DocumentReader-web-js-client)
+* [Java](https://github.com/regulaforensics/DocumentReader-web-java-client)
+* [Python](https://github.com/regulaforensics/DocumentReader-web-python-client)
 
 ## Structure
 
