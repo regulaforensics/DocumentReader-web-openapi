@@ -19,11 +19,11 @@ components:
     Status:
       type: object
       required:
-        - complete
+        - overallStatus
         - optical
         - detailsOptical
       properties:
-        complete:
+        overallStatus:
           description: "Overall checks status. Root status."
           $ref: "./common.yml#/components/schemas/CheckResult"
         optical:
