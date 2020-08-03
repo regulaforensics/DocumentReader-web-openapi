@@ -1,10 +1,14 @@
 # Regula Document Reader OpenAPI definitions
 
+[![documentation](https://img.shields.io/badge/docs-en-f6858d?style=flat-square)](https://support.regulaforensics.com/hc/en-us/articles/115000916306-Documentation)
+[![release](https://img.shields.io/github/v/release/regulaforensics/DocumentReader-web-openapi?style=flat-square)](https://github.com/regulaforensics/DocumentReader-web-openapi/releases)
+
+
 ## Clients
 
-* [JavaScript](https://github.com/regulaforensics/DocumentReader-web-js-client)
-* [Java](https://github.com/regulaforensics/DocumentReader-web-java-client)
-* [Python](https://github.com/regulaforensics/DocumentReader-web-python-client)
+* [JavaScript](https://github.com/regulaforensics/DocumentReader-web-js-client) client for the browser and node.js based on axios
+* [Java](https://github.com/regulaforensics/DocumentReader-web-java-client) client compatible with jvm and android
+* [Python](https://github.com/regulaforensics/DocumentReader-web-python-client) 3.5+ client
 
 ## Structure
 
