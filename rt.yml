@@ -25,7 +25,9 @@ components:
         - 8
         - 9
       x-enum-descriptions:
-        - 'Contains cropped and rotated image of document. Most of coordinates in other types defined on that image'
+        - 'Contains cropped and rotated with perspective compensation image of document.
+        Single input image can contain multiple document side/pages, which will be returned as separated results.
+         Most of coordinates in other types defined on that image'
         - 'Contains check statuses with details, grouped by source'
         - 'Contains document textual fields from all sources (mrz, rfid, visual, barcode) with validity and cross-source compare checks'
         - 'Contains images from all document sources (mrz, rfid, visual, barcode)'
@@ -42,7 +44,7 @@ components:
         - 'Contains list of document type candidates with their probabilities and descriptions'
         - 'Contains description of determined document type, if any'
       x-enum-varnames:
-        - RAW_IMAGE
+        - DOCUMENT_IMAGE
         - STATUS
         - TEXT
         - IMAGES
@@ -76,7 +78,7 @@ components:
       discriminator:
         propertyName: result_type
         mapping:
-          1: "RawImageResult"
+          1: "DocumentImageResult"
           3: "TextDataResult"
           6: "GraphicsResult"
           8: "DocumentTypesCandidatesResult"
@@ -101,7 +103,7 @@ components:
           type: array
           items:
             anyOf:
-              - $ref: "#/components/schemas/RawImageResult"
+              - $ref: "#/components/schemas/DocumentImageResult"
               - $ref: "#/components/schemas/TextResult"
               - $ref: "#/components/schemas/StatusResult"
               - $ref: "#/components/schemas/TextDataResult"
@@ -111,8 +113,8 @@ components:
               - $ref: "#/components/schemas/DocumentTypesCandidatesResult"
               - $ref: "#/components/schemas/ImagesResult"
 
-    RawImageResult:
-      $ref: "./rt-raw-image.yml#/components/schemas/RawImageResult"
+    DocumentImageResult:
+      $ref: "./rt-raw-image.yml#/components/schemas/DocumentImageResult"
 
     StatusResult:
       $ref: "./rt-status.yml#/components/schemas/StatusResult"
