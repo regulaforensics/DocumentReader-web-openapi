@@ -9,6 +9,7 @@
 * [JavaScript](https://github.com/regulaforensics/DocumentReader-web-js-client) client for the browser and node.js based on axios
 * [Java](https://github.com/regulaforensics/DocumentReader-web-java-client) client compatible with jvm and android
 * [Python](https://github.com/regulaforensics/DocumentReader-web-python-client) 3.5+ client
+* [C#](https://github.com/regulaforensics/DocumentReader-web-csharp-client) client for .NET & .NET Core
 
 ## Structure
 
