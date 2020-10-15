@@ -3,15 +3,16 @@ components:
   schemas:
 
     TextDataResult:
+      title: "Text Data (deprecated)"
       deprecated: true
       description: "Text fields extracted from one document source.
       Contains results of specific source for each provided page."
       allOf:
-        - $ref: './rt.yml#/components/schemas/ResultItem'
         - type: object
           properties:
             DocVisualExtendedInfo:
               $ref: "#/components/schemas/DocVisualExtendedInfo"
+        - $ref: './rt.yml#/components/schemas/ResultItem'
 
     DocVisualExtendedInfo:
       type: object

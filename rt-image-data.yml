@@ -3,16 +3,18 @@ components:
   schemas:
 
     GraphicsResult:
+      title: "Graphics (deprecated)"
       description: "Graphic fields extracted from one of the document sources.
       Returns separate results for each provided page."
       required:
         - DocGraphicsInfo
       allOf:
-        - $ref: './rt.yml#/components/schemas/ResultItem'
         - type: object
           properties:
             DocGraphicsInfo:
               $ref: "#/components/schemas/GraphicFieldsList"
+        - $ref: './rt.yml#/components/schemas/ResultItem'
+
 
     GraphicFieldsList:
       type: object

@@ -3,14 +3,15 @@ components:
   schemas:
 
     TextResult:
+      title: "Text"
       allOf:
-        - $ref: './rt.yml#/components/schemas/ResultItem'
         - type: object
           required:
             - Text
           properties:
             Text:
               $ref: '#/components/schemas/Text'
+        - $ref: './rt.yml#/components/schemas/ResultItem'
 
     Text:
       type: object
@@ -117,7 +118,7 @@ components:
           minimum: 0
           maximum: 100
         fieldRect:
-          description: "Coordinates of the text field in the normalized image of the document. Only for visual and mrz results."
+          description: "Only for visual and mrz results. Coordinates of the rectangle region on a document image(result type 1). Represented by two points - (left, top) + (right, bottom)"
           $ref: "./common.yml#/components/schemas/RectangleCoordinates"
         rfidOrigin:
           description: "Only for rfid images. Text location in rfid chip."
@@ -135,7 +136,6 @@ components:
           minimum: 0
           maximum: 100
         rect:
-          description: "Coordinates of the symbol in the normalized image of the document"
           $ref: "./common.yml#/components/schemas/RectangleCoordinates"
 
     SourceValidity:

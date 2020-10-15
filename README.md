@@ -24,3 +24,8 @@
 ```
 docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli validate --recommend -i /local/index.yml 
 ```
+
+## Building Redoc single page html documentation
+```
+npx redoc-cli bundle index.yml --output document-reader-static-doc.html --options.maxDisplayedEnumValues=5 --options.theme.logo.gutter="20px" --options.theme.colors.primary.main="#8a53cb" --options.expandResponses="all" --options.expandSingleSchemaField --options.hideDownloadButton --options.jsonSampleExpandLevel="6"
+```

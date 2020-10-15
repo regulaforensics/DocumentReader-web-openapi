@@ -96,7 +96,7 @@ components:
 
     ContainerList:
       type: object
-      description: "list with result objects"
+      description: "List with various objects, containing processing results"
       required:
         - List
       properties:
@@ -104,15 +104,15 @@ components:
           type: array
           items:
             anyOf:
-              - $ref: "#/components/schemas/DocumentImageResult"
-              - $ref: "#/components/schemas/TextResult"
               - $ref: "#/components/schemas/StatusResult"
+              - $ref: "#/components/schemas/TextResult"
+              - $ref: "#/components/schemas/DocumentImageResult"
+              - $ref: "#/components/schemas/ImagesResult"
+              - $ref: "#/components/schemas/ChosenDocumentTypeResult"
+              - $ref: "#/components/schemas/DocumentTypesCandidatesResult"
               - $ref: "#/components/schemas/TextDataResult"
               - $ref: "#/components/schemas/GraphicsResult"
               - $ref: "#/components/schemas/LexicalAnalysisResult"
-              - $ref: "#/components/schemas/ChosenDocumentTypeResult"
-              - $ref: "#/components/schemas/DocumentTypesCandidatesResult"
-              - $ref: "#/components/schemas/ImagesResult"
 
     DocumentImageResult:
       $ref: "./rt-raw-image.yml#/components/schemas/DocumentImageResult"

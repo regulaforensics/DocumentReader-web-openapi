@@ -18,6 +18,7 @@ components:
 
     CheckResult:
       type: integer
+      description: "0 - result is negative; 1 - result is positive; 2 - сheck was not performed"
       enum:
         - 0
         - 1
@@ -86,9 +87,10 @@ components:
       description: "Base64 encoded image"
       type: string
       format: byte
+      example: "Base64 encoded image"
 
     RectangleCoordinates:
-      description: "Coordinates of the rectangle region in the normalized image of the document"
+      description: "Coordinates of the rectangle region on a document image(result type 1). Represented by two points - (left, top) + (right, bottom)"
       type: object
       required:
         - left
@@ -107,7 +109,7 @@ components:
 
     RfidLocation:
       type: integer
-      description: "Determines the presence and location of an RFID chip in a document"
+      description: "Determines the presence and location of an RFID chip in a document. 0 - no rfid chip; 1 - chip is located in the document data page; 2 - chip is located in the back page or inlay of the document"
       enum:
         - 0
         - 1

@@ -5,6 +5,8 @@ paths:
     post:
       summary: Process list of documents images and return extracted data
       operationId: api-process
+      tags:
+        - process
       requestBody:
         content:
           application/json:
@@ -22,6 +24,112 @@ paths:
           description: "Bad request. Check your input data."
         "403":
           description: "Bad license. Either server or request does not contain valid license."
+      x-codeSamples:
+        - lang: 'JavaScript'
+          source: |
+            import {DocumentReaderApi, FieldType, GraphicFieldType} from '@regulaforensics/document-reader-webclient/esm'
+            const {DOCUMENT_NUMBER, SURNAME_AND_GIVEN_NAMES, DATE_OF_BIRTH} = FieldType;
+            const {PORTRAIT, SIGNATURE} = GraphicFieldType;
+
+            const imageAsBase64String = getDocImageAsBase64String()
+            const api = new DocumentReaderApi({basePath: "http://localhost:8080"});
+            const result = await api.process(imageAsBase64String)
+
+            // text fields
+            const docNumber = result.getTextField(DOCUMENT_NUMBER)
+            const fullName = result.getTextField(SURNAME_AND_GIVEN_NAMES)
+            const dateOfBirth = result.getTextField(DATE_OF_BIRTH)
+
+            // graphics fields
+            const portraitAsBase64 = result.getGraphicsField(PORTRAIT)
+            const signatureAsBase64 = result.getGraphicsField(SIGNATURE)
+        - lang: 'Java'
+          source: |
+            byte[] imageBytes = readFile("australia_passport.jpg");
+            var image = new ProcessRequestImage(imageBytes, Light.WHITE);
+
+            var requestParams = new RecognitionParams()
+                    .withScenario(Scenario.FULL_PROCESS)
+                    .withResultTypeOutput(Result.STATUS, Result.TEXT, Result.IMAGES);
+
+            RecognitionRequest request = new RecognitionRequest(requestParams, List.of(image));
+
+            var api = new DocumentReaderApi();
+            RecognitionResponse response = api.process(request);
+
+            var status = response.status();
+            var docOverallStatus = status.getComplete() == CheckResult.OK ? "valid" : "not valid";
+            var docOpticalTextStatus = status.getDetailsOptical().getText();
+
+            var docNumberField = response.text().getField(DOCUMENT_NUMBER);
+            var docNumberMrz = docNumberField.getValue(Source.MRZ);
+            var docNumberMrzValidity = docNumberField.sourceValidity(Source.MRZ);
+            var docNumberMrzVisualMatching = docNumberField.crossSourceComparison(Source.MRZ, Source.VISUAL);
+        - lang: 'Python'
+          source: |
+            from regula.documentreader.webclient import *
+
+            with open("australia_passport.jpg", "rb") as f:
+              input_image = f.read()
+
+            with DocumentReaderApi(host='http://localhost:8080') as api:
+              params = ProcessParams(
+              scenario=Scenario.FULL_PROCESS,
+              result_type_output=[Result.DOCUMENT_IMAGE, Result.STATUS, Result.TEXT, Result.IMAGES]
+              )
+              request = RecognitionRequest(process_params=params, images=[input_image])
+              response = api.process(request)
+
+            # status examples
+            response_status = response.status
+            doc_overall_status = "valid" if response_status.overall_status == CheckResult.OK else "not valid"
+
+            # text fields example
+            doc_number_field = response.text.get_field(TextFieldType.DOCUMENT_NUMBER)
+            doc_number_mrz = doc_number_field.get_value()
+            doc_number_visual = doc_number_field.get_value(Source.VISUAL)
+            doc_number_visual_validity = doc_number_field.source_validity(Source.VISUAL)
+            doc_number_mrz_validity = doc_number_field.source_validity(Source.MRZ)
+            doc_number_mrz_visual_matching = doc_number_field.cross_source_comparison(Source.MRZ, Source.VISUAL)
+
+            # images fields example
+            normalized_input_image = response.images.document_image()
+            portrait_field = response.images.get_field(GraphicFieldType.PORTRAIT)
+            portrait_from_visual = portrait_field.get_value(Source.VISUAL)
+            portrait_from_rfid = portrait_field.get_value(Source.RFID, original=True)
+        - lang: 'C#'
+          source: |
+            var imageBytes = File.ReadAllBytes("australia_passport.jpg");
+            var image = new ProcessRequestImage(new ImageData(imageBytes), Light.WHITE);
+
+            var requestParams = new RecognitionParams()
+            .WithScenario(Scenario.FULL_PROCESS)
+            .WithResultTypeOutput(new List<int> { Result.STATUS, Result.TEXT, Result.IMAGES, Result.DOCUMENT_TYPE });
+            var request = new RecognitionRequest(requestParams, image);
+
+            var api = licenseFromEnv != null
+               ? new DocumentReaderApi(apiBaseUrl).WithLicense(licenseFromEnv)
+               : new DocumentReaderApi(apiBaseUrl).WithLicense(licenseFromFile);
+            var response = api.Process(request);
+
+            // status examples
+            var status = response.Status();
+            string docOverallStatus = status.OverallStatus == CheckResult.OK ? "valid" : "not valid";
+            string docOpticalTextStatus = status.DetailsOptical.Text == CheckResult.OK ? "valid" : "not valid";
+
+            // text fields examples
+            var docNumberField = response.Text().GetField(TextFieldType.DOCUMENT_NUMBER);
+            string docNumberVisual = docNumberField.GetValue(Source.VISUAL);
+            string docNumberMrz = docNumberField.GetValue(Source.MRZ);
+            int docNumberVisualValidity = docNumberField.SourceValidity(Source.VISUAL);
+            int docNumberMrzValidity = docNumberField.SourceValidity(Source.MRZ);
+            int docNumberMrzVisualMatching = docNumberField.CrossSourceComparison(Source.MRZ, Source.VISUAL);
+
+            // images fields examples
+            var documentImage = response.Images().GetField(GraphicFieldType.DOCUMENT_FRONT).GetValue();
+            var portraitField = response.Images().GetField(GraphicFieldType.PORTRAIT);
+            var portraitFromVisual = portraitField.GetValue(Source.VISUAL);
+
 
 components:
   schemas:

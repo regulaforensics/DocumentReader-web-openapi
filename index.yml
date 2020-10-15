@@ -1,8 +1,18 @@
 openapi: 3.0.3
 info:
-  version: 5.2.0
+  version: 5.3.0
   title: Regula Document Reader Web API
-  description: Regula Document Reader Web API
+  x-logo:
+    url: 'https://regulaforensics.com/bitrix/media/img/elements/logo.png'
+    href: 'https://mobile.regulaforensics.com/'
+  description: |
+    Documents recognition as easy as reading two bytes.
+
+    # Clients:
+    * [JavaScript](https://github.com/regulaforensics/DocumentReader-web-js-client) client for the browser and node.js based on axios
+    * [Java](https://github.com/regulaforensics/DocumentReader-web-java-client) client compatible with jvm and android
+    * [Python](https://github.com/regulaforensics/DocumentReader-web-python-client) 3.5+ client
+    * [C#](https://github.com/regulaforensics/DocumentReader-web-csharp-client) client for .NET & .NET Core
 
 servers:
   - url: http://localhost:8080/
@@ -12,8 +22,63 @@ servers:
   - url: https://test-api.regulaforensics.com/
     description: Regula document reader test SaaS
 
+
 paths:
   /api/process:
     $ref: './p-process.yml#/paths/~1process'
   /api/ping:
     $ref: './p-ping.yml#/paths/~1ping'
+
+tags:
+  - name: process
+    description: Everything about perfoming request and parsing response
+  - name: status_model
+    x-displayName: Status Model
+    description: |
+      <SchemaDefinition schemaRef="#/components/schemas/Status" />
+  - name: text_model
+    x-displayName: Text Model
+    description: |
+      <SchemaDefinition schemaRef="#/components/schemas/Text" />
+  - name: images_model
+    x-displayName: Images Model
+    description: |
+      **Images model:**
+      <SchemaDefinition schemaRef="#/components/schemas/Images" />
+      **Document image model:**
+      <SchemaDefinition schemaRef="#/components/schemas/DocumentImage" />
+  - name: document_model
+    x-displayName: Document Model
+    description: |
+      **Choosen Document model:**
+      <SchemaDefinition schemaRef="#/components/schemas/ChosenDocumentType" />
+      **Candidates model:**
+      <SchemaDefinition schemaRef="#/components/schemas/DocumentTypesCandidates" />
+
+x-tagGroups:
+  - name: Requests
+    tags:
+      - process
+  - name: Models
+    tags:
+      - status_model
+      - text_model
+      - images_model
+      - document_model
+
+components:
+  schemas:
+    Status:
+      $ref: "./rt-status.yml#/components/schemas/Status"
+    Text:
+      $ref: "./rt-text.yml#/components/schemas/Text"
+    Images:
+      $ref: "./rt-images.yml#/components/schemas/Images"
+    DocumentImage:
+      $ref: "./common.yml#/components/schemas/ImageData"
+    DocumentTypesCandidates:
+      $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentTypesCandidatesList"
+    ChosenDocumentType:
+      $ref: "./rt-doc-type-old.yml#/components/schemas/OneCandidate"
+    DocumentType:
+      $ref: "./e-document-type.yml#/components/schemas/DocumentType"
