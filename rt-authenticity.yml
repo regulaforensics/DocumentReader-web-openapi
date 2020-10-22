@@ -1,0 +1,131 @@
+openapi: 3.0.1
+components:
+  schemas:
+
+    AuthenticityResult:
+      allOf:
+        - $ref: './rt.yml#/components/schemas/ResultItem'
+        - type: object
+          required:
+            - AuthenticityCheckList
+          properties:
+            AuthenticityCheckList:
+              $ref: '#/components/schemas/AuthenticityCheckList'
+
+    AuthenticityCheckList:
+      type: object
+      required:
+        - Count
+        - List
+      properties:
+        Count:
+          type: integer
+        List:
+          type: array
+          items:
+            $ref: '#/components/schemas/AuthenticityCheckResult'
+
+    AuthenticityCheckResult:
+      type: object
+      required:
+        - Type
+        - Result
+        - Count
+        - List
+      properties:
+        Type:
+          $ref: './e-security-feature-type.yml#/components/schemas/SecurityFeatureType'
+        Result:
+          $ref: './common.yml#/components/schemas/CheckResult'
+        Count:
+          type: integer
+        List:
+          type: array
+          items:
+            anyOf:
+              - $ref: '#/components/schemas/SecurityFeatureResult'
+              - $ref: '#/components/schemas/IdentResult'
+              - $ref: '#/components/schemas/FiberResult'
+              - $ref: '#/components/schemas/OCRSecurityTextResult'
+              - $ref: '#/components/schemas/PhotoIdentResult'
+
+    AuthenticityType:
+      type: integer
+      description: "Same as authenticity result type, but used for safe parsing of not-described values. See authenticity result type"
+
+    AuthenticityCheckResultItem:
+      description: "Common fields for all authenticity result objects"
+      type: object
+      required:
+        - Type
+      properties:
+        Type:
+          $ref: '#/components/schemas/AuthenticityType'
+        ElementResult:
+          $ref: './common.yml#/components/schemas/CheckResult'
+        ElementDiagnose:
+          $ref: './e-check-diagnose.yml#/components/schemas/CheckDiagnose'
+      discriminator:
+        propertyName: Type
+        mapping:
+          1: "SecurityFeatureResult"
+          2: "SecurityFeatureResult"
+          4: "IdentResult"
+          8: "SecurityFeatureResult"
+          16: "FiberResult"
+          32: "IdentResult"
+          64: "OCRSecurityTextResult"
+          128: "PhotoIdentResult"
+          256: "PhotoIdentResult"
+          512: "SecurityFeatureResult"
+          1024: "IdentResult"
+          2048: "IdentResult"
+          4096: "SecurityFeatureResult"
+          8192: "SecurityFeatureResult"
+          16384: "FiberResult"
+          32768: "IdentResult"
+          65536: "FiberResult"
+          131072: "IdentResult"
+          262144: "IdentResult"
+          524288: "IdentResult"
+          1048576: "SecurityFeatureResult"
+
+    SecurityFeatureResult:
+      $ref: './rt-security-feature.yml#/components/schemas/SecurityFeatureResult'
+
+    IdentResult:
+      $ref: './rt-ident.yml#/components/schemas/IdentResult'
+
+    FiberResult:
+      $ref: './rt-fiber.yml#/components/schemas/FiberResult'
+
+    OCRSecurityTextResult:
+      $ref: './rt-ocr-security-text.yml#/components/schemas/OCRSecurityTextResult'
+
+    PhotoIdentResult:
+      $ref: './rt-photo-ident.yml#/components/schemas/PhotoIdentResult'
+
+    AreaContainer:
+      description: "Checked fragment coordinates"
+      type: object
+      properties:
+        Count:
+          type: integer
+        List:
+          type: array
+          items:
+            $ref: './common.yml#/components/schemas/RectangleCoordinates'
+        Points:
+          type: array
+          items:
+            $ref: '#/components/schemas/PointsContainer'
+
+    PointsContainer:
+      type: object
+      properties:
+        PointCount:
+          type: integer
+        PointsList:
+          type: array
+          items:
+            $ref: './common.yml#/components/schemas/Point'

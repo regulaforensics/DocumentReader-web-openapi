@@ -160,3 +160,11 @@ components:
         - "WHITE"
         - "IR"
         - "UV"
+
+    Point:
+      type: object
+      properties:
+        x:
+          type: integer
+        y:
+          type: integer

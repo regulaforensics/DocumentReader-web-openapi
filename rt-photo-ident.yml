@@ -1,0 +1,39 @@
+openapi: 3.0.1
+components:
+  schemas:
+
+    PhotoIdentResult:
+      allOf:
+        - $ref: './rt-authenticity.yml#/components/schemas/AuthenticityCheckResultItem'
+        - type: object
+          properties:
+            LightIndex:
+              $ref: './common.yml#/components/schemas/Light'
+            Area:
+              $ref: './common.yml#/components/schemas/RectangleCoordinates'
+            SourceImage:
+              $ref: './common.yml#/components/schemas/ImageData'
+            ResultImages:
+              $ref: '#/components/schemas/RawImageContainerList'
+            FieldTypesCount:
+              type: integer
+            FieldTypesList:
+              type: array
+              items:
+                type: integer
+            Step:
+              type: integer
+            Angle:
+              type: integer
+            Reserved3:
+              type: integer
+
+    RawImageContainerList:
+      type: object
+      properties:
+        Count:
+          type: integer
+        Images:
+          type: array
+          items:
+            $ref: './common.yml#/components/schemas/ImageData'

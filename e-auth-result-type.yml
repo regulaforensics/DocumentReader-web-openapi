@@ -1,0 +1,73 @@
+openapi: 3.0.3
+components:
+  schemas:
+
+    AuthenticityResultType:
+      description: "Describes possible extracted result types from authenticity check list"
+      type: integer
+      enum:
+        - 1
+        - 2
+        - 4
+        - 8
+        - 16
+        - 32
+        - 64
+        - 128
+        - 256
+        - 512
+        - 1024
+        - 2048
+        - 4096
+        - 8192
+        - 16384
+        - 32768
+        - 65536
+        - 131072
+        - 262144
+        - 524288
+        - 1048576
+      x-enum-description:
+        - "Check document fluorescence element"
+        - "Check MRZ contrast using the image for IR lighting scheme"
+        - "Check one luminescent fragment presence checking for UV light image"
+        - "Check UV fluorescence of protection fibers"
+        - "Check blank element visibility using the images for IR lightning scheme"
+        - "Check document authenticity using the images for white coaxial light scheme"
+        - "Make OCR for the text field in UV and compare it with other text sources"
+        - "Find invisible personal information images"
+        - "Reserved for internal use"
+        - "Check is photo printed or sticked"
+        - "Reserved for internal use"
+        - "Reserved for internal use"
+        - "Reserved for internal use"
+        - "Reserved for internal use"
+        - "Reserved for internal use"
+        - "Portrait comparison"
+        - "Check barcode format"
+        - "Check kinegram"
+        - "Check letter screen"
+        - "Check holograms"
+        - "Check cancelling document status"
+      x-enum-varnames:
+        - "UV_LUMINESCENCE"
+        - "IR_B900"
+        - "IMAGE_PATTERN"
+        - "AXIAL_PROTECTION"
+        - "UV_FIBERS"
+        - "IR_VISIBILITY"
+        - "OCR_SECURITY_TEXT"
+        - "IPI"
+        - "IR_PHOTO"
+        - "PHOTO_EMBED_TYPE"
+        - "OVI"
+        - "IR_LUMINESCENCE"
+        - "HOLOGRAMS"
+        - "PHOTO_AREA"
+        - "UV_BACKGROUND"
+        - "PORTRAIT_COMPARISON"
+        - "BARCODE_FORMAT_CHECK"
+        - "KINEGRAM"
+        - "LETTER_SCREEN"
+        - "HOLOGRAMS_DETECTION"
+        - "CANCELLING_DOCUMENT_DETECTOR"

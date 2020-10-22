@@ -1,0 +1,19 @@
+openapi: 3.0.1
+components:
+  schemas:
+
+    Visibility:
+      description: "Enumeration contains a flag of visibility of the security element in IR range"
+      type: integer
+      enum:
+        - 0
+        - 1
+        - 2
+        - 4
+        - 8
+      x-enum-varnames:
+        - "INVISIBLE"
+        - "VISIBLE"
+        - "COLORED"
+        - "GRAYSCALE"
+        - "WHITE_IR_MATCHING"
