@@ -44,6 +44,7 @@ components:
       type: object
       required:
         - fieldType
+        - fieldName
         - status
         - validityStatus
         - comparisonStatus
@@ -54,6 +55,9 @@ components:
       properties:
         fieldType:
           $ref: "./e-text-field-type.yml#/components/schemas/TextFieldType"
+        fieldName:
+          description: "Field name"
+          type: string
         lcid:
           $ref: "./e-lcid.yml#/components/schemas/LCID"
         status:

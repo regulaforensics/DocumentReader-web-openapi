@@ -28,11 +28,15 @@ components:
       type: object
       required:
         - wFieldType
+        - FieldName
         - wLCID
         - Buf_Text
       properties:
         wFieldType:
           $ref: "./e-text-field-type.yml#/components/schemas/TextFieldType"
+        FieldName:
+          description: "Field name"
+          type: string
         wLCID:
           $ref: "./e-lcid.yml#/components/schemas/LCID"
         StringsResult:
