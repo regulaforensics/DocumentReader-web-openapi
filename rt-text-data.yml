@@ -35,7 +35,7 @@ components:
         wFieldType:
           $ref: "./e-text-field-type.yml#/components/schemas/TextFieldType"
         FieldName:
-          description: "Field name"
+          description: "Field name. Only use to search values for fields with fieldType=50(other). In general, use wFieldType for lookup."
           type: string
         wLCID:
           $ref: "./e-lcid.yml#/components/schemas/LCID"
