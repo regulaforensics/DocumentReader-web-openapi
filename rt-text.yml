@@ -56,7 +56,7 @@ components:
         fieldType:
           $ref: "./e-text-field-type.yml#/components/schemas/TextFieldType"
         fieldName:
-          description: "Document text field name"
+          description: "Field name"
           type: string
         lcid:
           $ref: "./e-lcid.yml#/components/schemas/LCID"
