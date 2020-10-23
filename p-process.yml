@@ -91,6 +91,9 @@ components:
         log:
           description: "This option can be set to true if you need to get base64 string of transaction processing log."
           type: boolean
+        forceDocID:
+          description: "Force use of specific template ID and skip document type identification step."
+          type: integer
       required:
         - scenario
 
