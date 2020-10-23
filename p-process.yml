@@ -1,0 +1,172 @@
+openapi: 3.0.1
+
+paths:
+  /process:
+    post:
+      summary: Process list of documents images and return extracted data
+      operationId: api-process
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ProcessRequest"
+        required: true
+      responses:
+        "200":
+          description: "Document reading result"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProcessResponse'
+        "400":
+          description: "Bad request. Check your input data."
+        "403":
+          description: "Bad license. Either server or request does not contain valid license."
+
+components:
+  schemas:
+
+    #############################
+    ############################# Requests objects
+
+    # todo different image input types
+    ProcessRequest:
+      type: object
+      properties:
+        processParam:
+          $ref: '#/components/schemas/ProcessParams'
+        List:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProcessRequestImage'
+        systemInfo:
+          $ref: '#/components/schemas/ProcessSystemInfo'
+      required:
+        - processParam
+        - List
+
+    ProcessParams:
+      type: object
+      properties:
+        scenario:
+          $ref: './common.yml#/components/schemas/Scenario'
+        resultTypeOutput:
+          description: "Types of results to return in response. See 'Result' enum for available options"
+          type: array
+          items:
+            $ref: './rt.yml#/components/schemas/Result'
+        doublePageSpread:
+          description: "This option can be set to true if the image you provide contains double page spread
+          of the passport and you want to process both pages in one go. It makes sense to use it for documents
+          that have meaningful information on both pages, like Russian domestic passport, or some others.
+          By default is set to false."
+          type: boolean
+        fieldTypesFilter:
+          description: "List of text field types to extract. If empty, all text fields from template will be extracted.
+          Narrowing the list can shorten processing time. By default is empty."
+          type: array
+          items:
+             $ref: './e-text-field-type.yml#/components/schemas/TextFieldType'
+        dateFormat:
+          description: "This option allows you to set dates format so that solution will return dates in this format.
+          For example, if you supply 'MM/dd/yyyy', and document have printed date '09 JUL 2020' for the date os issue,
+          you will get '07/09/2020' as a result.
+          By default it is set to system locale default (where the service is running)."
+          type: string
+          example: "MM/dd/yyyy"
+        imageDpiOutMax:
+          description: "This option controls maximum resolution in dpi of output images. Resolution will remain original
+          in case 0 is supplied. By default is set to return images in response with resolution not greater than 300 dpi."
+          type: integer
+        alreadyCropped:
+          description: "This option can be set to true if you know for sure that the image you provide contains
+          already cropped document by its edges. This was designed to process on the
+          server side images captured and cropped on mobile. By default is set to false."
+          type: boolean
+        customParams:
+          description: "This option allows to pass custom processing parameters that can be implemented in future without
+          changing API."
+          type: object
+          additionalProperties: true
+      required:
+        - scenario
+
+    ProcessRequestImage:
+      type: object
+      required:
+        - ImageData
+      properties:
+        ImageData:
+          $ref: './common.yml#/components/schemas/ImageData'
+        LightIndex:
+          $ref: './common.yml#/components/schemas/Light'
+        page_idx:
+          description: "page/image number"
+          type: integer
+          default: 0
+      example:
+        LightIndex: 6
+        page_idx: 0
+        ImageData:
+          image: "<base64 image>"
+
+    ProcessSystemInfo:
+      type: object
+      properties:
+        license:
+          description: "Base64 encoded license file"
+          type: string
+        recaptcha_token:
+          description: "For internal use. Demo-sites recaptcha token."
+          type: string
+
+    #############################
+    ############################# Response objects
+    ProcessResponse:
+      type: object
+      required:
+        - ProcessingFinished
+        - ContainerList
+        - TransactionInfo
+        - ChipPage
+      properties:
+        ChipPage:
+          $ref: "./common.yml#/components/schemas/RfidLocation"
+        ProcessingFinished:
+          $ref: "#/components/schemas/ProcessingStatus"
+        ContainerList:
+          $ref: "./rt.yml#/components/schemas/ContainerList"
+        TransactionInfo:
+          $ref: "#/components/schemas/TransactionInfo"
+
+    ProcessingStatus:
+      type: integer
+      enum:
+        - 0
+        - 1
+        - 2
+      x-enum-descriptions:
+        - 'Processing was not finished'
+        - 'Processing finished'
+        - 'Processing finished by timeout'
+      x-enum-varnames:
+        - 'NOT_FINISHED'
+        - 'FINISHED'
+        - 'TIMEOUT'
+
+    TransactionInfo:
+      type: object
+      properties:
+        ComputerName:
+          type: string
+        DateTime:
+          type: string
+        TransactionID:
+          type: string
+        UserName:
+          type: string
+      example:
+        ComputerName: "7cded6852d20"
+        "DateTime": "2020-05-27T08:17:03.247Z"
+        "TransactionID": "dc5eb444-ad6e-4ebc-8102-d62d5bb56a4e"
+        "UserName": "user"
