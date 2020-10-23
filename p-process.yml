@@ -88,6 +88,9 @@ components:
           changing API."
           type: object
           additionalProperties: true
+        log:
+          description: "This option can be set to true if you need to get base64 string of transaction processing log."
+          type: boolean
       required:
         - scenario
 
@@ -138,6 +141,9 @@ components:
           $ref: "./rt.yml#/components/schemas/ContainerList"
         TransactionInfo:
           $ref: "#/components/schemas/TransactionInfo"
+        log:
+          description: "Base64 encoded transaction processing log"
+          type: string
 
     ProcessingStatus:
       type: integer
