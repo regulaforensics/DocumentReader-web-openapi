@@ -1,0 +1,30 @@
+name: update clients
+
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: "Title For PR's"
+        required: true
+      branch:
+        description: "Branch Name"
+        required: true
+
+
+jobs:
+  update-js-client:
+    runs-on: ubuntu-latest
+    container: openapitools/openapi-generator-cli:v5.0.0-beta2
+    steps:
+      - name: Checkout Specification Repo
+        uses: actions/checkout@v2
+        path: 'spec'
+      - name: Checkout JS Client Repo
+        uses: actions/checkout@v2
+        repository: 'regulaforensics/DocumentReader-web-js-client'
+        path: 'js-client'
+      - run: >
+          docker run --rm -v "${PWD}:/client" -v "${PWD}/spec:/definitions"
+          openapitools/openapi-generator-cli generate -g typescript-axios
+          -i /definitions/index.yml -o /client/src -c /client/ts-generator-config.json
+          -t /client/generator-templates/
