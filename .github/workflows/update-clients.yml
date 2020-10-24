@@ -1,0 +1,109 @@
+name: update clients
+
+on:
+  workflow_dispatch:
+    inputs:
+      title:
+        description: "Title For PR's"
+        required: true
+
+jobs:
+
+  update-js-client:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Specification Repo
+        uses: actions/checkout@v2
+        with:
+          path: 'spec'
+      - name: Checkout JS Client Repo
+        uses: actions/checkout@v2
+        with:
+          repository: 'regulaforensics/DocumentReader-web-js-client'
+          token: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
+          path: 'js-client'
+      - name: Update Model According To Specification
+        working-directory: js-client
+        run: |
+          npm install
+          export DOCS_DEFINITION_FOLDER="$GITHUB_WORKSPACE/spec"
+          ./update-models.sh
+      - name: Push Changes Back To Client Repo
+        working-directory: js-client
+        run: |
+          git checkout -b ${GITHUB_SHA::8}
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add --all
+          git commit -m "${{ github.event.inputs.title }}" -a
+          git push --set-upstream origin ${GITHUB_SHA::8}
+          gh pr create --fill --draft
+        env:
+          GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
+
+  update-java-client:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Specify Java Version
+        uses: actions/setup-java@v1
+        with:
+          java-version: 11
+          java-package: jdk
+      - name: Checkout Specification Repo
+        uses: actions/checkout@v2
+        with:
+          path: 'spec'
+      - name: Checkout Java Client Repo
+        uses: actions/checkout@v2
+        with:
+          repository: 'regulaforensics/DocumentReader-web-java-client'
+          token: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
+          path: 'java-client'
+      - name: Update Model According To Specification
+        working-directory: java-client
+        run: |
+          export DOCS_DEFINITION_FOLDER="$GITHUB_WORKSPACE/spec"
+          ./update-models.sh
+      - name: Push Changes Back To Client Repo
+        working-directory: java-client
+        run: |
+          git checkout -b ${GITHUB_SHA::8}
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add --all
+          git commit -m "${{ github.event.inputs.title }}" -a
+          git push --set-upstream origin ${GITHUB_SHA::8}
+          gh pr create --fill --draft
+        env:
+          GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
+
+  update-python-client:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Specification Repo
+        uses: actions/checkout@v2
+        with:
+          path: 'spec'
+      - name: Checkout Python Client Repo
+        uses: actions/checkout@v2
+        with:
+          repository: 'regulaforensics/DocumentReader-web-python-client'
+          token: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
+          path: 'python-client'
+      - name: Update Model According To Specification
+        working-directory: python-client
+        run: |
+          export DOCS_DEFINITION_FOLDER="$GITHUB_WORKSPACE/spec"
+          ./update-models.sh
+      - name: Push Changes Back To Client Repo
+        working-directory: python-client
+        run: |
+          git checkout -b ${GITHUB_SHA::8}
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add --all
+          git commit -m "${{ github.event.inputs.title }}" -a
+          git push --set-upstream origin ${GITHUB_SHA::8}
+          gh pr create --fill --draft
+        env:
+          GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
