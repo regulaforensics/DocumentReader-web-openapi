@@ -4,15 +4,15 @@ components:
 
     OCRSecurityTextResult:
       allOf:
-        - $ref: './rt-authenticity.yml#/components/schemas/AuthenticityCheckResultItem'
+        - $ref: '../rt-authenticity.yml#/components/schemas/AuthenticityCheckResultItem'
         - type: object
           properties:
             CriticalFlag:
               $ref: './e-critical.yml#/components/schemas/Critical'
             LightType:
-              $ref: './common.yml#/components/schemas/Light'
+              $ref: '../common.yml#/components/schemas/Light'
             FieldRect:
-              $ref: './common.yml#/components/schemas/RectangleCoordinates'
+              $ref: '../common.yml#/components/schemas/RectangleCoordinates'
             EtalonResultType:
               type: integer
             EtalonFieldType:

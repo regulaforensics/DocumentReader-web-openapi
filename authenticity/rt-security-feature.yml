@@ -4,13 +4,13 @@ components:
 
     SecurityFeatureResult:
       allOf:
-        - $ref: './rt-authenticity.yml#/components/schemas/AuthenticityCheckResultItem'
+        - $ref: '../rt-authenticity.yml#/components/schemas/AuthenticityCheckResultItem'
         - type: object
           properties:
             ElementType:
               $ref: './e-security-feature-type.yml#/components/schemas/SecurityFeatureType'
             ElementRect:
-              $ref: './common.yml#/components/schemas/RectangleCoordinates'
+              $ref: '../common.yml#/components/schemas/RectangleCoordinates'
             Visibility:
               $ref: './e-visibility.yml#/components/schemas/Visibility'
             CriticalFlag:
@@ -18,6 +18,6 @@ components:
             AreaList:
               type: array
               items:
-                $ref: './rt-authenticity.yml#/components/schemas/AreaContainer'
+                $ref: '../rt-authenticity.yml#/components/schemas/AreaContainer'
             Reserved2:
               type: integer

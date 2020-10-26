@@ -4,7 +4,7 @@ components:
 
     FiberResult:
       allOf:
-        - $ref: './rt-authenticity.yml#/components/schemas/AuthenticityCheckResultItem'
+        - $ref: '../rt-authenticity.yml#/components/schemas/AuthenticityCheckResultItem'
         - type: object
           properties:
             RectCount:
@@ -15,7 +15,7 @@ components:
               type: integer
             LightValue:
               description: "For UV_Background authentication result type"
-              $ref: './common.yml#/components/schemas/Light'
+              $ref: '../common.yml#/components/schemas/Light'
             LightDisp:
               description: "For UV_Background authentication result type"
               type: integer
@@ -23,7 +23,7 @@ components:
               description: "Coordinates of located areas for defined fibers type"
               type: array
               items:
-                $ref: './common.yml#/components/schemas/RectangleCoordinates'
+                $ref: '../common.yml#/components/schemas/RectangleCoordinates'
             Width:
               description: "Fibers width value for located areas (in pixels)"
               type: array

@@ -34,7 +34,7 @@ components:
         - List
       properties:
         Type:
-          $ref: './e-security-feature-type.yml#/components/schemas/SecurityFeatureType'
+          $ref: './authenticity/e-security-feature-type.yml#/components/schemas/SecurityFeatureType'
         Result:
           $ref: './common.yml#/components/schemas/CheckResult'
         Count:
@@ -64,7 +64,7 @@ components:
         ElementResult:
           $ref: './common.yml#/components/schemas/CheckResult'
         ElementDiagnose:
-          $ref: './e-check-diagnose.yml#/components/schemas/CheckDiagnose'
+          $ref: './authenticity/e-check-diagnose.yml#/components/schemas/CheckDiagnose'
       discriminator:
         propertyName: Type
         mapping:
@@ -91,19 +91,19 @@ components:
           1048576: "SecurityFeatureResult"
 
     SecurityFeatureResult:
-      $ref: './rt-security-feature.yml#/components/schemas/SecurityFeatureResult'
+      $ref: './authenticity/rt-security-feature.yml#/components/schemas/SecurityFeatureResult'
 
     IdentResult:
-      $ref: './rt-ident.yml#/components/schemas/IdentResult'
+      $ref: './authenticity/rt-ident.yml#/components/schemas/IdentResult'
 
     FiberResult:
-      $ref: './rt-fiber.yml#/components/schemas/FiberResult'
+      $ref: './authenticity/rt-fiber.yml#/components/schemas/FiberResult'
 
     OCRSecurityTextResult:
-      $ref: './rt-ocr-security-text.yml#/components/schemas/OCRSecurityTextResult'
+      $ref: './authenticity/rt-ocr-security-text.yml#/components/schemas/OCRSecurityTextResult'
 
     PhotoIdentResult:
-      $ref: './rt-photo-ident.yml#/components/schemas/PhotoIdentResult'
+      $ref: './authenticity/rt-photo-ident.yml#/components/schemas/PhotoIdentResult'
 
     AreaContainer:
       description: "Checked fragment coordinates"
