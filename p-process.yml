@@ -212,14 +212,14 @@ components:
       properties:
         ImageData:
           $ref: './common.yml#/components/schemas/ImageData'
-        LightIndex:
+        light:
           $ref: './common.yml#/components/schemas/Light'
         page_idx:
           description: "page/image number"
           type: integer
           default: 0
       example:
-        LightIndex: 6
+        light: 6
         page_idx: 0
         ImageData:
           image: "<base64 image>"
