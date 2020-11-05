@@ -26,7 +26,6 @@ jobs:
         working-directory: js-client
         run: |
           npm install
-          export DOCS_DEFINITION_FOLDER="$GITHUB_WORKSPACE/spec"
           ./update-models.sh
       - name: Push Changes Back To Client Repo
         working-directory: js-client
@@ -62,7 +61,6 @@ jobs:
       - name: Update Model According To Specification
         working-directory: java-client
         run: |
-          export DOCS_DEFINITION_FOLDER="$GITHUB_WORKSPACE/spec"
           ./update-models.sh
       - name: Push Changes Back To Client Repo
         working-directory: java-client
@@ -93,7 +91,6 @@ jobs:
       - name: Update Model According To Specification
         working-directory: python-client
         run: |
-          export DOCS_DEFINITION_FOLDER="$GITHUB_WORKSPACE/spec"
           ./update-models.sh
       - name: Push Changes Back To Client Repo
         working-directory: python-client
