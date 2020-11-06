@@ -5,6 +5,7 @@ components:
     ContainerType:
       type: integer
       description: "Same as Result type, but used for safe parsing of not-described values. See Result type."
+      default: 0
 
     Result:
       type: integer
