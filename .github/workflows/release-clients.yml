@@ -19,5 +19,8 @@ jobs:
       - name: Release clients
         run: |
           gh release create v${{github.event.inputs.version}} ${{github.event.inputs.options}} --title ${{github.event.inputs.version}} --repo regulaforensics/DocumentReader-web-js-client
+          gh release create v${{github.event.inputs.version}} ${{github.event.inputs.options}} --title ${{github.event.inputs.version}} --repo regulaforensics/DocumentReader-web-java-client
+          gh release create v${{github.event.inputs.version}} ${{github.event.inputs.options}} --title ${{github.event.inputs.version}} --repo regulaforensics/DocumentReader-web-python-client
+          gh release create v${{github.event.inputs.version}} ${{github.event.inputs.options}} --title ${{github.event.inputs.version}} --repo regulaforensics/DocumentReader-web-csharp-client
         env:
           GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
