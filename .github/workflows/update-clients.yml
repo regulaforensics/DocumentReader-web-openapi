@@ -104,3 +104,33 @@ jobs:
           gh pr create --fill --draft
         env:
           GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
+
+  update-csharp-client:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Specification Repo
+        uses: actions/checkout@v2
+        with:
+          path: 'DocumentReader-web-openapi'
+      - name: Checkout C# Client Repo
+        uses: actions/checkout@v2
+        with:
+          repository: 'regulaforensics/DocumentReader-web-csharp-client'
+          token: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
+          path: 'csharp-client'
+      - name: Update Model According To Specification
+        working-directory: csharp-client
+        run: |
+          ./update-models.sh
+      - name: Push Changes Back To Client Repo
+        working-directory: csharp-client
+        run: |
+          git checkout -b ${GITHUB_SHA::8}
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add --all
+          git commit -m "${{ github.event.inputs.title }}" -a
+          git push --set-upstream origin ${GITHUB_SHA::8}
+          gh pr create --fill --draft
+        env:
+          GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
