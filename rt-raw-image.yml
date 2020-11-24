@@ -3,8 +3,8 @@ components:
   schemas:
 
     DocumentImageResult:
+      title: "Document Image"
       allOf:
-        - $ref: './rt.yml#/components/schemas/ResultItem'
         - type: object
           description: "Contains cropped and rotated with perspective compensation image of document.
             Single input image can contain multiple document side/pages, which will be returned as separated results.
@@ -14,3 +14,4 @@ components:
           properties:
             RawImageContainer:
               $ref: "./common.yml#/components/schemas/ImageData"
+        - $ref: './rt.yml#/components/schemas/ResultItem'

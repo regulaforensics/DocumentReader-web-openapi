@@ -3,14 +3,16 @@ components:
   schemas:
 
     ImagesResult:
+      title: "Images"
       allOf:
-        - $ref: './rt.yml#/components/schemas/ResultItem'
         - type: object
           required:
             - Images
           properties:
             Images:
               $ref: '#/components/schemas/Images'
+        - $ref: './rt.yml#/components/schemas/ResultItem'
+
 
     Images:
       type: object

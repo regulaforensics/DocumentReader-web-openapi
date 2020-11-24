@@ -3,14 +3,16 @@ components:
   schemas:
 
     StatusResult:
+      title: "Status"
       allOf:
-        - $ref: './rt.yml#/components/schemas/ResultItem'
         - type: object
           required:
             - Status
           properties:
             Status:
               $ref: '#/components/schemas/Status'
+        - $ref: './rt.yml#/components/schemas/ResultItem'
+
 
     # $ref with description doesnt work right now, waiting for OAS 3.1 (comming soon)
     # allOf should be used here to replace description from CheckResult

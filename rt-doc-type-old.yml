@@ -3,22 +3,25 @@ components:
   schemas:
 
     ChosenDocumentTypeResult:
+      title: "Chosen Document Type"
       description: "Contains information about the type of document that was determined
       based on the analysis of the provided image"
       allOf:
-        - $ref: './rt.yml#/components/schemas/ResultItem'
         - type: object
           properties:
             OneCandidate:
               $ref: "#/components/schemas/OneCandidate"
+        - $ref: './rt.yml#/components/schemas/ResultItem'
 
     DocumentTypesCandidatesResult:
+      title: "Document Types Candidates"
       allOf:
-        - $ref: './rt.yml#/components/schemas/ResultItem'
         - type: object
           properties:
             CandidatesList:
               $ref: "#/components/schemas/DocumentTypesCandidatesList"
+        - $ref: './rt.yml#/components/schemas/ResultItem'
+
 
     DocumentTypesCandidatesList:
       type: object
