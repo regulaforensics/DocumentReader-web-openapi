@@ -3,7 +3,7 @@ components:
   schemas:
 
     Visibility:
-      description: "Enumeration contains a flag of visibility of the security element in IR range"
+      description: "Enumeration contains visibility status of the security element"
       type: integer
       enum:
         - 0

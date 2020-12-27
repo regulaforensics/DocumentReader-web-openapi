@@ -3,7 +3,7 @@ components:
   schemas:
 
     AuthenticityResultType:
-      description: "Describes possible extracted result types from authenticity check list"
+      description: "Enumeration describes available authenticity checks"
       type: integer
       enum:
         - 1
@@ -14,41 +14,29 @@ components:
         - 32
         - 64
         - 128
-        - 256
         - 512
-        - 1024
-        - 2048
         - 4096
         - 8192
-        - 16384
         - 32768
         - 65536
         - 131072
         - 262144
-        - 524288
-        - 1048576
       x-enum-description:
-        - "Check document fluorescence element"
-        - "Check MRZ contrast using the image for IR lighting scheme"
-        - "Check one luminescent fragment presence checking for UV light image"
-        - "Check UV fluorescence of protection fibers"
-        - "Check blank element visibility using the images for IR lightning scheme"
-        - "Check document authenticity using the images for white coaxial light scheme"
-        - "Make OCR for the text field in UV and compare it with other text sources"
-        - "Find invisible personal information images"
-        - "Reserved for internal use"
-        - "Check is photo printed or sticked"
-        - "Reserved for internal use"
-        - "Reserved for internal use"
-        - "Reserved for internal use"
-        - "Reserved for internal use"
-        - "Reserved for internal use"
-        - "Portrait comparison"
-        - "Check barcode format"
-        - "Check kinegram"
-        - "Check letter screen"
-        - "Check holograms"
-        - "Check cancelling document status"
+        - "Document luminescence check in UV light"
+        - "B900 ink MRZ contrast check in IR light"
+        - "Image patterns presence/absence check (position, shape, color)"
+        - "Confirm laminate integrity check in axial light"
+        - "Protection fibers presence check (color, density) in UV light"
+        - "Document elements visibility check in IR light"
+        - "OCR for the text field in UV light comparison with other text sources check"
+        - "Invisible Personal Information (IPI) visualization"
+        - "Owner's photo embedding check (is photo printed or sticked)"
+        - "Hologram presence check"
+        - "Owner's photo area advanced check (photo shape, size, position, etc.)"
+        - "Portrait comparison check (document printed vs chip vs live)"
+        - "Barcode format check (code metadata, data format, contents format, etc.)"
+        - "Kinegram check"
+        - "LetterScreen check"
       x-enum-varnames:
         - "UV_LUMINESCENCE"
         - "IR_B900"
@@ -58,16 +46,10 @@ components:
         - "IR_VISIBILITY"
         - "OCR_SECURITY_TEXT"
         - "IPI"
-        - "IR_PHOTO"
         - "PHOTO_EMBED_TYPE"
-        - "OVI"
-        - "IR_LUMINESCENCE"
         - "HOLOGRAMS"
         - "PHOTO_AREA"
-        - "UV_BACKGROUND"
         - "PORTRAIT_COMPARISON"
         - "BARCODE_FORMAT_CHECK"
         - "KINEGRAM"
         - "LETTER_SCREEN"
-        - "HOLOGRAMS_DETECTION"
-        - "CANCELLING_DOCUMENT_DETECTOR"

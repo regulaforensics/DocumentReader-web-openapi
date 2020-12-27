@@ -3,7 +3,7 @@ components:
   schemas:
 
     CheckDiagnose:
-      description: "Enumeration contains identifiers which determinate the authenticity check result of the single document element comparison"
+      description: "Enumeration contains identifiers which determinate the single document element authenticity check outcome reason"
       type: integer
       enum:
         - 0
@@ -69,7 +69,6 @@ components:
         - 119
         - 120
         - 121
-        - 122
         - 130
         - 131
         - 132
@@ -87,7 +86,7 @@ components:
         - 156
         - 157
       x-enum-varnames:
-        - "UNKNOW"
+        - "UNKNOWN"
         - "PASS"
         - "INVALID_INPUT_DATA"
         - "INTERNAL_ERROR"
@@ -150,7 +149,6 @@ components:
         - "PHOTO_PATTERN_DIFFERENT_LINES_THICKNESS"
         - "PHOTO_IS_NOT_RECTANGLE"
         - "PHOTO_CORNERS_IS_WRONG"
-        - "DOCUMENT_IS_CANCELLING"
         - "TEXT_COLOR_SHOULD_BE_BLUE"
         - "TEXT_COLOR_SHOULD_BE_GREEN"
         - "TEXT_COLOR_SHOULD_BE_RED"
@@ -158,7 +156,7 @@ components:
         - "BARCODE_WAS_READ_WITH_ERRORS"
         - "BARCODE_DATA_FORMAT_ERROR"
         - "BARCODE_SIZE_PARAMS_ERROR"
-        - "NOT_ALL_BARCODESREAD"
+        - "NOT_ALL_BARCODES_READ"
         - "PORTRAIT_COMPARISON_PORTRAITS_DIFFER"
         - "PORTRAIT_COMPARISON_NO_SERVICE_REPLY"
         - "PORTRAIT_COMPARISON_SERVICE_ERROR"
