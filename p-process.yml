@@ -203,30 +203,30 @@ components:
           description: "Force use of specific template ID and skip document type identification step."
           type: integer
         matchTextFieldMask:
-          description: "Boolean, when disabled, text field OCR will be done as is and then the recognized value will be
+          description: "When disabled, text field OCR will be done as is and then the recognized value will be
           matched to the field mask for validity. If enabled, we are trying to read a field value with maximum efforts
           to match the mask and provide a correctly formatted value, making assumptions based on the provided field mask
-          in the template. Enabled by default."
+          in the template."
           type: boolean
           default: true
         fastDocDetect:
-          description: "Boolean, when enabled shorten the list of candidates to process during document detection in a
-          single image process mode. Reduces processing time for specific backgrounds. Enabled by default."
+          description: "When enabled shorten the list of candidates to process during document detection in a
+          single image process mode. Reduces processing time for specific backgrounds."
           type: boolean
           default: true
         updateOCRValidityByGlare:
-          description: "Boolean, when enabled OCR field validity will be updated with | tr_GlaresOnField value, if there
-          is a glare over the text field on the image. Disabled by default."
+          description: "When enabled OCR field validity will be updated with | tr_GlaresOnField value, if there
+          is a glare over the text field on the image."
           type: boolean
           default: false
         generateDoublePageSpreadImage:
-          description: 'Boolean, when enabled together with "doublePageSpread" and there is a passport with two pages
+          description: 'When enabled together with "doublePageSpread" and there is a passport with two pages
           spread in the image, pages will be cropped, straightened and aligned together, as if the document was captured
           on a flatbed scanner.'
           type: boolean
         checkRequiredTextFields:
-          description: 'Boolean, when enabled each field in template will be checked for value presence and if the field
-          is marked as required, but has no value, it will have "error" in validity status. Disabled by default.'
+          description: 'When enabled each field in template will be checked for value presence and if the field
+          is marked as required, but has no value, it will have "error" in validity status.'
           type: boolean
           default: false
       required:
