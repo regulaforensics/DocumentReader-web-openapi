@@ -90,10 +90,10 @@ components:
       description: "Extended document type info and Regula's 'Information Reference Systems' links"
       type: object
       properties:
-        ICAO:
+        ICAOCode:
           type: string
-          minLength: 4
-          maxLength: 4
+          minLength: 3
+          maxLength: 3
           description: "ICAO code of the issuing country"
         List:
           type: array
