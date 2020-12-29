@@ -228,8 +228,24 @@ components:
           is marked as required, but has no value, it will have "error" in validity status.'
           type: boolean
           default: false
+        imageQA:
+          $ref: '#/components/schemas/ImageQA'
       required:
         - scenario
+
+    ImageQA:
+      type: object
+      properties:
+        dpiThreshold:
+          description: "This parameter sets threshold for Image QA check of the presented document physical dpi. If
+          actual document dpi is below this threshold, check will fail."
+          type: number
+          default: 150
+        angleThreshold:
+          description: "This parameter sets threshold for Image QA check of the presented document perspective angle in
+          degrees. If actual document perspective angle is above this threshold, check will fail."
+          type: number
+          default: 5
 
     ProcessRequestImage:
       type: object
