@@ -15,6 +15,12 @@ components:
         - 'BARCODE'
         - 'RFID'
         - 'MAGNETIC'
+      x-enum-varnames:
+        - 'MRZ'
+        - 'VISUAL'
+        - 'BARCODE'
+        - 'RFID'
+        - 'MAGNETIC'
 
     CheckResult:
       type: integer
