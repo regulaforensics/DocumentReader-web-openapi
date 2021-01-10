@@ -41,7 +41,7 @@ components:
                 type: integer
             ColorValues:
               description: "Fibers color value"
-              example: [BLUE, GREAN, RED]
+              example: [BLUE, GREEN, RED]
               type: array
               items:
                 type: integer

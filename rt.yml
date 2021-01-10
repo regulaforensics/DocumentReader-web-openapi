@@ -45,7 +45,7 @@ components:
         - 'Contains RFID parsing result with graphic fields'
         - 'Contains list of document type candidates with their probabilities and descriptions'
         - 'Contains description of determined document type, if any'
-        - 'Contains document authenticity check using the images for different lightning schemas'
+        - 'Contains result of document authenticity checks'
       x-enum-varnames:
         - DOCUMENT_IMAGE
         - STATUS

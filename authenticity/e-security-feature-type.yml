@@ -3,7 +3,7 @@ components:
   schemas:
 
     SecurityFeatureType:
-      description: "Enumeration contains identifiers determining types of features for a document authenticity checking"
+      description: "Enumeration contains identifiers determining type of features for a document authenticity checks"
       type: integer
       enum:
         - 0
@@ -34,7 +34,6 @@ components:
         - 25
         - 26
         - 27
-        - 28
         - 29
         - 30
         - 31
@@ -43,34 +42,33 @@ components:
         - "Personalization element"
         - "Photo"
         - "MRZ"
-        - "Photo surrounding area"
-        - "Reserved for internal use"
-        - "Reserved for internal use"
-        - "Reserved for internal use"
-        - "Reserved for internal use"
-        - "Reserved for internal use"
-        - "Reserved for internal use"
-        - "Reserved for internal use"
-        - "Reserved for internal use"
-        - "Reserved for internal use"
-        - "Main portrait and ghost portrait comparison"
-        - "Main portrait and RFID portrait comparison"
-        - "Main portrait and other page portrait comparison"
-        - "Barcode format check"
-        - "Different lines thickness"
-        - "Portrait comparison with image from camera"
-        - "Portrait comparison with image from RFID"
+        - "False luminescence"
+        - "Hologram (static)"
+        - "Hologram (static verify)"
+        - "Hologram (static verify multiple)"
+        - "Hologram (dynamic verify)"
+        - "Pattern (non-interrupted)"
+        - "Pattern (non-shifted)"
+        - "Pattern (same colors)"
+        - "Pattern (IR invisible)"
+        - "Photo size"
+        - "Main vs ghost portrait comparison"
+        - "Main vs RFID portrait comparison"
+        - "Main vs other page portrait comparison"
+        - "Barcode"
+        - "Pattern (different line thickness)"
+        - "Main vs live camera portrait comparison"
+        - "RFID vs live camera portrait comparison"
         - "Ghost photo"
         - "Clear ghost photo"
         - "Invisible object"
         - "Low contrast object"
-        - "Photo color type"
-        - "Photo squareness check"
+        - "Photo color check"
+        - "Photo squareness"
         - "Photo corners shape"
-        - "Cancelling document"
-        - ""
-        - ""
-        - ""
+        - "External vs main portrait comparison"
+        - "External vs RFID portrait comparison"
+        - "External vs live camera portrait comparison"
       x-enum-varnames:
         - "BLANK"
         - "FILL"
@@ -84,7 +82,7 @@ components:
         - "PATTERN_NOT_INTERRUPTED"
         - "PATTERN_NOT_SHIFTED"
         - "PATTERN_SAME_COLORS"
-        - "PATTREN_IRI_INVISIBLE"
+        - "PATTERN_IR_INVISIBLE"
         - "PHOTO_SIZE_CHECK"
         - "PORTRAIT_COMPARISON_VS_GHOST"
         - "PORTRAIT_COMPARISON_VS_RFID"
@@ -92,7 +90,7 @@ components:
         - "BARCODE"
         - "PATTERN_DIFFERENT_LINES_THICKNESS"
         - "PORTRAIT_COMPARISON_VS_CAMERA"
-        - "PORTRAIT_COMPARISSON_RFID_VS_CAMERA"
+        - "PORTRAIT_COMPARISON_RFID_VS_CAMERA"
         - "GHOST_PHOTO"
         - "CLEAR_GHOST_PHOTO"
         - "INVISIBLE_OBJECT"
@@ -100,7 +98,6 @@ components:
         - "PHOTO_COLOR"
         - "PHOTO_SHAPE"
         - "PHOTO_CORNERS"
-        - "DOCUMENT_CANCELLING_DETECTOR"
         - "PORTRAIT_COMPARISON_EXT_VS_VISUAL"
         - "PORTRAIT_COMPARISON_EXT_VS_RFID"
-        - "PORTRAIT_COMPARISON_EXT_VS_LIVE"
+        - "PORTRAIT_COMPARISON_EXT_VS_CAMERA"

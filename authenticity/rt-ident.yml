@@ -14,13 +14,13 @@ components:
             Area:
               $ref: '../common.yml#/components/schemas/RectangleCoordinates'
             Image:
-              description: "Located image"
+              description: "Original image"
               $ref: '../common.yml#/components/schemas/ImageData'
             EtalonImage:
-              description: "Expected image"
+              description: "Reference image"
               $ref: '../common.yml#/components/schemas/ImageData'
             PercentValue:
-              description: "Identity percent of the etalon and sample image for IMAGE_PATTERN check or element's visibility for IR_VISIBILITY"
+              description: "Probability percent for IMAGE_PATTERN check or element's visibility for IR_VISIBILITY"
               type: integer
             AreaList:
               type: array

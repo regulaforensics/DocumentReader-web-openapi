@@ -84,11 +84,11 @@ components:
           8192: "SecurityFeatureResult"
           16384: "FiberResult"
           32768: "IdentResult"
-          65536: "FiberResult"
+          65536: "SecurityFeatureResult"
           131072: "IdentResult"
           262144: "IdentResult"
           524288: "IdentResult"
-          1048576: "SecurityFeatureResult"
+          1048576: "IdentResult"
 
     SecurityFeatureResult:
       $ref: './authenticity/rt-security-feature.yml#/components/schemas/SecurityFeatureResult'

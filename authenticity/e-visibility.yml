@@ -11,6 +11,12 @@ components:
         - 2
         - 4
         - 8
+      x-enum-description:
+        - "Invisible"
+        - "Visible"
+        - "Colored"
+        - "Grayscale"
+        - "Visible vs IR match"
       x-enum-varnames:
         - "INVISIBLE"
         - "VISIBLE"
