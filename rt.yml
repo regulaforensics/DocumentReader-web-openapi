@@ -25,6 +25,7 @@ components:
         - 103
         - 8
         - 9
+        - 20
       x-enum-descriptions:
         - 'Contains cropped and rotated with perspective compensation image of document.
         Single input image can contain multiple document side/pages, which will be returned as separated results.
@@ -44,6 +45,7 @@ components:
         - 'Contains RFID parsing result with graphic fields'
         - 'Contains list of document type candidates with their probabilities and descriptions'
         - 'Contains description of determined document type, if any'
+        - 'Contains result of document authenticity checks'
       x-enum-varnames:
         - DOCUMENT_IMAGE
         - STATUS
@@ -59,6 +61,7 @@ components:
         - RFID_GRAPHICS
         - DOCUMENT_TYPE_CANDIDATES
         - DOCUMENT_TYPE
+        - AUTHENTICITY
 
     ResultItem:
       type: object
@@ -84,6 +87,7 @@ components:
           6: "GraphicsResult"
           8: "DocumentTypesCandidatesResult"
           9: "ChosenDocumentTypeResult"
+          20: "AuthenticityResult"
           15: "LexicalAnalysisResult"
           17: "TextDataResult"
           18: "TextDataResult"
@@ -113,6 +117,7 @@ components:
               - $ref: "#/components/schemas/TextDataResult"
               - $ref: "#/components/schemas/GraphicsResult"
               - $ref: "#/components/schemas/LexicalAnalysisResult"
+              - $ref: "#/components/schemas/AuthenticityResult"
 
     DocumentImageResult:
       $ref: "./rt-raw-image.yml#/components/schemas/DocumentImageResult"
@@ -140,3 +145,6 @@ components:
 
     ChosenDocumentTypeResult:
       $ref: "./rt-doc-type-old.yml#/components/schemas/ChosenDocumentTypeResult"
+
+    AuthenticityResult:
+      $ref: "./rt-authenticity.yml#/components/schemas/AuthenticityResult"

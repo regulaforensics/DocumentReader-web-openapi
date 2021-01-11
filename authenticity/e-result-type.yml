@@ -1,0 +1,55 @@
+openapi: 3.0.3
+components:
+  schemas:
+
+    AuthenticityResultType:
+      description: "Enumeration describes available authenticity checks"
+      type: integer
+      enum:
+        - 1
+        - 2
+        - 4
+        - 8
+        - 16
+        - 32
+        - 64
+        - 128
+        - 512
+        - 4096
+        - 8192
+        - 32768
+        - 65536
+        - 131072
+        - 262144
+      x-enum-description:
+        - "Document luminescence check in UV light"
+        - "B900 ink MRZ contrast check in IR light"
+        - "Image patterns presence/absence check (position, shape, color)"
+        - "Confirm laminate integrity check in axial light"
+        - "Protection fibers presence check (color, density) in UV light"
+        - "Document elements visibility check in IR light"
+        - "OCR for the text field in UV light comparison with other text sources check"
+        - "Invisible Personal Information (IPI) visualization"
+        - "Owner's photo embedding check (is photo printed or sticked)"
+        - "Hologram presence check"
+        - "Owner's photo area advanced check (photo shape, size, position, etc.)"
+        - "Portrait comparison check (document printed vs chip vs live)"
+        - "Barcode format check (code metadata, data format, contents format, etc.)"
+        - "Kinegram check"
+        - "LetterScreen check"
+      x-enum-varnames:
+        - "UV_LUMINESCENCE"
+        - "IR_B900"
+        - "IMAGE_PATTERN"
+        - "AXIAL_PROTECTION"
+        - "UV_FIBERS"
+        - "IR_VISIBILITY"
+        - "OCR_SECURITY_TEXT"
+        - "IPI"
+        - "PHOTO_EMBED_TYPE"
+        - "HOLOGRAMS"
+        - "PHOTO_AREA"
+        - "PORTRAIT_COMPARISON"
+        - "BARCODE_FORMAT_CHECK"
+        - "KINEGRAM"
+        - "LETTER_SCREEN"

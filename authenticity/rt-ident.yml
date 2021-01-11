@@ -1,0 +1,28 @@
+openapi: 3.0.1
+components:
+  schemas:
+
+    IdentResult:
+      allOf:
+        - $ref: '../rt-authenticity.yml#/components/schemas/AuthenticityCheckResultItem'
+        - type: object
+          properties:
+            ElementType:
+              $ref: './e-security-feature-type.yml#/components/schemas/SecurityFeatureType'
+            LightIndex:
+              $ref: '../common.yml#/components/schemas/Light'
+            Area:
+              $ref: '../common.yml#/components/schemas/RectangleCoordinates'
+            Image:
+              description: "Original image"
+              $ref: '../common.yml#/components/schemas/ImageData'
+            EtalonImage:
+              description: "Reference image"
+              $ref: '../common.yml#/components/schemas/ImageData'
+            PercentValue:
+              description: "Probability percent for IMAGE_PATTERN check or element's visibility for IR_VISIBILITY"
+              type: integer
+            AreaList:
+              type: array
+              items:
+                $ref: '../rt-authenticity.yml#/components/schemas/AreaContainer'

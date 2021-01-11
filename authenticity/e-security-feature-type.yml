@@ -1,0 +1,103 @@
+openapi: 3.0.3
+components:
+  schemas:
+
+    SecurityFeatureType:
+      description: "Enumeration contains identifiers determining type of features for a document authenticity checks"
+      type: integer
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+        - 10
+        - 11
+        - 12
+        - 13
+        - 14
+        - 15
+        - 16
+        - 17
+        - 18
+        - 19
+        - 20
+        - 21
+        - 22
+        - 23
+        - 24
+        - 25
+        - 26
+        - 27
+        - 29
+        - 30
+        - 31
+      x-enum-description:
+        - "Blank element"
+        - "Personalization element"
+        - "Photo"
+        - "MRZ"
+        - "False luminescence"
+        - "Hologram (static)"
+        - "Hologram (static verify)"
+        - "Hologram (static verify multiple)"
+        - "Hologram (dynamic verify)"
+        - "Pattern (non-interrupted)"
+        - "Pattern (non-shifted)"
+        - "Pattern (same colors)"
+        - "Pattern (IR invisible)"
+        - "Photo size"
+        - "Main vs ghost portrait comparison"
+        - "Main vs RFID portrait comparison"
+        - "Main vs other page portrait comparison"
+        - "Barcode"
+        - "Pattern (different line thickness)"
+        - "Main vs live camera portrait comparison"
+        - "RFID vs live camera portrait comparison"
+        - "Ghost photo"
+        - "Clear ghost photo"
+        - "Invisible object"
+        - "Low contrast object"
+        - "Photo color check"
+        - "Photo squareness"
+        - "Photo corners shape"
+        - "External vs main portrait comparison"
+        - "External vs RFID portrait comparison"
+        - "External vs live camera portrait comparison"
+      x-enum-varnames:
+        - "BLANK"
+        - "FILL"
+        - "PHOTO"
+        - "MRZ"
+        - "FALSE_LUMINESCENCE"
+        - "HOLO_SIMPLE"
+        - "HOLO_VERIFY_STATIC"
+        - "HOLO_VERIFY_MULTI_STATIC"
+        - "HOLO_VERIFY_DYNAMIC"
+        - "PATTERN_NOT_INTERRUPTED"
+        - "PATTERN_NOT_SHIFTED"
+        - "PATTERN_SAME_COLORS"
+        - "PATTERN_IR_INVISIBLE"
+        - "PHOTO_SIZE_CHECK"
+        - "PORTRAIT_COMPARISON_VS_GHOST"
+        - "PORTRAIT_COMPARISON_VS_RFID"
+        - "PORTRAIT_COMPARISON_VS_VISUAL"
+        - "BARCODE"
+        - "PATTERN_DIFFERENT_LINES_THICKNESS"
+        - "PORTRAIT_COMPARISON_VS_CAMERA"
+        - "PORTRAIT_COMPARISON_RFID_VS_CAMERA"
+        - "GHOST_PHOTO"
+        - "CLEAR_GHOST_PHOTO"
+        - "INVISIBLE_OBJECT"
+        - "LOW_CONTRAST_OBJECT"
+        - "PHOTO_COLOR"
+        - "PHOTO_SHAPE"
+        - "PHOTO_CORNERS"
+        - "PORTRAIT_COMPARISON_EXT_VS_VISUAL"
+        - "PORTRAIT_COMPARISON_EXT_VS_RFID"
+        - "PORTRAIT_COMPARISON_EXT_VS_CAMERA"
