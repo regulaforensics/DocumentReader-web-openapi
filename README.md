@@ -26,7 +26,9 @@ docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli validate -
 ```
 
 ## Building Redoc single page html documentation
-Edit **rt.yml** - remove **components.schemas.ResultItem.discriminator** node and run next command
+Edit **rt.yml** - remove **components.schemas.ResultItem.discriminator** node
+Edit **rt-authenticity.yml** - remove **components.schemas.AuthenticityCheckResultItem.discriminator**
+Than run next command:
 ```
 npx redoc-cli bundle index.yml --output document-reader-static-doc.html \
 --options.maxDisplayedEnumValues=5 --options.theme.logo.gutter="20px" \

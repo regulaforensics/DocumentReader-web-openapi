@@ -3,6 +3,7 @@ components:
   schemas:
 
     OCRSecurityTextResult:
+      title: "OCR Security Text Check"
       allOf:
         - $ref: '../rt-authenticity.yml#/components/schemas/AuthenticityCheckResultItem'
         - type: object

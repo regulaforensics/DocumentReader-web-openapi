@@ -3,6 +3,7 @@ components:
   schemas:
 
     PhotoIdentResult:
+      title: "Photo Ident Check"
       allOf:
         - $ref: '../rt-authenticity.yml#/components/schemas/AuthenticityCheckResultItem'
         - type: object

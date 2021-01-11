@@ -3,6 +3,7 @@ components:
   schemas:
 
     SecurityFeatureResult:
+      title: "Security Feature Check"
       allOf:
         - $ref: '../rt-authenticity.yml#/components/schemas/AuthenticityCheckResultItem'
         - type: object

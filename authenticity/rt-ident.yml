@@ -3,6 +3,7 @@ components:
   schemas:
 
     IdentResult:
+      title: "Ident Check"
       allOf:
         - $ref: '../rt-authenticity.yml#/components/schemas/AuthenticityCheckResultItem'
         - type: object

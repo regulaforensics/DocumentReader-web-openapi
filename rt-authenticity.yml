@@ -3,14 +3,15 @@ components:
   schemas:
 
     AuthenticityResult:
+      title: "Authenticity Checks"
       allOf:
-        - $ref: './rt.yml#/components/schemas/ResultItem'
         - type: object
           required:
             - AuthenticityCheckList
           properties:
             AuthenticityCheckList:
               $ref: '#/components/schemas/AuthenticityCheckList'
+        - $ref: './rt.yml#/components/schemas/ResultItem'
 
     AuthenticityCheckList:
       type: object
@@ -18,10 +19,9 @@ components:
         - Count
         - List
       properties:
-        Count:
-          type: integer
         List:
           type: array
+          description: "Authenticity Check"
           items:
             $ref: '#/components/schemas/AuthenticityCheckResult'
 
@@ -37,8 +37,6 @@ components:
           $ref: './authenticity/e-security-feature-type.yml#/components/schemas/SecurityFeatureType'
         Result:
           $ref: './common.yml#/components/schemas/CheckResult'
-        Count:
-          type: integer
         List:
           type: array
           items:
