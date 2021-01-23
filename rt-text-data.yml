@@ -31,7 +31,6 @@ components:
         - wFieldType
         - FieldName
         - wLCID
-        - Buf_Text
       properties:
         wFieldType:
           $ref: "./e-text-field-type.yml#/components/schemas/TextFieldType"
