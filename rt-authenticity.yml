@@ -16,7 +16,6 @@ components:
     AuthenticityCheckList:
       type: object
       required:
-        - Count
         - List
       properties:
         List:
@@ -30,7 +29,6 @@ components:
       required:
         - Type
         - Result
-        - Count
         - List
       properties:
         Type:
@@ -50,6 +48,7 @@ components:
     AuthenticityType:
       type: integer
       description: "Same as authenticity result type, but used for safe parsing of not-described values. See authenticity result type"
+      default: 0
 
     AuthenticityCheckResultItem:
       description: "Common fields for all authenticity result objects"
