@@ -32,7 +32,7 @@ components:
         - List
       properties:
         Type:
-          $ref: './authenticity/e-security-feature-type.yml#/components/schemas/SecurityFeatureType'
+          $ref: './authenticity/e-result-type.yml#/components/schemas/AuthenticityResultType'
         Result:
           $ref: './common.yml#/components/schemas/CheckResult'
         List:
