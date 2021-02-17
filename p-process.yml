@@ -188,13 +188,8 @@ components:
           type: string
           example: "MM/dd/yyyy"
         measureSystem:
-          description: "This option allows you to set measure system:
-          Metric - it is the Metric System of Measurement, which uses the measuring units such as meters and grams and adds prefixes like kilo,
-          milli and centi to count orders of magnitude.
-          Imperial - it is the Imperial System of Measurement, where things are measured in feet, inches and pounds.
-          By default it is set to 0 (metric measurement system)."
-          type: integer
-          example: 1       
+          description: "This option allows you to set measure system."
+          $ref: '#/components/schemas/MeasureSystem'
         imageDpiOutMax:
           description: "This option controls maximum resolution in dpi of output images. Resolution will remain original
           in case 0 is supplied. By default is set to return images in response with resolution not greater than 300 dpi."
@@ -245,6 +240,21 @@ components:
           $ref: '#/components/schemas/ImageQA'
       required:
         - scenario
+
+    MeasureSystem:
+      type: integer
+      default: 0
+      example: 0
+      enum:
+        - 0
+        - 1
+      x-enum-descriptions:
+        - 'Metric System of Measurement, which uses the measuring units
+        such as meters and grams and adds prefixes like kilo, milli and centi to count orders of magnitude'
+        - 'Imperial System of Measurement, where things are measured in feet, inches and pounds'
+      x-enum-varnames:
+        - 'METRIC'
+        - 'IMPERIAL'
 
     ImageQA:
       type: object
