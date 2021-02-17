@@ -188,7 +188,7 @@ components:
           type: string
           example: "MM/dd/yyyy"
         measureSystem:
-          description: "This option allows you to set measure system."
+          description: "This option allows you to set the system of measurement used for converting original values in document to output result values."
           $ref: '#/components/schemas/MeasureSystem'
         imageDpiOutMax:
           description: "This option controls maximum resolution in dpi of output images. Resolution will remain original
@@ -249,8 +249,7 @@ components:
         - 0
         - 1
       x-enum-descriptions:
-        - 'Metric System of Measurement, which uses the measuring units
-        such as meters and grams and adds prefixes like kilo, milli and centi to count orders of magnitude'
+        - 'Metric system of measurement, where things are measured in meters and grams'
         - 'Imperial System of Measurement, where things are measured in feet, inches and pounds'
       x-enum-varnames:
         - 'METRIC'
