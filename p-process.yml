@@ -306,7 +306,6 @@ components:
         - ProcessingFinished
         - ContainerList
         - TransactionInfo
-        - ChipPage
       properties:
         ChipPage:
           $ref: "./common.yml#/components/schemas/RfidLocation"

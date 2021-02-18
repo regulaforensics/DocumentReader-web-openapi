@@ -130,6 +130,7 @@ components:
         code:
           description: "Unicode symbol code"
           type: integer
+          format: int64
         probability:
           description: "Probability of correctness reading of a single character"
           type: integer
