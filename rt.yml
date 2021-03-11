@@ -26,6 +26,7 @@ components:
         - 8
         - 9
         - 20
+        - 30
       x-enum-descriptions:
         - 'Contains cropped and rotated with perspective compensation image of document.
         Single input image can contain multiple document side/pages, which will be returned as separated results.
@@ -46,6 +47,7 @@ components:
         - 'Contains list of document type candidates with their probabilities and descriptions'
         - 'Contains description of determined document type, if any'
         - 'Contains result of document authenticity checks'
+        - 'imageQA descripiton'
       x-enum-varnames:
         - DOCUMENT_IMAGE
         - STATUS
@@ -62,6 +64,8 @@ components:
         - DOCUMENT_TYPE_CANDIDATES
         - DOCUMENT_TYPE
         - AUTHENTICITY
+        - IMAGE_QUALITY
+
 
     ResultItem:
       type: object
@@ -92,6 +96,7 @@ components:
           17: "TextDataResult"
           18: "TextDataResult"
           19: "GraphicsResult"
+          30: "ImagesResult"
           33: "StatusResult"
           36: "TextResult"
           37: "ImagesResult"
