@@ -1,41 +1,10 @@
 openapi: 3.0.3
 components:
   schemas:
-    
-    ImageQualityListResult:
-    title: "ImageQualityCheckList"
-      type: object
-      properties:
-        result:
-          $ref: ./common.yml#/components/schemas/CheckResult'
-        list:
-          type: array
-          items:
-            $ref: '/components/schemas/ImageQualityCheck'
-
-    TmageQualityCheck:
-      type: object
-      properties:
-        _type:
-          $ref: '#/components/schemas/ImageQualityCheckType'
-        result:
-          $ref: './common.yml#/components/schemas/CheckResult'
-        featureType:
-          $ref: './common.yml#/components/schemas/SecurityFeatureType'
-        areas:
-          type: object
-          items:
-            $ref: '#/components/schemas/AreaArray'
-        mean:
-          type: numbers
-        stdDev:
-          type: numbers
-        probability:
-          type: integer
 
     ImageQualityCheckType:
       type: integer
-      description: ""
+      description: ''
       enum:
         - 0
         - 1
@@ -163,7 +132,6 @@ components:
 
     AreaArray:
       type: object
-      description: ""
       properties:
         list:
           type: array
@@ -173,5 +141,37 @@ components:
           type: array
           items:
             $ref: './common.yml#/components/schemas/Point'
+ 
+    ImageQualityCheck:
+      type: object
+      properties:
+        _type:
+          $ref: '#/components/schemas/ImageQualityCheckType'
+        result:
+          $ref: './common.yml#/components/schemas/CheckResult'
+        featureType:
+          $ref: '#/components/schemas/SecurityFeatureType'
+        areas:
+          type: object
+          items:
+            $ref: '#/components/schemas/AreaArray'
+        mean:
+          type: numbers
+        stdDev:
+          type: numbers
+        probability:
+          type: integer
+   
+    ImageQualityListResult:
+      title: 'ImageQualityCheckList'
+      type: object
+      properties:
+        result:
+          description: 'Overall checks status. Root status.'
+          $ref: './common.yml#/components/schemas/CheckResult'
+        list:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImageQualityCheck'
 
-
+    
