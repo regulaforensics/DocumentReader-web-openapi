@@ -2,7 +2,8 @@ openapi: 3.0.3
 components:
   schemas:
     
-    ImageQualityCheckList:
+    ImageQualityListResult:
+    title: "ImageQualityCheckList"
       type: object
       properties:
         result:
@@ -167,10 +168,10 @@ components:
         list:
           type: array
           items:
-            $ref: ./common.yml#/components/schemas/RectangleCoordinates'
+            $ref: './common.yml#/components/schemas/RectangleCoordinates'
         points:
           type: array
           items:
-            $ref: ./common.yml#/components/schemas/Point'
+            $ref: './common.yml#/components/schemas/Point'
 
 

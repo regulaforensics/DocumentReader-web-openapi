@@ -12,6 +12,7 @@ components:
       description: "Describes possible extracted result types from documents"
       enum:
         - 1
+        - 30
         - 33
         - 36
         - 37
@@ -31,6 +32,7 @@ components:
         - 'Contains cropped and rotated with perspective compensation image of document.
         Single input image can contain multiple document side/pages, which will be returned as separated results.
          Most of coordinates in other types defined on that image'
+        - 'Todo add description'
         - 'Contains check statuses with details, grouped by source'
         - 'Contains document textual fields from all sources (mrz, rfid, visual, barcode) with validity and cross-source compare checks'
         - 'Contains images from all document sources (mrz, rfid, visual, barcode)'
@@ -50,6 +52,7 @@ components:
         - 'imageQA descripiton'
       x-enum-varnames:
         - DOCUMENT_IMAGE
+        - IMAGE_QUALITY_LIST
         - STATUS
         - TEXT
         - IMAGES
@@ -114,6 +117,7 @@ components:
           items:
             anyOf:
               - $ref: "#/components/schemas/StatusResult"
+              - $ref: "#/components/schemas/ImageQualityListResult"
               - $ref: "#/components/schemas/TextResult"
               - $ref: "#/components/schemas/DocumentImageResult"
               - $ref: "#/components/schemas/ImagesResult"
@@ -153,3 +157,6 @@ components:
 
     AuthenticityResult:
       $ref: "./rt-authenticity.yml#/components/schemas/AuthenticityResult"
+    
+    ImageQualityListResult:
+      $ref: "./rt-image-quality.yml#/companents/schemas/ImageQualityListResult"
