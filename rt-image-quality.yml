@@ -133,11 +133,11 @@ components:
     AreaArray:
       type: object
       properties:
-        list:
+        _List:
           type: array
           items:
             $ref: './common.yml#/components/schemas/RectangleCoordinates'
-        points:
+        Points:
           type: array
           items:
             $ref: './common.yml#/components/schemas/Point'
@@ -145,33 +145,34 @@ components:
     ImageQualityCheck:
       type: object
       properties:
-        _type:
+        Type:
           $ref: '#/components/schemas/ImageQualityCheckType'
-        result:
+        Result:
           $ref: './common.yml#/components/schemas/CheckResult'
-        featureType:
+        FeatureType:
           $ref: '#/components/schemas/SecurityFeatureType'
-        areas:
+        Areas:
           type: object
           items:
             $ref: '#/components/schemas/AreaArray'
-        mean:
-          type: numbers
-        stdDev:
-          type: numbers
-        probability:
+        Mean:
+          type: number
+        StdDev:
+          type: number
+        Probability:
           type: integer
    
     ImageQualityListResult:
-      title: 'ImageQualityCheckList'
-      type: object
-      properties:
-        result:
-          description: 'Overall checks status. Root status.'
-          $ref: './common.yml#/components/schemas/CheckResult'
-        list:
-          type: array
-          items:
-            $ref: '#/components/schemas/ImageQualityCheck'
+      title: "ImageQualityCheckList"
+      allOf:        
+        - type: object
+          properties:
+            Result:
+              description: 'Overall checks status. Root status.'
+              $ref: './common.yml#/components/schemas/CheckResult'
+            _List:
+              type: array
+              items:
+                $ref: '#/components/schemas/ImageQualityCheck'
 
     
