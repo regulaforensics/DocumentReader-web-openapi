@@ -25,109 +25,6 @@ components:
         - ''
         - ''
         - ''
-        - ''    
-    
-    SecurityFeatureType:
-      type: integer
-      description: ""
-      enum:
-        - 0
-        - 1
-        - 2
-        - 3
-        - 4
-        - 5
-        - 6
-        - 7
-        - 8
-        - 9
-        - 10
-        - 11
-        - 12
-        - 13
-        - 14
-        - 15
-        - 16
-        - 17
-        - 18
-        - 19
-        - 20
-        - 21
-        - 22
-        - 23
-        - 24
-        - 25
-        - 26
-        - 27
-        - 28
-        - 29
-        - 30
-        - 31
-      x-enum-varnames:
-        - 'Blank'
-        - 'Fill'
-        - 'Photo'
-        - 'MRZ'
-        - 'FalseLuminescene'
-        - 'HoloSimple'
-        - 'HoloVerifyStatic'
-        - 'HoloVerifyMultyStatic'
-        - 'HoloVerifyDinamic'
-        - 'PatternNotInterrupted'
-        - 'PatternNotShifted'
-        - 'PatternSameColors'
-        - 'PatternIRInvisible'
-        - 'PhotoSizeCheck'
-        - 'Portrait_Comparison_vsGhost'
-        - 'Portrait_Comparison_vsRFID'
-        - 'Portrait_Comparison_vsVisual'
-        - 'Barcode'
-        - 'Pattern_DifferentLinesThickness'
-        - 'Portrait_Comparison_vsCamera'
-        - 'Portrait_Comparison_RFIDvsCamera'
-        - 'GhostPhoto'
-        - 'ClearGhostPhoto'
-        - 'InvisibleObject'
-        - 'LowContrastObject'
-        - 'Photo_Color'
-        - 'Photo_Shape'
-        - 'Photo_Corners'
-        - 'Document_Cancelling_Detector'
-        - 'Portrait_Comparison_ExtvsVisual'
-        - 'Portrait_Comparison_ExtvsRFID'
-        - 'Portrait_Comparison_ExtvsLive'
-      x-enum-descriptions:
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
         - ''
 
     AreaArray:
@@ -141,7 +38,7 @@ components:
           type: array
           items:
             $ref: './common.yml#/components/schemas/Point'
- 
+
     ImageQualityCheck:
       type: object
       properties:
@@ -150,7 +47,7 @@ components:
         Result:
           $ref: './common.yml#/components/schemas/CheckResult'
         FeatureType:
-          $ref: '#/components/schemas/SecurityFeatureType'
+          $ref: './e-security-feature-type.yml#/components/schemas/SecurityFeatureType'
         Areas:
           type: object
           items:
@@ -161,10 +58,10 @@ components:
           type: number
         Probability:
           type: integer
-   
+
     ImageQualityListResult:
       title: "ImageQualityCheckList"
-      allOf:        
+      allOf:
         - type: object
           properties:
             Result:
