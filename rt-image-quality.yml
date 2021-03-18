@@ -2,6 +2,27 @@ openapi: 3.0.3
 components:
   schemas:
 
+    ImageQualityListResult:
+      title: "ImageQualityChecks"
+      allOf:
+        - type: object
+          properties:
+            ImageQualityCheckList:
+              $ref: '#/components/schemas/ImageQualityChecks'
+        - $ref: './rt.yml#/components/schemas/ResultItem'
+
+
+    ImageQualityChecks:
+      type: object
+      properties:
+        result:
+          description: 'Overall checks status. Root status.'
+          $ref: './common.yml#/components/schemas/CheckResult'
+        List:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImageQualityCheck'
+
     ImageQualityCheckType:
       type: integer
       description: ''
@@ -30,11 +51,17 @@ components:
     AreaArray:
       type: object
       properties:
-        _List:
+        List:
           type: array
           items:
             $ref: './common.yml#/components/schemas/RectangleCoordinates'
         Points:
+          $ref: '#/components/schemas/PointArray'
+
+    PointArray:
+      type: object
+      properties:
+        PointsList:
           type: array
           items:
             $ref: './common.yml#/components/schemas/Point'
@@ -42,34 +69,20 @@ components:
     ImageQualityCheck:
       type: object
       properties:
-        Type:
+        type:
           $ref: '#/components/schemas/ImageQualityCheckType'
-        Result:
+        result:
           $ref: './common.yml#/components/schemas/CheckResult'
-        FeatureType:
+        featureType:
           $ref: './e-security-feature-type.yml#/components/schemas/SecurityFeatureType'
-        Areas:
-          type: object
-          items:
-            $ref: '#/components/schemas/AreaArray'
-        Mean:
+        areas:
+          $ref: '#/components/schemas/AreaArray'
+        mean:
           type: number
-        StdDev:
+          format: float
+        std_dev:
           type: number
-        Probability:
+          format: float
+        probability:
+          # todo 0-1 or 0-100 ?
           type: integer
-
-    ImageQualityListResult:
-      title: "ImageQualityCheckList"
-      allOf:
-        - type: object
-          properties:
-            Result:
-              description: 'Overall checks status. Root status.'
-              $ref: './common.yml#/components/schemas/CheckResult'
-            _List:
-              type: array
-              items:
-                $ref: '#/components/schemas/ImageQualityCheck'
-
-    

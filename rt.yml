@@ -99,7 +99,7 @@ components:
           17: "TextDataResult"
           18: "TextDataResult"
           19: "GraphicsResult"
-          30: "ImagesResult"
+          30: "ImageQualityListResult"
           33: "StatusResult"
           36: "TextResult"
           37: "ImagesResult"
