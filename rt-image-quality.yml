@@ -3,7 +3,6 @@ components:
   schemas:
 
     ImageQualityListResult:
-      title: "ImageQualityChecks"
       allOf:
         - type: object
           required:
