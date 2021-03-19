@@ -3,11 +3,12 @@ components:
   schemas:
 
     ImageQualityListResult:
-      title: "ImageQualityChecks"
       allOf:
         - type: object
+          required:
+            - ImageQualityChecks
           properties:
-            ImageQualityCheckList:
+            ImageQualityChecks:
               $ref: '#/components/schemas/ImageQualityChecks'
         - $ref: './rt.yml#/components/schemas/ResultItem'
 
