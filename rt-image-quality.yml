@@ -6,10 +6,10 @@ components:
       allOf:
         - type: object
           required:
-            - ImageQualityChecks
+            - ImageQualityCheckList
           properties:
-            ImageQualityChecks:
-              $ref: '#/components/schemas/ImageQualityChecks'
+            ImageQualityCheckList:
+              $ref: '#/components/schemas/ImageQualityCheckList'
         - $ref: './rt.yml#/components/schemas/ResultItem'
 
 
