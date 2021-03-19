@@ -3,6 +3,7 @@ components:
   schemas:
 
     ImageQualityListResult:
+      title: "ImageQualityChecks"
       allOf:
         - type: object
           required:
@@ -15,6 +16,9 @@ components:
 
     ImageQualityChecks:
       type: object
+      required:
+        - result
+        - List
       properties:
         result:
           description: 'Overall checks status. Root status.'
