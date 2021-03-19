@@ -13,7 +13,7 @@ components:
         - $ref: './rt.yml#/components/schemas/ResultItem'
 
 
-    ImageQualityChecks:
+    ImageQualityCheckList:
       type: object
       required:
         - result
