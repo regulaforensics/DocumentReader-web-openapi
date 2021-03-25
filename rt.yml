@@ -26,8 +26,6 @@ components:
         - 103
         - 8
         - 9
-        - 20
-        - 30
       x-enum-descriptions:
         - 'Contains cropped and rotated with perspective compensation image of document.
         Single input image can contain multiple document side/pages, which will be returned as separated results.
