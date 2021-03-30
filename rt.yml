@@ -26,6 +26,7 @@ components:
         - 103
         - 8
         - 9
+        - 20
       x-enum-descriptions:
         - 'Contains cropped and rotated with perspective compensation image of document.
         Single input image can contain multiple document side/pages, which will be returned as separated results.
@@ -47,10 +48,9 @@ components:
         - 'Contains list of document type candidates with their probabilities and descriptions'
         - 'Contains description of determined document type, if any'
         - 'Contains result of document authenticity checks'
-        - 'imageQA descripiton'
       x-enum-varnames:
         - DOCUMENT_IMAGE
-        - IMAGE_QUALITY_LIST
+        - IMAGE_QUALITY
         - STATUS
         - TEXT
         - IMAGES
@@ -65,7 +65,6 @@ components:
         - DOCUMENT_TYPE_CANDIDATES
         - DOCUMENT_TYPE
         - AUTHENTICITY
-        - IMAGE_QUALITY
 
 
     ResultItem:
@@ -115,7 +114,6 @@ components:
           items:
             anyOf:
               - $ref: "#/components/schemas/StatusResult"
-              - $ref: "#/components/schemas/ImageQualityListResult"
               - $ref: "#/components/schemas/TextResult"
               - $ref: "#/components/schemas/DocumentImageResult"
               - $ref: "#/components/schemas/ImagesResult"
@@ -125,6 +123,7 @@ components:
               - $ref: "#/components/schemas/GraphicsResult"
               - $ref: "#/components/schemas/LexicalAnalysisResult"
               - $ref: "#/components/schemas/AuthenticityResult"
+              - $ref: "#/components/schemas/ImageQualityListResult"
 
     DocumentImageResult:
       $ref: "./rt-raw-image.yml#/components/schemas/DocumentImageResult"
