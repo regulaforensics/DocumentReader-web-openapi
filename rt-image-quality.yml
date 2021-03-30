@@ -2,7 +2,7 @@ openapi: 3.0.1
 components:
   schemas:
 
-    ImageQualityListResult:
+    ImageQualityResult:
       allOf:
         - type: object
           required:
@@ -20,7 +20,7 @@ components:
         - List
       properties:
         result:
-          description: 'Overall checks status. Root status.'
+          description: 'Overall image quality status, combined from check statuses in the list.'
           $ref: './common.yml#/components/schemas/CheckResult'
         List:
           type: array
@@ -29,7 +29,7 @@ components:
 
     ImageQualityCheckType:
       type: integer
-      description: ''
+      description: 'Image quality check type'
       enum:
         - 0
         - 1
@@ -45,13 +45,13 @@ components:
         - 'Perspective'
         - 'Bounds'
       x-enum-descriptions:
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
-        - ''
-
+        - 'Signals glare presence on the image'
+        - 'Signals whether image is in focus'
+        - 'Signals if image resolution is below threshold'
+        - 'Signals if image is colorless'
+        - 'Signals if document in the image has prespective distortion above threshold'
+        - 'Signals if document is not fully present in the image'
+        
     AreaArray:
       type: object
       properties:
@@ -88,5 +88,4 @@ components:
           type: number
           format: float
         probability:
-          # todo 0-1 or 0-100 ?
           type: integer
