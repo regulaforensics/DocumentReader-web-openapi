@@ -96,7 +96,7 @@ components:
           17: "TextDataResult"
           18: "TextDataResult"
           19: "GraphicsResult"
-          30: "ImageQualityListResult"
+          30: "ImageQualityResult"
           33: "StatusResult"
           36: "TextResult"
           37: "ImagesResult"
@@ -123,7 +123,7 @@ components:
               - $ref: "#/components/schemas/GraphicsResult"
               - $ref: "#/components/schemas/LexicalAnalysisResult"
               - $ref: "#/components/schemas/AuthenticityResult"
-              - $ref: "#/components/schemas/ImageQualityListResult"
+              - $ref: "#/components/schemas/ImageQualityResult"
 
     DocumentImageResult:
       $ref: "./rt-raw-image.yml#/components/schemas/DocumentImageResult"
@@ -154,5 +154,5 @@ components:
     AuthenticityResult:
       $ref: "./rt-authenticity.yml#/components/schemas/AuthenticityResult"
     
-    ImageQualityListResult:
-      $ref: "./rt-image-quality.yml#/components/schemas/ImageQualityListResult"
+    ImageQualityResult:
+      $ref: "./rt-image-quality.yml#/components/schemas/ImageQualityResult"
