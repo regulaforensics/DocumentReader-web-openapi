@@ -9,7 +9,7 @@ components:
         - type: object
           properties:
             ElementType:
-              $ref: './e-security-feature-type.yml#/components/schemas/SecurityFeatureType'
+              $ref: '../e-security-feature-type.yml#/components/schemas/SecurityFeatureType'
             LightIndex:
               $ref: '../common.yml#/components/schemas/Light'
             Area:

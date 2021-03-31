@@ -9,7 +9,7 @@ components:
         - type: object
           properties:
             ElementType:
-              $ref: './e-security-feature-type.yml#/components/schemas/SecurityFeatureType'
+              $ref: '../e-security-feature-type.yml#/components/schemas/SecurityFeatureType'
             ElementRect:
               $ref: '../common.yml#/components/schemas/RectangleCoordinates'
             Visibility:
