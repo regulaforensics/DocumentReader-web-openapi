@@ -1149,9 +1149,9 @@ components:
         - 'Validity date of CA driver’s license'
         - 'Expiration date of CA driver’s license'
         - 'Restrictions for CA driver’s license'
-        - 'ft_Citizenship_Status = 625 description'
-        - 'ft_Military_Service_From = 626 description'
-        - 'ft_Military_Service_To = 627 description'
+        - 'Citizenship Status'
+        - 'Military Service From'
+        - 'Military Service To'
       x-enum-varnames:
         - 'DOCUMENT_CLASS_CODE'
         - 'ISSUING_STATE_CODE'
