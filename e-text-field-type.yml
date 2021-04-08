@@ -575,6 +575,9 @@ components:
         - 622
         - 623
         - 624
+        - 625
+        - 626
+        - 627
       x-enum-descriptions:
         - 'Document class code'
         - 'Issuing country document code in accordance with the standard ISO 3166-1 (ICAO, document 9303)'
@@ -1146,6 +1149,9 @@ components:
         - 'Validity date of CA driver’s license'
         - 'Expiration date of CA driver’s license'
         - 'Restrictions for CA driver’s license'
+        - 'ft_Citizenship_Status = 625 description'
+        - 'ft_Military_Service_From = 626 description'
+        - 'ft_Military_Service_To = 627 description'
       x-enum-varnames:
         - 'DOCUMENT_CLASS_CODE'
         - 'ISSUING_STATE_CODE'
@@ -1717,3 +1723,6 @@ components:
         - 'DL_CLASS_CODE_CA_FROM'
         - 'DL_CLASS_CODE_CA_TO'
         - 'DL_CLASS_CODE_CA_NOTES'
+        - 'CITIZENSHIP_STATUS'
+        - 'MILITARY_SERVICE_FROM'
+        - 'MILITARY_SERVICE_TO'
