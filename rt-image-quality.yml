@@ -60,7 +60,9 @@ components:
           items:
             $ref: './common.yml#/components/schemas/RectangleCoordinates'
         Points:
-          $ref: '#/components/schemas/PointArray'
+          type: array
+          items:
+            $ref: '#/components/schemas/PointArray'
 
     PointArray:
       type: object
