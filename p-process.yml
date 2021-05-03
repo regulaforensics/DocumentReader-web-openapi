@@ -284,12 +284,18 @@ components:
     LogLevel:
       type: string
       enum:
-        - FATAL_ERROR
-        - ERROR
-        - WARNING
-        - INFO
-        - DEBUG
-
+        - FatalError
+        - Error
+        - Warning
+        - Info
+        - Debug
+      x-enum-varnames:
+        - 'FATAL_ERROR'
+        - 'ERROR'
+        - 'WARNING'
+        - 'INFO'
+        - 'DEBUG'        
+        
     ImageQA:
       type: object
       properties:
