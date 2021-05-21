@@ -288,8 +288,30 @@ components:
           description: "This option allows returning input images in output if enabled."
           type: boolean
           # default false
+        mrzFormatsFilter:
+          description: "This option allows limiting MRZ formats to be recognized by specifying them in array."
+          type: array
+          items:
+            $ref: '#/components/schemas/MRZFormat'
       required:
         - scenario
+
+    MRZFormat:
+      type: string
+      enum:
+        - '1x30'
+        - '3x30'
+        - '2x36'
+        - '2x44'
+        - '1x6'
+        - '2x30'
+      x-enum-varnames:
+        - 'IDL'
+        - 'ID1'
+        - 'ID2'
+        - 'ID3'
+        - 'CAN'
+        - 'ID1_2_30'
 
     MeasureSystem:
       type: integer
