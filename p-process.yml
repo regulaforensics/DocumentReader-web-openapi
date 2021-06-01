@@ -348,12 +348,12 @@ components:
           description: "This parameter sets threshold for Image QA check of the presented document physical dpi. If
           actual document dpi is below this threshold, check will fail."
           type: integer
-          default: 150
+          # default: 150
         angleThreshold:
           description: "This parameter sets threshold for Image QA check of the presented document perspective angle in
           degrees. If actual document perspective angle is above this threshold, check will fail."
           type: integer
-          default: 5
+          # default: 5
 
     ProcessRequestImage:
       type: object
@@ -367,7 +367,7 @@ components:
         page_idx:
           description: "page/image number"
           type: integer
-          default: 0
+          # default: 0
       example:
         light: 6
         page_idx: 0
