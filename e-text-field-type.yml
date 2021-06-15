@@ -38,6 +38,7 @@ components:
         - 30
         - 31
         - 35
+        - 36
         - 37
         - 38
         - 39
@@ -612,6 +613,7 @@ components:
         - 'Visa class'
         - 'Visa subclass'
         - 'MRZ type'
+        - 'Optional data'
         - 'Full name of the document class'
         - 'Full name of issuing state'
         - 'Place of document issue'
@@ -1186,6 +1188,7 @@ components:
         - 'VISA_CLASS'
         - 'VISA_SUBCLASS'
         - 'MRZ_TYPE'
+        - 'OPTIONAL_DATA'
         - 'DOCUMENT_CLASS_NAME'
         - 'ISSUING_STATE_NAME'
         - 'PLACE_OF_ISSUE'
