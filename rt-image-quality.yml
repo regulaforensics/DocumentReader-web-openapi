@@ -38,6 +38,8 @@ components:
         - 3
         - 4
         - 5
+        - 6
+        - 7
       x-enum-varnames:
         - 'ImageGlares'
         - 'ImageFocus'
@@ -45,6 +47,8 @@ components:
         - 'ImageColorness'
         - 'Perspective'
         - 'Bounds'
+        - 'ScreenCapture'
+        - 'Portrait'
       x-enum-descriptions:
         - 'Signals glare presence on the image'
         - 'Signals whether image is in focus'
@@ -52,7 +56,9 @@ components:
         - 'Signals if image is colorless'
         - 'Signals if document in the image has prespective distortion above threshold'
         - 'Signals if document is not fully present in the image'
-        
+        - 'Signals if an image is captured from screen'
+        - 'Signals if the portrait is present'
+
     AreaArray:
       type: object
       properties:
