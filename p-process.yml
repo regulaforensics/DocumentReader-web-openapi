@@ -293,6 +293,13 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/MRZFormat'
+        forceReadMrzBeforeLocate:
+          description: "This option can be set to true to make sure
+          that in series processing MRZ is located fully inside the result document image, if present on the document.
+          Enabling this option may add extra processing time, by disabling optimizations,
+          but allows more stability in output image quality."
+          type: boolean
+          # default false
       required:
         - scenario
 
