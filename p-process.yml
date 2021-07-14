@@ -409,7 +409,7 @@ components:
           description: "Free-form object provided in request. See passBackObject property of ProcessRequest."
           additionalProperties: true
         morePagesAvailable:
-          type: number
+          type: integer
 
     ProcessingStatus:
       type: integer
