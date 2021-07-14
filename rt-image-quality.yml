@@ -1,0 +1,100 @@
+openapi: 3.0.1
+components:
+  schemas:
+
+    ImageQualityResult:
+      title: "Image Quality Checks"
+      allOf:
+        - type: object
+          required:
+            - ImageQualityCheckList
+          properties:
+            ImageQualityCheckList:
+              $ref: '#/components/schemas/ImageQualityCheckList'
+        - $ref: './rt.yml#/components/schemas/ResultItem'
+
+
+    ImageQualityCheckList:
+      type: object
+      required:
+        - result
+        - List
+      properties:
+        result:
+          description: 'Overall image quality status, combined from check statuses in the list.'
+          $ref: './common.yml#/components/schemas/CheckResult'
+        List:
+          type: array
+          items:
+            $ref: '#/components/schemas/ImageQualityCheck'
+
+    ImageQualityCheckType:
+      type: integer
+      description: 'Image quality check type'
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+      x-enum-varnames:
+        - 'ImageGlares'
+        - 'ImageFocus'
+        - 'ImageResolution'
+        - 'ImageColorness'
+        - 'Perspective'
+        - 'Bounds'
+        - 'ScreenCapture'
+        - 'Portrait'
+      x-enum-descriptions:
+        - 'Signals glare presence on the image'
+        - 'Signals whether image is in focus'
+        - 'Signals if image resolution is below threshold'
+        - 'Signals if image is colorless'
+        - 'Signals if document in the image has prespective distortion above threshold'
+        - 'Signals if document is not fully present in the image'
+        - 'Signals if an image is captured from screen'
+        - 'Signals if the portrait is present'
+
+    AreaArray:
+      type: object
+      properties:
+        List:
+          type: array
+          items:
+            $ref: './common.yml#/components/schemas/RectangleCoordinates'
+        Points:
+          type: array
+          items:
+            $ref: '#/components/schemas/PointArray'
+
+    PointArray:
+      type: object
+      properties:
+        PointsList:
+          type: array
+          items:
+            $ref: './common.yml#/components/schemas/Point'
+
+    ImageQualityCheck:
+      type: object
+      properties:
+        type:
+          $ref: '#/components/schemas/ImageQualityCheckType'
+        result:
+          $ref: './common.yml#/components/schemas/CheckResult'
+        featureType:
+          $ref: './e-security-feature-type.yml#/components/schemas/SecurityFeatureType'
+        areas:
+          $ref: '#/components/schemas/AreaArray'
+        mean:
+          type: number
+          format: float
+        std_dev:
+          type: number
+          format: float
+        probability:
+          type: integer

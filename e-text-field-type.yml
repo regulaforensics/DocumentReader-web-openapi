@@ -38,6 +38,7 @@ components:
         - 30
         - 31
         - 35
+        - 36
         - 37
         - 38
         - 39
@@ -575,6 +576,9 @@ components:
         - 622
         - 623
         - 624
+        - 625
+        - 626
+        - 627
       x-enum-descriptions:
         - 'Document class code'
         - 'Issuing country document code in accordance with the standard ISO 3166-1 (ICAO, document 9303)'
@@ -609,6 +613,7 @@ components:
         - 'Visa class'
         - 'Visa subclass'
         - 'MRZ type'
+        - 'Optional data'
         - 'Full name of the document class'
         - 'Full name of issuing state'
         - 'Place of document issue'
@@ -1146,6 +1151,9 @@ components:
         - 'Validity date of CA driver’s license'
         - 'Expiration date of CA driver’s license'
         - 'Restrictions for CA driver’s license'
+        - 'Citizenship Status'
+        - 'Military Service From'
+        - 'Military Service To'
       x-enum-varnames:
         - 'DOCUMENT_CLASS_CODE'
         - 'ISSUING_STATE_CODE'
@@ -1180,6 +1188,7 @@ components:
         - 'VISA_CLASS'
         - 'VISA_SUBCLASS'
         - 'MRZ_TYPE'
+        - 'OPTIONAL_DATA'
         - 'DOCUMENT_CLASS_NAME'
         - 'ISSUING_STATE_NAME'
         - 'PLACE_OF_ISSUE'
@@ -1717,3 +1726,6 @@ components:
         - 'DL_CLASS_CODE_CA_FROM'
         - 'DL_CLASS_CODE_CA_TO'
         - 'DL_CLASS_CODE_CA_NOTES'
+        - 'CITIZENSHIP_STATUS'
+        - 'MILITARY_SERVICE_FROM'
+        - 'MILITARY_SERVICE_TO'

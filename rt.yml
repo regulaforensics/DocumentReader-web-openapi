@@ -12,6 +12,7 @@ components:
       description: "Describes possible extracted result types from documents"
       enum:
         - 1
+        - 30
         - 33
         - 36
         - 37
@@ -30,6 +31,7 @@ components:
         - 'Contains cropped and rotated with perspective compensation image of document.
         Single input image can contain multiple document side/pages, which will be returned as separated results.
          Most of coordinates in other types defined on that image'
+        - 'Contains image quality check results'
         - 'Contains check statuses with details, grouped by source'
         - 'Contains document textual fields from all sources (mrz, rfid, visual, barcode) with validity and cross-source compare checks'
         - 'Contains images from all document sources (mrz, rfid, visual, barcode)'
@@ -48,6 +50,7 @@ components:
         - 'Contains result of document authenticity checks'
       x-enum-varnames:
         - DOCUMENT_IMAGE
+        - IMAGE_QUALITY
         - STATUS
         - TEXT
         - IMAGES
@@ -62,6 +65,7 @@ components:
         - DOCUMENT_TYPE_CANDIDATES
         - DOCUMENT_TYPE
         - AUTHENTICITY
+
 
     ResultItem:
       type: object
@@ -92,6 +96,7 @@ components:
           17: "TextDataResult"
           18: "TextDataResult"
           19: "GraphicsResult"
+          30: "ImageQualityResult"
           33: "StatusResult"
           36: "TextResult"
           37: "ImagesResult"
@@ -118,6 +123,7 @@ components:
               - $ref: "#/components/schemas/GraphicsResult"
               - $ref: "#/components/schemas/LexicalAnalysisResult"
               - $ref: "#/components/schemas/AuthenticityResult"
+              - $ref: "#/components/schemas/ImageQualityResult"
 
     DocumentImageResult:
       $ref: "./rt-raw-image.yml#/components/schemas/DocumentImageResult"
@@ -142,9 +148,11 @@ components:
 
     DocumentTypesCandidatesResult:
       $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentTypesCandidatesResult"
-
     ChosenDocumentTypeResult:
       $ref: "./rt-doc-type-old.yml#/components/schemas/ChosenDocumentTypeResult"
 
     AuthenticityResult:
       $ref: "./rt-authenticity.yml#/components/schemas/AuthenticityResult"
+    
+    ImageQualityResult:
+      $ref: "./rt-image-quality.yml#/components/schemas/ImageQualityResult"

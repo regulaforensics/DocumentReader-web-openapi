@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  version: 5.5.0
+  version: 5.6.0
   title: Regula Document Reader Web API
   x-logo:
     url: 'https://regulaforensics.com/bitrix/media/img/elements/logo.png'
@@ -15,12 +15,13 @@ info:
     * [C#](https://github.com/regulaforensics/DocumentReader-web-csharp-client) client for .NET & .NET Core
 
 servers:
+  - url: https://api.regulaforensics.com/
+    description: Latest stable Regula Document Reader demo endpoint
+  - url: https://test-api.regulaforensics.com/
+    description: Nightly Regula document reader demo endpoint
   - url: http://localhost:8080/
     description: Local on-premise installation
-  - url: https://api.regulaforensics.com/
-    description: Regula document reader SaaS
-  - url: https://test-api.regulaforensics.com/
-    description: Regula document reader test SaaS
+
 
 
 paths:

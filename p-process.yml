@@ -174,6 +174,13 @@ components:
           that have meaningful information on both pages, like Russian domestic passport, or some others.
           By default is set to false."
           type: boolean
+          # default false
+        generateDoublePageSpreadImage:
+          description: 'When enabled together with "doublePageSpread" and there is a passport with two pages
+          spread in the image, pages will be cropped, straightened and aligned together, as if the document was captured
+          on a flatbed scanner.'
+          type: boolean
+          # default false
         fieldTypesFilter:
           description: "List of text field types to extract. If empty, all text fields from template will be extracted.
           Narrowing the list can shorten processing time. By default is empty."
@@ -199,6 +206,7 @@ components:
           already cropped document by its edges. This was designed to process on the
           server side images captured and cropped on mobile. By default is set to false."
           type: boolean
+          # default false
         customParams:
           description: "This option allows to pass custom processing parameters that can be implemented in future without
           changing API."
@@ -207,6 +215,11 @@ components:
         log:
           description: "This option can be set to true if you need to get base64 string of transaction processing log."
           type: boolean
+          # default log
+        logLevel:
+          description: "When used together with 'log' parameter enabled, sets the level of logs detalization."
+          $ref: "#/components/schemas/LogLevel"
+          # default: "INFO"
         forceDocID:
           description: "Force use of specific template ID and skip document type identification step."
           type: integer
@@ -216,34 +229,89 @@ components:
           to match the mask and provide a correctly formatted value, making assumptions based on the provided field mask
           in the template."
           type: boolean
-          default: true
+          # default: true
         fastDocDetect:
           description: "When enabled, shorten the list of candidates to process during document detection in a
           single image process mode. Reduces processing time for specific backgrounds."
           type: boolean
-          default: true
+          # default: true
         updateOCRValidityByGlare:
           description: "When enabled, fail OCR field validity, if there is a glare over the text field on the image."
           type: boolean
-          default: false
-        generateDoublePageSpreadImage:
-          description: 'When enabled together with "doublePageSpread" and there is a passport with two pages
-          spread in the image, pages will be cropped, straightened and aligned together, as if the document was captured
-          on a flatbed scanner.'
-          type: boolean
+          # default: false
         checkRequiredTextFields:
           description: 'When enabled, each field in template will be checked for value presence and if the field
           is marked as required, but has no value, it will have "error" in validity status.'
           type: boolean
-          default: false
+          # default: false
         returnCroppedBarcode:
           description: 'When enabled, returns cropped barcode images for unknown documents'
           type: boolean
-          default: false
+          # default: false
         imageQA:
           $ref: '#/components/schemas/ImageQA'
+        forceDocFormat:
+          description: "Force use of specified document format when locating
+          and recognizing document to reduce the number of candidates."
+          $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentFormat"
+        noGraphics:
+          description: "When enabled no graphic fields will be cropped from document image."
+          type: boolean
+          # default: false
+        documentAreaMin:
+          description: "Specifies minimal area of the image
+          that document should cover to be treated as candidate when locating.
+          Value should be in range from 0 to 1, where 1 is when document should fully cover the image."
+          type: number
+          format: float
+          # default: 0
+        depersonalizeLog:
+          description: "When enabled all personal data will be forcibly removed from the logs."
+          type: boolean
+          # default: false
+        multiDocOnImage:
+          description: "This option allows locating and cropping multiple documents from one image if enabled."
+          type: boolean
+          # default false
+        shiftExpiryDate:
+          description: "This option allows shifting the date of expiry into the future or past for number of months specified.
+          This is useful, for example, in some cases when document might be still valid for some period
+          after original expiration date to prevent negative validity status for such documents.
+          Or by shifting the date to the past will set negative validity for the documents
+          that is about to expire in a specified number of months."
+          type: integer
+        minimalHolderAge:
+          description: "This options allows specifying the minimal age in years of the document holder
+          for the document to be considered valid."
+          type: integer
+        returnUncroppedImage:
+          description: "This option allows returning input images in output if enabled."
+          type: boolean
+          # default false
+        mrzFormatsFilter:
+          description: "This option allows limiting MRZ formats to be recognized by specifying them in array."
+          type: array
+          items:
+            $ref: '#/components/schemas/MRZFormat'
       required:
         - scenario
+
+    MRZFormat:
+      type: string
+      enum:
+        - '1x30'
+        - '3x30'
+        - '2x36'
+        - '2x44'
+        - '1x6'
+        - '2x30'
+      x-enum-varnames:
+        - 'IDL'
+        - 'ID1'
+        - 'ID2'
+        - 'ID3'
+        - 'CAN'
+        - 'ID1_2_30'
 
     MeasureSystem:
       type: integer
@@ -258,6 +326,21 @@ components:
         - 'METRIC'
         - 'IMPERIAL'
 
+    LogLevel:
+      type: string
+      enum:
+        - FatalError
+        - Error
+        - Warning
+        - Info
+        - Debug
+      x-enum-varnames:
+        - 'FATAL_ERROR'
+        - 'ERROR'
+        - 'WARNING'
+        - 'INFO'
+        - 'DEBUG'        
+        
     ImageQA:
       type: object
       properties:
@@ -265,12 +348,12 @@ components:
           description: "This parameter sets threshold for Image QA check of the presented document physical dpi. If
           actual document dpi is below this threshold, check will fail."
           type: integer
-          default: 150
+          # default: 150
         angleThreshold:
           description: "This parameter sets threshold for Image QA check of the presented document perspective angle in
           degrees. If actual document perspective angle is above this threshold, check will fail."
           type: integer
-          default: 5
+          # default: 5
 
     ProcessRequestImage:
       type: object
@@ -284,7 +367,7 @@ components:
         page_idx:
           description: "page/image number"
           type: integer
-          default: 0
+          # default: 0
       example:
         light: 6
         page_idx: 0
@@ -324,7 +407,7 @@ components:
         passBackObject:
           type: object
           description: "Free-form object provided in request. See passBackObject property of ProcessRequest."
-          additionalProperties: { }
+          additionalProperties: true
         morePagesAvailable:
           type: number
 
