@@ -20,7 +20,21 @@
 * **rt - \*.yml** - files describing results types
 * **p - \*.yml** - files describing endpoints
 
-##  Scheme validation
+
+## Updating clients according to the current spec
+
+To update clients, use `update clients` GitHub action. Specify title PR and press run. For each client **PR** with changes will be created.
+
+:warning: NOTE: Static typed clients, such as Java or C#, require adding all new **enums** to `update-models.sh` ENUM_MAPPINGS section.
+
+:warning: NOTE: For some clients generator produces not-valid client code. See `update-models.sh` for ad-hocks fixing generator issues.   
+
+:warning: NOTE: Do **not edit** generated code. Create wrappers, decorators, etc in ext folder.
+
+:bulb: All clients have RawResultItem container that is used for deserialization for undescribed types. This container is a simple map/dict. 
+
+
+##  Spec validation
 ```
 docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli validate --recommend -i /local/index.yml 
 ```
