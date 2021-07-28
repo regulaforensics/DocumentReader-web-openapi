@@ -4,7 +4,7 @@ components:
 
     DocumentPositionResult:
       title: "Document Position"
-      description: "Contains information about document position, angle, etc"
+      description: "Contains information about document position on the input image, its center, angle, etc"
       allOf:
         - type: object
           properties:
