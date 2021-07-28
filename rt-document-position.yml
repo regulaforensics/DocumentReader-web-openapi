@@ -1,0 +1,37 @@
+openapi: 3.0.3
+components:
+  schemas:
+
+    DocumentPositionResult:
+      title: "Document Position"
+      description: "Contains information about document position, angle, etc"
+      allOf:
+        - type: object
+          properties:
+            DocumentPosition:
+              $ref: "#/components/schemas/DocumentPosition"
+        - $ref: './rt.yml#/components/schemas/ResultItem'
+
+    DocumentPosition:
+      type: object
+      properties:
+        docFormat:
+          $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentFormat"
+        Angle:
+          type: number
+        Width:
+          type: integer
+        Height:
+          type: integer
+        Center:
+          $ref: './common.yml#/components/schemas/Point'
+        LeftBottom:
+          $ref: './common.yml#/components/schemas/Point'
+        LeftTop:
+          $ref: './common.yml#/components/schemas/Point'
+        RightBottom:
+          $ref: './common.yml#/components/schemas/Point'
+        RightTop:
+          $ref: './common.yml#/components/schemas/Point'
+        Dpi:
+          type: integer

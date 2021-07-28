@@ -100,6 +100,7 @@ components:
           33: "StatusResult"
           36: "TextResult"
           37: "ImagesResult"
+          85: "DocumentPositionResult"
           102: "TextDataResult"
           103: "GraphicsResult"
 
@@ -124,6 +125,10 @@ components:
               - $ref: "#/components/schemas/LexicalAnalysisResult"
               - $ref: "#/components/schemas/AuthenticityResult"
               - $ref: "#/components/schemas/ImageQualityResult"
+              - $ref: "#/components/schemas/DocumentPositionResult"
+
+    DocumentPositionResult:
+      $ref: "./rt-document-position.yml#/components/schemas/DocumentPositionResult"
 
     DocumentImageResult:
       $ref: "./rt-raw-image.yml#/components/schemas/DocumentImageResult"
@@ -153,6 +158,6 @@ components:
 
     AuthenticityResult:
       $ref: "./rt-authenticity.yml#/components/schemas/AuthenticityResult"
-    
+
     ImageQualityResult:
       $ref: "./rt-image-quality.yml#/components/schemas/ImageQualityResult"
