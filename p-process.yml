@@ -382,19 +382,19 @@ components:
           degrees. If actual document perspective angle is above this threshold, check will fail."
           type: integer
           # default: 5
-        disableFocusCheck:
+        focusCheck:
           description: "This option disabled focus check during performing image quality validation"
           type: boolean
-          # default: false
-        disableGlaresCheck:
+          # default: true
+        glaresCheck:
           description: "This option disabled glares check during performing image quality validation"
           type: boolean
-          # default: false
-        disableColornessCheck:
+          # default: true
+        colornessCheck:
           description: "This option disabled colorness check during performing image quality validation"
           type: boolean
           # default: false
-        disableMoireCheck:
+        moireCheck:
           description: "This option disabled moire patterns check during performing image quality validation"
           type: boolean
           # default: false
