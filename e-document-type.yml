@@ -232,6 +232,8 @@ components:
         - 236
         - 237
         - 238
+        - 239
+        - 240
       x-enum-varnames:
         - "NOT_DEFINED"
         - "PASSPORT"
@@ -459,3 +461,5 @@ components:
         - "INTERIM_INSTRUCTIONAL_PERMIT"
         - "CERTIFICATE_OF_COMPETENCY"
         - "CERTIFICATE_OF_PROFICIENCY"
+        - "TRADE_LICENSE"
+        - "PASSPORT_PAGE"
