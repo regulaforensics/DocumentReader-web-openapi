@@ -306,6 +306,10 @@ components:
           but allows more stability in output image quality."
           type: boolean
           # default false
+        parseBarcodes:
+          description: "This option can be set to false to stop parsing after barcode is read."
+          type: boolean
+          # default true
       required:
         - scenario
 
