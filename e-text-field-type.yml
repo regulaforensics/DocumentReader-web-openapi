@@ -579,6 +579,20 @@ components:
         - 625
         - 626
         - 627
+        - 628
+        - 629
+        - 630
+        - 631
+        - 632
+        - 633
+        - 634
+        - 635
+        - 636
+        - 637
+        - 638
+        - 639
+        - 640
+        - 641
       x-enum-descriptions:
         - 'Document class code'
         - 'Issuing country document code in accordance with the standard ISO 3166-1 (ICAO, document 9303)'
@@ -1154,6 +1168,20 @@ components:
         - 'Citizenship Status'
         - 'Military Service From'
         - 'Military Service To'
+        - 'Validity date of NT driver’s license'
+        - 'Expiration date of NT driver’s license'
+        - 'Restrictions for NT driver’s license'
+        - 'Validity date of TN driver’s license'
+        - 'Expiration date of TN driver’s license'
+        - 'Restrictions for TN driver’s license'
+        - 'Validity date of D3 driver’s license'
+        - 'Expiration date of D3 driver’s license'
+        - 'Restrictions for D3 driver’s license'
+        - 'Alt Date of expire'
+        - 'Validity date of CD driver’s license'
+        - 'Expiration date of CD driver’s license'
+        - 'Restrictions for CD driver’s license'
+        - 'Issuer identification number'
       x-enum-varnames:
         - 'DOCUMENT_CLASS_CODE'
         - 'ISSUING_STATE_CODE'
@@ -1729,3 +1757,17 @@ components:
         - 'CITIZENSHIP_STATUS'
         - 'MILITARY_SERVICE_FROM'
         - 'MILITARY_SERVICE_TO'
+        - 'DL_CLASS_CODE_NT_FROM'
+        - 'DL_CLASS_CODE_NT_TO'
+        - 'DL_CLASS_CODE_NT_NOTES'
+        - 'DL_CLASS_CODE_TN_FROM'
+        - 'DL_CLASS_CODE_TN_TO'
+        - 'DL_CLASS_CODE_TN_NOTES'
+        - 'DL_CLASS_CODE_D3_FROM'
+        - 'DL_CLASS_CODE_D3_TO'
+        - 'DL_CLASS_CODE_D3_NOTES'
+        - 'ALT_DATE_OF_EXPIRE'
+        - 'DL_CLASS_CODE_CD_FROM'
+        - 'DL_CLASS_CODE_CD_TO'
+        - 'DL_CLASS_CODE_CD_NOTES'
+        - 'ISSUER_IDENTIFICATION_NUMBER'
