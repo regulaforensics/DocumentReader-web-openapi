@@ -310,6 +310,9 @@ components:
           description: "This option can be set to false to stop parsing after barcode is read."
           type: boolean
           # default true
+        convertCase:
+          description: "This option allows output text case transformation. No changes applied by default to original values."
+          $ref: "#/components/schemas/TextPostProcessing"
       required:
         - scenario
 
@@ -329,6 +332,19 @@ components:
         - 'ID3'
         - 'CAN'
         - 'ID1_2_30'
+
+    TextPostProcessing:
+      type: integer
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+      x-enum-varnames:
+        - 'NO_CHANGE'
+        - 'UPPERCASE'
+        - 'LOWERCASE'
+        - 'CAPITAL'
 
     MeasureSystem:
       type: integer
