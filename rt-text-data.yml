@@ -3,8 +3,7 @@ components:
   schemas:
 
     TextDataResult:
-      title: "Text Data (deprecated)"
-      deprecated: true
+      title: "Text Data (legacy)"
       description: "Text fields extracted from one document source.
       Contains results of specific source for each provided page."
       allOf:
