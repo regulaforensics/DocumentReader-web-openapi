@@ -3,7 +3,7 @@ components:
   schemas:
 
     GraphicsResult:
-      title: "Graphics (deprecated)"
+      title: "Graphics (legacy)"
       description: "Graphic fields extracted from one of the document sources.
       Returns separate results for each provided page."
       required:
