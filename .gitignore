@@ -1,2 +1,5 @@
 .idea
 document-reader-static-doc.html
+/.openapi-generator/VERSION
+/.openapi-generator/FILES
+/openapi.json

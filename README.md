@@ -52,3 +52,8 @@ npx redoc-cli bundle "$PWD/index.yml" --output document-reader-static-doc.html \
 --options.theme.colors.primary.main="#8a53cb" --options.expandResponses="all" \
 --options.expandSingleSchemaField --options.hideDownloadButton --options.jsonSampleExpandLevel="6"
 ```
+
+## Bundle scheme to single .json file
+```bash
+npx openapi-generator-cli generate -i index.yml  -g openapi  --skip-validate-spec
+```
