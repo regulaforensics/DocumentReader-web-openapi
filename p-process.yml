@@ -254,7 +254,7 @@ components:
           description: 'When enabled, returns cropped barcode images for unknown documents'
           type: boolean
           # default: false
-        imageQA:
+        imageQa:
           $ref: '#/components/schemas/ImageQA'
         forceDocFormat:
           description: "Force use of specified document format when locating
