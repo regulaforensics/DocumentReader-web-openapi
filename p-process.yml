@@ -403,19 +403,19 @@ components:
           type: integer
           # default: 5
         focusCheck:
-          description: "This option disabled focus check during performing image quality validation"
+          description: "This option enables focus check while performing image quality validation."
           type: boolean
-          # default: true
+          # default: false
         glaresCheck:
-          description: "This option disabled glares check during performing image quality validation"
+          description: "This option enables glares check while performing image quality validation."
           type: boolean
           # default: true
         colornessCheck:
-          description: "This option disabled colorness check during performing image quality validation"
+          description: "This option enables colorness check while performing image quality validation."
           type: boolean
           # default: false
         moireCheck:
-          description: "This option disabled moire patterns check during performing image quality validation"
+          description: "TThis option enables moire patterns check while performing image quality validation."
           type: boolean
           # default: false
 
