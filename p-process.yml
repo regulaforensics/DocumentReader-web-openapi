@@ -415,7 +415,7 @@ components:
           type: boolean
           # default: false
         moireCheck:
-          description: "TThis option enables moire patterns check while performing image quality validation."
+          description: "This option enables moire patterns check while performing image quality validation."
           type: boolean
           # default: false
 
