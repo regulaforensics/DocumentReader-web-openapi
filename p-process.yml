@@ -141,6 +141,9 @@ components:
     ProcessRequest:
       type: object
       properties:
+        tag:
+          type: string
+          description: "session id"
         processParam:
           $ref: '#/components/schemas/ProcessParams'
         List:
