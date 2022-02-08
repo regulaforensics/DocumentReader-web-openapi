@@ -147,6 +147,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ProcessRequestImage'
+        ContainerList:
+          $ref: '#/components/schemas/ProcessRequestContainerList'
         systemInfo:
           $ref: '#/components/schemas/ProcessSystemInfo'
         passBackObject:
@@ -156,7 +158,6 @@ components:
           additionalProperties: true
       required:
         - processParam
-        - List
 
     ProcessParams:
       type: object
@@ -506,3 +507,71 @@ components:
         "DateTime": "2020-05-27T08:17:03.247Z"
         "TransactionID": "dc5eb444-ad6e-4ebc-8102-d62d5bb56a4e"
         "UserName": "user"
+
+    ContainerRequestEnum:
+      type: integer
+      description: "ContainerList request items"
+      enum:
+        - 50
+        - 49
+      x-enum-descriptions:
+        - 'Contains license'
+        - 'Contains encrypted ResultContainerList'
+      x-enum-varnames:
+        - LICENSE
+        - ENCRYPTED_RCL
+
+    ContainerRequestItem:
+      type: object
+      required:
+        - result_type
+      properties:
+        buf_length:
+          type: integer
+          description: "length of input data"
+          example: 1234
+        light:
+          $ref: './common.yml#/components/schemas/Light'
+        list_idx:
+          type: integer
+        page_idx:
+          type: integer
+        result_type:
+          $ref: "#/components/schemas/ContainerRequestEnum"
+      discriminator:
+        propertyName: result_type
+        mapping:
+          50: "License"
+          49: "EncryptedRCL"
+
+    ProcessRequestContainerList:
+      type: object
+      description: "Process request as ContainerList"
+      required:
+        - Count
+        - List
+      properties:
+        Count:
+          type: number
+          description: "Length of list"
+        List:
+          type: array
+          items:
+              $ref: '#/components/schemas/ContainerRequestItem'
+          description: "List of input properties such as License and EncryptedRCL"
+      example:
+        Count: 2
+        List:
+          - License: "<base64 image>"
+            buf_length: 1372
+            light: 0
+            list_idx: 0
+            page_idx: 0
+            result_type: 50
+          - EncryptedRCL: "<base64 image>"
+            buf_length: 453276
+            light: 0
+            list_idx: 0
+            page_idx: 0
+            result_type: 49
+
