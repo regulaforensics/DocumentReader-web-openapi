@@ -147,7 +147,7 @@ components:
     StatusResult:
       $ref: "./rt-status.yml#/components/schemas/StatusResult"
 
-    T1`tResult:
+    TextResult:
       $ref: "./rt-text.yml#/components/schemas/TextResult"
 
     ImagesResult:
@@ -172,3 +172,9 @@ components:
 
     ImageQualityResult:
       $ref: "./rt-image-quality.yml#/components/schemas/ImageQualityResult"
+
+    License:
+      $ref: "./common.yml#/components/schemas/License"
+
+    EncryptedRCL:
+      $ref: "./common.yml#/components/schemas/EncryptedRCL"

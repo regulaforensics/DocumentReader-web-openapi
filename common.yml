@@ -174,3 +174,15 @@ components:
           type: integer
         y:
           type: integer
+
+    License:
+      description: "Base64 encoded data"
+      type: string
+      format: byte
+      example: "Base64 encoded data"
+
+    EncryptedRCL:
+      description: "Base64 encoded data"
+      type: string
+      format: byte
+      example: "Base64 encoded data"

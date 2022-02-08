@@ -541,8 +541,9 @@ components:
       discriminator:
         propertyName: result_type
         mapping:
-          50: "License"
-          49: "EncryptedRCL"
+          50: './rt.yml#/components/schemas/License'
+          49: './rt.yml#/components/schemas/EncryptedRCL'
+
 
     ProcessRequestContainerList:
       type: object
