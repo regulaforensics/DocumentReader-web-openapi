@@ -21,7 +21,58 @@ jobs:
         with:
           repository: 'regulaforensics/DocumentReader-web-python-client'
           path: 'python-client'
-      - name: Verify update client
+      - name: Verify update Python client
         working-directory: python-client
+        run: |
+          ./update-models.sh
+
+  verify-csharp:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Specification Repo
+        uses: actions/checkout@v2
+        with:
+          path: 'DocumentReader-web-openapi'
+      - name: Checkout CSharp Client Repo
+        uses: actions/checkout@v2
+        with:
+          repository: 'regulaforensics/DocumentReader-web-csharp-client'
+          path: 'csharp-client'
+      - name: Verify update CSharp client
+        working-directory: csharp-client
+        run: |
+          ./update-models.sh
+
+  verify-js:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Specification Repo
+        uses: actions/checkout@v2
+        with:
+          path: 'DocumentReader-web-openapi'
+      - name: Checkout JS Client Repo
+        uses: actions/checkout@v2
+        with:
+          repository: 'regulaforensics/DocumentReader-web-js-client'
+          path: 'js-client'
+      - name: Verify update JS client
+        working-directory: js-client
+        run: |
+          ./update-models.sh
+
+  verify-java:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Specification Repo
+        uses: actions/checkout@v2
+        with:
+          path: 'DocumentReader-web-openapi'
+      - name: Checkout Java Client Repo
+        uses: actions/checkout@v2
+        with:
+          repository: 'regulaforensics/DocumentReader-web-java-client'
+          path: 'java-client'
+      - name: Verify update Java client
+        working-directory: java-client
         run: |
           ./update-models.sh

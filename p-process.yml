@@ -465,7 +465,7 @@ components:
         ProcessingFinished:
           $ref: "#/components/schemas/ProcessingStatus"
         ContainerList:
-          $ref: "to broke specification" # "./rt.yml#/components/schemas/ContainerList"
+          $ref: "./rt.yml#/components/schemas/ContainerList"
         TransactionInfo:
           $ref: "#/components/schemas/TransactionInfo"
         log:
