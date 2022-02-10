@@ -1,0 +1,27 @@
+name: verify clients
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  verify-python:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Specification Repo
+        uses: actions/checkout@v2
+        with:
+          path: 'DocumentReader-web-openapi'
+      - name: Checkout Python Client Repo
+        uses: actions/checkout@v2
+        with:
+          repository: 'regulaforensics/DocumentReader-web-python-client'
+          path: 'python-client'
+      - name: Verify update client
+        working-directory: python-client
+        run: |
+          ./update-models.sh
