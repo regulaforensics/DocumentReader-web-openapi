@@ -121,6 +121,9 @@ components:
       required:
         - List
       properties:
+        Count:
+          type: integer
+          description: "Length of list (Count for items)"
         List:
           type: array
           items:
@@ -137,6 +140,8 @@ components:
               - $ref: "#/components/schemas/AuthenticityResult"
               - $ref: "#/components/schemas/ImageQualityResult"
               - $ref: "#/components/schemas/DocumentPositionResult"
+              - $ref: "#/components/schemas/License"
+              - $ref: "#/components/schemas/EncryptedRCL"
 
     DocumentPositionResult:
       $ref: "./rt-document-position.yml#/components/schemas/DocumentPositionResult"
