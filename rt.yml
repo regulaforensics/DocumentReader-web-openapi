@@ -112,8 +112,8 @@ components:
           85: "DocumentPositionResult"
           102: "TextDataResult"
           103: "GraphicsResult"
-          50: "License"
-          49: "EncryptedRCL"
+          50: "LicenseResult"
+          49: "EncryptedRCLResult"
 
     ContainerList:
       type: object
@@ -140,8 +140,8 @@ components:
               - $ref: "#/components/schemas/AuthenticityResult"
               - $ref: "#/components/schemas/ImageQualityResult"
               - $ref: "#/components/schemas/DocumentPositionResult"
-              - $ref: "#/components/schemas/License"
-              - $ref: "#/components/schemas/EncryptedRCL"
+              - $ref: "#/components/schemas/LicenseResult"
+              - $ref: "#/components/schemas/EncryptedRCLResult"
 
     DocumentPositionResult:
       $ref: "./rt-document-position.yml#/components/schemas/DocumentPositionResult"
@@ -178,8 +178,8 @@ components:
     ImageQualityResult:
       $ref: "./rt-image-quality.yml#/components/schemas/ImageQualityResult"
 
-    License:
-      $ref: "./common.yml#/components/schemas/License"
+    LicenseResult:
+      $ref: "./rt-license.yml#/components/schemas/LicenseResult"
 
-    EncryptedRCL:
-      $ref: "./common.yml#/components/schemas/EncryptedRCL"
+    EncryptedRCLResult:
+      $ref: "./rt-encrypted-rcl.yml#/components/schemas/EncryptedRCLResult"

@@ -1,0 +1,15 @@
+openapi: 3.0.3
+components:
+  schemas:
+
+    EncryptedRCLResult:
+      title: "EncryptedRCL"
+      allOf:
+        - type: object
+          description: "Contains encrypted result container list"
+          required:
+            - EncryptedRCL
+          properties:
+            EncryptedRCL:
+              $ref: "./common.yml#/components/schemas/EncryptedRCL"
+        - $ref: './rt.yml#/components/schemas/ResultItem'

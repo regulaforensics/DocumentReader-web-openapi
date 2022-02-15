@@ -1,0 +1,15 @@
+openapi: 3.0.3
+components:
+  schemas:
+
+    LicenseResult:
+      title: "License"
+      allOf:
+        - type: object
+          description: "Contains license"
+          required:
+            - License
+          properties:
+            License:
+              $ref: "./common.yml#/components/schemas/License"
+        - $ref: './rt.yml#/components/schemas/ResultItem'
