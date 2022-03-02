@@ -94,7 +94,7 @@ components:
         mapping:
           1: "DocumentImageResult"
           3: "TextDataResult"
-          5: "BarCodesResult"
+          5: "DocBarCodeInfo"
           6: "GraphicsResult"
           8: "DocumentTypesCandidatesResult"
           9: "ChosenDocumentTypeResult"
@@ -133,6 +133,7 @@ components:
               - $ref: "#/components/schemas/AuthenticityResult"
               - $ref: "#/components/schemas/ImageQualityResult"
               - $ref: "#/components/schemas/DocumentPositionResult"
+              - $ref: "#/components/schemas/DocBarCodeInfo"
 
     DocumentPositionResult:
       $ref: "./rt-document-position.yml#/components/schemas/DocumentPositionResult"
@@ -168,3 +169,6 @@ components:
 
     ImageQualityResult:
       $ref: "./rt-image-quality.yml#/components/schemas/ImageQualityResult"
+
+    DocBarCodeInfo:
+      $ref: "./rt-barcodes.yml#/components/schemas/DocBarCodeInfo"

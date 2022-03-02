@@ -1,0 +1,80 @@
+openapi: 3.0.1
+components:
+  schemas:
+
+    DocBarCodeInfo:
+      title: "Document BarCode Info"
+      description: "Raw data from BarCodes"
+      type: object
+      properties:
+        nFields:
+          type: integer
+          description: "Count of array fields"
+        pArrayFields:
+          type: array
+          description: "Data from barcode"
+          items:
+            $ref: "#/components/schemas/pArrayField"
+
+    pArrayField:
+      bcAngle_DETECT:
+        type: float
+      bcCodeResult:
+        type: integer
+      bcCountModule:
+        type: integer
+      bcDataModule:
+        type: array
+        items:
+          $ref: "#/components/schemas/DataModule"
+
+      bcPDF417INFO:
+        type: object
+        properties:
+          Angle:
+            type: float
+          bcColumn:
+            type: integer
+          bcErrorLevel:
+            type: integer
+          bcRow:
+            type: integer
+          minX:
+            type: float
+          minY:
+            type: float
+
+      bcROI_DETECT:
+        type: object
+        properties:
+          bottom:
+            type: integer
+          left:
+            type: integer
+          right:
+            type: integer
+          top:
+            type: integer
+
+      bcTextDecoderTypes:
+        type: integer
+      bcTextFieldType:
+        type: integer
+      bcType_DECODE:
+        type: integer
+      bcType_DETECT:
+        type: integer
+
+    DataModule:
+      type: object
+      properties:
+        mData:
+          type: string
+        mLength:
+          type: integer
+        mReserved1:
+          type: integer
+        mReserver2:
+          type: integer
+        mType:
+          type: integer
