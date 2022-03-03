@@ -28,6 +28,8 @@ components:
         - 9
         - 20
         - 85
+        - 50
+        - 49
       x-enum-descriptions:
         - 'Contains cropped and rotated with perspective compensation image of document.
         Single input image can contain multiple document side/pages, which will be returned as separated results.
@@ -50,6 +52,8 @@ components:
         - 'Contains description of determined document type, if any'
         - 'Contains result of document authenticity checks'
         - 'Contains information about document position on the input image, its center, angle, etc'
+        - 'Contains license'
+        - 'Contains encrypted ResultContainerList'
       x-enum-varnames:
         - DOCUMENT_IMAGE
         - IMAGE_QUALITY
@@ -68,6 +72,8 @@ components:
         - DOCUMENT_TYPE
         - AUTHENTICITY
         - DOCUMENT_POSITION
+        - LICENSE
+        - ENCRYPTED_RCL
 
 
     ResultItem:
@@ -106,6 +112,8 @@ components:
           85: "DocumentPositionResult"
           102: "TextDataResult"
           103: "GraphicsResult"
+          50: "LicenseResult"
+          49: "EncryptedRCLResult"
 
     ContainerList:
       type: object
@@ -113,6 +121,9 @@ components:
       required:
         - List
       properties:
+        Count:
+          type: integer
+          description: "Length of list (Count for items)"
         List:
           type: array
           items:
@@ -129,6 +140,8 @@ components:
               - $ref: "#/components/schemas/AuthenticityResult"
               - $ref: "#/components/schemas/ImageQualityResult"
               - $ref: "#/components/schemas/DocumentPositionResult"
+              - $ref: "#/components/schemas/LicenseResult"
+              - $ref: "#/components/schemas/EncryptedRCLResult"
 
     DocumentPositionResult:
       $ref: "./rt-document-position.yml#/components/schemas/DocumentPositionResult"
@@ -164,3 +177,9 @@ components:
 
     ImageQualityResult:
       $ref: "./rt-image-quality.yml#/components/schemas/ImageQualityResult"
+
+    LicenseResult:
+      $ref: "./rt-license.yml#/components/schemas/LicenseResult"
+
+    EncryptedRCLResult:
+      $ref: "./rt-encrypted-rcl.yml#/components/schemas/EncryptedRCLResult"

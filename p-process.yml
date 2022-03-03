@@ -150,6 +150,8 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ProcessRequestImage'
+        ContainerList:
+          $ref: './rt.yml#/components/schemas/ContainerList'
         systemInfo:
           $ref: '#/components/schemas/ProcessSystemInfo'
         passBackObject:
@@ -159,7 +161,6 @@ components:
           additionalProperties: true
       required:
         - processParam
-        - List
 
     ProcessParams:
       type: object
@@ -509,3 +510,4 @@ components:
         "DateTime": "2020-05-27T08:17:03.247Z"
         "TransactionID": "dc5eb444-ad6e-4ebc-8102-d62d5bb56a4e"
         "UserName": "user"
+
