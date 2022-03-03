@@ -28,6 +28,7 @@ components:
         - 9
         - 20
         - 85
+        - 5
         - 50
         - 49
       x-enum-descriptions:
@@ -52,6 +53,7 @@ components:
         - 'Contains description of determined document type, if any'
         - 'Contains result of document authenticity checks'
         - 'Contains information about document position on the input image, its center, angle, etc'
+        - 'Contains raw information about barcodes on the input image'
         - 'Contains license'
         - 'Contains encrypted ResultContainerList'
       x-enum-varnames:
@@ -72,6 +74,7 @@ components:
         - DOCUMENT_TYPE
         - AUTHENTICITY
         - DOCUMENT_POSITION
+        - BARCODES
         - LICENSE
         - ENCRYPTED_RCL
 
@@ -97,6 +100,7 @@ components:
         mapping:
           1: "DocumentImageResult"
           3: "TextDataResult"
+          5: "DocBarCodeInfo"
           6: "GraphicsResult"
           8: "DocumentTypesCandidatesResult"
           9: "ChosenDocumentTypeResult"
@@ -140,6 +144,7 @@ components:
               - $ref: "#/components/schemas/AuthenticityResult"
               - $ref: "#/components/schemas/ImageQualityResult"
               - $ref: "#/components/schemas/DocumentPositionResult"
+              - $ref: "#/components/schemas/DocBarCodeInfo"
               - $ref: "#/components/schemas/LicenseResult"
               - $ref: "#/components/schemas/EncryptedRCLResult"
 
@@ -177,6 +182,9 @@ components:
 
     ImageQualityResult:
       $ref: "./rt-image-quality.yml#/components/schemas/ImageQualityResult"
+
+    DocBarCodeInfo:
+      $ref: "./rt-barcodes.yml#/components/schemas/DocBarCodeInfo"
 
     LicenseResult:
       $ref: "./rt-license.yml#/components/schemas/LicenseResult"

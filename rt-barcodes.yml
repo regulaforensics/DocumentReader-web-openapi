@@ -1,0 +1,87 @@
+openapi: 3.0.3
+components:
+  schemas:
+
+    DocBarCodeInfo:
+      title: "Document BarCode Info"
+      description: "Raw data from BarCodes"
+      allOf:
+        - type: object
+          properties:
+            nFields:
+              type: integer
+              description: "Count of array fields"
+            pArrayFields:
+              type: array
+              description: "Data from barcode"
+              items:
+                $ref: '#/components/schemas/pArrayField'
+        - $ref: './rt.yml#/components/schemas/ResultItem'
+
+    pArrayField:
+      type: object
+      properties:
+        bcAngle_DETECT:
+          type: float
+        bcCodeResult:
+          type: integer
+        bcCountModule:
+          type: integer
+        bcDataModule:
+          type: array
+          items:
+            $ref: '#/components/schemas/DataModule'
+        bcPDF417INFO:
+          $ref: '#/components/schemas/bcPDF417INFO'
+        bcROI_DETECT:
+          $ref: '#/components/schemas/bcROI_DETECT'
+        bcTextDecoderTypes:
+          type: integer
+        bcTextFieldType:
+          type: integer
+        bcType_DECODE:
+          type: integer
+        bcType_DETECT:
+          type: integer
+
+    bcPDF417INFO:
+      type: object
+      properties:
+        Angle:
+          type: float
+        bcColumn:
+          type: integer
+        bcErrorLevel:
+          type: integer
+        bcRow:
+          type: integer
+        minX:
+          type: float
+        minY:
+          type: float
+
+    bcROI_DETECT:
+      type: object
+      properties:
+        bottom:
+          type: integer
+        left:
+          type: integer
+        right:
+          type: integer
+        top:
+          type: integer
+
+    DataModule:
+      type: object
+      properties:
+        mData:
+          type: string
+        mLength:
+          type: integer
+        mReserved1:
+          type: integer
+        mReserver2:
+          type: integer
+        mType:
+          type: integer
