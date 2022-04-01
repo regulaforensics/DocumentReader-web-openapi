@@ -593,6 +593,10 @@ components:
         - 639
         - 640
         - 641
+        - 647
+        - 648
+        - 649
+        - 650
       x-enum-descriptions:
         - 'Document class code'
         - 'Issuing country document code in accordance with the standard ISO 3166-1 (ICAO, document 9303)'
@@ -1182,6 +1186,10 @@ components:
         - 'Expiration date of CD driver’s license'
         - 'Restrictions for CD driver’s license'
         - 'Issuer identification number'
+        - 'Second name'
+        - 'Third name'
+        - 'Fourth name'
+        - 'Last name'
       x-enum-varnames:
         - 'DOCUMENT_CLASS_CODE'
         - 'ISSUING_STATE_CODE'
@@ -1771,3 +1779,7 @@ components:
         - 'DL_CLASS_CODE_CD_TO'
         - 'DL_CLASS_CODE_CD_NOTES'
         - 'ISSUER_IDENTIFICATION_NUMBER'
+        - 'FT_SECOND_NAME'
+        - 'FT_THIRD_NAME'
+        - 'FT_FOURTH_NAME'
+        - 'FT_LAST_NAME'
