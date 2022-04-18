@@ -198,5 +198,14 @@ components:
         maxGlaringPart:
           type: number
           format: float
-          description: "The maximum allowable part of the area occupied by the glare. The same: 0.06 = 6%"
+          description: "The maximum allowable part of the area occupied by the glare.
+          The same: 0.06 = 6%"
           example: 0.0
+
+#    ExpectedPass:
+#      type: array
+#      description: "List of checks from the imageQA section that must be accepted
+#      to complete the capture of a document in a series"
+#      items:
+#        type: string
+#      example: ["dpiThreshold", "glaresCheck"]
