@@ -332,6 +332,14 @@ components:
           type: boolean
           description: "Checks filter"
           # default true
+        documentGroupFilter:
+          type: string
+          description: "Filter documents by group"
+          example: "242"
+        respectImageQuality:
+          type: boolean
+          description: "When it true ImageQuality can affect on Optical Status"
+          example: true
       required:
         - scenario
 
