@@ -317,6 +317,13 @@ components:
         convertCase:
           description: "This option allows output text case transformation. No changes applied by default to original values."
           $ref: "#/components/schemas/TextPostProcessing"
+        splitNames:
+          type: boolean
+          description: "If it is set to true,
+          the Surname and GivenNames fields from the MRZ will be divided
+          into the ft_First_Name, ft_Second_Name, ft_Third_Name,
+          ft_Fourth_Name, ft_Last_Name fields"
+          # default false
       required:
         - scenario
 
