@@ -324,6 +324,14 @@ components:
           into the ft_First_Name, ft_Second_Name, ft_Third_Name,
           ft_Fourth_Name, ft_Last_Name fields"
           # default false
+        disablePerforationOCR:
+          type: boolean
+          description: "Disables reading perforated fields"
+          # default ?
+        processAuth:
+          type: boolean
+          description: "Checks filter"
+          # default true
       required:
         - scenario
 
