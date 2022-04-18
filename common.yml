@@ -193,10 +193,10 @@ components:
         imgMarginPart:
           type: number
           format: float
-          description: ""
+          description: "Margin from the edges of the image. 0.35 = 35%"
           example: 0.35
         maxGlaringPart:
           type: number
           format: float
-          description: ""
+          description: "The maximum allowable part of the area occupied by the glare. The same: 0.06 = 6%"
           example: 0.0

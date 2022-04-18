@@ -394,18 +394,6 @@ components:
 
 
     ImageQA:
-#        "imgMarginPart"  - отступ от краёв картинки. 0.07 = 7%.
-#        "maxGlaringPart" - максимально допустимая часть площади, занятая бликом. То же самое, 0.07 = 7%.
-#      {
-#        "processParam": {
-#          "imageQa": {
-#            "glaresCheckParams": {
-#              "imgMarginPart": 0.35,
-#              "maxGlaringPart": 0.0
-#            }
-#          }
-#        }
-#      }
       type: object
       properties:
         dpiThreshold:
