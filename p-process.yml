@@ -317,6 +317,31 @@ components:
         convertCase:
           description: "This option allows output text case transformation. No changes applied by default to original values."
           $ref: "#/components/schemas/TextPostProcessing"
+        splitNames:
+          type: boolean
+          description: "If it is set to true,
+          the Surname and GivenNames fields from the MRZ will be divided
+          into the ft_First_Name, ft_Second_Name, ft_Third_Name,
+          ft_Fourth_Name, ft_Last_Name fields"
+          # default false
+        disablePerforationOCR:
+          type: boolean
+          description: "Disables reading perforated fields"
+          # default ?
+        processAuth:
+          type: boolean
+          description: "Checks filter"
+          # default true
+        documentGroupFilter:
+          description: "Filter documents by group"
+          type: array
+          items:
+            $ref: "./e-document-type.yml#/components/schemas/DocumentType"
+          example: [1,214,12]
+        respectImageQuality:
+          type: boolean
+          description: "When it true ImageQuality can affect on Optical Status"
+          example: true
       required:
         - scenario
 
@@ -422,6 +447,8 @@ components:
           description: "This option enables moire patterns check while performing image quality validation."
           type: boolean
           # default: false
+        glaresCheckParams:
+          $ref: './common.yml#/components/schemas/GlaresCheckParams'
 
     ProcessRequestImage:
       type: object

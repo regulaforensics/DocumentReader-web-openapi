@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  version: 6.1.0
+  version: 6.3.0
   title: Regula Document Reader Web API
   x-logo:
     url: 'https://regulaforensics.com/bitrix/media/img/elements/logo.png'
