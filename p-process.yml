@@ -327,11 +327,9 @@ components:
         disablePerforationOCR:
           type: boolean
           description: "Disables reading perforated fields"
-          # default ?
         processAuth:
-          type: boolean
+          type: integer
           description: "Checks filter"
-          # default true
         documentGroupFilter:
           description: "Filter documents by group"
           type: array
