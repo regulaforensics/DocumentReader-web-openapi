@@ -447,8 +447,6 @@ components:
           description: "This option enables moire patterns check while performing image quality validation."
           type: boolean
           # default: false
-        glaresCheckParams:
-          $ref: './common.yml#/components/schemas/GlaresCheckParams'
 
     ProcessRequestImage:
       type: object
