@@ -173,21 +173,21 @@ components:
           items:
             $ref: './rt.yml#/components/schemas/Result'
         doublePageSpread:
-          description: "This option can be set to true if the image you provide contains double page spread
+          description: "Enable this option if the image you provide contains double page spread
           of the passport and you want to process both pages in one go. It makes sense to use it for documents
           that have meaningful information on both pages, like Russian domestic passport, or some others.
-          By default is set to false."
+          Disabled by default."
           type: boolean
           # default false
         generateDoublePageSpreadImage:
           description: 'When enabled together with "doublePageSpread" and there is a passport with two pages
           spread in the image, pages will be cropped, straightened and aligned together, as if the document was captured
-          on a flatbed scanner.'
+          on a flatbed scanner. Disabled by default.'
           type: boolean
           # default false
         fieldTypesFilter:
           description: "List of text field types to extract. If empty, all text fields from template will be extracted.
-          Narrowing the list can shorten processing time. By default is empty."
+          Narrowing the list can shorten processing time. Empty by default."
           type: array
           items:
             $ref: './e-text-field-type.yml#/components/schemas/TextFieldType'
@@ -199,35 +199,36 @@ components:
           type: string
           example: "MM/dd/yyyy"
         measureSystem:
-          description: "This option allows you to set the system of measurement used for converting original values in document to output result values."
+          description: "This option allows you to set the system of measurement used for converting original values 
+          in document to output result values. Metric by default."
           $ref: '#/components/schemas/MeasureSystem'
         imageDpiOutMax:
           description: "This option controls maximum resolution in dpi of output images. Resolution will remain original
           in case 0 is supplied. By default is set to return images in response with resolution not greater than 300 dpi."
           type: integer
         alreadyCropped:
-          description: "This option can be set to true if you know for sure that the image you provide contains
+          description: "This option can be enabled if you know for sure that the image you provide contains
           already cropped document by its edges. This was designed to process on the
-          server side images captured and cropped on mobile. By default is set to false."
+          server side images captured and cropped on mobile. Disabled by default."
           type: boolean
           # default false
         customParams:
-          description: "This option allows to pass custom processing parameters that can be implemented in future without
+          description: "This option allows passing custom processing parameters that can be implemented in future without
           changing API."
           type: object
           additionalProperties: true
         config:
-          description: "This option allows to set additional custom configuration per document type.
-           If recognized document has id specified in config, processing adjusts according to designated configuration."
+          description: "This option allows setting additional custom configuration per document type.
+           If recognized document has ID specified in config, processing adjusts according to designated configuration."
           type: array
           items:
             $ref: '#/components/schemas/PerDocumentConfig'
         log:
-          description: "This option can be set to true if you need to get base64 string of transaction processing log."
+          description: "When enabled, results will contain transaction processing log. Disabled by default"
           type: boolean
-          # default log
+          # default false
         logLevel:
-          description: "When used together with 'log' parameter enabled, sets the level of logs detalization."
+          description: "When used together with 'log' parameter enabled, sets the level of logs detalization. 'INFO' by default."
           $ref: "#/components/schemas/LogLevel"
           # default: "INFO"
         forceDocID:
@@ -237,50 +238,52 @@ components:
           description: "When disabled, text field OCR will be done as is and then the recognized value will be
           matched to the field mask for validity. If enabled, we are trying to read a field value with maximum efforts
           to match the mask and provide a correctly formatted value, making assumptions based on the provided field mask
-          in the template."
+          in the template. Enabled by default."
           type: boolean
           # default: true
         fastDocDetect:
           description: "When enabled, shorten the list of candidates to process during document detection in a
-          single image process mode. Reduces processing time for specific backgrounds."
+          single image process mode. Reduces processing time for specific backgrounds. Enabled by default."
           type: boolean
           # default: true
         updateOCRValidityByGlare:
-          description: "When enabled, fail OCR field validity, if there is a glare over the text field on the image."
+          description: "When enabled, fail OCR field validity, if there is a glare over the text field on the image. Disabled by default."
           type: boolean
           # default: false
         checkRequiredTextFields:
-          description: 'When enabled, each field in template will be checked for value presence and if the field
-          is marked as required, but has no value, it will have "error" in validity status.'
+          description: "When enabled, each field in template will be checked for value presence and if the field
+          is marked as required, but has no value, it will have 'error' in validity status. Disabled by default."
           type: boolean
           # default: false
         returnCroppedBarcode:
-          description: 'When enabled, returns cropped barcode images for unknown documents'
+          description: "When enabled, returns cropped barcode images for unknown documents. Disabled by default."
           type: boolean
           # default: false
         imageQa:
           $ref: '#/components/schemas/ImageQA'
+        respectImageQuality:
+          description: "When enabled, image quality checks status affects document optical and overall status. Disabled by default."
+          type: boolean
+          # default: false
         forceDocFormat:
-          description: "Force use of specified document format when locating
-          and recognizing document to reduce the number of candidates."
+          description: "Force use of specified document format when locating and recognizing document to reduce the number of candidates."
           $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentFormat"
         noGraphics:
-          description: "When enabled no graphic fields will be cropped from document image."
+          description: "When enabled, no graphic fields will be cropped from document image. Disabled by default."
           type: boolean
           # default: false
         documentAreaMin:
-          description: "Specifies minimal area of the image
-          that document should cover to be treated as candidate when locating.
+          description: "Specifies minimal area of the image that document should cover to be treated as candidate when locating.
           Value should be in range from 0 to 1, where 1 is when document should fully cover the image."
           type: number
           format: float
           # default: 0
         depersonalizeLog:
-          description: "When enabled all personal data will be forcibly removed from the logs."
+          description: "When enabled, all personal data will be forcibly removed from the logs. Disabled by default."
           type: boolean
           # default: false
         multiDocOnImage:
-          description: "This option allows locating and cropping multiple documents from one image if enabled."
+          description: "This option allows locating and cropping multiple documents from one image if enabled. Disabled by default."
           type: boolean
           # default false
         shiftExpiryDate:
@@ -288,14 +291,15 @@ components:
           This is useful, for example, in some cases when document might be still valid for some period
           after original expiration date to prevent negative validity status for such documents.
           Or by shifting the date to the past will set negative validity for the documents
-          that is about to expire in a specified number of months."
+          that is about to expire in a specified number of months. 0 by default"
           type: integer
+          #default 0
         minimalHolderAge:
           description: "This options allows specifying the minimal age in years of the document holder
           for the document to be considered valid."
           type: integer
         returnUncroppedImage:
-          description: "This option allows returning input images in output if enabled."
+          description: "When enabled, returns input images in output. Disabled by default."
           type: boolean
           # default false
         mrzFormatsFilter:
@@ -304,42 +308,33 @@ components:
           items:
             $ref: '#/components/schemas/MRZFormat'
         forceReadMrzBeforeLocate:
-          description: "This option can be set to true to make sure
-          that in series processing MRZ is located fully inside the result document image, if present on the document.
-          Enabling this option may add extra processing time, by disabling optimizations,
-          but allows more stability in output image quality."
+          description: "When enabled, make sure that in series processing MRZ is located fully inside the result document image, 
+          if present on the document. Enabling this option may add extra processing time, by disabling optimizations,
+          but allows more stability in output image quality. Disabled by default."
           type: boolean
           # default false
         parseBarcodes:
-          description: "This option can be set to false to stop parsing after barcode is read."
+          description: "This option can be disabled to stop parsing after barcode is read. Enabled by default."
           type: boolean
           # default true
         convertCase:
           description: "This option allows output text case transformation. No changes applied by default to original values."
           $ref: "#/components/schemas/TextPostProcessing"
         splitNames:
+          description: "When enabled, the Surname and GivenNames field will be divided into
+          ft_First_Name, ft_Second_Name, ft_Third_Name, ft_Fourth_Name, ft_Last_Name fields. Disabled by default."
           type: boolean
-          description: "If it is set to true,
-          the Surname and GivenNames fields from the MRZ will be divided
-          into the ft_First_Name, ft_Second_Name, ft_Third_Name,
-          ft_Fourth_Name, ft_Last_Name fields"
           # default false
         disablePerforationOCR:
+          description: "When enabled, OCR of perforated fields in the document template will not be performed. Disabled by default."
           type: boolean
-          description: "Disables reading perforated fields"
-        processAuth:
-          type: integer
-          description: "Checks filter"
+          # default false
         documentGroupFilter:
-          description: "Filter documents by group"
+          description: "List of specific eligible document types from DocumentType enum to recognize from. 
+          You may, for example, specify only passports to be recognized by setting this property. Empty by default."
           type: array
           items:
             $ref: "./e-document-type.yml#/components/schemas/DocumentType"
-          example: [1,214,12]
-        respectImageQuality:
-          type: boolean
-          description: "When it true ImageQuality can affect on Optical Status"
-          example: true
       required:
         - scenario
 
@@ -442,7 +437,7 @@ components:
           type: boolean
           # default: false
         moireCheck:
-          description: "This option enables moire patterns check while performing image quality validation."
+          description: "This option enables screen capture (moire patterns) check while performing image quality validation."
           type: boolean
           # default: false
 
@@ -529,7 +524,7 @@ components:
         UserName:
           type: string
       example:
-        ComputerName: "7cded6852d20"
+        "ComputerName": "7cded6852d20"
         "DateTime": "2020-05-27T08:17:03.247Z"
         "TransactionID": "dc5eb444-ad6e-4ebc-8102-d62d5bb56a4e"
         "UserName": "user"
