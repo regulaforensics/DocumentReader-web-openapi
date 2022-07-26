@@ -469,9 +469,6 @@ components:
         recaptcha_token:
           description: "For internal use. Demo-sites recaptcha token."
           type: string
-        commitTransactions:
-          description: "" # todo commit transactions description
-          type: boolean
 
     #############################
     ############################# Response objects
