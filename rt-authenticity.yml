@@ -18,6 +18,9 @@ components:
       required:
         - List
       properties:
+        Count:
+          type: integer
+          description: "Count of items in List"
         List:
           type: array
           description: "Authenticity Check"
