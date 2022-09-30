@@ -31,6 +31,9 @@ components:
         - 307
         - 308
         - 309
+        - 313
+        - 314
+        - 315
       x-enum-descriptions:
         - 'Document holder photo'
         - 'Fingerprint of document holder'
@@ -56,6 +59,9 @@ components:
         - 'Fingerprint (middle, right hand)'
         - 'Fingerprint (ring, right hand)'
         - 'Fingerprint (little, right hand)'
+        - 'Fingerprint (four without thumb on right hand)'
+        - 'Fingerprint (four without thumb on left hand'
+        - 'Fingerprint (two thumbs)'
       x-enum-varnames:
         - 'PORTRAIT'
         - 'FINGERPRINT'
@@ -79,3 +85,6 @@ components:
         - 'FINGER_RIGHT_MIDDLE'
         - 'FINGER_RIGHT_RING'
         - 'FINGER_RIGHT_LITTLE'
+        - 'FINGER_RIGHT_FOUR_FINGERS'
+        - 'FINGER_LEFT_FOUR_FINGERS'
+        - 'FINGER_TWO_THUMBS'

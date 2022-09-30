@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.3
 components:
   schemas:
 
@@ -24,6 +24,4 @@ components:
               description: "Probability percent for IMAGE_PATTERN check or element's visibility for IR_VISIBILITY"
               type: integer
             AreaList:
-              type: array
-              items:
-                $ref: '../rt-authenticity.yml#/components/schemas/AreaContainer'
+              $ref: '../rt-authenticity.yml#/components/schemas/AreaContainer'

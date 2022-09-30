@@ -1,4 +1,4 @@
-openapi: 3.0.1
+openapi: 3.0.3
 components:
   schemas:
 
@@ -17,8 +17,6 @@ components:
             CriticalFlag:
               $ref: './e-critical.yml#/components/schemas/Critical'
             AreaList:
-              type: array
-              items:
-                $ref: '../rt-authenticity.yml#/components/schemas/AreaContainer'
+              $ref: '../rt-authenticity.yml#/components/schemas/AreaContainer'
             Reserved2:
               type: integer

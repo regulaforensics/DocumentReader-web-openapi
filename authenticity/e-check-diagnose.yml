@@ -85,6 +85,7 @@ components:
         - 155
         - 156
         - 157
+        - 82
       x-enum-varnames:
         - "UNKNOWN"
         - "PASS"
@@ -165,3 +166,4 @@ components:
         - "PORTRAIT_COMPARISON_NO_SERVICE_LICENSE"
         - "PORTRAIT_COMPARISON_NO_PORTRAIT_DETECTED"
         - "LAST_DIAGNOSE_VALUE"
+        - "FIELD_POS_CORRECTOR_PHOTO_REPLACED"
