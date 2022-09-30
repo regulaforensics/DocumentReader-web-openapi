@@ -4,3 +4,4 @@ document-reader-api-doc.html
 /.openapi-generator/FILES
 /openapi.json
 document-reader-static-doc.html
+*.DS_Store
