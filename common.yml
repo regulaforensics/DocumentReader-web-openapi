@@ -1,7 +1,15 @@
 openapi: 3.0.3
-components:
-  schemas:
 
+
+components:
+  parameters:
+    x-request:
+      in: header
+      name: X-RequestID
+      schema:
+        type: string
+
+  schemas:
     PageIndex:
       description: "Page index of the image from input list"
       type: integer
