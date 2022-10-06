@@ -2,6 +2,8 @@ openapi: 3.0.3
 
 paths:
   /process:
+    parameters:
+      - $ref: "./common.yml#/components/parameters/x-request"
     post:
       summary: Process list of documents images and return extracted data
       operationId: api-process
