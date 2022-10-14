@@ -3,6 +3,9 @@
 [![documentation](https://img.shields.io/badge/docs-en-f6858d?style=flat-square)](https://support.regulaforensics.com/hc/en-us/articles/115000916306-Documentation)
 [![release](https://img.shields.io/github/v/release/regulaforensics/DocumentReader-web-openapi?style=flat-square)](https://github.com/regulaforensics/DocumentReader-web-openapi/releases)
 
+## Main GitHub repository
+
+* [https://github.com/regulaforensics/DocumentReader-web-openapi](https://github.com/regulaforensics/DocumentReader-web-openapi)
 
 ## Clients
 
