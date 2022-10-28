@@ -505,6 +505,9 @@ components:
           additionalProperties: true
         morePagesAvailable:
           type: integer
+        elapsedTime:
+          type: integer
+          description: "Time the document processing has taken, ms."
 
     ProcessingStatus:
       type: integer
