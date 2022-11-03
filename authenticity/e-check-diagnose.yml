@@ -84,10 +84,10 @@ components:
         - 154
         - 155
         - 156
-        - 157
         - 82
         - 200
         - 201
+        - 210g
       x-enum-varnames:
         - "UNKNOWN"
         - "PASS"
@@ -167,7 +167,7 @@ components:
         - "PORTRAIT_COMPARISON_NO_LIVE_PHOTO"
         - "PORTRAIT_COMPARISON_NO_SERVICE_LICENSE"
         - "PORTRAIT_COMPARISON_NO_PORTRAIT_DETECTED"
-        - "LAST_DIAGNOSE_VALUE"
         - "FIELD_POS_CORRECTOR_PHOTO_REPLACED"
         - "WRONG_MRZ_DPI"
         - "WRONG_BACKGROUND"
+        - "LAST_DIAGNOSE_VALUE"
