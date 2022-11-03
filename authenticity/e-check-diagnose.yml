@@ -87,7 +87,7 @@ components:
         - 82
         - 200
         - 201
-        - 210g
+        - 210
       x-enum-varnames:
         - "UNKNOWN"
         - "PASS"
