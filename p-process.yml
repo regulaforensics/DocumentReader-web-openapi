@@ -167,6 +167,12 @@ components:
     ProcessParams:
       type: object
       properties:
+        imageOutputMaxHeight:
+          type: integer
+          description: "Defines the maximum height of the output document image."
+        imageOutputMaxWidth:
+          type: integer
+          description: "Defines the maximum width for the document image."
         scenario:
           $ref: './common.yml#/components/schemas/Scenario'
         resultTypeOutput:
