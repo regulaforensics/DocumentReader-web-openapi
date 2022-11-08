@@ -593,6 +593,11 @@ components:
         - 639
         - 640
         - 641
+        - 642
+        - 643
+        - 644
+        - 645
+        - 646
         - 647
         - 648
         - 649
@@ -1186,6 +1191,11 @@ components:
         - 'Expiration date of CD driver’s license'
         - 'Restrictions for CD driver’s license'
         - 'Issuer identification number'
+        - 'Start date of payment period'
+        - 'End date of payment period'
+        - 'Vaccination certificate identifier'
+        - 'First name'
+        - 'Date of arrival'
         - 'Second name'
         - 'Third name'
         - 'Fourth name'
@@ -1779,6 +1789,11 @@ components:
         - 'DL_CLASS_CODE_CD_TO'
         - 'DL_CLASS_CODE_CD_NOTES'
         - 'ISSUER_IDENTIFICATION_NUMBER'
+        - 'PAYMENT_PERIOD_FROM'
+        - 'PAYMENT_PERIOD_TO'
+        - 'VACCINATION_CERTIFICATE_IDENTIFIER'
+        - 'FIRST_NAME'
+        - 'DATE_OF_ARRIVAL'
         - 'FT_SECOND_NAME'
         - 'FT_THIRD_NAME'
         - 'FT_FOURTH_NAME'
