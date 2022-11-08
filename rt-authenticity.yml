@@ -89,7 +89,8 @@ components:
           262144: "IdentResult"
           524288: "IdentResult"
           1048576: "IdentResult"
-          8388608: "SecurityFeatureCheck"
+          8388608: "SecurityFeatureResult"
+
 
     SecurityFeatureResult:
       $ref: './authenticity/rt-security-feature.yml#/components/schemas/SecurityFeatureResult'
