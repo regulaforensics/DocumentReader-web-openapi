@@ -348,6 +348,7 @@ components:
           description: "Authenticity checks that should be performed regardless of the document type.
           The available checks are listed in the eRPRM_Authenticity enum.
           Note that only supported by your license checks can be added. "
+          $ref: "./authenticity/e-result-type.yml#/components/schemas/AuthenticityResultType"
           type: array
           items:
             $ref: "./authenticity/e-result-type.yml#/components/schemas/AuthenticityResultType"
