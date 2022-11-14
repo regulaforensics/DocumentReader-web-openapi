@@ -351,6 +351,21 @@ components:
           type: array
           items:
             $ref: "./authenticity/e-result-type.yml#/components/schemas/AuthenticityResultType"
+        deviceId:
+          description: "This parameter is used to specify the document reader device type from which input images were captured. Default 0."
+          type: integer
+          default: 0
+        deviceType:
+          description: "This parameter is used to specify the document reader device type from which input images were captured. Default 0."
+          type: integer
+          default: 0
+        deviceTypeHex:
+          type: string
+          description: "This parameter is used to specify the document reader device type from which input images were captured"
+        ignoreDeviceIdFromImage:
+          type: boolean
+          description: "This parameter is used to tell the processing engine to ignore any parameters saved in the image when scanned from the document reader device. Default false"
+          # default: false
       required:
         - scenario
 
@@ -460,17 +475,6 @@ components:
           description: "This parameter specifies the necessary margin. Default 0."
           type: integer
           default: 0
-        deviceId:
-          description: "This parameter is used to specify the document reader device type from which input images were captured. Default 0."
-          type: integer
-          default: 0
-        deviceType:
-          description: "This parameter is used to specify the document reader device type from which input images were captured. Default 0."
-          type: integer
-          default: 0
-        deviceTypeHex:
-          type: string
-          description: "This parameter is used to specify the document reader device type from which input images were captured"
 
     ProcessRequestImage:
       type: object
