@@ -21,6 +21,10 @@ components:
         - 65536
         - 131072
         - 262144
+        - 524288
+        - 1048576
+        - 2097152
+        - 8388608
       x-enum-description:
         - "Document luminescence check in UV light"
         - "B900 ink MRZ contrast check in IR light"
@@ -37,6 +41,10 @@ components:
         - "Barcode format check (code metadata, data format, contents format, etc.)"
         - "Kinegram check"
         - "LetterScreen check"
+        - "Hologram detection and validation check"
+        - "Fingerprint comparison check"
+        - "Document liveness check"
+        - "MRZ extended check"
       x-enum-varnames:
         - "UV_LUMINESCENCE"
         - "IR_B900"
@@ -53,3 +61,7 @@ components:
         - "BARCODE_FORMAT_CHECK"
         - "KINEGRAM"
         - "LETTER_SCREEN"
+        - "HOLOGRAM_DETECTION"
+        - "FINGERPRINT_COMPARISON"
+        - "LIVENESS"
+        - "MRZ"
