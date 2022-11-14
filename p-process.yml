@@ -169,10 +169,10 @@ components:
       properties:
         imageOutputMaxHeight:
           type: integer
-          description: "Defines the maximum height of the output document image."
+          description: "This parameter allows setting maximum height in pixels of output images and thus reducing image size to desired. Does not change the aspect ratio. Changes disabled if equals to 0. Default 0."
         imageOutputMaxWidth:
           type: integer
-          description: "Defines the maximum width for the document image."
+          description: "This parameter allows setting maximum width in pixels of output images and thus reducing image size to desired. Does not change the aspect ratio. Changes disabled if equals to 0. Default 0."
         scenario:
           $ref: './common.yml#/components/schemas/Scenario'
         resultTypeOutput:
@@ -211,8 +211,9 @@ components:
           in document to output result values. Metric by default."
           $ref: '#/components/schemas/MeasureSystem'
         imageDpiOutMax:
-          description: "This option controls maximum resolution in dpi of output images. Resolution will remain original
-          in case 0 is supplied. By default is set to return images in response with resolution not greater than 300 dpi."
+          description: "This parameter controls maximum resolution in dpi of output images.
+          Resolution will remain original in case 0 is supplied. By default is set to return images in response with
+          resolution not greater than 300 dpi for all scenarios except FullAuth. In FullAuth scenario this limit is 1000 dpi by default."
           type: integer
         alreadyCropped:
           description: "This option can be enabled if you know for sure that the image you provide contains
@@ -348,6 +349,24 @@ components:
           The available checks are listed in the eRPRM_Authenticity enum.
           Note that only supported by your license checks can be added. "
           $ref: "./authenticity/e-result-type.yml#/components/schemas/AuthenticityResultType"
+          type: array
+          items:
+            $ref: "./authenticity/e-result-type.yml#/components/schemas/AuthenticityResultType"
+        deviceId:
+          description: "This parameter is used to specify the document reader device type from which input images were captured. Default 0."
+          type: integer
+          # default: 0
+        deviceType:
+          description: "This parameter is used to specify the document reader device type from which input images were captured. Default 0."
+          type: integer
+          # default: 0
+        deviceTypeHex:
+          type: string
+          description: "This parameter is used to specify the document reader device type from which input images were captured"
+        ignoreDeviceIdFromImage:
+          type: boolean
+          description: "This parameter is used to tell the processing engine to ignore any parameters saved in the image when scanned from the document reader device. Default false"
+          # default: false
       required:
         - scenario
 
@@ -453,6 +472,10 @@ components:
           description: "This option enables screen capture (moire patterns) check while performing image quality validation."
           type: boolean
           # default: false
+        documentPositionIndent:
+          description: "This parameter specifies the necessary margin. Default 0."
+          type: integer
+          # default: 0
 
     ProcessRequestImage:
       type: object
