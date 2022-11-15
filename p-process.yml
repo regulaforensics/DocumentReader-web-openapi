@@ -367,6 +367,12 @@ components:
           type: boolean
           description: "This parameter is used to tell the processing engine to ignore any parameters saved in the image when scanned from the document reader device. Default false"
           # default: false
+        documentIdList:
+          type: array
+          description: "List of the document ID's to process. All documents will be processed, if empty."
+          items:
+            type: integer
+          # default []
       required:
         - scenario
 
