@@ -1,0 +1,49 @@
+name: release web page
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout Specifications
+        uses: actions/checkout@v2
+        with:
+          path: 'master-branch'
+      - name: Install redoc-cli
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+          registry-url: https://registry.npmjs.org/
+      - name: Build html page
+        working-directory: master-branch
+        run: |
+          npm install -g redoc-cli;
+          npx redoc-cli build "./index.yml" --output doc.html \
+          --options.maxDisplayedEnumValues=5 --options.theme.logo.gutter="20px" \
+          --options.theme.colors.primary.main="#8a53cb" --options.expandResponses="all" \
+          --options.expandSingleSchemaField --options.hideDownloadButton \
+          --options.jsonSampleExpandLevel="6";
+      - name: Checkout pages branch
+        uses: actions/checkout@v3
+        with:
+          path: 'pages-branch'
+          ref: 'gh-pages'
+      - name: Rewrite html page
+        working-directory: pages-branch
+        run: |
+          rm index.html
+          mv ../master-branch/doc.html index.html
+      - name: Push changes
+        working-directory: pages-branch
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add --all
+          git commit -m "update pages"
+          git push origin gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
