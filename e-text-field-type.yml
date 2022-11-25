@@ -602,6 +602,12 @@ components:
         - 648
         - 649
         - 650
+        - 651
+        - 652
+        - 653
+        - 654
+        - 655
+        - 656
       x-enum-descriptions:
         - 'Document class code'
         - 'Issuing country document code in accordance with the standard ISO 3166-1 (ICAO, document 9303)'
@@ -1200,6 +1206,12 @@ components:
         - 'Third name'
         - 'Fourth name'
         - 'Last name'
+        - 'DL class code RM valid from'
+        - 'DL class code RM valid notes'
+        - 'DL class code RM valid to'
+        - 'DL class code PW valid from'
+        - 'DL class code PW valid notes'
+        - 'DL class code PW valid to'
       x-enum-varnames:
         - 'DOCUMENT_CLASS_CODE'
         - 'ISSUING_STATE_CODE'
@@ -1798,3 +1810,9 @@ components:
         - 'FT_THIRD_NAME'
         - 'FT_FOURTH_NAME'
         - 'FT_LAST_NAME'
+        - 'RM_FROM'
+        - 'RM-NOTES'
+        - 'RM_TO'
+        - 'PW_FROM'
+        - 'PW_NOTES'
+        - 'PW_TO'
