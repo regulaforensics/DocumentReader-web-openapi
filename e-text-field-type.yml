@@ -1811,7 +1811,7 @@ components:
         - 'FT_FOURTH_NAME'
         - 'FT_LAST_NAME'
         - 'RM_FROM'
-        - 'RM-NOTES'
+        - 'RM_NOTES'
         - 'RM_TO'
         - 'PW_FROM'
         - 'PW_NOTES'
