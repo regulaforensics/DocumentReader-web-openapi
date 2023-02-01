@@ -24,6 +24,7 @@ components:
         - 524288
         - 1048576
         - 2097152
+        - 4194304
         - 8388608
       x-enum-description:
         - "Document luminescence check in UV light"
@@ -44,6 +45,7 @@ components:
         - "Hologram detection and validation check"
         - "Fingerprint comparison check"
         - "Document liveness check"
+        - "Extended OCR Check"
         - "MRZ extended check"
       x-enum-varnames:
         - "UV_LUMINESCENCE"
@@ -64,4 +66,5 @@ components:
         - "HOLOGRAM_DETECTION"
         - "FINGERPRINT_COMPARISON"
         - "LIVENESS"
+        - "EXTENDED_OCR_CHECK"
         - "MRZ"
