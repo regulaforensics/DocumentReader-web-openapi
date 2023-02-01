@@ -34,9 +34,14 @@ components:
         - 25
         - 26
         - 27
+        - 28
         - 29
         - 30
         - 31
+        - 39
+        - 40
+        - 41
+        - 42
       x-enum-description:
         - "Blank element"
         - "Personalization element"
@@ -66,9 +71,14 @@ components:
         - "Photo color check"
         - "Photo squareness"
         - "Photo corners shape"
+        - "OCR"
         - "External vs main portrait comparison"
         - "External vs RFID portrait comparison"
         - "External vs live camera portrait comparison"
+        - "Liveness screen capture"
+        - "Liveness electronic device"
+        - "Liveness OVI"
+        - "Barcode size check"
       x-enum-varnames:
         - "BLANK"
         - "FILL"
@@ -98,6 +108,11 @@ components:
         - "PHOTO_COLOR"
         - "PHOTO_SHAPE"
         - "PHOTO_CORNERS"
+        - "OCR"
         - "PORTRAIT_COMPARISON_EXT_VS_VISUAL"
         - "PORTRAIT_COMPARISON_EXT_VS_RFID"
         - "PORTRAIT_COMPARISON_EXT_VS_CAMERA"
+        - "LIVENESS_SCREEN_CAPTURE"
+        - "LIVENESS_ELECTRONIC_DEVICE"
+        - "LIVENESS_OVI"
+        - "BARCODE_SIZE_CHECK"

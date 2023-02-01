@@ -3,7 +3,7 @@ info:
   version: 6.6.0
   title: Regula Document Reader Web API
   x-logo:
-    url: 'https://regulaforensics.com/bitrix/media/img/elements/logo.png'
+    url: 'https://static-content.regulaforensics.com/Icons/Logos/Regula-logo.svg'
     href: 'https://mobile.regulaforensics.com/'
   description: |
     Documents recognition as easy as reading two bytes.
