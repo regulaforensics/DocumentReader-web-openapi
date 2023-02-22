@@ -38,6 +38,12 @@ components:
         - 29
         - 30
         - 31
+        - 32
+        - 33
+        - 34
+        - 35
+        - 36
+        - 38
         - 39
         - 40
         - 41
@@ -75,6 +81,12 @@ components:
         - "External vs main portrait comparison"
         - "External vs RFID portrait comparison"
         - "External vs live camera portrait comparison"
+        - "Portrait Depth"
+        - "Micro text"
+        - "Fluorescent Object"
+        - "Facial landmarks check"
+        - "Facial image presence"
+        - "Facial image absence"
         - "Liveness screen capture"
         - "Liveness electronic device"
         - "Liveness OVI"
@@ -112,6 +124,12 @@ components:
         - "PORTRAIT_COMPARISON_EXT_VS_VISUAL"
         - "PORTRAIT_COMPARISON_EXT_VS_RFID"
         - "PORTRAIT_COMPARISON_EXT_VS_CAMERA"
+        - "LIVENESS_DEPTH"
+        - "MICRO_TEXT"
+        - "FLUORESCENT_OBJECT"
+        - "LANDMARK_CHECK"
+        - "FACE_PRESENCE"
+        - "FACE_ABSENCE"
         - "LIVENESS_SCREEN_CAPTURE"
         - "LIVENESS_ELECTRONIC_DEVICE"
         - "LIVENESS_OVI"
