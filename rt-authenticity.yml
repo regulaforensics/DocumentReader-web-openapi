@@ -50,7 +50,7 @@ components:
 
     AuthenticityType:
       type: integer
-      description: "Same as authenticity result type, but used for safe parsing of not-described values. See authenticity result type"
+      description: "Same as authenticity result type, but used for safe parsing of not-described values: https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/development/enums/authenticity-result-type/"
       default: 0
 
     AuthenticityCheckResultItem:

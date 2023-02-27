@@ -3,7 +3,7 @@ components:
   schemas:
 
     SecurityFeatureType:
-      description: "Enumeration contains identifiers determining type of features for a document authenticity checks"
+      description: "Enumeration contains identifiers determining type of features for a document authenticity checks: https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/development/enums/security-feature-type/"
       type: integer
       enum:
         - 0
