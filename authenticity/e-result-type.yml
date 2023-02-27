@@ -3,7 +3,7 @@ components:
   schemas:
 
     AuthenticityResultType:
-      description: "Enumeration describes available authenticity checks"
+      description: "Enumeration describes available authenticity checks: https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/development/enums/authenticity-result-type/."
       type: integer
       enum:
         - 1
