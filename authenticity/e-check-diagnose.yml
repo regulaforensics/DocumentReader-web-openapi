@@ -99,6 +99,24 @@ components:
         - 220
         - 221
         - 222
+        - 81
+        - 103
+        - 104
+        - 122
+        - 160
+        - 161
+        - 170
+        - 180
+        - 181
+        - 182
+        - 183
+        - 184
+        - 185
+        - 186
+        - 187
+        - 190
+        - 230
+        - 240
       x-enum-varnames:
         - "UNKNOWN"
         - "PASS"
@@ -193,3 +211,21 @@ components:
         - "TEXT_POSITION"
         - "INVALID_FONT"
         - "INVALID_BACKGROUND"
+        - "FIELD_POS_CORRECTOR_GLARES_IN_PHOTO_AREA"
+        - "HOLOGRAM_FRAMES_IS_ABSENT"
+        - "HOLOGRAM_HOLO_FIELD_IS_ABSENT"
+        - "DOCUMENT_IS_CANCELLING"
+        - "MOBILE_IMAGES_UNSUITABLE_LIGHT_CONDITIONS"
+        - "MOBILE_IMAGES_WHITE_UV_NO_DIFFERENCE"
+        - "FINGERPRINTS_COMPARISON_MISMATCH"
+        - "HOLO_PHOTO_FACE_NOT_DETECTED"
+        - "HOLO_PHOTO_FACE_COMPARISON_FAILED"
+        - "HOLO_PHOTO_GLARE_IN_CENTER_ABSENT"
+        - "HOLO_PHOTO_HOLO_ELEMENT_SHAPE_ERROR"
+        - "HOLO_PHOTO_ALGORITHMS_STEPS_ERROR"
+        - "HOLO_PHOTO_HOLO_AREAS_NOT_LOADED"
+        - "HOLO_PHOTO_FINISHED_BY_TIMEOUT"
+        - "HOLO_PHOTO_DOCUMENT_OUTSIDE_FRAME"
+        - "LIVENESS_DEPTH_CHECK_FAILED"
+        - "LAS_INK_INVALID_LINES_FREQUENCY"
+        - "LAST_DIAGNOSE_VALUE"
