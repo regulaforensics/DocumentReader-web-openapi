@@ -95,7 +95,6 @@ components:
         - 202
         - 203
         - 204
-        - 210
         - 220
         - 221
         - 222
@@ -207,7 +206,6 @@ components:
         - "WRONG_MRZ_WIDTH"
         - "WRONG_MRZ_HEIGHT"
         - "WRONG_LINE_POSITION"
-        - "LAST_DIAGNOSE_VALUE"
         - "TEXT_POSITION"
         - "INVALID_FONT"
         - "INVALID_BACKGROUND"
