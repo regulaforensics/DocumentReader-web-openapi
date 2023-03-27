@@ -48,6 +48,7 @@ components:
         - 40
         - 41
         - 42
+        - 43
       x-enum-description:
         - "Blank element"
         - "Personalization element"
@@ -91,6 +92,7 @@ components:
         - "Liveness electronic device"
         - "Liveness OVI"
         - "Barcode size check"
+        - "LASINK Security Feature Check"
       x-enum-varnames:
         - "BLANK"
         - "FILL"
@@ -134,3 +136,4 @@ components:
         - "LIVENESS_ELECTRONIC_DEVICE"
         - "LIVENESS_OVI"
         - "BARCODE_SIZE_CHECK"
+        - "LAS_INK"
