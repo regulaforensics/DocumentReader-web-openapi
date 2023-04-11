@@ -72,6 +72,9 @@ components:
         originalValue:
           description: "Only for images from RFID. Image as was originally stored in the RFID chip."
           $ref: './common.yml#/components/schemas/ImageBase64'
+        originalPageIndex:
+          description: "Original page index"
+          type: integer
         pageIndex:
           $ref: './common.yml#/components/schemas/PageIndex'
         lightIndex:
