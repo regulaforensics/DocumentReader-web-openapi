@@ -60,7 +60,7 @@ components:
         - text
       properties:
         overallStatus:
-          description: "Overall optical checks combined status"
+          description: "Summary of all optical results"
           $ref: "./common.yml#/components/schemas/CheckResult"
         docType:
           description: "Status of document type recognition"
@@ -78,7 +78,7 @@ components:
           description: "Number of processed pages in the document"
           type: integer
         security:
-          description: "Status of document MRZ"
+          description: "Authenticity verification status"
           $ref: "./common.yml#/components/schemas/CheckResult"
         text:
           description: "Status of text fields analysis"
