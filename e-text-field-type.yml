@@ -620,6 +620,7 @@ components:
         - 666
         - 667
         - 668
+        - 669
       x-enum-descriptions:
         - 'Document class code'
         - 'Issuing country document code in accordance with the standard ISO 3166-1 (ICAO, document 9303)'
@@ -1236,6 +1237,7 @@ components:
         - 'FT place of birth city'
         - 'FT year of birth'
         - 'FT year of expiry'
+        - 'Grandfather mame maternal'
       x-enum-varnames:
         - 'DOCUMENT_CLASS_CODE'
         - 'ISSUING_STATE_CODE'
@@ -1851,3 +1853,4 @@ components:
         - 'EC1_TO'
         - 'PLACE_OF_BIRTH_CITY'
         - 'YEAR_OF_EXPIRY'
+        - 'GRANDFATHER_NAME_MATERIAL'
