@@ -608,6 +608,19 @@ components:
         - 654
         - 655
         - 656
+        - 657
+        - 658
+        - 659
+        - 660
+        - 661
+        - 662
+        - 663
+        - 664
+        - 665
+        - 666
+        - 667
+        - 668
+        - 669
       x-enum-descriptions:
         - 'Document class code'
         - 'Issuing country document code in accordance with the standard ISO 3166-1 (ICAO, document 9303)'
@@ -1212,6 +1225,19 @@ components:
         - 'DL class code PW valid from'
         - 'DL class code PW valid notes'
         - 'DL class code PW valid to'
+        - 'DL class code EB from'
+        - 'DL class code EB notes'
+        - 'DL class code EB to'
+        - 'DL class code EC from'
+        - 'DL class code EC notes'
+        - 'DL class code EC to'
+        - 'DL class code EC1 from'
+        - 'DL class code EC1 notes'
+        - 'DL class code EC1 to'
+        - 'FT place of birth city'
+        - 'FT year of birth'
+        - 'FT year of expiry'
+        - 'Grandfather mame maternal'
       x-enum-varnames:
         - 'DOCUMENT_CLASS_CODE'
         - 'ISSUING_STATE_CODE'
@@ -1816,3 +1842,15 @@ components:
         - 'PW_FROM'
         - 'PW_NOTES'
         - 'PW_TO'
+        - 'EB_FROM'
+        - 'EB_NOTES'
+        - 'EB_TO'
+        - 'EC_FROM'
+        - 'EC_NOTES'
+        - 'EC_TO'
+        - 'EC1_FROM'
+        - 'EC1_NOTES'
+        - 'EC1_TO'
+        - 'PLACE_OF_BIRTH_CITY'
+        - 'YEAR_OF_EXPIRY'
+        - 'GRANDFATHER_NAME_MATERIAL'
