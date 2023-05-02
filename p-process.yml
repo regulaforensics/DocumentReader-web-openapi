@@ -381,7 +381,7 @@ components:
               description: "A list of passive authentication (PA) sensitive codes that are considered non-critical."
               type: array
               items:
-                type: integer
+                $ref: "./e-pa-sensitives-codes.yml#/components/schemas/ParsingNotificationCodes"
       required:
         - scenario
 
