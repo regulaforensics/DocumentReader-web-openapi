@@ -373,14 +373,14 @@ components:
           items:
             type: integer
           # default []
-          rfid:
-            type: object
-            description: "RFID params for process command"
-            properties:
-              paSensitiveCodesDisable:
-                type: array
-                items:
-                  type: integer
+        rfid:
+          type: object
+          description: "RFID params for process command"
+          properties:
+            paSensitiveCodesDisable:
+              type: array
+              items:
+                type: integer
       required:
         - scenario
 
