@@ -373,6 +373,15 @@ components:
           items:
             type: integer
           # default []
+        rfid:
+          type: object
+          description: "Params for the RFID chip processing"
+          properties:
+            paSensitiveCodesDisable:
+              description: "A list of passive authentication (PA) sensitive codes that are considered non-critical."
+              type: array
+              items:
+                $ref: "./e-pa-sensitives-codes.yml#/components/schemas/ParsingNotificationCodes"
       required:
         - scenario
 
