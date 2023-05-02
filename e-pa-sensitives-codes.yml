@@ -2,7 +2,7 @@ openapi: 3.0.3
 components:
   schemas:
     ParsingNotificationCodes:
-      description: "A list of passive authentication (PA) sensitive codes that are considered non-critical."
+      description: "A set of codes of non-critical remarks detected during analysis of data structure used during SDK work."
       type: integer
       enum:
       - -1879048191
