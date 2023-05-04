@@ -116,6 +116,7 @@ components:
         - 190
         - 230
         - 240
+        - 205
       x-enum-varnames:
         - "UNKNOWN"
         - "PASS"
@@ -227,3 +228,4 @@ components:
         - "LIVENESS_DEPTH_CHECK_FAILED"
         - "LAS_INK_INVALID_LINES_FREQUENCY"
         - "LAST_DIAGNOSE_VALUE"
+        - "WRONG_FONT_TYPE"
