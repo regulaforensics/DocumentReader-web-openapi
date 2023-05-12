@@ -119,7 +119,6 @@ components:
       - -2079522816
       - -2079457280
       - -2079391744
-      - -2097151903
       x-enum-varnames:
       - "RFID_ERROR_NO_ERROR"
       - "RFID_ERROR_ALREADY_DONE"
@@ -235,4 +234,3 @@ components:
       - "RFID_ERROR_LAYER34_SAM_ERROR"
       - "RFID_ERROR_LAYER34_SAM_COLLISION"
       - "RFID_ERROR_LAYER34_SAM_ACKNOWLEDGE"
-      - "RFID_Error_Session_BitnessMismatch"
