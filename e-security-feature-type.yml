@@ -92,7 +92,7 @@ components:
         - "Liveness electronic device"
         - "Liveness OVI"
         - "Barcode size check"
-        - "LASINK Security Feature Check"
+        - "LASINK"
       x-enum-varnames:
         - "BLANK"
         - "FILL"
