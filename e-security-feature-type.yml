@@ -136,4 +136,4 @@ components:
         - "LIVENESS_ELECTRONIC_DEVICE"
         - "LIVENESS_OVI"
         - "BARCODE_SIZE_CHECK"
-        - "LAS_INK"
+        - "LASINK"
