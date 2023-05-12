@@ -60,7 +60,7 @@ components:
         - text
       properties:
         overallStatus:
-          description: "Summary of all optical results"
+          description: "Overall optical checks combined status"
           $ref: "./common.yml#/components/schemas/CheckResult"
         docType:
           description: "Status of document type recognition"
