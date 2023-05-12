@@ -1,90 +1,90 @@
-openapi: 3.0.3
 components:
   schemas:
-
     GraphicFieldName:
-      description: "Human readable field name. Do not bind to this name - use GraphicFieldType instead."
+      description: Human readable field name. Do not bind to this name - use GraphicFieldType
+        instead.
       type: string
-
     GraphicFieldType:
-      type: integer
       enum:
-        - 201
-        - 202
-        - 203
-        - 204
-        - 205
-        - 206
-        - 207
-        - 208
-        - 209
-        - 210
-        - 211
-        - 250
-        - 300
-        - 301
-        - 302
-        - 303
-        - 304
-        - 305
-        - 306
-        - 307
-        - 308
-        - 309
-        - 313
-        - 314
-        - 315
+      - 201
+      - 202
+      - 203
+      - 204
+      - 205
+      - 206
+      - 207
+      - 208
+      - 209
+      - 210
+      - 211
+      - 250
+      - 300
+      - 301
+      - 302
+      - 303
+      - 304
+      - 305
+      - 306
+      - 307
+      - 308
+      - 309
+      - 313
+      - 314
+      - 315
+      type: integer
       x-enum-descriptions:
-        - 'Document holder photo'
-        - 'Fingerprint of document holder'
-        - 'Image of the iris of document holder'
-        - 'Signature of document holder'
-        - 'Barcode image'
-        - 'Image of document confirming owner citizenship'
-        - 'Cropped and rotated with perspective compensation (front side) of a document.
-           Single input image can contain multiple document side/pages, which will be returned as separated results.
-           Most coordinates in other types defined on that image.'
-        - 'Image of the rear side of the document'
-        - 'Area with dynamic color change'
-        - 'Additional Portrait'
-        - 'Stamp'
-        - 'Undefined image type'
-        - 'Fingerprint (thumb, left hand)'
-        - 'Fingerprint (index, left hand)'
-        - 'Fingerprint (middle, left hand)'
-        - 'Fingerprint (ring, left hand)'
-        - 'Fingerprint (little, left hand)'
-        - 'Fingerprint (thumb, right hand)'
-        - 'Fingerprint (index, right hand)'
-        - 'Fingerprint (middle, right hand)'
-        - 'Fingerprint (ring, right hand)'
-        - 'Fingerprint (little, right hand)'
-        - 'Fingerprint (four without thumb on right hand)'
-        - 'Fingerprint (four without thumb on left hand'
-        - 'Fingerprint (two thumbs)'
+      - Document holder photo
+      - Fingerprint of document holder
+      - Image of the iris of document holder
+      - Signature of document holder
+      - Barcode image
+      - Image of document confirming owner citizenship
+      - Cropped and rotated with perspective compensation (front side) of a document.
+        Single input image can contain multiple document side/pages, which will be
+        returned as separated results. Most coordinates in other types defined on
+        that image.
+      - Image of the rear side of the document
+      - Area with dynamic color change
+      - Additional Portrait
+      - Stamp
+      - Undefined image type
+      - Fingerprint (thumb, left hand)
+      - Fingerprint (index, left hand)
+      - Fingerprint (middle, left hand)
+      - Fingerprint (ring, left hand)
+      - Fingerprint (little, left hand)
+      - Fingerprint (thumb, right hand)
+      - Fingerprint (index, right hand)
+      - Fingerprint (middle, right hand)
+      - Fingerprint (ring, right hand)
+      - Fingerprint (little, right hand)
+      - Fingerprint (four without thumb on right hand)
+      - Fingerprint (four without thumb on left hand
+      - Fingerprint (two thumbs)
       x-enum-varnames:
-        - 'PORTRAIT'
-        - 'FINGERPRINT'
-        - 'EYE'
-        - 'SIGNATURE'
-        - 'BAR_CODE'
-        - 'PROOF_OF_CITIZENSHIP'
-        - 'DOCUMENT_FRONT'
-        - 'DOCUMENT_REAR'
-        - 'COLOR_DYNAMIC'
-        - 'GHOST_PORTRAIT'
-        - 'STAMP'
-        - 'OTHER'
-        - 'FINGER_LEFT_THUMB'
-        - 'FINGER_LEFT_INDEX'
-        - 'FINGER_LEFT_MIDDLE'
-        - 'FINGER_LEFT_RING'
-        - 'FINGER_LEFT_LITTLE'
-        - 'FINGER_RIGHT_THUMB'
-        - 'FINGER_RIGHT_INDEX'
-        - 'FINGER_RIGHT_MIDDLE'
-        - 'FINGER_RIGHT_RING'
-        - 'FINGER_RIGHT_LITTLE'
-        - 'FINGER_RIGHT_FOUR_FINGERS'
-        - 'FINGER_LEFT_FOUR_FINGERS'
-        - 'FINGER_TWO_THUMBS'
+      - PORTRAIT
+      - FINGERPRINT
+      - EYE
+      - SIGNATURE
+      - BAR_CODE
+      - PROOF_OF_CITIZENSHIP
+      - DOCUMENT_FRONT
+      - DOCUMENT_REAR
+      - COLOR_DYNAMIC
+      - GHOST_PORTRAIT
+      - STAMP
+      - OTHER
+      - FINGER_LEFT_THUMB
+      - FINGER_LEFT_INDEX
+      - FINGER_LEFT_MIDDLE
+      - FINGER_LEFT_RING
+      - FINGER_LEFT_LITTLE
+      - FINGER_RIGHT_THUMB
+      - FINGER_RIGHT_INDEX
+      - FINGER_RIGHT_MIDDLE
+      - FINGER_RIGHT_RING
+      - FINGER_RIGHT_LITTLE
+      - FINGER_RIGHT_FOUR_FINGERS
+      - FINGER_LEFT_FOUR_FINGERS
+      - FINGER_TWO_THUMBS
+openapi: 3.0.3

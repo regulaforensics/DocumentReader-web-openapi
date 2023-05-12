@@ -1,16 +1,16 @@
-openapi: 3.0.3
 components:
   schemas:
-
     Critical:
-      description: "Enumeration contains identifiers determining the criticality of the security element"
-      type: integer
+      description: Enumeration contains identifiers determining the criticality of
+        the security element
       enum:
-        - 0
-        - 1
+      - 0
+      - 1
+      type: integer
       x-enum-descriptions:
-        - "Security element may be absent in a valid document"
-        - "Security element must be present in a valid document"
+      - Security element may be absent in a valid document
+      - Security element must be present in a valid document
       x-enum-varnames:
-        - "NOT_CRITICAL"
-        - "CRITICAL"
+      - NOT_CRITICAL
+      - CRITICAL
+openapi: 3.0.3
