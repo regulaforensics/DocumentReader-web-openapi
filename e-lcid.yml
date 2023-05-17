@@ -1,13 +1,8 @@
+openapi: 3.0.3
 components:
   schemas:
     LCID:
-      description: 'Locale id. Used to tag same typed fields declared in several languages.
-
-        For example: name can be provided in both native and latin variants.
-
-        Based on Microsoft locale id (https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/70feba9f-294e-491e-b6eb-56532684c37f).
-
-        '
+      description: "Locale id. Used to tag same typed fields declared in several languages. For example: name can be provided in both native and latin variants. Based on Microsoft locale id (https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/70feba9f-294e-491e-b6eb-56532684c37f)."
       enum:
       - 0
       - 1025
@@ -435,4 +430,3 @@ components:
       - SPANISH_PUERTO_RICO
       - CTC_SIMPLIFIED
       - CTC_TRADITIONAL
-openapi: 3.0.3

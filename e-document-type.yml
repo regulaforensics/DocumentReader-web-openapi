@@ -1,3 +1,4 @@
+openapi: 3.0.3
 components:
   schemas:
     DocumentType:
@@ -461,4 +462,3 @@ components:
       - CERTIFICATE_OF_PROFICIENCY
       - TRADE_LICENSE
       - PASSPORT_PAGE
-openapi: 3.0.3

@@ -1,8 +1,8 @@
+openapi: 3.0.3
 components:
   schemas:
     SecurityFeatureType:
-      description: 'Enumeration contains identifiers determining type of features
-        for a document authenticity checks: https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/development/enums/security-feature-type/'
+      description: "Enumeration contains identifiers determining type of features for a document authenticity checks: https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/development/enums/security-feature-type/"
       enum:
       - 0
       - 1
@@ -136,4 +136,3 @@ components:
       - LIVENESS_OVI
       - BARCODE_SIZE_CHECK
       - LASINK
-openapi: 3.0.3

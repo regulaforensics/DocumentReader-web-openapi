@@ -1,3 +1,4 @@
+openapi: 3.0.3
 components:
   schemas:
     RFIDErrorCodes:
@@ -233,4 +234,3 @@ components:
       - RFID_ERROR_FAILED
       - RFID_ERROR_NO_ERROR
       - RFID_ERROR_ALREADY_DONE
-openapi: 3.0.3

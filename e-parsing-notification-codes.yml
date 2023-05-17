@@ -1,8 +1,7 @@
 components:
   schemas:
     ParsingNotificationCodes:
-      description: A set of codes of non-critical remarks detected during analysis
-        of data structure used during SDK work.
+      description: "A set of codes of non-critical remarks detected during analysis of data structure used during SDK work."
       enum:
       - -1879048191
       - -1879048190

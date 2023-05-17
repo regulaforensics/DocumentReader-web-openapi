@@ -33,34 +33,31 @@ components:
       - 315
       type: integer
       x-enum-descriptions:
-      - Document holder photo
-      - Fingerprint of document holder
-      - Image of the iris of document holder
-      - Signature of document holder
-      - Barcode image
-      - Image of document confirming owner citizenship
-      - Cropped and rotated with perspective compensation (front side) of a document.
-        Single input image can contain multiple document side/pages, which will be
-        returned as separated results. Most coordinates in other types defined on
-        that image.
-      - Image of the rear side of the document
-      - Area with dynamic color change
-      - Additional Portrait
-      - Stamp
-      - Undefined image type
-      - Fingerprint (thumb, left hand)
-      - Fingerprint (index, left hand)
-      - Fingerprint (middle, left hand)
-      - Fingerprint (ring, left hand)
-      - Fingerprint (little, left hand)
-      - Fingerprint (thumb, right hand)
-      - Fingerprint (index, right hand)
-      - Fingerprint (middle, right hand)
-      - Fingerprint (ring, right hand)
-      - Fingerprint (little, right hand)
-      - Fingerprint (four without thumb on right hand)
-      - Fingerprint (four without thumb on left hand
-      - Fingerprint (two thumbs)
+      - "Document holder photo"
+      - "Fingerprint of document holder"
+      - "Image of the iris of document holder"
+      - "Signature of document holder"
+      - "Barcode image"
+      - "Image of document confirming owner citizenship"
+      - "Cropped and rotated with perspective compensation (front side) of a document. Single input image can contain multiple document side/pages, which will be returned as separated results. Most coordinates in other types defined on that image."
+      - "Image of the rear side of the document"
+      - "Area with dynamic color change"
+      - "Additional Portrait"
+      - "Stamp"
+      - "Undefined image type"
+      - "Fingerprint (thumb, left hand)"
+      - "Fingerprint (index, left hand)"
+      - "Fingerprint (middle, left hand)"
+      - "Fingerprint (ring, left hand)"
+      - "Fingerprint (little, left hand)"
+      - "Fingerprint (thumb, right hand)"
+      - "Fingerprint (index, right hand)"
+      - "Fingerprint (middle, right hand)"
+      - "Fingerprint (ring, right hand)"
+      - "Fingerprint (little, right hand)"
+      - "Fingerprint (four without thumb on right hand)"
+      - "Fingerprint (four without thumb on left hand"
+      - "Fingerprint (two thumbs)"
       x-enum-varnames:
       - PORTRAIT
       - FINGERPRINT

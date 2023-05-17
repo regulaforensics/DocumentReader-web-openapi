@@ -32,30 +32,28 @@ components:
         - 50
         - 49
       x-enum-descriptions:
-        - 'Contains cropped and rotated with perspective compensation image of document.
+        - "Contains cropped and rotated with perspective compensation image of document.
         Single input image can contain multiple document side/pages, which will be returned as separated results.
-         Most of coordinates in other types defined on that image'
-        - 'Contains image quality check results'
-        - 'Contains check statuses with details, grouped by source'
-        - 'Contains document textual fields from all sources (mrz, rfid, visual, barcode) with validity and cross-source compare checks'
-        - 'Contains images from all document sources (mrz, rfid, visual, barcode)'
-        - 'Contains MRZ OCR results'
-        - 'Contains Visual zone OCR results'
-        - 'Contains barcode parsing result with text fields'
-        - 'Contains RFID parsing result with text fields'
-        - "Contains lexical data analysis results that allow you to compare MRZ OCR results,
-           Visual zone OCR results, barcodes and RFID chip data for an additional
-           assessment of the authenticity of the document (this is an old format, better use TEXT type)"
-        - 'Contains cropped graphic fields from Visual zone'
-        - 'Contains barcode parsing result with graphic fields'
-        - 'Contains RFID parsing result with graphic fields'
-        - 'Contains list of document type candidates with their probabilities and descriptions'
-        - 'Contains description of determined document type, if any'
-        - 'Contains result of document authenticity checks'
-        - 'Contains information about document position on the input image, its center, angle, etc'
-        - 'Contains raw information about barcodes on the input image'
-        - 'Contains license'
-        - 'Contains encrypted ResultContainerList'
+         Most of coordinates in other types defined on that image"
+        - "Contains image quality check results"
+        - "Contains check statuses with details, grouped by source"
+        - "Contains document textual fields from all sources (mrz, rfid, visual, barcode) with validity and cross-source compare checks"
+        - "Contains images from all document sources (mrz, rfid, visual, barcode)"
+        - "Contains MRZ OCR results"
+        - "Contains Visual zone OCR results"
+        - "Contains barcode parsing result with text fields"
+        - "Contains RFID parsing result with text fields"
+        - "Contains lexical data analysis results that allow you to compare MRZ OCR results, Visual zone OCR results, barcodes and RFID chip data for an additional assessment of the authenticity of the document (this is an old format, better use TEXT type)"
+        - "Contains cropped graphic fields from Visual zone"
+        - "Contains barcode parsing result with graphic fields"
+        - "Contains RFID parsing result with graphic fields"
+        - "Contains list of document type candidates with their probabilities and descriptions"
+        - "Contains description of determined document type, if any"
+        - "Contains result of document authenticity checks"
+        - "Contains information about document position on the input image, its center, angle, etc"
+        - "Contains raw information about barcodes on the input image"
+        - "Contains license'
+        - "Contains encrypted ResultContainerList'
       x-enum-varnames:
         - DOCUMENT_IMAGE
         - IMAGE_QUALITY
