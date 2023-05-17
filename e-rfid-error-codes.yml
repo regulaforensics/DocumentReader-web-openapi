@@ -2,7 +2,8 @@ openapi: 3.0.3
 components:
   schemas:
     RFIDErrorCodes:
-      description: Enumeration contains a set of error codes returned by SDK
+      type: integer
+      description: "Enumeration contains a set of error codes returned by SDK"
       enum:
       - -2147458430
       - -2147458429
@@ -118,7 +119,6 @@ components:
       - -1
       - 1
       - 2
-      type: integer
       x-enum-varnames:
       - RFID_ERROR_LAYER6_FILE_EOF1
       - RFID_ERROR_LAYER6_PWD_DEACTIVATED

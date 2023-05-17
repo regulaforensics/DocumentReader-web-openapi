@@ -1,8 +1,8 @@
 components:
   schemas:
     CheckDiagnose:
-      description: 'Enumeration contains identifiers which determinate the single
-        document element authenticity check outcome reason: https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/development/enums/check-diagnose/'
+      description: "Enumeration contains identifiers which determinate the single document element authenticity check outcome reason: https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/development/enums/check-diagnose/"
+      type: integer
       enum:
       - 0
       - 1
@@ -115,7 +115,6 @@ components:
       - 222
       - 230
       - 240
-      type: integer
       x-enum-varnames:
       - UNKNOWN
       - PASS

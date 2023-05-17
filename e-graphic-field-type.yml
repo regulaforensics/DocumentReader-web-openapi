@@ -1,8 +1,8 @@
+openapi: 3.0.3
 components:
   schemas:
     GraphicFieldName:
-      description: Human readable field name. Do not bind to this name - use GraphicFieldType
-        instead.
+      description: "Human readable field name. Do not bind to this name - use GraphicFieldType instead."
       type: string
     GraphicFieldType:
       enum:
@@ -84,4 +84,3 @@ components:
       - FINGER_RIGHT_FOUR_FINGERS
       - FINGER_LEFT_FOUR_FINGERS
       - FINGER_TWO_THUMBS
-openapi: 3.0.3

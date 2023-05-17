@@ -2,6 +2,7 @@ openapi: 3.0.3
 components:
   schemas:
     TextFieldType:
+      type: integer
       enum:
       - 0
       - 1
@@ -619,7 +620,6 @@ components:
       - 667
       - 668
       - 669
-      type: integer
       x-enum-descriptions:
       - "Document class code"
       - "Issuing country document code in accordance with the standard ISO 3166-1 (ICAO, document 9303)"

@@ -2,7 +2,8 @@ openapi: 3.0.3
 components:
   schemas:
     DocumentType:
-      description: Possible values for document types
+      type: integer
+      description: "Possible values for document types"
       enum:
       - 0
       - 11
@@ -232,7 +233,6 @@ components:
       - 238
       - 239
       - 240
-      type: integer
       x-enum-varnames:
       - NOT_DEFINED
       - PASSPORT
