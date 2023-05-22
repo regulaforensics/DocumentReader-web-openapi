@@ -2,7 +2,7 @@ openapi: 3.0.3
 components:
   schemas:
     RFIDErrorCodes:
-      description: Enumeration contains a set of error codes returned by SDK
+      description: The enumeration contains a set of possible errors that can return during the RFID chip processing
       type: integer
       enum:
       - 1
