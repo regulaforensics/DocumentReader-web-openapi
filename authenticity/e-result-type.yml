@@ -45,7 +45,7 @@ components:
       - "Fingerprint comparison check"
       - "Document liveness check"
       - "Extended OCR Check"
-      - "MRZ extended check"
+      - "Extended MRZ check"
       x-enum-varnames:
       - "UV_LUMINESCENCE"
       - "IR_B900"
