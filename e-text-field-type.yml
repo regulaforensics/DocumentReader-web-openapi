@@ -4,1854 +4,1852 @@ components:
     TextFieldType:
       type: integer
       enum:
-      - 0
-      - 1
-      - 2
-      - 3
-      - 4
-      - 5
-      - 6
-      - 7
-      - 8
-      - 9
-      - 10
-      - 11
-      - 12
-      - 13
-      - 14
-      - 15
-      - 16
-      - 17
-      - 18
-      - 19
-      - 20
-      - 21
-      - 22
-      - 23
-      - 24
-      - 25
-      - 26
-      - 27
-      - 28
-      - 29
-      - 30
-      - 31
-      - 35
-      - 36
-      - 37
-      - 38
-      - 39
-      - 40
-      - 41
-      - 42
-      - 43
-      - 44
-      - 45
-      - 46
-      - 47
-      - 48
-      - 49
-      - 50
-      - 51
-      - 52
-      - 53
-      - 54
-      - 55
-      - 56
-      - 57
-      - 58
-      - 59
-      - 60
-      - 61
-      - 62
-      - 63
-      - 64
-      - 65
-      - 66
-      - 67
-      - 68
-      - 69
-      - 70
-      - 71
-      - 72
-      - 73
-      - 74
-      - 75
-      - 76
-      - 77
-      - 78
-      - 79
-      - 80
-      - 81
-      - 82
-      - 83
-      - 84
-      - 85
-      - 86
-      - 87
-      - 88
-      - 89
-      - 90
-      - 91
-      - 92
-      - 93
-      - 94
-      - 95
-      - 96
-      - 97
-      - 98
-      - 99
-      - 100
-      - 101
-      - 102
-      - 103
-      - 104
-      - 105
-      - 106
-      - 107
-      - 108
-      - 109
-      - 110
-      - 111
-      - 112
-      - 113
-      - 114
-      - 115
-      - 116
-      - 117
-      - 118
-      - 119
-      - 120
-      - 121
-      - 122
-      - 123
-      - 124
-      - 125
-      - 126
-      - 127
-      - 128
-      - 129
-      - 130
-      - 131
-      - 132
-      - 133
-      - 134
-      - 135
-      - 136
-      - 137
-      - 138
-      - 139
-      - 140
-      - 141
-      - 142
-      - 143
-      - 144
-      - 145
-      - 146
-      - 147
-      - 148
-      - 149
-      - 150
-      - 151
-      - 152
-      - 153
-      - 154
-      - 155
-      - 156
-      - 157
-      - 158
-      - 159
-      - 160
-      - 161
-      - 162
-      - 163
-      - 164
-      - 165
-      - 166
-      - 167
-      - 168
-      - 169
-      - 170
-      - 171
-      - 172
-      - 173
-      - 174
-      - 175
-      - 176
-      - 177
-      - 178
-      - 179
-      - 180
-      - 181
-      - 182
-      - 183
-      - 184
-      - 185
-      - 186
-      - 187
-      - 188
-      - 189
-      - 190
-      - 191
-      - 192
-      - 193
-      - 194
-      - 195
-      - 196
-      - 197
-      - 198
-      - 199
-      - 200
-      - 220
-      - 221
-      - 251
-      - 252
-      - 253
-      - 254
-      - 255
-      - 256
-      - 257
-      - 258
-      - 259
-      - 260
-      - 261
-      - 262
-      - 263
-      - 264
-      - 265
-      - 266
-      - 267
-      - 268
-      - 269
-      - 270
-      - 271
-      - 272
-      - 273
-      - 274
-      - 275
-      - 276
-      - 277
-      - 278
-      - 279
-      - 280
-      - 281
-      - 282
-      - 283
-      - 284
-      - 285
-      - 286
-      - 287
-      - 288
-      - 289
-      - 290
-      - 291
-      - 292
-      - 293
-      - 294
-      - 295
-      - 296
-      - 297
-      - 298
-      - 299
-      - 300
-      - 301
-      - 302
-      - 303
-      - 304
-      - 305
-      - 306
-      - 307
-      - 308
-      - 309
-      - 310
-      - 311
-      - 312
-      - 313
-      - 314
-      - 315
-      - 316
-      - 317
-      - 318
-      - 319
-      - 320
-      - 321
-      - 322
-      - 323
-      - 324
-      - 325
-      - 326
-      - 327
-      - 328
-      - 329
-      - 330
-      - 331
-      - 332
-      - 333
-      - 334
-      - 335
-      - 336
-      - 340
-      - 341
-      - 342
-      - 343
-      - 344
-      - 345
-      - 346
-      - 347
-      - 348
-      - 349
-      - 350
-      - 351
-      - 352
-      - 353
-      - 354
-      - 355
-      - 356
-      - 357
-      - 358
-      - 359
-      - 360
-      - 361
-      - 362
-      - 363
-      - 364
-      - 365
-      - 366
-      - 367
-      - 368
-      - 369
-      - 370
-      - 371
-      - 372
-      - 373
-      - 374
-      - 375
-      - 376
-      - 377
-      - 378
-      - 379
-      - 380
-      - 381
-      - 382
-      - 383
-      - 384
-      - 385
-      - 386
-      - 387
-      - 388
-      - 389
-      - 390
-      - 391
-      - 392
-      - 393
-      - 394
-      - 395
-      - 396
-      - 397
-      - 398
-      - 399
-      - 400
-      - 401
-      - 402
-      - 403
-      - 404
-      - 405
-      - 406
-      - 407
-      - 408
-      - 409
-      - 410
-      - 411
-      - 412
-      - 413
-      - 414
-      - 415
-      - 416
-      - 417
-      - 418
-      - 419
-      - 420
-      - 421
-      - 422
-      - 423
-      - 424
-      - 425
-      - 426
-      - 427
-      - 428
-      - 429
-      - 430
-      - 431
-      - 432
-      - 433
-      - 434
-      - 435
-      - 436
-      - 437
-      - 438
-      - 439
-      - 440
-      - 441
-      - 442
-      - 443
-      - 444
-      - 445
-      - 446
-      - 447
-      - 448
-      - 449
-      - 450
-      - 451
-      - 452
-      - 453
-      - 454
-      - 455
-      - 456
-      - 457
-      - 458
-      - 459
-      - 460
-      - 461
-      - 462
-      - 463
-      - 464
-      - 465
-      - 466
-      - 467
-      - 468
-      - 469
-      - 470
-      - 471
-      - 472
-      - 473
-      - 474
-      - 475
-      - 476
-      - 477
-      - 478
-      - 479
-      - 480
-      - 481
-      - 482
-      - 483
-      - 484
-      - 485
-      - 486
-      - 487
-      - 488
-      - 489
-      - 490
-      - 491
-      - 492
-      - 493
-      - 494
-      - 495
-      - 496
-      - 497
-      - 498
-      - 499
-      - 500
-      - 501
-      - 502
-      - 503
-      - 504
-      - 505
-      - 506
-      - 507
-      - 508
-      - 509
-      - 510
-      - 511
-      - 512
-      - 513
-      - 514
-      - 515
-      - 516
-      - 517
-      - 518
-      - 519
-      - 520
-      - 521
-      - 522
-      - 523
-      - 524
-      - 525
-      - 526
-      - 527
-      - 528
-      - 529
-      - 530
-      - 531
-      - 532
-      - 533
-      - 534
-      - 535
-      - 536
-      - 537
-      - 538
-      - 539
-      - 540
-      - 541
-      - 542
-      - 543
-      - 544
-      - 545
-      - 546
-      - 547
-      - 548
-      - 549
-      - 550
-      - 551
-      - 552
-      - 553
-      - 554
-      - 555
-      - 556
-      - 557
-      - 558
-      - 559
-      - 560
-      - 561
-      - 562
-      - 563
-      - 564
-      - 565
-      - 566
-      - 567
-      - 568
-      - 569
-      - 570
-      - 571
-      - 572
-      - 573
-      - 574
-      - 575
-      - 576
-      - 577
-      - 578
-      - 579
-      - 580
-      - 581
-      - 582
-      - 583
-      - 584
-      - 585
-      - 586
-      - 587
-      - 588
-      - 589
-      - 590
-      - 591
-      - 592
-      - 593
-      - 594
-      - 595
-      - 596
-      - 597
-      - 598
-      - 599
-      - 600
-      - 601
-      - 602
-      - 603
-      - 604
-      - 605
-      - 606
-      - 607
-      - 608
-      - 609
-      - 610
-      - 611
-      - 612
-      - 613
-      - 614
-      - 615
-      - 616
-      - 617
-      - 618
-      - 619
-      - 620
-      - 621
-      - 622
-      - 623
-      - 624
-      - 625
-      - 626
-      - 627
-      - 628
-      - 629
-      - 630
-      - 631
-      - 632
-      - 633
-      - 634
-      - 635
-      - 636
-      - 637
-      - 638
-      - 639
-      - 640
-      - 641
-      - 642
-      - 643
-      - 644
-      - 645
-      - 646
-      - 647
-      - 648
-      - 649
-      - 650
-      - 651
-      - 652
-      - 653
-      - 654
-      - 655
-      - 656
-      - 657
-      - 658
-      - 659
-      - 660
-      - 661
-      - 662
-      - 663
-      - 664
-      - 665
-      - 666
-      - 667
-      - 668
-      - 669
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+        - 10
+        - 11
+        - 12
+        - 13
+        - 14
+        - 15
+        - 16
+        - 17
+        - 18
+        - 19
+        - 20
+        - 21
+        - 22
+        - 23
+        - 24
+        - 25
+        - 26
+        - 27
+        - 28
+        - 29
+        - 30
+        - 31
+        - 35
+        - 36
+        - 37
+        - 38
+        - 39
+        - 40
+        - 41
+        - 42
+        - 43
+        - 44
+        - 45
+        - 46
+        - 47
+        - 48
+        - 49
+        - 50
+        - 51
+        - 52
+        - 53
+        - 54
+        - 55
+        - 56
+        - 57
+        - 58
+        - 59
+        - 60
+        - 61
+        - 62
+        - 63
+        - 64
+        - 65
+        - 66
+        - 67
+        - 68
+        - 69
+        - 70
+        - 71
+        - 72
+        - 73
+        - 74
+        - 75
+        - 76
+        - 77
+        - 78
+        - 79
+        - 80
+        - 81
+        - 82
+        - 83
+        - 84
+        - 85
+        - 86
+        - 87
+        - 88
+        - 89
+        - 90
+        - 91
+        - 92
+        - 93
+        - 94
+        - 95
+        - 96
+        - 97
+        - 98
+        - 99
+        - 100
+        - 101
+        - 102
+        - 103
+        - 104
+        - 105
+        - 106
+        - 107
+        - 108
+        - 109
+        - 110
+        - 111
+        - 112
+        - 113
+        - 114
+        - 115
+        - 116
+        - 117
+        - 118
+        - 119
+        - 120
+        - 121
+        - 122
+        - 123
+        - 124
+        - 125
+        - 126
+        - 127
+        - 128
+        - 129
+        - 130
+        - 131
+        - 132
+        - 133
+        - 134
+        - 135
+        - 136
+        - 137
+        - 138
+        - 139
+        - 140
+        - 141
+        - 142
+        - 143
+        - 144
+        - 145
+        - 146
+        - 147
+        - 148
+        - 149
+        - 150
+        - 151
+        - 152
+        - 153
+        - 154
+        - 155
+        - 156
+        - 157
+        - 158
+        - 159
+        - 160
+        - 161
+        - 162
+        - 163
+        - 164
+        - 165
+        - 166
+        - 167
+        - 168
+        - 169
+        - 170
+        - 171
+        - 172
+        - 173
+        - 174
+        - 175
+        - 176
+        - 177
+        - 178
+        - 179
+        - 180
+        - 181
+        - 182
+        - 183
+        - 184
+        - 185
+        - 186
+        - 187
+        - 188
+        - 189
+        - 190
+        - 191
+        - 192
+        - 193
+        - 194
+        - 195
+        - 196
+        - 197
+        - 198
+        - 199
+        - 200
+        - 220
+        - 221
+        - 251
+        - 252
+        - 253
+        - 254
+        - 255
+        - 256
+        - 257
+        - 258
+        - 259
+        - 260
+        - 261
+        - 262
+        - 263
+        - 264
+        - 265
+        - 266
+        - 267
+        - 268
+        - 269
+        - 270
+        - 271
+        - 272
+        - 273
+        - 274
+        - 275
+        - 276
+        - 277
+        - 278
+        - 279
+        - 280
+        - 281
+        - 282
+        - 283
+        - 284
+        - 285
+        - 286
+        - 287
+        - 288
+        - 289
+        - 290
+        - 291
+        - 292
+        - 293
+        - 294
+        - 295
+        - 296
+        - 297
+        - 298
+        - 299
+        - 300
+        - 301
+        - 302
+        - 303
+        - 304
+        - 305
+        - 306
+        - 307
+        - 308
+        - 309
+        - 310
+        - 311
+        - 312
+        - 313
+        - 314
+        - 315
+        - 316
+        - 317
+        - 318
+        - 319
+        - 320
+        - 321
+        - 322
+        - 323
+        - 324
+        - 325
+        - 326
+        - 327
+        - 328
+        - 329
+        - 330
+        - 331
+        - 332
+        - 333
+        - 334
+        - 335
+        - 336
+        - 340
+        - 341
+        - 342
+        - 343
+        - 344
+        - 345
+        - 346
+        - 347
+        - 348
+        - 349
+        - 350
+        - 351
+        - 352
+        - 353
+        - 354
+        - 355
+        - 356
+        - 357
+        - 358
+        - 359
+        - 360
+        - 361
+        - 362
+        - 363
+        - 364
+        - 365
+        - 366
+        - 367
+        - 368
+        - 369
+        - 370
+        - 371
+        - 372
+        - 373
+        - 374
+        - 375
+        - 376
+        - 377
+        - 378
+        - 379
+        - 380
+        - 381
+        - 382
+        - 383
+        - 384
+        - 385
+        - 386
+        - 387
+        - 388
+        - 389
+        - 390
+        - 391
+        - 392
+        - 393
+        - 394
+        - 395
+        - 396
+        - 397
+        - 398
+        - 399
+        - 400
+        - 401
+        - 402
+        - 403
+        - 404
+        - 405
+        - 406
+        - 407
+        - 408
+        - 409
+        - 410
+        - 411
+        - 412
+        - 413
+        - 414
+        - 415
+        - 416
+        - 417
+        - 418
+        - 419
+        - 420
+        - 421
+        - 422
+        - 423
+        - 424
+        - 425
+        - 426
+        - 427
+        - 428
+        - 429
+        - 430
+        - 431
+        - 432
+        - 433
+        - 434
+        - 435
+        - 436
+        - 437
+        - 438
+        - 439
+        - 440
+        - 441
+        - 442
+        - 443
+        - 444
+        - 445
+        - 446
+        - 447
+        - 448
+        - 449
+        - 450
+        - 451
+        - 452
+        - 453
+        - 454
+        - 455
+        - 456
+        - 457
+        - 458
+        - 459
+        - 460
+        - 461
+        - 462
+        - 463
+        - 464
+        - 465
+        - 466
+        - 467
+        - 468
+        - 469
+        - 470
+        - 471
+        - 472
+        - 473
+        - 474
+        - 475
+        - 476
+        - 477
+        - 478
+        - 479
+        - 480
+        - 481
+        - 482
+        - 483
+        - 484
+        - 485
+        - 486
+        - 487
+        - 488
+        - 489
+        - 490
+        - 491
+        - 492
+        - 493
+        - 494
+        - 495
+        - 496
+        - 497
+        - 498
+        - 499
+        - 500
+        - 501
+        - 502
+        - 503
+        - 504
+        - 505
+        - 506
+        - 507
+        - 508
+        - 509
+        - 510
+        - 511
+        - 512
+        - 513
+        - 514
+        - 515
+        - 516
+        - 517
+        - 518
+        - 519
+        - 520
+        - 521
+        - 522
+        - 523
+        - 524
+        - 525
+        - 526
+        - 527
+        - 528
+        - 529
+        - 530
+        - 531
+        - 532
+        - 533
+        - 534
+        - 535
+        - 536
+        - 537
+        - 538
+        - 539
+        - 540
+        - 541
+        - 542
+        - 543
+        - 544
+        - 545
+        - 546
+        - 547
+        - 548
+        - 549
+        - 550
+        - 551
+        - 552
+        - 553
+        - 554
+        - 555
+        - 556
+        - 557
+        - 558
+        - 559
+        - 560
+        - 561
+        - 562
+        - 563
+        - 564
+        - 565
+        - 566
+        - 567
+        - 568
+        - 569
+        - 570
+        - 571
+        - 572
+        - 573
+        - 574
+        - 575
+        - 576
+        - 577
+        - 578
+        - 579
+        - 580
+        - 581
+        - 582
+        - 583
+        - 584
+        - 585
+        - 586
+        - 587
+        - 588
+        - 589
+        - 590
+        - 591
+        - 592
+        - 593
+        - 594
+        - 595
+        - 596
+        - 597
+        - 598
+        - 599
+        - 600
+        - 601
+        - 602
+        - 603
+        - 604
+        - 605
+        - 606
+        - 607
+        - 608
+        - 609
+        - 610
+        - 611
+        - 612
+        - 613
+        - 614
+        - 615
+        - 616
+        - 617
+        - 618
+        - 619
+        - 620
+        - 621
+        - 622
+        - 623
+        - 624
+        - 625
+        - 626
+        - 627
+        - 628
+        - 629
+        - 630
+        - 631
+        - 632
+        - 633
+        - 634
+        - 635
+        - 636
+        - 637
+        - 638
+        - 639
+        - 640
+        - 641
+        - 642
+        - 643
+        - 644
+        - 645
+        - 646
+        - 647
+        - 648
+        - 649
+        - 650
+        - 651
+        - 652
+        - 653
+        - 654
+        - 655
+        - 656
+        - 657
+        - 658
+        - 659
+        - 660
+        - 661
+        - 662
+        - 663
+        - 664
+        - 665
+        - 666
+        - 667
+        - 668
+        - 669
       x-enum-descriptions:
-      - "Document class code"
-      - "Issuing country document code in accordance with the standard ISO 3166-1 (ICAO, document 9303)"
-      - "Document number"
-      - "Document expiration date"
-      - "Date of issue"
-      - "Date of birth"
-      - "Place of birth"
-      - "Personal number"
-      - "Surname"
-      - "Given name (names)"
-      - "Mother`s name"
-      - "Nationality"
-      - "Sex"
-      - "Height"
-      - "Weight"
-      - "Eyes color"
-      - "Hair color"
-      - "Address"
-      - "Donation stamp"
-      - "Social security number"
-      - "Driving license class"
-      - "Driving license permission code"
-      - "Driving license restriction code"
-      - "Date when the owner of the document turns 21 years old"
-      - "Document issuing authority"
-      - "Full name"
-      - "Nationality letter code according to standard ISO 3166-1 (ICAO doc 9303)"
-      - "Passport number (used in visas)"
-      - "Invitation number (used in visas)"
-      - "Visa ID"
-      - "Visa class"
-      - "Visa subclass"
-      - "MRZ type"
-      - "Optional data"
-      - "Full name of the document class"
-      - "Full name of issuing state"
-      - "Place of document issue"
-      - "Document number checksum"
-      - "Date of birth checksum"
-      - "Date of document expiration checksum"
-      - "Personal number checksum"
-      - "Final checksum"
-      - "Passport number checksum (used in visas)"
-      - "Invitation number checksum (used in visas)"
-      - "Visa identification number checksum"
-      - "Full name checksum"
-      - "Visa expiration date checksum"
-      - "Other information"
-      - "MRZ strings"
-      - "Name suffix"
-      - "Name prefix"
-      - "Checksum for the date of issue of the document"
-      - "Check digit for or the date of issue of the document"
-      - "Document series"
-      - "Vehicle registration certificate number"
-      - "Vehicle model"
-      - "Vehicle color"
-      - "Vehicle body number"
-      - "Vehicle type"
-      - "Vehicle GVWR"
-      - "Vehicle unladen weight"
-      - "Address (region)"
-      - "Address (state)"
-      - "Address (building number)"
-      - "Address (house number)"
-      - "Address (flat number)"
-      - "Place of registration"
-      - "Date of registration"
-      - "Start date of residence"
-      - "End date of residence"
-      - "Issuing authority code"
-      - "Place of birth address (region)"
-      - "Place of birth address (state code)"
-      - "Address (street)"
-      - "Address (city)"
-      - "Address (tax code)"
-      - "Address (postal code)"
-      - "Check digit for document number"
-      - "Check digit for date of birth"
-      - "Check digit for date of expiry"
-      - "Check digit for personal number"
-      - "Final check digit for all MRZ"
-      - "Check digit for passport number (used in visas)"
-      - "Check digit for invitation number (used in visas)"
-      - "Check digit for visa identification number"
-      - "Check digit for full name"
-      - "Check digit for visa expiration date"
-      - "Permit type"
-      - "Permit expiration date"
-      - "Permit identifier"
-      - "Permit issue date"
-      - "Driving restriction code"
-      - "Driving permit code"
-      - "A string that is used to validate a document against a database"
-      - "Number of duplicates"
-      - "Medical indicator codes"
-      - "Non resident stamp"
-      - "Visa type"
-      - "Visa valid-from date"
-      - "Visa valid-until date"
-      - "Duration of stay on visa"
-      - "Number of entries"
-      - "Day in date"
-      - "Month in date"
-      - "Year in date"
-      - "Unique customer identifier"
-      - "Commercial vehicle code"
-      - "Also known as (date of birth)"
-      - "Also known as (social security number)"
-      - "Also known as (last name)"
-      - "Also known as (first name)"
-      - "Also known as (name suffix)"
-      - "Also known as (name prefix)"
-      - "Postal address (street)"
-      - "Postal address (city)"
-      - "Postal address (tax code)"
-      - "Postal address (zip)"
-      - "Driver license validation number"
-      - "Inventory number"
-      - "Race ethnicity"
-      - "Vehicle legal class"
-      - "Legal permission code"
-      - "Legal restriction code"
-      - "Surname and (or) name at birth"
-      - "Name (russian transcription)"
-      - "Visa identification number (russian transcription)"
-      - "Father`s name"
-      - "Father`s name (russian transcription)"
-      - "Full name (russian transcription)"
-      - "Place of birth (russian transcription)"
-      - "Issuing authority (russian transcription)"
-      - "Digital code of the state of issue of the document in accordance with ISO 3166-1 (ICAO Doc 9303)"
-      - "Digital code of nationality in accordance with ISO 3166-1 (ICAO Doc 9303)"
-      - "Vehicle engine power"
-      - "Vehicle engine volume"
-      - "Vehicle chassis number"
-      - "Vehicle engine number"
-      - "Vehicle engine model"
-      - "Vehicle category"
-      - "Identity card number"
-      - "Control number"
-      - "Parent names"
-      - "Second last name"
-      - "Middle name"
-      - "Vehicle identification number"
-      - "Check digit for vehicle identification number"
-      - "Checksum for vehicle identification number"
-      - "Check digit of the first line of the MRZ"
-      - "Check digit of the second line of the MRZ"
-      - "Check digit of the third line of the MRZ"
-      - "Checksum of the first line of the MRZ"
-      - "Checksum of the second line of the MRZ"
-      - "Checksum of the third line of the MRZ"
-      - "Check digit of the vehicle registration number"
-      - "Checksum of the vehicle registration number"
-      - "Vehicle code in accordance with ITS (Intelligent Transport System)"
-      - "Card number for access to the RFID chip"
-      - "Marital status"
-      - "Company name"
-      - "Special notes"
-      - "Spouse`s last name"
-      - "Document status tracking number"
-      - "Booklet number"
-      - "Children"
-      - "Copy number"
-      - "Serial number"
-      - "Dossier number"
-      - "Also known as (full name)"
-      - "Territorial validity"
-      - "MRZ strings with correct checksums (calculated)"
-      - "Restriction code for commercial driving license"
-      - "Date the document holder turns 18 years old"
-      - "Record creation date"
-      - "Duplicate creation date"
-      - "Driving license type"
-      - "Military card number"
-      - "Destination"
-      - "Blood type"
-      - "Sequence number"
-      - "Vehicle body type"
-      - "Make of vehicle"
-      - "Transaction number"
-      - "Age"
-      - "Registration number (document on the record-keeping system)"
-      - "Voter personal number"
-      - "Address (municipality)"
-      - "Address (locality)"
-      - "Domain/sector"
-      - "OCR number"
-      - "Federal elections"
-      - "Reference number"
-      - "Optional data checksum"
-      - "Optional data check digit"
-      - "Visa number"
-      - "Visa number checksum"
-      - "Visa number check digit"
-      - "Voter"
-      - "Type/number of previous document"
-      - "Field from MRZ"
-      - "Current date"
-      - "Status expiration date"
-      - "bank note number"
-      - "Code of customer service center"
-      - "Pseudonym"
-      - "Academic rank"
-      - "Address (country)"
-      - "Address (zip)"
-      - "Information on a permit for permanent residence 1 (field for eID)"
-      - "Information on a permit for permanent residence 2 (field for eID)"
-      - "Place of birth address: street (field for eID)"
-      - "Place of birth address: city (field for eID)"
-      - "Place of birth address: state (field for eID)"
-      - "Place of birth address: country (field for eID)"
-      - "Place of birth address: zip (field for eID)"
-      - "Commercial driving license class"
-      - "Date when the holder of the document is 19 years old"
-      - "Weight (pounds)"
-      - "Document expiration indicator"
-      - "Driving license permit"
-      - "Revision date"
-      - "Compliance type"
-      - "Abbreviated last name"
-      - "Abbreviated first name"
-      - "Abbreviated middle name"
-      - "Exam date"
-      - "Organization"
-      - "Department"
-      - "Salary level"
-      - "Rank/status/title"
-      - "Number confirming the right to receive benefits"
-      - "Type of armed forces in which sponsor serves"
-      - "Sponsor status"
-      - "Sponsor"
-      - "Degree of kindred"
-      - "US Citizenship and Immigration Services Alien Registration Number"
-      - "Category"
-      - "Remainder term"
-      - "Conditions"
-      - "Identifier"
-      - "Configuration"
-      - "Optional data"
-      - "Optional data from MRZ first line"
-      - "Optional data from MRZ second line"
-      - "Optional data from MRZ third line"
-      - "EQV-code"
-      - "ALT-code"
-      - "Binary code"
-      - "Pseudo code"
-      - "Fee"
-      - "Stamp number"
-      - "Biometric data protection settings"
-      - "Biometric data integrity parameters"
-      - "Biometric data creation date"
-      - "Biometric data validity period"
-      - "Biometric data header format version"
-      - "Biometric data record type"
-      - "Biometric data type"
-      - "Biometric data subtype"
-      - "Biometric data id"
-      - "Biometric data format"
-      - "Phone number"
-      - "Profession"
-      - "Job position"
-      - "Common personal data"
-      - "Other valid identifier"
-      - "Custody info"
-      - "Other name"
-      - "Additional data"
-      - "Tax information"
-      - "Document personalization date"
-      - "Personalization serial number"
-      - "Other person name"
-      - "Date of creation of a record of persons for notification in case of unforeseen situations"
-      - "Person name for contingency notification"
-      - "Person phone for contingency notification"
-      - "Person address for contingency notification"
-      - "Text details of the organization issuing the DS certificate"
-      - "Text details of the organization issuing the document"
-      - "DS-certificate start date"
-      - "DS-certificate expiration date"
-      - "Vehicle category/restriction/conditions from data group DG1 of the eDL application"
-      - "Type confirmation number"
-      - "Administrative number"
-      - "Document discriminator"
-      - "Data discriminator"
-      - "ISO issuer identifier"
-      - "The Garda National Immigration Bureau registration number"
-      - "Department number"
-      - "Telegraph code"
-      - "Allergies"
-      - "Sp-code"
-      - "Court restriction code"
-      - "County code"
-      - "Sponsor social security number"
-      - "Military identification number"
-      - "Novice driver until ... (date)"
-      - "Registration number in the computer system of the Norwegian Directorate of"
-        "Immigration (the UDI)"
-      - "Philippines Traffic Police Unit Code"
-      - "PNR-code (book number)"
-      - "Departure airport code"
-      - "Arrival airport code"
-      - "Flight number"
-      - "Departure date"
-      - "Seat number"
-      - "Boarding pass issue date"
-      - "Hidden weapons license,  valid until... (date)"
-      - "Reference number checksum"
-      - "Reference number check digit"
-      - "Room number"
-      - "Religion"
-      - "Number of months before the due date expiration of a document"
-      - "Electronic ticket indicator"
-      - "Free baggage allowance"
-      - "Frequent flyer number"
-      - "Airline frequent flyer indicator"
-      - "Ticket number"
-      - "Airline numeric code"
-      - "Boarding pass issuer code"
-      - "Check-in sequence number"
-      - "Compartment code"
-      - "PDF417 codec"
-      - "identity card checksum"
-      - "identity card check digit"
-      - "Veteran"
-      - "Validity date of A1 driver\u2019s license"
-      - "Expiration date of A1 driver\u2019s license"
-      - "Restrictions for A1 driver\u2019s license"
-      - "Validity date of A driver\u2019s license"
-      - "Expiration date of A driver\u2019s license"
-      - "Restrictions for A driver\u2019s license"
-      - "Validity date of B driver\u2019s license"
-      - "Expiration date of B driver\u2019s license"
-      - "Restrictions for B driver\u2019s license"
-      - "Validity date of C1 driver\u2019s license"
-      - "Expiration date of C1 driver\u2019s license"
-      - "Restrictions for C1 driver\u2019s license"
-      - "Validity date of C driver\u2019s license"
-      - "Expiration date of C driver\u2019s license"
-      - "Restrictions for C driver\u2019s license"
-      - "Validity date of D1 driver\u2019s license"
-      - "Expiration date of D1 driver\u2019s license"
-      - "Restrictions for D1 driver\u2019s license"
-      - "Validity date of D driver\u2019s license"
-      - "Expiration date of D driver\u2019s license"
-      - "Restrictions for D driver\u2019s license"
-      - "Validity date of BE driver\u2019s license"
-      - "Expiration date of BE driver\u2019s license"
-      - "Restrictions for BE driver\u2019s license"
-      - "Validity date of C1E driver\u2019s license"
-      - "Expiration date of C1E driver\u2019s license"
-      - "Restrictions for C1E driver\u2019s license"
-      - "Validity date of CE driver\u2019s license"
-      - "Expiration date of CE driver\u2019s license"
-      - "Restrictions for CE driver\u2019s license"
-      - "Validity date of D1E driver\u2019s license"
-      - "Expiration date of D1E driver\u2019s license"
-      - "Restrictions for D1E driver\u2019s license"
-      - "Validity date of DE driver\u2019s license"
-      - "Expiration date of DE driver\u2019s license"
-      - "Restrictions for DE driver\u2019s license"
-      - "Validity date of M driver\u2019s license"
-      - "Expiration date of M driver\u2019s license"
-      - "Restrictions for M driver\u2019s license"
-      - "Validity date of L driver\u2019s license"
-      - "Expiration date of L driver\u2019s license"
-      - "Restrictions for L driver\u2019s license"
-      - "Validity date of T driver\u2019s license"
-      - "Expiration date of T driver\u2019s license"
-      - "Restrictions for T driver\u2019s license"
-      - "Validity date of AM driver\u2019s license"
-      - "Expiration date of AM driver\u2019s license"
-      - "Restrictions for AM driver\u2019s license"
-      - "Validity date of A2 driver\u2019s license"
-      - "Expiration date of A2 driver\u2019s license"
-      - "Restrictions for A2 driver\u2019s license"
-      - "Validity date of B1 driver\u2019s license"
-      - "Expiration date of B1 driver\u2019s license"
-      - "Restrictions for B1 driver\u2019s license"
-      - "Last name at birth"
-      - "Civil status"
-      - "Number of seats"
-      - "Number of standing places"
-      - "Max speed"
-      - "Fuel type"
-      - "Vehicle emission class"
-      - "Engine power-to-weight ratio"
-      - "Trailer with brakes maximum weight"
-      - "Trailer without brakes maximum weight"
-      - "Transmission type"
-      - "Trailer equipment"
-      - "Accompanying person"
-      - "Police district"
-      - "Date of document first issue"
-      - "Maximum payload"
-      - "Number of axles"
-      - "Axle weight limit"
-      - "Precinct"
-      - "Inviter"
-      - "Purpose of arrival"
-      - "Skin color"
-      - "Complexion"
-      - "Departure airport"
-      - "Arrival airport"
-      - "Airline name"
-      - "Airline bonus program for frequent flyers"
-      - "License number"
-      - "In tanks"
-      - "Other than tanks"
-      - "Passenger with fast track priority (express formal procedures at the airport)"
-      - "Owner"
-      - "MRZ strings from ICAO RFID"
-      - "Number of card issues with this number"
-      - "Card issues count checksum"
-      - "Card issues count check digit"
-      - "Birth century"
-      - "Validity date of A3 driver\u2019s license"""
-      - "Expiration date of A3 driver\u2019s license"
-      - "Restrictions for A3 driver\u2019s license"
-      - "Validity date of C2 driver\u2019s license"
-      - "Expiration date of C2 driver\u2019s license"
-      - "Restrictions for C2 driver\u2019s license"
-      - "Validity date of B2 driver\u2019s license"
-      - "Expiration date of B2 driver\u2019s license"
-      - "Restrictions for B2 driver\u2019s license"
-      - "Validity date of D2 driver\u2019s license"
-      - "Expiration date of D2 driver\u2019s license"
-      - "Restrictions for D2 driver\u2019s license"
-      - "Validity date of B2E driver\u2019s license"
-      - "Expiration date of B2E driver\u2019s license"
-      - "Restrictions for B2E driver\u2019s license"
-      - "Validity date of G driver\u2019s license"
-      - "Expiration date of G driver\u2019s license"
-      - "Restrictions for G driver\u2019s license"
-      - "Validity date of J driver\u2019s license"
-      - "Expiration date of J driver\u2019s license"
-      - "Restrictions for J driver\u2019s license"
-      - "Validity date of LC driver\u2019s license"
-      - "Expiration date of LC driver\u2019s license"
-      - "Restrictions for LC driver\u2019s license"
-      - "Bank card number"
-      - "Bank card validity"
-      - "Tax number"
-      - "Health insurance number"
-      - "Grandfather`s name"
-      - "Recruit indicator"
-      - "Mother`s last name"
-      - "Mother`s first name"
-      - "Father`s last name"
-      - "Father`s first name"
-      - "Mother`s date of birth"
-      - "Father`s date of birth"
-      - "Mother`s personal number"
-      - "Father`s personal number"
-      - "Mother`s place of birth"
-      - "Father`s place of birth"
-      - "Mother`s country of birth"
-      - "Father`s country of birth"
-      - "Date of document first renewal"
-      - "Date of document second renewal"
-      - "Place of examination"
-      - "Application number"
-      - "Voucher number"
-      - "Authorization number"
-      - "Faculty"
-      - "Form of education"
-      - "DNI number"
-      - "Retirement number"
-      - "Professional id number"
-      - "Age at issue"
-      - "Years since issue"
-      - "Validity date of BTP driver\u2019s license"
-      - "Restrictions for BTP driver\u2019s license"
-      - "Expiration date of BTP driver\u2019s license"
-      - "Validity date of C3 driver\u2019s license"
-      - "Restrictions for C3 driver\u2019s license"
-      - "Expiration date of C3 driver\u2019s license"
-      - "Validity date of E driver\u2019s license"
-      - "Restrictions for E driver\u2019s license"
-      - "Expiration date of E driver\u2019s license"
-      - "Validity date of F driver\u2019s license"
-      - "Restrictions for F driver\u2019s license"
-      - "Expiration date of F driver\u2019s license"
-      - "Validity date of FA driver\u2019s license"
-      - "Restrictions for FA driver\u2019s license"
-      - "Expiration date of FA driver\u2019s license"
-      - "Validity date of FA1 driver\u2019s license"
-      - "Restrictions for FA1 driver\u2019s license"
-      - "Expiration date of FA1 driver\u2019s license"
-      - "Validity date of FB driver\u2019s license"
-      - "Restrictions for FB driver\u2019s license"
-      - "Expiration date of FB driver\u2019s license"
-      - "Validity date of G1 driver\u2019s license"
-      - "Restrictions for G1 driver\u2019s license"
-      - "Expiration date of G1 driver\u2019s license"
-      - "Validity date of H driver\u2019s license"
-      - "Restrictions for H driver\u2019s license"
-      - "Expiration date of H driver\u2019s license"
-      - "Validity date of I driver\u2019s license"
-      - "Restrictions for I driver\u2019s license"
-      - "Expiration date of I driver\u2019s license"
-      - "Validity date of K driver\u2019s license"
-      - "Restrictions for K driver\u2019s license"
-      - "Expiration date of K driver\u2019s license"
-      - "Validity date of LK driver\u2019s license"
-      - "Restrictions for LK driver\u2019s license"
-      - "Expiration date of LK driver\u2019s license"
-      - "Validity date of N driver\u2019s license"
-      - "Restrictions for N driver\u2019s license"
-      - "Expiration date of N driver\u2019s license"
-      - "Validity date of S driver\u2019s license"
-      - "Restrictions for S driver\u2019s license"
-      - "Expiration date of S driver\u2019s license"
-      - "Validity date of TB driver\u2019s license"
-      - "Restrictions for TB driver\u2019s license"
-      - "Expiration date of TB driver\u2019s license"
-      - "Validity date of TM driver\u2019s license"
-      - "Restrictions for TM driver\u2019s license"
-      - "Expiration date of TM driver\u2019s license"
-      - "Validity date of TR driver\u2019s license"
-      - "Restrictions for TR driver\u2019s license"
-      - "Expiration date of TR driver\u2019s license"
-      - "Validity date of TV driver\u2019s license"
-      - "Restrictions for TV driver\u2019s license"
-      - "Expiration date of TV driver\u2019s license"
-      - "Validity date of V driver\u2019s license"
-      - "Restrictions for V driver\u2019s license"
-      - "Expiration date of V driver\u2019s license"
-      - "Validity date of W driver\u2019s license"
-      - "Restrictions for W driver\u2019s license"
-      - "Expiration date of W driver\u2019s license"
-      - "URL"
-      - "Caliber"
-      - "Model"
-      - "Make"
-      - "Number of cylinders"
-      - "Surname of husband after registration"
-      - "Surname of wife after registration"
-      - "Date of birth of wife"
-      - "Date of birth of husband"
-      - "Citizenship of first person"
-      - "Citizenship of second person"
-      - "CVV code"
-      - "Date of insurance expiry"
-      - "Mortgage"
-      - "Old document number"
-      - "Old date of issue"
-      - "Old place of issue"
-      - "Validity date of LR driver\u2019s license"
-      - "Expiration date of LR driver\u2019s license"
-      - "Restrictions for LR driver\u2019s license"
-      - "Validity date of MR driver\u2019s license"
-      - "Expiration date of MR driver\u2019s license"
-      - "Restrictions for MR driver\u2019s license"
-      - "Validity date of HR driver\u2019s license"
-      - "Expiration date of HR driver\u2019s license"
-      - "Restrictions for HR driver\u2019s license"
-      - "Validity date of HC driver\u2019s license"
-      - "Expiration date of HC driver\u2019s license"
-      - "Restrictions for HC driver\u2019s license"
-      - "Validity date of MC driver\u2019s license"
-      - "Expiration date of MC driver\u2019s license"
-      - "Restrictions for MC driver\u2019s license"
-      - "Validity date of RE driver\u2019s license"
-      - "Expiration date of RE driver\u2019s license"
-      - "Restrictions for RE driver\u2019s license"
-      - "Validity date of R driver\u2019s license"
-      - "Expiration date of R driver\u2019s license"
-      - "Restrictions for R driver\u2019s license"
-      - "Validity date of CA driver\u2019s license"
-      - "Expiration date of CA driver\u2019s license"
-      - "Restrictions for CA driver\u2019s license"
-      - "Citizenship Status"
-      - "Military Service From"
-      - "Military Service To"
-      - "Validity date of NT driver\u2019s license"
-      - "Expiration date of NT driver\u2019s license"
-      - "Restrictions for NT driver\u2019s license"
-      - "Validity date of TN driver\u2019s license"
-      - "Expiration date of TN driver\u2019s license"
-      - "Restrictions for TN driver\u2019s license"
-      - "Validity date of D3 driver\u2019s license"
-      - "Expiration date of D3 driver\u2019s license"
-      - "Restrictions for D3 driver\u2019s license"
-      - "Alt Date of expire"
-      - "Validity date of CD driver\u2019s license"
-      - "Expiration date of CD driver\u2019s license"
-      - "Restrictions for CD driver\u2019s license"
-      - "Issuer identification number"
-      - "Start date of payment period"
-      - "End date of payment period"
-      - "Vaccination certificate identifier"
-      - "First name"
-      - "Date of arrival"
-      - "Second name"
-      - "Third name"
-      - "Fourth name"
-      - "Last name"
-      - "DL class code RM valid from"
-      - "DL class code RM valid notes"
-      - "DL class code RM valid to"
-      - "DL class code PW valid from"
-      - "DL class code PW valid notes"
-      - "DL class code PW valid to"
-      - "DL class code EB from"
-      - "DL class code EB notes"
-      - "DL class code EB to"
-      - "DL class code EC from"
-      - "DL class code EC notes"
-      - "DL class code EC to"
-      - "DL class code EC1 from"
-      - "DL class code EC1 notes"
-      - "DL class code EC1 to"
-      - "FT place of birth city"
-      - "FT year of birth"
-      - "FT year of expiry"
-      - "Grandfather mame maternal"
+        - 'Document class code'
+        - 'Issuing country document code in accordance with the standard ISO 3166-1 (ICAO, document 9303)'
+        - 'Document number'
+        - 'Document expiration date'
+        - 'Date of issue'
+        - 'Date of birth'
+        - 'Place of birth'
+        - 'Personal number'
+        - 'Surname'
+        - 'Given name (names)'
+        - 'Mother`s name'
+        - 'Nationality'
+        - 'Sex'
+        - 'Height'
+        - 'Weight'
+        - 'Eyes color'
+        - 'Hair color'
+        - 'Address'
+        - 'Donation stamp'
+        - 'Social security number'
+        - 'Driving license class'
+        - 'Driving license permission code'
+        - 'Driving license restriction code'
+        - 'Date when the owner of the document turns 21 years old'
+        - 'Document issuing authority'
+        - 'Full name'
+        - 'Nationality letter code according to standard ISO 3166-1 (ICAO doc 9303)'
+        - 'Passport number (used in visas)'
+        - 'Invitation number (used in visas)'
+        - 'Visa ID'
+        - 'Visa class'
+        - 'Visa subclass'
+        - 'MRZ type'
+        - 'Optional data'
+        - 'Full name of the document class'
+        - 'Full name of issuing state'
+        - 'Place of document issue'
+        - 'Document number checksum'
+        - 'Date of birth checksum'
+        - 'Date of document expiration checksum'
+        - 'Personal number checksum'
+        - 'Final checksum'
+        - 'Passport number checksum (used in visas)'
+        - 'Invitation number checksum (used in visas)'
+        - 'Visa identification number checksum'
+        - 'Full name checksum'
+        - 'Visa expiration date checksum'
+        - 'Other information'
+        - 'MRZ strings'
+        - 'Name suffix'
+        - 'Name prefix'
+        - 'Checksum for the date of issue of the document'
+        - 'Check digit for or the date of issue of the document'
+        - 'Document series'
+        - 'Vehicle registration certificate number'
+        - 'Vehicle model'
+        - 'Vehicle color'
+        - 'Vehicle body number'
+        - 'Vehicle type'
+        - 'Vehicle GVWR'
+        - 'Vehicle unladen weight'
+        - 'Address (region)'
+        - 'Address (state)'
+        - 'Address (building number)'
+        - 'Address (house number)'
+        - 'Address (flat number)'
+        - 'Place of registration'
+        - 'Date of registration'
+        - 'Start date of residence'
+        - 'End date of residence'
+        - 'Issuing authority code'
+        - 'Place of birth address (region)'
+        - 'Place of birth address (state code)'
+        - 'Address (street)'
+        - 'Address (city)'
+        - 'Address (tax code)'
+        - 'Address (postal code)'
+        - 'Check digit for document number'
+        - 'Check digit for date of birth'
+        - 'Check digit for date of expiry'
+        - 'Check digit for personal number'
+        - 'Final check digit for all MRZ'
+        - 'Check digit for passport number (used in visas)'
+        - 'Check digit for invitation number (used in visas)'
+        - 'Check digit for visa identification number'
+        - 'Check digit for full name'
+        - 'Check digit for visa expiration date'
+        - 'Permit type'
+        - 'Permit expiration date'
+        - 'Permit identifier'
+        - 'Permit issue date'
+        - 'Driving restriction code'
+        - 'Driving permit code'
+        - 'A string that is used to validate a document against a database'
+        - 'Number of duplicates'
+        - 'Medical indicator codes'
+        - 'Non resident stamp'
+        - 'Visa type'
+        - 'Visa valid-from date'
+        - 'Visa valid-until date'
+        - 'Duration of stay on visa'
+        - 'Number of entries'
+        - 'Day in date'
+        - 'Month in date'
+        - 'Year in date'
+        - 'Unique customer identifier'
+        - 'Commercial vehicle code'
+        - 'Also known as (date of birth)'
+        - 'Also known as (social security number)'
+        - 'Also known as (last name)'
+        - 'Also known as (first name)'
+        - 'Also known as (name suffix)'
+        - 'Also known as (name prefix)'
+        - 'Postal address (street)'
+        - 'Postal address (city)'
+        - 'Postal address (tax code)'
+        - 'Postal address (zip)'
+        - 'Driver license validation number'
+        - 'Inventory number'
+        - 'Race ethnicity'
+        - 'Vehicle legal class'
+        - 'Legal permission code'
+        - 'Legal restriction code'
+        - 'Surname and (or) name at birth'
+        - 'Name (russian transcription)'
+        - 'Visa identification number (russian transcription)'
+        - 'Father`s name'
+        - 'Father`s name (russian transcription)'
+        - 'Full name (russian transcription)'
+        - 'Place of birth (russian transcription)'
+        - 'Issuing authority (russian transcription)'
+        - 'Digital code of the state of issue of the document in accordance with ISO 3166-1 (ICAO Doc 9303)'
+        - 'Digital code of nationality in accordance with ISO 3166-1 (ICAO Doc 9303)'
+        - 'Vehicle engine power'
+        - 'Vehicle engine volume'
+        - 'Vehicle chassis number'
+        - 'Vehicle engine number'
+        - 'Vehicle engine model'
+        - 'Vehicle category'
+        - 'Identity card number'
+        - 'Control number'
+        - 'Parent names'
+        - 'Second last name'
+        - 'Middle name'
+        - 'Vehicle identification number'
+        - 'Check digit for vehicle identification number'
+        - 'Checksum for vehicle identification number'
+        - 'Check digit of the first line of the MRZ'
+        - 'Check digit of the second line of the MRZ'
+        - 'Check digit of the third line of the MRZ'
+        - 'Checksum of the first line of the MRZ'
+        - 'Checksum of the second line of the MRZ'
+        - 'Checksum of the third line of the MRZ'
+        - 'Check digit of the vehicle registration number'
+        - 'Checksum of the vehicle registration number'
+        - 'Vehicle code in accordance with ITS (Intelligent Transport System)'
+        - 'Card number for access to the RFID chip'
+        - 'Marital status'
+        - 'Company name'
+        - 'Special notes'
+        - 'Spouse`s last name'
+        - 'Document status tracking number'
+        - 'Booklet number'
+        - 'Children'
+        - 'Copy number'
+        - 'Serial number'
+        - 'Dossier number'
+        - 'Also known as (full name)'
+        - 'Territorial validity'
+        - 'MRZ strings with correct checksums (calculated)'
+        - 'Restriction code for commercial driving license'
+        - 'Date the document holder turns 18 years old'
+        - 'Record creation date'
+        - 'Duplicate creation date'
+        - 'Driving license type'
+        - 'Military card number'
+        - 'Destination'
+        - 'Blood type'
+        - 'Sequence number'
+        - 'Vehicle body type'
+        - 'Make of vehicle'
+        - 'Transaction number'
+        - 'Age'
+        - 'Registration number (document on the record-keeping system)'
+        - 'Voter personal number'
+        - 'Address (municipality)'
+        - 'Address (locality)'
+        - 'Domain/sector'
+        - 'OCR number'
+        - 'Federal elections'
+        - 'Reference number'
+        - 'Optional data checksum'
+        - 'Optional data check digit'
+        - 'Visa number'
+        - 'Visa number checksum'
+        - 'Visa number check digit'
+        - 'Voter'
+        - 'Type/number of previous document'
+        - 'Field from MRZ'
+        - 'Current date'
+        - 'Status expiration date'
+        - 'bank note number'
+        - 'Code of customer service center'
+        - 'Pseudonym'
+        - 'Academic rank'
+        - 'Address (country)'
+        - 'Address (zip)'
+        - 'Information on a permit for permanent residence 1 (field for eID)'
+        - 'Information on a permit for permanent residence 2 (field for eID)'
+        - 'Place of birth address: street (field for eID)'
+        - 'Place of birth address: city (field for eID)'
+        - 'Place of birth address: state (field for eID)'
+        - 'Place of birth address: country (field for eID)'
+        - 'Place of birth address: zip (field for eID)'
+        - 'Commercial driving license class'
+        - 'Date when the holder of the document is 19 years old'
+        - 'Weight (pounds)'
+        - 'Document expiration indicator'
+        - 'Driving license permit'
+        - 'Revision date'
+        - 'Compliance type'
+        - 'Abbreviated last name'
+        - 'Abbreviated first name'
+        - 'Abbreviated middle name'
+        - 'Exam date'
+        - 'Organization'
+        - 'Department'
+        - 'Salary level'
+        - 'Rank/status/title'
+        - 'Number confirming the right to receive benefits'
+        - 'Type of armed forces in which sponsor serves'
+        - 'Sponsor status'
+        - 'Sponsor'
+        - 'Degree of kindred'
+        - 'US Citizenship and Immigration Services Alien Registration Number'
+        - 'Category'
+        - 'Remainder term'
+        - 'Conditions'
+        - 'Identifier'
+        - 'Configuration'
+        - 'Optional data'
+        - 'Optional data from MRZ first line'
+        - 'Optional data from MRZ second line'
+        - 'Optional data from MRZ third line'
+        - 'EQV-code'
+        - 'ALT-code'
+        - 'Binary code'
+        - 'Pseudo code'
+        - 'Fee'
+        - 'Stamp number'
+        - 'Biometric data protection settings'
+        - 'Biometric data integrity parameters'
+        - 'Biometric data creation date'
+        - 'Biometric data validity period'
+        - 'Biometric data header format version'
+        - 'Biometric data record type'
+        - 'Biometric data type'
+        - 'Biometric data subtype'
+        - 'Biometric data id'
+        - 'Biometric data format'
+        - 'Phone number'
+        - 'Profession'
+        - 'Job position'
+        - 'Common personal data'
+        - 'Other valid identifier'
+        - 'Custody info'
+        - 'Other name'
+        - 'Additional data'
+        - 'Tax information'
+        - 'Document personalization date'
+        - 'Personalization serial number'
+        - 'Other person name'
+        - 'Date of creation of a record of persons for notification in case of unforeseen situations'
+        - 'Person name for contingency notification'
+        - 'Person phone for contingency notification'
+        - 'Person address for contingency notification'
+        - 'Text details of the organization issuing the DS certificate'
+        - 'Text details of the organization issuing the document'
+        - 'DS-certificate start date'
+        - 'DS-certificate expiration date'
+        - 'Vehicle category/restriction/conditions from data group DG1 of the eDL application'
+        - 'Type confirmation number'
+        - 'Administrative number'
+        - 'Document discriminator'
+        - 'Data discriminator'
+        - 'ISO issuer identifier'
+        - 'The Garda National Immigration Bureau registration number'
+        - 'Department number'
+        - 'Telegraph code'
+        - 'Allergies'
+        - 'Sp-code'
+        - 'Court restriction code'
+        - 'County code'
+        - 'Sponsor social security number'
+        - 'Military identification number'
+        - 'Novice driver until ... (date)'
+        - 'Registration number in the computer system of the Norwegian Directorate of Immigration (the UDI)'
+        - 'Philippines Traffic Police Unit Code'
+        - 'PNR-code (book number)'
+        - 'Departure airport code'
+        - 'Arrival airport code'
+        - 'Flight number'
+        - 'Departure date'
+        - 'Seat number'
+        - 'Boarding pass issue date'
+        - 'Hidden weapons license,  valid until... (date)'
+        - 'Reference number checksum'
+        - 'Reference number check digit'
+        - 'Room number'
+        - 'Religion'
+        - 'Number of months before the due date expiration of a document'
+        - 'Electronic ticket indicator'
+        - 'Free baggage allowance'
+        - 'Frequent flyer number'
+        - 'Airline frequent flyer indicator'
+        - 'Ticket number'
+        - 'Airline numeric code'
+        - 'Boarding pass issuer code'
+        - 'Check-in sequence number'
+        - 'Compartment code'
+        - 'PDF417 codec'
+        - 'identity card checksum'
+        - 'identity card check digit'
+        - 'Veteran'
+        - 'Validity date of A1 driver’s license'
+        - 'Expiration date of A1 driver’s license'
+        - 'Restrictions for A1 driver’s license'
+        - 'Validity date of A driver’s license'
+        - 'Expiration date of A driver’s license'
+        - 'Restrictions for A driver’s license'
+        - 'Validity date of B driver’s license'
+        - 'Expiration date of B driver’s license'
+        - 'Restrictions for B driver’s license'
+        - 'Validity date of C1 driver’s license'
+        - 'Expiration date of C1 driver’s license'
+        - 'Restrictions for C1 driver’s license'
+        - 'Validity date of C driver’s license'
+        - 'Expiration date of C driver’s license'
+        - 'Restrictions for C driver’s license'
+        - 'Validity date of D1 driver’s license'
+        - 'Expiration date of D1 driver’s license'
+        - 'Restrictions for D1 driver’s license'
+        - 'Validity date of D driver’s license'
+        - 'Expiration date of D driver’s license'
+        - 'Restrictions for D driver’s license'
+        - 'Validity date of BE driver’s license'
+        - 'Expiration date of BE driver’s license'
+        - 'Restrictions for BE driver’s license'
+        - 'Validity date of C1E driver’s license'
+        - 'Expiration date of C1E driver’s license'
+        - 'Restrictions for C1E driver’s license'
+        - 'Validity date of CE driver’s license'
+        - 'Expiration date of CE driver’s license'
+        - 'Restrictions for CE driver’s license'
+        - 'Validity date of D1E driver’s license'
+        - 'Expiration date of D1E driver’s license'
+        - 'Restrictions for D1E driver’s license'
+        - 'Validity date of DE driver’s license'
+        - 'Expiration date of DE driver’s license'
+        - 'Restrictions for DE driver’s license'
+        - 'Validity date of M driver’s license'
+        - 'Expiration date of M driver’s license'
+        - 'Restrictions for M driver’s license'
+        - 'Validity date of L driver’s license'
+        - 'Expiration date of L driver’s license'
+        - 'Restrictions for L driver’s license'
+        - 'Validity date of T driver’s license'
+        - 'Expiration date of T driver’s license'
+        - 'Restrictions for T driver’s license'
+        - 'Validity date of AM driver’s license'
+        - 'Expiration date of AM driver’s license'
+        - 'Restrictions for AM driver’s license'
+        - 'Validity date of A2 driver’s license'
+        - 'Expiration date of A2 driver’s license'
+        - 'Restrictions for A2 driver’s license'
+        - 'Validity date of B1 driver’s license'
+        - 'Expiration date of B1 driver’s license'
+        - 'Restrictions for B1 driver’s license'
+        - 'Last name at birth'
+        - 'Civil status'
+        - 'Number of seats'
+        - 'Number of standing places'
+        - 'Max speed'
+        - 'Fuel type'
+        - 'Vehicle emission class'
+        - 'Engine power-to-weight ratio'
+        - 'Trailer with brakes maximum weight'
+        - 'Trailer without brakes maximum weight'
+        - 'Transmission type'
+        - 'Trailer equipment'
+        - 'Accompanying person'
+        - 'Police district'
+        - 'Date of document first issue'
+        - 'Maximum payload'
+        - 'Number of axles'
+        - 'Axle weight limit'
+        - 'Precinct'
+        - 'Inviter'
+        - 'Purpose of arrival'
+        - 'Skin color'
+        - 'Complexion'
+        - 'Departure airport'
+        - 'Arrival airport'
+        - 'Airline name'
+        - 'Airline bonus program for frequent flyers'
+        - 'License number'
+        - 'In tanks'
+        - 'Other than tanks'
+        - 'Passenger with fast track priority (express formal procedures at the airport)'
+        - 'Owner'
+        - 'MRZ strings from ICAO RFID'
+        - 'Number of card issues with this number'
+        - 'Card issues count checksum'
+        - 'Card issues count check digit'
+        - 'Birth century'
+        - 'Validity date of A3 driver’s license'
+        - 'Expiration date of A3 driver’s license'
+        - 'Restrictions for A3 driver’s license'
+        - 'Validity date of C2 driver’s license'
+        - 'Expiration date of C2 driver’s license'
+        - 'Restrictions for C2 driver’s license'
+        - 'Validity date of B2 driver’s license'
+        - 'Expiration date of B2 driver’s license'
+        - 'Restrictions for B2 driver’s license'
+        - 'Validity date of D2 driver’s license'
+        - 'Expiration date of D2 driver’s license'
+        - 'Restrictions for D2 driver’s license'
+        - 'Validity date of B2E driver’s license'
+        - 'Expiration date of B2E driver’s license'
+        - 'Restrictions for B2E driver’s license'
+        - 'Validity date of G driver’s license'
+        - 'Expiration date of G driver’s license'
+        - 'Restrictions for G driver’s license'
+        - 'Validity date of J driver’s license'
+        - 'Expiration date of J driver’s license'
+        - 'Restrictions for J driver’s license'
+        - 'Validity date of LC driver’s license'
+        - 'Expiration date of LC driver’s license'
+        - 'Restrictions for LC driver’s license'
+        - 'Bank card number'
+        - 'Bank card validity'
+        - 'Tax number'
+        - 'Health insurance number'
+        - 'Grandfather`s name'
+        - 'Recruit indicator'
+        - 'Mother`s last name'
+        - 'Mother`s first name'
+        - 'Father`s last name'
+        - 'Father`s first name'
+        - 'Mother`s date of birth'
+        - 'Father`s date of birth'
+        - 'Mother`s personal number'
+        - 'Father`s personal number'
+        - 'Mother`s place of birth'
+        - 'Father`s place of birth'
+        - 'Mother`s country of birth'
+        - 'Father`s country of birth'
+        - 'Date of document first renewal'
+        - 'Date of document second renewal'
+        - 'Place of examination'
+        - 'Application number'
+        - 'Voucher number'
+        - 'Authorization number'
+        - 'Faculty'
+        - 'Form of education'
+        - 'DNI number'
+        - 'Retirement number'
+        - 'Professional id number'
+        - 'Age at issue'
+        - 'Years since issue'
+        - 'Validity date of BTP driver’s license'
+        - 'Restrictions for BTP driver’s license'
+        - 'Expiration date of BTP driver’s license'
+        - 'Validity date of C3 driver’s license'
+        - 'Restrictions for C3 driver’s license'
+        - 'Expiration date of C3 driver’s license'
+        - 'Validity date of E driver’s license'
+        - 'Restrictions for E driver’s license'
+        - 'Expiration date of E driver’s license'
+        - 'Validity date of F driver’s license'
+        - 'Restrictions for F driver’s license'
+        - 'Expiration date of F driver’s license'
+        - 'Validity date of FA driver’s license'
+        - 'Restrictions for FA driver’s license'
+        - 'Expiration date of FA driver’s license'
+        - 'Validity date of FA1 driver’s license'
+        - 'Restrictions for FA1 driver’s license'
+        - 'Expiration date of FA1 driver’s license'
+        - 'Validity date of FB driver’s license'
+        - 'Restrictions for FB driver’s license'
+        - 'Expiration date of FB driver’s license'
+        - 'Validity date of G1 driver’s license'
+        - 'Restrictions for G1 driver’s license'
+        - 'Expiration date of G1 driver’s license'
+        - 'Validity date of H driver’s license'
+        - 'Restrictions for H driver’s license'
+        - 'Expiration date of H driver’s license'
+        - 'Validity date of I driver’s license'
+        - 'Restrictions for I driver’s license'
+        - 'Expiration date of I driver’s license'
+        - 'Validity date of K driver’s license'
+        - 'Restrictions for K driver’s license'
+        - 'Expiration date of K driver’s license'
+        - 'Validity date of LK driver’s license'
+        - 'Restrictions for LK driver’s license'
+        - 'Expiration date of LK driver’s license'
+        - 'Validity date of N driver’s license'
+        - 'Restrictions for N driver’s license'
+        - 'Expiration date of N driver’s license'
+        - 'Validity date of S driver’s license'
+        - 'Restrictions for S driver’s license'
+        - 'Expiration date of S driver’s license'
+        - 'Validity date of TB driver’s license'
+        - 'Restrictions for TB driver’s license'
+        - 'Expiration date of TB driver’s license'
+        - 'Validity date of TM driver’s license'
+        - 'Restrictions for TM driver’s license'
+        - 'Expiration date of TM driver’s license'
+        - 'Validity date of TR driver’s license'
+        - 'Restrictions for TR driver’s license'
+        - 'Expiration date of TR driver’s license'
+        - 'Validity date of TV driver’s license'
+        - 'Restrictions for TV driver’s license'
+        - 'Expiration date of TV driver’s license'
+        - 'Validity date of V driver’s license'
+        - 'Restrictions for V driver’s license'
+        - 'Expiration date of V driver’s license'
+        - 'Validity date of W driver’s license'
+        - 'Restrictions for W driver’s license'
+        - 'Expiration date of W driver’s license'
+        - 'URL'
+        - 'Caliber'
+        - 'Model'
+        - 'Make'
+        - 'Number of cylinders'
+        - 'Surname of husband after registration'
+        - 'Surname of wife after registration'
+        - 'Date of birth of wife'
+        - 'Date of birth of husband'
+        - 'Citizenship of first person'
+        - 'Citizenship of second person'
+        - 'CVV code'
+        - 'Date of insurance expiry'
+        - 'Mortgage'
+        - 'Old document number'
+        - 'Old date of issue'
+        - 'Old place of issue'
+        - 'Validity date of LR driver’s license'
+        - 'Expiration date of LR driver’s license'
+        - 'Restrictions for LR driver’s license'
+        - 'Validity date of MR driver’s license'
+        - 'Expiration date of MR driver’s license'
+        - 'Restrictions for MR driver’s license'
+        - 'Validity date of HR driver’s license'
+        - 'Expiration date of HR driver’s license'
+        - 'Restrictions for HR driver’s license'
+        - 'Validity date of HC driver’s license'
+        - 'Expiration date of HC driver’s license'
+        - 'Restrictions for HC driver’s license'
+        - 'Validity date of MC driver’s license'
+        - 'Expiration date of MC driver’s license'
+        - 'Restrictions for MC driver’s license'
+        - 'Validity date of RE driver’s license'
+        - 'Expiration date of RE driver’s license'
+        - 'Restrictions for RE driver’s license'
+        - 'Validity date of R driver’s license'
+        - 'Expiration date of R driver’s license'
+        - 'Restrictions for R driver’s license'
+        - 'Validity date of CA driver’s license'
+        - 'Expiration date of CA driver’s license'
+        - 'Restrictions for CA driver’s license'
+        - 'Citizenship Status'
+        - 'Military Service From'
+        - 'Military Service To'
+        - 'Validity date of NT driver’s license'
+        - 'Expiration date of NT driver’s license'
+        - 'Restrictions for NT driver’s license'
+        - 'Validity date of TN driver’s license'
+        - 'Expiration date of TN driver’s license'
+        - 'Restrictions for TN driver’s license'
+        - 'Validity date of D3 driver’s license'
+        - 'Expiration date of D3 driver’s license'
+        - 'Restrictions for D3 driver’s license'
+        - 'Alt Date of expire'
+        - 'Validity date of CD driver’s license'
+        - 'Expiration date of CD driver’s license'
+        - 'Restrictions for CD driver’s license'
+        - 'Issuer identification number'
+        - 'Start date of payment period'
+        - 'End date of payment period'
+        - 'Vaccination certificate identifier'
+        - 'First name'
+        - 'Date of arrival'
+        - 'Second name'
+        - 'Third name'
+        - 'Fourth name'
+        - 'Last name'
+        - 'DL class code RM valid from'
+        - 'DL class code RM valid notes'
+        - 'DL class code RM valid to'
+        - 'DL class code PW valid from'
+        - 'DL class code PW valid notes'
+        - 'DL class code PW valid to'
+        - 'DL class code EB from'
+        - 'DL class code EB notes'
+        - 'DL class code EB to'
+        - 'DL class code EC from'
+        - 'DL class code EC notes'
+        - 'DL class code EC to'
+        - 'DL class code EC1 from'
+        - 'DL class code EC1 notes'
+        - 'DL class code EC1 to'
+        - 'Place of birth city'
+        - 'Year of birth'
+        - 'Year of expiry'
+        - 'Grandfather mame maternal'
       x-enum-varnames:
-      - "DOCUMENT_CLASS_CODE"
-      - "ISSUING_STATE_CODE"
-      - "DOCUMENT_NUMBER"
-      - "DATE_OF_EXPIRY"
-      - "DATE_OF_ISSUE"
-      - "DATE_OF_BIRTH"
-      - "PLACE_OF_BIRTH"
-      - "PERSONAL_NUMBER"
-      - "SURNAME"
-      - "GIVEN_NAME"
-      - "MOTHERS_NAME"
-      - "NATIONALITY"
-      - "SEX"
-      - "HEIGHT"
-      - "WEIGHT"
-      - "EYES_COLOR"
-      - "HAIR_COLOR"
-      - "ADDRESS"
-      - "DONOR"
-      - "SOCIAL_SECURITY_NUMBER"
-      - "DL_CLASS"
-      - "DL_ENDORSED"
-      - "DL_RESTRICTION_CODE"
-      - "DL_UNDER_21_DATE"
-      - "AUTHORITY"
-      - "SURNAME_AND_GIVEN_NAMES"
-      - "NATIONALITY_CODE"
-      - "PASSPORT_NUMBER"
-      - "INVITATION_NUMBER"
-      - "VISA_ID"
-      - "VISA_CLASS"
-      - "VISA_SUBCLASS"
-      - "MRZ_TYPE"
-      - "OPTIONAL_DATA"
-      - "DOCUMENT_CLASS_NAME"
-      - "ISSUING_STATE_NAME"
-      - "PLACE_OF_ISSUE"
-      - "DOCUMENT_NUMBER_CHECKSUM"
-      - "DATE_OF_BIRTH_CHECKSUM"
-      - "DATE_OF_EXPIRY_CHECKSUM"
-      - "PERSONAL_NUMBER_CHECKSUM"
-      - "FINAL_CHECKSUM"
-      - "PASSPORT_NUMBER_CHECKSUM"
-      - "INVITATION_NUMBER_CHECKSUM"
-      - "VISA_ID_CHECKSUM"
-      - "SURNAME_AND_GIVEN_NAME_CHECKSUM"
-      - "VISA_VALID_UNTIL_CHECKSUM"
-      - "OTHER"
-      - "MRZ_STRINGS"
-      - "NAME_SUFFIX"
-      - "NAME_PREFIX"
-      - "DATE_OF_ISSUE_CHECKSUM"
-      - "DATE_OF_ISSUE_CHECK_DIGIT"
-      - "DOCUMENT_SERIES"
-      - "REG_CERT_REG_NUMBER"
-      - "REG_CERT_CAR_MODEL"
-      - "REG_CERT_CAR_COLOR"
-      - "REG_CERT_BODY_NUMBER"
-      - "REG_CERT_CAR_TYPE"
-      - "REG_CERT_MAX_WEIGHT"
-      - "REG_CERT_WEIGHT"
-      - "ADDRESS_AREA"
-      - "ADDRESS_STATE"
-      - "ADDRESS_BUILDING"
-      - "ADDRESS_HOUSE"
-      - "ADDRESS_FLAT"
-      - "PLACE_OF_REGISTRATION"
-      - "DATE_OF_REGISTRATION"
-      - "RESIDENT_FROM"
-      - "RESIDENT_UNTIL"
-      - "AUTHORITY_CODE"
-      - "PLACE_OF_BIRTH_AREA"
-      - "PLACE_OF_BIRTH_STATE_CODE"
-      - "ADDRESS_STREET"
-      - "ADDRESS_CITY"
-      - "ADDRESS_JURISDICTION_CODE"
-      - "ADDRESS_POSTAL_CODE"
-      - "DOCUMENT_NUMBER_CHECK_DIGIT"
-      - "DATE_OF_BIRTH_CHECK_DIGIT"
-      - "DATE_OF_EXPIRY_CHECK_DIGIT"
-      - "PERSONAL_NUMBER_CHECK_DIGIT"
-      - "FINAL_CHECK_DIGIT"
-      - "PASSPORT_NUMBER_CHECK_DIGIT"
-      - "INVITATION_NUMBER_CHECK_DIGIT"
-      - "VISA_ID_CHECK_DIGIT"
-      - "SURNAME_AND_GIVEN_NAMES_CHECK_DIGIT"
-      - "VISA_VALID_UNTIL_CHECK_DIGIT"
-      - "PERMIT_DL_CLASS"
-      - "PERMIT_DATE_OF_EXPIRY"
-      - "PERMIT_IDENTIFIER"
-      - "PERMIT_DATE_OF_ISSUE"
-      - "PERMIT_RESTRICTION_CODE"
-      - "PERMIT_ENDORSED"
-      - "ISSUE_TIMESTAMP"
-      - "NUMBER_OF_DUPLICATES"
-      - "MEDICAL_INDICATOR_CODES"
-      - "NON_RESIDENT_INDICATOR"
-      - "VISA_TYPE"
-      - "VISA_VALID_FROM"
-      - "VISA_VALID_UNTIL"
-      - "DURATION_OF_STAY"
-      - "NUMBER_OF_ENTRIES"
-      - "DAY"
-      - "MONTH"
-      - "YEAR"
-      - "UNIQUE_CUSTOMER_IDENTIFIER"
-      - "COMMERCIAL_VEHICLE_CODES"
-      - "AKA_DATE_OF_BIRTH"
-      - "AKA_SOCIAL_SECURITY_NUMBER"
-      - "AKA_SURNAME"
-      - "AKA_GIVEN_NAMES"
-      - "AKA_NAME_SUFFIX"
-      - "AKA_NAME_PREFIX"
-      - "MAILING_ADDRESS_STREET"
-      - "MAILING_ADDRESS_CITY"
-      - "MAILING_ADDRESS_JURISDICTION_CODE"
-      - "MAILING_ADDRESS_POSTAL_CODE"
-      - "AUDIT_INFORMATION"
-      - "INVENTORY_NUMBER"
-      - "RACE_ETHNICITY"
-      - "JURISDICTION_VEHICLE_CLASS"
-      - "JURISDICTION_ENDORSEMENT_CODE"
-      - "JURISDICTION_RESTRICTION_CODE"
-      - "FAMILY_NAME"
-      - "GIVEN_NAMES_RUS"
-      - "VISA_ID_RUS"
-      - "FATHERS_NAME"
-      - "FATHERS_NAME_RUS"
-      - "SURNAME_AND_GIVEN_NAME_RUS"
-      - "PLACE_OF_BIRTH_RUS"
-      - "AUTHORITY_RUS"
-      - "ISSUING_STATE_CODE_NUMERIC"
-      - "NATIONALITY_CODE_NUMERIC"
-      - "ENGINE_POWER"
-      - "ENGINE_VOLUME"
-      - "CHASSIS_NUMBER"
-      - "ENGINE_NUMBER"
-      - "ENGINE_MODEL"
-      - "VEHICLE_CATEGORY"
-      - "IDENTITY_CARD_NUMBER"
-      - "CONTROL_NUMBER"
-      - "PARENTS_GIVEN_NAMES"
-      - "SECOND_SURNAME"
-      - "MIDDLE_NAME"
-      - "REG_CERT_VIN"
-      - "REG_CERT_VIN_CHECK_DIGIT"
-      - "REG_CERT_VIN_CHECKSUM"
-      - "LINE_1_CHECK_DIGIT"
-      - "LINE_2_CHECK_DIGIT"
-      - "LINE_3_CHECK_DIGIT"
-      - "LINE_1_CHECKSUM"
-      - "LINE_2_CHECKSUM"
-      - "LINE_3_CHECKSUM"
-      - "REG_CERT_REG_NUMBER_CHECK_DIGIT"
-      - "REG_CERT_REG_NUMBER_CHECKSUM"
-      - "REG_CERT_VEHICLE_ITS_CODE"
-      - "CARD_ACCESS_NUMBER"
-      - "MARITAL_STATUS"
-      - "COMPANY_NAME"
-      - "SPECIAL_NOTES"
-      - "SURNAME_OF_SPOUSE"
-      - "TRACKING_NUMBER"
-      - "BOOKLET_NUMBER"
-      - "CHILDREN"
-      - "COPY_NUMBER"
-      - "SERIAL_NUMBER"
-      - "DOSSIER_NUMBER"
-      - "AKA_SURNAME_AND_GIVEN_NAMES"
-      - "TERRITORIAL_VALIDITY"
-      - "MRZ_STRINGS_WITH_CORRECT_CHECK_SUMS"
-      - "DL_CDL_RESTRICTION_CODE"
-      - "DL_UNDER_18_DATE"
-      - "DL_RECORD_CREATED"
-      - "DL_DUPLICATE_DATE"
-      - "DL_ISSUE_TYPE"
-      - "MILITARY_BOOK_NUMBER"
-      - "DESTINATION"
-      - "BLOOD_GROUP"
-      - "SEQUENCE_NUMBER"
-      - "REG_CERT_BODY_TYPE"
-      - "REG_CERT_CAR_MARK"
-      - "TRANSACTION_NUMBER"
-      - "AGE"
-      - "FOLIO_NUMBER"
-      - "VOTER_KEY"
-      - "ADDRESS_MUNICIPALITY"
-      - "ADDRESS_LOCATION"
-      - "SECTION"
-      - "OCR_NUMBER"
-      - "FEDERAL_ELECTIONS"
-      - "REFERENCE_NUMBER"
-      - "OPTIONAL_DATA_CHECKSUM"
-      - "OPTIONAL_DATA_CHECK_DIGIT"
-      - "VISA_NUMBER"
-      - "VISA_NUMBER_CHECKSUM"
-      - "VISA_NUMBER_CHECK_DIGIT"
-      - "VOTER"
-      - "PREVIOUS_TYPE"
-      - "FIELD_FROM_MRZ"
-      - "CURRENT_DATE"
-      - "STATUS_DATE_OF_EXPIRY"
-      - "BANK_NOTE_NUMBER"
-      - "CSC_CODE"
-      - "ARTISTIC_NAME"
-      - "ACADEMIC_TITLE"
-      - "ADDRESS_COUNTRY"
-      - "ADDRESS_ZIP_CODE"
-      - "E_ID_RESIDENCE_PERMIT_1"
-      - "E_ID_RESIDENCE_PERMIT_2"
-      - "E_ID_PLACE_OF_BIRTH_STREET"
-      - "E_ID_PLACE_OF_BIRTH_CITY"
-      - "E_ID_PLACE_OF_BIRTH_STATE"
-      - "E_ID_PLACE_OF_BIRTH_COUNTRY"
-      - "E_ID_PLACE_OF_BIRTH_ZIP_CODE"
-      - "CDL_CLASS"
-      - "DL_UNDER_19_DATE"
-      - "WEIGHT_POUNDS"
-      - "LIMITED_DURATION_DOCUMENT_INDICATOR"
-      - "ENDORSEMENT_EXPIRATION_DATE"
-      - "REVISION_DATE"
-      - "COMPLIANCE_TYPE"
-      - "FAMILY_NAME_TRUNCATION"
-      - "FIRST_NAME_TRUNCATION"
-      - "MIDDLE_NAME_TRUNCATION"
-      - "EXAM_DATE"
-      - "ORGANIZATION"
-      - "DEPARTMENT"
-      - "PAY_GRADE"
-      - "RANK"
-      - "BENEFITS_NUMBER"
-      - "SPONSOR_SERVICE"
-      - "SPONSOR_STATUS"
-      - "SPONSOR"
-      - "RELATIONSHIP"
-      - "USCIS"
-      - "CATEGORY"
-      - "CONDITIONS"
-      - "IDENTIFIER"
-      - "CONFIGURATION"
-      - "DISCRETIONARY_DATA"
-      - "LINE_1_OPTIONAL_DATA"
-      - "LINE_2_OPTIONAL_DATA"
-      - "LINE_3_OPTIONAL_DATA"
-      - "EQV_CODE"
-      - "ALT_CODE"
-      - "BINARY_CODE"
-      - "PSEUDO_CODE"
-      - "FEE"
-      - "STAMP_NUMBER"
-      - "SBH_SECURITY_OPTIONS"
-      - "SBH_INTEGRITY_OPTIONS"
-      - "DATE_OF_CREATION"
-      - "VALIDITY_PERIOD"
-      - "PATRON_HEADER_VERSION"
-      - "BDB_TYPE"
-      - "BIOMETRIC_TYPE"
-      - "BIOMETRIC_SUBTYPE"
-      - "BIOMETRIC_PRODUCT_ID"
-      - "BIOMETRIC_FORMAT_OWNER"
-      - "BIOMETRIC_FORMAT_TYPE"
-      - "PHONE"
-      - "PROFESSION"
-      - "TITLE"
-      - "PERSONAL_SUMMARY"
-      - "OTHER_VALID_ID"
-      - "CUSTODY_INFO"
-      - "OTHER_NAME"
-      - "OBSERVATIONS"
-      - "TAX"
-      - "DATE_OF_PERSONALIZATION"
-      - "PERSONALIZATION_SN"
-      - "OTHER_PERSON_NAME"
-      - "PERSON_TO_NOTIFY_DATE_OF_RECORD"
-      - "PERSON_TO_NOTIFY_NAME"
-      - "PERSON_TO_NOTIFY_PHONE"
-      - "PERSON_TO_NOTIFY_ADDRESS"
-      - "DS_CERTIFICATE_ISSUER"
-      - "DS_CERTIFICATE_SUBJECT"
-      - "DS_CERTIFICATE_VALID_FROM"
-      - "DS_CERTIFICATE_VALID_TO"
-      - "VRC_DATA_OBJECT_ENTRY"
-      - "TYPE_APPROVAL_NUMBER"
-      - "ADMINISTRATIVE_NUMBER"
-      - "DOCUMENT_DISCRIMINATOR"
-      - "DATA_DISCRIMINATOR"
-      - "ISO_ISSUER_ID_NUMBER"
-      - "GNIB_NUMBER"
-      - "DEPT_NUMBER"
-      - "TELEX_CODE"
-      - "ALLERGIES"
-      - "SP_CODE"
-      - "COURT_CODE"
-      - "CTY"
-      - "SPONSOR_SSN"
-      - "DOD_NUMBER"
-      - "MC_NOVICE_DATE"
-      - "DUF_NUMBER"
-      - "AGY"
-      - "PNR_CODE"
-      - "FROM_AIRPORT_CODE"
-      - "TO_AIRPORT_CODE"
-      - "FLIGHT_NUMBER"
-      - "DATE_OF_FLIGHT"
-      - "SEAT_NUMBER"
-      - "DATE_OF_ISSUE_BOARDING_PASS"
-      - "CCW_UNTIL"
-      - "REFERENCE_NUMBER_CHECKSUM"
-      - "REFERENCE_NUMBER_CHECK_DIGIT"
-      - "ROOM_NUMBER"
-      - "RELIGION"
-      - "REMAINDER_TERM"
-      - "ELECTRONIC_TICKET_INDICATOR"
-      - "COMPARTMENT_CODE"
-      - "CHECK_IN_SEQUENCE_NUMBER"
-      - "AIRLINE_DESIGNATOR_OF_BOARDING_PASS_ISSUER"
-      - "AIRLINE_NUMERIC_CODE"
-      - "TICKET_NUMBER"
-      - "FREQUENT_FLYER_AIRLINE_DESIGNATOR"
-      - "FREQUENT_FLYER_NUMBER"
-      - "FREE_BAGGAGE_ALLOWANCE"
-      - "PDF_417_CODEC"
-      - "IDENTITY_CARD_NUMBER_CHECKSUM"
-      - "IDENTITY_CARD_NUMBER_CHECK_DIGIT"
-      - "VETERAN"
-      - "DL_CLASS_CODE_A1_FROM"
-      - "DL_CLASS_CODE_A1_TO"
-      - "DL_CLASS_CODE_A1_NOTES"
-      - "DL_CLASS_CODE_A_FROM"
-      - "DL_CLASS_CODE_A_TO"
-      - "DL_CLASS_CODE_A_NOTES"
-      - "DL_CLASS_CODE_B_FROM"
-      - "DL_CLASS_CODE_B_TO"
-      - "DL_CLASS_CODE_B_NOTES"
-      - "DL_CLASS_CODE_C1_FROM"
-      - "DL_CLASS_CODE_C1_TO"
-      - "DL_CLASS_CODE_C1_NOTES"
-      - "DL_CLASS_CODE_C_FROM"
-      - "DL_CLASS_CODE_C_TO"
-      - "DL_CLASS_CODE_C_NOTES"
-      - "DL_CLASS_CODE_D1_FROM"
-      - "DL_CLASS_CODE_D1_TO"
-      - "DL_CLASS_CODE_D1_NOTES"
-      - "DL_CLASS_CODE_D_FROM"
-      - "DL_CLASS_CODE_D_TO"
-      - "DL_CLASS_CODE_D_NOTES"
-      - "DL_CLASS_CODE_BE_FROM"
-      - "DL_CLASS_CODE_BE_TO"
-      - "DL_CLASS_CODE_BE_NOTES"
-      - "DL_CLASS_CODE_C1E_FROM"
-      - "DL_CLASS_CODE_C1E_TO"
-      - "DL_CLASS_CODE_C1E_NOTES"
-      - "DL_CLASS_CODE_CE_FROM"
-      - "DL_CLASS_CODE_CE_TO"
-      - "DL_CLASS_CODE_CE_NOTES"
-      - "DL_CLASS_CODE_D1E_FROM"
-      - "DL_CLASS_CODE_D1E_TO"
-      - "DL_CLASS_CODE_D1E_NOTES"
-      - "DL_CLASS_CODE_DE_FROM"
-      - "DL_CLASS_CODE_DE_TO"
-      - "DL_CLASS_CODE_DE_NOTES"
-      - "DL_CLASS_CODE_M_FROM"
-      - "DL_CLASS_CODE_M_TO"
-      - "DL_CLASS_CODE_M_NOTES"
-      - "DL_CLASS_CODE_L_FROM"
-      - "DL_CLASS_CODE_L_TO"
-      - "DL_CLASS_CODE_L_NOTES"
-      - "DL_CLASS_CODE_T_FROM"
-      - "DL_CLASS_CODE_T_TO"
-      - "DL_CLASS_CODE_T_NOTES"
-      - "DL_CLASS_CODE_AM_FROM"
-      - "DL_CLASS_CODE_AM_TO"
-      - "DL_CLASS_CODE_AM_NOTES"
-      - "DL_CLASS_CODE_A2_FROM"
-      - "DL_CLASS_CODE_A2_TO"
-      - "DL_CLASS_CODE_A2_NOTES"
-      - "DL_CLASS_CODE_B1_FROM"
-      - "DL_CLASS_CODE_B1_TO"
-      - "DL_CLASS_CODE_B1_NOTES"
-      - "SURNAME_AT_BIRTH"
-      - "CIVIL_STATUS"
-      - "NUMBER_OF_SEATS"
-      - "NUMBER_OF_STANDING_PLACES"
-      - "MAX_SPEED"
-      - "FUEL_TYPE"
-      - "EC_ENVIRONMENTAL_TYPE"
-      - "POWER_WEIGHT_RATIO"
-      - "MAX_MASS_OF_TRAILER_BRAKED"
-      - "MAX_MASS_OF_TRAILER_UNBRAKED"
-      - "TRANSMISSION_TYPE"
-      - "TRAILER_HITCH"
-      - "ACCOMPANIED_BY"
-      - "POLICE_DISTRICT"
-      - "FIRST_ISSUE_DATE"
-      - "PAYLOAD_CAPACITY"
-      - "NUMBER_OF_AXLES"
-      - "PERMISSIBLE_AXLE_LOAD"
-      - "PRECINCT"
-      - "INVITED_BY"
-      - "PURPOSE_OF_ENTRY"
-      - "SKIN_COLOR"
-      - "COMPLEXION"
-      - "AIRPORT_FROM"
-      - "AIRPORT_TO"
-      - "AIRLINE_NAME"
-      - "AIRLINE_NAME_FREQUENT_FLYER"
-      - "LICENSE_NUMBER"
-      - "IN_TANKS"
-      - "EXCEPT_IN_TANKS"
-      - "FAST_TRACK"
-      - "OWNER"
-      - "MRZ_STRINGS_ICAO_RFID"
-      - "NUMBER_OF_CARD_ISSUANCE"
-      - "NUMBER_OF_CARD_ISSUANCE_CHECKSUM"
-      - "NUMBER_OF_CARD_ISSUANCE_CHECK_DIGIT"
-      - "CENTURY_DATE_OF_BIRTH"
-      - "DL_CLASS_CODE_A3_FROM"
-      - "DL_CLASS_CODE_A3_TO"
-      - "DL_CLASS_CODE_A3_NOTES"
-      - "DL_CLASS_CODE_C2_FROM"
-      - "DL_CLASS_CODE_C2_TO"
-      - "DL_CLASS_CODE_C2_NOTES"
-      - "DL_CLASS_CODE_B2_FROM"
-      - "DL_CLASS_CODE_B2_TO"
-      - "DL_CLASS_CODE_B2_NOTES"
-      - "DL_CLASS_CODE_D2_FROM"
-      - "DL_CLASS_CODE_D2_TO"
-      - "DL_CLASS_CODE_D2_NOTES"
-      - "DL_CLASS_CODE_B2E_FROM"
-      - "DL_CLASS_CODE_B2E_TO"
-      - "DL_CLASS_CODE_B2E_NOTES"
-      - "DL_CLASS_CODE_G_FROM"
-      - "DL_CLASS_CODE_G_TO"
-      - "DL_CLASS_CODE_G_NOTES"
-      - "DL_CLASS_CODE_J_FROM"
-      - "DL_CLASS_CODE_J_TO"
-      - "DL_CLASS_CODE_J_NOTES"
-      - "DL_CLASS_CODE_LC_FROM"
-      - "DL_CLASS_CODE_LC_TO"
-      - "DL_CLASS_CODE_LC_NOTES"
-      - "BANK_CARD_NUMBER"
-      - "BANK_CARD_VALID_THRU"
-      - "TAX_NUMBER"
-      - "HEALTH_NUMBER"
-      - "GRANDFATHER_NAME"
-      - "SELECTEE_INDICATOR"
-      - "MOTHER_SURNAME"
-      - "MOTHER_GIVEN_NAME"
-      - "FATHER_SURNAME"
-      - "FATHER_GIVEN_NAME"
-      - "MOTHER_DATE_OF_BIRTH"
-      - "FATHER_DATE_OF_BIRTH"
-      - "MOTHER_PERSONAL_NUMBER"
-      - "FATHER_PERSONAL_NUMBER"
-      - "MOTHER_PLACE_OF_BIRTH"
-      - "FATHER_PLACE_OF_BIRTH"
-      - "MOTHER_COUNTRY_OF_BIRTH"
-      - "FATHER_COUNTRY_OF_BIRTH"
-      - "DATE_FIRST_RENEWAL"
-      - "DATE_SECOND_RENEWAL"
-      - "PLACE_OF_EXAMINATION"
-      - "APPLICATION_NUMBER"
-      - "VOUCHER_NUMBER"
-      - "AUTHORIZATION_NUMBER"
-      - "FACULTY"
-      - "FORM_OF_EDUCATION"
-      - "DNI_NUMBER"
-      - "RETIREMENT_NUMBER"
-      - "PROFESSIONAL_ID_NUMBER"
-      - "AGE_AT_ISSUE"
-      - "YEARS_SINCE_ISSUE"
-      - "DL_CLASS_CODE_BTP_FROM"
-      - "DL_CLASS_CODE_BTP_NOTES"
-      - "DL_CLASS_CODE_BTP_TO"
-      - "DL_CLASS_CODE_C3_FROM"
-      - "DL_CLASS_CODE_C3_NOTES"
-      - "DL_CLASS_CODE_C3_TO"
-      - "DL_CLASS_CODE_E_FROM"
-      - "DL_CLASS_CODE_E_NOTES"
-      - "DL_CLASS_CODE_E_TO"
-      - "DL_CLASS_CODE_F_FROM"
-      - "DL_CLASS_CODE_F_NOTES"
-      - "DL_CLASS_CODE_F_TO"
-      - "DL_CLASS_CODE_FA_FROM"
-      - "DL_CLASS_CODE_FA_NOTES"
-      - "DL_CLASS_CODE_FA_TO"
-      - "DL_CLASS_CODE_FA1_FROM"
-      - "DL_CLASS_CODE_FA1_NOTES"
-      - "DL_CLASS_CODE_FA1_TO"
-      - "DL_CLASS_CODE_FB_FROM"
-      - "DL_CLASS_CODE_FB_NOTES"
-      - "DL_CLASS_CODE_FB_TO"
-      - "DL_CLASS_CODE_G1_FROM"
-      - "DL_CLASS_CODE_G1_NOTES"
-      - "DL_CLASS_CODE_G1_TO"
-      - "DL_CLASS_CODE_H_FROM"
-      - "DL_CLASS_CODE_H_NOTES"
-      - "DL_CLASS_CODE_H_TO"
-      - "DL_CLASS_CODE_I_FROM"
-      - "DL_CLASS_CODE_I_NOTES"
-      - "DL_CLASS_CODE_I_TO"
-      - "DL_CLASS_CODE_K_FROM"
-      - "DL_CLASS_CODE_K_NOTES"
-      - "DL_CLASS_CODE_K_TO"
-      - "DL_CLASS_CODE_LK_FROM"
-      - "DL_CLASS_CODE_LK_NOTES"
-      - "DL_CLASS_CODE_LK_TO"
-      - "DL_CLASS_CODE_N_FROM"
-      - "DL_CLASS_CODE_N_NOTES"
-      - "DL_CLASS_CODE_N_TO"
-      - "DL_CLASS_CODE_S_FROM"
-      - "DL_CLASS_CODE_S_NOTES"
-      - "DL_CLASS_CODE_S_TO"
-      - "DL_CLASS_CODE_TB_FROM"
-      - "DL_CLASS_CODE_TB_NOTES"
-      - "DL_CLASS_CODE_TB_TO"
-      - "DL_CLASS_CODE_TM_FROM"
-      - "DL_CLASS_CODE_TM_NOTES"
-      - "DL_CLASS_CODE_TM_TO"
-      - "DL_CLASS_CODE_TR_FROM"
-      - "DL_CLASS_CODE_TR_NOTES"
-      - "DL_CLASS_CODE_TR_TO"
-      - "DL_CLASS_CODE_TV_FROM"
-      - "DL_CLASS_CODE_TV_NOTES"
-      - "DL_CLASS_CODE_TV_TO"
-      - "DL_CLASS_CODE_V_FROM"
-      - "DL_CLASS_CODE_V_NOTES"
-      - "DL_CLASS_CODE_V_TO"
-      - "DL_CLASS_CODE_W_FROM"
-      - "DL_CLASS_CODE_W_NOTES"
-      - "DL_CLASS_CODE_W_TO"
-      - "URL"
-      - "CALIBER"
-      - "MODEL"
-      - "MAKE"
-      - "NUMBER_OF_CYLINDERS"
-      - "SURNAME_OF_HUSBAND_AFTER_REGISTRATION"
-      - "SURNAME_OF_WIFE_AFTER_REGISTRATION"
-      - "DATE_OF_BIRTH_OF_WIFE"
-      - "DATE_OF_BIRTH_OF_HUSBAND"
-      - "CITIZENSHIP_OF_FIRST_PERSON"
-      - "CITIZENSHIP_OF_SECOND_PERSON"
-      - "CVV"
-      - "DATE_OF_INSURANCE_EXPIRY"
-      - "MORTGAGE_BY"
-      - "OLD_DOCUMENT_NUMBER"
-      - "OLD_DATE_OF_ISSUE"
-      - "OLD_PLACE_OF_ISSUE"
-      - "DL_CLASS_CODE_LR_FROM"
-      - "DL_CLASS_CODE_LR_TO"
-      - "DL_CLASS_CODE_LR_NOTES"
-      - "DL_CLASS_CODE_MR_FROM"
-      - "DL_CLASS_CODE_MR_TO"
-      - "DL_CLASS_CODE_MR_NOTES"
-      - "DL_CLASS_CODE_HR_FROM"
-      - "DL_CLASS_CODE_HR_TO"
-      - "DL_CLASS_CODE_HR_NOTES"
-      - "DL_CLASS_CODE_HC_FROM"
-      - "DL_CLASS_CODE_HC_TO"
-      - "DL_CLASS_CODE_HC_NOTES"
-      - "DL_CLASS_CODE_MC_FROM"
-      - "DL_CLASS_CODE_MC_TO"
-      - "DL_CLASS_CODE_MC_NOTES"
-      - "DL_CLASS_CODE_RE_FROM"
-      - "DL_CLASS_CODE_RE_TO"
-      - "DL_CLASS_CODE_RE_NOTES"
-      - "DL_CLASS_CODE_R_FROM"
-      - "DL_CLASS_CODE_R_TO"
-      - "DL_CLASS_CODE_R_NOTES"
-      - "DL_CLASS_CODE_CA_FROM"
-      - "DL_CLASS_CODE_CA_TO"
-      - "DL_CLASS_CODE_CA_NOTES"
-      - "CITIZENSHIP_STATUS"
-      - "MILITARY_SERVICE_FROM"
-      - "MILITARY_SERVICE_TO"
-      - "DL_CLASS_CODE_NT_FROM"
-      - "DL_CLASS_CODE_NT_TO"
-      - "DL_CLASS_CODE_NT_NOTES"
-      - "DL_CLASS_CODE_TN_FROM"
-      - "DL_CLASS_CODE_TN_TO"
-      - "DL_CLASS_CODE_TN_NOTES"
-      - "DL_CLASS_CODE_D3_FROM"
-      - "DL_CLASS_CODE_D3_TO"
-      - "DL_CLASS_CODE_D3_NOTES"
-      - "ALT_DATE_OF_EXPIRE"
-      - "DL_CLASS_CODE_CD_FROM"
-      - "DL_CLASS_CODE_CD_TO"
-      - "DL_CLASS_CODE_CD_NOTES"
-      - "ISSUER_IDENTIFICATION_NUMBER"
-      - "PAYMENT_PERIOD_FROM"
-      - "PAYMENT_PERIOD_TO"
-      - "VACCINATION_CERTIFICATE_IDENTIFIER"
-      - "FIRST_NAME"
-      - "DATE_OF_ARRIVAL"
-      - "FT_SECOND_NAME"
-      - "FT_THIRD_NAME"
-      - "FT_FOURTH_NAME"
-      - "FT_LAST_NAME"
-      - "RM_FROM"
-      - "RM_NOTES"
-      - "RM_TO"
-      - "PW_FROM"
-      - "PW_NOTES"
-      - "PW_TO"
-      - "EB_FROM"
-      - "EB_NOTES"
-      - "EB_TO"
-      - "EC_FROM"
-      - "EC_NOTES"
-      - "EC_TO"
-      - "EC1_FROM"
-      - "EC1_NOTES"
-      - "EC1_TO"
-      - "PLACE_OF_BIRTH_CITY"
-      - "YEAR_OF_BIRTH"
-      - "YEAR_OF_EXPIRY"
-      - "GRANDFATHER_NAME_MATERNAL"
+        - 'DOCUMENT_CLASS_CODE'
+        - 'ISSUING_STATE_CODE'
+        - 'DOCUMENT_NUMBER'
+        - 'DATE_OF_EXPIRY'
+        - 'DATE_OF_ISSUE'
+        - 'DATE_OF_BIRTH'
+        - 'PLACE_OF_BIRTH'
+        - 'PERSONAL_NUMBER'
+        - 'SURNAME'
+        - 'GIVEN_NAME'
+        - 'MOTHERS_NAME'
+        - 'NATIONALITY'
+        - 'SEX'
+        - 'HEIGHT'
+        - 'WEIGHT'
+        - 'EYES_COLOR'
+        - 'HAIR_COLOR'
+        - 'ADDRESS'
+        - 'DONOR'
+        - 'SOCIAL_SECURITY_NUMBER'
+        - 'DL_CLASS'
+        - 'DL_ENDORSED'
+        - 'DL_RESTRICTION_CODE'
+        - 'DL_UNDER_21_DATE'
+        - 'AUTHORITY'
+        - 'SURNAME_AND_GIVEN_NAMES'
+        - 'NATIONALITY_CODE'
+        - 'PASSPORT_NUMBER'
+        - 'INVITATION_NUMBER'
+        - 'VISA_ID'
+        - 'VISA_CLASS'
+        - 'VISA_SUBCLASS'
+        - 'MRZ_TYPE'
+        - 'OPTIONAL_DATA'
+        - 'DOCUMENT_CLASS_NAME'
+        - 'ISSUING_STATE_NAME'
+        - 'PLACE_OF_ISSUE'
+        - 'DOCUMENT_NUMBER_CHECKSUM'
+        - 'DATE_OF_BIRTH_CHECKSUM'
+        - 'DATE_OF_EXPIRY_CHECKSUM'
+        - 'PERSONAL_NUMBER_CHECKSUM'
+        - 'FINAL_CHECKSUM'
+        - 'PASSPORT_NUMBER_CHECKSUM'
+        - 'INVITATION_NUMBER_CHECKSUM'
+        - 'VISA_ID_CHECKSUM'
+        - 'SURNAME_AND_GIVEN_NAME_CHECKSUM'
+        - 'VISA_VALID_UNTIL_CHECKSUM'
+        - 'OTHER'
+        - 'MRZ_STRINGS'
+        - 'NAME_SUFFIX'
+        - 'NAME_PREFIX'
+        - 'DATE_OF_ISSUE_CHECKSUM'
+        - 'DATE_OF_ISSUE_CHECK_DIGIT'
+        - 'DOCUMENT_SERIES'
+        - 'REG_CERT_REG_NUMBER'
+        - 'REG_CERT_CAR_MODEL'
+        - 'REG_CERT_CAR_COLOR'
+        - 'REG_CERT_BODY_NUMBER'
+        - 'REG_CERT_CAR_TYPE'
+        - 'REG_CERT_MAX_WEIGHT'
+        - 'REG_CERT_WEIGHT'
+        - 'ADDRESS_AREA'
+        - 'ADDRESS_STATE'
+        - 'ADDRESS_BUILDING'
+        - 'ADDRESS_HOUSE'
+        - 'ADDRESS_FLAT'
+        - 'PLACE_OF_REGISTRATION'
+        - 'DATE_OF_REGISTRATION'
+        - 'RESIDENT_FROM'
+        - 'RESIDENT_UNTIL'
+        - 'AUTHORITY_CODE'
+        - 'PLACE_OF_BIRTH_AREA'
+        - 'PLACE_OF_BIRTH_STATE_CODE'
+        - 'ADDRESS_STREET'
+        - 'ADDRESS_CITY'
+        - 'ADDRESS_JURISDICTION_CODE'
+        - 'ADDRESS_POSTAL_CODE'
+        - 'DOCUMENT_NUMBER_CHECK_DIGIT'
+        - 'DATE_OF_BIRTH_CHECK_DIGIT'
+        - 'DATE_OF_EXPIRY_CHECK_DIGIT'
+        - 'PERSONAL_NUMBER_CHECK_DIGIT'
+        - 'FINAL_CHECK_DIGIT'
+        - 'PASSPORT_NUMBER_CHECK_DIGIT'
+        - 'INVITATION_NUMBER_CHECK_DIGIT'
+        - 'VISA_ID_CHECK_DIGIT'
+        - 'SURNAME_AND_GIVEN_NAMES_CHECK_DIGIT'
+        - 'VISA_VALID_UNTIL_CHECK_DIGIT'
+        - 'PERMIT_DL_CLASS'
+        - 'PERMIT_DATE_OF_EXPIRY'
+        - 'PERMIT_IDENTIFIER'
+        - 'PERMIT_DATE_OF_ISSUE'
+        - 'PERMIT_RESTRICTION_CODE'
+        - 'PERMIT_ENDORSED'
+        - 'ISSUE_TIMESTAMP'
+        - 'NUMBER_OF_DUPLICATES'
+        - 'MEDICAL_INDICATOR_CODES'
+        - 'NON_RESIDENT_INDICATOR'
+        - 'VISA_TYPE'
+        - 'VISA_VALID_FROM'
+        - 'VISA_VALID_UNTIL'
+        - 'DURATION_OF_STAY'
+        - 'NUMBER_OF_ENTRIES'
+        - 'DAY'
+        - 'MONTH'
+        - 'YEAR'
+        - 'UNIQUE_CUSTOMER_IDENTIFIER'
+        - 'COMMERCIAL_VEHICLE_CODES'
+        - 'AKA_DATE_OF_BIRTH'
+        - 'AKA_SOCIAL_SECURITY_NUMBER'
+        - 'AKA_SURNAME'
+        - 'AKA_GIVEN_NAMES'
+        - 'AKA_NAME_SUFFIX'
+        - 'AKA_NAME_PREFIX'
+        - 'MAILING_ADDRESS_STREET'
+        - 'MAILING_ADDRESS_CITY'
+        - 'MAILING_ADDRESS_JURISDICTION_CODE'
+        - 'MAILING_ADDRESS_POSTAL_CODE'
+        - 'AUDIT_INFORMATION'
+        - 'INVENTORY_NUMBER'
+        - 'RACE_ETHNICITY'
+        - 'JURISDICTION_VEHICLE_CLASS'
+        - 'JURISDICTION_ENDORSEMENT_CODE'
+        - 'JURISDICTION_RESTRICTION_CODE'
+        - 'FAMILY_NAME'
+        - 'GIVEN_NAMES_RUS'
+        - 'VISA_ID_RUS'
+        - 'FATHERS_NAME'
+        - 'FATHERS_NAME_RUS'
+        - 'SURNAME_AND_GIVEN_NAME_RUS'
+        - 'PLACE_OF_BIRTH_RUS'
+        - 'AUTHORITY_RUS'
+        - 'ISSUING_STATE_CODE_NUMERIC'
+        - 'NATIONALITY_CODE_NUMERIC'
+        - 'ENGINE_POWER'
+        - 'ENGINE_VOLUME'
+        - 'CHASSIS_NUMBER'
+        - 'ENGINE_NUMBER'
+        - 'ENGINE_MODEL'
+        - 'VEHICLE_CATEGORY'
+        - 'IDENTITY_CARD_NUMBER'
+        - 'CONTROL_NUMBER'
+        - 'PARENTS_GIVEN_NAMES'
+        - 'SECOND_SURNAME'
+        - 'MIDDLE_NAME'
+        - 'REG_CERT_VIN'
+        - 'REG_CERT_VIN_CHECK_DIGIT'
+        - 'REG_CERT_VIN_CHECKSUM'
+        - 'LINE_1_CHECK_DIGIT'
+        - 'LINE_2_CHECK_DIGIT'
+        - 'LINE_3_CHECK_DIGIT'
+        - 'LINE_1_CHECKSUM'
+        - 'LINE_2_CHECKSUM'
+        - 'LINE_3_CHECKSUM'
+        - 'REG_CERT_REG_NUMBER_CHECK_DIGIT'
+        - 'REG_CERT_REG_NUMBER_CHECKSUM'
+        - 'REG_CERT_VEHICLE_ITS_CODE'
+        - 'CARD_ACCESS_NUMBER'
+        - 'MARITAL_STATUS'
+        - 'COMPANY_NAME'
+        - 'SPECIAL_NOTES'
+        - 'SURNAME_OF_SPOUSE'
+        - 'TRACKING_NUMBER'
+        - 'BOOKLET_NUMBER'
+        - 'CHILDREN'
+        - 'COPY_NUMBER'
+        - 'SERIAL_NUMBER'
+        - 'DOSSIER_NUMBER'
+        - 'AKA_SURNAME_AND_GIVEN_NAMES'
+        - 'TERRITORIAL_VALIDITY'
+        - 'MRZ_STRINGS_WITH_CORRECT_CHECK_SUMS'
+        - 'DL_CDL_RESTRICTION_CODE'
+        - 'DL_UNDER_18_DATE'
+        - 'DL_RECORD_CREATED'
+        - 'DL_DUPLICATE_DATE'
+        - 'DL_ISSUE_TYPE'
+        - 'MILITARY_BOOK_NUMBER'
+        - 'DESTINATION'
+        - 'BLOOD_GROUP'
+        - 'SEQUENCE_NUMBER'
+        - 'REG_CERT_BODY_TYPE'
+        - 'REG_CERT_CAR_MARK'
+        - 'TRANSACTION_NUMBER'
+        - 'AGE'
+        - 'FOLIO_NUMBER'
+        - 'VOTER_KEY'
+        - 'ADDRESS_MUNICIPALITY'
+        - 'ADDRESS_LOCATION'
+        - 'SECTION'
+        - 'OCR_NUMBER'
+        - 'FEDERAL_ELECTIONS'
+        - 'REFERENCE_NUMBER'
+        - 'OPTIONAL_DATA_CHECKSUM'
+        - 'OPTIONAL_DATA_CHECK_DIGIT'
+        - 'VISA_NUMBER'
+        - 'VISA_NUMBER_CHECKSUM'
+        - 'VISA_NUMBER_CHECK_DIGIT'
+        - 'VOTER'
+        - 'PREVIOUS_TYPE'
+        - 'FIELD_FROM_MRZ'
+        - 'CURRENT_DATE'
+        - 'STATUS_DATE_OF_EXPIRY'
+        - 'BANK_NOTE_NUMBER'
+        - 'CSC_CODE'
+        - 'ARTISTIC_NAME'
+        - 'ACADEMIC_TITLE'
+        - 'ADDRESS_COUNTRY'
+        - 'ADDRESS_ZIP_CODE'
+        - 'E_ID_RESIDENCE_PERMIT_1'
+        - 'E_ID_RESIDENCE_PERMIT_2'
+        - 'E_ID_PLACE_OF_BIRTH_STREET'
+        - 'E_ID_PLACE_OF_BIRTH_CITY'
+        - 'E_ID_PLACE_OF_BIRTH_STATE'
+        - 'E_ID_PLACE_OF_BIRTH_COUNTRY'
+        - 'E_ID_PLACE_OF_BIRTH_ZIP_CODE'
+        - 'CDL_CLASS'
+        - 'DL_UNDER_19_DATE'
+        - 'WEIGHT_POUNDS'
+        - 'LIMITED_DURATION_DOCUMENT_INDICATOR'
+        - 'ENDORSEMENT_EXPIRATION_DATE'
+        - 'REVISION_DATE'
+        - 'COMPLIANCE_TYPE'
+        - 'FAMILY_NAME_TRUNCATION'
+        - 'FIRST_NAME_TRUNCATION'
+        - 'MIDDLE_NAME_TRUNCATION'
+        - 'EXAM_DATE'
+        - 'ORGANIZATION'
+        - 'DEPARTMENT'
+        - 'PAY_GRADE'
+        - 'RANK'
+        - 'BENEFITS_NUMBER'
+        - 'SPONSOR_SERVICE'
+        - 'SPONSOR_STATUS'
+        - 'SPONSOR'
+        - 'RELATIONSHIP'
+        - 'USCIS'
+        - 'CATEGORY'
+        - 'CONDITIONS'
+        - 'IDENTIFIER'
+        - 'CONFIGURATION'
+        - 'DISCRETIONARY_DATA'
+        - 'LINE_1_OPTIONAL_DATA'
+        - 'LINE_2_OPTIONAL_DATA'
+        - 'LINE_3_OPTIONAL_DATA'
+        - 'EQV_CODE'
+        - 'ALT_CODE'
+        - 'BINARY_CODE'
+        - 'PSEUDO_CODE'
+        - 'FEE'
+        - 'STAMP_NUMBER'
+        - 'SBH_SECURITY_OPTIONS'
+        - 'SBH_INTEGRITY_OPTIONS'
+        - 'DATE_OF_CREATION'
+        - 'VALIDITY_PERIOD'
+        - 'PATRON_HEADER_VERSION'
+        - 'BDB_TYPE'
+        - 'BIOMETRIC_TYPE'
+        - 'BIOMETRIC_SUBTYPE'
+        - 'BIOMETRIC_PRODUCT_ID'
+        - 'BIOMETRIC_FORMAT_OWNER'
+        - 'BIOMETRIC_FORMAT_TYPE'
+        - 'PHONE'
+        - 'PROFESSION'
+        - 'TITLE'
+        - 'PERSONAL_SUMMARY'
+        - 'OTHER_VALID_ID'
+        - 'CUSTODY_INFO'
+        - 'OTHER_NAME'
+        - 'OBSERVATIONS'
+        - 'TAX'
+        - 'DATE_OF_PERSONALIZATION'
+        - 'PERSONALIZATION_SN'
+        - 'OTHER_PERSON_NAME'
+        - 'PERSON_TO_NOTIFY_DATE_OF_RECORD'
+        - 'PERSON_TO_NOTIFY_NAME'
+        - 'PERSON_TO_NOTIFY_PHONE'
+        - 'PERSON_TO_NOTIFY_ADDRESS'
+        - 'DS_CERTIFICATE_ISSUER'
+        - 'DS_CERTIFICATE_SUBJECT'
+        - 'DS_CERTIFICATE_VALID_FROM'
+        - 'DS_CERTIFICATE_VALID_TO'
+        - 'VRC_DATA_OBJECT_ENTRY'
+        - 'TYPE_APPROVAL_NUMBER'
+        - 'ADMINISTRATIVE_NUMBER'
+        - 'DOCUMENT_DISCRIMINATOR'
+        - 'DATA_DISCRIMINATOR'
+        - 'ISO_ISSUER_ID_NUMBER'
+        - 'GNIB_NUMBER'
+        - 'DEPT_NUMBER'
+        - 'TELEX_CODE'
+        - 'ALLERGIES'
+        - 'SP_CODE'
+        - 'COURT_CODE'
+        - 'CTY'
+        - 'SPONSOR_SSN'
+        - 'DOD_NUMBER'
+        - 'MC_NOVICE_DATE'
+        - 'DUF_NUMBER'
+        - 'AGY'
+        - 'PNR_CODE'
+        - 'FROM_AIRPORT_CODE'
+        - 'TO_AIRPORT_CODE'
+        - 'FLIGHT_NUMBER'
+        - 'DATE_OF_FLIGHT'
+        - 'SEAT_NUMBER'
+        - 'DATE_OF_ISSUE_BOARDING_PASS'
+        - 'CCW_UNTIL'
+        - 'REFERENCE_NUMBER_CHECKSUM'
+        - 'REFERENCE_NUMBER_CHECK_DIGIT'
+        - 'ROOM_NUMBER'
+        - 'RELIGION'
+        - 'REMAINDER_TERM'
+        - 'ELECTRONIC_TICKET_INDICATOR'
+        - 'COMPARTMENT_CODE'
+        - 'CHECK_IN_SEQUENCE_NUMBER'
+        - 'AIRLINE_DESIGNATOR_OF_BOARDING_PASS_ISSUER'
+        - 'AIRLINE_NUMERIC_CODE'
+        - 'TICKET_NUMBER'
+        - 'FREQUENT_FLYER_AIRLINE_DESIGNATOR'
+        - 'FREQUENT_FLYER_NUMBER'
+        - 'FREE_BAGGAGE_ALLOWANCE'
+        - 'PDF_417_CODEC'
+        - 'IDENTITY_CARD_NUMBER_CHECKSUM'
+        - 'IDENTITY_CARD_NUMBER_CHECK_DIGIT'
+        - 'VETERAN'
+        - 'DL_CLASS_CODE_A1_FROM'
+        - 'DL_CLASS_CODE_A1_TO'
+        - 'DL_CLASS_CODE_A1_NOTES'
+        - 'DL_CLASS_CODE_A_FROM'
+        - 'DL_CLASS_CODE_A_TO'
+        - 'DL_CLASS_CODE_A_NOTES'
+        - 'DL_CLASS_CODE_B_FROM'
+        - 'DL_CLASS_CODE_B_TO'
+        - 'DL_CLASS_CODE_B_NOTES'
+        - 'DL_CLASS_CODE_C1_FROM'
+        - 'DL_CLASS_CODE_C1_TO'
+        - 'DL_CLASS_CODE_C1_NOTES'
+        - 'DL_CLASS_CODE_C_FROM'
+        - 'DL_CLASS_CODE_C_TO'
+        - 'DL_CLASS_CODE_C_NOTES'
+        - 'DL_CLASS_CODE_D1_FROM'
+        - 'DL_CLASS_CODE_D1_TO'
+        - 'DL_CLASS_CODE_D1_NOTES'
+        - 'DL_CLASS_CODE_D_FROM'
+        - 'DL_CLASS_CODE_D_TO'
+        - 'DL_CLASS_CODE_D_NOTES'
+        - 'DL_CLASS_CODE_BE_FROM'
+        - 'DL_CLASS_CODE_BE_TO'
+        - 'DL_CLASS_CODE_BE_NOTES'
+        - 'DL_CLASS_CODE_C1E_FROM'
+        - 'DL_CLASS_CODE_C1E_TO'
+        - 'DL_CLASS_CODE_C1E_NOTES'
+        - 'DL_CLASS_CODE_CE_FROM'
+        - 'DL_CLASS_CODE_CE_TO'
+        - 'DL_CLASS_CODE_CE_NOTES'
+        - 'DL_CLASS_CODE_D1E_FROM'
+        - 'DL_CLASS_CODE_D1E_TO'
+        - 'DL_CLASS_CODE_D1E_NOTES'
+        - 'DL_CLASS_CODE_DE_FROM'
+        - 'DL_CLASS_CODE_DE_TO'
+        - 'DL_CLASS_CODE_DE_NOTES'
+        - 'DL_CLASS_CODE_M_FROM'
+        - 'DL_CLASS_CODE_M_TO'
+        - 'DL_CLASS_CODE_M_NOTES'
+        - 'DL_CLASS_CODE_L_FROM'
+        - 'DL_CLASS_CODE_L_TO'
+        - 'DL_CLASS_CODE_L_NOTES'
+        - 'DL_CLASS_CODE_T_FROM'
+        - 'DL_CLASS_CODE_T_TO'
+        - 'DL_CLASS_CODE_T_NOTES'
+        - 'DL_CLASS_CODE_AM_FROM'
+        - 'DL_CLASS_CODE_AM_TO'
+        - 'DL_CLASS_CODE_AM_NOTES'
+        - 'DL_CLASS_CODE_A2_FROM'
+        - 'DL_CLASS_CODE_A2_TO'
+        - 'DL_CLASS_CODE_A2_NOTES'
+        - 'DL_CLASS_CODE_B1_FROM'
+        - 'DL_CLASS_CODE_B1_TO'
+        - 'DL_CLASS_CODE_B1_NOTES'
+        - 'SURNAME_AT_BIRTH'
+        - 'CIVIL_STATUS'
+        - 'NUMBER_OF_SEATS'
+        - 'NUMBER_OF_STANDING_PLACES'
+        - 'MAX_SPEED'
+        - 'FUEL_TYPE'
+        - 'EC_ENVIRONMENTAL_TYPE'
+        - 'POWER_WEIGHT_RATIO'
+        - 'MAX_MASS_OF_TRAILER_BRAKED'
+        - 'MAX_MASS_OF_TRAILER_UNBRAKED'
+        - 'TRANSMISSION_TYPE'
+        - 'TRAILER_HITCH'
+        - 'ACCOMPANIED_BY'
+        - 'POLICE_DISTRICT'
+        - 'FIRST_ISSUE_DATE'
+        - 'PAYLOAD_CAPACITY'
+        - 'NUMBER_OF_AXLES'
+        - 'PERMISSIBLE_AXLE_LOAD'
+        - 'PRECINCT'
+        - 'INVITED_BY'
+        - 'PURPOSE_OF_ENTRY'
+        - 'SKIN_COLOR'
+        - 'COMPLEXION'
+        - 'AIRPORT_FROM'
+        - 'AIRPORT_TO'
+        - 'AIRLINE_NAME'
+        - 'AIRLINE_NAME_FREQUENT_FLYER'
+        - 'LICENSE_NUMBER'
+        - 'IN_TANKS'
+        - 'EXCEPT_IN_TANKS'
+        - 'FAST_TRACK'
+        - 'OWNER'
+        - 'MRZ_STRINGS_ICAO_RFID'
+        - 'NUMBER_OF_CARD_ISSUANCE'
+        - 'NUMBER_OF_CARD_ISSUANCE_CHECKSUM'
+        - 'NUMBER_OF_CARD_ISSUANCE_CHECK_DIGIT'
+        - 'CENTURY_DATE_OF_BIRTH'
+        - 'DL_CLASS_CODE_A3_FROM'
+        - 'DL_CLASS_CODE_A3_TO'
+        - 'DL_CLASS_CODE_A3_NOTES'
+        - 'DL_CLASS_CODE_C2_FROM'
+        - 'DL_CLASS_CODE_C2_TO'
+        - 'DL_CLASS_CODE_C2_NOTES'
+        - 'DL_CLASS_CODE_B2_FROM'
+        - 'DL_CLASS_CODE_B2_TO'
+        - 'DL_CLASS_CODE_B2_NOTES'
+        - 'DL_CLASS_CODE_D2_FROM'
+        - 'DL_CLASS_CODE_D2_TO'
+        - 'DL_CLASS_CODE_D2_NOTES'
+        - 'DL_CLASS_CODE_B2E_FROM'
+        - 'DL_CLASS_CODE_B2E_TO'
+        - 'DL_CLASS_CODE_B2E_NOTES'
+        - 'DL_CLASS_CODE_G_FROM'
+        - 'DL_CLASS_CODE_G_TO'
+        - 'DL_CLASS_CODE_G_NOTES'
+        - 'DL_CLASS_CODE_J_FROM'
+        - 'DL_CLASS_CODE_J_TO'
+        - 'DL_CLASS_CODE_J_NOTES'
+        - 'DL_CLASS_CODE_LC_FROM'
+        - 'DL_CLASS_CODE_LC_TO'
+        - 'DL_CLASS_CODE_LC_NOTES'
+        - 'BANK_CARD_NUMBER'
+        - 'BANK_CARD_VALID_THRU'
+        - 'TAX_NUMBER'
+        - 'HEALTH_NUMBER'
+        - 'GRANDFATHER_NAME'
+        - 'SELECTEE_INDICATOR'
+        - 'MOTHER_SURNAME'
+        - 'MOTHER_GIVEN_NAME'
+        - 'FATHER_SURNAME'
+        - 'FATHER_GIVEN_NAME'
+        - 'MOTHER_DATE_OF_BIRTH'
+        - 'FATHER_DATE_OF_BIRTH'
+        - 'MOTHER_PERSONAL_NUMBER'
+        - 'FATHER_PERSONAL_NUMBER'
+        - 'MOTHER_PLACE_OF_BIRTH'
+        - 'FATHER_PLACE_OF_BIRTH'
+        - 'MOTHER_COUNTRY_OF_BIRTH'
+        - 'FATHER_COUNTRY_OF_BIRTH'
+        - 'DATE_FIRST_RENEWAL'
+        - 'DATE_SECOND_RENEWAL'
+        - 'PLACE_OF_EXAMINATION'
+        - 'APPLICATION_NUMBER'
+        - 'VOUCHER_NUMBER'
+        - 'AUTHORIZATION_NUMBER'
+        - 'FACULTY'
+        - 'FORM_OF_EDUCATION'
+        - 'DNI_NUMBER'
+        - 'RETIREMENT_NUMBER'
+        - 'PROFESSIONAL_ID_NUMBER'
+        - 'AGE_AT_ISSUE'
+        - 'YEARS_SINCE_ISSUE'
+        - 'DL_CLASS_CODE_BTP_FROM'
+        - 'DL_CLASS_CODE_BTP_NOTES'
+        - 'DL_CLASS_CODE_BTP_TO'
+        - 'DL_CLASS_CODE_C3_FROM'
+        - 'DL_CLASS_CODE_C3_NOTES'
+        - 'DL_CLASS_CODE_C3_TO'
+        - 'DL_CLASS_CODE_E_FROM'
+        - 'DL_CLASS_CODE_E_NOTES'
+        - 'DL_CLASS_CODE_E_TO'
+        - 'DL_CLASS_CODE_F_FROM'
+        - 'DL_CLASS_CODE_F_NOTES'
+        - 'DL_CLASS_CODE_F_TO'
+        - 'DL_CLASS_CODE_FA_FROM'
+        - 'DL_CLASS_CODE_FA_NOTES'
+        - 'DL_CLASS_CODE_FA_TO'
+        - 'DL_CLASS_CODE_FA1_FROM'
+        - 'DL_CLASS_CODE_FA1_NOTES'
+        - 'DL_CLASS_CODE_FA1_TO'
+        - 'DL_CLASS_CODE_FB_FROM'
+        - 'DL_CLASS_CODE_FB_NOTES'
+        - 'DL_CLASS_CODE_FB_TO'
+        - 'DL_CLASS_CODE_G1_FROM'
+        - 'DL_CLASS_CODE_G1_NOTES'
+        - 'DL_CLASS_CODE_G1_TO'
+        - 'DL_CLASS_CODE_H_FROM'
+        - 'DL_CLASS_CODE_H_NOTES'
+        - 'DL_CLASS_CODE_H_TO'
+        - 'DL_CLASS_CODE_I_FROM'
+        - 'DL_CLASS_CODE_I_NOTES'
+        - 'DL_CLASS_CODE_I_TO'
+        - 'DL_CLASS_CODE_K_FROM'
+        - 'DL_CLASS_CODE_K_NOTES'
+        - 'DL_CLASS_CODE_K_TO'
+        - 'DL_CLASS_CODE_LK_FROM'
+        - 'DL_CLASS_CODE_LK_NOTES'
+        - 'DL_CLASS_CODE_LK_TO'
+        - 'DL_CLASS_CODE_N_FROM'
+        - 'DL_CLASS_CODE_N_NOTES'
+        - 'DL_CLASS_CODE_N_TO'
+        - 'DL_CLASS_CODE_S_FROM'
+        - 'DL_CLASS_CODE_S_NOTES'
+        - 'DL_CLASS_CODE_S_TO'
+        - 'DL_CLASS_CODE_TB_FROM'
+        - 'DL_CLASS_CODE_TB_NOTES'
+        - 'DL_CLASS_CODE_TB_TO'
+        - 'DL_CLASS_CODE_TM_FROM'
+        - 'DL_CLASS_CODE_TM_NOTES'
+        - 'DL_CLASS_CODE_TM_TO'
+        - 'DL_CLASS_CODE_TR_FROM'
+        - 'DL_CLASS_CODE_TR_NOTES'
+        - 'DL_CLASS_CODE_TR_TO'
+        - 'DL_CLASS_CODE_TV_FROM'
+        - 'DL_CLASS_CODE_TV_NOTES'
+        - 'DL_CLASS_CODE_TV_TO'
+        - 'DL_CLASS_CODE_V_FROM'
+        - 'DL_CLASS_CODE_V_NOTES'
+        - 'DL_CLASS_CODE_V_TO'
+        - 'DL_CLASS_CODE_W_FROM'
+        - 'DL_CLASS_CODE_W_NOTES'
+        - 'DL_CLASS_CODE_W_TO'
+        - 'URL'
+        - 'CALIBER'
+        - 'MODEL'
+        - 'MAKE'
+        - 'NUMBER_OF_CYLINDERS'
+        - 'SURNAME_OF_HUSBAND_AFTER_REGISTRATION'
+        - 'SURNAME_OF_WIFE_AFTER_REGISTRATION'
+        - 'DATE_OF_BIRTH_OF_WIFE'
+        - 'DATE_OF_BIRTH_OF_HUSBAND'
+        - 'CITIZENSHIP_OF_FIRST_PERSON'
+        - 'CITIZENSHIP_OF_SECOND_PERSON'
+        - 'CVV'
+        - 'DATE_OF_INSURANCE_EXPIRY'
+        - 'MORTGAGE_BY'
+        - 'OLD_DOCUMENT_NUMBER'
+        - 'OLD_DATE_OF_ISSUE'
+        - 'OLD_PLACE_OF_ISSUE'
+        - 'DL_CLASS_CODE_LR_FROM'
+        - 'DL_CLASS_CODE_LR_TO'
+        - 'DL_CLASS_CODE_LR_NOTES'
+        - 'DL_CLASS_CODE_MR_FROM'
+        - 'DL_CLASS_CODE_MR_TO'
+        - 'DL_CLASS_CODE_MR_NOTES'
+        - 'DL_CLASS_CODE_HR_FROM'
+        - 'DL_CLASS_CODE_HR_TO'
+        - 'DL_CLASS_CODE_HR_NOTES'
+        - 'DL_CLASS_CODE_HC_FROM'
+        - 'DL_CLASS_CODE_HC_TO'
+        - 'DL_CLASS_CODE_HC_NOTES'
+        - 'DL_CLASS_CODE_MC_FROM'
+        - 'DL_CLASS_CODE_MC_TO'
+        - 'DL_CLASS_CODE_MC_NOTES'
+        - 'DL_CLASS_CODE_RE_FROM'
+        - 'DL_CLASS_CODE_RE_TO'
+        - 'DL_CLASS_CODE_RE_NOTES'
+        - 'DL_CLASS_CODE_R_FROM'
+        - 'DL_CLASS_CODE_R_TO'
+        - 'DL_CLASS_CODE_R_NOTES'
+        - 'DL_CLASS_CODE_CA_FROM'
+        - 'DL_CLASS_CODE_CA_TO'
+        - 'DL_CLASS_CODE_CA_NOTES'
+        - 'CITIZENSHIP_STATUS'
+        - 'MILITARY_SERVICE_FROM'
+        - 'MILITARY_SERVICE_TO'
+        - 'DL_CLASS_CODE_NT_FROM'
+        - 'DL_CLASS_CODE_NT_TO'
+        - 'DL_CLASS_CODE_NT_NOTES'
+        - 'DL_CLASS_CODE_TN_FROM'
+        - 'DL_CLASS_CODE_TN_TO'
+        - 'DL_CLASS_CODE_TN_NOTES'
+        - 'DL_CLASS_CODE_D3_FROM'
+        - 'DL_CLASS_CODE_D3_TO'
+        - 'DL_CLASS_CODE_D3_NOTES'
+        - 'ALT_DATE_OF_EXPIRE'
+        - 'DL_CLASS_CODE_CD_FROM'
+        - 'DL_CLASS_CODE_CD_TO'
+        - 'DL_CLASS_CODE_CD_NOTES'
+        - 'ISSUER_IDENTIFICATION_NUMBER'
+        - 'PAYMENT_PERIOD_FROM'
+        - 'PAYMENT_PERIOD_TO'
+        - 'VACCINATION_CERTIFICATE_IDENTIFIER'
+        - 'FIRST_NAME'
+        - 'DATE_OF_ARRIVAL'
+        - 'SECOND_NAME'
+        - 'THIRD_NAME'
+        - 'FOURTH_NAME'
+        - 'LAST_NAME'
+        - 'DL_CLASS_CODE_RM_FROM'
+        - 'DL_CLASS_CODE_RM_NOTES'
+        - 'DL_CLASS_CODE_RM_TO'
+        - 'DL_CLASS_CODE_PW_FROM'
+        - 'DL_CLASS_CODE_PW_NOTES'
+        - 'DL_CLASS_CODE_PW_TO'
+        - 'DL_CLASS_CODE_EB_FROM'
+        - 'DL_CLASS_CODE_EB_NOTES'
+        - 'DL_CLASS_CODE_EB_TO'
+        - 'DL_CLASS_CODE_EC_FROM'
+        - 'DL_CLASS_CODE_EC_NOTES'
+        - 'DL_CLASS_CODE_EC_TO'
+        - 'DL_CLASS_CODE_EC1_FROM'
+        - 'DL_CLASS_CODE_EC1_NOTES'
+        - 'DL_CLASS_CODE_EC1_TO'
+        - 'PLACE_OF_BIRTH_CITY'
+        - 'YEAR_OF_EXPIRY'
+        - 'GRANDFATHER_NAME_MATERIAL'
