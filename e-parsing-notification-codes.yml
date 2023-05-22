@@ -2,7 +2,7 @@ openapi: 3.0.3
 components:
   schemas:
     ParsingNotificationCodes:
-      description: "A set of codes of non-critical remarks detected during analysis of data structure used during SDK work."
+      description: "The enumeration contains possible values of notification codes returned during the RFID chip processing."
       type: integer
       enum:
       - -1879048191
