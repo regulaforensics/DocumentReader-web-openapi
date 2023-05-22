@@ -66,4 +66,4 @@ components:
       - "FINGERPRINT_COMPARISON"
       - "LIVENESS"
       - "EXTENDED_OCR_CHECK"
-      - "MRZ"
+      - "EXTENDED_MRZ_CHECK"
