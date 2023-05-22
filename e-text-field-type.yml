@@ -1854,4 +1854,4 @@ components:
       - "PLACE_OF_BIRTH_CITY"
       - "YEAR_OF_BIRTH"
       - "YEAR_OF_EXPIRY"
-      - "GRANDFATHER_NAME_MATERIAL"
+      - "GRANDFATHER_NAME_MATERNAL"
