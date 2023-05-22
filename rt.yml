@@ -52,8 +52,8 @@ components:
         - "Contains result of document authenticity checks"
         - "Contains information about document position on the input image, its center, angle, etc"
         - "Contains raw information about barcodes on the input image"
-        - "Contains license'
-        - "Contains encrypted ResultContainerList'
+        - "Contains license"
+        - "Contains encrypted ResultContainerList"
       x-enum-varnames:
         - DOCUMENT_IMAGE
         - IMAGE_QUALITY
