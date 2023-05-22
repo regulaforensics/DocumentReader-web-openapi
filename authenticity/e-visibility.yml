@@ -1,25 +1,24 @@
 openapi: 3.0.3
 components:
   schemas:
-
     Visibility:
       description: "Enumeration contains visibility status of the security element"
-      type: integer
       enum:
-        - 0
-        - 1
-        - 2
-        - 4
-        - 8
+      - 0
+      - 1
+      - 2
+      - 4
+      - 8
+      type: integer
       x-enum-description:
-        - "Invisible"
-        - "Visible"
-        - "Colored"
-        - "Grayscale"
-        - "Visible vs IR match"
+      - "Invisible"
+      - "Visible"
+      - "Colored"
+      - "Grayscale"
+      - "Visible vs IR match"
       x-enum-varnames:
-        - "INVISIBLE"
-        - "VISIBLE"
-        - "COLORED"
-        - "GRAYSCALE"
-        - "WHITE_IR_MATCHING"
+      - INVISIBLE
+      - VISIBLE
+      - COLORED
+      - GRAYSCALE
+      - WHITE_IR_MATCHING
