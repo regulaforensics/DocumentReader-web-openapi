@@ -5,428 +5,428 @@ components:
       type: integer
       description: "Locale id. Used to tag same typed fields declared in several languages. For example: name can be provided in both native and latin variants. Based on Microsoft locale id (https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-lcid/70feba9f-294e-491e-b6eb-56532684c37f)."
       enum:
-       - 0
-       - 1025
-       - 1026
-       - 1027
-       - 1028
-       - 1029
-       - 1030
-       - 1031
-       - 1032
-       - 1033
-       - 1034
-       - 1035
-       - 1036
-       - 1037
-       - 1038
-       - 1039
-       - 1040
-       - 1041
-       - 1042
-       - 1043
-       - 1044
-       - 1045
-       - 1046
-       - 1047
-       - 1048
-       - 1049
-       - 1050
-       - 1051
-       - 1052
-       - 1053
-       - 1054
-       - 1055
-       - 1056
-       - 1057
-       - 1058
-       - 1059
-       - 1060
-       - 1061
-       - 1062
-       - 1063
-       - 1064
-       - 1065
-       - 1066
-       - 1067
-       - 1068
-       - 1069
-       - 1071
-       - 1078
-       - 1079
-       - 1080
-       - 1081
-       - 1086
-       - 1087
-       - 1088
-       - 1089
-       - 1090
-       - 1091
-       - 1092
-       - 1094
-       - 1095
-       - 1097
-       - 1098
-       - 1099
-       - 1102
-       - 1103
-       - 1104
-       - 1110
-       - 1111
-       - 1114
-       - 1125
-       - 2049
-       - 2052
-       - 2055
-       - 2057
-       - 2058
-       - 2060
-       - 2064
-       - 2067
-       - 2068
-       - 2070
-       - 2074
-       - 2077
-       - 2092
-       - 2110
-       - 2115
-       - 3073
-       - 3076
-       - 3079
-       - 3081
-       - 3082
-       - 3084
-       - 3098
-       - 4097
-       - 4100
-       - 4103
-       - 4105
-       - 4106
-       - 4108
-       - 5121
-       - 5124
-       - 5127
-       - 5129
-       - 5130
-       - 5132
-       - 6145
-       - 6153
-       - 6154
-       - 6156
-       - 7169
-       - 7177
-       - 7178
-       - 8193
-       - 8201
-       - 8202
-       - 9217
-       - 9225
-       - 9226
-       - 10241
-       - 10249
-       - 10250
-       - 11265
-       - 11273
-       - 11274
-       - 12289
-       - 12297
-       - 12298
-       - 13313
-       - 13321
-       - 13322
-       - 14337
-       - 14346
-       - 15361
-       - 15370
-       - 16385
-       - 16394
-       - 17418
-       - 18442
-       - 19466
-       - 20490
-       - 50001
-       - 50002
+        - 0
+        - 1025
+        - 1026
+        - 1027
+        - 1028
+        - 1029
+        - 1030
+        - 1031
+        - 1032
+        - 1033
+        - 1034
+        - 1035
+        - 1036
+        - 1037
+        - 1038
+        - 1039
+        - 1040
+        - 1041
+        - 1042
+        - 1043
+        - 1044
+        - 1045
+        - 1046
+        - 1047
+        - 1048
+        - 1049
+        - 1050
+        - 1051
+        - 1052
+        - 1053
+        - 1054
+        - 1055
+        - 1056
+        - 1057
+        - 1058
+        - 1059
+        - 1060
+        - 1061
+        - 1062
+        - 1063
+        - 1064
+        - 1065
+        - 1066
+        - 1067
+        - 1068
+        - 1069
+        - 1071
+        - 1078
+        - 1079
+        - 1080
+        - 1081
+        - 1086
+        - 1087
+        - 1088
+        - 1089
+        - 1090
+        - 1091
+        - 1092
+        - 1094
+        - 1095
+        - 1097
+        - 1098
+        - 1099
+        - 1102
+        - 1103
+        - 1104
+        - 1110
+        - 1111
+        - 1114
+        - 1125
+        - 2049
+        - 2052
+        - 2055
+        - 2057
+        - 2058
+        - 2060
+        - 2064
+        - 2067
+        - 2068
+        - 2070
+        - 2074
+        - 2077
+        - 2092
+        - 2110
+        - 2115
+        - 3073
+        - 3076
+        - 3079
+        - 3081
+        - 3082
+        - 3084
+        - 3098
+        - 4097
+        - 4100
+        - 4103
+        - 4105
+        - 4106
+        - 4108
+        - 5121
+        - 5124
+        - 5127
+        - 5129
+        - 5130
+        - 5132
+        - 6145
+        - 6153
+        - 6154
+        - 6156
+        - 7169
+        - 7177
+        - 7178
+        - 8193
+        - 8201
+        - 8202
+        - 9217
+        - 9225
+        - 9226
+        - 10241
+        - 10249
+        - 10250
+        - 11265
+        - 11273
+        - 11274
+        - 12289
+        - 12297
+        - 12298
+        - 13313
+        - 13321
+        - 13322
+        - 14337
+        - 14346
+        - 15361
+        - 15370
+        - 16385
+        - 16394
+        - 17418
+        - 18442
+        - 19466
+        - 20490
+        - 50001
+        - 50002
       x-enum-descriptions:
-       - "Latin"
-       - "Arabic (Saudi Arabia)"
-       - "Bulgarian"
-       - "Catalan"
-       - "Chinese (Taiwan)"
-       - "Czech"
-       - "Danish"
-       - "German (Liechtenstein)"
-       - "Gujarati"
-       - "English (United States)"
-       - "Spanish (Traditional Sort)"
-       - "Finnish"
-       - "French (France)"
-       - "Hindi (India)"
-       - "Icelandic"
-       - "Indonesian"
-       - "Italian (Switzerland)"
-       - "Kannada"
-       - "Kyrgyz (Cyrillic)"
-       - "Dutch (Netherlands)"
-       - "Norwegian (Bokmal)"
-       - "Polish"
-       - "Portuguese (Brazil)"
-       - "Rhaeto-Romanic"
-       - "Romanian"
-       - "Russian"
-       - "Croatian"
-       - "Slovak"
-       - "Albanian"
-       - "Swedish"
-       - "Thai (Thailand)"
-       - "Turkish"
-       - "Urdu"
-       - "Italian (Italy)"
-       - "Ukrainian"
-       - "Belarusian"
-       - "Slovenian"
-       - "Estonian"
-       - "Lithuanian"
-       - "FYRO Macedonian"
-       - "Tajik (Cyrillic)"
-       - "Farsi"
-       - "Vietnamese"
-       - "Armenian"
-       - "Azeri (Latin)"
-       - "Basque"
-       - "Galician"
-       - "Afrikaans"
-       - "German (Austria)"
-       - "Faeroese"
-       - "Hungarian"
-       - "Malay (Malaysia)"
-       - "Konkani"
-       - "Latvian"
-       - "Swahili"
-       - "Turkmen"
-       - "Uzbek (Latin)"
-       - "Tatar"
-       - "Punjabi"
-       - "Hebrew"
-       - "Tamil"
-       - "Telugu"
-       - "Kazakh"
-       - "Marathi"
-       - "Sanskrit"
-       - "Mongolian (Cyrillic)"
-       - "Georgian"
-       - "Korean"
-       - "Syriac"
-       - "Divehi"
-       - "Arabic (Iraq)"
-       - "Chinese"
-       - "Greek"
-       - "English (United Kingdom)"
-       - "Spanish (Mexico)"
-       - "French (Belgium)"
-       - "Japanese"
-       - "Dutch (Belgium)"
-       - "Norwegian (Nynorsk)"
-       - "Portuguese (Portugal)"
-       - "Serbian (Latin)"
-       - "Swedish (Finland)"
-       - "Azeri (Cyrillic)"
-       - "Malay (Brunei Darussalam)"
-       - "Uzbek (Cyrillic)"
-       - "Arabic (Egypt)"
-       - "Chinese (HongKong S.A.R.)"
-       - "German (Germany)"
-       - "English (Australia)"
-       - "Spanish (International Sort)"
-       - "French (Canada)"
-       - "Serbian (Cyrillic)"
-       - "Arabic (Libya)"
-       - "Chinese (Singapore)"
-       - "German (Switzerland)"
-       - "English (Canada)"
-       - "Spanish (Guatemala)"
-       - "French (Switzerland)"
-       - "Arabic (Algeria)"
-       - "Chinese (Macao S.A.R.)"
-       - "German (Luxembourg)"
-       - "English (New Zealand)"
-       - "Spanish (Costa Rica)"
-       - "French (Luxembourg)"
-       - "Arabic (Morocco)"
-       - "English (Ireland)"
-       - "Spanish (Panama)"
-       - "French (Monaco)"
-       - "Arabic (Tunisia)"
-       - "English (South Africa)"
-       - "Spanish (Dominican Republic)"
-       - "Arabic (Oman)"
-       - "English (Jamaica)"
-       - "Spanish (Venezuela)"
-       - "Arabic (Yemen)"
-       - "English (Caribbean)"
-       - "Spanish (Colombia)"
-       - "Arabic (Syria)"
-       - "English (Belize)"
-       - "Spanish (Peru)"
-       - "Arabic (Jordan)"
-       - "English (Trinidad)"
-       - "Spanish (Argentina)"
-       - "Arabic (Lebanon)"
-       - "English (Zimbabwe)"
-       - "Spanish (Ecuador)"
-       - "Arabic (Kuwait)"
-       - "English (Philippines)"
-       - "Spanish (Chile)"
-       - "Arabic (U.A.E.)"
-       - "Spanish (Uruguay)"
-       - "Arabic (Bahrain)"
-       - "Spanish (Paraguay)"
-       - "Arabic (Qatar)"
-       - "Spanish (Bolivia)"
-       - "Spanish (El Salvador)"
-       - "Spanish (Honduras)"
-       - "Spanish (Nicaragua)"
-       - "Spanish (Puerto Rico)"
-       - "CTC Simplified"
-       - "CTC Traditional"
+        - "Latin"
+        - "Arabic (Saudi Arabia)"
+        - "Bulgarian"
+        - "Catalan"
+        - "Chinese (Taiwan)"
+        - "Czech"
+        - "Danish"
+        - "German (Liechtenstein)"
+        - "Gujarati"
+        - "English (United States)"
+        - "Spanish (Traditional Sort)"
+        - "Finnish"
+        - "French (France)"
+        - "Hindi (India)"
+        - "Icelandic"
+        - "Indonesian"
+        - "Italian (Switzerland)"
+        - "Kannada"
+        - "Kyrgyz (Cyrillic)"
+        - "Dutch (Netherlands)"
+        - "Norwegian (Bokmal)"
+        - "Polish"
+        - "Portuguese (Brazil)"
+        - "Rhaeto-Romanic"
+        - "Romanian"
+        - "Russian"
+        - "Croatian"
+        - "Slovak"
+        - "Albanian"
+        - "Swedish"
+        - "Thai (Thailand)"
+        - "Turkish"
+        - "Urdu"
+        - "Italian (Italy)"
+        - "Ukrainian"
+        - "Belarusian"
+        - "Slovenian"
+        - "Estonian"
+        - "Lithuanian"
+        - "FYRO Macedonian"
+        - "Tajik (Cyrillic)"
+        - "Farsi"
+        - "Vietnamese"
+        - "Armenian"
+        - "Azeri (Latin)"
+        - "Basque"
+        - "Galician"
+        - "Afrikaans"
+        - "German (Austria)"
+        - "Faeroese"
+        - "Hungarian"
+        - "Malay (Malaysia)"
+        - "Konkani"
+        - "Latvian"
+        - "Swahili"
+        - "Turkmen"
+        - "Uzbek (Latin)"
+        - "Tatar"
+        - "Punjabi"
+        - "Hebrew"
+        - "Tamil"
+        - "Telugu"
+        - "Kazakh"
+        - "Marathi"
+        - "Sanskrit"
+        - "Mongolian (Cyrillic)"
+        - "Georgian"
+        - "Korean"
+        - "Syriac"
+        - "Divehi"
+        - "Arabic (Iraq)"
+        - "Chinese"
+        - "Greek"
+        - "English (United Kingdom)"
+        - "Spanish (Mexico)"
+        - "French (Belgium)"
+        - "Japanese"
+        - "Dutch (Belgium)"
+        - "Norwegian (Nynorsk)"
+        - "Portuguese (Portugal)"
+        - "Serbian (Latin)"
+        - "Swedish (Finland)"
+        - "Azeri (Cyrillic)"
+        - "Malay (Brunei Darussalam)"
+        - "Uzbek (Cyrillic)"
+        - "Arabic (Egypt)"
+        - "Chinese (HongKong S.A.R.)"
+        - "German (Germany)"
+        - "English (Australia)"
+        - "Spanish (International Sort)"
+        - "French (Canada)"
+        - "Serbian (Cyrillic)"
+        - "Arabic (Libya)"
+        - "Chinese (Singapore)"
+        - "German (Switzerland)"
+        - "English (Canada)"
+        - "Spanish (Guatemala)"
+        - "French (Switzerland)"
+        - "Arabic (Algeria)"
+        - "Chinese (Macao S.A.R.)"
+        - "German (Luxembourg)"
+        - "English (New Zealand)"
+        - "Spanish (Costa Rica)"
+        - "French (Luxembourg)"
+        - "Arabic (Morocco)"
+        - "English (Ireland)"
+        - "Spanish (Panama)"
+        - "French (Monaco)"
+        - "Arabic (Tunisia)"
+        - "English (South Africa)"
+        - "Spanish (Dominican Republic)"
+        - "Arabic (Oman)"
+        - "English (Jamaica)"
+        - "Spanish (Venezuela)"
+        - "Arabic (Yemen)"
+        - "English (Caribbean)"
+        - "Spanish (Colombia)"
+        - "Arabic (Syria)"
+        - "English (Belize)"
+        - "Spanish (Peru)"
+        - "Arabic (Jordan)"
+        - "English (Trinidad)"
+        - "Spanish (Argentina)"
+        - "Arabic (Lebanon)"
+        - "English (Zimbabwe)"
+        - "Spanish (Ecuador)"
+        - "Arabic (Kuwait)"
+        - "English (Philippines)"
+        - "Spanish (Chile)"
+        - "Arabic (U.A.E.)"
+        - "Spanish (Uruguay)"
+        - "Arabic (Bahrain)"
+        - "Spanish (Paraguay)"
+        - "Arabic (Qatar)"
+        - "Spanish (Bolivia)"
+        - "Spanish (El Salvador)"
+        - "Spanish (Honduras)"
+        - "Spanish (Nicaragua)"
+        - "Spanish (Puerto Rico)"
+        - "CTC Simplified"
+        - "CTC Traditional"
       x-enum-varnames:
-       - "LATIN"
-       - "ARABIC_SAUDI_ARABIA"
-       - "BULGARIAN"
-       - "CATALAN"
-       - "CHINESE_TAIWAN"
-       - "CZECH"
-       - "DANISH"
-       - "GERMAN_LIECHTENSTEIN"
-       - "GUJARATI"
-       - "ENGLISH_US"
-       - "SPANISH_TRADITIONAL_SORT"
-       - "FINNISH"
-       - "FRENCH_FRANCE"
-       - "HINDI_INDIA"
-       - "ICELANDIC"
-       - "INDONESIAN"
-       - "ITALIAN_SWITZERLAND"
-       - "KANNADA"
-       - "KYRGYZ_CYRILICK"
-       - "DUTCH_NETHERLANDS"
-       - "NORWEGIAN_BOKMAL"
-       - "POLISH"
-       - "PORTUGUESE_BRAZIL"
-       - "RHAETO_ROMANIC"
-       - "ROMANIAN"
-       - "RUSSIAN"
-       - "CROATIAN"
-       - "SLOVAK"
-       - "ALBANIAN"
-       - "SWEDISH"
-       - "THAI_THAILAND"
-       - "TURKISH"
-       - "URDU"
-       - "ITALIAN_ITALY"
-       - "UKRAINIAN"
-       - "BELARUSIAN"
-       - "SLOVENIAN"
-       - "ESTONIAN"
-       - "LITHUANIAN"
-       - "FYRO_MACEDONIAN"
-       - "TAJIK_CYRILLIC"
-       - "FARSI"
-       - "VIETNAMESE"
-       - "ARABIC_ARMENIAN"
-       - "AZERI_LATIN"
-       - "BASQUE"
-       - "GALICIAN"
-       - "AFRIKAANS"
-       - "GERMAN_AUSTRIA"
-       - "FAEROESE"
-       - "HUNGARIAN"
-       - "MALAY_MALAYSIA"
-       - "KONKANI"
-       - "LATVIAN"
-       - "SWAHILI"
-       - "TURKMEN"
-       - "UZBEK_LATIN"
-       - "TATAR"
-       - "PUNJABI"
-       - "HEBREW"
-       - "TAMIL"
-       - "TELUGU"
-       - "KAZAKH"
-       - "MARATHI"
-       - "SANSKRIT"
-       - "MONGOLIAN_CYRILIC"
-       - "GEORGIAN"
-       - "KOREAN"
-       - "SYRIAC"
-       - "DIVEHI"
-       - "ARABIC_IRAQ"
-       - "CHINESE"
-       - "GREEK"
-       - "ENGLISH_UK"
-       - "SPANISH_MEXICO"
-       - "FRENCH_BELGIUM"
-       - "JAPANESE"
-       - "DUTCH_BELGIUM"
-       - "NORWEGIAN_NYORSK"
-       - "PORTUGUESE_PORTUGAL"
-       - "SERBIAN_LATIN"
-       - "SWEDISH_FINLAND"
-       - "AZERI_CYRILIC"
-       - "MALAY_BRUNEI_DARUSSALAM"
-       - "UZBEK_CYRILIC"
-       - "ARABIC_EGYPT"
-       - "CHINESE_HONGKONG_SAR"
-       - "GERMAN_GERMANY"
-       - "ENGLISH_AUSTRALIA"
-       - "SPANISH_INTERNATIONAL_SORT"
-       - "FRENCH_CANADA"
-       - "SERBIAN_CYRILIC"
-       - "ARABIC_LIBYA"
-       - "CHINESE_SINGAPORE"
-       - "GERMAN_SWITZERLAND"
-       - "ENGLISH_CANADA"
-       - "SPANISH_GUATEMALA"
-       - "FRENCH_SWITZERLAND"
-       - "ARABIC_ALGERIA"
-       - "CHINESE_MACAO_SAR"
-       - "GERMAN_LUXEMBOURG"
-       - "ENGLISH_NEW_ZEALAND"
-       - "SPANISH_COSTA_RICA"
-       - "FRENCH_LUXEMBOURG"
-       - "ARABIC_MOROCCO"
-       - "ENGLISH_IRELAND"
-       - "SPANISH_PANAMA"
-       - "FRENCH_MONACO"
-       - "ARABIC_TUNISIA"
-       - "ENGLISH_SOUTH_AFRICA"
-       - "SPANISH_DOMINICAN_REPUBLIC"
-       - "ARABIC_OMAN"
-       - "ENGLISH_JAMAICA"
-       - "SPANISH_VENEZUELA"
-       - "ARABIC_YEMEN"
-       - "ENGLISH_CARRIBEAN"
-       - "SPANICH_COLOMBIA"
-       - "ARABIC_SYRIA"
-       - "ENGLISH_BELIZE"
-       - "SPANISH_PERU"
-       - "ARABIC_JORDAN"
-       - "ENGLISH_TRINIDAD"
-       - "SPANISH_ARGENTINA"
-       - "ARABIC_LEBANON"
-       - "ENGLISH_ZIMBABWE"
-       - "SPANISH_ECUADOR"
-       - "ARABIC_KUWAIT"
-       - "ENGLISH_PHILIPPINES"
-       - "SPANISH_CHILE"
-       - "ARABIC_UAE"
-       - "SPANISH_URUGUAY"
-       - "ARABIC_BAHRAIN"
-       - "SPANISH_PARAGUAY"
-       - "ARABIC_QATAR"
-       - "SPANISH_BOLIVIA"
-       - "SPANISH_EL_SALVADOR"
-       - "SPANISH_HONDURAS"
-       - "SPANISH_NICARAGUA"
-       - "SPANISH_PUERTO_RICO"
-       - "CTC_SIMPLIFIED"
-       - "CTC_TRADITIONAL"
+        - "LATIN"
+        - "ARABIC_SAUDI_ARABIA"
+        - "BULGARIAN"
+        - "CATALAN"
+        - "CHINESE_TAIWAN"
+        - "CZECH"
+        - "DANISH"
+        - "GERMAN_LIECHTENSTEIN"
+        - "GUJARATI"
+        - "ENGLISH_US"
+        - "SPANISH_TRADITIONAL_SORT"
+        - "FINNISH"
+        - "FRENCH_FRANCE"
+        - "HINDI_INDIA"
+        - "ICELANDIC"
+        - "INDONESIAN"
+        - "ITALIAN_SWITZERLAND"
+        - "KANNADA"
+        - "KYRGYZ_CYRILICK"
+        - "DUTCH_NETHERLANDS"
+        - "NORWEGIAN_BOKMAL"
+        - "POLISH"
+        - "PORTUGUESE_BRAZIL"
+        - "RHAETO_ROMANIC"
+        - "ROMANIAN"
+        - "RUSSIAN"
+        - "CROATIAN"
+        - "SLOVAK"
+        - "ALBANIAN"
+        - "SWEDISH"
+        - "THAI_THAILAND"
+        - "TURKISH"
+        - "URDU"
+        - "ITALIAN_ITALY"
+        - "UKRAINIAN"
+        - "BELARUSIAN"
+        - "SLOVENIAN"
+        - "ESTONIAN"
+        - "LITHUANIAN"
+        - "FYRO_MACEDONIAN"
+        - "TAJIK_CYRILLIC"
+        - "FARSI"
+        - "VIETNAMESE"
+        - "ARABIC_ARMENIAN"
+        - "AZERI_LATIN"
+        - "BASQUE"
+        - "GALICIAN"
+        - "AFRIKAANS"
+        - "GERMAN_AUSTRIA"
+        - "FAEROESE"
+        - "HUNGARIAN"
+        - "MALAY_MALAYSIA"
+        - "KONKANI"
+        - "LATVIAN"
+        - "SWAHILI"
+        - "TURKMEN"
+        - "UZBEK_LATIN"
+        - "TATAR"
+        - "PUNJABI"
+        - "HEBREW"
+        - "TAMIL"
+        - "TELUGU"
+        - "KAZAKH"
+        - "MARATHI"
+        - "SANSKRIT"
+        - "MONGOLIAN_CYRILIC"
+        - "GEORGIAN"
+        - "KOREAN"
+        - "SYRIAC"
+        - "DIVEHI"
+        - "ARABIC_IRAQ"
+        - "CHINESE"
+        - "GREEK"
+        - "ENGLISH_UK"
+        - "SPANISH_MEXICO"
+        - "FRENCH_BELGIUM"
+        - "JAPANESE"
+        - "DUTCH_BELGIUM"
+        - "NORWEGIAN_NYORSK"
+        - "PORTUGUESE_PORTUGAL"
+        - "SERBIAN_LATIN"
+        - "SWEDISH_FINLAND"
+        - "AZERI_CYRILIC"
+        - "MALAY_BRUNEI_DARUSSALAM"
+        - "UZBEK_CYRILIC"
+        - "ARABIC_EGYPT"
+        - "CHINESE_HONGKONG_SAR"
+        - "GERMAN_GERMANY"
+        - "ENGLISH_AUSTRALIA"
+        - "SPANISH_INTERNATIONAL_SORT"
+        - "FRENCH_CANADA"
+        - "SERBIAN_CYRILIC"
+        - "ARABIC_LIBYA"
+        - "CHINESE_SINGAPORE"
+        - "GERMAN_SWITZERLAND"
+        - "ENGLISH_CANADA"
+        - "SPANISH_GUATEMALA"
+        - "FRENCH_SWITZERLAND"
+        - "ARABIC_ALGERIA"
+        - "CHINESE_MACAO_SAR"
+        - "GERMAN_LUXEMBOURG"
+        - "ENGLISH_NEW_ZEALAND"
+        - "SPANISH_COSTA_RICA"
+        - "FRENCH_LUXEMBOURG"
+        - "ARABIC_MOROCCO"
+        - "ENGLISH_IRELAND"
+        - "SPANISH_PANAMA"
+        - "FRENCH_MONACO"
+        - "ARABIC_TUNISIA"
+        - "ENGLISH_SOUTH_AFRICA"
+        - "SPANISH_DOMINICAN_REPUBLIC"
+        - "ARABIC_OMAN"
+        - "ENGLISH_JAMAICA"
+        - "SPANISH_VENEZUELA"
+        - "ARABIC_YEMEN"
+        - "ENGLISH_CARRIBEAN"
+        - "SPANICH_COLOMBIA"
+        - "ARABIC_SYRIA"
+        - "ENGLISH_BELIZE"
+        - "SPANISH_PERU"
+        - "ARABIC_JORDAN"
+        - "ENGLISH_TRINIDAD"
+        - "SPANISH_ARGENTINA"
+        - "ARABIC_LEBANON"
+        - "ENGLISH_ZIMBABWE"
+        - "SPANISH_ECUADOR"
+        - "ARABIC_KUWAIT"
+        - "ENGLISH_PHILIPPINES"
+        - "SPANISH_CHILE"
+        - "ARABIC_UAE"
+        - "SPANISH_URUGUAY"
+        - "ARABIC_BAHRAIN"
+        - "SPANISH_PARAGUAY"
+        - "ARABIC_QATAR"
+        - "SPANISH_BOLIVIA"
+        - "SPANISH_EL_SALVADOR"
+        - "SPANISH_HONDURAS"
+        - "SPANISH_NICARAGUA"
+        - "SPANISH_PUERTO_RICO"
+        - "CTC_SIMPLIFIED"
+        - "CTC_TRADITIONAL"

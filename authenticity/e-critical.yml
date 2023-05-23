@@ -5,11 +5,11 @@ components:
       type: integer
       description: "Enumeration contains identifiers determining the criticality of the security element"
       enum:
-       - 0
-       - 1
+        - 0
+        - 1
       x-enum-descriptions:
-       - "Security element may be absent in a valid document"
-       - "Security element must be present in a valid document"
+        - "Security element may be absent in a valid document"
+        - "Security element must be present in a valid document"
       x-enum-varnames:
-       - "NOT_CRITICAL"
-       - "CRITICAL"
+        - "NOT_CRITICAL"
+        - "CRITICAL"
