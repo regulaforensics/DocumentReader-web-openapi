@@ -14,6 +14,7 @@ components:
         - 64
         - 128
         - 512
+        - 1024
         - 4096
         - 8192
         - 32768
@@ -35,6 +36,7 @@ components:
         - "OCR for the text field in UV light comparison with other text sources check"
         - "Invisible Personal Information (IPI) visualization"
         - "Owner's photo embedding check (is photo printed or sticked)"
+        - "OVI check"
         - "Hologram presence check"
         - "Owner's photo area advanced check (photo shape, size, position, etc.)"
         - "Portrait comparison check (document printed vs chip vs live)"
@@ -57,6 +59,7 @@ components:
         - "IPI"
         - "PHOTO_EMBED_TYPE"
         - "HOLOGRAMS"
+        - "OVI"
         - "PHOTO_AREA"
         - "PORTRAIT_COMPARISON"
         - "BARCODE_FORMAT_CHECK"

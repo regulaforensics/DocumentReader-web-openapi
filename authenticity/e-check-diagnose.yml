@@ -116,6 +116,7 @@ components:
         - 222
         - 230
         - 240
+        - 250
       x-enum-varnames:
         - "UNKNOWN"
         - "PASS"
@@ -227,4 +228,5 @@ components:
         - "INVALID_FONT"
         - "INVALID_BACKGROUND"
         - "LASINK_INVALID_LINES_FREQUENCY"
+        - "ELECTRONIC_DEVICE_DETECTED"
         - "LAST_DIAGNOSE_VALUE"
