@@ -15,8 +15,8 @@ components:
               type: array
               description: "Data from barcode"
               items:
-                $ref: '#/components/schemas/pArrayField'
-        - $ref: './rt.yml#/components/schemas/ResultItem'
+                $ref: "#/components/schemas/pArrayField"
+        - $ref: "./rt.yml#/components/schemas/ResultItem"
 
     pArrayField:
       type: object
@@ -30,11 +30,11 @@ components:
         bcDataModule:
           type: array
           items:
-            $ref: '#/components/schemas/DataModule'
+            $ref: "#/components/schemas/DataModule"
         bcPDF417INFO:
-          $ref: '#/components/schemas/bcPDF417INFO'
+          $ref: "#/components/schemas/bcPDF417INFO"
         bcROI_DETECT:
-          $ref: '#/components/schemas/bcROI_DETECT'
+          $ref: "#/components/schemas/bcROI_DETECT"
         bcTextDecoderTypes:
           type: integer
         bcTextFieldType:

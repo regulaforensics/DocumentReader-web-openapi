@@ -13,7 +13,7 @@ components:
           properties:
             DocGraphicsInfo:
               $ref: "#/components/schemas/GraphicFieldsList"
-        - $ref: './rt.yml#/components/schemas/ResultItem'
+        - $ref: "./rt.yml#/components/schemas/ResultItem"
 
 
     GraphicFieldsList:

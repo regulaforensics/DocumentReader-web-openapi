@@ -1,10 +1,9 @@
 openapi: 3.0.3
 components:
   schemas:
-
     AuthenticityResultType:
-      description: "Enumeration describes available authenticity checks: https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/development/enums/authenticity-result-type/."
       type: integer
+      description: "Enumeration describes available authenticity checks: https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/development/enums/authenticity-result-type/."
       enum:
         - 1
         - 2
@@ -15,6 +14,7 @@ components:
         - 64
         - 128
         - 512
+        - 1024
         - 4096
         - 8192
         - 32768
@@ -36,6 +36,7 @@ components:
         - "OCR for the text field in UV light comparison with other text sources check"
         - "Invisible Personal Information (IPI) visualization"
         - "Owner's photo embedding check (is photo printed or sticked)"
+        - "OVI check"
         - "Hologram presence check"
         - "Owner's photo area advanced check (photo shape, size, position, etc.)"
         - "Portrait comparison check (document printed vs chip vs live)"
@@ -46,7 +47,7 @@ components:
         - "Fingerprint comparison check"
         - "Document liveness check"
         - "Extended OCR Check"
-        - "MRZ extended check"
+        - "Extended MRZ check"
       x-enum-varnames:
         - "UV_LUMINESCENCE"
         - "IR_B900"
@@ -58,6 +59,7 @@ components:
         - "IPI"
         - "PHOTO_EMBED_TYPE"
         - "HOLOGRAMS"
+        - "OVI"
         - "PHOTO_AREA"
         - "PORTRAIT_COMPARISON"
         - "BARCODE_FORMAT_CHECK"
@@ -67,4 +69,4 @@ components:
         - "FINGERPRINT_COMPARISON"
         - "LIVENESS"
         - "EXTENDED_OCR_CHECK"
-        - "MRZ"
+        - "EXTENDED_MRZ_CHECK"

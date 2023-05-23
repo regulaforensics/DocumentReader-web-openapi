@@ -10,8 +10,8 @@ components:
             - Status
           properties:
             Status:
-              $ref: '#/components/schemas/Status'
-        - $ref: './rt.yml#/components/schemas/ResultItem'
+              $ref: "#/components/schemas/Status"
+        - $ref: "./rt.yml#/components/schemas/ResultItem"
 
 
     # $ref with description doesnt work right now, waiting for OAS 3.1 (comming soon)
@@ -78,7 +78,7 @@ components:
           description: "Number of processed pages in the document"
           type: integer
         security:
-          description: "Status of document MRZ"
+          description: "Authenticity verification status"
           $ref: "./common.yml#/components/schemas/CheckResult"
         text:
           description: "Status of text fields analysis"

@@ -5,23 +5,23 @@ components:
     IdentResult:
       title: "Ident Check"
       allOf:
-        - $ref: '../rt-authenticity.yml#/components/schemas/AuthenticityCheckResultItem'
+        - $ref: "../rt-authenticity.yml#/components/schemas/AuthenticityCheckResultItem"
         - type: object
           properties:
             ElementType:
-              $ref: '../e-security-feature-type.yml#/components/schemas/SecurityFeatureType'
+              $ref: "../e-security-feature-type.yml#/components/schemas/SecurityFeatureType"
             LightIndex:
-              $ref: '../common.yml#/components/schemas/Light'
+              $ref: "../common.yml#/components/schemas/Light"
             Area:
-              $ref: '../common.yml#/components/schemas/RectangleCoordinates'
+              $ref: "../common.yml#/components/schemas/RectangleCoordinates"
             Image:
               description: "Original image"
-              $ref: '../common.yml#/components/schemas/ImageData'
+              $ref: "../common.yml#/components/schemas/ImageData"
             EtalonImage:
               description: "Reference image"
-              $ref: '../common.yml#/components/schemas/ImageData'
+              $ref: "../common.yml#/components/schemas/ImageData"
             PercentValue:
               description: "Probability percent for IMAGE_PATTERN check or element's visibility for IR_VISIBILITY"
               type: integer
             AreaList:
-              $ref: '../rt-authenticity.yml#/components/schemas/AreaContainer'
+              $ref: "../rt-authenticity.yml#/components/schemas/AreaContainer"

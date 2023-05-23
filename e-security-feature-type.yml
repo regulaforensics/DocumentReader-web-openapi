@@ -1,10 +1,9 @@
 openapi: 3.0.3
 components:
   schemas:
-
     SecurityFeatureType:
-      description: "Enumeration contains identifiers determining type of features for a document authenticity checks: https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/development/enums/security-feature-type/"
       type: integer
+      description: "Enumeration contains identifiers determining type of features for a document authenticity checks: https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/development/enums/security-feature-type/"
       enum:
         - 0
         - 1
@@ -48,6 +47,8 @@ components:
         - 40
         - 41
         - 42
+        - 43
+        - 44
       x-enum-description:
         - "Blank element"
         - "Personalization element"
@@ -91,6 +92,8 @@ components:
         - "Liveness electronic device"
         - "Liveness OVI"
         - "Barcode size check"
+        - "LASINK"
+        - "Liveness MLI"
       x-enum-varnames:
         - "BLANK"
         - "FILL"
@@ -134,3 +137,5 @@ components:
         - "LIVENESS_ELECTRONIC_DEVICE"
         - "LIVENESS_OVI"
         - "BARCODE_SIZE_CHECK"
+        - "LASINK"
+        - "LIVENESS_MLI"

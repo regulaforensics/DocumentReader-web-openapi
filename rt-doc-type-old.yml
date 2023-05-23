@@ -11,7 +11,7 @@ components:
           properties:
             OneCandidate:
               $ref: "#/components/schemas/OneCandidate"
-        - $ref: './rt.yml#/components/schemas/ResultItem'
+        - $ref: "./rt.yml#/components/schemas/ResultItem"
 
     DocumentTypesCandidatesResult:
       title: "Document Types Candidates"
@@ -20,7 +20,7 @@ components:
           properties:
             CandidatesList:
               $ref: "#/components/schemas/DocumentTypesCandidatesList"
-        - $ref: './rt.yml#/components/schemas/ResultItem'
+        - $ref: "./rt.yml#/components/schemas/ResultItem"
 
 
     DocumentTypesCandidatesList:
@@ -41,13 +41,13 @@ components:
         - 15
         - 29
       x-enum-descriptions:
-        - 'Document type determined. The first element in candidates array is recognition result'
-        - 'Document type was not determined. Ongoing processing is not possible'
-        - 'To determine document type user should provide more images with different light sources (UV, for example)'
+        - "Document type determined. The first element in candidates array is recognition result"
+        - "Document type was not determined. Ongoing processing is not possible"
+        - "To determine document type user should provide more images with different light sources (UV, for example)"
       x-enum-varnames:
-        - 'OK'
-        - 'UNKNOWN'
-        - 'NEED_MORE_IMAGES'
+        - "OK"
+        - "UNKNOWN"
+        - "NEED_MORE_IMAGES"
 
 
     OneCandidate:
@@ -141,30 +141,30 @@ components:
         - 1000
         - 1002
       x-enum-descriptions:
-        - 'ID1 document format'
-        - 'ID2 document format'
-        - 'ID3 document format'
-        - 'Undefined document format'
-        - 'A4 document format'
-        - 'ID3 double document format'
-        - 'ID1 format document rotated 90 °'
-        - 'ID1 format document rotated 180 °'
-        - 'ID1 format document rotated 270 °'
-        - 'ID2 format document rotated 90 °'
-        - 'ID3 format document rotated 180 °'
-        - 'Arbitrary format'
-        - 'Flexible format. Standard formats can be resized during cropping, depending on various factors: light, background...'
+        - "ID1 document format"
+        - "ID2 document format"
+        - "ID3 document format"
+        - "Undefined document format"
+        - "A4 document format"
+        - "ID3 double document format"
+        - "ID1 format document rotated 90 °"
+        - "ID1 format document rotated 180 °"
+        - "ID1 format document rotated 270 °"
+        - "ID2 format document rotated 90 °"
+        - "ID3 format document rotated 180 °"
+        - "Arbitrary format"
+        - "Flexible format. Standard formats can be resized during cropping, depending on various factors: light, background..."
       x-enum-varnames:
-        - 'ID1'
-        - 'ID2'
-        - 'ID3'
-        - 'NON'
-        - 'A4'
-        - 'ID3_X2'
-        - 'ID1_90'
-        - 'ID1_180'
-        - 'ID1_270'
-        - 'ID2_180'
-        - 'ID3_180'
-        - 'CUSTOM'
-        - 'FLEXIBLE'
+        - "ID1"
+        - "ID2"
+        - "ID3"
+        - "NON"
+        - "A4"
+        - "ID3_X2"
+        - "ID1_90"
+        - "ID1_180"
+        - "ID1_270"
+        - "ID2_180"
+        - "ID3_180"
+        - "CUSTOM"
+        - "FLEXIBLE"

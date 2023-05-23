@@ -13,8 +13,8 @@ components:
         - type: object
           properties:
             ListVerifiedFields:
-              $ref: '#/components/schemas/ListVerifiedFields'
-        - $ref: './rt.yml#/components/schemas/ResultItem'
+              $ref: "#/components/schemas/ListVerifiedFields"
+        - $ref: "./rt.yml#/components/schemas/ResultItem"
 
 
     ListVerifiedFields:
@@ -23,7 +23,7 @@ components:
         pFieldMaps:
           type: array
           items:
-            $ref: '#/components/schemas/VerifiedFieldMap'
+            $ref: "#/components/schemas/VerifiedFieldMap"
 
     VerifiedFieldMap:
       type: object
@@ -45,7 +45,7 @@ components:
           description: "Field data extracted from rfid chip"
           type: string
         Matrix:
-          $ref: '#/components/schemas/ComparisonMatrix'
+          $ref: "#/components/schemas/ComparisonMatrix"
 
       example:
         {FieldType: 185, Field_MRZ: "37", Field_Visual: "37", Matrix: [1,0,0,0,0,3,0,0,0,0]}
@@ -70,7 +70,7 @@ components:
          - 8 - the result of comparing the data of the text areas of the document and barcodes;
          - 9 - the result of comparing the data of the RFID chip and barcodes."
       items:
-        $ref: '#/components/schemas/VerificationResult'
+        $ref: "#/components/schemas/VerificationResult"
       example: [1,0,0,0,0,3,0,0,0,0]
 
     VerificationResult:
@@ -82,14 +82,14 @@ components:
         - 3
         - 4
       x-enum-descriptions:
-        - 'Comparison result unknown'
-        - 'Verification passed'
-        - 'Verification failed'
-        - 'Positive comparison result'
-        - 'Negative comparison result'
+        - "Comparison result unknown"
+        - "Verification passed"
+        - "Verification failed"
+        - "Positive comparison result"
+        - "Negative comparison result"
       x-enum-varnames:
-        - 'DISABLED'
-        - 'VERIFIED'
-        - 'NOT_VERIFIED'
-        - 'COMPARE_MATCH'
-        - 'COMPARE_NOT_MATCH'
+        - "DISABLED"
+        - "VERIFIED"
+        - "NOT_VERIFIED"
+        - "COMPARE_MATCH"
+        - "COMPARE_NOT_MATCH"

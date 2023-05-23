@@ -1,10 +1,9 @@
 openapi: 3.0.3
 components:
   schemas:
-
     CheckDiagnose:
-      description: "Enumeration contains identifiers which determinate the single document element authenticity check outcome reason: https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/development/enums/check-diagnose/"
       type: integer
+      description: "Enumeration contains identifiers which determinate the single document element authenticity check outcome reason: https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/development/enums/check-diagnose/"
       enum:
         - 0
         - 1
@@ -47,6 +46,11 @@ components:
         - 60
         - 65
         - 80
+        - 81
+        - 82
+        - 83
+        - 84
+        - 85
         - 90
         - 91
         - 92
@@ -57,6 +61,8 @@ components:
         - 100
         - 101
         - 102
+        - 103
+        - 104
         - 110
         - 111
         - 112
@@ -69,6 +75,7 @@ components:
         - 119
         - 120
         - 121
+        - 122
         - 130
         - 131
         - 132
@@ -84,24 +91,6 @@ components:
         - 154
         - 155
         - 156
-        - 82
-        - 191
-        - 192
-        - 83
-        - 84
-        - 85
-        - 200
-        - 201
-        - 202
-        - 203
-        - 204
-        - 220
-        - 221
-        - 222
-        - 81
-        - 103
-        - 104
-        - 122
         - 160
         - 161
         - 170
@@ -114,8 +103,18 @@ components:
         - 186
         - 187
         - 190
+        - 200
+        - 201
+        - 202
+        - 203
+        - 204
+        - 205
+        - 220
+        - 221
+        - 222
         - 230
         - 240
+        - 250
       x-enum-varnames:
         - "UNKNOWN"
         - "PASS"
@@ -158,6 +157,11 @@ components:
         - "BAD_AREA_IN_AXIAL"
         - "FALSE_IP_PARAMETERS"
         - "FIELD_POS_CORRECTOR_HIGHLIGHT_IR"
+        - "FIELD_POS_CORRECTOR_GLARES_IN_PHOTO_AREA"
+        - "FIELD_POS_CORRECTOR_PHOTO_REPLACED"
+        - "FIELD_POS_CORRECTOR_LANDMARKS_CHECK_ERROR"
+        - "FIELD_POS_CORRECTOR_FACE_PRESENCE_CHECK_ERROR"
+        - "FIELD_POS_CORRECTOR_FACE_ABSENCE_CHECK_ERROR"
         - "OVI_IR_INVISIBLE"
         - "OVI_INSUFFICIENT_AREA"
         - "OVI_COLOR_INVARIABLE"
@@ -168,6 +172,8 @@ components:
         - "HOLOGRAM_ELEMENT_ABSENT"
         - "HOLOGRAM_SIDE_TOP_IMAGES_ABSENT"
         - "HOLOGRAM_ELEMENT_PRESENT"
+        - "HOLOGRAM_FRAMES_IS_ABSENT"
+        - "HOLOGRAM_HOLO_FIELD_IS_ABSENT"
         - "PHOTO_PATTERN_INTERRUPTED"
         - "PHOTO_PATTERN_SHIFTED"
         - "PHOTO_PATTERN_DIFFERENT_COLORS"
@@ -180,6 +186,7 @@ components:
         - "PHOTO_PATTERN_DIFFERENT_LINES_THICKNESS"
         - "PHOTO_IS_NOT_RECTANGLE"
         - "PHOTO_CORNERS_IS_WRONG"
+        - "DOCUMENT_IS_CANCELLING"
         - "TEXT_COLOR_SHOULD_BE_BLUE"
         - "TEXT_COLOR_SHOULD_BE_GREEN"
         - "TEXT_COLOR_SHOULD_BE_RED"
@@ -195,24 +202,6 @@ components:
         - "PORTRAIT_COMPARISON_NO_LIVE_PHOTO"
         - "PORTRAIT_COMPARISON_NO_SERVICE_LICENSE"
         - "PORTRAIT_COMPARISON_NO_PORTRAIT_DETECTED"
-        - "FIELD_POS_CORRECTOR_PHOTO_REPLACED"
-        - "SCREEN_CAPTURE_DETECTED"
-        - "ELECTRONIC_DEVICE_DETECTED"
-        - "FIELD_POS_CORRECTOR_LANDMARKS_CHECK_ERROR"
-        - "FIELD_POS_CORRECTOR_FACE_PRESENCE_CHECK_ERROR"
-        - "FIELD_POS_CORRECTOR_FACE_ABSENCE_CHECK_ERROR"
-        - "WRONG_SYMBOL_BACKGROUND"
-        - "WRONG_BACKGROUND"
-        - "WRONG_MRZ_WIDTH"
-        - "WRONG_MRZ_HEIGHT"
-        - "WRONG_LINE_POSITION"
-        - "TEXT_POSITION"
-        - "INVALID_FONT"
-        - "INVALID_BACKGROUND"
-        - "FIELD_POS_CORRECTOR_GLARES_IN_PHOTO_AREA"
-        - "HOLOGRAM_FRAMES_IS_ABSENT"
-        - "HOLOGRAM_HOLO_FIELD_IS_ABSENT"
-        - "DOCUMENT_IS_CANCELLING"
         - "MOBILE_IMAGES_UNSUITABLE_LIGHT_CONDITIONS"
         - "MOBILE_IMAGES_WHITE_UV_NO_DIFFERENCE"
         - "FINGERPRINTS_COMPARISON_MISMATCH"
@@ -225,5 +214,15 @@ components:
         - "HOLO_PHOTO_FINISHED_BY_TIMEOUT"
         - "HOLO_PHOTO_DOCUMENT_OUTSIDE_FRAME"
         - "LIVENESS_DEPTH_CHECK_FAILED"
-        - "LAS_INK_INVALID_LINES_FREQUENCY"
+        - "MRZ_QUALITY_WRONG_SYMBOL_POSITION"
+        - "MRZ_QUALITY_WRONG_BACKGROUND"
+        - "MRZ_QUALITY_WRONG_MRZ_WIDTH"
+        - "MRZ_QUALITY_WRONG_MRZ_HEIGHT"
+        - "MRZ_QUALITY_WRONG_LINE_POSITION"
+        - "MRZ_QUALITY_WRONG_FONT_TYPE"
+        - "OCR_QUALITY_TEXT_POSITION"
+        - "OCR_QUALITY_INVALID_FONT"
+        - "OCR_QUALITY_INVALID_BACKGROUND"
+        - "LASINK_INVALID_LINES_FREQUENCY"
+        - "DOC_LIVENESS_ELECTRONIC_DEVICE_DETECTED"
         - "LAST_DIAGNOSE_VALUE"

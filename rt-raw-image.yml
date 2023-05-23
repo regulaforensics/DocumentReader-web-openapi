@@ -14,4 +14,4 @@ components:
           properties:
             RawImageContainer:
               $ref: "./common.yml#/components/schemas/ImageData"
-        - $ref: './rt.yml#/components/schemas/ResultItem'
+        - $ref: "./rt.yml#/components/schemas/ResultItem"
