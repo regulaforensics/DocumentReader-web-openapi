@@ -4,7 +4,7 @@ info:
   title: Regula Document Reader Web API
   x-logo:
     url: "https://static-content.regulaforensics.com/Icons/Logos/Regula-logo.svg"
-    href: "https://mobile.regulaforensics.com/"
+    href: "https://regulaforensics.com"
   description: |
     Documents recognition as easy as reading two bytes.
 
