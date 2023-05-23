@@ -17,8 +17,8 @@ components:
       - "Grayscale"
       - "Visible vs IR match"
       x-enum-varnames:
-      - INVISIBLE
-      - VISIBLE
-      - COLORED
-      - GRAYSCALE
-      - WHITE_IR_MATCHING
+      - "INVISIBLE"
+      - "VISIBLE"
+      - "COLORED"
+      - "GRAYSCALE"
+      - "WHITE_IR_MATCHING"

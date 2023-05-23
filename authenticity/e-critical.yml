@@ -11,5 +11,5 @@ components:
       - "Security element may be absent in a valid document"
       - "Security element must be present in a valid document"
       x-enum-varnames:
-      - NOT_CRITICAL
-      - CRITICAL
+      - "NOT_CRITICAL"
+      - "CRITICAL"
