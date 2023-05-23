@@ -48,6 +48,7 @@ components:
         - 41
         - 42
         - 43
+        - 44
       x-enum-description:
         - "Blank element"
         - "Personalization element"
@@ -92,6 +93,7 @@ components:
         - "Liveness OVI"
         - "Barcode size check"
         - "LASINK"
+        - "Checking the presence of a device that could be used for document capturing"
       x-enum-varnames:
         - "BLANK"
         - "FILL"
@@ -136,3 +138,4 @@ components:
         - "LIVENESS_OVI"
         - "BARCODE_SIZE_CHECK"
         - "LASINK"
+        - "ELECTRONIC_DEVICE"
