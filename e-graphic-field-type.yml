@@ -5,6 +5,7 @@ components:
       description: "Human readable field name. Do not bind to this name - use GraphicFieldType instead."
       type: string
     GraphicFieldType:
+      type: integer
       enum:
       - 201
       - 202
@@ -31,7 +32,6 @@ components:
       - 313
       - 314
       - 315
-      type: integer
       x-enum-descriptions:
       - "Document holder photo"
       - "Fingerprint of document holder"

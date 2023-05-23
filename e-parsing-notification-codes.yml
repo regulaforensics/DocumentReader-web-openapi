@@ -2,8 +2,8 @@ openapi: 3.0.3
 components:
   schemas:
     ParsingNotificationCodes:
-      description: "The enumeration contains possible values of notification codes returned during the RFID chip processing."
       type: integer
+      description: "The enumeration contains possible values of notification codes returned during the RFID chip processing."
       enum:
       - -1879048191
       - -1879048190

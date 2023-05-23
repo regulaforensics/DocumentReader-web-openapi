@@ -2,6 +2,7 @@ openapi: 3.0.3
 components:
   schemas:
     Visibility:
+      type: integer
       description: "Enumeration contains visibility status of the security element"
       enum:
       - 0
@@ -9,7 +10,6 @@ components:
       - 2
       - 4
       - 8
-      type: integer
       x-enum-description:
       - "Invisible"
       - "Visible"

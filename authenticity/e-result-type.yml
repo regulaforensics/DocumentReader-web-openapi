@@ -2,6 +2,7 @@ openapi: 3.0.3
 components:
   schemas:
     AuthenticityResultType:
+      type: integer
       description: "Enumeration describes available authenticity checks: https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/development/enums/authenticity-result-type/."
       enum:
       - 1
@@ -24,7 +25,6 @@ components:
       - 2097152
       - 4194304
       - 8388608
-      type: integer
       x-enum-description:
       - "Document luminescence check in UV light"
       - "B900 ink MRZ contrast check in IR light"
