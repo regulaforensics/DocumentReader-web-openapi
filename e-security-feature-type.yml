@@ -93,7 +93,7 @@ components:
         - "Liveness OVI"
         - "Barcode size check"
         - "LASINK"
-        - "Checking the presence of a device that could be used for document capturing"
+        - "Liveness MLI"
       x-enum-varnames:
         - "BLANK"
         - "FILL"
