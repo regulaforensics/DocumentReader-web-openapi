@@ -21,7 +21,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ProcessResponse'
+                $ref: "#/components/schemas/ProcessResponse"
         "400":
           description: "Bad request. Check your input data."
         "403":
@@ -147,15 +147,15 @@ components:
           type: string
           description: "session id"
         processParam:
-          $ref: '#/components/schemas/ProcessParams'
+          $ref: "#/components/schemas/ProcessParams"
         List:
           type: array
           items:
-            $ref: '#/components/schemas/ProcessRequestImage'
+            $ref: "#/components/schemas/ProcessRequestImage"
         ContainerList:
-          $ref: './rt.yml#/components/schemas/ContainerList'
+          $ref: "./rt.yml#/components/schemas/ContainerList"
         systemInfo:
-          $ref: '#/components/schemas/ProcessSystemInfo'
+          $ref: "#/components/schemas/ProcessSystemInfo"
         passBackObject:
           type: object
           description: "Free-form object to be included in response. Must be object, not list or simple value.
@@ -174,12 +174,12 @@ components:
           type: integer
           description: "This parameter allows setting maximum width in pixels of output images and thus reducing image size to desired. Does not change the aspect ratio. Changes disabled if equals to 0. Default 0."
         scenario:
-          $ref: './common.yml#/components/schemas/Scenario'
+          $ref: "./common.yml#/components/schemas/Scenario"
         resultTypeOutput:
           description: "Types of results to return in response. See 'Result' enum for available options"
           type: array
           items:
-            $ref: './rt.yml#/components/schemas/Result'
+            $ref: "./rt.yml#/components/schemas/Result"
         doublePageSpread:
           description: "Enable this option if the image you provide contains double page spread
           of the passport and you want to process both pages in one go. It makes sense to use it for documents
@@ -198,7 +198,7 @@ components:
           Narrowing the list can shorten processing time. Empty by default."
           type: array
           items:
-            $ref: './e-text-field-type.yml#/components/schemas/TextFieldType'
+            $ref: "./e-text-field-type.yml#/components/schemas/TextFieldType"
         dateFormat:
           description: "This option allows you to set dates format so that solution will return dates in this format.
           For example, if you supply 'MM/dd/yyyy', and document have printed date '09 JUL 2020' for the date os issue,
@@ -209,7 +209,7 @@ components:
         measureSystem:
           description: "This option allows you to set the system of measurement used for converting original values 
           in document to output result values. Metric by default."
-          $ref: '#/components/schemas/MeasureSystem'
+          $ref: "#/components/schemas/MeasureSystem"
         imageDpiOutMax:
           description: "This parameter controls maximum resolution in dpi of output images.
           Resolution will remain original in case 0 is supplied. By default is set to return images in response with
@@ -231,7 +231,7 @@ components:
            If recognized document has ID specified in config, processing adjusts according to designated configuration."
           type: array
           items:
-            $ref: '#/components/schemas/PerDocumentConfig'
+            $ref: "#/components/schemas/PerDocumentConfig"
         log:
           description: "When enabled, results will contain transaction processing log. Disabled by default"
           type: boolean
@@ -269,7 +269,7 @@ components:
           type: boolean
           # default: false
         imageQa:
-          $ref: '#/components/schemas/ImageQA'
+          $ref: "#/components/schemas/ImageQA"
         respectImageQuality:
           description: "When enabled, image quality checks status affects document optical and overall status. Disabled by default."
           type: boolean
@@ -315,7 +315,7 @@ components:
           description: "This option allows limiting MRZ formats to be recognized by specifying them in array."
           type: array
           items:
-            $ref: '#/components/schemas/MRZFormat'
+            $ref: "#/components/schemas/MRZFormat"
         forceReadMrzBeforeLocate:
           description: "When enabled, make sure that in series processing MRZ is located fully inside the result document image, 
           if present on the document. Enabling this option may add extra processing time, by disabling optimizations,
@@ -388,19 +388,19 @@ components:
     MRZFormat:
       type: string
       enum:
-        - '1x30'
-        - '3x30'
-        - '2x36'
-        - '2x44'
-        - '1x6'
-        - '2x30'
+        - "1x30"
+        - "3x30"
+        - "2x36"
+        - "2x44"
+        - "1x6"
+        - "2x30"
       x-enum-varnames:
-        - 'IDL'
-        - 'ID1'
-        - 'ID2'
-        - 'ID3'
-        - 'CAN'
-        - 'ID1_2_30'
+        - "IDL"
+        - "ID1"
+        - "ID2"
+        - "ID3"
+        - "CAN"
+        - "ID1_2_30"
 
     TextPostProcessing:
       type: integer
@@ -410,10 +410,10 @@ components:
         - 2
         - 3
       x-enum-varnames:
-        - 'NO_CHANGE'
-        - 'UPPERCASE'
-        - 'LOWERCASE'
-        - 'CAPITAL'
+        - "NO_CHANGE"
+        - "UPPERCASE"
+        - "LOWERCASE"
+        - "CAPITAL"
 
     MeasureSystem:
       type: integer
@@ -422,11 +422,11 @@ components:
         - 0
         - 1
       x-enum-descriptions:
-        - 'Metric system of measurement, where things are measured in meters and grams'
-        - 'Imperial System of Measurement, where things are measured in feet, inches and pounds'
+        - "Metric system of measurement, where things are measured in meters and grams"
+        - "Imperial System of Measurement, where things are measured in feet, inches and pounds"
       x-enum-varnames:
-        - 'METRIC'
-        - 'IMPERIAL'
+        - "METRIC"
+        - "IMPERIAL"
 
     LogLevel:
       type: string
@@ -437,11 +437,11 @@ components:
         - Info
         - Debug
       x-enum-varnames:
-        - 'FATAL_ERROR'
-        - 'ERROR'
-        - 'WARNING'
-        - 'INFO'
-        - 'DEBUG'
+        - "FATAL_ERROR"
+        - "ERROR"
+        - "WARNING"
+        - "INFO"
+        - "DEBUG"
 
 
     PerDocumentConfig:
@@ -498,9 +498,9 @@ components:
         - ImageData
       properties:
         ImageData:
-          $ref: './common.yml#/components/schemas/ImageData'
+          $ref: "./common.yml#/components/schemas/ImageData"
         light:
-          $ref: './common.yml#/components/schemas/Light'
+          $ref: "./common.yml#/components/schemas/Light"
         page_idx:
           description: "page/image number"
           type: integer
@@ -558,13 +558,13 @@ components:
         - 1
         - 2
       x-enum-descriptions:
-        - 'Processing was not finished'
-        - 'Processing finished'
-        - 'Processing finished by timeout'
+        - "Processing was1 not finished"
+        - "Processing finished"
+        - "Processing finished by timeout"
       x-enum-varnames:
-        - 'NOT_FINISHED'
-        - 'FINISHED'
-        - 'TIMEOUT'
+        - "NOT_FINISHED"
+        - "FINISHED"
+        - "TIMEOUT"
 
     TransactionInfo:
       type: object

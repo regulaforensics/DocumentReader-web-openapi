@@ -10,8 +10,8 @@ components:
             - ImageQualityCheckList
           properties:
             ImageQualityCheckList:
-              $ref: '#/components/schemas/ImageQualityCheckList'
-        - $ref: './rt.yml#/components/schemas/ResultItem'
+              $ref: "#/components/schemas/ImageQualityCheckList"
+        - $ref: "./rt.yml#/components/schemas/ResultItem"
 
 
     ImageQualityCheckList:
@@ -21,16 +21,16 @@ components:
         - List
       properties:
         result:
-          description: 'Overall image quality status, combined from check statuses in the list.'
-          $ref: './common.yml#/components/schemas/CheckResult'
+          description: "Overall image quality status, combined from check statuses in the list."
+          $ref: "./common.yml#/components/schemas/CheckResult"
         List:
           type: array
           items:
-            $ref: '#/components/schemas/ImageQualityCheck'
+            $ref: "#/components/schemas/ImageQualityCheck"
 
     ImageQualityCheckType:
       type: integer
-      description: 'Image quality check type'
+      description: "Image quality check type"
       enum:
         - 0
         - 1
@@ -41,23 +41,23 @@ components:
         - 6
         - 7
       x-enum-varnames:
-        - 'ImageGlares'
-        - 'ImageFocus'
-        - 'ImageResolution'
-        - 'ImageColorness'
-        - 'Perspective'
-        - 'Bounds'
-        - 'ScreenCapture'
-        - 'Portrait'
+        - "ImageGlares"
+        - "ImageFocus"
+        - "ImageResolution"
+        - "ImageColorness"
+        - "Perspective"
+        - "Bounds"
+        - "ScreenCapture"
+        - "Portrait"
       x-enum-descriptions:
-        - 'Signals glare presence on the image'
-        - 'Signals whether image is in focus'
-        - 'Signals if image resolution is below threshold'
-        - 'Signals if image is colorless'
-        - 'Signals if document in the image has prespective distortion above threshold'
-        - 'Signals if document is not fully present in the image'
-        - 'Signals if an image is captured from screen'
-        - 'Signals if the portrait is present'
+        - "Signals glare presence on the image"
+        - "Signals whether image is in focus"
+        - "Signals if image resolution is below threshold"
+        - "Signals if image is colorless"
+        - "Signals if document in the image has prespective distortion above threshold"
+        - "Signals if document is not fully present in the image"
+        - "Signals if an image is captured from screen"
+        - "Signals if the portrait is present"
 
     AreaArray:
       type: object
@@ -65,11 +65,11 @@ components:
         List:
           type: array
           items:
-            $ref: './common.yml#/components/schemas/RectangleCoordinates'
+            $ref: "./common.yml#/components/schemas/RectangleCoordinates"
         Points:
           type: array
           items:
-            $ref: '#/components/schemas/PointArray'
+            $ref: "#/components/schemas/PointArray"
 
     PointArray:
       type: object
@@ -77,19 +77,19 @@ components:
         PointsList:
           type: array
           items:
-            $ref: './common.yml#/components/schemas/Point'
+            $ref: "./common.yml#/components/schemas/Point"
 
     ImageQualityCheck:
       type: object
       properties:
         type:
-          $ref: '#/components/schemas/ImageQualityCheckType'
+          $ref: "#/components/schemas/ImageQualityCheckType"
         result:
-          $ref: './common.yml#/components/schemas/CheckResult'
+          $ref: "./common.yml#/components/schemas/CheckResult"
         featureType:
-          $ref: './e-security-feature-type.yml#/components/schemas/SecurityFeatureType'
+          $ref: "./e-security-feature-type.yml#/components/schemas/SecurityFeatureType"
         areas:
-          $ref: '#/components/schemas/AreaArray'
+          $ref: "#/components/schemas/AreaArray"
         mean:
           type: number
           format: float

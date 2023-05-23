@@ -10,8 +10,8 @@ components:
             - Text
           properties:
             Text:
-              $ref: '#/components/schemas/Text'
-        - $ref: './rt.yml#/components/schemas/ResultItem'
+              $ref: "#/components/schemas/Text"
+        - $ref: "./rt.yml#/components/schemas/ResultItem"
 
     Text:
       type: object
@@ -176,4 +176,4 @@ components:
           description: "Overall status of validity from all fields for given source"
           $ref: "./common.yml#/components/schemas/CheckResult"
         containerType:
-          $ref: './rt.yml#/components/schemas/ContainerType'
+          $ref: "./rt.yml#/components/schemas/ContainerType"

@@ -10,8 +10,8 @@ components:
             - AuthenticityCheckList
           properties:
             AuthenticityCheckList:
-              $ref: '#/components/schemas/AuthenticityCheckList'
-        - $ref: './rt.yml#/components/schemas/ResultItem'
+              $ref: "#/components/schemas/AuthenticityCheckList"
+        - $ref: "./rt.yml#/components/schemas/ResultItem"
 
     AuthenticityCheckList:
       type: object
@@ -25,7 +25,7 @@ components:
           type: array
           description: "Authenticity Check"
           items:
-            $ref: '#/components/schemas/AuthenticityCheckResult'
+            $ref: "#/components/schemas/AuthenticityCheckResult"
 
     AuthenticityCheckResult:
       type: object
@@ -35,18 +35,18 @@ components:
         - List
       properties:
         Type:
-          $ref: './authenticity/e-result-type.yml#/components/schemas/AuthenticityResultType'
+          $ref: "./authenticity/e-result-type.yml#/components/schemas/AuthenticityResultType"
         Result:
-          $ref: './common.yml#/components/schemas/CheckResult'
+          $ref: "./common.yml#/components/schemas/CheckResult"
         List:
           type: array
           items:
             anyOf:
-              - $ref: '#/components/schemas/SecurityFeatureResult'
-              - $ref: '#/components/schemas/IdentResult'
-              - $ref: '#/components/schemas/FiberResult'
-              - $ref: '#/components/schemas/OCRSecurityTextResult'
-              - $ref: '#/components/schemas/PhotoIdentResult'
+              - $ref: "#/components/schemas/SecurityFeatureResult"
+              - $ref: "#/components/schemas/IdentResult"
+              - $ref: "#/components/schemas/FiberResult"
+              - $ref: "#/components/schemas/OCRSecurityTextResult"
+              - $ref: "#/components/schemas/PhotoIdentResult"
 
     AuthenticityType:
       type: integer
@@ -60,11 +60,11 @@ components:
         - Type
       properties:
         Type:
-          $ref: '#/components/schemas/AuthenticityType'
+          $ref: "#/components/schemas/AuthenticityType"
         ElementResult:
-          $ref: './common.yml#/components/schemas/CheckResult'
+          $ref: "./common.yml#/components/schemas/CheckResult"
         ElementDiagnose:
-          $ref: './authenticity/e-check-diagnose.yml#/components/schemas/CheckDiagnose'
+          $ref: "./authenticity/e-check-diagnose.yml#/components/schemas/CheckDiagnose"
       discriminator:
         propertyName: Type
         mapping:
@@ -93,19 +93,19 @@ components:
 
 
     SecurityFeatureResult:
-      $ref: './authenticity/rt-security-feature.yml#/components/schemas/SecurityFeatureResult'
+      $ref: "./authenticity/rt-security-feature.yml#/components/schemas/SecurityFeatureResult"
 
     IdentResult:
-      $ref: './authenticity/rt-ident.yml#/components/schemas/IdentResult'
+      $ref: "./authenticity/rt-ident.yml#/components/schemas/IdentResult"
 
     FiberResult:
-      $ref: './authenticity/rt-fiber.yml#/components/schemas/FiberResult'
+      $ref: "./authenticity/rt-fiber.yml#/components/schemas/FiberResult"
 
     OCRSecurityTextResult:
-      $ref: './authenticity/rt-ocr-security-text.yml#/components/schemas/OCRSecurityTextResult'
+      $ref: "./authenticity/rt-ocr-security-text.yml#/components/schemas/OCRSecurityTextResult"
 
     PhotoIdentResult:
-      $ref: './authenticity/rt-photo-ident.yml#/components/schemas/PhotoIdentResult'
+      $ref: "./authenticity/rt-photo-ident.yml#/components/schemas/PhotoIdentResult"
 
     AreaContainer:
       description: "Checked fragment coordinates"
@@ -116,11 +116,11 @@ components:
         List:
           type: array
           items:
-            $ref: './common.yml#/components/schemas/RectangleCoordinates'
+            $ref: "./common.yml#/components/schemas/RectangleCoordinates"
         Points:
           type: array
           items:
-            $ref: '#/components/schemas/PointsContainer'
+            $ref: "#/components/schemas/PointsContainer"
 
     PointsContainer:
       type: object
@@ -130,4 +130,4 @@ components:
         PointsList:
           type: array
           items:
-            $ref: './common.yml#/components/schemas/Point'
+            $ref: "./common.yml#/components/schemas/Point"

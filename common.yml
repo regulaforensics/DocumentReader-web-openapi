@@ -18,17 +18,17 @@ components:
       description: "Document data sources"
       type: string
       enum:
-        - 'MRZ'
-        - 'VISUAL'
-        - 'BARCODE'
-        - 'RFID'
-        - 'MAGNETIC'
+        - "MRZ"
+        - "VISUAL"
+        - "BARCODE"
+        - "RFID"
+        - "MAGNETIC"
       x-enum-varnames:
-        - 'MRZ'
-        - 'VISUAL'
-        - 'BARCODE'
-        - 'RFID'
-        - 'MAGNETIC'
+        - "MRZ"
+        - "VISUAL"
+        - "BARCODE"
+        - "RFID"
+        - "MAGNETIC"
 
     CheckResult:
       type: integer
@@ -38,13 +38,13 @@ components:
         - 1
         - 2
       x-enum-varnames:
-        - 'ERROR'
-        - 'OK'
-        - 'WAS_NOT_DONE'
+        - "ERROR"
+        - "OK"
+        - "WAS_NOT_DONE"
       x-enum-descriptions:
-        - 'Check was performed and result is NEGATIVE'
-        - 'Check was performed and result is POSITIVE'
-        - 'Check was NOT PERFORMED'
+        - "Check was performed and result is NEGATIVE"
+        - "Check was performed and result is POSITIVE"
+        - "Check was NOT PERFORMED"
 
     # todo update x-enum-descriptions
     Scenario:
@@ -129,13 +129,13 @@ components:
         - 1
         - 2
       x-enum-descriptions:
-        - 'There is no RFID chip in the document'
-        - 'The RFID chip is located in the document data page'
-        - 'The RFID chip is located in the back page or inlay of the document'
+        - "There is no RFID chip in the document"
+        - "The RFID chip is located in the document data page"
+        - "The RFID chip is located in the back page or inlay of the document"
       x-enum-varnames:
-        - 'NONE'
-        - 'MAIN_PAGE'
-        - 'BACK_PAGE'
+        - "NONE"
+        - "MAIN_PAGE"
+        - "BACK_PAGE"
 
     RfidOrigin:
       type: object
@@ -165,10 +165,10 @@ components:
         - 24
         - 128
       x-enum-descriptions:
-        - 'No Light'
-        - 'White'
-        - 'Infrared'
-        - 'Ultraviolet'
+        - "No Light"
+        - "White"
+        - "Infrared"
+        - "Ultraviolet"
       x-enum-varnames:
         - "OFF"
         - "WHITE"

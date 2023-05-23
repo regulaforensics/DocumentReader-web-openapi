@@ -12,4 +12,4 @@ components:
           properties:
             License:
               $ref: "./common.yml#/components/schemas/License"
-        - $ref: './rt.yml#/components/schemas/ResultItem'
+        - $ref: "./rt.yml#/components/schemas/ResultItem"

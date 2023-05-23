@@ -10,8 +10,8 @@ components:
             - Images
           properties:
             Images:
-              $ref: '#/components/schemas/Images'
-        - $ref: './rt.yml#/components/schemas/ResultItem'
+              $ref: "#/components/schemas/Images"
+        - $ref: "./rt.yml#/components/schemas/ResultItem"
 
 
     Images:
@@ -23,11 +23,11 @@ components:
         availableSourceList:
           type: array
           items:
-            $ref: '#/components/schemas/ImagesAvailableSource'
+            $ref: "#/components/schemas/ImagesAvailableSource"
         fieldList:
           type: array
           items:
-            $ref: '#/components/schemas/ImagesField'
+            $ref: "#/components/schemas/ImagesField"
 
     ImagesAvailableSource:
       type: object
@@ -36,9 +36,9 @@ components:
         - sourceName
       properties:
         containerType:
-          $ref: './rt.yml#/components/schemas/ContainerType'
+          $ref: "./rt.yml#/components/schemas/ContainerType"
         source:
-          $ref: './common.yml#/components/schemas/Source'
+          $ref: "./common.yml#/components/schemas/Source"
 
     ImagesField:
       type: object
@@ -66,21 +66,21 @@ components:
         - value
       properties:
         source:
-          $ref: './common.yml#/components/schemas/Source'
+          $ref: "./common.yml#/components/schemas/Source"
         value:
-          $ref: './common.yml#/components/schemas/ImageBase64'
+          $ref: "./common.yml#/components/schemas/ImageBase64"
         originalValue:
           description: "Only for images from RFID. Image as was originally stored in the RFID chip."
-          $ref: './common.yml#/components/schemas/ImageBase64'
+          $ref: "./common.yml#/components/schemas/ImageBase64"
         originalPageIndex:
           description: "Original page index"
           type: integer
         pageIndex:
-          $ref: './common.yml#/components/schemas/PageIndex'
+          $ref: "./common.yml#/components/schemas/PageIndex"
         lightIndex:
-          $ref: './common.yml#/components/schemas/Light'
+          $ref: "./common.yml#/components/schemas/Light"
         containerType:
-          $ref: './rt.yml#/components/schemas/ContainerType'
+          $ref: "./rt.yml#/components/schemas/ContainerType"
         fieldRect:
           description: "Only for images from VISUAL. Coordinates of the image in the normalized image of the document."
           $ref: "./common.yml#/components/schemas/RectangleCoordinates"

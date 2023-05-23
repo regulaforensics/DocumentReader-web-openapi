@@ -10,7 +10,7 @@ components:
           properties:
             DocumentPosition:
               $ref: "#/components/schemas/DocumentPosition"
-        - $ref: './rt.yml#/components/schemas/ResultItem'
+        - $ref: "./rt.yml#/components/schemas/ResultItem"
 
     DocumentPosition:
       type: object
@@ -24,14 +24,14 @@ components:
         Height:
           type: integer
         Center:
-          $ref: './common.yml#/components/schemas/Point'
+          $ref: "./common.yml#/components/schemas/Point"
         LeftBottom:
-          $ref: './common.yml#/components/schemas/Point'
+          $ref: "./common.yml#/components/schemas/Point"
         LeftTop:
-          $ref: './common.yml#/components/schemas/Point'
+          $ref: "./common.yml#/components/schemas/Point"
         RightBottom:
-          $ref: './common.yml#/components/schemas/Point'
+          $ref: "./common.yml#/components/schemas/Point"
         RightTop:
-          $ref: './common.yml#/components/schemas/Point'
+          $ref: "./common.yml#/components/schemas/Point"
         Dpi:
           type: integer

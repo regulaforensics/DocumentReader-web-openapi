@@ -3,8 +3,8 @@ info:
   version: 6.7.0
   title: Regula Document Reader Web API
   x-logo:
-    url: 'https://static-content.regulaforensics.com/Icons/Logos/Regula-logo.svg'
-    href: 'https://mobile.regulaforensics.com/'
+    url: "https://static-content.regulaforensics.com/Icons/Logos/Regula-logo.svg"
+    href: "https://mobile.regulaforensics.com/"
   description: |
     Documents recognition as easy as reading two bytes.
 
@@ -26,9 +26,9 @@ servers:
 
 paths:
   /api/process:
-    $ref: './p-process.yml#/paths/~1process'
+    $ref: "./p-process.yml#/paths/~1process"
   /api/ping:
-    $ref: './p-ping.yml#/paths/~1ping'
+    $ref: "./p-ping.yml#/paths/~1ping"
 
 tags:
   - name: process
@@ -90,4 +90,4 @@ components:
     AuthenticityCheckResult:
       $ref: "./rt-authenticity.yml#/components/schemas/AuthenticityCheckResult"
     AuthenticityResultType:
-      $ref: './authenticity/e-result-type.yml#/components/schemas/AuthenticityResultType'
+      $ref: "./authenticity/e-result-type.yml#/components/schemas/AuthenticityResultType"

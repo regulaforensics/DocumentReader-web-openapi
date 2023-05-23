@@ -53,26 +53,26 @@ components:
         - "Contains license"
         - "Contains encrypted ResultContainerList"
       x-enum-varnames:
-        - DOCUMENT_IMAGE
-        - IMAGE_QUALITY
-        - STATUS
-        - TEXT
-        - IMAGES
-        - MRZ_TEXT
-        - VISUAL_TEXT
-        - BARCODE_TEXT
-        - RFID_TEXT
-        - LEXICAL_ANALYSIS
-        - VISUAL_GRAPHICS
-        - BARCODE_GRAPHICS
-        - RFID_GRAPHICS
-        - DOCUMENT_TYPE_CANDIDATES
-        - DOCUMENT_TYPE
-        - AUTHENTICITY
-        - DOCUMENT_POSITION
-        - BARCODES
-        - LICENSE
-        - ENCRYPTED_RCL
+        - "DOCUMENT_IMAGE"
+        - "IMAGE_QUALITY"
+        - "STATUS"
+        - "TEXT"
+        - "IMAGES"
+        - "MRZ_TEXT"
+        - "VISUAL_TEXT"
+        - "BARCODE_TEXT"
+        - "RFID_TEXT"
+        - "LEXICAL_ANALYSIS"
+        - "VISUAL_GRAPHICS"
+        - "BARCODE_GRAPHICS"
+        - "RFID_GRAPHICS"
+        - "DOCUMENT_TYPE_CANDIDATES"
+        - "DOCUMENT_TYPE"
+        - "AUTHENTICITY"
+        - "DOCUMENT_POSITION"
+        - "BARCODES"
+        - "LICENSE"
+        - "ENCRYPTED_RCL"
 
 
     ResultItem:

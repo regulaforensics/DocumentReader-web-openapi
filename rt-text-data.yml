@@ -11,7 +11,7 @@ components:
           properties:
             DocVisualExtendedInfo:
               $ref: "#/components/schemas/DocVisualExtendedInfo"
-        - $ref: './rt.yml#/components/schemas/ResultItem'
+        - $ref: "./rt.yml#/components/schemas/ResultItem"
 
     DocVisualExtendedInfo:
       type: object
