@@ -48,6 +48,7 @@ components:
         - 41
         - 42
         - 43
+        - 44
       x-enum-description:
         - "Blank element"
         - "Personalization element"
