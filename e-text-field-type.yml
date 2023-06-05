@@ -860,7 +860,7 @@ components:
         - "Conditions"
         - "Identifier"
         - "Configuration"
-        - "Optional data"
+        - "Discretionary data"
         - "Optional data from MRZ first line"
         - "Optional data from MRZ second line"
         - "Optional data from MRZ third line"
@@ -1236,7 +1236,7 @@ components:
         - "Place of birth city"
         - "Year of birth"
         - "Year of expiry"
-        - "Grandfather mame maternal"
+        - "Grandfather name maternal"
       x-enum-varnames:
         - "DOCUMENT_CLASS_CODE"
         - "ISSUING_STATE_CODE"
