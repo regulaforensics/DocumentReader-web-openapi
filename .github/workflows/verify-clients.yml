@@ -1,9 +1,6 @@
 name: verify clients
 
 on:
-  push:
-    branches:
-      - master
   pull_request:
     branches:
       - master
