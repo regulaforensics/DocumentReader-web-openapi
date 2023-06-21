@@ -10,7 +10,7 @@ components:
         - 2
         - 4
         - 8
-      x-enum-description:
+      x-enum-descriptions:
         - "Invisible"
         - "Visible"
         - "Colored"
