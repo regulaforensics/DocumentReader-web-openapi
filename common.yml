@@ -102,7 +102,7 @@ components:
     ImageBase64:
       description: "Base64 encoded image"
       type: string
-      format: byte
+      format: base64
       example: "Base64 encoded image"
 
     RectangleCoordinates:
