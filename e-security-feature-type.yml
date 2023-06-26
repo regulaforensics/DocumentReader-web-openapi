@@ -49,7 +49,7 @@ components:
         - 42
         - 43
         - 44
-      x-enum-description:
+      x-enum-descriptions:
         - "Blank element"
         - "Personalization element"
         - "Photo"
