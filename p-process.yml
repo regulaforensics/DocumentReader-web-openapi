@@ -401,6 +401,13 @@ components:
         - "ID3"
         - "CAN"
         - "ID1_2_30"
+      x-enum-descriptions:
+        - "1x30"
+        - "3x30"
+        - "2x36"
+        - "2x44"
+        - "1x6"
+        - "2x30"
 
     TextPostProcessing:
       type: integer
@@ -414,6 +421,11 @@ components:
         - "UPPERCASE"
         - "LOWERCASE"
         - "CAPITAL"
+      x-enum-descriptions:
+        - "Do not change"
+        - "Uppercase"
+        - "Lowercase"
+        - "Capital"
 
     MeasureSystem:
       type: integer
@@ -442,6 +454,12 @@ components:
         - "WARNING"
         - "INFO"
         - "DEBUG"
+      x-enum-descriptions:
+        - "Fatal error"
+        - "Error"
+        - "Warning"
+        - "Info"
+        - "Debug"
 
 
     PerDocumentConfig:
