@@ -167,6 +167,9 @@ components:
     ProcessParams:
       type: object
       properties:
+        doDetectCan:
+          type: bool
+          description: "Enable the CAN (Card Access Number) detection when using scenarios with document location and MRZ reading, such as the MrzAndLocate scenario."
         imageOutputMaxHeight:
           type: integer
           description: "This parameter allows setting maximum height in pixels of output images and thus reducing image size to desired. Does not change the aspect ratio. Changes disabled if equals to 0. Default 0."
