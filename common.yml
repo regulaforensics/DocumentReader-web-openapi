@@ -29,6 +29,12 @@ components:
         - "BARCODE"
         - "RFID"
         - "MAGNETIC"
+      x-enum-descriptions:
+        - "Machine readable zone (MRZ)"
+        - "Visual zone"
+        - "Barcode"
+        - "RFID"
+        - "Magnetic"
 
     CheckResult:
       type: integer
