@@ -31,6 +31,9 @@ components:
         - 5
         - 50
         - 49
+        - 101
+        - 104
+        - 105
       x-enum-descriptions:
         - "Contains cropped and rotated with perspective compensation image of document. Single input image can contain multiple document side/pages, which will be returned as separated results. Most of coordinates in other types defined on that image"
         - "Contains image quality check results"
@@ -52,6 +55,9 @@ components:
         - "Contains raw information about barcodes on the input image"
         - "Contains license"
         - "Contains encrypted ResultContainerList"
+        - "Servers for storing the data reading results from the RFID-chip in a form of a list of the logically separated data groups"
+        - "Servers for storing the data reading results from the RFID-chip in a form of a list of the logically separated data groups"
+        - "ervers for storing the results of data reading in a form of a list of objects of the original binary representation of the graphics in memory of the RFID-chip"
       x-enum-varnames:
         - "DOCUMENT_IMAGE"
         - "IMAGE_QUALITY"
@@ -73,6 +79,9 @@ components:
         - "BARCODES"
         - "LICENSE"
         - "ENCRYPTED_RCL"
+        - "RAW_DATA"
+        - "BINARY_DATA"
+        - "ORIGINAL_GRAPHICS"
 
 
     ResultItem:
