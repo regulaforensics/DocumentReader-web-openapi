@@ -80,7 +80,7 @@ components:
         - "LICENSE"
         - "ENCRYPTED_RCL"
         - "RFID_RAW_DATA"
-        - "BINARY_DATA"
+        - "RFID_BINARY_DATA"
         - "ORIGINAL_GRAPHICS"
 
 
