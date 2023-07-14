@@ -81,7 +81,7 @@ components:
         - "ENCRYPTED_RCL"
         - "RFID_RAW_DATA"
         - "RFID_BINARY_DATA"
-        - "ORIGINAL_GRAPHICS"
+        - "RFID_ORIGINAL_GRAPHICS"
 
 
     ResultItem:
