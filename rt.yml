@@ -79,7 +79,7 @@ components:
         - "BARCODES"
         - "LICENSE"
         - "ENCRYPTED_RCL"
-        - "RAW_DATA"
+        - "RFID_RAW_DATA"
         - "BINARY_DATA"
         - "ORIGINAL_GRAPHICS"
 
