@@ -56,7 +56,7 @@ components:
         - "Contains license"
         - "Contains encrypted ResultContainerList"
         - "Servers for storing the data reading results from the RFID-chip in a form of a list of the logically separated data groups"
-        - "Servers for storing the data reading results from the RFID-chip in a form of a list of the logically separated data groups"
+        - "Servers for storing the data reading results from the RFID-chip in a form of a list of the logically separated data groups (binary data)"
         - "Servers for storing the results of data reading in a form of a list of objects of the original binary representation of the graphics in memory of the RFID-chip"
       x-enum-varnames:
         - "DOCUMENT_IMAGE"
