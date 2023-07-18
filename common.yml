@@ -96,6 +96,26 @@ components:
         - "OCR_FREE"
         - "CREDIT_CARD"
         - "CAPTURE"
+      x-enum-descriptions:
+        - "Processing scenario for obtaining MRZ data"
+        - "Processing scenario for obtaining barcode data"
+        - "Processing scenario for detecting document boundaries"
+        - "Processing scenario for obtaining visual zone OCR results"
+        - "Processing scenario for document type recognition"
+        - "Processing scenario for obtaining MRZ and/or barcode data"
+        - "Processing scenario for detecting document boundaries and/or obtaining MRZ data"
+        - "Processing scenario for detecting document boundaries and obtaining MRZ data"
+        - "Processing scenario for detecting the document boundaries and obtaining barcode data"
+        - "Processing scenario for obtaining MRZ data or visual zone OCR results"
+        - "Processing scenario for obtaining MRZ or barcode or visual zone OCR results"
+        - "Processing scenario for detecting document boundaries and obtaining MRZ data or visual zone OCR results"
+        - "Processing scenario for obtaining all document data"
+        - "Processing scenario for obtaining all document data and document authentication"
+        - "Processing scenario for obtaining visual zone OCR results from Russian National Passport and MRZ data from any document"
+        - "Processing scenario for obtaining data from registration stamps"
+        - "Processing scenario for obtaining OCR results of any image"
+        - "Processing scenario for obtaining bank card data"
+        - "Scenario for obtaining an original image without any processing"
 
     ImageData:
       type: object
