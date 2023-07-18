@@ -28,8 +28,11 @@ components:
         - 49
         - 50
         - 85
+        - 101
         - 102
         - 103
+        - 104
+        - 105
       x-enum-descriptions:
         - "Contains cropped and rotated with perspective compensation image of document. Single input image can contain multiple document side/pages, which will be returned as separated results. Most of coordinates in other types defined on that image"
         - "Contains MRZ OCR results"
@@ -49,8 +52,11 @@ components:
         - "Contains encrypted ResultContainerList"
         - "Contains license"
         - "Contains information about document position on the input image, its center, angle, etc"
+        - "Servers for storing the data reading results from the RFID-chip in a form of a list of the logically separated data groups (raw data)"
         - "Contains RFID parsing result with text fields"
         - "Contains RFID parsing result with graphic fields"
+        - "Servers for storing the data reading results from the RFID-chip in a form of a list of the logically separated data groups (binary data)"
+        - "Servers for storing the results of data reading in a form of a list of objects of the original binary representation of the graphics in memory of the RFID-chip"
       x-enum-varnames:
         - "DOCUMENT_IMAGE"
         - "MRZ_TEXT"
@@ -70,8 +76,11 @@ components:
         - "ENCRYPTED_RCL"
         - "LICENSE"
         - "DOCUMENT_POSITION"
+        - "RFID_RAW_DATA"
         - "RFID_TEXT"
         - "RFID_GRAPHICS"
+        - "RFID_BINARY_DATA"
+        - "RFID_ORIGINAL_GRAPHICS"
 
     ResultItem:
       type: object
