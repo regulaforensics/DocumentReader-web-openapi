@@ -152,6 +152,11 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/ProcessRequestImage"
+        livePortrait:
+          type: string
+          format: base64
+          example: "base64image"
+          description: "todo"
         ContainerList:
           $ref: "./rt.yml#/components/schemas/ContainerList"
         systemInfo:
