@@ -623,6 +623,14 @@ components:
         - 667
         - 668
         - 669
+        - 670
+        - 671
+        - 672
+        - 673
+        - 674
+        - 675
+        - 676
+        - 677
       x-enum-descriptions:
         - "Document class code"
         - "Issuing state code"
@@ -1243,6 +1251,14 @@ components:
         - "Year of birth"
         - "Year of expiry"
         - "Grandfather's name (maternal)"
+        - "First surname"
+        - "Month of birth"
+        - "Floor number"
+        - "Entrance number"
+        - "Block number"
+        - "Street number"
+        - "Street type"
+        - "City sector"
       x-enum-varnames:
         - "DOCUMENT_CLASS_CODE"
         - "ISSUING_STATE_CODE"
@@ -1863,3 +1879,11 @@ components:
         - "YEAR_OF_BIRTH"
         - "YEAR_OF_EXPIRY"
         - "GRANDFATHER_NAME_MATERNAL"
+        - "FIRST_SURNAME"
+        - "MONTH_OF_BIRTH"
+        - "ADDRESS_FLOOR_NUMBER"
+        - "ADDRESS_ENTRANCE"
+        - "ADDRESS_BLOCK_NUMBER"
+        - "ADDRESS_STREET_NUMBER"
+        - "ADDRESS_STREET_TYPE"
+        - "ADDRESS_CITY_SECTOR"
