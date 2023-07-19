@@ -49,6 +49,7 @@ components:
         - 42
         - 43
         - 44
+        - 45
       x-enum-descriptions:
         - "Blank element"
         - "Personalization element"
@@ -94,6 +95,7 @@ components:
         - "Barcode size check"
         - "LASINK"
         - "Liveness MLI"
+        - "Liveness barcode background"
       x-enum-varnames:
         - "BLANK"
         - "FILL"
@@ -139,3 +141,4 @@ components:
         - "BARCODE_SIZE_CHECK"
         - "LASINK"
         - "LIVENESS_MLI"
+        - "LIVENESS_BARCODE_BACKGROUND"
