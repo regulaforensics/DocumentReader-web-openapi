@@ -1641,7 +1641,7 @@ components:
         - "POLICE_DISTRICT"
         - "FIRST_ISSUE_DATE"
         - "PAYLOAD_CAPACITY"
-        - "NUMBER_OF_AXELS"
+        - "NUMBER_OF_AXLES"
         - "PERMISSIBLE_AXLE_LOAD"
         - "PRECINCT"
         - "INVITED_BY"
