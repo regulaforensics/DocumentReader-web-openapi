@@ -1654,7 +1654,7 @@ components:
         - "AIRLINE_NAME_FREQUENT_FLYER"
         - "LICENSE_NUMBER"
         - "IN_TANKS"
-        - "EXEPT_IN_TANKS"
+        - "EXCEPT_IN_TANKS"
         - "FAST_TRACK"
         - "OWNER"
         - "MRZ_STRINGS_ICAO_RFID"
