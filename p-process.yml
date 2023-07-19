@@ -139,20 +139,6 @@ components:
     #############################
     ############################# Requests objects
 
-#{
-#	"processParam": {
-#		"useFaceApi": true,
-#		"faceApi": {
-#			"serviceTimeout": 10000,
-#			"url": "https://faceapi.regulaforensics.com/"
-#		}
-#	},
-#	"tag": "tag",
-#	"livePortrait": "/9j/4AAQSkZJR....",
-#	"extPortrait": "/9j/4A==...",
-#	"List": []
-#}
-
     # todo different image input types
     ProcessRequest:
       type: object
