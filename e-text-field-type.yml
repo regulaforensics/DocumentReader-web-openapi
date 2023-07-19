@@ -1034,7 +1034,7 @@ components:
         - "Airline name frequent flyer"
         - "License number"
         - "In tanks"
-        - "Exept in tanks"
+        - "Other than tanks"
         - "Fast track"
         - "Owner"
         - "MRZ strings ICAO RFID"
