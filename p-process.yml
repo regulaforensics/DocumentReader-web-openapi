@@ -139,6 +139,20 @@ components:
     #############################
     ############################# Requests objects
 
+#{
+#	"processParam": {
+#		"useFaceApi": true,
+#		"faceApi": {
+#			"serviceTimeout": 10000,
+#			"url": "https://faceapi.regulaforensics.com/"
+#		}
+#	},
+#	"tag": "tag",
+#	"livePortrait": "/9j/4AAQSkZJR....",
+#	"extPortrait": "/9j/4A==...",
+#	"List": []
+#}
+
     # todo different image input types
     ProcessRequest:
       type: object
@@ -153,6 +167,11 @@ components:
           items:
             $ref: "#/components/schemas/ProcessRequestImage"
         livePortrait:
+          type: string
+          format: base64
+          example: "base64image"
+          description: "todo"
+        extPortrait:
           type: string
           format: base64
           example: "base64image"
@@ -172,6 +191,11 @@ components:
     ProcessParams:
       type: object
       properties:
+        useFaceApi:
+          type: boolean
+          description: "If enabled service will request your FaceAPI instance"
+        faceApi:
+          $ref: "./common.yml#/components/schemas/FaceApi"
         imageOutputMaxHeight:
           type: integer
           description: "This parameter allows setting maximum height in pixels of output images and thus reducing image size to desired. Does not change the aspect ratio. Changes disabled if equals to 0. Default 0."

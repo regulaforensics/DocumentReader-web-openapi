@@ -196,3 +196,15 @@ components:
       type: string
       format: byte
       example: "Base64 encoded data"
+
+    FaceApi:
+      type: object
+      properties:
+        serverTimeout:
+          type: integer
+          example: 10000
+          description: "Timeout for FaceAPI service requests"
+        url:
+          type: string
+          example: "https://faceapi.regulaforensics.com/"
+          description: "URL for FaceAPI"
