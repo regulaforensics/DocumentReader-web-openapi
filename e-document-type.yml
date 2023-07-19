@@ -232,6 +232,8 @@ components:
         - 238
         - 239
         - 240
+        - 241
+        - 242
       x-enum-descriptions:
         - "Not defined"
         - "Passport"
@@ -461,6 +463,8 @@ components:
         - "Certificate of proficiency"
         - "Trade license"
         - "Passport page"
+        - "Invoice"
+        - "Passenger locator form"
       x-enum-varnames:
         - "NOT_DEFINED"
         - "PASSPORT"
@@ -690,3 +694,5 @@ components:
         - "CERTIFICATE_OF_PROFICIENCY"
         - "TRADE_LICENSE"
         - "PASSPORT_PAGE"
+        - "INVOICE"
+        - "PASSENGER_LOCATOR_FORM"
