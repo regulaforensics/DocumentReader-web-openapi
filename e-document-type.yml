@@ -233,6 +233,8 @@ components:
         - 238
         - 239
         - 240
+        - 241
+        - 242
       x-enum-varnames:
         - "NOT_DEFINED"
         - "PASSPORT"
@@ -462,3 +464,5 @@ components:
         - "CERTIFICATE_OF_PROFICIENCY"
         - "TRADE_LICENSE"
         - "PASSPORT_PAGE"
+        - "INVOICE"
+        - "PASSENGER_LOCATOR_FORM"
