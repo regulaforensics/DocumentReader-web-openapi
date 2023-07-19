@@ -84,6 +84,7 @@ components:
         - 141
         - 142
         - 143
+        - 144
         - 150
         - 151
         - 152
@@ -114,6 +115,7 @@ components:
         - 222
         - 230
         - 240
+        - 241
         - 250
       x-enum-varnames:
         - "UNKNOWN"
@@ -195,6 +197,7 @@ components:
         - "BARCODE_DATA_FORMAT_ERROR"
         - "BARCODE_SIZE_PARAMS_ERROR"
         - "NOT_ALL_BARCODES_READ"
+        - "GLARES_IN_BARCODE_AREA"
         - "PORTRAIT_COMPARISON_PORTRAITS_DIFFER"
         - "PORTRAIT_COMPARISON_NO_SERVICE_REPLY"
         - "PORTRAIT_COMPARISON_SERVICE_ERROR"
@@ -225,4 +228,5 @@ components:
         - "OCR_QUALITY_INVALID_BACKGROUND"
         - "LASINK_INVALID_LINES_FREQUENCY"
         - "DOC_LIVENESS_ELECTRONIC_DEVICE_DETECTED"
+        - "DOC_LIVENESS_INVALID_BARCODE_BACKGROUND"
         - "LAST_DIAGNOSE_VALUE"
