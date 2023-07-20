@@ -3,6 +3,7 @@ components:
   schemas:
     DocumentType:
       type: integer
+      description: "Possible values for document types"
       enum:
         - 0
         - 11
