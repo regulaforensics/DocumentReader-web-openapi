@@ -653,7 +653,7 @@ components:
         - "DL endorsement code"
         - "DL restriction code"
         - "Date of 21st birthday"
-        - "Authority"
+        - "Issuing authority"
         - "Surname and given names"
         - "Nationality code"
         - "Passport number"
