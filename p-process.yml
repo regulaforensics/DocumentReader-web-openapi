@@ -182,6 +182,9 @@ components:
           description: "If enabled service will request your FaceAPI instance"
         faceApi:
           $ref: "./common.yml#/components/schemas/FaceApi"
+        doDetectCan:
+          type: bool
+          description: "This parameter allows enabling the CAN (Card Access Number) detection and recognition when using scenarios with document location and MRZ reading, such as the MrzAndLocate scenario."
         imageOutputMaxHeight:
           type: integer
           description: "This parameter allows setting maximum height in pixels of output images and thus reducing image size to desired. Does not change the aspect ratio. Changes disabled if equals to 0. Default 0."
