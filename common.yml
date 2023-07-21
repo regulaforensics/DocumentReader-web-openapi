@@ -200,11 +200,11 @@ components:
     FaceApi:
       type: object
       properties:
-        serverTimeout:
+        serviceTimeout:
           type: integer
           example: 10000
-          description: "Timeout for FaceAPI service requests"
+          description: "The service request timeout, ms"
         url:
           type: string
-          example: "https://faceapi.regulaforensics.com/"
-          description: "URL for FaceAPI"
+          example: "https://faceapi.regulaforensics.com"
+          description: "The URL of the Regula Face Web service to be used"

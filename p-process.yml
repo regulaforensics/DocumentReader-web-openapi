@@ -155,12 +155,12 @@ components:
         livePortrait:
           type: string
           format: base64
-          example: "base64image"
+          example: "Base64 encoded data"
           description: "Live portrait photo"
         extPortrait:
           type: string
           format: base64
-          example: "base64image"
+          example: "Base64 encoded data"
           description: "Portrait photo from an external source"
         ContainerList:
           $ref: "./rt.yml#/components/schemas/ContainerList"
@@ -179,10 +179,10 @@ components:
       properties:
         oneShotIdentification:
           type: boolean
-          description: "This parameter processing an image that contains a person and a document and compare the portrait photo from the document with the person's face"
+          description: "This parameter allows processing an image that contains a person and a document and compare the portrait photo from the document with the person's face"
         useFaceApi:
           type: boolean
-          description: "If enabled service will request your FaceAPI instance"
+          description: "This parameter allows comparing faces on Regula Face Web Service"
         faceApi:
           $ref: "./common.yml#/components/schemas/FaceApi"
         doDetectCan:
