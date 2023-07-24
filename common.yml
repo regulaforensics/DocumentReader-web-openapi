@@ -200,10 +200,6 @@ components:
     FaceApi:
       type: object
       properties:
-        serviceTimeout:
-          type: integer
-          example: 3000
-          description: "The Regula Face Web service requests timeout, ms."
         url:
           type: string
           example: "https://faceapi.regulaforensics.com"
@@ -220,6 +216,10 @@ components:
           type: integer
           example: 75
           description: "The similarity threshold, 0-100. Above 75 means that the faces' similarity is verified, below 75 is not."
+        serviceTimeout:
+          type: integer
+          example: 3000
+          description: "The Regula Face Web service requests timeout, ms."
         proxy:
           type: string
           example: "http://localhost:8080"
