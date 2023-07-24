@@ -245,7 +245,7 @@ components:
         customParams:
           description: "This option allows passing custom processing parameters that can be implemented in future without
           changing API."
-          type: object
+          type: object`
           additionalProperties: true
         config:
           description: "This option allows setting additional custom configuration per document type.

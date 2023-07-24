@@ -202,9 +202,33 @@ components:
       properties:
         serviceTimeout:
           type: integer
-          example: 10000
-          description: "The service request timeout, ms"
+          example: 3000
+          description: "Timeout for FaceAPI service requests"
         url:
           type: string
-          example: "https://faceapi.regulaforensics.com"
+          example: "https://faceapi.regulaforensics.com/"
           description: "The URL of the Regula Face Web service to be used"
+        mode:
+          type: string
+          example: "match"
+          description: "The processing mode: \"match\" or \"match+search\""
+        search:
+          type: object
+          additionalProperties: true
+          description: "A search filter that can be applied if the \"match+search\" mode is enabled. May include limit, threshold, group_ids. If the group_ids are specified, the search is performed only in these groups. Find more information in the <a href=\"https://dev.regulaforensics.com/FaceSDK-web-openapi/#tag/search/operation/search\" target=\"_blank\">OpenAPI documentation</a>."
+        threshold:
+          type: integer
+          example: 75
+          description: "The similarity threshold, 0-100. Above 75 means that the faces' similarity is verified, below 75 is not."
+        proxy:
+          type: string
+          example: "not set"
+          description: "Proxy to use, should be set according to the <a href=\"https://curl.se/libcurl/c/CURLOPT_PROXYUSERPWD.html\" target=\"_blank\">cURL standart</a>."
+        proxy_userpwd:
+          type: string
+          example: "not set"
+          description: "Username and password to use for proxy authentication, should be set according to the cURL standart."
+        proxy_type:
+          type: string
+          example: "not set"
+          description: "Proxy protocol type, should be set according to the cURL standart."
