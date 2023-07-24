@@ -222,13 +222,13 @@ components:
           description: "The similarity threshold, 0-100. Above 75 means that the faces' similarity is verified, below 75 is not."
         proxy:
           type: string
-          example: "not set"
+          example: "http://localhost:8080"
           description: "Proxy to use, should be set according to the <a href=\"https://curl.se/libcurl/c/CURLOPT_PROXYUSERPWD.html\" target=\"_blank\">cURL standart</a>."
         proxy_userpwd:
           type: string
-          example: "not set"
+          example: "user:pass"
           description: "Username and password to use for proxy authentication, should be set according to the cURL standart."
         proxy_type:
           type: string
-          example: "not set"
+          example: "0"
           description: "Proxy protocol type, should be set according to the cURL standart."
