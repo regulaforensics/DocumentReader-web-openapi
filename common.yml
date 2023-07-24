@@ -203,15 +203,15 @@ components:
         serviceTimeout:
           type: integer
           example: 3000
-          description: "Timeout for FaceAPI service requests"
+          description: "The Regula Face Web service requests timeout, ms."
         url:
           type: string
-          example: "https://faceapi.regulaforensics.com/"
-          description: "The URL of the Regula Face Web service to be used"
+          example: "https://faceapi.regulaforensics.com"
+          description: "The URL of the Regula Face Web service to be used."
         mode:
           type: string
           example: "match"
-          description: "The processing mode: \"match\" or \"match+search\""
+          description: "The processing mode: \"match\" or \"match+search\"."
         search:
           type: object
           additionalProperties: true
