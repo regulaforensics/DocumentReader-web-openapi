@@ -628,6 +628,9 @@ components:
         - 675
         - 676
         - 677
+        - 678
+        - 679
+        - 680
       x-enum-descriptions:
         - "Document class code"
         - "Issuing state code"
@@ -1253,6 +1256,9 @@ components:
         - "Street number"
         - "Street type"
         - "City sector"
+        - "County type"
+        - "City type"
+        - "Building type"
       x-enum-varnames:
         - "DOCUMENT_CLASS_CODE"
         - "ISSUING_STATE_CODE"
@@ -1878,3 +1884,6 @@ components:
         - "ADDRESS_STREET_NUMBER"
         - "ADDRESS_STREET_TYPE"
         - "ADDRESS_CITY_SECTOR"
+        - "ADDRESS_COUNTY_TYPE"
+        - "ADDRESS_CITY_TYPE"
+        - "ADDRESS_BUILDING_TYPE"
