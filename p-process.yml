@@ -186,7 +186,7 @@ components:
         faceApi:
           $ref: "./common.yml#/components/schemas/FaceApi"
         doDetectCan:
-          type: bool
+          type: boolean
           description: "This parameter allows enabling the CAN (Card Access Number) detection and recognition when using scenarios with document location and MRZ reading, such as the MrzAndLocate scenario."
         imageOutputMaxHeight:
           type: integer
