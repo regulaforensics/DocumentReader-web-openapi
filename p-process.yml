@@ -152,6 +152,16 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/ProcessRequestImage"
+        livePortrait:
+          type: string
+          format: base64
+          example: "Base64 encoded data"
+          description: "Live portrait photo"
+        extPortrait:
+          type: string
+          format: base64
+          example: "Base64 encoded data"
+          description: "Portrait photo from an external source"
         ContainerList:
           $ref: "./rt.yml#/components/schemas/ContainerList"
         systemInfo:
@@ -167,6 +177,17 @@ components:
     ProcessParams:
       type: object
       properties:
+        oneShotIdentification:
+          type: boolean
+          description: "This parameter allows processing an image that contains a person and a document and compare the portrait photo from the document with the person's face"
+        useFaceApi:
+          type: boolean
+          description: "This parameter allows comparing faces on Regula Face Web Service"
+        faceApi:
+          $ref: "./common.yml#/components/schemas/FaceApi"
+        doDetectCan:
+          type: bool
+          description: "This parameter allows enabling the CAN (Card Access Number) detection and recognition when using scenarios with document location and MRZ reading, such as the MrzAndLocate scenario."
         imageOutputMaxHeight:
           type: integer
           description: "This parameter allows setting maximum height in pixels of output images and thus reducing image size to desired. Does not change the aspect ratio. Changes disabled if equals to 0. Default 0."
@@ -401,6 +422,13 @@ components:
         - "ID3"
         - "CAN"
         - "ID1_2_30"
+      x-enum-descriptions:
+        - "1x30"
+        - "3x30"
+        - "2x36"
+        - "2x44"
+        - "1x6"
+        - "2x30"
 
     TextPostProcessing:
       type: integer
@@ -414,6 +442,11 @@ components:
         - "UPPERCASE"
         - "LOWERCASE"
         - "CAPITAL"
+      x-enum-descriptions:
+        - "Do not change"
+        - "Uppercase"
+        - "Lowercase"
+        - "Capital"
 
     MeasureSystem:
       type: integer
@@ -442,6 +475,12 @@ components:
         - "WARNING"
         - "INFO"
         - "DEBUG"
+      x-enum-descriptions:
+        - "Fatal error"
+        - "Error"
+        - "Warning"
+        - "Info"
+        - "Debug"
 
 
     PerDocumentConfig:

@@ -5,3 +5,6 @@ document-reader-api-doc.html
 /openapi.json
 document-reader-static-doc.html
 *.DS_Store
+*.txt
+*.strings
+*.json

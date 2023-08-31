@@ -29,6 +29,12 @@ components:
         - "BARCODE"
         - "RFID"
         - "MAGNETIC"
+      x-enum-descriptions:
+        - "Machine readable zone (MRZ)"
+        - "Visual zone"
+        - "Barcode"
+        - "RFID"
+        - "Magnetic"
 
     CheckResult:
       type: integer
@@ -65,7 +71,6 @@ components:
         - "LocateVisual_And_MrzOrOcr"
         - "FullProcess"
         - "FullAuth"
-        - "Id3Rus"
         - "RusStamp"
         - "OcrFree"
         - "CreditCard"
@@ -85,11 +90,29 @@ components:
         - "LOCATE_VISUAL_AND_MRZ_OR_OCR"
         - "FULL_PROCESS"
         - "FULL_AUTH"
-        - "ID3RUS"
         - "RUS_STAMP"
         - "OCR_FREE"
         - "CREDIT_CARD"
         - "CAPTURE"
+      x-enum-descriptions:
+        - "Processing scenario for obtaining MRZ data"
+        - "Processing scenario for obtaining barcode data"
+        - "Processing scenario for detecting document boundaries"
+        - "Processing scenario for obtaining visual zone OCR results"
+        - "Processing scenario for document type recognition"
+        - "Processing scenario for obtaining MRZ and/or barcode data"
+        - "Processing scenario for detecting document boundaries and/or obtaining MRZ data"
+        - "Processing scenario for detecting document boundaries and obtaining MRZ data"
+        - "Processing scenario for detecting the document boundaries and obtaining barcode data"
+        - "Processing scenario for obtaining MRZ data or visual zone OCR results"
+        - "Processing scenario for obtaining MRZ or barcode or visual zone OCR results"
+        - "Processing scenario for detecting document boundaries and obtaining MRZ data or visual zone OCR results"
+        - "Processing scenario for obtaining all document data"
+        - "Processing scenario for obtaining all document data and document authentication"
+        - "Processing scenario for obtaining data from registration stamps"
+        - "Processing scenario for obtaining OCR results of any image"
+        - "Processing scenario for obtaining bank card data"
+        - "Scenario for obtaining an original image without any processing"
 
     ImageData:
       type: object
@@ -196,3 +219,50 @@ components:
       type: string
       format: byte
       example: "Base64 encoded data"
+
+    FaceApi:
+      type: object
+      properties:
+        url:
+          type: string
+          example: "https://faceapi.regulaforensics.com"
+          description: "The URL of the Regula Face Web service to be used."
+        mode:
+          type: string
+          example: "match"
+          description: "The processing mode: \"match\" or \"match+search\"."
+        search:
+          type: object
+          description: "A search filter that can be applied if the \"match+search\" mode is enabled. May include limit, threshold, group_ids. If the group_ids are specified, the search is performed only in these groups. Find more information in the <a href=\"https://dev.regulaforensics.com/FaceSDK-web-openapi/#tag/search/operation/search\" target=\"_blank\">OpenAPI documentation</a>."
+          properties:
+            limit:
+              type: integer
+              description: "The maximum number of results to be returned."
+            threshold:
+              type: float
+              description: "The similarity threshold."
+            group_ids:
+              type: array
+              items:
+                type: integer
+              description: " The groups where to conduct the search."
+        threshold:
+          type: integer
+          example: 75
+          description: "The similarity threshold, 0-100. Above 75 means that the faces' similarity is verified, below 75 is not."
+        serviceTimeout:
+          type: integer
+          example: 3000
+          description: "The Regula Face Web service requests timeout, ms."
+        proxy:
+          type: string
+          example: "http://localhost:8080"
+          description: "Proxy to use, should be set according to the <a href=\"https://curl.se/libcurl/c/CURLOPT_PROXY.html\" target=\"_blank\">cURL standard</a>."
+        proxy_userpwd:
+          type: string
+          example: "user:pass"
+          description: "Username and password to use for proxy authentication, should be set according to the <a href=\"https://curl.se/libcurl/c/CURLOPT_PROXYUSERPWD.html\" target=\"_blank\">cURL standard</a>."
+        proxy_type:
+          type: integer
+          example: 0
+          description: "Proxy protocol type, should be set according to the <a href=\"https://curl.se/libcurl/c/CURLOPT_PROXYTYPE.html\" target=\"_blank\">cURL standard</a>."
