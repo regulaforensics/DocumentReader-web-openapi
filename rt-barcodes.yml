@@ -5,6 +5,8 @@ components:
     DocBarCodeInfo:
       title: "Document BarCode Info"
       description: "Raw data from BarCodes"
+      required:
+        - DocBarCodeInfo
       allOf:
         - type: object
           properties:
