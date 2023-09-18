@@ -177,6 +177,7 @@ components:
 
     DocumentTypesCandidatesResult:
       $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentTypesCandidatesResult"
+
     ChosenDocumentTypeResult:
       $ref: "./rt-doc-type-old.yml#/components/schemas/ChosenDocumentTypeResult"
 
