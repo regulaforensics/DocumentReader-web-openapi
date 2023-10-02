@@ -8,15 +8,22 @@ components:
       allOf:
         - type: object
           properties:
-            nFields:
-              type: integer
-              description: "Count of array fields"
-            pArrayFields:
-              type: array
-              description: "Data from barcode"
-              items:
-                $ref: "#/components/schemas/pArrayField"
+            DocBarCodeInfo:
+              $ref: "#/components/schemas/DocBarCodeInfoFieldsList"
         - $ref: "./rt.yml#/components/schemas/ResultItem"
+
+
+    DocBarCodeInfoFieldsList:
+      type: object
+      properties:
+        nFields:
+          type: integer
+          description: "Count of array fields"
+        pArrayFields:
+          type: array
+          description: "Data from barcode"
+          items:
+            $ref: "#/components/schemas/pArrayField"
 
     pArrayField:
       type: object
