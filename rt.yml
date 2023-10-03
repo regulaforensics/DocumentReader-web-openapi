@@ -23,8 +23,10 @@ components:
         - 20
         - 30
         - 33
+        - 34
         - 36
         - 37
+        - 39
         - 49
         - 50
         - 85
@@ -47,8 +49,10 @@ components:
         - "Contains result of document authenticity checks"
         - "Contains image quality check results"
         - "Contains check statuses with details, grouped by source"
+        - "Contains result of portraits comparison"
         - "Contains document textual fields from all sources (mrz, rfid, visual, barcode) with validity and cross-source compare checks"
         - "Contains images from all document sources (mrz, rfid, visual, barcode)"
+        - "Contains result of fingerprints comparison"
         - "Contains encrypted ResultContainerList"
         - "Contains license"
         - "Contains information about document position on the input image, its center, angle, etc"
@@ -71,8 +75,10 @@ components:
         - "AUTHENTICITY"
         - "IMAGE_QUALITY"
         - "STATUS"
+        - "PORTRAIT_COMPARISON"
         - "TEXT"
         - "IMAGES"
+        - "FINGERPRINT_COMPARISON"
         - "ENCRYPTED_RCL"
         - "LICENSE"
         - "DOCUMENT_POSITION"
@@ -107,20 +113,22 @@ components:
           6: "GraphicsResult"
           8: "DocumentTypesCandidatesResult"
           9: "ChosenDocumentTypeResult"
-          20: "AuthenticityResult"
           15: "LexicalAnalysisResult"
           17: "TextDataResult"
           18: "TextDataResult"
           19: "GraphicsResult"
+          20: "AuthenticityResult"
           30: "ImageQualityResult"
           33: "StatusResult"
+          34: "AuthenticityResult"
           36: "TextResult"
           37: "ImagesResult"
+          39: "AuthenticityResult"
+          49: "EncryptedRCLResult"
+          50: "LicenseResult"
           85: "DocumentPositionResult"
           102: "TextDataResult"
           103: "GraphicsResult"
-          50: "LicenseResult"
-          49: "EncryptedRCLResult"
 
     ContainerList:
       type: object
