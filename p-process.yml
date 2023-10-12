@@ -369,10 +369,29 @@ components:
           description: "Authenticity checks that should be performed regardless of the document type.
           The available checks are listed in the eRPRM_Authenticity enum.
           Note that only supported by your license checks can be added. "
-          $ref: "./authenticity/e-result-type.yml#/components/schemas/AuthenticityResultType"
-          type: array
-          items:
-            $ref: "./authenticity/e-result-type.yml#/components/schemas/AuthenticityResultType"
+          type: integer
+          enum:
+            - 1
+            - 2
+            - 4
+            - 8
+            - 16
+            - 32
+            - 64
+            - 128
+            - 512
+            - 1024
+            - 4096
+            - 8192
+            - 32768
+            - 65536
+            - 131072
+            - 262144
+            - 524288
+            - 1048576
+            - 2097152
+            - 4194304
+            - 8388608
         deviceId:
           description: "This parameter is used to specify the document reader device type from which input images were captured. Default 0."
           type: integer
