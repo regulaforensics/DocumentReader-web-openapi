@@ -370,6 +370,7 @@ components:
           The available checks are listed in the eRPRM_Authenticity enum.
           Note that only supported by your license checks can be added. "
           type: integer
+          format: int64
         deviceId:
           description: "This parameter is used to specify the document reader device type from which input images were captured. Default 0."
           type: integer
