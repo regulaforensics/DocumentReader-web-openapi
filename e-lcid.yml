@@ -34,6 +34,7 @@ components:
         - 1069
         - 1059
         - 1026
+        - 1109
         - 1027
         - 3076
         - 5124
@@ -89,6 +90,7 @@ components:
         - 1041
         - 1099
         - 1087
+        - 1107
         - 1111
         - 1042
         - 1088
@@ -96,6 +98,7 @@ components:
         - 1063
         - 1086
         - 2110
+        - 1082
         - 1102
         - 1104
         - 1044
@@ -176,6 +179,7 @@ components:
         - "BASQUE"
         - "BELARUSIAN"
         - "BULGARIAN"
+        - "BURMESE"
         - "CATALAN"
         - "CHINESE_HONGKONG_SAR"
         - "CHINESE_MACAO_SAR"
@@ -231,6 +235,7 @@ components:
         - "JAPANESE"
         - "KANNADA"
         - "KAZAKH"
+        - "KHMER"
         - "KONKANI"
         - "KOREAN"
         - "KYRGYZ_CYRILICK"
@@ -238,6 +243,7 @@ components:
         - "LITHUANIAN"
         - "MALAY_MALAYSIA"
         - "MALAY_BRUNEI_DARUSSALAM"
+        - "MALTESE"
         - "MARATHI"
         - "MONGOLIAN_CYRILIC"
         - "NORWEGIAN_BOKMAL"
@@ -318,6 +324,7 @@ components:
         - "Basque"
         - "Belarusian"
         - "Bulgarian"
+        - "Burmese"
         - "Catalan"
         - "Chinese (HongKong S.A.R.)"
         - "Chinese (Macao S.A.R.)"
@@ -373,6 +380,7 @@ components:
         - "Japanese"
         - "Kannada"
         - "Kazakh"
+        - "Khmer"
         - "Konkani"
         - "Korean"
         - "Kyrgyz (Cyrillic)"
@@ -380,6 +388,7 @@ components:
         - "Lithuanian"
         - "Malay (Malaysia)"
         - "Malay (Brunei Darussalam)"
+        - "Maltese"
         - "Marathi"
         - "Mongolian (Cyrillic)"
         - "Norwegian (Bokmal)"
