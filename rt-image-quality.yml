@@ -40,6 +40,7 @@ components:
         - 5
         - 6
         - 7
+        - 8
       x-enum-varnames:
         - "ImageGlares"
         - "ImageFocus"
@@ -49,6 +50,7 @@ components:
         - "Bounds"
         - "ScreenCapture"
         - "Portrait"
+        - "Brightness"
       x-enum-descriptions:
         - "Signals glare presence on the image"
         - "Signals whether image is in focus"
