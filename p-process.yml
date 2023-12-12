@@ -177,6 +177,12 @@ components:
     ProcessParams:
       type: object
       properties:
+        lcidIgnoreFilter:
+          description: "The list of LCID types to ignore during the recognition. If empty, values with all LCID types will be extracted. Narrowing down the list can reduce processing time. Empty by default."
+          type: array
+          items:
+            type: integer
+          default: []
         oneShotIdentification:
           type: boolean
           description: "This parameter allows processing an image that contains a person and a document and compare the portrait photo from the document with the person's face"
@@ -498,6 +504,10 @@ components:
     ImageQA:
       type: object
       properties:
+        brightnessThreshold:
+          description: "Set the threshold for an actual document brightness below which the check fails"
+          type: number
+          format: double
         dpiThreshold:
           description: "This parameter sets threshold for Image QA check of the presented document physical dpi. If
           actual document dpi is below this threshold, check will fail."
