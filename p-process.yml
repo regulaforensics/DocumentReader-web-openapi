@@ -177,6 +177,10 @@ components:
     ProcessParams:
       type: object
       properties:
+        checkLiveness:
+          description: "This parameter is used to enable document liveness check."
+          type: boolean
+          default: false
         lcidIgnoreFilter:
           description: "The list of LCID types to ignore during the recognition. If empty, values with all LCID types will be extracted. Narrowing down the list can reduce processing time. Empty by default."
           type: array
