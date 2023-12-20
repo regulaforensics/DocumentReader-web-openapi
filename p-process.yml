@@ -177,6 +177,12 @@ components:
     ProcessParams:
       type: object
       properties:
+        lcidFilter:
+          description: "The list of LCID types to recognize. If empty, values with all LCID types will be extracted. Empty by default."
+          type: array
+          items:
+            type: integer
+          default: []
         checkLiveness:
           description: "This parameter is used to enable document liveness check."
           type: boolean
