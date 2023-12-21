@@ -153,6 +153,9 @@ components:
         - 1066
         - 50001
         - 50002
+        - 2117
+        - 1093
+        - 1101
       x-enum-varnames:
         - "LATIN"
         - "AFRIKAANS"
@@ -298,6 +301,9 @@ components:
         - "VIETNAMESE"
         - "CTC_SIMPLIFIED"
         - "CTC_TRADITIONAL"
+        - "BengaliBangladesh"
+        - "BengaliIndia"
+        - "Assamese"
       x-enum-descriptions:
         - "Latin"
         - "Afrikaans"
@@ -443,3 +449,6 @@ components:
         - "Vietnamese"
         - "CTC Simplified"
         - "CTC Traditional"
+        - "Bengali (Bangladesh)"
+        - "BengaliIndia"
+        - "Assamese"
