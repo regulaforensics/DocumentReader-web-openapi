@@ -223,6 +223,7 @@ components:
           that have meaningful information on both pages, like Russian domestic passport, or some others.
           Disabled by default."
           type: boolean
+          deprecated: true
           # default false
         generateDoublePageSpreadImage:
           description: 'When enabled together with "doublePageSpread" and there is a passport with two pages
