@@ -292,6 +292,7 @@ components:
           description: "When enabled, shorten the list of candidates to process during document detection in a
           single image process mode. Reduces processing time for specific backgrounds. Enabled by default."
           type: boolean
+          deprecated: true
           # default: true
         updateOCRValidityByGlare:
           description: "When enabled, fail OCR field validity, if there is a glare over the text field on the image. Disabled by default."
