@@ -631,6 +631,7 @@ components:
         - 678
         - 679
         - 680
+        - 681
       x-enum-descriptions:
         - "Document class code"
         - "Issuing state code"
@@ -1259,6 +1260,7 @@ components:
         - "County type"
         - "City type"
         - "Building type"
+        - "Date of Retirement"
       x-enum-varnames:
         - "DOCUMENT_CLASS_CODE"
         - "ISSUING_STATE_CODE"
@@ -1887,3 +1889,4 @@ components:
         - "ADDRESS_COUNTY_TYPE"
         - "ADDRESS_CITY_TYPE"
         - "ADDRESS_BUILDING_TYPE"
+        - "DATE_OF_RETIREMENT"

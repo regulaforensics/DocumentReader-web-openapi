@@ -50,6 +50,12 @@ components:
         - 43
         - 44
         - 45
+        - 46
+        - 47
+        - 48
+        - 49
+        - 50
+        - 51
       x-enum-descriptions:
         - "Blank element"
         - "Personalization element"
@@ -96,6 +102,12 @@ components:
         - "LASINK"
         - "Liveness MLI"
         - "Liveness barcode background"
+        - "Visual zone portrait image vs. image from barcode"
+        - "Image from barcode vs. image from RFID"
+        - "Image from barcode vs. external source image"
+        - "Image from barcode vs. photo from camera"
+        - "Digital signature сheck"
+        - "Contact сhip check"
       x-enum-varnames:
         - "BLANK"
         - "FILL"
@@ -142,3 +154,9 @@ components:
         - "LASINK"
         - "LIVENESS_MLI"
         - "LIVENESS_BARCODE_BACKGROUND"
+        - "PORTRAIT_COMPARISON_VS_BARCODE"
+        - "PORTRAIT_COMPARISON_RFID_VS_BARCODE"
+        - "PORTRAIT_COMPARISON_EXT_VS_BARCODE"
+        - "PORTRAIT_COMPARISON_BARCODE_VS_CAMERA"
+        - "CHECK_DIGITAL_SIGNATURE"
+        - "CONTACT_CHIP_CLASSIFICATION"

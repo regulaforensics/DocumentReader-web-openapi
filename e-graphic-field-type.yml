@@ -18,6 +18,7 @@ components:
         - 209
         - 210
         - 211
+        - 213
         - 250
         - 300
         - 301
@@ -44,6 +45,7 @@ components:
         - "Area with dynamic color change"
         - "Additional Portrait"
         - "Stamp"
+        - "Contact chip"
         - "Undefined image type"
         - "Fingerprint (thumb, left hand)"
         - "Fingerprint (index, left hand)"
@@ -70,6 +72,7 @@ components:
         - "COLOR_DYNAMIC"
         - "GHOST_PORTRAIT"
         - "STAMP"
+        - "CONTACT_CHIP"
         - "OTHER"
         - "FINGER_LEFT_THUMB"
         - "FINGER_LEFT_INDEX"
