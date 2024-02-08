@@ -28,6 +28,7 @@ components:
         - 26
         - 27
         - 28
+        - 29
         - 30
         - 31
         - 33
@@ -141,6 +142,7 @@ components:
         - "INCORRECT_TEXT_COLOR"
         - "PHOTO_FALSE_LUMINESCENCE"
         - "TOO_MUCH_SHIFT"
+        - "CONTACT_CHIP_TYPE_MISMATCH"
         - "FIBERS_NOT_FOUND"
         - "TOO_MANY_OBJECTS"
         - "SPECKS_IN_UV"
