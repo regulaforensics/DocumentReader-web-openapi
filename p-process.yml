@@ -183,10 +183,6 @@ components:
           items:
             type: integer
           default: []
-        checkLiveness:
-          description: "This parameter is used to enable document liveness check."
-          type: boolean
-          default: false
         lcidIgnoreFilter:
           description: "The list of LCID types to ignore during the recognition. If empty, values with all LCID types will be extracted. Narrowing down the list can reduce processing time. Empty by default."
           type: array
@@ -419,6 +415,12 @@ components:
               type: array
               items:
                 $ref: "./e-parsing-notification-codes.yml#/components/schemas/ParsingNotificationCodes"
+        checkAuth:
+          type: boolean
+          description: "This parameter is used to enable authenticity checks"
+#          default: true
+        authParams:
+          $ref: '#/components/schemas/AuthParams'
       required:
         - scenario
 
@@ -463,6 +465,103 @@ components:
         - "Uppercase"
         - "Lowercase"
         - "Capital"
+
+    AuthParams:
+      type: object
+      properties:
+        checkLiveness:
+          type: boolean
+          description: "This parameter is used to enable document liveness check"
+#          default: true
+
+        livenessParams:
+          $ref: '#/components/schemas/LivenessParams'
+
+        checkUVLuminiscence:
+          type: boolean
+          description: "This parameter is used to enable Document luminescence check in UV light"
+#          default: true
+
+        checkIRB900:
+          type: boolean
+          description: "This parameter is used to enable B900 ink MRZ contrast check in IR light"
+#          default: true
+
+        checkImagePatterns:
+          type: boolean
+          description: "This parameter is used to enable Image patterns presence/absence check (position, shape, color)"
+#          default: true
+
+        checkFibers:
+          type: boolean
+          description: "This parameter is used to enable Fibers detection"
+#          default: true
+
+        checkExtMRZ:
+          type: boolean
+          description: "This parameter is used to enable Extended MRZ Check"
+#          default: true
+
+        checkExtOCR:
+          type: boolean
+          description: "This parameter is used to enable Extended OCR Check"
+#          default: true
+
+        checkAxial:
+          type: boolean
+          description: "This parameter is used to enable laminate integrity check in axial light"
+#          default: true
+
+        checkBarcodeFormat:
+          type: boolean
+          description: "This parameter is used to enable Barcode format check (code metadata, data format, contents format, etc.)"
+#          default: true
+
+        checkIRVisibility:
+          type: boolean
+          description: "This parameter is used to enable Document elements visibility check in IR light"
+#          default: true
+
+        checkIPI:
+          type: boolean
+          description: "This parameter is used to enable Invisible Personal Information (IPI) check"
+#          default: true
+
+        checkPhotoEmbedding:
+          type: boolean
+          description: "This parameter is used to enable Owner's photo embedding check (is photo printed or sticked)"
+#          default: true
+
+        checkPhotoComparison:
+          type: boolean
+          description: "This parameter is used to enable Portrait comparison check"
+#          default: true
+
+        checkLetterScreen:
+          type: boolean
+          description: "This parameter is used to enable LetterScreen check"
+#          default: false
+
+
+    LivenessParams:
+      type: object
+      properties:
+        checkOVI:
+          type: boolean
+          description: "This parameter is used to enable OVI check"
+#         default: true
+        checkMLI:
+          type: boolean
+          description: "This parameter is used to enable MLI check"
+#          default: true
+        checkHolo:
+          type: boolean
+          description: "This parameter is used to enable Hologram detection"
+#          default: true
+        checkED:
+          type: boolean
+          description: "This parameter is used to enable Electronic device detection"
+#          default: true
 
     MeasureSystem:
       type: integer
