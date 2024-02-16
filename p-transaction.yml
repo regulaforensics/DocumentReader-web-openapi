@@ -1,0 +1,167 @@
+openapi: 3.0.3
+info:
+  version: 6.9.0
+  title: Regula Document Reader Web API
+
+paths:
+  /transaction/{transactionId}/process:
+    parameters:
+      - in: header
+        name: X-CLIENT-KEY
+        schema:
+          type: string
+        required: true
+    post:
+      parameters:
+        - in: path
+          name: transactionId
+          schema:
+            type: integer
+            format: uuid
+          required: true
+          description: Transaction id
+      summary: Preprocess
+      tags:
+        - transaction
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "./p-process.yml#/components/schemas/ProcessRequest"
+        required: true
+      responses:
+        "200":
+          description: "Transaction process result"
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  tag:
+                    type: string
+                  transactionId:
+                    type: string
+                    format: uuid
+        "400":
+          description: "Bad request. Check your input data."
+        "403":
+          description: "Bad license. Either server or request does not contain valid license."
+
+  /transaction/{transactionId}:
+    get:
+      parameters:
+        - in: path
+          name: transactionId
+          schema:
+            type: integer
+            format: uuid
+          required: true
+          description: Transaction id
+      summary: Get preprocess transaction data
+      tags:
+        - transaction
+      responses:
+        "200":
+          description: "Preprocess transaction data"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransactionProcessGetResponse'
+        "400":
+          description: "Bad request. Check your input data."
+        "403":
+          description: "Bad license. Either server or request does not contain valid license."
+
+  /transaction/{transactionId}/results:
+    get:
+      parameters:
+        - in: path
+          name: transactionId
+          schema:
+            type: integer
+            format: uuid
+          required: true
+          description: Transaction id
+        - in: query
+          name: withImages
+          schema:
+            type: boolean
+            enum:
+              - true
+              - false
+          description: With base64 images or url
+      summary: Get preprocess transaction result
+      tags:
+        - transaction
+      responses:
+        "200":
+          description: "Transaction data"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransactionProcessGetResponse'
+        "400":
+          description: "Bad request. Check your input data."
+        "403":
+          description: "Bad license. Either server or request does not contain valid license."
+
+  /tag/{tagId}:
+    delete:
+      parameters:
+        - in: path
+          name: tagId
+          schema:
+            type: integer
+            format: uuid
+          required: true
+          description: Tag id
+      summary: Delete preprocess transactions by tag
+      tags:
+        - transaction
+      responses:
+        "204":
+          description: "Transactions deleted"
+          content:
+            application/json:
+              schema: {}
+        "400":
+          description: "Bad request. Check your input data."
+        "403":
+          description: "Bad license. Either server or request does not contain valid license."
+
+components:
+  schemas:
+    TransactionProcessGetResponse:
+      type: object
+      properties:
+        transactionId:
+          type: integer
+          format: uuid
+        tag:
+          type: string
+        outData:
+          $ref: '#/components/schemas/OutData'
+        inData:
+          $ref: '#/components/schemas/InData'
+
+    OutData:
+      type: object
+      properties:
+        url:
+          description: "Image url"
+          type: string
+        images:
+          type: array
+          items:
+            $ref: "common.yml#/components/schemas/ImageData"
+
+    InData:
+      type: object
+      properties:
+        video:
+          description: "Video"
+          type: object
+        images:
+          type: array
+          items:
+            $ref: "common.yml#/components/schemas/ImageData"
