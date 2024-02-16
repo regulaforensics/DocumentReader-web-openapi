@@ -23,10 +23,17 @@ servers:
     description: Local on-premise installation
 
 
-
 paths:
   /api/process:
     $ref: "./p-process.yml#/paths/~1process"
+  /api/v2/transaction/{transaction_id}/process:
+    $ref: "./p-transaction.yml#/paths/~1transaction~1{transactionId}~1process"
+  /api/v2/transaction/{transaction_id}:
+    $ref: "./p-transaction.yml#/paths/~1transaction~1{transactionId}"
+  /api/v2/transaction/{transaction_id}/results:
+    $ref: "./p-transaction.yml#/paths/~1transaction~1{transactionId}~1results"
+  /api/v2/tag/{tag_id}:
+    $ref: "./p-transaction.yml#/paths/~1tag~1{tagId}"
   /api/ping:
     $ref: "./p-ping.yml#/paths/~1ping"
 
@@ -65,6 +72,7 @@ x-tagGroups:
   - name: Requests
     tags:
       - process
+      - transaction
   - name: Models
     tags:
       - status_model
