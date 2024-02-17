@@ -113,6 +113,7 @@ components:
         - 1103
         - 3098
         - 2074
+        - 1115
         - 1051
         - 1060
         - 11274
@@ -261,6 +262,7 @@ components:
         - "SANSKRIT"
         - "SERBIAN_CYRILIC"
         - "SERBIAN_LATIN"
+        - "SINHALA"
         - "SLOVAK"
         - "SLOVENIAN"
         - "SPANISH_ARGENTINA"
@@ -409,6 +411,7 @@ components:
         - "Sanskrit"
         - "Serbian (Cyrillic)"
         - "Serbian (Latin)"
+        - "Sinhala"
         - "Slovak"
         - "Slovenian"
         - "Spanish (Argentina)"
