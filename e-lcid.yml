@@ -157,6 +157,24 @@ components:
         - 2117
         - 1093
         - 1101
+        - 1096
+        - 1100
+        - 1108
+        - 1113
+        - 1118
+        - 1120
+        - 1121
+        - 1123
+        - 2137
+        - 4096
+        - 10000
+        - 10001
+        - 10002
+        - 10003
+        - 10004
+        - 10011
+        - 10012
+        - 10560
       x-enum-varnames:
         - "LATIN"
         - "AFRIKAANS"
@@ -306,6 +324,24 @@ components:
         - "BengaliBangladesh"
         - "BengaliIndia"
         - "Assamese"
+        - "ORIYA"
+        - "MALAYALAM"
+        - "LAO"
+        - "SINDHI"
+        - "AMHARIC"
+        - "KASHMIRI"
+        - "NEPALI"
+        - "PASHTO"
+        - "SINDHI"
+        - "ARABIC"
+        - "BANK_CARD_NUMBER"
+        - "BANK_CARD_EXPIRY_DATE"
+        - "BANK_CARD_NAME"
+        - "BANK_CARD"
+        - "BANK_CARD_CVV2"
+        - "ABKHAZIAN"
+        - "KARAKALPAK"
+        - "URDU_DETECTION"
       x-enum-descriptions:
         - "Latin"
         - "Afrikaans"
@@ -455,3 +491,21 @@ components:
         - "Bengali (Bangladesh)"
         - "BengaliIndia"
         - "Assamese"
+        - "Oriya"
+        - "Malayalam"
+        - "Lao"
+        - "Sindhi (India)"
+        - "Amharic"
+        - "Kashmiri"
+        - "Nepali"
+        - "Pashto"
+        - "Sindhi"
+        - "Arabic (World)"
+        - "Bank Card Number"
+        - "Bank Card Expiry Date"
+        - "Bank Card Name"
+        - "Bank Card"
+        - "Bank Card CVV2"
+        - "Abkhazian (Cyrillic)"
+        - "Karakalpak (Latin)"
+        - "Urdu Detection"
