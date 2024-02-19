@@ -122,6 +122,11 @@ components:
         image:
           $ref: "#/components/schemas/ImageBase64"
 
+    ImageTransactionData:
+      type: array
+      items:
+        $ref: './rt-images.yml#/components/schemas/ImagesFieldValue'
+
     ImageBase64:
       description: "Base64 encoded image"
       type: string

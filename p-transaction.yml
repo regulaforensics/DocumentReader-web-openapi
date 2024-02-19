@@ -99,7 +99,29 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TransactionProcessGetResponse'
+                type: object
+                properties:
+                  ChipPage:
+                    $ref: "./common.yml#/components/schemas/RfidLocation"
+                  ProcessingFinished:
+                    $ref: "./p-process.yml#/components/schemas/ProcessingStatus"
+                  ContainerList:
+                    $ref: "./rt.yml#/components/schemas/ContainerList"
+                  TransactionInfo:
+                    $ref: "./p-process.yml#/components/schemas/TransactionInfo"
+                  log:
+                    description: "Base64 encoded transaction processing log"
+                    type: string
+                  passBackObject:
+                    type: object
+                    description: "Free-form object provided in request. See passBackObject property of ProcessRequest."
+                    additionalProperties: true
+                  morePagesAvailable:
+                    type: integer
+                  elapsedTime:
+                    type: integer
+                    description: "Time the document processing has taken, ms."
+
         "400":
           description: "Bad request. Check your input data."
         "403":
@@ -150,18 +172,28 @@ components:
         url:
           description: "Image url"
           type: string
-        images:
-          type: array
-          items:
-            $ref: "common.yml#/components/schemas/ImageData"
 
     InData:
       type: object
       properties:
+        rfidSession:
+          type: object
+          properties:
+            url:
+              description: "Image url"
+              type: string
         video:
           description: "Video"
           type: object
+          properties:
+            metadata:
+              type: object
+              additionalProperties: true
+              description: "A free-form object containing video's extended attributes."
+            url:
+              description: "Video url"
+              type: string
         images:
           type: array
           items:
-            $ref: "common.yml#/components/schemas/ImageData"
+            $ref: "common.yml#/components/schemas/ImageTransactionData"
