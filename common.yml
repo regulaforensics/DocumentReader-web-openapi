@@ -123,7 +123,7 @@ components:
           $ref: "#/components/schemas/ImageBase64"
 
     ImageTransactionData:
-      type: array
+      type: object
       items:
         $ref: './rt-images.yml#/components/schemas/ImagesFieldValue'
 
