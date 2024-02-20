@@ -124,8 +124,9 @@ components:
 
     ImageTransactionData:
       type: object
-      items:
-        $ref: './rt-images.yml#/components/schemas/ImagesFieldValue'
+      properties:
+        image:
+          $ref: './rt-images.yml#/components/schemas/ImagesFieldValue'
 
     ImageBase64:
       description: "Base64 encoded image"
