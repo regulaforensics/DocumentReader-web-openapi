@@ -91,6 +91,8 @@ components:
       $ref: "./rt-images.yml#/components/schemas/Images"
     DocumentImage:
       $ref: "./common.yml#/components/schemas/ImageData"
+    TransactionImage:
+      $ref: "./common.yml#/components/schemas/ImageTransactionData"
     DocumentTypesCandidates:
       $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentTypesCandidatesList"
     ChosenDocumentType:
