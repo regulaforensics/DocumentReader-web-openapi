@@ -27,7 +27,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "./p-process.yml#/components/schemas/ProcessRequest"
+              $ref: "#/components/schemas/TransactionProcessRequest"
         required: true
       responses:
         "200":
@@ -197,3 +197,37 @@ components:
           type: array
           items:
             $ref: "common.yml#/components/schemas/ImageTransactionData"
+
+    TransactionProcessRequest:
+      type: object
+      properties:
+        tag:
+          type: string
+          description: "session id"
+        processParam:
+          $ref: "./p-process.yml#/components/schemas/ProcessParams"
+        List:
+          type: array
+          items:
+            $ref: "./p-process.yml#/components/schemas/ProcessRequestImage"
+        livePortrait:
+          type: string
+          format: base64
+          example: "Base64 encoded data"
+          description: "Live portrait photo"
+        extPortrait:
+          type: string
+          format: base64
+          example: "Base64 encoded data"
+          description: "Portrait photo from an external source"
+        ContainerList:
+          $ref: "./rt.yml#/components/schemas/ContainerList"
+        systemInfo:
+          $ref: "./p-process.yml#/components/schemas/ProcessSystemInfo"
+        passBackObject:
+          type: object
+          description: "Free-form object to be included in response. Must be object, not list or simple value.
+          Do not affect document processing. Use it freely to pass your app params. Stored in process logs."
+          additionalProperties: true
+      required:
+        - processParam
