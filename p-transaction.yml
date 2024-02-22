@@ -5,12 +5,6 @@ info:
 
 paths:
   /transaction/{transactionId}/process:
-    parameters:
-      - in: header
-        name: X-CLIENT-KEY
-        schema:
-          type: string
-        required: true
     post:
       parameters:
         - in: path
@@ -170,18 +164,16 @@ components:
       type: object
       properties:
         url:
-          description: "Image url"
+          description: "Response url"
           type: string
+        images:
+          type: array
+          items:
+            $ref: "#/components/schemas/TransactionImagesFieldValue"
 
     InData:
       type: object
       properties:
-        rfidSession:
-          type: object
-          properties:
-            url:
-              description: "Image url"
-              type: string
         video:
           description: "Video"
           type: object
@@ -196,7 +188,7 @@ components:
         images:
           type: array
           items:
-            $ref: "common.yml#/components/schemas/ImageTransactionData"
+            $ref: "#/components/schemas/TransactionImagesFieldValue"
 
     TransactionProcessRequest:
       type: object
@@ -231,3 +223,18 @@ components:
           additionalProperties: true
       required:
         - processParam
+
+    TransactionImagesFieldValue:
+      type: object
+      properties:
+        fieldType:
+          $ref: "./e-graphic-field-type.yml#/components/schemas/GraphicFieldType"
+        light:
+          $ref: "./common.yml#/components/schemas/Light"
+        listIdx:
+          type: integer
+        pageIdx:
+          $ref: "./common.yml#/components/schemas/PageIndex"
+        url:
+          type: string
+          description: "Image url"
