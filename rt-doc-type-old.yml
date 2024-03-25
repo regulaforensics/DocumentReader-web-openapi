@@ -122,6 +122,9 @@ components:
         dStateName:
           type: string
           description: "Issuing state name"
+        isDeprecated:
+          type: boolean
+          description: "Whether the document is deprecated"
 
     DocumentFormat:
       type: integer
