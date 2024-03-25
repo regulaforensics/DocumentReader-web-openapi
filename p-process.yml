@@ -421,6 +421,8 @@ components:
 #          default: true
         authParams:
           $ref: '#/components/schemas/AuthParams'
+        mrzDetectMode:
+          $ref: '#/components/schemas/mrzDetectModeEnum'
       required:
         - scenario
 
@@ -465,6 +467,18 @@ components:
         - "Uppercase"
         - "Lowercase"
         - "Capital"
+
+    mrzDetectModeEnum:
+      type: integer
+      description: "Make better MRZ detection on complex noisy backgrounds, like BW photocopy of some documents."
+      enum:
+        - 0
+        - 1
+        - 2
+      x-enum-varnames:
+        - "eMDM_Default"
+        - "eMDM_ResizeBinarizeWindow"
+        - "eMDM_BlurBeforeBinarization"
 
     AuthParams:
       type: object
