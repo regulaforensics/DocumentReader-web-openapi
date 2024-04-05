@@ -633,6 +633,7 @@ components:
         - 680
         - 681
         - 682
+        - 683
       x-enum-descriptions:
         - "Document class code"
         - "Issuing state code"
@@ -1263,6 +1264,7 @@ components:
         - "Building type"
         - "Date of Retirement"
         - "Document Status"
+        - "Signature"
       x-enum-varnames:
         - "DOCUMENT_CLASS_CODE"
         - "ISSUING_STATE_CODE"
@@ -1893,3 +1895,4 @@ components:
         - "ADDRESS_BUILDING_TYPE"
         - "DATE_OF_RETIREMENT"
         - "DOCUMENT_STATUS"
+        - "SIGNATURE"
