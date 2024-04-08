@@ -14,7 +14,7 @@ paths:
             format: uuid
           required: true
           description: Transaction id
-      summary: Preprocess
+      summary: Reprocess
       tags:
         - transaction
       requestBody:
@@ -25,12 +25,16 @@ paths:
         required: true
       responses:
         "200":
-          description: "Transaction process result"
+          description: "Transaction Process result"
           content:
             application/json:
               schema:
                 type: object
                 properties:
+                  OutData:
+                    $ref: '#/components/schemas/OutData'
+                  InData:
+                    $ref: '#/components/schemas/InData'
                   tag:
                     type: string
                   transactionId:
@@ -51,12 +55,12 @@ paths:
             format: uuid
           required: true
           description: Transaction id
-      summary: Get preprocess transaction data
+      summary: Get Reprocess transaction data
       tags:
         - transaction
       responses:
         "200":
-          description: "Preprocess transaction data"
+          description: "Reprocess transaction data"
           content:
             application/json:
               schema:
@@ -84,7 +88,7 @@ paths:
               - true
               - false
           description: With base64 images or url
-      summary: Get preprocess transaction result
+      summary: Get Reprocess transaction result
       tags:
         - transaction
       responses:
@@ -120,7 +124,35 @@ paths:
           description: "Bad request. Check your input data."
         "403":
           description: "Bad license. Either server or request does not contain valid license."
-
+  /transaction/{transactionId}/file:
+    get:
+      parameters:
+        - in: path
+          name: transactionId
+          schema:
+            type: integer
+            format: uuid
+          required: true
+          description: Transaction id
+        - in: query
+          name: name
+          schema:
+            type: string
+          required: true
+          description: "File name"
+      summary: "Get File"
+      tags:
+        - transaction
+      responses:
+        "200":
+          description: "Binary file"
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        "404":
+          description: "File not found"
   /tag/{tagId}:
     delete:
       parameters:
@@ -131,7 +163,7 @@ paths:
             format: uuid
           required: true
           description: Tag id
-      summary: Delete preprocess transactions by tag
+      summary: Delete Reprocess transactions by tag
       tags:
         - transaction
       responses:
