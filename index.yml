@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  version: 7.1.0
+  version: 7.1.2
   title: Regula Document Reader Web API
   x-logo:
     url: "https://static-content.regulaforensics.com/Icons/Logos/Regula-logo.svg"
@@ -32,6 +32,8 @@ paths:
     $ref: "./p-transaction.yml#/paths/~1transaction~1{transactionId}"
   /api/v2/transaction/{transaction_id}/results:
     $ref: "./p-transaction.yml#/paths/~1transaction~1{transactionId}~1results"
+  /api/v2/transaction/{transaction_id}/file:
+    $ref: "./p-transaction.yml#/paths/~1transaction~1{transactionId}~1file"
   /api/v2/tag/{tag_id}:
     $ref: "./p-transaction.yml#/paths/~1tag~1{tagId}"
   /api/ping:
