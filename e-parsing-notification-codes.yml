@@ -223,6 +223,10 @@ components:
         - -1845493481
         - -1845493480
         - -1845493479
+        - 0x90000250
+        - 0x90000251
+        - 0x00022019
+        - 0x90000252
       x-enum-descriptions:
         - "ASN certificate: Incorrect version"
         - "ASN certificate: Non-matching signature algorithm"
@@ -442,6 +446,10 @@ components:
         - "Auth ML signer info: Certificate cannot find CSCA"
         - "Auth ML signer info: Certificate revoked"
         - "Auth ML signer info: Certificate signature invalid"
+        - "Country Codes from certificate chain don't match"
+        - "Country Codes from certificate and visual MRZ don't match"
+        - "Incorrect MRZ, country code doesn't match codes from Visual MRZ"
+        - "Country Codes from certificate and DG1 MRZ don't match"
       x-enum-varnames:
         - "ntfLDS_ASN_Certificate_IncorrectVersion"
         - "ntfLDS_ASN_Certificate_NonMatchingSignatureAlgorithm"
@@ -661,3 +669,7 @@ components:
         - "ntfLDS_Auth_MLSignerInfo_Certificate_CantFindCSCA"
         - "ntfLDS_Auth_MLSignerInfo_Certificate_Revoked"
         - "ntfLDS_Auth_MLSignerInfo_Certificate_SignatureInvalid"
+        - "ntfLDS_ICAO_Certificate_Chain_Country_NonMatching"
+        - "ntfLDS_ICAO_Certificate_VisualMrz_Country_NonMatching"
+        - "ntfLDS_MRZ_CountryCode_VisualMrz_NonMatching"
+        - "ntfLDS_ICAO_Certificate_MRZ_Country_NonMatching"
