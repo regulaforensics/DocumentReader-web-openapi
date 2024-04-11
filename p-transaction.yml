@@ -119,6 +119,8 @@ paths:
                   elapsedTime:
                     type: integer
                     description: "Time the document processing has taken, ms."
+                  CoreLibResultCode:
+                    type: integer
 
         "400":
           description: "Bad request. Check your input data."
@@ -259,8 +261,6 @@ components:
     TransactionImagesFieldValue:
       type: object
       properties:
-        fieldType:
-          $ref: "./e-graphic-field-type.yml#/components/schemas/GraphicFieldType"
         light:
           $ref: "./common.yml#/components/schemas/Light"
         listIdx:
