@@ -142,7 +142,7 @@ paths:
             type: string
           required: true
           description: "File name"
-      summary: "Get File"
+      summary: "Get Reprocess transaction file"
       tags:
         - transaction
       responses:
@@ -203,7 +203,7 @@ components:
         images:
           type: array
           items:
-            $ref: "#/components/schemas/TransactionImagesFieldValue"
+            $ref: "#/components/schemas/OutDataTransactionImagesFieldValue"
 
     InData:
       type: object
@@ -222,7 +222,7 @@ components:
         images:
           type: array
           items:
-            $ref: "#/components/schemas/TransactionImagesFieldValue"
+            $ref: "#/components/schemas/InDataTransactionImagesFieldValue"
 
     TransactionProcessRequest:
       type: object
@@ -258,9 +258,24 @@ components:
       required:
         - processParam
 
-    TransactionImagesFieldValue:
+    InDataTransactionImagesFieldValue:
       type: object
       properties:
+        light:
+          $ref: "./common.yml#/components/schemas/Light"
+        listIdx:
+          type: integer
+        pageIdx:
+          $ref: "./common.yml#/components/schemas/PageIndex"
+        url:
+          type: string
+          description: "Image url"
+
+    OutDataTransactionImagesFieldValue:
+      type: object
+      properties:
+        fieldType:
+          $ref: "./e-graphic-field-type.yml#/components/schemas/GraphicFieldType"
         light:
           $ref: "./common.yml#/components/schemas/Light"
         listIdx:
