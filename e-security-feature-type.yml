@@ -95,7 +95,7 @@ components:
         - "Facial landmarks check"
         - "Facial image presence"
         - "Facial image absence"
-        - "Liveness screen capture"
+        - "Liveness screen capture. Deprecated. LIVENESS_ELECTRONIC_DEVICE is used instead."
         - "Liveness electronic device"
         - "Liveness OVI"
         - "Barcode size check"
