@@ -11,6 +11,9 @@ components:
           properties:
             OneCandidate:
               $ref: "#/components/schemas/OneCandidate"
+            XML_buffer:
+              type: string
+              readOnly: true
         - $ref: "./rt.yml#/components/schemas/ResultItem"
 
     DocumentTypesCandidatesResult:
