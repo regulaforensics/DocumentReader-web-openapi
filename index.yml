@@ -26,15 +26,15 @@ servers:
 paths:
   /api/process:
     $ref: "./p-process.yml#/paths/~1process"
-  /api/v2/transaction/{transaction_id}/process:
+  /api/v2/transaction/{transactionId}/process:
     $ref: "./p-transaction.yml#/paths/~1transaction~1{transactionId}~1process"
-  /api/v2/transaction/{transaction_id}:
+  /api/v2/transaction/{transactionId}:
     $ref: "./p-transaction.yml#/paths/~1transaction~1{transactionId}"
-  /api/v2/transaction/{transaction_id}/results:
+  /api/v2/transaction/{transactionId}/results:
     $ref: "./p-transaction.yml#/paths/~1transaction~1{transactionId}~1results"
-  /api/v2/transaction/{transaction_id}/file:
+  /api/v2/transaction/{transactionId}/file:
     $ref: "./p-transaction.yml#/paths/~1transaction~1{transactionId}~1file"
-  /api/v2/tag/{tag_id}:
+  /api/v2/tag/{tagId}:
     $ref: "./p-transaction.yml#/paths/~1tag~1{tagId}"
   /api/ping:
     $ref: "./p-ping.yml#/paths/~1ping"
