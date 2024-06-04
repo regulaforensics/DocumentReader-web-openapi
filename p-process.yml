@@ -147,10 +147,10 @@ components:
           type: string
           description: "Session ID"
         tenant:
-          tyype: string
+          type: string
           description: "Customer name"
         env:
-          tyype: string
+          type: string
           description: "Environment type"
         processParam:
           $ref: "#/components/schemas/ProcessParams"
