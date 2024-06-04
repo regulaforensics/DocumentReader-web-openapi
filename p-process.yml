@@ -145,7 +145,13 @@ components:
       properties:
         tag:
           type: string
-          description: "session id"
+          description: "Session ID"
+        tenant:
+          type: string
+          description: "Customer name"
+        env:
+          type: string
+          description: "Environment type"
         processParam:
           $ref: "#/components/schemas/ProcessParams"
         List:
