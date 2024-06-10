@@ -143,6 +143,12 @@ components:
     ProcessRequest:
       type: object
       properties:
+        processParam:
+          $ref: "#/components/schemas/ProcessParams"
+        List:
+          type: array
+          items:
+            $ref: "#/components/schemas/ProcessRequestImage"
         tag:
           type: string
           description: "Session ID"
@@ -152,12 +158,6 @@ components:
         env:
           type: string
           description: "Environment type"
-        processParam:
-          $ref: "#/components/schemas/ProcessParams"
-        List:
-          type: array
-          items:
-            $ref: "#/components/schemas/ProcessRequestImage"
         livePortrait:
           type: string
           format: base64
