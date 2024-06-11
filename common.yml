@@ -8,6 +8,7 @@ components:
       name: X-RequestID
       schema:
         type: string
+        description: It allows the client and server to correlate each HTTP request. HTTP requests with an identifier are sent from the client to the server and back again. 
 
   schemas:
     PageIndex:
