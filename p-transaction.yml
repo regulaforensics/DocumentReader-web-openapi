@@ -178,9 +178,47 @@ paths:
           description: "Bad request. Check your input data."
         "403":
           description: "Bad license. Either server or request does not contain valid license."
+  /tag/{tagId}/transactions:
+    get:
+      parameters:
+        - in: path
+          name: tagId
+          schema:
+            type: integer
+            format: uuid
+          required: true
+          description: Tag id
+      summary: Get transactions by tag
+      tags:
+        - transaction
+      responses:
+        "200":
+          description: "Transactions list by tag"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetTransactionsByTagResponse'
+        "400":
+          description: "Bad request. Check your input data."
+        "403":
+          description: "Bad license. Either server or request does not contain valid license."
 
 components:
   schemas:
+    GetTransactionsByTagResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: uuid
+          description: "Transaction id"
+        state:
+          type: integer
+          description: "Transaction status"
+        updatedAt:
+          type: string
+          format: 'date-time'
+          description: "Last time updated"
     TransactionProcessGetResponse:
       type: object
       properties:
