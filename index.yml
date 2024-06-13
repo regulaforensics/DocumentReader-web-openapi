@@ -36,6 +36,8 @@ paths:
     $ref: "./p-transaction.yml#/paths/~1transaction~1{transactionId}~1file"
   /api/v2/tag/{tagId}:
     $ref: "./p-transaction.yml#/paths/~1tag~1{tagId}"
+  /api/v2/tag/{tagId}/transactions:
+    $ref: "./p-transaction.yml#/paths/~1tag~1{tagId}~1transactions"
   /api/ping:
     $ref: "./p-ping.yml#/paths/~1ping"
 
