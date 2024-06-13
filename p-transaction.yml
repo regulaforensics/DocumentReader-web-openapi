@@ -197,7 +197,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GetTransactionsByTagResponse'
+                $ref: '#/components/schemas/ListTransactionsByTagResponse'
         "400":
           description: "Bad request. Check your input data."
         "403":
@@ -205,6 +205,10 @@ paths:
 
 components:
   schemas:
+    ListTransactionsByTagResponse:
+      type: array
+      items:
+         $ref: '#/components/schemas/GetTransactionsByTagResponse'
     GetTransactionsByTagResponse:
       type: object
       properties:
