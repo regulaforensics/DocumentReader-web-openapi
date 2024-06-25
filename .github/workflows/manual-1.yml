@@ -14,7 +14,6 @@ on:
         default: ""
 
 jobs:
-
   release-clients:
     runs-on: ubuntu-latest
     steps:

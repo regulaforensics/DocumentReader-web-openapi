@@ -1,19 +1,18 @@
 name: automatic-2
 
 on:
+
   repository_dispatch:
     types: [manual-Version]
 
 jobs:
   build-and-push:
+    if: ${{ github.event.client_payload.passed }}
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout Specifications
         uses: actions/checkout@v2
-        with:
-          path: 'master-branch'
 
       - name: test
-        working-directory: master-branch
         run: |
-            echo ${{ github.event.client_payload.version }}
+            echo github.event.client_payload.version = ${{ github.event.client_payload.version }} 
