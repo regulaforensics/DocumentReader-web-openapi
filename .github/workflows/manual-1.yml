@@ -1,6 +1,8 @@
 name: manual-1
 
 on:
+  pull_request:
+    branches: [master]
   workflow_dispatch:
     inputs:
       version:
