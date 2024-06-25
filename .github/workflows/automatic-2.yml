@@ -1,8 +1,8 @@
 name: automatic-2
 
 on:
-    repository_dispatch:
-      types: [manual-Version]
+  repository_dispatch:
+    types: [manual-Version]
 
 jobs:
   build-and-push:
