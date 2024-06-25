@@ -26,4 +26,4 @@ jobs:
         uses: peter-evans/repository-dispatch@v3
         with:
             event-type: manual-Version
-            client-payload: ${{github.event.inputs.version}}
+            client-payload: '{"version": "${{github.event.inputs.version}}"}'

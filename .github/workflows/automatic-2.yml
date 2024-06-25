@@ -16,4 +16,4 @@ jobs:
       - name: test
         working-directory: master-branch
         run: |
-            echo ${{ github.event.client_payload }}
+            echo ${{ github.event.client_payload.version }}
