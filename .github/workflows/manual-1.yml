@@ -1,0 +1,27 @@
+name: manual-1
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version"
+        required: true
+      options:
+        description: "Possible options: --prerelease"
+        required: false
+        default: ""
+
+jobs:
+
+  release-clients:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Manual 1
+        run: |
+          echo ${{github.event.inputs.version}}
+
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v3
+        with:
+            event-type: manual-Version
+            client-payload: ${{github.event.inputs.version}}
