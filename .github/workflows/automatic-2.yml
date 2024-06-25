@@ -1,8 +1,10 @@
 name: automatic-2
 
 on:
-  repository_dispatch:
-    types: [manual-Version]
+  pull_request:
+    branches: [master]
+#   repository_dispatch:
+#     types: [manual-Version]
 
 jobs:
   build-and-push:
@@ -13,7 +15,7 @@ jobs:
         with:
           path: 'master-branch'
 
-      - name: test
-        working-directory: master-branch
-        run: |
-            echo ${{ github.event.client_payload.version }}
+    #   - name: test
+    #     working-directory: master-branch
+    #     run: |
+    #         echo ${{ github.event.client_payload.version }}
