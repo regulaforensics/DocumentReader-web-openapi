@@ -634,6 +634,14 @@ components:
         - 681
         - 682
         - 683
+        - 684
+        - 685
+        - 686
+        - 687
+        - 688
+        - 689
+        - 690
+        - 691
       x-enum-descriptions:
         - "Document class code"
         - "Issuing state code"
@@ -1265,6 +1273,14 @@ components:
         - "Date of Retirement"
         - "Document Status"
         - "Signature"
+        - "Unique Certificate Identifier"
+        - "Email"
+        - "Date of Specimen Collection"
+        - "Type Of Testing"
+        - "Result Of Testing"
+        - "Method Of Testing"
+        - "Digital Travel Authorization Number"
+        - "Date of First Positive Test Result"
       x-enum-varnames:
         - "DOCUMENT_CLASS_CODE"
         - "ISSUING_STATE_CODE"
@@ -1896,3 +1912,11 @@ components:
         - "DATE_OF_RETIREMENT"
         - "DOCUMENT_STATUS"
         - "SIGNATURE"
+        - "FT_UNIQUE_CERTIFICATE_IDENTIFIER"
+        - "FT_EMAIL"
+        - "FT_DATE_OF_SPECIMEN_COLLECTION"
+        - "FT_TYPE_OF_TESTING"
+        - "FT_RESULT_OF_TESTING"
+        - "FT_METHOD_OF_TESTING"
+        - "FT_DIGITAL_TRAVEL_AUTHORIZATION_NUMBER"
+        - "FT_DATE_OF_FIRST_POSITIVE_TEST_RESULT"
