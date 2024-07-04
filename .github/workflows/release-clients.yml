@@ -31,4 +31,3 @@ jobs:
           event-type: release-web-page
           client-payload: '{"version": "${{github.event.inputs.version}}", "success": true}'
         if: ${{ success() }}
-  
