@@ -269,9 +269,6 @@ components:
     TransactionProcessRequest:
       type: object
       properties:
-        tag:
-          type: string
-          description: "session id"
         processParam:
           $ref: "./p-process.yml#/components/schemas/ProcessParams"
         List:
