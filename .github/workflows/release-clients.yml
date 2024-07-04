@@ -24,3 +24,10 @@ jobs:
           gh release create v${{github.event.inputs.version}} ${{github.event.inputs.options}} --title ${{github.event.inputs.version}} --repo regulaforensics/DocumentReader-web-csharp-client
         env:
           GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
+
+      - name: Repository Dispatch
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          event-type: release-web-page
+          client-payload: '{"version": "${{github.event.inputs.version}}", "success": true}'
+        if: ${{ success() }}
