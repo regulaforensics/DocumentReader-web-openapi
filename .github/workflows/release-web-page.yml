@@ -1,18 +1,28 @@
 name: release web page
 
 on:
-  push:
-    branches:
-      - master
+  repository_dispatch:
+    types: [release-web-page]
+
 
 jobs:
   build-and-push:
+    if: ${{ github.event.client_payload.success }}
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout Specifications
         uses: actions/checkout@v2
         with:
           path: 'master-branch'
+
+      - name: Install yq
+        uses: vegardit/gha-setup-yq@v1
+        with:
+          version: 4.44.2
+  
+      - name: Replace index.yml version 
+        run: yq -i ".info.version =\"${{ github.event.client_payload.version }}\"" index.yml
+
       - name: Install redoc-cli
         uses: actions/setup-node@v1
         with:
@@ -47,3 +57,9 @@ jobs:
           git push origin gh-pages
         env:
           GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
+
+      - name: Pushing tag to Repo
+        uses: thejeff77/action-push-tag@v1.0.0
+        with:
+          tag: v${{ github.event.client_payload.version }} 
+        if: ${{ success() }}
