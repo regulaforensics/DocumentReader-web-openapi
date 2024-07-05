@@ -46,6 +46,8 @@ components:
         - 55
         - 60
         - 65
+        - 66
+        - 67
         - 80
         - 81
         - 82
@@ -165,7 +167,9 @@ components:
         - "UV_DULL_PAPER_ERROR"
         - "FALSE_LUMINESCENCE_IN_BLANK"
         - "BAD_AREA_IN_AXIAL"
-        - "FALSE_IP_PARAMETERS"
+        - "FALSE_IPI_PARAMETERS"
+        - "ENCRYPTED_IPI_NOT_FOUND"
+        - "ENCRYPTED_IPI_DATA_DONT_MATCH"
         - "FIELD_POS_CORRECTOR_HIGHLIGHT_IR"
         - "FIELD_POS_CORRECTOR_GLARES_IN_PHOTO_AREA"
         - "FIELD_POS_CORRECTOR_PHOTO_REPLACED"
