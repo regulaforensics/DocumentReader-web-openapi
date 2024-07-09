@@ -26,6 +26,7 @@ components:
         - 2097152
         - 4194304
         - 8388608
+        - 16777216
       x-enum-descriptions:
         - "Document luminescence check in UV light"
         - "B900 ink MRZ contrast check in IR light"
@@ -48,6 +49,7 @@ components:
         - "Document liveness check"
         - "Extended OCR Check"
         - "Extended MRZ check"
+        - "Encrypted IPI"
       x-enum-varnames:
         - "UV_LUMINESCENCE"
         - "IR_B900"
@@ -70,3 +72,4 @@ components:
         - "LIVENESS"
         - "EXTENDED_OCR_CHECK"
         - "EXTENDED_MRZ_CHECK"
+        - "ENCRYPTED_IPI"
