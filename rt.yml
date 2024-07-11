@@ -17,6 +17,7 @@ components:
         - 8
         - 9
         - 15
+        - 16
         - 17
         - 18
         - 19
@@ -43,6 +44,7 @@ components:
         - "Contains list of document type candidates with their probabilities and descriptions"
         - "Contains description of determined document type, if any"
         - "Contains lexical data analysis results that allow you to compare MRZ OCR results, Visual zone OCR results, barcodes and RFID chip data for an additional assessment of the authenticity of the document (this is an old format, better use TEXT type)"
+        - "Contains raw uncropped images"
         - "Contains Visual zone OCR results"
         - "Contains barcode parsing result with text fields"
         - "Contains barcode parsing result with graphic fields"
@@ -69,6 +71,7 @@ components:
         - "DOCUMENT_TYPE_CANDIDATES"
         - "DOCUMENT_TYPE"
         - "LEXICAL_ANALYSIS"
+        - "RAW_UNCROPPED_IMAGE"
         - "VISUAL_TEXT"
         - "BARCODE_TEXT"
         - "BARCODE_GRAPHICS"
