@@ -655,10 +655,6 @@ components:
           description: "This option enables colorness check while performing image quality validation."
           type: boolean
           # default: false
-        moireCheck:
-          description: "This option enables screen capture (moire patterns) check while performing image quality validation."
-          type: boolean
-          # default: false
         documentPositionIndent:
           description: "This parameter specifies the necessary margin. Default 0."
           type: integer
