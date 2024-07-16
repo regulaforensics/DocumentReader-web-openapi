@@ -423,6 +423,10 @@ components:
           $ref: '#/components/schemas/AuthParams'
         mrzDetectMode:
           $ref: '#/components/schemas/mrzDetectModeEnum'
+        generateNumericCodes:
+          type: boolean
+          description: "This parameter is used to generate numeric representation for issuing state and nationality codes"
+#          default: false
       required:
         - scenario
 
