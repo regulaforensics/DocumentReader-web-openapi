@@ -427,10 +427,6 @@ components:
           type: boolean
           description: "This parameter is used to generate numeric representation for issuing state and nationality codes"
 #          default: false
-        authOneThreadProcessing:
-          type: boolean
-          description: "This parameter is used to perform authenticity checks sequentially instead of in parallel (mainly applicable for low-end devices)"
-#          default: false
       required:
         - scenario
 
