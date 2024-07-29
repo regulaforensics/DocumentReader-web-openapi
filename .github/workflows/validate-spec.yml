@@ -4,12 +4,14 @@ on:
   pull_request:
     branches:
       - master
+      - develop
+      - stable
 
 jobs:
   validate-specification:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v1
         with:
           node-version: 14
@@ -21,4 +23,4 @@ jobs:
         run: |
           npm install -g @openapitools/openapi-generator-cli
           openapi-generator-cli validate -i index.yml
-        
+

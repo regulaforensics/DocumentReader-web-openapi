@@ -13,15 +13,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Specification Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           path: 'DocumentReader-web-openapi'
+          ref: 'develop'
       - name: Checkout JS Client Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: 'regulaforensics/DocumentReader-web-js-client'
           token: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
           path: 'js-client'
+          ref: 'develop'
+
       - name: Update Model According To Specification
         working-directory: js-client
         run: |
@@ -36,7 +39,7 @@ jobs:
           git add --all
           git commit -m "${{ github.event.inputs.title }}" -a
           git push --set-upstream origin ${GITHUB_SHA::8}
-          gh pr create --fill --draft
+          gh pr create --fill --draft --base develop
         env:
           GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
 
@@ -49,15 +52,17 @@ jobs:
           java-version: 11
           java-package: jdk
       - name: Checkout Specification Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           path: 'DocumentReader-web-openapi'
+          ref: 'develop'
       - name: Checkout Java Client Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: 'regulaforensics/DocumentReader-web-java-client'
           token: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
           path: 'java-client'
+          ref: 'develop'
       - name: Update Model According To Specification
         working-directory: java-client
         run: |
@@ -71,7 +76,7 @@ jobs:
           git add --all
           git commit -m "${{ github.event.inputs.title }}" -a
           git push --set-upstream origin ${GITHUB_SHA::8}
-          gh pr create --fill --draft
+          gh pr create --fill --draft --base develop
         env:
           GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
 
@@ -79,15 +84,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Specification Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           path: 'DocumentReader-web-openapi'
+          ref: 'develop'
       - name: Checkout Python Client Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: 'regulaforensics/DocumentReader-web-python-client'
           token: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
           path: 'python-client'
+          ref: 'develop'
       - name: Update Model According To Specification
         working-directory: python-client
         run: |
@@ -101,7 +108,7 @@ jobs:
           git add --all
           git commit -m "${{ github.event.inputs.title }}" -a
           git push --set-upstream origin ${GITHUB_SHA::8}
-          gh pr create --fill --draft
+          gh pr create --fill --draft --base develop
         env:
           GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
 
@@ -109,15 +116,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Specification Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           path: 'DocumentReader-web-openapi'
+          ref: 'develop'
       - name: Checkout C# Client Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           repository: 'regulaforensics/DocumentReader-web-csharp-client'
           token: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
           path: 'csharp-client'
+          ref: 'develop'
       - name: Update Model According To Specification
         working-directory: csharp-client
         run: |
@@ -132,6 +141,6 @@ jobs:
           git add --all
           git commit -m "${{ github.event.inputs.title }}" -a
           git push --set-upstream origin ${GITHUB_SHA::8}
-          gh pr create --fill --draft
+          gh pr create --fill --draft --base develop
         env:
           GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
