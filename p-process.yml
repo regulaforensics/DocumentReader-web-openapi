@@ -188,13 +188,11 @@ components:
           type: array
           items:
             type: integer
-          default: []
         lcidIgnoreFilter:
           description: "The list of LCID types to ignore during the recognition. If empty, values with all LCID types will be extracted. Narrowing down the list can reduce processing time. Empty by default."
           type: array
           items:
             type: integer
-          default: []
         oneShotIdentification:
           type: boolean
           description: "This parameter allows processing an image that contains a person and a document and compare the portrait photo from the document with the person's face"
