@@ -65,6 +65,9 @@ components:
           $ref: "./common.yml#/components/schemas/CheckResult"
         ElementDiagnose:
           $ref: "./authenticity/e-check-diagnose.yml#/components/schemas/CheckDiagnose"
+        PercentValue:
+          type: integer
+          format: double
       discriminator:
         propertyName: Type
         mapping:
