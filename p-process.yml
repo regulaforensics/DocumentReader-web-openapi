@@ -150,7 +150,8 @@ components:
           items:
             $ref: "#/components/schemas/ProcessRequestImage"
         tag:
-          type: string
+          type: integer
+          format: uuid
           description: "Session ID"
         tenant:
           type: string
