@@ -36,7 +36,8 @@ paths:
                   InData:
                     $ref: '#/components/schemas/InData'
                   tag:
-                    type: string
+                    type: integer
+                    format: uuid
                   transactionId:
                     type: string
                     format: uuid
@@ -206,9 +207,15 @@ paths:
 components:
   schemas:
     ListTransactionsByTagResponse:
-      type: array
-      items:
-         $ref: '#/components/schemas/GetTransactionsByTagResponse'
+      type: object
+      properties:
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/GetTransactionsByTagResponse'
+        metadata:
+          type: object
+          additionalProperties: true
     GetTransactionsByTagResponse:
       type: object
       properties:
@@ -230,7 +237,8 @@ components:
           type: integer
           format: uuid
         tag:
-          type: string
+          type: integer
+          format: uuid
         outData:
           $ref: '#/components/schemas/OutData'
         inData:
