@@ -184,8 +184,7 @@ paths:
         - in: path
           name: tagId
           schema:
-            type: integer
-            format: uuid
+            type: string
           required: true
           description: Tag id
       summary: Get transactions by tag
