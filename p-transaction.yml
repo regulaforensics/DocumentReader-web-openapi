@@ -36,8 +36,7 @@ paths:
                   InData:
                     $ref: '#/components/schemas/InData'
                   tag:
-                    type: integer
-                    format: uuid
+                    type: string
                   transactionId:
                     type: string
                     format: uuid
@@ -237,8 +236,7 @@ components:
           type: integer
           format: uuid
         tag:
-          type: integer
-          format: uuid
+          type: string
         outData:
           $ref: '#/components/schemas/OutData'
         inData:
