@@ -13,6 +13,85 @@ components:
               $ref: "#/components/schemas/DocVisualExtendedInfo"
         - $ref: "./rt.yml#/components/schemas/ResultItem"
 
+    RawDataResult:
+      type: object
+      title: "Raw Data"
+      description: ""
+      properties:
+        nFields:
+          type: integer
+          description: "Count of array fields"
+        pArrayFields:
+          type: array
+          description: ""
+          items:
+            $ref: "#/components/schemas/TBinaryData"
+
+    BinaryDataResult:
+      type: object
+      title: "Binary Data"
+      description: ""
+      properties:
+        nFields:
+          type: integer
+          description: "Count of array fields"
+        pArrayFields:
+          type: array
+          description: ""
+          items:
+            $ref: "#/components/schemas/TBinaryData"
+
+    OriginalGraphicsResult:
+      type: object
+      title: "Graphic Data"
+      description: ""
+      properties:
+        nFields:
+          type: integer
+          description: "Count of array fields"
+        pArrayFields:
+          type: array
+          description: ""
+          items:
+            $ref: "#/components/schemas/TOriginalRFIDGraphics"
+
+    TOriginalRFIDGraphics:
+      type: object
+      description: ""
+      properties:
+        FieldType:
+          type: integer
+        GraphicsType:
+          type: integer
+        RFID_OriginDG:
+          type: integer
+        RFID_OriginDGTag:
+          type: integer
+        RFID_OriginTagEntry:
+          type: integer
+        RFID_OriginEntryView:
+          type: integer
+        Buf_Length:
+          type: integer
+        Buffer:
+          type: string
+          format: byte
+
+    TBinaryData:
+      type: object
+      description: "Container for extracted text fields. Fields are identified by type and language"
+      properties:
+        FieldType:
+          type: integer
+        FieldName:
+          type: string
+        Buf_Length:
+          type: integer
+        Buffer:
+          type: string
+          format: byte
+
+
     DocVisualExtendedInfo:
       type: object
       description: "Container for extracted text fields. Fields are identified by type and language"

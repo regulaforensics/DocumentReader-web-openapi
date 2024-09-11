@@ -130,8 +130,11 @@ components:
           49: "EncryptedRCLResult"
           50: "LicenseResult"
           85: "DocumentPositionResult"
+          101: "RawDataResult"
           102: "TextDataResult"
           103: "GraphicsResult"
+          104: "BinaryDataResult"
+          105: "OriginalGraphicsResult"
 
     ContainerList:
       type: object
@@ -161,6 +164,9 @@ components:
               - $ref: "#/components/schemas/DocBarCodeInfo"
               - $ref: "#/components/schemas/LicenseResult"
               - $ref: "#/components/schemas/EncryptedRCLResult"
+              - $ref: "#/components/schemas/RawDataResult"
+              - $ref: "#/components/schemas/BinaryDataResult"
+              - $ref: "#/components/schemas/OriginalGraphicsResult"
 
     DocumentPositionResult:
       $ref: "./rt-document-position.yml#/components/schemas/DocumentPositionResult"
@@ -182,6 +188,15 @@ components:
 
     TextDataResult:
       $ref: "./rt-text-data.yml#/components/schemas/TextDataResult"
+
+    RawDataResult:
+      $ref: "./rt-text-data.yml#/components/schemas/RawDataResult"
+
+    BinaryDataResult:
+      $ref: "./rt-text-data.yml#/components/schemas/BinaryDataResult"
+
+    OriginalGraphicsResult:
+      $ref: "./rt-text-data.yml#/components/schemas/OriginalGraphicsResult"
 
     GraphicsResult:
       $ref: "./rt-image-data.yml#/components/schemas/GraphicsResult"
