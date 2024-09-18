@@ -106,8 +106,8 @@ components:
         - "Image from barcode vs. image from RFID"
         - "Image from barcode vs. external source image"
         - "Image from barcode vs. photo from camera"
-        - "Digital signature сheck"
-        - "Contact сhip check"
+        - "Digital signature check"
+        - "Contact chip check"
       x-enum-varnames:
         - "BLANK"
         - "FILL"
