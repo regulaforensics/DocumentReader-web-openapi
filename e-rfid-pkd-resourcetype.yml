@@ -1,7 +1,7 @@
 openapi: 3.0.3
 components:
   schemas:
-    RFID_PKD_ResourceType:
+    RFIDPKDResourceType:
       type: integer
       description: "Enumeration contains a set of constants that define the type of certificate"
       enum:
