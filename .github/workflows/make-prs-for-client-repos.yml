@@ -1,7 +1,7 @@
 name: Make PRs for client repos
 
 on:
-  pull_request:
+  push:
     branches:
       - feature/automatization-web-clients
 
