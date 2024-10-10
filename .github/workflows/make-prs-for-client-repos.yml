@@ -1,4 +1,4 @@
-name: Make PRs for client repositories
+name: Make PRs for OpenAPI and client repositories
 
 on:
   workflow_dispatch:
