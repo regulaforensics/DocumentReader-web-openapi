@@ -1,12 +1,17 @@
 openapi: 3.0.3
 components:
   schemas:
-
     IdentResult:
-      title: "Ident Check"
+      title: "IdentResult"
       allOf:
         - $ref: "../rt-authenticity.yml#/components/schemas/AuthenticityCheckResultItem"
         - type: object
+          required:
+            - ElementType
+            - LightIndex
+            - Area
+            - Image
+            - EtalonImage
           properties:
             ElementType:
               $ref: "../e-security-feature-type.yml#/components/schemas/SecurityFeatureType"

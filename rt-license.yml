@@ -1,9 +1,8 @@
 openapi: 3.0.3
 components:
   schemas:
-
     LicenseResult:
-      title: "License"
+      title: "LicenseResult"
       allOf:
         - type: object
           description: "Contains license"

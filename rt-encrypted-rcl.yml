@@ -1,9 +1,8 @@
 openapi: 3.0.3
 components:
   schemas:
-
     EncryptedRCLResult:
-      title: "EncryptedRCL"
+      title: "EncryptedRCLResult"
       allOf:
         - type: object
           description: "Contains encrypted result container list"

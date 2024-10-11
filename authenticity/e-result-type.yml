@@ -2,9 +2,11 @@ openapi: 3.0.3
 components:
   schemas:
     AuthenticityResultType:
+      title: "AuthenticityResultType"
       type: integer
       description: "Enumeration describes available authenticity checks: https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/development/enums/authenticity-result-type/."
       enum:
+        - 0
         - 1
         - 2
         - 4
@@ -13,10 +15,13 @@ components:
         - 32
         - 64
         - 128
+        - 256
         - 512
         - 1024
+        - 2048
         - 4096
         - 8192
+        - 16384
         - 32768
         - 65536
         - 131072
@@ -27,7 +32,9 @@ components:
         - 4194304
         - 8388608
         - 16777216
+        - 2147483648
       x-enum-descriptions:
+        - "No authenticity control procedure"
         - "Document luminescence check in UV light"
         - "B900 ink MRZ contrast check in IR light"
         - "Image patterns presence/absence check (position, shape, color)"
@@ -36,10 +43,13 @@ components:
         - "Document elements visibility check in IR light"
         - "OCR for the text field in UV light comparison with other text sources check"
         - "Invisible Personal Information (IPI) visualization"
+        - "Document photo check in IR light"
         - "Owner's photo embedding check (is photo printed or sticked)"
         - "OVI check"
+        - "IR luminescence check"
         - "Hologram presence check"
         - "Owner's photo area advanced check (photo shape, size, position, etc.)"
+        - "UV background check"
         - "Portrait comparison check (document printed vs chip vs live)"
         - "Barcode format check (code metadata, data format, contents format, etc.)"
         - "Kinegram check"
@@ -50,7 +60,9 @@ components:
         - "Extended OCR Check"
         - "Extended MRZ check"
         - "Encrypted IPI"
+        - "Flag for status-only authenticity"
       x-enum-varnames:
+        - "NONE"
         - "UV_LUMINESCENCE"
         - "IR_B900"
         - "IMAGE_PATTERN"
@@ -59,10 +71,13 @@ components:
         - "IR_VISIBILITY"
         - "OCR_SECURITY_TEXT"
         - "IPI"
+        - "IR_PHOTO"
         - "PHOTO_EMBED_TYPE"
         - "OVI"
+        - "IR_LUMINESCENCE"
         - "HOLOGRAMS"
         - "PHOTO_AREA"
+        - "UV_BACKGROUND"
         - "PORTRAIT_COMPARISON"
         - "BARCODE_FORMAT_CHECK"
         - "KINEGRAM"
@@ -73,3 +88,4 @@ components:
         - "EXTENDED_OCR_CHECK"
         - "EXTENDED_MRZ_CHECK"
         - "ENCRYPTED_IPI"
+        - "STATUS_ONLY"

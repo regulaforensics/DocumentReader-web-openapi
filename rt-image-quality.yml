@@ -1,9 +1,8 @@
 openapi: 3.0.3
 components:
   schemas:
-
     ImageQualityResult:
-      title: "Image Quality Checks"
+      title: "ImageQualityResult"
       allOf:
         - type: object
           required:
@@ -13,12 +12,13 @@ components:
               $ref: "#/components/schemas/ImageQualityCheckList"
         - $ref: "./rt.yml#/components/schemas/ResultItem"
 
-
     ImageQualityCheckList:
+      title: "ImageQualityCheckList"
       type: object
       required:
         - result
         - List
+        - Count
       properties:
         result:
           description: "Overall image quality status, combined from check statuses in the list."
@@ -27,8 +27,12 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/ImageQualityCheck"
+        Count:
+          description: "Number of List array elements"
+          type: number
 
     ImageQualityCheckType:
+      title: "ImageQualityCheckType"
       type: integer
       description: "Image quality check type"
       enum:
@@ -60,8 +64,16 @@ components:
         - "Signals if the document image is bright enough"
 
     AreaArray:
+      title: "AreaArray"
       type: object
+      required:
+        - Count
+        - List
+        - Points
       properties:
+        Count:
+          description: "Number of elements in List and Points"
+          type: number
         List:
           type: array
           items:
@@ -72,7 +84,10 @@ components:
             $ref: "#/components/schemas/PointArray"
 
     PointArray:
+      title: "PointArray"
       type: object
+      required:
+        - PointsList
       properties:
         PointsList:
           type: array
@@ -80,7 +95,15 @@ components:
             $ref: "./common.yml#/components/schemas/Point"
 
     ImageQualityCheck:
+      title: "ImageQualityCheck"
       type: object
+      required:
+        - type
+        - result
+        - featureType
+        - mean
+        - std_dev
+        - probability
       properties:
         type:
           $ref: "#/components/schemas/ImageQualityCheckType"
@@ -91,10 +114,13 @@ components:
         areas:
           $ref: "#/components/schemas/AreaArray"
         mean:
+          description: "Check mean value"
           type: number
           format: float
         std_dev:
+          description: "Check deviation value"
           type: number
           format: float
         probability:
+          description: "Check probability value"
           type: integer

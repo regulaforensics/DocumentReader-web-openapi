@@ -1,12 +1,21 @@
 openapi: 3.0.3
 components:
   schemas:
-
     OCRSecurityTextResult:
-      title: "OCR Security Text Check"
+      title: "OCRSecurityTextResult"
       allOf:
         - $ref: "../rt-authenticity.yml#/components/schemas/AuthenticityCheckResultItem"
         - type: object
+          required:
+            - CriticalFlag
+            - LightType
+            - FieldRect
+            - EtalonResultType
+            - EtalonFieldType
+            - EtalonLightType
+            - EtalonFieldRect
+            - SecurityTextResultOCR
+            - EtalonResultOCR
           properties:
             CriticalFlag:
               $ref: "./e-critical.yml#/components/schemas/Critical"
@@ -20,6 +29,8 @@ components:
               type: integer
             EtalonLightType:
               type: integer
+            EtalonFieldRect:
+              $ref: "../common.yml#/components/schemas/RectangleCoordinates"
             SecurityTextResultOCR:
               type: string
             EtalonResultOCR:
