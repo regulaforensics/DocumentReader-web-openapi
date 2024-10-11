@@ -750,11 +750,11 @@ components:
       type: integer
       description: "Enumeration contains a set of constants specifying the rate of data exchange between the reader and the RFID-chip"
       enum:
-        - 0X00
-        - 0X01
-        - 0X02
-        - 0X04
-        - 0X08
+        - 0x00
+        - 0x01
+        - 0x02
+        - 0x04
+        - 0x08
       x-enum-descriptions:
         - "Unknown"
         - "106 bits/s"
