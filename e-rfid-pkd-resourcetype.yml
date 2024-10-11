@@ -1,0 +1,33 @@
+openapi: 3.0.3
+components:
+  schemas:
+    RFIDPKDResourceType:
+      type: integer
+      description: "Enumeration contains a set of constants that define the type of certificate"
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+      x-enum-varnames:
+        - "CERTIFICATE_PA"
+        - "CERTIFICATE_TA"
+        - "LDIF"
+        - "CRL"
+        - "ML"
+        - "DEFL"
+        - "DEVL"
+        - "BL"
+      x-enum-descriptions:
+        - "Certificate file contents (.pem, .cer, .crt, .der)"
+        - "Certificate file contents (.cvcert) and private key file contents (.pkcs8)"
+        - "LDIF file contents (.ldif)"
+        - "CRL file contents (.crl)"
+        - "Master List (.ml, .mls)"
+        - "Defect List (.dl, .dls, .dfl)"
+        - "Deviance List (.dl, .dls, .dvl)"
+        - "Black List (.bl, .bls)"
