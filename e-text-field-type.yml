@@ -2,6 +2,7 @@ openapi: 3.0.3
 components:
   schemas:
     TextFieldType:
+      title: "TextFieldType"
       type: integer
       enum:
         - 0

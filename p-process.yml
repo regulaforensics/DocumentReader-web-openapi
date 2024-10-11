@@ -1,4 +1,7 @@
 openapi: 3.0.3
+info:
+  version: 7.4.0
+  title: Regula Document Reader Web API
 
 paths:
   /process:
@@ -135,14 +138,19 @@ paths:
 
 components:
   schemas:
-
     #############################
     ############################# Requests objects
-
-    # todo different image input types
     ProcessRequest:
+      title: "ProcessRequest"
       type: object
+      required:
+        - processParam
       properties:
+        lcidFilter:
+          type: array
+          description: "The list of LCID types to recognize. If empty, values with all LCID types will be extracted. Empty by default."
+          items:
+            $ref: "./e-lcid.yml#/components/schemas/LCID"
         processParam:
           $ref: "#/components/schemas/ProcessParams"
         List:
@@ -177,22 +185,26 @@ components:
           description: "Free-form object to be included in response. Must be object, not list or simple value.
           Do not affect document processing. Use it freely to pass your app params. Stored in process logs."
           additionalProperties: true
-      required:
-        - processParam
 
     ProcessParams:
+      title: "ProcessParams"
       type: object
+      required:
+        - scenario
       properties:
         lcidFilter:
           description: "The list of LCID types to recognize. If empty, values with all LCID types will be extracted. Empty by default."
           type: array
           items:
-            type: integer
+            $ref: "./e-lcid.yml#/components/schemas/LCID"
+        checkLiveness:
+          description: "This parameter is used to enable document liveness check."
+          type: boolean
         lcidIgnoreFilter:
           description: "The list of LCID types to ignore during the recognition. If empty, values with all LCID types will be extracted. Narrowing down the list can reduce processing time. Empty by default."
           type: array
           items:
-            type: integer
+            $ref: "./e-lcid.yml#/components/schemas/LCID"
         oneShotIdentification:
           type: boolean
           description: "This parameter allows processing an image that contains a person and a document and compare the portrait photo from the document with the person's face"
@@ -416,7 +428,7 @@ components:
         checkAuth:
           type: boolean
           description: "This parameter is used to enable authenticity checks"
-#          default: true
+          # default: true
         authParams:
           $ref: '#/components/schemas/AuthParams'
         mrzDetectMode:
@@ -424,11 +436,10 @@ components:
         generateNumericCodes:
           type: boolean
           description: "This parameter is used to generate numeric representation for issuing state and nationality codes"
-#          default: false
-      required:
-        - scenario
+          # default: false
 
     MRZFormat:
+      title: "MRZFormat"
       type: string
       enum:
         - "1x30"
@@ -453,6 +464,7 @@ components:
         - "2x30"
 
     TextPostProcessing:
+      title: "TextPostProcessing"
       type: integer
       enum:
         - 0
@@ -471,6 +483,7 @@ components:
         - "Capital"
 
     mrzDetectModeEnum:
+      title: "mrzDetectModeEnum"
       type: integer
       description: "Make better MRZ detection on complex noisy backgrounds, like BW photocopy of some documents."
       enum:
@@ -483,103 +496,91 @@ components:
         - "eMDM_BlurBeforeBinarization"
 
     AuthParams:
+      title: "AuthParams"
       type: object
       properties:
         checkLiveness:
           type: boolean
           description: "This parameter is used to enable document liveness check"
-#          default: true
-
+          # default: true
         livenessParams:
           $ref: '#/components/schemas/LivenessParams'
-
         checkUVLuminiscence:
           type: boolean
           description: "This parameter is used to enable Document luminescence check in UV light"
-#          default: true
-
+          # default: true
         checkIRB900:
           type: boolean
           description: "This parameter is used to enable B900 ink MRZ contrast check in IR light"
-#          default: true
-
+          # default: true
         checkImagePatterns:
           type: boolean
           description: "This parameter is used to enable Image patterns presence/absence check (position, shape, color)"
-#          default: true
-
+          # default: true
         checkFibers:
           type: boolean
           description: "This parameter is used to enable Fibers detection"
-#          default: true
-
+          # default: true
         checkExtMRZ:
           type: boolean
           description: "This parameter is used to enable Extended MRZ Check"
-#          default: true
-
+          # default: true
         checkExtOCR:
           type: boolean
           description: "This parameter is used to enable Extended OCR Check"
-#          default: true
-
+          # default: true
         checkAxial:
           type: boolean
           description: "This parameter is used to enable laminate integrity check in axial light"
-#          default: true
-
+          # default: true
         checkBarcodeFormat:
           type: boolean
           description: "This parameter is used to enable Barcode format check (code metadata, data format, contents format, etc.)"
-#          default: true
-
+          # default: true
         checkIRVisibility:
           type: boolean
           description: "This parameter is used to enable Document elements visibility check in IR light"
-#          default: true
-
+          # default: true
         checkIPI:
           type: boolean
           description: "This parameter is used to enable Invisible Personal Information (IPI) check"
-#          default: true
-
+          # default: true
         checkPhotoEmbedding:
           type: boolean
           description: "This parameter is used to enable Owner's photo embedding check (is photo printed or sticked)"
-#          default: true
-
+          # default: true
         checkPhotoComparison:
           type: boolean
           description: "This parameter is used to enable Portrait comparison check"
-#          default: true
-
+          # default: true
         checkLetterScreen:
           type: boolean
           description: "This parameter is used to enable LetterScreen check"
-#          default: false
-
+          # default: false
 
     LivenessParams:
+      title: "LivenessParams"
       type: object
       properties:
         checkOVI:
           type: boolean
           description: "This parameter is used to enable OVI check"
-#         default: true
+          # default: true
         checkMLI:
           type: boolean
           description: "This parameter is used to enable MLI check"
-#          default: true
+          # default: true
         checkHolo:
           type: boolean
           description: "This parameter is used to enable Hologram detection"
-#          default: true
+          # default: true
         checkED:
           type: boolean
           description: "This parameter is used to enable Electronic device detection"
-#          default: true
+          # default: true
 
     MeasureSystem:
+      title: "MeasureSystem"
       type: integer
       example: 0
       enum:
@@ -593,6 +594,7 @@ components:
         - "IMPERIAL"
 
     LogLevel:
+      title: "LogLevel"
       type: string
       enum:
         - FatalError
@@ -613,8 +615,8 @@ components:
         - "Info"
         - "Debug"
 
-
     PerDocumentConfig:
+      title: "PerDocumentConfig"
       type: object
       properties:
         docID:
@@ -627,8 +629,8 @@ components:
           type: integer
           example: 2
 
-
     ImageQA:
+      title: "ImageQA"
       type: object
       properties:
         brightnessThreshold:
@@ -657,12 +659,16 @@ components:
           description: "This option enables colorness check while performing image quality validation."
           type: boolean
           # default: false
+        moireCheck:
+          description: "This option enables screen capture (moire patterns) check while performing image quality validation."
+          type: boolean
         documentPositionIndent:
           description: "This parameter specifies the necessary margin. Default 0."
           type: integer
           # default: 0
 
     ProcessRequestImage:
+      title: "ProcessRequestImage"
       type: object
       required:
         - ImageData
@@ -682,6 +688,7 @@ components:
           image: "<base64 image>"
 
     ProcessSystemInfo:
+      title: "ProcessSystemInfo"
       type: object
       properties:
         license:
@@ -694,11 +701,15 @@ components:
     #############################
     ############################# Response objects
     ProcessResponse:
+      title: "ProcessResponse"
       type: object
       required:
+        - ChipPage
         - ProcessingFinished
         - ContainerList
         - TransactionInfo
+        - morePagesAvailable
+        - elapsedTime
       properties:
         ChipPage:
           $ref: "./common.yml#/components/schemas/RfidLocation"
@@ -720,8 +731,12 @@ components:
         elapsedTime:
           type: integer
           description: "Time the document processing has taken, ms."
+        metadata:
+          type: object
+          additionalProperties: true
 
     ProcessingStatus:
+      title: "ProcessingStatus"
       type: integer
       enum:
         - 0
@@ -737,15 +752,24 @@ components:
         - "TIMEOUT"
 
     TransactionInfo:
+      title: "TransactionInfo"
       type: object
       properties:
         ComputerName:
           type: string
         DateTime:
           type: string
+        DocumentsDatabase:
+          $ref: "#/components/schemas/DocumentsDatabase"
+        SystemInfo:
+          type: string
+        Tag:
+          type: string
         TransactionID:
           type: string
         UserName:
+          type: string
+        Version:
           type: string
       example:
         "ComputerName": "7cded6852d20"
@@ -753,3 +777,14 @@ components:
         "TransactionID": "dc5eb444-ad6e-4ebc-8102-d62d5bb56a4e"
         "UserName": "user"
 
+    DocumentsDatabase:
+      type: object
+      properties:
+        Description:
+          type: string
+        ExportDate:
+          type: string
+        ID:
+          type: string
+        Version:
+          type: string

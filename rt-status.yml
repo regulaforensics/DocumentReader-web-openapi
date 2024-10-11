@@ -1,9 +1,8 @@
 openapi: 3.0.3
 components:
   schemas:
-
     StatusResult:
-      title: "Status"
+      title: "StatusResult"
       allOf:
         - type: object
           required:
@@ -19,14 +18,18 @@ components:
     # see https://github.com/OAI/OpenAPI-Specification/issues/556#issuecomment-192007034
     # but java codegen produce invalid code for allOf `int complete=null`
     Status:
+      title: "Status"
       type: object
       required:
         - overallStatus
         - optical
+        - portrait
+        - rfid
+        - stopList
         - detailsOptical
       properties:
         overallStatus:
-          description: "Overall checks status. Root status."
+          description: "Overall checks status. Rootx status."
           $ref: "./common.yml#/components/schemas/CheckResult"
         optical:
           description: "Overall optical checks combined status"
@@ -48,6 +51,7 @@ components:
           $ref: "#/components/schemas/detailsOptical"
 
     detailsOptical:
+      title: "detailsOptical"
       type: object
       required:
         - overallStatus
@@ -85,6 +89,7 @@ components:
           $ref: "./common.yml#/components/schemas/CheckResult"
 
     detailsRFID:
+      title: "detailsRFID"
       type: object
       required:
         - overallStatus

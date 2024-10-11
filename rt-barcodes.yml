@@ -1,20 +1,24 @@
 openapi: 3.0.3
 components:
   schemas:
-
     DocBarCodeInfo:
-      title: "Document BarCode Info"
+      title: "DocBarCodeInfo"
       description: "Raw data from BarCodes"
       allOf:
         - type: object
+          required:
+            - DocBarCodeInfo
           properties:
             DocBarCodeInfo:
               $ref: "#/components/schemas/DocBarCodeInfoFieldsList"
         - $ref: "./rt.yml#/components/schemas/ResultItem"
 
-
     DocBarCodeInfoFieldsList:
+      title: "DocBarCodeInfoFieldsList"
       type: object
+      required:
+        - nFields
+        - pArrayFields
       properties:
         nFields:
           type: integer
@@ -26,10 +30,20 @@ components:
             $ref: "#/components/schemas/pArrayField"
 
     pArrayField:
+      title: "pArrayField"
       type: object
+      required:
+        - bcAngle_DETECT
+        - bcCodeResult
+        - bcCountModule
+        - bcDataModule
+        - bcROI_DETECT
+        - bcType_DECODE
+        - bcType_DETECT
       properties:
         bcAngle_DETECT:
-          type: float
+          type: number
+          format: float
         bcCodeResult:
           type: integer
         bcCountModule:
@@ -47,15 +61,24 @@ components:
         bcTextFieldType:
           type: integer
         bcType_DECODE:
-          type: integer
+          $ref: "./e-barcode-type.yml#/components/schemas/BarcodeType"
         bcType_DETECT:
           type: integer
 
     bcPDF417INFO:
+      title: "bcPDF417INFO"
       type: object
+      required:
+        - Angle
+        - bcColumn
+        - bcErrorLevel
+        - bcRow
+        - minX
+        - minY
       properties:
         Angle:
-          type: float
+          type: number
+          format: float
         bcColumn:
           type: integer
         bcErrorLevel:
@@ -63,12 +86,20 @@ components:
         bcRow:
           type: integer
         minX:
-          type: float
+          type: number
+          format: float
         minY:
-          type: float
+          type: number
+          format: float
 
     bcROI_DETECT:
+      title: "bcROI_DETECT"
       type: object
+      required:
+        - bottom
+        - left
+        - right
+        - top
       properties:
         bottom:
           type: integer
@@ -80,7 +111,12 @@ components:
           type: integer
 
     DataModule:
+      title: "DataModule"
       type: object
+      required:
+        - mData
+        - mLength
+        - mType
       properties:
         mData:
           type: string
@@ -91,4 +127,26 @@ components:
         mReserver2:
           type: integer
         mType:
-          type: integer
+          $ref: "#/components/schemas/BarCodeModuleType"
+
+    BarCodeModuleType:
+      title: "BarCodeModuleType"
+      type: integer
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+      x-enum-descriptions:
+        - "Module contains text data"
+        - "Module contains byte data"
+        - "Module contains numeric data"
+        - "Shifts in byte compaction mode (for PDF417)"
+        - "Module contains any data"
+      x-enum-varnames:
+        - "TEXT"
+        - "BYTE"
+        - "NUM"
+        - "SHIFT"
+        - "ALL"

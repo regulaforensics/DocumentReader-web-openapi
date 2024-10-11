@@ -2,6 +2,7 @@ openapi: 3.0.3
 components:
   schemas:
     SecurityFeatureType:
+      title: "SecurityFeatureType"
       type: integer
       description: "Enumeration contains identifiers determining type of features for a document authenticity checks: https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/development/enums/security-feature-type/"
       enum:
