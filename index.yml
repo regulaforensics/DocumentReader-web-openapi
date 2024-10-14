@@ -77,8 +77,8 @@ x-tagGroups:
   - name: Requests
     tags:
       - process
-      - healthcheck
       - transaction
+      - healthcheck
   - name: Models
     tags:
       - status_model
