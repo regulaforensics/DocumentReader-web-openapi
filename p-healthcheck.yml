@@ -1,0 +1,62 @@
+openapi: 3.0.3
+
+paths:
+  /healthz:
+    parameters:
+      - $ref: "./common.yml#/components/parameters/x-request"
+    get:
+      summary: "Server healthcheck"
+      operationId: healthz
+      tags:
+        - healthcheck
+      responses:
+        200:
+          description: "Device info"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DeviceInfo"
+  /readyz:
+    parameters:
+      - $ref: "./common.yml#/components/parameters/x-request"
+    get:
+      summary: "License healthcheck"
+      operationId: readyz
+      tags:
+        - healthcheck
+      responses:
+        200:
+          description: "License is valid"
+        400:
+          description: "License is not valid"
+
+components:
+  schemas:
+    DeviceInfo:
+      type: object
+      properties:
+        app:
+          type: string
+        licenseId:
+          type: string
+        licenseType:
+          type: string
+        licenseSerial:
+          type: string
+        licenseValidUntil:
+          type: string
+          format: date-time
+        scenarios:
+          type: array
+          items:
+            type: string
+        version:
+          type: string
+      example:
+        "app": "Regula Document Reader Web API"
+        "licenseId": "4D43A2AF-E321-496C-9A4E-5A8F3D26DF0E"
+        "licenseType": "Transactional"
+        "licenseSerial": "OL70786"
+        "licenseValidUntil": "9999-12-31T23:59:59Z"
+        "scenarios": ["Mrz", "Barcode", "Locate"]
+        "version": "7.5.297907.1721"

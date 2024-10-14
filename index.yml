@@ -22,7 +22,6 @@ servers:
   - url: http://localhost:8080/
     description: Local on-premise installation
 
-
 paths:
   /api/process:
     $ref: "./p-process.yml#/paths/~1process"
@@ -38,8 +37,10 @@ paths:
     $ref: "./p-transaction.yml#/paths/~1tag~1{tagId}"
   /api/v2/tag/{tagId}/transactions:
     $ref: "./p-transaction.yml#/paths/~1tag~1{tagId}~1transactions"
-  /api/ping:
-    $ref: "./p-ping.yml#/paths/~1ping"
+  /api/healthz:
+    $ref: "./p-healthcheck.yml#/paths/~1healthz"
+  /api/readyz:
+    $ref: "./p-healthcheck.yml#/paths/~1readyz"
 
 tags:
   - name: process
@@ -76,6 +77,7 @@ x-tagGroups:
   - name: Requests
     tags:
       - process
+      - healthcheck
       - transaction
   - name: Models
     tags:
