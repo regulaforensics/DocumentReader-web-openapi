@@ -1,13 +1,14 @@
 openapi: 3.0.3
 components:
   schemas:
-
     ContainerType:
+      title: "ContainerType"
       type: integer
       description: "Same as Result type, but used for safe parsing of not-described values. See Result type."
       default: 0
 
     Result:
+      title: "Result"
       type: integer
       enum:
         - 1
@@ -22,14 +23,20 @@ components:
         - 18
         - 19
         - 20
+        - 26
         - 30
+        - 32
         - 33
         - 34
+        - 35
         - 36
         - 37
+        - 38
         - 39
         - 49
         - 50
+        - 61
+        - 62
         - 85
         - 101
         - 102
@@ -49,14 +56,20 @@ components:
         - "Contains barcode parsing result with text fields"
         - "Contains barcode parsing result with graphic fields"
         - "Contains result of document authenticity checks"
+        - "Contains result of DocVisualExtendedInfoContainer"
         - "Contains image quality check results"
+        - "Contains result of DocGraphicsInfoContainer"
         - "Contains check statuses with details, grouped by source"
         - "Contains result of portraits comparison"
+        - "Contains result of DocGraphicsInfoContainer"
         - "Contains document textual fields from all sources (mrz, rfid, visual, barcode) with validity and cross-source compare checks"
         - "Contains images from all document sources (mrz, rfid, visual, barcode)"
+        - "Contains result of DocGraphicsInfoContainer"
         - "Contains result of fingerprints comparison"
         - "Contains encrypted ResultContainerList"
         - "Contains license"
+        - "Contains result of DocumentPosition"
+        - "Contains result of DocumentPosition"
         - "Contains information about document position on the input image, its center, angle, etc"
         - "Contains RFID raw data"
         - "Contains RFID text results"
@@ -76,14 +89,20 @@ components:
         - "BARCODE_TEXT"
         - "BARCODE_GRAPHICS"
         - "AUTHENTICITY"
+        - "MAGNETIC_STRIPE_TEXT_DATA"
         - "IMAGE_QUALITY"
+        - "LIVE_PORTRAIT"
         - "STATUS"
         - "PORTRAIT_COMPARISON"
+        - "EXT_PORTRAIT"
         - "TEXT"
         - "IMAGES"
+        - "FINGERPRINTS"
         - "FINGERPRINT_COMPARISON"
         - "ENCRYPTED_RCL"
         - "LICENSE"
+        - "MRZ_POSITION"
+        - "BARCODE_POSITION"
         - "DOCUMENT_POSITION"
         - "RFID_RAW_DATA"
         - "RFID_TEXT"
@@ -92,6 +111,7 @@ components:
         - "RFID_ORIGINAL_GRAPHICS"
 
     ResultItem:
+      title: "ResultItem"
       type: object
       description: "Common fields for all result objects"
       required:
@@ -107,36 +127,13 @@ components:
           type: integer
         result_type:
           $ref: "#/components/schemas/ContainerType"
-      discriminator:
-        propertyName: result_type
-        mapping:
-          1: "DocumentImageResult"
-          3: "TextDataResult"
-          5: "DocBarCodeInfo"
-          6: "GraphicsResult"
-          8: "DocumentTypesCandidatesResult"
-          9: "ChosenDocumentTypeResult"
-          15: "LexicalAnalysisResult"
-          17: "TextDataResult"
-          18: "TextDataResult"
-          19: "GraphicsResult"
-          20: "AuthenticityResult"
-          30: "ImageQualityResult"
-          33: "StatusResult"
-          34: "AuthenticityResult"
-          36: "TextResult"
-          37: "ImagesResult"
-          39: "AuthenticityResult"
-          49: "EncryptedRCLResult"
-          50: "LicenseResult"
-          85: "DocumentPositionResult"
-          102: "TextDataResult"
-          103: "GraphicsResult"
 
     ContainerList:
+      title: "ContainerList"
       type: object
       description: "List with various objects, containing processing results"
       required:
+        - Count
         - List
       properties:
         Count:
@@ -146,63 +143,19 @@ components:
           type: array
           items:
             anyOf:
-              - $ref: "#/components/schemas/StatusResult"
-              - $ref: "#/components/schemas/TextResult"
-              - $ref: "#/components/schemas/DocumentImageResult"
-              - $ref: "#/components/schemas/ImagesResult"
-              - $ref: "#/components/schemas/ChosenDocumentTypeResult"
-              - $ref: "#/components/schemas/DocumentTypesCandidatesResult"
-              - $ref: "#/components/schemas/TextDataResult"
-              - $ref: "#/components/schemas/GraphicsResult"
-              - $ref: "#/components/schemas/LexicalAnalysisResult"
-              - $ref: "#/components/schemas/AuthenticityResult"
-              - $ref: "#/components/schemas/ImageQualityResult"
-              - $ref: "#/components/schemas/DocumentPositionResult"
-              - $ref: "#/components/schemas/DocBarCodeInfo"
-              - $ref: "#/components/schemas/LicenseResult"
-              - $ref: "#/components/schemas/EncryptedRCLResult"
-
-    DocumentPositionResult:
-      $ref: "./rt-document-position.yml#/components/schemas/DocumentPositionResult"
-
-    DocumentImageResult:
-      $ref: "./rt-raw-image.yml#/components/schemas/DocumentImageResult"
-
-    StatusResult:
-      $ref: "./rt-status.yml#/components/schemas/StatusResult"
-
-    TextResult:
-      $ref: "./rt-text.yml#/components/schemas/TextResult"
-
-    ImagesResult:
-      $ref: "./rt-images.yml#/components/schemas/ImagesResult"
-
-    LexicalAnalysisResult:
-      $ref: "./rt-ocr-lexical-analisis.yml#/components/schemas/LexicalAnalysisResult"
-
-    TextDataResult:
-      $ref: "./rt-text-data.yml#/components/schemas/TextDataResult"
-
-    GraphicsResult:
-      $ref: "./rt-image-data.yml#/components/schemas/GraphicsResult"
-
-    DocumentTypesCandidatesResult:
-      $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentTypesCandidatesResult"
-
-    ChosenDocumentTypeResult:
-      $ref: "./rt-doc-type-old.yml#/components/schemas/ChosenDocumentTypeResult"
-
-    AuthenticityResult:
-      $ref: "./rt-authenticity.yml#/components/schemas/AuthenticityResult"
-
-    ImageQualityResult:
-      $ref: "./rt-image-quality.yml#/components/schemas/ImageQualityResult"
-
-    DocBarCodeInfo:
-      $ref: "./rt-barcodes.yml#/components/schemas/DocBarCodeInfo"
-
-    LicenseResult:
-      $ref: "./rt-license.yml#/components/schemas/LicenseResult"
-
-    EncryptedRCLResult:
-      $ref: "./rt-encrypted-rcl.yml#/components/schemas/EncryptedRCLResult"
+              - $ref: "./rt-status.yml#/components/schemas/StatusResult"
+              - $ref: "./rt-text.yml#/components/schemas/TextResult"
+              - $ref: "./rt-raw-image.yml#/components/schemas/DocumentImageResult"
+              - $ref: "./rt-images.yml#/components/schemas/ImagesResult"
+              - $ref: "./rt-doc-type-old.yml#/components/schemas/ChosenDocumentTypeResult"
+              - $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentTypesCandidatesResult"
+              - $ref: "./rt-text-data.yml#/components/schemas/TextDataResult"
+              - $ref: "./rt-image-data.yml#/components/schemas/GraphicsResult"
+              - $ref: "./rt-ocr-lexical-analysis.yml#/components/schemas/LexicalAnalysisResult"
+              - $ref: "./rt-authenticity.yml#/components/schemas/AuthenticityResult"
+              - $ref: "./rt-image-quality.yml#/components/schemas/ImageQualityResult"
+              - $ref: "./rt-document-position.yml#/components/schemas/DocumentPositionResult"
+              - $ref: "./rt-barcodes.yml#/components/schemas/DocBarCodeInfo"
+              - $ref: "./rt-license.yml#/components/schemas/LicenseResult"
+              - $ref: "./rt-encrypted-rcl.yml#/components/schemas/EncryptedRCLResult"
+              - $ref: "./rt-rfid-binary-data.yml#/components/schemas/DocumentBinaryInfoResult"

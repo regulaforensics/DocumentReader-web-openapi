@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  version: 7.2.0
+  version: 7.4.0
   title: Regula Document Reader Web API
   x-logo:
     url: "https://static-content.regulaforensics.com/Icons/Logos/Regula-logo.svg"
@@ -65,7 +65,7 @@ tags:
   - name: document_model
     x-displayName: Document Model
     description: |
-      **Choosen Document model:**
+      **Chosen Document model:**
       <SchemaDefinition schemaRef="#/components/schemas/ChosenDocumentType" />
       **Candidates model:**
       <SchemaDefinition schemaRef="#/components/schemas/DocumentTypesCandidates" />
@@ -73,7 +73,6 @@ tags:
     x-displayName: Authenticity Model
     description: |
       <SchemaDefinition schemaRef="#/components/schemas/AuthenticityCheckResult" />
-
 
 x-tagGroups:
   - name: Requests
@@ -91,12 +90,6 @@ x-tagGroups:
 
 components:
   schemas:
-    Status:
-      $ref: "./rt-status.yml#/components/schemas/Status"
-    Text:
-      $ref: "./rt-text.yml#/components/schemas/Text"
-    Images:
-      $ref: "./rt-images.yml#/components/schemas/Images"
     DocumentImage:
       $ref: "./common.yml#/components/schemas/ImageData"
     TransactionImage:
@@ -105,7 +98,3 @@ components:
       $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentTypesCandidatesList"
     ChosenDocumentType:
       $ref: "./rt-doc-type-old.yml#/components/schemas/OneCandidate"
-    AuthenticityCheckResult:
-      $ref: "./rt-authenticity.yml#/components/schemas/AuthenticityCheckResult"
-    AuthenticityResultType:
-      $ref: "./authenticity/e-result-type.yml#/components/schemas/AuthenticityResultType"

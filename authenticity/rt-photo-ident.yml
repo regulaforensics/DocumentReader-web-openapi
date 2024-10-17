@@ -1,12 +1,16 @@
 openapi: 3.0.3
 components:
   schemas:
-
     PhotoIdentResult:
-      title: "Photo Ident Check"
+      title: "PhotoIdentResult"
       allOf:
         - $ref: "../rt-authenticity.yml#/components/schemas/AuthenticityCheckResultItem"
         - type: object
+          required:
+            - LightIndex
+            - Area
+            - SourceImage
+            - ResultImages
           properties:
             LightIndex:
               $ref: "../common.yml#/components/schemas/Light"
@@ -26,11 +30,19 @@ components:
               type: integer
             Angle:
               type: integer
+            Reserved1:
+              type: integer
+            Reserved2:
+              type: integer
             Reserved3:
               type: integer
 
     RawImageContainerList:
+      title: "RawImageContainerList"
       type: object
+      required:
+        - Count
+        - Images
       properties:
         Count:
           type: integer

@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info:
-  version: 6.9.0
+  version: 7.4.0
   title: Regula Document Reader Web API
 
 paths:
@@ -29,17 +29,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  OutData:
-                    $ref: '#/components/schemas/OutData'
-                  InData:
-                    $ref: '#/components/schemas/InData'
-                  tag:
-                    type: string
-                  transactionId:
-                    type: string
-                    format: uuid
+                $ref: '#/components/schemas/TransactionProcessResult'
         "400":
           description: "Bad request. Check your input data."
         "403":
@@ -97,35 +87,12 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  ChipPage:
-                    $ref: "./common.yml#/components/schemas/RfidLocation"
-                  ProcessingFinished:
-                    $ref: "./p-process.yml#/components/schemas/ProcessingStatus"
-                  ContainerList:
-                    $ref: "./rt.yml#/components/schemas/ContainerList"
-                  TransactionInfo:
-                    $ref: "./p-process.yml#/components/schemas/TransactionInfo"
-                  log:
-                    description: "Base64 encoded transaction processing log"
-                    type: string
-                  passBackObject:
-                    type: object
-                    description: "Free-form object provided in request. See passBackObject property of ProcessRequest."
-                    additionalProperties: true
-                  morePagesAvailable:
-                    type: integer
-                  elapsedTime:
-                    type: integer
-                    description: "Time the document processing has taken, ms."
-                  CoreLibResultCode:
-                    type: integer
-
+                $ref: '#/components/schemas/TransactionProcessResponse'
         "400":
           description: "Bad request. Check your input data."
         "403":
           description: "Bad license. Either server or request does not contain valid license."
+
   /transaction/{transactionId}/file:
     get:
       parameters:
@@ -155,6 +122,7 @@ paths:
                 format: binary
         "404":
           description: "File not found"
+
   /tag/{tagId}:
     delete:
       parameters:
@@ -178,6 +146,7 @@ paths:
           description: "Bad request. Check your input data."
         "403":
           description: "Bad license. Either server or request does not contain valid license."
+
   /tag/{tagId}/transactions:
     get:
       parameters:
@@ -205,6 +174,7 @@ paths:
 components:
   schemas:
     ListTransactionsByTagResponse:
+      title: "ListTransactionsByTagResponse"
       type: object
       properties:
         items:
@@ -214,7 +184,9 @@ components:
         metadata:
           type: object
           additionalProperties: true
+
     GetTransactionsByTagResponse:
+      title: "GetTransactionsByTagResponse"
       type: object
       properties:
         id:
@@ -228,7 +200,34 @@ components:
           type: string
           format: 'date-time'
           description: "Last time updated"
+
+    TransactionProcessResult:
+      title: "TransactionProcessResult"
+      type: object
+      properties:
+        OutData:
+          $ref: '#/components/schemas/OutData'
+        InData:
+          $ref: '#/components/schemas/InData'
+        tag:
+          type: string
+        transactionId:
+          type: string
+          format: uuid
+
+    TransactionProcessResponse:
+      title: "TransactionProcessResponse"
+      allOf:
+        - type: object
+          required:
+            - CoreLibResultCode
+          properties:
+            CoreLibResultCode:
+              type: integer
+        - $ref: "./p-process.yml#/components/schemas/ProcessResponse"
+
     TransactionProcessGetResponse:
+      title: "TransactionProcessGetResponse"
       type: object
       properties:
         transactionId:
@@ -242,6 +241,7 @@ components:
           $ref: '#/components/schemas/InData'
 
     OutData:
+      title: "OutData"
       type: object
       properties:
         url:
@@ -253,6 +253,7 @@ components:
             $ref: "#/components/schemas/OutDataTransactionImagesFieldValue"
 
     InData:
+      title: "InData"
       type: object
       properties:
         video:
@@ -272,7 +273,10 @@ components:
             $ref: "#/components/schemas/InDataTransactionImagesFieldValue"
 
     TransactionProcessRequest:
+      title: "TransactionProcessRequest"
       type: object
+      required:
+        - processParam
       properties:
         processParam:
           $ref: "./p-process.yml#/components/schemas/ProcessParams"
@@ -299,10 +303,9 @@ components:
           description: "Free-form object to be included in response. Must be object, not list or simple value.
                 Do not affect document processing. Use it freely to pass your app params. Stored in process logs."
           additionalProperties: true
-      required:
-        - processParam
 
     InDataTransactionImagesFieldValue:
+      title: "InDataTransactionImagesFieldValue"
       type: object
       properties:
         light:
@@ -316,6 +319,7 @@ components:
           description: "Image url"
 
     OutDataTransactionImagesFieldValue:
+      title: "OutDataTransactionImagesFieldValue"
       type: object
       properties:
         fieldType:
@@ -331,6 +335,7 @@ components:
           description: "Image url"
 
     TransactionScenarioRequest:
+      title: "TransactionScenarioRequest"
       type: object
       properties:
         scenario:

@@ -1,9 +1,8 @@
 openapi: 3.0.3
 components:
   schemas:
-
     TextResult:
-      title: "Text"
+      title: "TextResult"
       allOf:
         - type: object
           required:
@@ -14,12 +13,14 @@ components:
         - $ref: "./rt.yml#/components/schemas/ResultItem"
 
     Text:
+      title: "Text"
       type: object
       description: "Contains all document text fields data with validity and cross-source compare checks"
       required:
         - status
         - validityStatus
         - comparisonStatus
+        - dateFormat
         - fieldList
         - availableSourceList
       properties:
@@ -32,6 +33,9 @@ components:
         comparisonStatus:
           description: "Overall status of data comparison from different sources for each text field"
           $ref: "./common.yml#/components/schemas/CheckResult"
+        dateFormat:
+          description: "Date format"
+          type: string
         fieldList:
           type: array
           items:
@@ -42,10 +46,13 @@ components:
             $ref: "#/components/schemas/TextAvailableSource"
 
     TextField:
+      title: "TextField"
       type: object
       required:
         - fieldType
         - fieldName
+        - lcid
+        - lcidName
         - status
         - validityStatus
         - comparisonStatus
@@ -61,6 +68,9 @@ components:
           type: string
         lcid:
           $ref: "./e-lcid.yml#/components/schemas/LCID"
+        lcidName:
+          description: "LCID name"
+          type: string
         status:
           description: "Overall status of all checks from all values"
           $ref: "./common.yml#/components/schemas/CheckResult"
@@ -90,13 +100,16 @@ components:
           items:
             $ref: "#/components/schemas/CrossSourceValueComparison"
 
-    # todo originalValidity очн путает, может в validityList сделать validityList = originalValidity && validityList
+    # todo originalValidity очень путает, может в validityList сделать validityList = originalValidity && validityList
     TextFieldValue:
+      title: "TextFieldValue"
       type: object
       required:
         - value
         - pageIndex
         - source
+        - originalValidity
+        - probability
       properties:
         source:
           $ref: "./common.yml#/components/schemas/Source"
@@ -106,6 +119,8 @@ components:
         originalValue:
           description: "Original value as seen in the document"
           type: string
+        originalValidity:
+          $ref: "./common.yml#/components/schemas/CheckResult"
         originalSymbols:
           type: array
           items:
@@ -125,7 +140,11 @@ components:
           $ref: "./common.yml#/components/schemas/RfidOrigin"
 
     OriginalSymbol:
+      title: "OriginalSymbol"
       type: object
+      required:
+        - code
+        - probability
       properties:
         code:
           description: "Unicode symbol code"
@@ -140,6 +159,7 @@ components:
           $ref: "./common.yml#/components/schemas/RectangleCoordinates"
 
     SourceValidity:
+      title: "SourceValidity"
       type: object
       required:
         - source
@@ -151,6 +171,7 @@ components:
           $ref: "./common.yml#/components/schemas/CheckResult"
 
     CrossSourceValueComparison:
+      title: "CrossSourceValueComparison"
       type: object
       required:
         - sourceLeft
@@ -165,6 +186,7 @@ components:
           $ref: "./common.yml#/components/schemas/CheckResult"
 
     TextAvailableSource:
+      title: "TextAvailableSource"
       type: object
       required:
         - source
