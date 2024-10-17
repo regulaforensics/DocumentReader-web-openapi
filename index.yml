@@ -39,6 +39,10 @@ paths:
     $ref: "./p-transaction.yml#/paths/~1tag~1{tagId}~1transactions"
   /api/ping:
     $ref: "./p-ping.yml#/paths/~1ping"
+  /api/healthz:
+    $ref: "./p-healthcheck.yml#/paths/~1healthz"
+  /api/readyz:
+    $ref: "./p-healthcheck.yml#/paths/~1readyz"
 
 tags:
   - name: process
@@ -75,6 +79,7 @@ x-tagGroups:
     tags:
       - process
       - transaction
+      - healthcheck
   - name: Models
     tags:
       - status_model
