@@ -40,7 +40,7 @@ components:
           description: Indexes of groups that aren't read
           type: array
           items:
-            type: integer
+            $ref: "./e-rfid-data-file-type.yml#/components/schemas/RfidDataFileType"
 
     RfidDG1:
       title: "RfidDG1"
