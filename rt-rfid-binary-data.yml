@@ -27,15 +27,193 @@ components:
       title: "BinaryData"
       description: "Structure is used for storing the results of one bar-code module reading."
       type: object
-      required:
-        - RFID_DG1
-        - RFID_Session_Data
-        - RFID_ePassp_Directory
       properties:
+        RFID_Authentication_Info:
+          type: object
+          additionalProperties: true
+        RFID_MIFARE_Data_Validity:
+          type: object
+          additionalProperties: true
+        RFID_MIFARE_Data:
+          type: object
+          additionalProperties: true
+        RFID_EF_COM:
+          type: object
+          additionalProperties: true
         RFID_DG1:
           $ref: "#/components/schemas/RfidDG1"
+        RFID_DG2:
+          type: object
+          additionalProperties: true
+        RFID_DG3:
+          type: object
+          additionalProperties: true
+        RFID_DG4:
+          type: object
+          additionalProperties: true
+        RFID_DG5:
+          type: object
+          additionalProperties: true
+        RFID_DG6:
+          type: object
+          additionalProperties: true
+        RFID_DG7:
+          type: object
+          additionalProperties: true
+        RFID_DG8:
+          type: object
+          additionalProperties: true
+        RFID_DG9:
+          type: object
+          additionalProperties: true
+        RFID_DG10:
+          type: object
+          additionalProperties: true
+        RFID_DG11:
+          type: object
+          additionalProperties: true
+        RFID_DG12:
+          type: object
+          additionalProperties: true
+        RFID_DG13:
+          type: object
+          additionalProperties: true
+        RFID_DG14:
+          type: object
+          additionalProperties: true
+        RFID_DG15:
+          type: object
+          additionalProperties: true
+        RFID_DG16:
+          type: object
+          additionalProperties: true
+        RFID_EF_SOD:
+          type: object
+          additionalProperties: true
+        eID_DG1:
+          type: object
+          additionalProperties: true
+        eID_DG2:
+          type: object
+          additionalProperties: true
+        eID_DG3:
+          type: object
+          additionalProperties: true
+        eID_DG4:
+          type: object
+          additionalProperties: true
+        eID_DG5:
+          type: object
+          additionalProperties: true
+        eID_DG6:
+          type: object
+          additionalProperties: true
+        eID_DG7:
+          type: object
+          additionalProperties: true
+        eID_DG8:
+          type: object
+          additionalProperties: true
+        eID_DG9:
+          type: object
+          additionalProperties: true
+        eID_DG10:
+          type: object
+          additionalProperties: true
+        eID_DG11:
+          type: object
+          additionalProperties: true
+        eID_DG12:
+          type: object
+          additionalProperties: true
+        eID_DG13:
+          type: object
+          additionalProperties: true
+        eID_DG14:
+          type: object
+          additionalProperties: true
+        eID_DG15:
+          type: object
+          additionalProperties: true
+        eID_DG16:
+          type: object
+          additionalProperties: true
+        eID_DG17:
+          type: object
+          additionalProperties: true
+        eID_DG18:
+          type: object
+          additionalProperties: true
+        eID_DG19:
+          type: object
+          additionalProperties: true
+        eID_DG20:
+          type: object
+          additionalProperties: true
+        eID_DG21:
+          type: object
+          additionalProperties: true
+        eDL_COM:
+          type: object
+          additionalProperties: true
+        eDL_SOD:
+          type: object
+          additionalProperties: true
+        eDL_DG1:
+          type: object
+          additionalProperties: true
+        eDL_DG2:
+          type: object
+          additionalProperties: true
+        eDL_DG3:
+          type: object
+          additionalProperties: true
+        eDL_DG4:
+          type: object
+          additionalProperties: true
+        eDL_DG5:
+          type: object
+          additionalProperties: true
+        eDL_DG6:
+          type: object
+          additionalProperties: true
+        eDL_DG7:
+          type: object
+          additionalProperties: true
+        eDL_DG8:
+          type: object
+          additionalProperties: true
+        eDL_DG9:
+          type: object
+          additionalProperties: true
+        eDL_DG10:
+          type: object
+          additionalProperties: true
+        eDL_DG11:
+          type: object
+          additionalProperties: true
+        eDL_DG12:
+          type: object
+          additionalProperties: true
+        eDL_DG13:
+          type: object
+          additionalProperties: true
+        eDL_DG14:
+          type: object
+          additionalProperties: true
+        Visible_Digital_Seal:
+          type: object
+          additionalProperties: true
+        Visible_Digital_Seal_NC:
+          type: object
+          additionalProperties: true
+        Digital_Signature:
+          type: object
+          additionalProperties: true
         RFID_Session_Data:
           $ref: "#/components/schemas/RfidSessionData"
+        RFID_Session_Data_Status:
+          $ref: "./rt-status.yml#/components/schemas/detailsRFID"
         RFID_ePassp_Directory:
           description: Indexes of groups that aren't read
           type: array
