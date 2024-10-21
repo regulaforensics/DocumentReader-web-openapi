@@ -6,6 +6,10 @@ on:
       title:
         description: "Title For PR's"
         required: true
+      branch:
+        description: "OpenAPI branch"
+        required: true
+        default: "develop"
 
 jobs:
 
@@ -16,7 +20,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: 'DocumentReader-web-openapi'
-          ref: 'develop'
+          ref: ${{ github.event.inputs.branch }}
       - name: Checkout JS Client Repo
         uses: actions/checkout@v4
         with:
@@ -55,7 +59,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: 'DocumentReader-web-openapi'
-          ref: 'develop'
+          ref: ${{ github.event.inputs.branch }}
       - name: Checkout Java Client Repo
         uses: actions/checkout@v4
         with:
@@ -87,7 +91,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: 'DocumentReader-web-openapi'
-          ref: 'develop'
+          ref: ${{ github.event.inputs.branch }}
       - name: Checkout Python Client Repo
         uses: actions/checkout@v4
         with:
@@ -119,7 +123,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: 'DocumentReader-web-openapi'
-          ref: 'develop'
+          ref: ${{ github.event.inputs.branch }}
       - name: Checkout C# Client Repo
         uses: actions/checkout@v4
         with:
