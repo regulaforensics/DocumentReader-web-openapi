@@ -98,3 +98,5 @@ components:
       $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentTypesCandidatesList"
     ChosenDocumentType:
       $ref: "./rt-doc-type-old.yml#/components/schemas/OneCandidate"
+    RFIDPKDResourceType:
+      $ref: "./e-rfid-pkd-resourcetype.yml#/components/schemas/RFIDPKDResourceType"
