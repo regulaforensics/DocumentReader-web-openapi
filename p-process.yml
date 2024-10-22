@@ -368,7 +368,7 @@ components:
           type: boolean
           # default false
         forceBarcodeChecks:
-          description: "Allows you to bypass the minimum conditions that should be met to perform the barcode format check"
+          description: "Allows you to fail both the Barcode format check and overall statuses of the document if the Digital signature check is not performed"
           type: boolean
           # default: false
         parseBarcodes:
