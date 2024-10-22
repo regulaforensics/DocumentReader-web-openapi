@@ -46,7 +46,7 @@ paths:
 
 tags:
   - name: process
-    description: Everything about perfoming request and parsing response
+    description: Everything about performing request and parsing response
   - name: status_model
     x-displayName: Status Model
     description: |
