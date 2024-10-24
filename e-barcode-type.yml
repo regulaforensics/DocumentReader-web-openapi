@@ -2,6 +2,7 @@ openapi: 3.0.3
 components:
   schemas:
     BarcodeType:
+      title: "BarcodeType"
       type: integer
       description: "Enumeration contains the types of barcodes that can be processed"
       enum:
@@ -25,6 +26,7 @@ components:
         - 17
         - 18
         - 19
+        - 20
       x-enum-varnames:
         - "UNKNOWN"
         - "CODE128"
@@ -46,24 +48,26 @@ components:
         - "ALL_1D"
         - "CODE11"
         - "JABCODE"
+        - "END"
       x-enum-descriptions:
-        - "Unknown"
-        - "Code 128"
-        - "Code 39"
-        - "EAN-8"
-        - "ITF"
-        - "PDF417"
-        - "STF"
-        - "MTF"
-        - "IATA"
-        - "Codabar"
-        - "UPC-A"
-        - "Code 93"
-        - "UPC-E"
-        - "EAN-13"
-        - "QR code"
-        - "Aztec code"
-        - "Datamatrix"
-        - "All 1D barcodes"
-        - "Code 11"
+        - "Unknown type"
+        - "One-dimensional bar-code, ISO 15417 (ANSI/AIM BC4-1999 Code 128)"
+        - "One-dimensional bar-code, ISO 16388 (ANSI/AIM BC1-1995 Code 39)"
+        - "One-dimensional bar-code, EAN8, ISO 15418"
+        - "One-dimensional bar-code, Interleaved 2 of 5, ISO 16390 (ANSI/AIM BC2-1995 Interleaved 2 of 5)"
+        - "Two-dimensional bar-code, ISO 15438 (AIM USS PDF417)"
+        - "One-dimensional bar-code, Standard 2 of 5 (Industrial)"
+        - "One-dimensional bar-code, Matrix 2 of 5"
+        - "One-dimensional bar-code, IATA 2 of 5 (Airline)"
+        - "One-dimensional bar-code, (ANSI/AIM BC3-1995, USS - Codabar)"
+        - "One-dimensional bar-code, UPC-A"
+        - "One-dimensional bar-code, (ANSI/AIM BC5-1995, USS - Code 93)"
+        - "One-dimensional bar-code, UPC-E"
+        - "One-dimensional bar-code, EAN13, ISO 15418"
+        - "Two-dimensional QRCODE bar-code"
+        - "Two-dimensional AZTEC bar-code"
+        - "Two-dimensional DATAMATRIX bar-code"
+        - "Type for internal use, representing all 1D bar-codes"
+        - "One-dimensional bar-code CODE11"
         - "JAB code"
+        - "For internal use"

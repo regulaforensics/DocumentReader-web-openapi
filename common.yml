@@ -1,6 +1,4 @@
 openapi: 3.0.3
-
-
 components:
   parameters:
     x-request:
@@ -12,10 +10,12 @@ components:
 
   schemas:
     PageIndex:
+      title: "PageIndex"
       description: "Page index of the image from input list"
       type: integer
 
     Source:
+      title: "Source"
       description: "Document data sources"
       type: string
       enum:
@@ -24,20 +24,24 @@ components:
         - "BARCODE"
         - "RFID"
         - "MAGNETIC"
+        - "EXTERNAL"
       x-enum-varnames:
         - "MRZ"
         - "VISUAL"
         - "BARCODE"
         - "RFID"
         - "MAGNETIC"
+        - "EXTERNAL"
       x-enum-descriptions:
         - "Machine readable zone (MRZ)"
         - "Visual zone"
         - "Barcode"
         - "RFID"
         - "Magnetic"
+        - "External"
 
     CheckResult:
+      title: "CheckResult"
       type: integer
       description: "0 - result is negative; 1 - result is positive; 2 - сheck was not performed"
       enum:
@@ -53,8 +57,8 @@ components:
         - "Check was performed and result is POSITIVE"
         - "Check was NOT PERFORMED"
 
-    # todo update x-enum-descriptions
     Scenario:
+      title: "Scenario"
       type: string
       description: "Document processing scenario"
       enum:
@@ -116,6 +120,7 @@ components:
         - "Scenario for obtaining an original image without any processing"
 
     ImageData:
+      title: "ImageData"
       type: object
       required:
         - image
@@ -124,18 +129,21 @@ components:
           $ref: "#/components/schemas/ImageBase64"
 
     ImageTransactionData:
+      title: "ImageTransactionData"
       type: object
       properties:
         image:
           $ref: './rt-images.yml#/components/schemas/ImagesFieldValue'
 
     ImageBase64:
+      title: "ImageBase64"
       description: "Base64 encoded image"
       type: string
       format: base64
       example: "Base64 encoded image"
 
     RectangleCoordinates:
+      title: "RectangleCoordinates"
       description: "Coordinates of the rectangle region on a document image(result type 1). Represented by two points - (left, top) + (right, bottom)"
       type: object
       required:
@@ -154,6 +162,7 @@ components:
           type: integer
 
     RfidLocation:
+      title: "RfidLocation"
       type: integer
       description: "Determines the presence and location of an RFID chip in a document. 0 - no rfid chip; 1 - chip is located in the document data page; 2 - chip is located in the back page or inlay of the document"
       enum:
@@ -170,10 +179,14 @@ components:
         - "BACK_PAGE"
 
     RfidOrigin:
+      title: "RfidOrigin"
       type: object
       description: "Location of data in RFID chip"
       required:
         - dg
+        - dgTag
+        - tagEntry
+        - entryView
       properties:
         dg:
           description: "Source data group file"
@@ -189,26 +202,145 @@ components:
           type: integer
 
     Light:
+      title: "Light"
       type: integer
       description: "Image light index"
       enum:
-        - 0
-        - 6
-        - 24
-        - 128
+        - 0x00000000
+        - 0x00000001
+        - 0x00000002
+        - 0x00000004
+        - 0x00800000
+        - 0x00000006
+        - 0x00000008
+        - 0x00000010
+        - 0x01000000
+        - 0x00000018
+        - 0x02000000
+        - 0x00000080
+        - 0x04000000
+        - 0x08000000
+        - 0x10000000
+        - 0x00000100
+        - 0x00000400
+        - 0x00000800
+        - 0x00000200
+        - 0x00001000
+        - 0x00002000
+        - 0x00000C00
+        - 0x80000000
+        - 0x90000000
+        - 0xA0000000
+        - 0xB0000000
+        - 0xC0000000
+        - 0x00000020
+        - 0x00000040
+        - 0x00010000
+        - 0x00004000
+        - 0x00040000
+        - 0x00020000
+        - 0x00008000
+        - 0x01000000
+        - 0x04000000
+        - 0x00000040
+        - 0x00000020
+        - 0x00080000
+        - 0x00100000
+        - 0x00200000
+        - 0x00400000
       x-enum-descriptions:
-        - "No Light"
-        - "White"
-        - "Infrared"
-        - "Ultraviolet"
+        - "Lighting schemes are off"
+        - "OVI scheme"
+        - "Upper/lower lighters of white light scheme"
+        - "Side lighters of white light scheme"
+        - "General white light without separate control of side and upper/lower lighters scheme"
+        - "Upper/lower and side lighters of white light scheme"
+        - "Upper/lower lighters of IR light scheme"
+        - "Side lighters of IR light scheme"
+        - "General IR light without separate control of side and upper/lower lighters scheme"
+        - "Upper/lower and side lighters of IR light scheme"
+        - "general white image converted to grayscale"
+        - "General UV light scheme"
+        - "OVD light for hologram visualization"
+        - "Video detection light for internal use only"
+        - "Light IR 870 oblique"
+        - "IR luminescence"
+        - "Left lighter of white coaxial light scheme"
+        - "Right lighter of white coaxial light scheme"
+        - "Coaxial white light without separate control of left and right lighters scheme"
+        - "IR720"
+        - "IR940"
+        - "Right and left lighters of white coaxial light scheme"
+        - "For internal use"
+        - "For internal use"
+        - "For internal use"
+        - "For internal use"
+        - "For internal use"
+        - "Transmitted"
+        - "Transmitted IR"
+        - "Transmitted AntiStokes"
+        - "Transmitted IR940"
+        - "OVD right"
+        - "OVD left"
+        - "IR 700"
+        - "Front IR870 (mod. 8803)"
+        - "OVD light (hologram visualization) (mod. 8850)"
+        - "For internal use"
+        - "For internal use"
+        - "UVС 254 (mod. 88X0)"
+        - "UVB 313 (mod. 88X0)"
+        - "White oblique light"
+        - "For internal use"
       x-enum-varnames:
         - "OFF"
+        - "OVI"
+        - "WHITE_TOP"
+        - "WHITE_SIDE"
+        - "WHITE_FRONT"
         - "WHITE"
+        - "IR_TOP"
+        - "IR_SIDE"
+        - "IR_FRONT"
         - "IR"
+        - "WHITE_GRAY"
         - "UV"
+        - "OVD"
+        - "VIDEODETECTION"
+        - "IR_870_OBL"
+        - "IR_LUMINESCENCE"
+        - "AXIAL_WHITE_LEFT"
+        - "AXIAL_WHITE_RIGHT"
+        - "AXIAL_WHITE_FRONT"
+        - "IR_720"
+        - "IR_940"
+        - "AXIAL_WHITE_FULL"
+        - "RAW_DATA"
+        - "RAW_DATA_GRBG"
+        - "RAW_DATA_GBGR"
+        - "RAW_DATA_RGGB"
+        - "RAW_DATA_BGGR"
+        - "TRANSMITTED"
+        - "TRANSMITTED_IR"
+        - "ANTI_STOKES"
+        - "TRANSMITTED_IR940"
+        - "OVD_RIGHT"
+        - "OVD_LEFT"
+        - "IR_700"
+        - "IR_870"
+        - "HOLO"
+        - "IR_BOTTOM"
+        - "WHITE_BOTTOM"
+        - "UVC"
+        - "UVB"
+        - "WHITE_OBL"
+        - "WHITE_SPECIAL"
 
     Point:
+      title: "Point"
       type: object
+      required:
+        - x
+        - y
       properties:
         x:
           type: integer
@@ -216,18 +348,21 @@ components:
           type: integer
 
     License:
+      title: "License"
       description: "Base64 encoded data"
       type: string
       format: byte
       example: "Base64 encoded data"
 
     EncryptedRCL:
+      title: "EncryptedRCL"
       description: "Base64 encoded data"
       type: string
       format: byte
       example: "Base64 encoded data"
 
     FaceApi:
+      title: "FaceApi"
       type: object
       properties:
         url:
@@ -246,7 +381,8 @@ components:
               type: integer
               description: "The maximum number of results to be returned."
             threshold:
-              type: float
+              type: number
+              format: float
               description: "The similarity threshold."
             group_ids:
               type: array

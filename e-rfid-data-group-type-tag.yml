@@ -1,0 +1,177 @@
+openapi: 3.0.3
+components:
+  schemas:
+    RfidDataGroupTypeTag:
+      title: "RfidDataGroupTypeTag"
+      type: integer
+      description: "Enumeration representing RFID Data Group Types.
+      Constants with prefix  correspond to the informational data groups of ePassport
+      application, with prefix EID_ – those of eID application, with prefix EDL_ –
+      eDL application"
+      enum:
+        - 0x60
+        - 0x61
+        - 0x75
+        - 0x63
+        - 0x76
+        - 0x65
+        - 0x66
+        - 0x67
+        - 0x68
+        - 0x69
+        - 0x6A
+        - 0x6B
+        - 0x6C
+        - 0x6D
+        - 0x6E
+        - 0x6F
+        - 0x70
+        - 0x77
+        - 0x61
+        - 0x62
+        - 0x63
+        - 0x64
+        - 0x65
+        - 0x66
+        - 0x67
+        - 0x68
+        - 0x69
+        - 0x6A
+        - 0x6B
+        - 0x6C
+        - 0x6D
+        - 0x6E
+        - 0x6F
+        - 0x70
+        - 0x71
+        - 0x72
+        - 0x73
+        - 0x74
+        - 0x75
+        - 0x60
+        - 0x77
+        - 0x77
+        - 0x61
+        - 0x6B
+        - 0x6C
+        - 0x65
+        - 0x67
+        - 0x75
+        - 0x63
+        - 0x76
+        - 0x70
+        - 0x6D
+        - 0x71
+        - 0x6F
+        - 0x6E
+      x-enum-descriptions:
+        - "Common Data Group Type"
+        - "Data Group 1"
+        - "Data Group 2"
+        - "Data Group 3"
+        - "Data Group 4"
+        - "Data Group 5"
+        - "Data Group 6"
+        - "Data Group 7"
+        - "Data Group 8"
+        - "Data Group 9"
+        - "Data Group 10"
+        - "Data Group 11"
+        - "Data Group 12"
+        - "Data Group 13"
+        - "Data Group 14"
+        - "Data Group 15"
+        - "Data Group 16"
+        - "Start of Data"
+        - "Extended Interoperable Data, Data Group 1"
+        - "Extended Interoperable Data, Data Group 2"
+        - "Extended Interoperable Data, Data Group 3"
+        - "Extended Interoperable Data, Data Group 4"
+        - "Extended Interoperable Data, Data Group 5"
+        - "Extended Interoperable Data, Data Group 6"
+        - "Extended Interoperable Data, Data Group 7"
+        - "Extended Interoperable Data, Data Group 8"
+        - "Extended Interoperable Data, Data Group 9"
+        - "Extended Interoperable Data, Data Group 10"
+        - "Extended Interoperable Data, Data Group 11"
+        - "Extended Interoperable Data, Data Group 12"
+        - "Extended Interoperable Data, Data Group 13"
+        - "Extended Interoperable Data, Data Group 14"
+        - "Extended Interoperable Data, Data Group 15"
+        - "Extended Interoperable Data, Data Group 16"
+        - "Extended Interoperable Data, Data Group 17"
+        - "Extended Interoperable Data, Data Group 18"
+        - "Extended Interoperable Data, Data Group 19"
+        - "Extended Interoperable Data, Data Group 20"
+        - "Extended Interoperable Data, Data Group 21"
+        - "Extended Length Data, Common Data Group Type"
+        - "Extended Length Data, Start of Data"
+        - "Extended Length Data, Certificate Holder Authorization"
+        - "Extended Length Data, Data Group 1"
+        - "Extended Length Data, Data Group 2"
+        - "Extended Length Data, Data Group 3"
+        - "Extended Length Data, Data Group 4"
+        - "Extended Length Data, Data Group 5"
+        - "Extended Length Data, Data Group 6"
+        - "Extended Length Data, Data Group 7"
+        - "Extended Length Data, Data Group 8"
+        - "Extended Length Data, Data Group 9"
+        - "Extended Length Data, Data Group 11"
+        - "Extended Length Data, Data Group 12"
+        - "Extended Length Data, Data Group 13"
+        - "Extended Length Data, Data Group 14"
+      x-enum-varnames:
+        - "COM"
+        - "DG1"
+        - "DG2"
+        - "DG3"
+        - "DG4"
+        - "DG5"
+        - "DG6"
+        - "DG7"
+        - "DG8"
+        - "DG9"
+        - "DG10"
+        - "DG11"
+        - "DG12"
+        - "DG13"
+        - "DG14"
+        - "DG15"
+        - "DG16"
+        - "SOD"
+        - "EID_DG1"
+        - "EID_DG2"
+        - "EID_DG3"
+        - "EID_DG4"
+        - "EID_DG5"
+        - "EID_DG6"
+        - "EID_DG7"
+        - "EID_DG8"
+        - "EID_DG9"
+        - "EID_DG10"
+        - "EID_DG11"
+        - "EID_DG12"
+        - "EID_DG13"
+        - "EID_DG14"
+        - "EID_DG15"
+        - "EID_DG16"
+        - "EID_DG17"
+        - "EID_DG18"
+        - "EID_DG19"
+        - "EID_DG20"
+        - "EID_DG21"
+        - "EDL_COM"
+        - "EDL_SOD"
+        - "EDL_CE"
+        - "EDL_DG1"
+        - "EDL_DG2"
+        - "EDL_DG3"
+        - "EDL_DG4"
+        - "EDL_DG5"
+        - "EDL_DG6"
+        - "EDL_DG7"
+        - "EDL_DG8"
+        - "EDL_DG9"
+        - "EDL_DG11"
+        - "EDL_DG12"
+        - "EDL_DG14"

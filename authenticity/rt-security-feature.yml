@@ -1,12 +1,16 @@
 openapi: 3.0.3
 components:
   schemas:
-
     SecurityFeatureResult:
-      title: "Security Feature Check"
+      title: "SecurityFeatureResult"
       allOf:
         - $ref: "../rt-authenticity.yml#/components/schemas/AuthenticityCheckResultItem"
         - type: object
+          required:
+            - ElementType
+            - ElementRect
+            - Visibility
+            - CriticalFlag
           properties:
             ElementType:
               $ref: "../e-security-feature-type.yml#/components/schemas/SecurityFeatureType"

@@ -2,6 +2,7 @@ openapi: 3.0.3
 components:
   schemas:
     DocumentType:
+      title: "DocumentType"
       type: integer
       description: "Possible values for document types"
       enum:
