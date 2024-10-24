@@ -16,11 +16,11 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/DeviceInfo"
+                $ref: "#/components/schemas/DeviceInfoDeprecated"
 
 components:
   schemas:
-    DeviceInfo:
+    DeviceInfoDeprecated:
       type: object
       properties:
         app-name:
