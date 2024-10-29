@@ -31,6 +31,11 @@ components:
         - 21
         - 22
         - 23
+        - 57
+        - 58
+        - 62
+        - 63
+        - 64
         - 101
         - 102
         - 103
@@ -119,6 +124,11 @@ components:
         - "PASSPORT_SOD"
         - "PASSPORT_CVCA"
         - "PASSPORT_COM"
+        - "DTC_DG17"
+        - "DTC_DG18"
+        - "DTC_DG22"
+        - "DTC_DG23"
+        - "DTC_DG24"
         - "ID_DG1"
         - "ID_DG2"
         - "ID_DG3"
