@@ -34,6 +34,7 @@ components:
   schemas:
     DeviceInfo:
       type: object
+      required: [app, licenseId, licenseType, licenseSerial, licenseValidUntil, scenarios, version]
       properties:
         app:
           type: string
@@ -52,6 +53,19 @@ components:
             type: string
         version:
           type: string
+        documentsDatabase:
+          type: object
+          required: [id, version, exportDate, description]
+          properties:
+            id:
+              type: string
+            version:
+              type: string
+            exportDate:
+              type: string
+              format: date
+            description:
+              type: string
       example:
         app: "Regula Document Reader Web API"
         licenseId: "4D43A2AF-E321-496C-9A4E-5A8F3D26DF0E"
@@ -60,3 +74,8 @@ components:
         licenseValidUntil: "9999-12-31T23:59:59Z"
         scenarios: ["Mrz", "Barcode", "Locate"]
         version: "7.5.297907.1721"
+        documentsDatabase:
+          id: "FullAuth"
+          version: "800111"
+          exportDate: "2024-11-11"
+          description: "FullAuth: All documents"
