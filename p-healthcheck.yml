@@ -40,32 +40,42 @@ components:
           type: string
         licenseId:
           type: string
+          nullable: true
         licenseType:
           type: string
+          nullable: true
         licenseSerial:
           type: string
+          nullable: true
         licenseValidUntil:
           type: string
           format: date-time
+          nullable: true
         scenarios:
           type: array
+          nullable: true
           items:
             type: string
         version:
           type: string
+          nullable: true
         documentsDatabase:
           type: object
           required: [id, version, exportDate, description]
           properties:
             id:
               type: string
+              nullable: true
             version:
               type: string
+              nullable: true
             exportDate:
               type: string
               format: date
+              nullable: true
             description:
               type: string
+              nullable: true
       example:
         app: "Regula Document Reader Web API"
         licenseId: "4D43A2AF-E321-496C-9A4E-5A8F3D26DF0E"
