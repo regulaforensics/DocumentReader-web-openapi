@@ -33,47 +33,60 @@ paths:
 components:
   schemas:
     DeviceInfo:
+      description: TBD
       type: object
       required: [app, licenseId, licenseType, licenseSerial, licenseValidUntil, scenarios, version]
       properties:
         app:
+          description: (Should be approved) Application name
           type: string
         licenseId:
+          description: (Should be approved) Unique license identifier
           type: string
           nullable: true
         licenseType:
+          description: (Should be approved) License type
           type: string
           nullable: true
         licenseSerial:
+          description: (Should be approved) License serial number
           type: string
           nullable: true
         licenseValidUntil:
+          description: (Should be approved) License validity date
           type: string
           format: date-time
           nullable: true
         scenarios:
+          description: (Should be approved) List of supported scenarios
           type: array
           nullable: true
           items:
             type: string
         version:
+          description: (Should be approved) Product version
           type: string
           nullable: true
         documentsDatabase:
+          description: TBD
           type: object
           required: [id, version, exportDate, description]
           properties:
             id:
+              description: (Should be approved) The database identifier
               type: string
               nullable: true
             version:
+              description: (Should be approved) The database version
               type: string
               nullable: true
             exportDate:
+              description: (Should be approved) The date of database creation
               type: string
               format: date
               nullable: true
             description:
+              description: (Should be approved) The information what database includes, like the list of supported countries and documents
               type: string
               nullable: true
       example:
