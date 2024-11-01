@@ -33,7 +33,6 @@ paths:
 components:
   schemas:
     DeviceInfo:
-      description: TBD
       type: object
       required: [app, licenseId, licenseType, licenseSerial, licenseValidUntil, scenarios, version]
       properties:
