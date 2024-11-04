@@ -11,7 +11,7 @@ paths:
         - healthcheck
       responses:
         200:
-          description: "Device info"
+          description: "Device info."
           content:
             application/json:
               schema:
@@ -26,9 +26,9 @@ paths:
         - healthcheck
       responses:
         200:
-          description: "License is valid"
+          description: "The license is valid."
         400:
-          description: "License is not valid"
+          description: "The license is not valid."
 
 components:
   schemas:
@@ -37,55 +37,55 @@ components:
       required: [app, licenseId, licenseType, licenseSerial, licenseValidUntil, scenarios, version]
       properties:
         app:
-          description: (Should be approved) Application name
+          description: Application name.
           type: string
         licenseId:
-          description: (Should be approved) Unique license identifier
+          description: Unique license identifier.
           type: string
           nullable: true
         licenseType:
-          description: (Should be approved) License type
+          description: License type.
           type: string
           nullable: true
         licenseSerial:
-          description: (Should be approved) License serial number
+          description: License serial number.
           type: string
           nullable: true
         licenseValidUntil:
-          description: (Should be approved) License validity date
+          description: License validity date.
           type: string
           format: date-time
           nullable: true
         scenarios:
-          description: (Should be approved) List of supported scenarios
+          description: List of supported scenarios.
           type: array
           nullable: true
           items:
             type: string
         version:
-          description: (Should be approved) Product version
+          description: Product version.
           type: string
           nullable: true
         documentsDatabase:
-          description: TBD
+          description: Database information.
           type: object
           required: [id, version, exportDate, description]
           properties:
             id:
-              description: (Should be approved) The database identifier
+              description: Database identifier.
               type: string
               nullable: true
             version:
-              description: (Should be approved) The database version
+              description: Database version.
               type: string
               nullable: true
             exportDate:
-              description: (Should be approved) The date of database creation
+              description: Date of database creation.
               type: string
               format: date
               nullable: true
             description:
-              description: (Should be approved) The information what database includes, like the list of supported countries and documents
+              description: Description of the database contents, such as the list of supported countries and documents.
               type: string
               nullable: true
       example:
