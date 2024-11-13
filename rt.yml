@@ -36,6 +36,7 @@ components:
         - 103
         - 104
         - 105
+        - 109
       x-enum-descriptions:
         - "Contains cropped and rotated with perspective compensation image of document. Single input image can contain multiple document side/pages, which will be returned as separated results. Most of coordinates in other types defined on that image"
         - "Contains MRZ OCR results"
@@ -63,6 +64,7 @@ components:
         - "Contains RFID graphic results"
         - "Contains RFID binary data"
         - "Contains RFID original graphics data"
+        - "Digital Travel Credential data"
       x-enum-varnames:
         - "DOCUMENT_IMAGE"
         - "MRZ_TEXT"
@@ -90,6 +92,7 @@ components:
         - "RFID_GRAPHICS"
         - "RFID_BINARY_DATA"
         - "RFID_ORIGINAL_GRAPHICS"
+        - "DTC_VC"
 
     ResultItem:
       type: object
@@ -133,6 +136,7 @@ components:
           85: "DocumentPositionResult"
           102: "TextDataResult"
           103: "GraphicsResult"
+          109: "DTCVCResult"
 
     ContainerList:
       type: object
@@ -186,6 +190,9 @@ components:
 
     GraphicsResult:
       $ref: "./rt-image-data.yml#/components/schemas/GraphicsResult"
+
+    DTCVCResult:
+      $ref: "./rt-image-data.yml#/components/schemas/DTCVCResult"
 
     DocumentTypesCandidatesResult:
       $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentTypesCandidatesResult"

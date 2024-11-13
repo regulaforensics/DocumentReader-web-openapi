@@ -15,6 +15,24 @@ components:
               $ref: "#/components/schemas/GraphicFieldsList"
         - $ref: "./rt.yml#/components/schemas/ResultItem"
 
+    DTCVCResult:
+      type: object
+      required:
+        - buf_length
+        - light
+        - list_idx
+        - page_idx
+      properties:
+        buf_length:
+          type: integer
+        light:
+          type: integer
+        list_idx:
+          type: integer
+        page_idx:
+          type: integer
+        result_type:
+          $ref: "./rt.yml#/components/schemas/ContainerType"
 
     GraphicFieldsList:
       type: object
