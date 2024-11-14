@@ -430,6 +430,10 @@ components:
           type: boolean
           description: "This parameter is used to generate numeric representation for issuing state and nationality codes"
 #          default: false
+        strictBarcodeDigitalSignatureCheck:
+          type: boolean
+          description: "This parameter if enabled will require all necessary certificates to verify digital signature in barcode data to be present in order for the Barcode format check to succeed."
+#          default: false
       required:
         - scenario
 
