@@ -309,9 +309,14 @@ components:
           # default: false
         imageQa:
           $ref: "#/components/schemas/ImageQA"
-        respectImageQuality:
-          description: "When enabled, image quality checks status affects document optical and overall status. Disabled by default."
+        strictImageQuality:
+          description: "When enabled, the image quality check status affects the document optical and overall status. Disabled by default."
           type: boolean
+          # default: false
+        respectImageQuality:
+          description: "Deprecated. Please use strictImageQuality instead. When enabled, image quality checks status affects document optical and overall status. Disabled by default."
+          type: boolean
+          deprecated: true
           # default: false
         forceDocFormat:
           description: "Force use of specified document format when locating and recognizing document to reduce the number of candidates."
