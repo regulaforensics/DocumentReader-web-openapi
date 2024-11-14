@@ -1,0 +1,103 @@
+openapi: 3.0.3
+
+paths:
+  /healthz:
+    parameters:
+      - $ref: "./common.yml#/components/parameters/x-request"
+    get:
+      summary: "Server healthcheck"
+      operationId: healthz
+      tags:
+        - healthcheck
+      responses:
+        200:
+          description: "Device info."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DeviceInfo"
+  /readyz:
+    parameters:
+      - $ref: "./common.yml#/components/parameters/x-request"
+    get:
+      summary: "License healthcheck"
+      operationId: readyz
+      tags:
+        - healthcheck
+      responses:
+        200:
+          description: "The license is valid."
+        400:
+          description: "The license is not valid."
+
+components:
+  schemas:
+    DeviceInfo:
+      type: object
+      required: [app, licenseId, licenseType, licenseSerial, licenseValidUntil, scenarios, version]
+      properties:
+        app:
+          description: Application name.
+          type: string
+        licenseId:
+          description: Unique license identifier.
+          type: string
+          nullable: true
+        licenseType:
+          description: License type.
+          type: string
+          nullable: true
+        licenseSerial:
+          description: License serial number.
+          type: string
+          nullable: true
+        licenseValidUntil:
+          description: License validity date.
+          type: string
+          format: date-time
+          nullable: true
+        scenarios:
+          description: List of supported scenarios.
+          type: array
+          nullable: true
+          items:
+            type: string
+        version:
+          description: Product version.
+          type: string
+          nullable: true
+        documentsDatabase:
+          description: Database information.
+          type: object
+          required: [id, version, exportDate, description]
+          properties:
+            id:
+              description: Database identifier.
+              type: string
+              nullable: true
+            version:
+              description: Database version.
+              type: string
+              nullable: true
+            exportDate:
+              description: Date of database creation.
+              type: string
+              format: date
+              nullable: true
+            description:
+              description: Description of the database contents, such as the list of supported countries and documents.
+              type: string
+              nullable: true
+      example:
+        app: "Regula Document Reader Web API"
+        licenseId: "4D43A2AF-E321-496C-9A4E-5A8F3D26DF0E"
+        licenseType: "Transactional"
+        licenseSerial: "OL70786"
+        licenseValidUntil: "9999-12-31T23:59:59Z"
+        scenarios: ["Mrz", "Barcode", "Locate"]
+        version: "7.5.297907.1721"
+        documentsDatabase:
+          id: "FullAuth"
+          version: "800111"
+          exportDate: "2024-11-11"
+          description: "FullAuth: All documents"

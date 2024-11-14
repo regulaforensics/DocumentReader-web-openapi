@@ -5,8 +5,11 @@ paths:
     parameters:
       - $ref: "./common.yml#/components/parameters/x-request"
     get:
+      deprecated: true
       summary: "Server health check"
       operationId: ping
+      tags:
+        - healthcheck
       responses:
         200:
           description: "Device info"
