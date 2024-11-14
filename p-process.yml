@@ -427,7 +427,7 @@ components:
 #          default: false
         strictBarcodeDigitalSignatureCheck:
           type: boolean
-          description: "If the certificates required for performing the Digital signature check are missing, this parameter if enabled will make the Barcode format check failed"
+          description: "This parameter if enabled will require all necessary certificates to verify digital signature in barcode data to be present in order for the Barcode format check to succeed."
 #          default: false
       required:
         - scenario
