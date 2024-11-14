@@ -310,7 +310,7 @@ components:
         imageQa:
           $ref: "#/components/schemas/ImageQA"
         strictImageQuality:
-          description: "When enabled, the image quality check status affects the document optical and overall status."
+          description: "When enabled, the image quality check status affects the document optical and overall status. Disabled by default."
           type: boolean
           # default: false
         respectImageQuality:
