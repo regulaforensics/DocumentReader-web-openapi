@@ -192,7 +192,7 @@ components:
       properties:
         generateDTCVC:
           type: boolean
-          description: "This parameter is used to generate DTC-VC"
+          description: "This parameter is used to generate separate DTC-VC data container from RFID session data."
         lcidFilter:
           description: "The list of LCID types to recognize. If empty, values with all LCID types will be extracted. Empty by default."
           type: array

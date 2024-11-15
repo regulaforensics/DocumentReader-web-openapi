@@ -1,0 +1,23 @@
+openapi: 3.0.3
+components:
+  schemas:
+    DTCVCResult:
+      type: object
+      required:
+        - buf_length
+        - light
+        - list_idx
+        - page_idx
+      properties:
+        ByteArray:
+          type: string
+        buf_length:
+          type: integer
+        light:
+          type: integer
+        list_idx:
+          type: integer
+        page_idx:
+          type: integer
+        result_type:
+          $ref: "./rt.yml#/components/schemas/ContainerType"

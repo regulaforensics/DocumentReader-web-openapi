@@ -166,6 +166,7 @@ components:
               - $ref: "#/components/schemas/DocBarCodeInfo"
               - $ref: "#/components/schemas/LicenseResult"
               - $ref: "#/components/schemas/EncryptedRCLResult"
+              - $ref: "#/components/schemas/DTCVCResult"
 
     DocumentPositionResult:
       $ref: "./rt-document-position.yml#/components/schemas/DocumentPositionResult"
@@ -192,7 +193,7 @@ components:
       $ref: "./rt-image-data.yml#/components/schemas/GraphicsResult"
 
     DTCVCResult:
-      $ref: "./rt-image-data.yml#/components/schemas/DTCVCResult"
+      $ref: "./rt-dtc-data.yml#/components/schemas/DTCVCResult"
 
     DocumentTypesCandidatesResult:
       $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentTypesCandidatesResult"
