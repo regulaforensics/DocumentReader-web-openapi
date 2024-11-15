@@ -13,17 +13,5 @@ components:
             - RawImageContainer
           properties:
             RawImageContainer:
-              $ref: "#/components/schemas/RawImageContainerFieldList"
+              $ref: "./common.yml#/components/schemas/ImageData"
         - $ref: "./rt.yml#/components/schemas/ResultItem"
-
-    RawImageContainerFieldList:
-      title: "RawImageContainerFieldList"
-      allOf:
-        - type: object
-          required:
-            - format
-          properties:
-            format:
-              description: "Image format"
-              type: string
-        - $ref: "./common.yml#/components/schemas/ImageData"
