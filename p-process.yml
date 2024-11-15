@@ -179,6 +179,7 @@ components:
           additionalProperties: true
         ImageUrls:
           type: array
+          description: "URL to the document image for processing."
           items:
             type: string
       required:
