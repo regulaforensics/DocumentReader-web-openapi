@@ -15,7 +15,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/DeviceInfo"
+                $ref: "#/components/schemas/Healthcheck"
   /readyz:
     parameters:
       - $ref: "./common.yml#/components/parameters/x-request"
@@ -32,8 +32,8 @@ paths:
 
 components:
   schemas:
-    DeviceInfo:
-      title: "DeviceInfo"
+    Healthcheck:
+      title: "Healthcheck"
       type: object
       required: [app, licenseId, licenseType, licenseSerial, licenseValidUntil, scenarios, version]
       properties:
