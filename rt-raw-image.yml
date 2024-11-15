@@ -4,9 +4,7 @@ components:
 
     DocumentImageResult:
       title: "Document Image"
-      description: "Contains cropped and rotated with perspective compensation image of document.
-        Single input image can contain multiple document side/pages, which will be returned as separated results.
-        Most of coordinates in other types defined on that image"
+      description: "Contains document images after processing."
       allOf:
         - type: object
           required:
