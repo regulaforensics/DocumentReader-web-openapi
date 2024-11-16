@@ -117,6 +117,7 @@ components:
           8: "DocumentTypesCandidatesResult"
           9: "ChosenDocumentTypeResult"
           15: "LexicalAnalysisResult"
+          16: "DocumentImageResult"
           17: "TextDataResult"
           18: "TextDataResult"
           19: "GraphicsResult"
