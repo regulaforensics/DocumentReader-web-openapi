@@ -5,7 +5,7 @@ paths:
     parameters:
       - $ref: "./common.yml#/components/parameters/x-request"
     get:
-      summary: "Server healthcheck"
+      summary: "Server health check"
       operationId: healthz
       tags:
         - healthcheck
@@ -20,7 +20,7 @@ paths:
     parameters:
       - $ref: "./common.yml#/components/parameters/x-request"
     get:
-      summary: "License healthcheck"
+      summary: "License health check"
       operationId: readyz
       tags:
         - healthcheck
@@ -33,7 +33,7 @@ paths:
 components:
   schemas:
     Healthcheck:
-      title: "Healthcheck"
+      title: "Health check"
       type: object
       required: [app, licenseId, licenseType, licenseSerial, licenseValidUntil, scenarios, version]
       properties:
