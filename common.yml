@@ -127,6 +127,9 @@ components:
       properties:
         image:
           $ref: "#/components/schemas/ImageBase64"
+        format:
+          description: "Image format"
+          type: string
 
     ImageTransactionData:
       title: "ImageTransactionData"

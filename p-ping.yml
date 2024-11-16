@@ -19,12 +19,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/DeviceInfoDeprecated"
+                $ref: "#/components/schemas/DeviceInfo"
 
 components:
   schemas:
-    DeviceInfoDeprecated:
-      title: "DeviceInfoDeprecated"
+    DeviceInfo:
+      title: "DeviceInfo"
       type: object
       properties:
         app-name:
