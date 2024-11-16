@@ -6,7 +6,7 @@ paths:
       - $ref: "./common.yml#/components/parameters/x-request"
     get:
       deprecated: true
-      summary: "Server healthcheck"
+      summary: "Server health check"
       operationId: ping
       tags:
         - healthcheck
