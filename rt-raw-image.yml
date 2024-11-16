@@ -4,7 +4,7 @@ components:
 
     DocumentImageResult:
       title: "Document Image"
-      description: "Contains document images after processing."
+      description: "Contains document image."
       allOf:
         - type: object
           required:
