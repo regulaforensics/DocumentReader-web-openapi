@@ -1,7 +1,7 @@
 openapi: 3.0.3
 components:
   schemas:
-    DTCVCResult:
-      title: "DTC"
+    ByteArrayResult:
+      title: "ByteArray"
       allOf:
         - $ref: "./rt.yml#/components/schemas/ResultItem"

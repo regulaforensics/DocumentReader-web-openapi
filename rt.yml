@@ -100,6 +100,8 @@ components:
       required:
         - result_type
       properties:
+        ByteArray:
+          type: string
         buf_length:
           type: integer
         light:
@@ -136,7 +138,7 @@ components:
           85: "DocumentPositionResult"
           102: "TextDataResult"
           103: "GraphicsResult"
-          109: "DTCVCResult"
+          109: "ByteArrayResult"
 
     ContainerList:
       type: object
@@ -166,7 +168,7 @@ components:
               - $ref: "#/components/schemas/DocBarCodeInfo"
               - $ref: "#/components/schemas/LicenseResult"
               - $ref: "#/components/schemas/EncryptedRCLResult"
-              - $ref: "#/components/schemas/DTCVCResult"
+              - $ref: "#/components/schemas/ByteArrayResult"
 
     DocumentPositionResult:
       $ref: "./rt-document-position.yml#/components/schemas/DocumentPositionResult"
@@ -192,8 +194,8 @@ components:
     GraphicsResult:
       $ref: "./rt-image-data.yml#/components/schemas/GraphicsResult"
 
-    DTCVCResult:
-      $ref: "./rt-dtc-data.yml#/components/schemas/DTCVCResult"
+    ByteArrayResult:
+      $ref: "./rt-byte-array-data.yml#/components/schemas/ByteArrayResult"
 
     DocumentTypesCandidatesResult:
       $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentTypesCandidatesResult"
