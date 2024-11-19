@@ -4,4 +4,11 @@ components:
     ByteArrayResult:
       title: "ByteArray"
       allOf:
+        - type: object
+          required:
+            - ByteArray
+          properties:
+            ByteArray:
+              description: "Byte array in base64"
+              type: string
         - $ref: "./rt.yml#/components/schemas/ResultItem"

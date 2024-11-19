@@ -100,8 +100,6 @@ components:
       required:
         - result_type
       properties:
-        ByteArray:
-          type: string
         buf_length:
           type: integer
         light:
