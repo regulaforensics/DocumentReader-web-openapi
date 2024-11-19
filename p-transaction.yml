@@ -10,7 +10,7 @@ paths:
         - in: path
           name: transactionId
           schema:
-            type: integer
+            type: string
             format: uuid
           required: true
           description: Transaction id
@@ -51,7 +51,7 @@ paths:
         - in: path
           name: transactionId
           schema:
-            type: integer
+            type: string
             format: uuid
           required: true
           description: Transaction id
@@ -76,7 +76,7 @@ paths:
         - in: path
           name: transactionId
           schema:
-            type: integer
+            type: string
             format: uuid
           required: true
           description: Transaction id
@@ -132,7 +132,7 @@ paths:
         - in: path
           name: transactionId
           schema:
-            type: integer
+            type: string
             format: uuid
           required: true
           description: Transaction id
@@ -161,7 +161,7 @@ paths:
         - in: path
           name: tagId
           schema:
-            type: integer
+            type: string
             format: uuid
           required: true
           description: Tag id
@@ -218,7 +218,7 @@ components:
       type: object
       properties:
         id:
-          type: integer
+          type: string
           format: uuid
           description: "Transaction id"
         state:
@@ -232,7 +232,7 @@ components:
       type: object
       properties:
         transactionId:
-          type: integer
+          type: string
           format: uuid
         tag:
           type: string

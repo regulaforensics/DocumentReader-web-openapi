@@ -177,12 +177,22 @@ components:
           description: "Free-form object to be included in response. Must be object, not list or simple value.
           Do not affect document processing. Use it freely to pass your app params. Stored in process logs."
           additionalProperties: true
+        dtc:
+          type: string
+        ImageUrls:
+          type: array
+          description: "URLs to the document images for processing."
+          items:
+            type: string
       required:
         - processParam
 
     ProcessParams:
       type: object
       properties:
+        generateDTCVC:
+          type: boolean
+          description: "This parameter is used to generate separate DTC-VC data container from RFID session data."
         lcidFilter:
           description: "The list of LCID types to recognize. If empty, values with all LCID types will be extracted. Empty by default."
           type: array
@@ -309,9 +319,14 @@ components:
           # default: false
         imageQa:
           $ref: "#/components/schemas/ImageQA"
-        respectImageQuality:
-          description: "When enabled, image quality checks status affects document optical and overall status. Disabled by default."
+        strictImageQuality:
+          description: "When enabled, the image quality check status affects the document optical and overall status. Disabled by default."
           type: boolean
+          # default: false
+        respectImageQuality:
+          description: "Deprecated. Please use strictImageQuality instead. When enabled, image quality checks status affects document optical and overall status. Disabled by default."
+          type: boolean
+          deprecated: true
           # default: false
         forceDocFormat:
           description: "Force use of specified document format when locating and recognizing document to reduce the number of candidates."
@@ -424,6 +439,10 @@ components:
         generateNumericCodes:
           type: boolean
           description: "This parameter is used to generate numeric representation for issuing state and nationality codes"
+#          default: false
+        strictBarcodeDigitalSignatureCheck:
+          type: boolean
+          description: "This parameter if enabled will require all necessary certificates to verify digital signature in barcode data to be present in order for the Barcode format check to succeed."
 #          default: false
       required:
         - scenario

@@ -21,6 +21,7 @@ paths:
 components:
   schemas:
     DeviceInfo:
+      title: "DeviceInfo"
       type: object
       properties:
         app-name:

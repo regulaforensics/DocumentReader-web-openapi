@@ -15,7 +15,6 @@ components:
               $ref: "#/components/schemas/GraphicFieldsList"
         - $ref: "./rt.yml#/components/schemas/ResultItem"
 
-
     GraphicFieldsList:
       type: object
       required:
