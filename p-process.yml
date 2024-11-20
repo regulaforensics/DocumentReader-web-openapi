@@ -185,6 +185,9 @@ components:
           description: "Free-form object to be included in response. Must be object, not list or simple value.
           Do not affect document processing. Use it freely to pass your app params. Stored in process logs."
           additionalProperties: true
+        dtc:
+          type: string
+          description: "Digital Travel Credential (DTC-VC) data in base64 format for processing"
         ImageUrls:
           type: array
           description: "URLs to the document images for processing."
@@ -197,6 +200,9 @@ components:
       required:
         - scenario
       properties:
+        generateDTCVC:
+          type: boolean
+          description: "This parameter is used to generate separate DTC-VC data container from RFID session data."
         lcidFilter:
           description: "The list of LCID types to recognize. If empty, values with all LCID types will be extracted. Empty by default."
           type: array
