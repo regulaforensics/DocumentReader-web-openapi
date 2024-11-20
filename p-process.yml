@@ -179,7 +179,7 @@ components:
           additionalProperties: true
         dtc:
           type: string
-          description: "Digital Travel Credential (DTC) data in base64 format for processing"
+          description: "Digital Travel Credential (DTC-VC) data in base64 format for processing"
         ImageUrls:
           type: array
           description: "URLs to the document images for processing."
