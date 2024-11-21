@@ -760,20 +760,27 @@ components:
       type: object
       properties:
         ComputerName:
+          description: "Computer name"
           type: string
         DateTime:
+          description: "Date and time"
           type: string
         DocumentsDatabase:
           $ref: "#/components/schemas/DocumentsDatabase"
         SystemInfo:
+          description: "System information"
           type: string
         Tag:
+          description: "Transaction tag"
           type: string
         TransactionID:
+          description: "Transaction identifier"
           type: string
         UserName:
+          description: "User name"
           type: string
         Version:
+          description: "SDK version"
           type: string
       example:
         "ComputerName": "7cded6852d20"
@@ -783,12 +790,17 @@ components:
 
     DocumentsDatabase:
       type: object
+      description: "Document database information"
       properties:
         Description:
+          description: "Document database description"
           type: string
         ExportDate:
+          description: "Date the document database was created"
           type: string
         ID:
+          description: "Document database identifier"
           type: string
         Version:
+          description: "Document database version"
           type: string
