@@ -445,6 +445,10 @@ components:
           type: boolean
           description: "This parameter if enabled will require all necessary certificates to verify digital signature in barcode data to be present in order for the Barcode format check to succeed."
 #          default: false
+        selectLongestNames:
+          type: boolean
+          description: "Select the longest value from the different value sources and write it to the value field if comparison is done successfully. The parameter applies this logic to the personal names, such as given name, surname, surname and given name, middle name and etc."
+#          default: false
       required:
         - scenario
 
