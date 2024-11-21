@@ -763,9 +763,17 @@ components:
           type: string
         DateTime:
           type: string
+        DocumentsDatabase:
+          $ref: "#/components/schemas/DocumentsDatabase"
+        SystemInfo:
+          type: string
+        Tag:
+          type: string
         TransactionID:
           type: string
         UserName:
+          type: string
+        Version:
           type: string
       example:
         "ComputerName": "7cded6852d20"
@@ -773,3 +781,14 @@ components:
         "TransactionID": "dc5eb444-ad6e-4ebc-8102-d62d5bb56a4e"
         "UserName": "user"
 
+    DocumentsDatabase:
+      type: object
+      properties:
+        Description:
+          type: string
+        ExportDate:
+          type: string
+        ID:
+          type: string
+        Version:
+          type: string
