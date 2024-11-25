@@ -54,6 +54,7 @@ components:
         - 83
         - 84
         - 85
+        - 86
         - 90
         - 91
         - 92
@@ -88,6 +89,7 @@ components:
         - 142
         - 143
         - 144
+        - 145
         - 150
         - 151
         - 152
@@ -117,6 +119,7 @@ components:
         - 221
         - 222
         - 230
+        - 239
         - 240
         - 241
         - 243
@@ -176,6 +179,7 @@ components:
         - "FIELD_POS_CORRECTOR_LANDMARKS_CHECK_ERROR"
         - "FIELD_POS_CORRECTOR_FACE_PRESENCE_CHECK_ERROR"
         - "FIELD_POS_CORRECTOR_FACE_ABSENCE_CHECK_ERROR"
+        - "FIELD_POS_CORRECTOR_INCORRECT_HEAD_POSITION"
         - "OVI_IR_INVISIBLE"
         - "OVI_INSUFFICIENT_AREA"
         - "OVI_COLOR_INVARIABLE"
@@ -210,6 +214,7 @@ components:
         - "BARCODE_SIZE_PARAMS_ERROR"
         - "NOT_ALL_BARCODES_READ"
         - "GLARES_IN_BARCODE_AREA"
+        - "NO_CERTIFICATE_FOR_DIGITAL_SIGNATURE_CHECK"
         - "PORTRAIT_COMPARISON_PORTRAITS_DIFFER"
         - "PORTRAIT_COMPARISON_NO_SERVICE_REPLY"
         - "PORTRAIT_COMPARISON_SERVICE_ERROR"
@@ -239,6 +244,7 @@ components:
         - "OCR_QUALITY_INVALID_FONT"
         - "OCR_QUALITY_INVALID_BACKGROUND"
         - "LASINK_INVALID_LINES_FREQUENCY"
+        - "DOC_LIVENESS_BLACK_AND_WHITE_COPY_DETECTED"
         - "DOC_LIVENESS_ELECTRONIC_DEVICE_DETECTED"
         - "DOC_LIVENESS_INVALID_BARCODE_BACKGROUND"
         - "CHD_ICAO_IDB_BASE32_ERROR"
