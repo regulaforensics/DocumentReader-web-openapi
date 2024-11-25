@@ -291,6 +291,9 @@ components:
         - 334
         - 335
         - 336
+        - 337
+        - 338
+        - 339
         - 340
         - 341
         - 342
@@ -643,6 +646,7 @@ components:
         - 689
         - 690
         - 691
+        - 692
       x-enum-descriptions:
         - "Document class code"
         - "Issuing state code"
@@ -930,6 +934,9 @@ components:
         - "Document discriminator"
         - "Data discriminator"
         - "ID number of ISO issuer"
+        - "DTC version"
+        - "DTC ID"
+        - "DTC date of expiry"
         - "GNIB number"
         - "Department number"
         - "Telegraph code"
@@ -1282,6 +1289,7 @@ components:
         - "Method Of Testing"
         - "Digital Travel Authorization Number"
         - "Date of First Positive Test Result"
+        - "EF.CardAccess"
       x-enum-varnames:
         - "DOCUMENT_CLASS_CODE"
         - "ISSUING_STATE_CODE"
@@ -1569,6 +1577,9 @@ components:
         - "DOCUMENT_DISCRIMINATOR"
         - "DATA_DISCRIMINATOR"
         - "ISO_ISSUER_ID_NUMBER"
+        - "DTC_VERSION"
+        - "DTC_ID"
+        - "DTC_DATE_OF_EXPIRY"
         - "GNIB_NUMBER"
         - "DEPT_NUMBER"
         - "TELEX_CODE"
@@ -1921,3 +1932,4 @@ components:
         - "FT_METHOD_OF_TESTING"
         - "FT_DIGITAL_TRAVEL_AUTHORIZATION_NUMBER"
         - "FT_DATE_OF_FIRST_POSITIVE_TEST_RESULT"
+        - "EF_CARD_ACCESS"
