@@ -116,7 +116,7 @@ components:
         - "Processing scenario for obtaining OCR results of any image"
         - "Processing scenario for obtaining bank card data"
         - "Scenario for obtaining an original image without any processing"
-        - "Processing scenario for Digital Travel Credentials (DTC) processing"
+        - "Processing scenario for Digital Travel Credentials (DTC-VC) data processing"
 
     ImageData:
       type: object
