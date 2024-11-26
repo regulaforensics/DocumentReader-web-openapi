@@ -57,6 +57,7 @@ jobs:
       - name: Verify update JS client
         working-directory: js-client
         run: |
+          npm install
           ./update-models.sh
           npm run check-types
 
