@@ -58,6 +58,7 @@ jobs:
         working-directory: js-client
         run: |
           ./update-models.sh
+          npm run check-types
 
   verify-java:
     runs-on: ubuntu-latest
