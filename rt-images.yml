@@ -21,9 +21,7 @@ components:
         - fieldList
       properties:
         availableSourceList:
-          type: array
-          items:
-            $ref: "#/components/schemas/ImagesAvailableSource"
+          type: number
         fieldList:
           type: array
           items:
