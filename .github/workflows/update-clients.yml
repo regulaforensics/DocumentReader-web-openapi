@@ -1,7 +1,7 @@
 name: update clients
 
 on:
-  pull_request:
+  push:
     branches: [develop]
   workflow_dispatch:
     inputs:
@@ -38,26 +38,23 @@ jobs:
             TMP_TITLE=$(echo "$MANUAL_BUILD_TITLE")
             echo "TITLE=$TMP_TITLE" >> $GITHUB_ENV
           fi
-      - name: Print PR title
-        run: echo "${{ env.TITLE }}"
-
-      # - name: Update Model According To Specification
-      #   working-directory: js-client
-      #   run: |
-      #     npm install
-      #     ./update-models.sh
-      # - name: Push Changes Back To Client Repo
-      #   working-directory: js-client
-      #   run: |
-      #     git checkout -b ${GITHUB_SHA::8}
-      #     git config --local user.email "action@github.com"
-      #     git config --local user.name "GitHub Action"
-      #     git add --all
-      #     git commit -m "${{ env.TITLE }}" -a
-      #     git push --set-upstream origin ${GITHUB_SHA::8}
-      #     gh pr create --fill --draft --base develop
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
+      - name: Update Model According To Specification
+        working-directory: js-client
+        run: |
+          npm install
+          ./update-models.sh
+      - name: Push Changes Back To Client Repo
+        working-directory: js-client
+        run: |
+          git checkout -b ${GITHUB_SHA::8}
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add --all
+          git commit -m "${{ env.TITLE }}" -a
+          git push --set-upstream origin ${GITHUB_SHA::8}
+          gh pr create --fill --draft --base develop
+        env:
+          GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
 
   update-java-client:
     runs-on: ubuntu-latest
@@ -91,24 +88,22 @@ jobs:
             TMP_TITLE=$(echo "$MANUAL_BUILD_TITLE")
             echo "TITLE=$TMP_TITLE" >> $GITHUB_ENV
           fi
-      - name: Print PR title
-        run: echo "${{ env.TITLE }}"
-      # - name: Update Model According To Specification
-      #   working-directory: java-client
-      #   run: |
-      #     ./update-models.sh
-      # - name: Push Changes Back To Client Repo
-      #   working-directory: java-client
-      #   run: |
-      #     git checkout -b ${GITHUB_SHA::8}
-      #     git config --local user.email "action@github.com"
-      #     git config --local user.name "GitHub Action"
-      #     git add --all
-      #     git commit -m "${{ env.TITLE }}" -a
-      #     git push --set-upstream origin ${GITHUB_SHA::8}
-      #     gh pr create --fill --draft --base develop
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
+      - name: Update Model According To Specification
+        working-directory: java-client
+        run: |
+          ./update-models.sh
+      - name: Push Changes Back To Client Repo
+        working-directory: java-client
+        run: |
+          git checkout -b ${GITHUB_SHA::8}
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add --all
+          git commit -m "${{ env.TITLE }}" -a
+          git push --set-upstream origin ${GITHUB_SHA::8}
+          gh pr create --fill --draft --base develop
+        env:
+          GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
 
   update-python-client:
     runs-on: ubuntu-latest
@@ -137,24 +132,22 @@ jobs:
             TMP_TITLE=$(echo "$MANUAL_BUILD_TITLE")
             echo "TITLE=$TMP_TITLE" >> $GITHUB_ENV
           fi
-      - name: Print PR title
-        run: echo "${{ env.TITLE }}"
-      # - name: Update Model According To Specification
-      #   working-directory: python-client
-      #   run: |
-      #     ./update-models.sh
-      # - name: Push Changes Back To Client Repo
-      #   working-directory: python-client
-      #   run: |
-      #     git checkout -b ${GITHUB_SHA::8}
-      #     git config --local user.email "action@github.com"
-      #     git config --local user.name "GitHub Action"
-      #     git add --all
-      #     git commit -m "${{ env.TITLE }}" -a
-      #     git push --set-upstream origin ${GITHUB_SHA::8}
-      #     gh pr create --fill --draft --base develop
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
+      - name: Update Model According To Specification
+        working-directory: python-client
+        run: |
+          ./update-models.sh
+      - name: Push Changes Back To Client Repo
+        working-directory: python-client
+        run: |
+          git checkout -b ${GITHUB_SHA::8}
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add --all
+          git commit -m "${{ env.TITLE }}" -a
+          git push --set-upstream origin ${GITHUB_SHA::8}
+          gh pr create --fill --draft --base develop
+        env:
+          GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
 
   update-csharp-client:
     runs-on: ubuntu-latest
@@ -183,22 +176,20 @@ jobs:
             TMP_TITLE=$(echo "$MANUAL_BUILD_TITLE")
             echo "TITLE=$TMP_TITLE" >> $GITHUB_ENV
           fi
-      - name: Print PR title
-        run: echo "${{ env.TITLE }}"
-      # - name: Update Model According To Specification
-      #   working-directory: csharp-client
-      #   run: |
-      #     ./update-models.sh
-      # - name: Push Changes Back To Client Repo
-      #   working-directory: csharp-client
-      #   run: |
-      #     git checkout -b ${GITHUB_SHA::8}
-      #     git config --local user.email "action@github.com"
-      #     git config --local user.name "GitHub Action"
-      #     git checkout src/Regula.DocumentReader.WebClient/Api/DefaultApi.cs src/Regula.DocumentReader.WebClient/Api/ProcessApi.cs
-      #     git add --all
-      #     git commit -m "${{ env.TITLE }}" -a
-      #     git push --set-upstream origin ${GITHUB_SHA::8}
-      #     gh pr create --fill --draft --base develop
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
+      - name: Update Model According To Specification
+        working-directory: csharp-client
+        run: |
+          ./update-models.sh
+      - name: Push Changes Back To Client Repo
+        working-directory: csharp-client
+        run: |
+          git checkout -b ${GITHUB_SHA::8}
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git checkout src/Regula.DocumentReader.WebClient/Api/DefaultApi.cs src/Regula.DocumentReader.WebClient/Api/ProcessApi.cs
+          git add --all
+          git commit -m "${{ env.TITLE }}" -a
+          git push --set-upstream origin ${GITHUB_SHA::8}
+          gh pr create --fill --draft --base develop
+        env:
+          GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
