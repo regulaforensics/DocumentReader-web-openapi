@@ -77,3 +77,4 @@ jobs:
         working-directory: java-client
         run: |
           ./update-models.sh
+          ./gradlew clean :example:run

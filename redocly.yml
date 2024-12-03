@@ -1,0 +1,13 @@
+theme:
+  openapi:
+    hideDownloadButton: true
+    maxDisplayedEnumValues: 5
+    expandResponses: 'all'
+    expandSingleSchemaField: true
+    jsonSampleExpandLevel: 6
+    theme:
+      logo:
+        gutter: '20px'
+      colors:
+        primary:
+          main: '#8a53cb'
