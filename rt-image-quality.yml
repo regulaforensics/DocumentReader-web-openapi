@@ -59,6 +59,38 @@ components:
         - "Signals if the portrait is present"
         - "Signals if the document image is bright enough"
 
+    ImageQualityChecks:
+      type: string
+      description: "Image quality checks"
+      enum:
+        - "glaresCheck"
+        - "focusCheck"
+        - "dpiThreshold"
+        - "colornessCheck"
+        - "IQC_Perspective"
+        - "documentPosition"
+        - "IQC_Portrait"
+        - "brightness"
+      x-enum-varnames:
+        - "ImageGlares"
+        - "ImageFocus"
+        - "ImageResolution"
+        - "ImageColorness"
+        - "Perspective"
+        - "Bounds"
+        - "Portrait"
+        - "Brightness"
+      x-enum-descriptions:
+        - "Signals glare presence on the image"
+        - "Signals whether image is in focus"
+        - "Signals if image resolution is below threshold"
+        - "Signals if image is colorless"
+        - "Signals if document in the image has prespective distortion above threshold"
+        - "Signals if document is not fully present in the image"
+        - "Signals if the portrait is present"
+        - "Signals if the document image is bright enough"
+
+
     AreaArray:
       type: object
       properties:
