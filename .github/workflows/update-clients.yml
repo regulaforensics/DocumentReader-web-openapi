@@ -21,10 +21,10 @@ jobs:
         run: |
           if [[ ${{ github.event_name == 'workflow_dispatch' }} ]]; then
             title="${{ github.event.inputs.title }}"
-            echo "title=$title" >> $GITHUB_OUTPUT
+            echo "title=$title" >> "$GITHUB_OUTPUT"
           else
             title="${{ github.event.pull_request.title }}"
-            echo "title=$title" >> $GITHUB_OUTPUT
+            echo "title=$title" >> "$GITHUB_OUTPUT"
           fi
   update-js-client:
     needs: getting-title
@@ -44,7 +44,7 @@ jobs:
           ref: 'develop'
 
       - name: Echo title
-        working-directory: java-client
+        working-directory: js-client
         run: echo "${{ needs.getting-title.outputs.title }}"
       # - name: Update Model According To Specification
       #   working-directory: js-client
@@ -123,7 +123,7 @@ jobs:
           path: 'python-client'
           ref: 'develop'
       - name: Echo title
-        working-directory: java-client
+        working-directory: python-client
         run: echo "${{ needs.getting-title.outputs.title }}"
       # - name: Update Model According To Specification
       #   working-directory: python-client
@@ -159,7 +159,7 @@ jobs:
           path: 'csharp-client'
           ref: 'develop'
       - name: Echo title
-        working-directory: java-client
+        working-directory: csharp-client
         run: echo "${{ needs.getting-title.outputs.title }}"
       # - name: Update Model According To Specification
       #   working-directory: csharp-client
