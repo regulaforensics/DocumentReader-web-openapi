@@ -25,7 +25,7 @@ jobs:
           else
             title="${{ github.event.pull_request.title }}"
             echo "title=$title" >> $GITHUB_OUTPUT
-  
+          fi
   update-js-client:
     needs: getting-title
     runs-on: ubuntu-latest
