@@ -59,9 +59,9 @@ components:
         - "Signals if the portrait is present"
         - "Signals if the document image is bright enough"
 
-    ImageQualityChecks:
+    InputImageQualityChecks:
       type: string
-      description: "Image quality checks"
+      description: "Input image quality checks for the document processing"
       enum:
         - "glaresCheck"
         - "focusCheck"

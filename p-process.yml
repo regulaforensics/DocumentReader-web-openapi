@@ -689,7 +689,7 @@ components:
           description: "This parameter controls the quality checks that the image should pass to be considered a valid input during the scanning process."
           type: array
           items:
-            $ref: "./rt-image-quality.yml#/components/schemas/ImageQualityChecks"
+            $ref: "./rt-image-quality.yml#/components/schemas/InputImageQualityChecks"
 
     ProcessRequestImage:
       type: object
