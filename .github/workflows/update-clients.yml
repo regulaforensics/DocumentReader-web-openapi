@@ -18,14 +18,16 @@ jobs:
     steps:
       - id: "getting-tag"
         run: |
-          if [[ ${{ github.event_name == 'workflow_dispatch' }} ]]; then
-            echo "fmt_title=\"${{ github.event.inputs.title }}\"" >> "$GITHUB_OUTPUT"
+          if [[ ${{ github.event_name }} == 'workflow_dispatch' ]]; then
+            echo "fmt_title=${{ github.event.inputs.title }}" >> "$GITHUB_OUTPUT"
           else
-            echo "fmt_title=\"${{ github.event.pull_request.title }}\"" >> "$GITHUB_OUTPUT"
+            echo "fmt_title=${{ github.event.pull_request.title }}" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Echo title
-        run: echo "${{ steps.getting-title.outputs.title }}"
+        run: | 
+          echo "${{ steps.getting-title.outputs.title }}"
+          echo "${{ github.event_name }}"
 
   update-js-client:
     needs: getting-title
