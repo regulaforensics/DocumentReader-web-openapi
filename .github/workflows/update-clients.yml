@@ -20,11 +20,11 @@ jobs:
         id: "get_title"
         run: |
           if [[ ${{ github.event_name == 'workflow_dispatch' }} ]]; then
-            title="${{ github.event.inputs.title }}"
-            echo "title=$title" >> "$GITHUB_OUTPUT"
+            pr_title="${{ github.event.inputs.title }}"
+            echo "title=$pr_title" >> "$GITHUB_OUTPUT"
           else
-            title="${{ github.event.pull_request.title }}"
-            echo "title=$title" >> "$GITHUB_OUTPUT"
+            pr_title="${{ github.event.pull_request.title }}"
+            echo "title=$pr_title" >> "$GITHUB_OUTPUT"
           fi
   update-js-client:
     needs: getting-title
@@ -46,6 +46,9 @@ jobs:
       - name: Echo title
         working-directory: js-client
         run: echo "${{ needs.getting-title.outputs.title }}"
+        env:
+          title: ${{ needs.getting-title.outputs.title }}
+          all: ${{ needs.getting-title.outputs }}
       # - name: Update Model According To Specification
       #   working-directory: js-client
       #   run: |
