@@ -69,8 +69,8 @@ components:
         - "colornessCheck"
         - "IQC_Perspective"
         - "documentPosition"
-        - "IQC_Portrait"
-        - "brightness"
+        - "portraitCheck"
+        - "brightnessCheck"
       x-enum-varnames:
         - "Glares"
         - "Focus"
