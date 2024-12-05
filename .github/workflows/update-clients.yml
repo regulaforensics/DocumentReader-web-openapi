@@ -13,22 +13,20 @@ jobs:
 
   getting-title:
     runs-on: ubuntu-latest
+    outputs:
+      title: ${{ steps.getting-tag.outputs.fmt_title }}
     steps:
-      - name: "Create output for title"
+      - id: "getting-tag"
         run: |
           if [[ ${{ github.event_name == 'workflow_dispatch' }} ]]; then
-            echo 'title<<EOF' >> $GITHUB_ENV
-            echo ${{ github.event.inputs.title }} >> $GITHUB_ENV
-            echo 'EOF' >> $GITHUB_ENV
-
+            echo "fmt_title=${{ github.event.inputs.title }}" >> "$GITHUB_OUTPUT"
           else
-            echo 'title<<EOF' >> $GITHUB_ENV
-            echo "${{ github.event.pull_request.title }}" >> $GITHUB_ENV
-            echo 'EOF' >> $GITHUB_ENV
+            echo "fmt_title=${{ github.event.pull_request.title }}" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Echo title
-        run: echo "${{ env.title }}"
+        run: echo "${{ steps.getting-title.outputs.title }}"
+
   update-js-client:
     needs: getting-title
     runs-on: ubuntu-latest
@@ -48,7 +46,7 @@ jobs:
 
       - name: Echo title
         working-directory: js-client
-        run: echo "${{ env.title }}"
+        run: echo "${{ needs.getting-title.outputs.title }}"
       # - name: Update Model According To Specification
       #   working-directory: js-client
       #   run: |
@@ -91,7 +89,7 @@ jobs:
 
       - name: Echo title
         working-directory: java-client
-        run: echo "${{ env.title }}"
+        run: echo "${{ needs.getting-title.outputs.title }}"
       # - name: Update Model According To Specification
       #   working-directory: java-client
       #   run: |
@@ -127,7 +125,7 @@ jobs:
           ref: 'develop'
       - name: Echo title
         working-directory: python-client
-        run: echo "${{ env.title }}"
+        run: echo "${{ needs.getting-title.outputs.title }}"
       # - name: Update Model According To Specification
       #   working-directory: python-client
       #   run: |
@@ -163,7 +161,7 @@ jobs:
           ref: 'develop'
       - name: Echo title
         working-directory: csharp-client
-        run: echo "${{ env.title }}"
+        run: echo "${{ needs.getting-title.outputs.title }}"
       # - name: Update Model According To Specification
       #   working-directory: csharp-client
       #   run: |
