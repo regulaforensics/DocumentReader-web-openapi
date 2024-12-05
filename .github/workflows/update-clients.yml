@@ -23,12 +23,11 @@ jobs:
 
           else
             echo 'title<<EOF' >> $GITHUB_ENV
-            echo ${{ github.event.pull_request.title }} >> $GITHUB_ENV
+            echo "${{ github.event.pull_request.title }}" >> $GITHUB_ENV
             echo 'EOF' >> $GITHUB_ENV
           fi
 
       - name: Echo title
-        working-directory: js-client
         run: echo "${{ env.title }}"
   update-js-client:
     needs: getting-title
