@@ -67,7 +67,7 @@ components:
         - "focusCheck"
         - "dpiThreshold"
         - "colornessCheck"
-        - "IQC_Perspective"
+        - "perspectiveCheck"
         - "documentPosition"
         - "portraitCheck"
         - "brightnessCheck"
