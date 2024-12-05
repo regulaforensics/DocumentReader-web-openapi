@@ -17,12 +17,19 @@ jobs:
       - name: "Create output for title"
         run: |
           if [[ ${{ github.event_name == 'workflow_dispatch' }} ]]; then
-            title="${{ github.event.inputs.title }}"
-            echo "title=$title" >> "$GITHUB_ENV"
+            echo 'title<<EOF' >> $GITHUB_ENV
+            echo ${{ github.event.inputs.title }} >> $GITHUB_ENV
+            echo 'EOF' >> $GITHUB_ENV
+
           else
-            title="${{ github.event.pull_request.title }}"
-            echo "title=$title" >> "$GITHUB_ENV"
+            echo 'title<<EOF' >> $GITHUB_ENV
+            echo ${{ github.event.pull_request.title }} >> $GITHUB_ENV
+            echo 'EOF' >> $GITHUB_ENV
           fi
+
+      - name: Echo title
+        working-directory: js-client
+        run: echo "${{ env.title }}"
   update-js-client:
     needs: getting-title
     runs-on: ubuntu-latest
