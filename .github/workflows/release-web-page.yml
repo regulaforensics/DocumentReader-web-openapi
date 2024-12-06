@@ -4,30 +4,27 @@ on:
   repository_dispatch:
     types: [release-web-page]
 
-
 jobs:
   build-and-push:
     if: ${{ github.event.client_payload.success }}
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Specifications
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
-          path: 'master-branch'
+          path: "master-branch"
 
       - name: Install yq
-        uses: vegardit/gha-setup-yq@v1
+        uses: mikefarah/yq@v4.44.5
         with:
-          version: 4.44.2
-  
-      - name: Replace index.yml version 
-        run: yq -i ".info.version =\"${{ github.event.client_payload.version }}\"" index.yml
+          cmd: yq -i ".info.version =\"${{ github.event.client_payload.version }}\"" index.yml
 
       - name: Install redoc-cli
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: 14
           registry-url: https://registry.npmjs.org/
+
       - name: Build html page
         working-directory: master-branch
         run: |
@@ -37,16 +34,19 @@ jobs:
           --options.theme.colors.primary.main="#8a53cb" --options.expandResponses="all" \
           --options.expandSingleSchemaField --options.hideDownloadButton \
           --options.jsonSampleExpandLevel="6";
+
       - name: Checkout pages branch
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
-          path: 'pages-branch'
-          ref: 'gh-pages'
+          path: "pages-branch"
+          ref: "gh-pages"
+
       - name: Rewrite html page
         working-directory: pages-branch
         run: |
           rm index.html
           mv ../master-branch/doc.html index.html
+
       - name: Push changes
         working-directory: pages-branch
         run: |
@@ -61,5 +61,5 @@ jobs:
       - name: Pushing tag to Repo
         uses: thejeff77/action-push-tag@v1.0.0
         with:
-          tag: v${{ github.event.client_payload.version }} 
+          tag: v${{ github.event.client_payload.version }}
         if: ${{ success() }}

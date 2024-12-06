@@ -11,16 +11,22 @@ jobs:
   validate-specification:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v1
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
         with:
           node-version: 14
           registry-url: https://registry.npmjs.org/
-      - run: |
+
+      - name: Install redoc
+        run: |
           npm install -g redoc-cli
           redoc-cli bundle index.yml
-      - if: ${{ false }}
+
+      - name: Revert changes
+        if: ${{ false }}
         run: |
           npm install -g @openapitools/openapi-generator-cli
           openapi-generator-cli validate -i index.yml
-
