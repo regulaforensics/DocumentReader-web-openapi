@@ -2,7 +2,7 @@ name: update clients
 
 on:
   push:
-    branches: [develop]
+    branches: [SP-19891]
   workflow_dispatch:
     inputs:
       title:
