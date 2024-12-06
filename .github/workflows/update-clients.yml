@@ -20,7 +20,7 @@ jobs:
           if [[ ${{ github.event_name }} == 'workflow_dispatch' ]]; then
             echo "fmt_title=${{ github.event.inputs.title }}" >> "$GITHUB_OUTPUT"
           else
-            echo "fmt_title=${{ github.event.push.head_commit.message }}" >> "$GITHUB_OUTPUT"
+            echo "fmt_title=${{ github.event.push.commits.message }}" >> "$GITHUB_OUTPUT"
           fi
 
   update-js-client:
