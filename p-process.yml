@@ -685,6 +685,11 @@ components:
           description: "This parameter specifies the necessary margin. Default 0."
           type: integer
           # default: 0
+        expectedPass:
+          description: "This parameter controls the quality checks that the image should pass to be considered a valid input during the scanning process."
+          type: array
+          items:
+            $ref: "./rt-image-quality.yml#/components/schemas/InputImageQualityChecks"
 
     ProcessRequestImage:
       type: object
