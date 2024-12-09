@@ -256,7 +256,7 @@ components:
           type: string
           example: "MM/dd/yyyy"
         measureSystem:
-          description: "This option allows you to set the system of measurement used for converting original values
+          description: "This option allows you to set the system of measurement used for converting original values 
           in document to output result values. Metric by default."
           $ref: "#/components/schemas/MeasureSystem"
         imageDpiOutMax:
