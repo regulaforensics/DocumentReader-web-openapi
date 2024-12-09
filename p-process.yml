@@ -256,7 +256,7 @@ components:
           type: string
           example: "MM/dd/yyyy"
         measureSystem:
-          description: "This option allows you to set the system of measurement used for converting original values 
+          description: "This option allows you to set the system of measurement used for converting original values
           in document to output result values. Metric by default."
           $ref: "#/components/schemas/MeasureSystem"
         imageDpiOutMax:
@@ -366,7 +366,7 @@ components:
           items:
             $ref: "#/components/schemas/MRZFormat"
         forceReadMrzBeforeLocate:
-          description: "When enabled, make sure that in series processing MRZ is located fully inside the result document image, 
+          description: "When enabled, make sure that in series processing MRZ is located fully inside the result document image,
           if present on the document. Enabling this option may add extra processing time, by disabling optimizations,
           but allows more stability in output image quality. Disabled by default."
           type: boolean
@@ -388,7 +388,7 @@ components:
           type: boolean
           # default false
         documentGroupFilter:
-          description: "List of specific eligible document types from DocumentType enum to recognize from. 
+          description: "List of specific eligible document types from DocumentType enum to recognize from.
           You may, for example, specify only passports to be recognized by setting this property. Empty by default."
           type: array
           items:
@@ -693,8 +693,6 @@ components:
 
     ProcessRequestImage:
       type: object
-      required:
-        - ImageData
       properties:
         ImageData:
           $ref: "./common.yml#/components/schemas/ImageData"
