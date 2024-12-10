@@ -1,6 +1,8 @@
 name: update clients
 
 on:
+  push:
+    branches: [develop]
   workflow_dispatch:
     inputs:
       title:
@@ -8,28 +10,43 @@ on:
         required: true
 
 jobs:
+  title:
+    runs-on: ubuntu-latest
+    outputs:
+      title: ${{ steps.get-title.outputs.fmt_title }}
+    steps:
+      - id: get-title
+        run: |
+          if [[ ${{ github.event_name }} == 'workflow_dispatch' ]]; then
+            echo "fmt_title=${{ github.event.inputs.title }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "fmt_title=${{ github.event.head_commit.message }}" >> "$GITHUB_OUTPUT"
+          fi
 
   update-js-client:
+    needs: title
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Specification Repo
         uses: actions/checkout@v4
         with:
-          path: 'DocumentReader-web-openapi'
-          ref: 'develop'
+          path: "DocumentReader-web-openapi"
+          ref: "develop"
+
       - name: Checkout JS Client Repo
         uses: actions/checkout@v4
         with:
-          repository: 'regulaforensics/DocumentReader-web-js-client'
+          repository: "regulaforensics/DocumentReader-web-js-client"
           token: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
-          path: 'js-client'
-          ref: 'develop'
+          path: "js-client"
+          ref: "develop"
 
       - name: Update Model According To Specification
         working-directory: js-client
         run: |
           npm install
           ./update-models.sh
+
       - name: Push Changes Back To Client Repo
         working-directory: js-client
         run: |
@@ -37,36 +54,42 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add --all
-          git commit -m "${{ github.event.inputs.title }}" -a
+          git commit -m "${{ needs.title.outputs.title }}" -a
           git push --set-upstream origin ${GITHUB_SHA::8}
           gh pr create --fill --draft --base develop
         env:
           GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
 
   update-java-client:
+    needs: title
     runs-on: ubuntu-latest
     steps:
       - name: Specify Java Version
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v4
         with:
+          distribution: "zulu"
           java-version: 11
           java-package: jdk
+
       - name: Checkout Specification Repo
         uses: actions/checkout@v4
         with:
-          path: 'DocumentReader-web-openapi'
-          ref: 'develop'
+          path: "DocumentReader-web-openapi"
+          ref: "develop"
+
       - name: Checkout Java Client Repo
         uses: actions/checkout@v4
         with:
-          repository: 'regulaforensics/DocumentReader-web-java-client'
+          repository: "regulaforensics/DocumentReader-web-java-client"
           token: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
-          path: 'java-client'
-          ref: 'develop'
+          path: "java-client"
+          ref: "develop"
+
       - name: Update Model According To Specification
         working-directory: java-client
         run: |
           ./update-models.sh
+
       - name: Push Changes Back To Client Repo
         working-directory: java-client
         run: |
@@ -74,31 +97,35 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add --all
-          git commit -m "${{ github.event.inputs.title }}" -a
+          git commit -m "${{ needs.title.outputs.title }}" -a
           git push --set-upstream origin ${GITHUB_SHA::8}
           gh pr create --fill --draft --base develop
         env:
           GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
 
   update-python-client:
+    needs: title
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Specification Repo
         uses: actions/checkout@v4
         with:
-          path: 'DocumentReader-web-openapi'
-          ref: 'develop'
+          path: "DocumentReader-web-openapi"
+          ref: "develop"
+
       - name: Checkout Python Client Repo
         uses: actions/checkout@v4
         with:
-          repository: 'regulaforensics/DocumentReader-web-python-client'
+          repository: "regulaforensics/DocumentReader-web-python-client"
           token: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
-          path: 'python-client'
-          ref: 'develop'
+          path: "python-client"
+          ref: "develop"
+
       - name: Update Model According To Specification
         working-directory: python-client
         run: |
           ./update-models.sh
+
       - name: Push Changes Back To Client Repo
         working-directory: python-client
         run: |
@@ -106,31 +133,35 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add --all
-          git commit -m "${{ github.event.inputs.title }}" -a
+          git commit -m "${{ needs.title.outputs.title }}" -a
           git push --set-upstream origin ${GITHUB_SHA::8}
           gh pr create --fill --draft --base develop
         env:
           GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
 
   update-csharp-client:
+    needs: title
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Specification Repo
         uses: actions/checkout@v4
         with:
-          path: 'DocumentReader-web-openapi'
-          ref: 'develop'
+          path: "DocumentReader-web-openapi"
+          ref: "develop"
+
       - name: Checkout C# Client Repo
         uses: actions/checkout@v4
         with:
-          repository: 'regulaforensics/DocumentReader-web-csharp-client'
+          repository: "regulaforensics/DocumentReader-web-csharp-client"
           token: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
-          path: 'csharp-client'
-          ref: 'develop'
+          path: "csharp-client"
+          ref: "develop"
+
       - name: Update Model According To Specification
         working-directory: csharp-client
         run: |
           ./update-models.sh
+
       - name: Push Changes Back To Client Repo
         working-directory: csharp-client
         run: |
@@ -139,7 +170,7 @@ jobs:
           git config --local user.name "GitHub Action"
           git checkout src/Regula.DocumentReader.WebClient/Api/DefaultApi.cs src/Regula.DocumentReader.WebClient/Api/ProcessApi.cs
           git add --all
-          git commit -m "${{ github.event.inputs.title }}" -a
+          git commit -m "${{ needs.title.outputs.title }}" -a
           git push --set-upstream origin ${GITHUB_SHA::8}
           gh pr create --fill --draft --base develop
         env:
