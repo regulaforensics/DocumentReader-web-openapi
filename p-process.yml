@@ -693,8 +693,6 @@ components:
 
     ProcessRequestImage:
       type: object
-      required:
-        - ImageData
       properties:
         ImageData:
           $ref: "./common.yml#/components/schemas/ImageData"
