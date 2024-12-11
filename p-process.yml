@@ -451,7 +451,7 @@ components:
 #          default: false
         checkMRZNamesLength:
           type: boolean
-          description: "This parameter if enabled will ignore partial comparison of surname and given names between the Visual zone and MRZ, and checks for a full match."
+          description: "This parameter if enabled will ignore partial comparison of surname and given names between the Visual zone and MRZ, and will check for a full match if a longer one is in the MRZ."
 #          default: false
       required:
         - scenario
