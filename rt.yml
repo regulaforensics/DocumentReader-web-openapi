@@ -1,13 +1,14 @@
 openapi: 3.0.3
 components:
   schemas:
-
     ContainerType:
+      title: "ContainerType"
       type: integer
       description: "Same as Result type, but used for safe parsing of not-described values. See Result type."
       default: 0
 
     Result:
+      title: "Result"
       type: integer
       enum:
         - 1
@@ -22,14 +23,20 @@ components:
         - 18
         - 19
         - 20
+        - 26
         - 30
+        - 32
         - 33
         - 34
+        - 35
         - 36
         - 37
+        - 38
         - 39
         - 49
         - 50
+        - 61
+        - 62
         - 85
         - 101
         - 102
@@ -50,14 +57,20 @@ components:
         - "Contains barcode parsing result with text fields"
         - "Contains barcode parsing result with graphic fields"
         - "Contains result of document authenticity checks"
+        - "Contains result of DocVisualExtendedInfoContainer"
         - "Contains image quality check results"
+        - "Contains result of DocGraphicsInfoContainer"
         - "Contains check statuses with details, grouped by source"
         - "Contains result of portraits comparison"
+        - "Contains result of DocGraphicsInfoContainer"
         - "Contains document textual fields from all sources (mrz, rfid, visual, barcode) with validity and cross-source compare checks"
         - "Contains images from all document sources (mrz, rfid, visual, barcode)"
+        - "Contains result of DocGraphicsInfoContainer"
         - "Contains result of fingerprints comparison"
         - "Contains encrypted ResultContainerList"
         - "Contains license"
+        - "Contains result of DocumentPosition"
+        - "Contains result of DocumentPosition"
         - "Contains information about document position on the input image, its center, angle, etc"
         - "Contains RFID raw data"
         - "Contains RFID text results"
@@ -78,14 +91,20 @@ components:
         - "BARCODE_TEXT"
         - "BARCODE_GRAPHICS"
         - "AUTHENTICITY"
+        - "MAGNETIC_STRIPE_TEXT_DATA"
         - "IMAGE_QUALITY"
+        - "LIVE_PORTRAIT"
         - "STATUS"
         - "PORTRAIT_COMPARISON"
+        - "EXT_PORTRAIT"
         - "TEXT"
         - "IMAGES"
+        - "FINGERPRINTS"
         - "FINGERPRINT_COMPARISON"
         - "ENCRYPTED_RCL"
         - "LICENSE"
+        - "MRZ_POSITION"
+        - "BARCODE_POSITION"
         - "DOCUMENT_POSITION"
         - "RFID_RAW_DATA"
         - "RFID_TEXT"
@@ -95,6 +114,7 @@ components:
         - "DTC_VC"
 
     ResultItem:
+      title: "ResultItem"
       type: object
       description: "Common fields for all result objects"
       required:
@@ -125,23 +145,32 @@ components:
           18: "TextDataResult"
           19: "GraphicsResult"
           20: "AuthenticityResult"
+          26: "TextDataResult"
           30: "ImageQualityResult"
+          32: "GraphicsResult"
           33: "StatusResult"
           34: "AuthenticityResult"
+          35: "GraphicsResult"
           36: "TextResult"
           37: "ImagesResult"
+          38: "GraphicsResult"
           39: "AuthenticityResult"
           49: "EncryptedRCLResult"
           50: "LicenseResult"
+          61: "DocumentPositionResult"
+          62: "DocumentPositionResult"
           85: "DocumentPositionResult"
           102: "TextDataResult"
           103: "GraphicsResult"
+          104: "DocumentBinaryInfoResult"
           109: "ByteArrayResult"
 
     ContainerList:
+      title: "ContainerList"
       type: object
       description: "List with various objects, containing processing results"
       required:
+        - Count
         - List
       properties:
         Count:
@@ -166,13 +195,8 @@ components:
               - $ref: "#/components/schemas/DocBarCodeInfo"
               - $ref: "#/components/schemas/LicenseResult"
               - $ref: "#/components/schemas/EncryptedRCLResult"
+              - $ref: "#/components/schemas/DocumentBinaryInfoResult"
               - $ref: "#/components/schemas/ByteArrayResult"
-
-    DocumentPositionResult:
-      $ref: "./rt-document-position.yml#/components/schemas/DocumentPositionResult"
-
-    DocumentImageResult:
-      $ref: "./rt-raw-image.yml#/components/schemas/DocumentImageResult"
 
     StatusResult:
       $ref: "./rt-status.yml#/components/schemas/StatusResult"
@@ -180,11 +204,17 @@ components:
     TextResult:
       $ref: "./rt-text.yml#/components/schemas/TextResult"
 
+    DocumentImageResult:
+      $ref: "./rt-raw-image.yml#/components/schemas/DocumentImageResult"
+
     ImagesResult:
       $ref: "./rt-images.yml#/components/schemas/ImagesResult"
 
-    LexicalAnalysisResult:
-      $ref: "./rt-ocr-lexical-analisis.yml#/components/schemas/LexicalAnalysisResult"
+    ChosenDocumentTypeResult:
+      $ref: "./rt-doc-type-old.yml#/components/schemas/ChosenDocumentTypeResult"
+
+    DocumentTypesCandidatesResult:
+      $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentTypesCandidatesResult"
 
     TextDataResult:
       $ref: "./rt-text-data.yml#/components/schemas/TextDataResult"
@@ -195,17 +225,17 @@ components:
     ByteArrayResult:
       $ref: "./rt-byte-array-data.yml#/components/schemas/ByteArrayResult"
 
-    DocumentTypesCandidatesResult:
-      $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentTypesCandidatesResult"
-
-    ChosenDocumentTypeResult:
-      $ref: "./rt-doc-type-old.yml#/components/schemas/ChosenDocumentTypeResult"
+    LexicalAnalysisResult:
+      $ref: "./rt-ocr-lexical-analysis.yml#/components/schemas/LexicalAnalysisResult"
 
     AuthenticityResult:
       $ref: "./rt-authenticity.yml#/components/schemas/AuthenticityResult"
 
     ImageQualityResult:
       $ref: "./rt-image-quality.yml#/components/schemas/ImageQualityResult"
+
+    DocumentPositionResult:
+      $ref: "./rt-document-position.yml#/components/schemas/DocumentPositionResult"
 
     DocBarCodeInfo:
       $ref: "./rt-barcodes.yml#/components/schemas/DocBarCodeInfo"
@@ -215,3 +245,6 @@ components:
 
     EncryptedRCLResult:
       $ref: "./rt-encrypted-rcl.yml#/components/schemas/EncryptedRCLResult"
+
+    DocumentBinaryInfoResult:
+      $ref: "./rt-rfid-binary-data.yml#/components/schemas/DocumentBinaryInfoResult"

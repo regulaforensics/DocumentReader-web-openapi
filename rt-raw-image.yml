@@ -1,9 +1,8 @@
 openapi: 3.0.3
 components:
   schemas:
-
     DocumentImageResult:
-      title: "Document Image"
+      title: "DocumentImageResult"
       description: "Contains document image."
       allOf:
         - type: object

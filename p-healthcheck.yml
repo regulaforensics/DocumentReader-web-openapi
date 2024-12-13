@@ -33,7 +33,7 @@ paths:
 components:
   schemas:
     Healthcheck:
-      title: "Health check"
+      title: "Healthcheck"
       type: object
       required: [app, licenseId, licenseType, licenseSerial, licenseValidUntil, scenarios, version]
       properties:

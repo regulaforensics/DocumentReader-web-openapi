@@ -1,12 +1,19 @@
 openapi: 3.0.3
 components:
   schemas:
-
     FiberResult:
-      title: "Fibers Check"
+      title: "FiberResult"
       allOf:
         - $ref: "../rt-authenticity.yml#/components/schemas/AuthenticityCheckResultItem"
         - type: object
+          required:
+            - RectCount
+            - ExpectedCount
+            - RectArray
+            - Width
+            - Length
+            - Area
+            - ColorValues
           properties:
             RectCount:
               description: "For UV_Fibers authenticity result type"

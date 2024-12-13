@@ -2,7 +2,7 @@ openapi: 3.0.3
 components:
   schemas:
     ByteArrayResult:
-      title: "ByteArray"
+      title: "ByteArrayResult"
       allOf:
         - type: object
           required:

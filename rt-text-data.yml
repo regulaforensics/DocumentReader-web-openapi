@@ -1,94 +1,160 @@
 openapi: 3.0.3
 components:
   schemas:
-
     TextDataResult:
-      title: "Text Data (legacy)"
+      title: "TextDataResult"
       description: "Text fields extracted from one document source.
       Contains results of specific source for each provided page."
       allOf:
         - type: object
+          required:
+            - DocVisualExtendedInfo
           properties:
             DocVisualExtendedInfo:
               $ref: "#/components/schemas/DocVisualExtendedInfo"
         - $ref: "./rt.yml#/components/schemas/ResultItem"
 
     DocVisualExtendedInfo:
+      title: "DocVisualExtendedInfo"
       type: object
       description: "Container for extracted text fields. Fields are identified by type and language"
       required:
+        - nFields
         - pArrayFields
       properties:
+        nFields:
+          description: "Number of pArrayFields array elements"
+          type: number
         pArrayFields:
           type: array
           items:
-            $ref: "#/components/schemas/DocVisualExtendedField"
+            anyOf:
+              - $ref: "#/components/schemas/DocVisualExtendedFieldRect"
+              - $ref: "#/components/schemas/DocVisualExtendedFieldRfid"
+
+    DocVisualExtendedFieldRfid:
+      title: "DocVisualExtendedFieldRfid"
+      description: "Structure and serves for storing information from one text data field.
+      Variant with field logical type and RFID data."
+      allOf:
+        - type: object
+          required:
+            - RFID_OriginDG
+            - RFID_OriginTagEntry
+          properties:
+            RFID_OriginDG:
+              $ref: "./e-rfid-data-group-type-tag.yml#/components/schemas/RfidDataGroupTypeTag"
+            RFID_OriginDGTag: {}
+            RFID_OriginTagEntry:
+              description: "Record index of the text field source in the data group"
+              type: number
+            RFID_OriginEntryView: {}
+        - $ref: "#/components/schemas/DocVisualExtendedField"
+
+    DocVisualExtendedFieldRect:
+      title: "DocVisualExtendedFieldRect"
+      description: "Structure and serves for storing information from one text data field.
+      Variant with field logical type and field rectangular area coordinates on the image."
+      allOf:
+        - type: object
+          properties:
+            FieldRect:
+              description: "Coordinates of the text field in the normalized image of the document.
+              Only for Result.VISUAL_TEXT and Result.MRZ_TEXT results."
+              $ref: "./common.yml#/components/schemas/RectangleCoordinates"
+        - $ref: "#/components/schemas/DocVisualExtendedField"
+
 
     DocVisualExtendedField:
+      title: "DocVisualExtendedField"
       type: object
       required:
+        - FieldType
         - wFieldType
         - FieldName
-        - wLCID
+        - StringsCount
+        - StringsResult
+        - Buf_Length
+        - Buf_Text
       properties:
+        FieldType: {}
         wFieldType:
           $ref: "./e-text-field-type.yml#/components/schemas/TextFieldType"
         FieldName:
-          description: "Field name. Only use to search values for fields with fieldType=50(other). In general, use wFieldType for lookup."
+          description: "Field symbolic name (null-terminated string)"
           type: string
-        wLCID:
-          $ref: "./e-lcid.yml#/components/schemas/LCID"
+        StringsCount:
+          description: "Number of StringsResult array elements"
+          type: number
         StringsResult:
           type: array
           description: "Array of recognizing probabilities for a each line of text field.
           Only for Result.VISUAL_TEXT and Result.MRZ_TEXT results."
           items:
             $ref: "#/components/schemas/StringRecognitionResult"
+        Buf_Length:
+          description: "Buf_Text text string length"
+          type: number
         Buf_Text:
           type: string
           description: "Text field data in UTF8 format.
           Results of reading different lines of a multi-line field are separated by '^'"
-        FieldRect:
-          description: "Coordinates of the text field in the normalized image of the document.
-          Only for Result.VISUAL_TEXT and Result.MRZ_TEXT results."
-          $ref: "./common.yml#/components/schemas/RectangleCoordinates"
-        RFID_OriginDG:
-          description: "Origin data group information. Only for Result.RFID_TEXT results."
-          type: integer
-        RFID_OriginTagEntry:
-          type: integer
-          description: "Index of the text field record in origin data group. Only for Result.RFID_TEXT results."
+        FieldMask: {}
+        Validity: {}
+        InComparison: {}
+        Reserved2: {}
+        Reserved3: {}
 
     StringRecognitionResult:
+      title: "StringRecognitionResult"
       type: object
       description: "Describes single row recognition results in multi-line text field of a document"
       required:
+        - SymbolsCount
         - StringResult
       properties:
+        SymbolsCount:
+          description: "Number of StringResult array elements"
+          type: number
+        Reserved: {}
         StringResult:
           type: array
           description: "Array of recognition results for individual characters of a string"
           items:
             $ref: "#/components/schemas/SymbolRecognitionResult"
+        Buf_Length:
+          description: "Buf_Text text string length"
+          type: number
+        Buf_Text:
+          type: string
+          description: "Text field data in UTF8 format.
+          Results of reading different lines of a multi-line field are separated by '^'"
 
     SymbolRecognitionResult:
+      title: "SymbolRecognitionResult"
       type: object
       description: "Describes a single character recognition results in the text field line"
       required:
         - SymbolRect
+        - CandidatesCount
         - ListOfCandidates
       properties:
         SymbolRect:
           description: "Coordinates of the symbol in the normalized image of the document"
           $ref: "./common.yml#/components/schemas/RectangleCoordinates"
+        CandidatesCount:
+          description: "Number of significant elements of ListOfCandidates array"
+          type: number
         ListOfCandidates:
           type: array
           description: "Array of candidate characters. Sorted in descending order of recognition probabilities
           (the first element has highest probability)"
           items:
             $ref: "#/components/schemas/SymbolCandidate"
+        Reserved: {}
 
     SymbolCandidate:
+      title: "SymbolCandidate"
       required:
         - SymbolCode
         - SymbolProbability
@@ -103,3 +169,4 @@ components:
           description: "character recognition probability (0–100,%)"
           minimum: 0
           maximum: 100
+        Reserved: {}

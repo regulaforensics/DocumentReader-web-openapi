@@ -1,9 +1,8 @@
 openapi: 3.0.3
 components:
   schemas:
-
     ImagesResult:
-      title: "Images"
+      title: "ImagesResult"
       allOf:
         - type: object
           required:
@@ -13,13 +12,21 @@ components:
               $ref: "#/components/schemas/Images"
         - $ref: "./rt.yml#/components/schemas/ResultItem"
 
-
     Images:
+      title: "Images"
       type: object
       required:
+        - fieldCount
+        - availableSourceCount
         - availableSourceList
         - fieldList
       properties:
+        fieldCount:
+          type: integer
+          description: "Fields count"
+        availableSourceCount:
+          type: integer
+          description: "Available sources count"
         availableSourceList:
           type: array
           items:
@@ -30,10 +37,11 @@ components:
             $ref: "#/components/schemas/ImagesField"
 
     ImagesAvailableSource:
+      title: "ImagesAvailableSource"
       type: object
       required:
+        - containerType
         - source
-        - sourceName
       properties:
         containerType:
           $ref: "./rt.yml#/components/schemas/ContainerType"
@@ -41,11 +49,13 @@ components:
           $ref: "./common.yml#/components/schemas/Source"
 
     ImagesField:
+      title: "ImagesField"
       type: object
       required:
         - fieldName
         - fieldType
         - valueList
+        - valueCount
       properties:
         fieldName:
           $ref: "./e-graphic-field-type.yml#/components/schemas/GraphicFieldName"
@@ -55,15 +65,18 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/ImagesFieldValue"
+        valueCount:
+          description: "Field value count"
+          type: number
 
     ImagesFieldValue:
+      title: "ImagesFieldValue"
       type: object
       required:
         - containerType
         - lightIndex
         - pageIndex
         - source
-        - value
       properties:
         source:
           $ref: "./common.yml#/components/schemas/Source"
