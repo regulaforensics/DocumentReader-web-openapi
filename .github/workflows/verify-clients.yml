@@ -12,14 +12,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Specification Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
-          path: 'DocumentReader-web-openapi'
+          path: "DocumentReader-web-openapi"
+
       - name: Checkout Python Client Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
-          repository: 'regulaforensics/DocumentReader-web-python-client'
-          path: 'python-client'
+          repository: "regulaforensics/DocumentReader-web-python-client"
+          path: "python-client"
+
       - name: Verify update Python client
         working-directory: python-client
         run: |
@@ -29,14 +31,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Specification Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
-          path: 'DocumentReader-web-openapi'
+          path: "DocumentReader-web-openapi"
+
       - name: Checkout CSharp Client Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
-          repository: 'regulaforensics/DocumentReader-web-csharp-client'
-          path: 'csharp-client'
+          repository: "regulaforensics/DocumentReader-web-csharp-client"
+          path: "csharp-client"
+
       - name: Verify update CSharp client
         working-directory: csharp-client
         run: |
@@ -46,14 +50,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Specification Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
-          path: 'DocumentReader-web-openapi'
+          path: "DocumentReader-web-openapi"
+
       - name: Checkout JS Client Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
-          repository: 'regulaforensics/DocumentReader-web-js-client'
-          path: 'js-client'
+          repository: "regulaforensics/DocumentReader-web-js-client"
+          path: "js-client"
+
       - name: Verify update JS client
         working-directory: js-client
         run: |
@@ -65,14 +71,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Specification Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
-          path: 'DocumentReader-web-openapi'
+          path: "DocumentReader-web-openapi"
+
       - name: Checkout Java Client Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
-          repository: 'regulaforensics/DocumentReader-web-java-client'
-          path: 'java-client'
+          repository: "regulaforensics/DocumentReader-web-java-client"
+          path: "java-client"
+
       - name: Verify update Java client
         working-directory: java-client
         run: |
