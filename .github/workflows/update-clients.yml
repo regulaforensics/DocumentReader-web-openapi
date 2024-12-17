@@ -21,7 +21,7 @@ jobs:
             echo "fmt_title=${{ github.event.inputs.title }}" >> "$GITHUB_OUTPUT"
           else
             echo 'fmt_title<<EOF' >> $GITHUB_OUTPUT
-            ${{ github.event.head_commit.message }} | head -n 1 >> $GITHUB_OUTPUT
+            echo "${{ github.event.head_commit.message }}" | head -n 1 >> $GITHUB_OUTPUT
             echo 'EOF' >> $GITHUB_OUTPUT
           fi
 
