@@ -21,6 +21,7 @@ jobs:
             echo "fmt_title=${{ github.event.inputs.title }}" >> "$GITHUB_OUTPUT"
           else
             echo ${{ toJSON(github.event) }}
+          fi
 
   update-js-client:
     needs: title
