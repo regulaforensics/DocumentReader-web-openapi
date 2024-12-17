@@ -2,7 +2,7 @@ name: update clients
 
 on:
   push:
-    branches: [develop]
+    branches: [fix/SP-19891]
   workflow_dispatch:
     inputs:
       title:
@@ -20,7 +20,7 @@ jobs:
           if [[ ${{ github.event_name }} == 'workflow_dispatch' ]]; then
             echo "fmt_title=${{ github.event.inputs.title }}" >> "$GITHUB_OUTPUT"
           else
-            echo "fmt_title=${{ github.event.head_commit.message }}" >> "$GITHUB_OUTPUT"
+            echo "fmt_title=$(${{ github.event.head_commit.message }} | head -n 1)" >> "$GITHUB_OUTPUT"
           fi
 
   update-js-client:
