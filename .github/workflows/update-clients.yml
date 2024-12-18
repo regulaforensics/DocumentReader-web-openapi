@@ -20,7 +20,7 @@ jobs:
           if [[ ${{ github.event_name }} == 'workflow_dispatch' ]]; then
             echo "fmt_title=${{ github.event.inputs.title }}" >> "$GITHUB_OUTPUT"
           else
-            echo "fmt_title=${{ github.event.head_commit.id }}" >> "$GITHUB_OUTPUT"
+            echo "fmt_title=${GITHUB_SHA::8}" >> "$GITHUB_OUTPUT"
           fi
 
   update-js-client:
@@ -54,7 +54,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add --all
-          git commit -m "${{ needs.title.outputs.title }}" -a
+          git commit -m "Commit: ${{ needs.title.outputs.title }}" -a
           git push --set-upstream origin ${GITHUB_SHA::8}
           gh pr create --fill --draft --base develop
         env:
@@ -97,7 +97,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add --all
-          git commit -m "${{ needs.title.outputs.title }}" -a
+          git commit -m "Commit: ${{ needs.title.outputs.title }}" -a
           git push --set-upstream origin ${GITHUB_SHA::8}
           gh pr create --fill --draft --base develop
         env:
@@ -133,7 +133,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add --all
-          git commit -m "${{ needs.title.outputs.title }}" -a
+          git commit -m "Commit: ${{ needs.title.outputs.title }}" -a
           git push --set-upstream origin ${GITHUB_SHA::8}
           gh pr create --fill --draft --base develop
         env:
@@ -170,7 +170,7 @@ jobs:
           git config --local user.name "GitHub Action"
           git checkout src/Regula.DocumentReader.WebClient/Api/DefaultApi.cs src/Regula.DocumentReader.WebClient/Api/ProcessApi.cs
           git add --all
-          git commit -m "${{ needs.title.outputs.title }}" -a
+          git commit -m "Commit: ${{ needs.title.outputs.title }}" -a
           git push --set-upstream origin ${GITHUB_SHA::8}
           gh pr create --fill --draft --base develop
         env:
