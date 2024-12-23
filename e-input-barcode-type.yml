@@ -2,7 +2,7 @@ openapi: 3.0.3
 components:
   schemas:
     InputBarcodeType:
-      type: integer
+      type: string
       description: "Enumeration contains the types of barcodes that can be processed"
       enum:
         - "bct_unknown"
