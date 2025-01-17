@@ -9,7 +9,6 @@ components:
           required:
             - ElementType
             - LightIndex
-            - Area
             - Image
             - EtalonImage
           properties:
