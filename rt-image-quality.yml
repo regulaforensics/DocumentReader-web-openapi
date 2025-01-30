@@ -64,6 +64,7 @@ components:
         - "Signals if the document image is bright enough"
 
     InputImageQualityChecks:
+      title: "InputImageQualityChecks"
       type: string
       description: "Input image quality checks for the document processing"
       enum:
