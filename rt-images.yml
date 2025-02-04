@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.1.1
 components:
   schemas:
     ImagesResult:
@@ -82,8 +82,7 @@ components:
           $ref: "./common.yml#/components/schemas/Source"
         value:
           $ref: "./common.yml#/components/schemas/ImageBase64"
-        originalValue:
-          description: "Only for images from RFID. Image as was originally stored in the RFID chip."
+        originalValue: # Only for images from RFID. Image as was originally stored in the RFID chip.
           $ref: "./common.yml#/components/schemas/ImageBase64"
         originalPageIndex:
           description: "Original page index"
@@ -94,9 +93,8 @@ components:
           $ref: "./common.yml#/components/schemas/Light"
         containerType:
           $ref: "./rt.yml#/components/schemas/ContainerType"
-        fieldRect:
-          description: "Only for images from VISUAL. Coordinates of the image in the normalized image of the document."
+        fieldRect: # Only for images from VISUAL. Coordinates of the image in the normalized image of the document.
           $ref: "./common.yml#/components/schemas/RectangleCoordinates"
         rfidOrigin:
-          description: "Only for images from RFID. Image location in RFID chip."
+          description: # Only for images from RFID. Image location in RFID chip.
           $ref: "./common.yml#/components/schemas/RfidOrigin"

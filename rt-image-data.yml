@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.1.1
 components:
   schemas:
     GraphicsResult:
@@ -24,7 +24,7 @@ components:
         pArrayFields:
           type: array
           items:
-            anyOf:
+            oneOf:
               - $ref: "#/components/schemas/GraphicFieldRect"
               - $ref: "#/components/schemas/GraphicFieldRfid"
         nFields:

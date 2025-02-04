@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.1.1
 components:
   schemas:
     DocumentBinaryInfoResult:
@@ -601,13 +601,13 @@ components:
         - Data
       properties:
         Type:
-          anyOf:
+          oneOf:
             - $ref: "./e-graphic-field-type.yml#/components/schemas/GraphicFieldType"
             - $ref: "./e-text-field-type.yml#/components/schemas/TextFieldType"
         Status:
           description: "Result of logical analysis of compliance of the contents of the field
           with the requirements of the specification"
-          anyOf:
+          oneOf:
             - $ref: "./e-parsing-notification-codes.yml#/components/schemas/ParsingNotificationCodes"
             - $ref: "./e-parsing-error-codes.yml#/components/schemas/ParsingErrorCodes"
         Format:
@@ -754,7 +754,7 @@ components:
       properties:
         Type:
           description: "Logical type of the field"
-          anyOf:
+          oneOf:
             - $ref: "./e-graphic-field-type.yml#/components/schemas/GraphicFieldType"
             - $ref: "./e-text-field-type.yml#/components/schemas/TextFieldType"
         Status:

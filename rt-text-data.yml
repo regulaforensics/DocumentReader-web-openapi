@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.1.1
 components:
   schemas:
     TextDataResult:
@@ -28,7 +28,7 @@ components:
         pArrayFields:
           type: array
           items:
-            anyOf:
+            oneOf:
               - $ref: "#/components/schemas/DocVisualExtendedFieldRect"
               - $ref: "#/components/schemas/DocVisualExtendedFieldRfid"
 
@@ -58,9 +58,7 @@ components:
       allOf:
         - type: object
           properties:
-            FieldRect:
-              description: "Coordinates of the text field in the normalized image of the document.
-              Only for Result.VISUAL_TEXT and Result.MRZ_TEXT results."
+            FieldRect: # Coordinates of the text field in the normalized image of the document. Only for Result.VISUAL_TEXT and Result.MRZ_TEXT results.
               $ref: "./common.yml#/components/schemas/RectangleCoordinates"
         - $ref: "#/components/schemas/DocVisualExtendedField"
 
@@ -139,8 +137,7 @@ components:
         - CandidatesCount
         - ListOfCandidates
       properties:
-        SymbolRect:
-          description: "Coordinates of the symbol in the normalized image of the document"
+        SymbolRect: # Coordinates of the symbol in the normalized image of the document
           $ref: "./common.yml#/components/schemas/RectangleCoordinates"
         CandidatesCount:
           description: "Number of significant elements of ListOfCandidates array"

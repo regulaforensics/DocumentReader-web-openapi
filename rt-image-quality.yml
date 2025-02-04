@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.1.1
 components:
   schemas:
     ImageQualityResult:
@@ -20,8 +20,7 @@ components:
         - List
         - Count
       properties:
-        result:
-          description: "Overall image quality status, combined from check statuses in the list."
+        result: # Overall image quality status, combined from check statuses in the list.
           $ref: "./common.yml#/components/schemas/CheckResult"
         List:
           type: array
@@ -94,7 +93,6 @@ components:
         - "Signals if document is not fully present in the image"
         - "Signals if the portrait is present"
         - "Signals if the document image is bright enough"
-
 
     AreaArray:
       title: "AreaArray"

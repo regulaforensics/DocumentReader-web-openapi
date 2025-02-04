@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.1.1
 components:
   schemas:
     ChosenDocumentTypeResult:
@@ -30,8 +30,7 @@ components:
       title: "DocumentTypesCandidatesList"
       type: object
       properties:
-        RecResult:
-          description: "Overall recognition result"
+        RecResult: # Overall recognition result
           $ref: "#/components/schemas/DocumentTypeRecognitionResult"
         Candidates:
           type: array
@@ -88,7 +87,7 @@ components:
           description: "true if the document of the given type is rotated by 180 degrees"
           type: boolean
         RFID_Presence:
-          description: "Indication of the presence of an RFID chip in the document (electronic document indicator)"
+          description: # Indication of the presence of an RFID chip in the document (electronic document indicator)
           $ref: "./common.yml#/components/schemas/RfidLocation"
         FDSIDList:
           $ref: "#/components/schemas/FDSIDList"

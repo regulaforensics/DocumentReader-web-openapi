@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.1.1
 components:
   schemas:
     IdentResult:
@@ -18,11 +18,9 @@ components:
               $ref: "../common.yml#/components/schemas/Light"
             Area:
               $ref: "../common.yml#/components/schemas/RectangleCoordinates"
-            Image:
-              description: "Original image"
+            Image: # Original image
               $ref: "../common.yml#/components/schemas/ImageData"
-            EtalonImage:
-              description: "Reference image"
+            EtalonImage: # Reference image
               $ref: "../common.yml#/components/schemas/ImageData"
             AreaList:
               $ref: "../rt-authenticity.yml#/components/schemas/AreaContainer"

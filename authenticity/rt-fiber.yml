@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.1.1
 components:
   schemas:
     FiberResult:
@@ -21,8 +21,7 @@ components:
             ExpectedCount:
               description: "Expected fibers number. For UV_Fibers authentication result type"
               type: integer
-            LightValue:
-              description: "For UV_Background authentication result type"
+            LightValue: # For UV_Background authentication result type
               $ref: "../common.yml#/components/schemas/Light"
             LightDisp:
               description: "For UV_Background authentication result type"

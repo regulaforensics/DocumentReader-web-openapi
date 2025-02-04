@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.1.1
 info:
   version: 7.4.0
   title: Regula Document Reader Web API
@@ -267,9 +267,7 @@ components:
           By default it is set to system locale default (where the service is running)."
           type: string
           example: "MM/dd/yyyy"
-        measureSystem:
-          description: "This option allows you to set the system of measurement used for converting original values 
-          in document to output result values. Metric by default."
+        measureSystem: # This option allows you to set the system of measurement used for converting original values in document to output result values. Metric by default.
           $ref: "#/components/schemas/MeasureSystem"
         imageDpiOutMax:
           description: "This parameter controls maximum resolution in dpi of output images.
@@ -297,8 +295,7 @@ components:
           description: "When enabled, results will contain transaction processing log. Disabled by default"
           type: boolean
           # default false
-        logLevel:
-          description: "When used together with 'log' parameter enabled, sets the level of logs detalization. 'INFO' by default."
+        logLevel: # When used together with 'log' parameter enabled, sets the level of logs detalization. 'INFO' by default.
           $ref: "#/components/schemas/LogLevel"
           # default: "INFO"
         forceDocID:
@@ -341,8 +338,7 @@ components:
           type: boolean
           deprecated: true
           # default: false
-        forceDocFormat:
-          description: "Force use of specified document format when locating and recognizing document to reduce the number of candidates."
+        forceDocFormat: # Force use of specified document format when locating and recognizing document to reduce the number of candidates.
           $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentFormat"
         noGraphics:
           description: "When enabled, no graphic fields will be cropped from document image. Disabled by default."
@@ -387,8 +383,7 @@ components:
           description: "This option can be disabled to stop parsing after barcode is read. Enabled by default."
           type: boolean
           # default true
-        convertCase:
-          description: "This option allows output text case transformation. No changes applied by default to original values."
+        convertCase: # This option allows output text case transformation. No changes applied by default to original values.
           $ref: "#/components/schemas/TextPostProcessing"
         splitNames:
           description: "When enabled, the Surname and GivenNames fields from MRZ will be divided into
