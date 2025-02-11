@@ -26,7 +26,7 @@ components:
         - "bct_Code11"
         - "bct_JABCODE"
       x-enum-varnames:
-        - "Unknown"
+        - "UNKNOWN"
         - "CODE128"
         - "CODE39"
         - "EAN8"
