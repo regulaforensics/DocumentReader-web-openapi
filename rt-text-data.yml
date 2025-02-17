@@ -44,11 +44,13 @@ components:
           properties:
             RFID_OriginDG:
               $ref: "./e-rfid-data-group-type-tag.yml#/components/schemas/RfidDataGroupTypeTag"
-            RFID_OriginDGTag: {}
+            RFID_OriginDGTag:
+              type: integer
             RFID_OriginTagEntry:
               description: "Record index of the text field source in the data group"
               type: number
-            RFID_OriginEntryView: {}
+            RFID_OriginEntryView:
+              type: integer
         - $ref: "#/components/schemas/DocVisualExtendedField"
 
     DocVisualExtendedFieldRect:
@@ -75,7 +77,8 @@ components:
         - Buf_Length
         - Buf_Text
       properties:
-        FieldType: {}
+        FieldType:
+          type: integer
         wFieldType:
           $ref: "./e-text-field-type.yml#/components/schemas/TextFieldType"
         FieldName:
@@ -97,11 +100,12 @@ components:
           type: string
           description: "Text field data in UTF8 format.
           Results of reading different lines of a multi-line field are separated by '^'"
-        FieldMask: {}
-        Validity: {}
-        InComparison: {}
-        Reserved2: {}
-        Reserved3: {}
+        FieldMask:
+          type: string
+        Validity:
+          type: integer
+        InComparison:
+          type: integer
 
     StringRecognitionResult:
       title: "StringRecognitionResult"
@@ -114,7 +118,6 @@ components:
         SymbolsCount:
           description: "Number of StringResult array elements"
           type: number
-        Reserved: {}
         StringResult:
           type: array
           description: "Array of recognition results for individual characters of a string"
@@ -148,7 +151,6 @@ components:
           (the first element has highest probability)"
           items:
             $ref: "#/components/schemas/SymbolCandidate"
-        Reserved: {}
 
     SymbolCandidate:
       title: "SymbolCandidate"
@@ -166,4 +168,3 @@ components:
           description: "character recognition probability (0–100,%)"
           minimum: 0
           maximum: 100
-        Reserved: {}
