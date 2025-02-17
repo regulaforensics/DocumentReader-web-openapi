@@ -74,9 +74,6 @@ paths:
           name: withImages
           schema:
             type: boolean
-            enum:
-              - true
-              - false
           description: With base64 images or url
       summary: Get Reprocess transaction result
       tags:
