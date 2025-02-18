@@ -456,6 +456,11 @@ components:
           type: boolean
           description: "Select the longest value from the different value sources and write it to the value field if comparison is done successfully. The parameter applies this logic to the personal names, such as given name, surname, surname and given name, middle name and etc."
           # default: false
+        doBarcodes:
+          description: "Set the types of barcodes to process."
+          type: array
+          items:
+            $ref: "./e-input-barcode-type.yml#/components/schemas/InputBarcodeType"
 
     MRZFormat:
       title: "MRZFormat"
