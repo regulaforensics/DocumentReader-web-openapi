@@ -70,13 +70,6 @@ jobs:
   verify-java:
     runs-on: ubuntu-latest
     steps:
-      - name: Specify Java Version
-        uses: actions/setup-java@v4
-        with:
-          distribution: "zulu"
-          java-version: 11
-          java-package: jdk
-
       - name: Checkout Specification Repo
         uses: actions/checkout@v4
         with:
