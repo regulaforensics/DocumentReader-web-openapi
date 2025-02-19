@@ -416,3 +416,11 @@ components:
           type: integer
           example: 0
           description: "Proxy protocol type, should be set according to the <a href=\"https://curl.se/libcurl/c/CURLOPT_PROXYTYPE.html\" target=\"_blank\">cURL standard</a>."
+        childAgeThreshold:
+          type: integer
+          example: 13
+          description: "Minimum age of a child, at which portrait comparison result will be effective. Default: 13."
+        childDocValidityYears:
+          type: integer
+          example: 5
+          description: "Estimated duration of validity for a child's passport, years. Default: 5."
