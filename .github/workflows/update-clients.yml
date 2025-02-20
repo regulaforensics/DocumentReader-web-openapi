@@ -60,7 +60,7 @@ jobs:
           git add --all
           git commit -m "Commit: ${{ needs.title.outputs.title }}" -a
           git push --set-upstream origin ${GITHUB_SHA::8}
-          gh pr create --fill --draft --base develop
+          gh pr create --fill --base develop
         env:
           GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
 
@@ -103,7 +103,7 @@ jobs:
           git add --all
           git commit -m "Commit: ${{ needs.title.outputs.title }}" -a
           git push --set-upstream origin ${GITHUB_SHA::8}
-          gh pr create --fill --draft --base develop
+          gh pr create --fill --base develop
         env:
           GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
 
@@ -139,7 +139,7 @@ jobs:
           git add --all
           git commit -m "Commit: ${{ needs.title.outputs.title }}" -a
           git push --set-upstream origin ${GITHUB_SHA::8}
-          gh pr create --fill --draft --base develop
+          gh pr create --fill --base develop
         env:
           GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
 
@@ -176,6 +176,6 @@ jobs:
           git add --all
           git commit -m "Commit: ${{ needs.title.outputs.title }}" -a
           git push --set-upstream origin ${GITHUB_SHA::8}
-          gh pr create --fill --draft --base develop
+          gh pr create --fill --base develop
         env:
           GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
