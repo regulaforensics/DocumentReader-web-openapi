@@ -69,6 +69,8 @@ components:
           $ref: "./common.yml#/components/schemas/CheckResult"
         text: # Status of text fields analysis
           $ref: "./common.yml#/components/schemas/CheckResult"
+        vds:
+          type: integer
 
     detailsRFID:
       title: "detailsRFID"
