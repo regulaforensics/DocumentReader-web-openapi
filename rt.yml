@@ -38,6 +38,7 @@ components:
         - 61
         - 62
         - 85
+        - 97
         - 101
         - 102
         - 103
@@ -72,6 +73,7 @@ components:
         - "Contains result of DocumentPosition"
         - "Contains result of DocumentPosition"
         - "Contains information about document position on the input image, its center, angle, etc"
+        - "Contains result of FaceDetection"
         - "Contains RFID raw data"
         - "Contains RFID text results"
         - "Contains RFID graphic results"
@@ -106,6 +108,7 @@ components:
         - "MRZ_POSITION"
         - "BARCODE_POSITION"
         - "DOCUMENT_POSITION"
+        - "FACE_DETECTION"
         - "RFID_RAW_DATA"
         - "RFID_TEXT"
         - "RFID_GRAPHICS"
@@ -163,6 +166,7 @@ components:
               - $ref: "#/components/schemas/EncryptedRCLResult"
               - $ref: "#/components/schemas/DocumentBinaryInfoResult"
               - $ref: "#/components/schemas/ByteArrayResult"
+              - $ref: "#/components/schemas/FaceDetectionResult"
             discriminator:
               propertyName: result_type
               mapping:
@@ -193,6 +197,7 @@ components:
                 61: "DocumentPositionResult"
                 62: "DocumentPositionResult"
                 85: "DocumentPositionResult"
+                97: "FaceDetectionResult"
                 102: "TextDataResult"
                 103: "GraphicsResult"
                 104: "DocumentBinaryInfoResult"
@@ -248,3 +253,6 @@ components:
 
     DocumentBinaryInfoResult:
       $ref: "./rt-rfid-binary-data.yml#/components/schemas/DocumentBinaryInfoResult"
+
+    FaceDetectionResult:
+      $ref: "./rt-face-detection.yml#/components/schemas/FaceDetectionResult"
