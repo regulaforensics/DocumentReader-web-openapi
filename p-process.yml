@@ -740,6 +740,8 @@ components:
       properties:
         ChipPage:
           $ref: "./common.yml#/components/schemas/RfidLocation"
+        CoreLibResultCode:
+          type: integer
         ProcessingFinished:
           $ref: "#/components/schemas/ProcessingStatus"
         ContainerList:
