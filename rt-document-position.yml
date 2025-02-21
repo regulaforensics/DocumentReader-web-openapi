@@ -51,3 +51,13 @@ components:
           $ref: "./common.yml#/components/schemas/Point"
         Dpi:
           type: integer
+        Inverse:
+          type: integer
+        ObjArea:
+          type: integer
+        ObjIntAngleDev:
+          type: integer
+        PerspectiveTr:
+          type: integer
+        ResultStatus:
+          type: integer
