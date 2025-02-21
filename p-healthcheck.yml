@@ -67,6 +67,9 @@ components:
           description: Product version.
           type: string
           nullable: true
+        metadata:
+          type: object
+          additionalProperties: true
         documentsDatabase:
           description: Database information.
           type: object
