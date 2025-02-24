@@ -49,7 +49,6 @@ components:
         - fieldType
         - fieldName
         - lcid
-        - lcidName
         - status
         - validityStatus
         - comparisonStatus
@@ -130,6 +129,8 @@ components:
           $ref: "./common.yml#/components/schemas/RectangleCoordinates"
         rfidOrigin: # Only for rfid images. Text location in rfid chip.
           $ref: "./common.yml#/components/schemas/RfidOrigin"
+        containerType:
+          $ref: "./rt.yml#/components/schemas/ContainerType"
 
     OriginalSymbol:
       title: "OriginalSymbol"

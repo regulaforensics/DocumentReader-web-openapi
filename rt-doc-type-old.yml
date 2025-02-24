@@ -85,7 +85,7 @@ components:
           maximum: 1
         Rotated180:
           description: "true if the document of the given type is rotated by 180 degrees"
-          type: boolean
+          type: integer
         RFID_Presence:
           description: # Indication of the presence of an RFID chip in the document (electronic document indicator)
           $ref: "./common.yml#/components/schemas/RfidLocation"
@@ -108,6 +108,8 @@ components:
         OVIExp:
           description: "Camera exposure value necessary when obtaining document images of the given type for AXIAL lighting scheme"
           type: number
+        RotationAngle:
+          type: integer
 
     FDSIDList:
       title: "FDSIDList"

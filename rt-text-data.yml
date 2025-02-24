@@ -106,6 +106,13 @@ components:
           type: integer
         InComparison:
           type: integer
+        wLCID:
+          type: integer
+        Reserved2:
+          type: integer
+        Reserved3:
+          type: integer
+
 
     StringRecognitionResult:
       title: "StringRecognitionResult"
@@ -130,6 +137,8 @@ components:
           type: string
           description: "Text field data in UTF8 format.
           Results of reading different lines of a multi-line field are separated by '^'"
+        Reserved:
+          type: integer
 
     SymbolRecognitionResult:
       title: "SymbolRecognitionResult"
@@ -151,6 +160,12 @@ components:
           (the first element has highest probability)"
           items:
             $ref: "#/components/schemas/SymbolCandidate"
+        BaseLineBottom:
+          type: integer
+        BaseLineTop:
+          type: integer
+        Reserved:
+          type: integer
 
     SymbolCandidate:
       title: "SymbolCandidate"
@@ -168,3 +183,7 @@ components:
           description: "character recognition probability (0–100,%)"
           minimum: 0
           maximum: 100
+        Class:
+          type: integer
+        SubClass:
+          type: integer

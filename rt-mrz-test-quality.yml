@@ -1,0 +1,211 @@
+openapi: 3.1.1
+components:
+  schemas:
+    MRZTestQualityResult:
+      title: "MRZTestQualityResult"
+      allOf:
+        - type: object
+          required:
+            - MRZTestQuality
+          properties:
+            MRZTestQuality:
+              $ref: "#/components/schemas/MRZTestQuality"
+        - $ref: "./rt.yml#/components/schemas/ResultItem"
+
+    MRZTestQuality:
+      title: "MRZTestQuality"
+      type: object
+      required:
+        - CHECK_SUMS
+        - CONTRAST_PRINT
+        - DOC_FORMAT
+        - MRZ_FORMAT
+        - PRINT_POSITION
+        - STAIN_MRZ
+        - SYMBOLS_PARAM
+        - StrCount
+        - Strings
+        - TEXTUAL_FILLING
+      properties:
+        CHECK_SUMS:
+          type: integer
+        CONTRAST_PRINT:
+          type: integer
+        DOC_FORMAT:
+          type: integer
+        MRZ_FORMAT:
+          type: integer
+        PRINT_POSITION:
+          type: integer
+        STAIN_MRZ:
+          type: integer
+        SYMBOLS_PARAM:
+          type: integer
+        StrCount:
+          type: integer
+        Strings:
+          type: array
+          items:
+            $ref: "#/components/schemas/StringItem"
+        TEXTUAL_FILLING:
+          type: integer
+
+    StringItem:
+      title: "StringItem"
+      type: object
+      required:
+        - ALIGNMENT_SYMBOLS_IN_STRING
+        - CHECK_SUMS
+        - ErrorPOSITION
+        - FieldCount
+        - Fields
+        - STRINGS_DISTANCE
+        - STRINGS_INTERVAL
+        - STRING_FILLING
+        - STRING_POSITION
+        - SYMBOLS_PARAM
+        - SizeError_ALIGNMENT
+        - SizeError_DISTANCE
+        - SizeError_INTERVAL
+        - StringAngle
+        - StringBorders
+        - SymbolsCount
+        - SymbolsEstimations
+      properties:
+        ALIGNMENT_SYMBOLS_IN_STRING:
+          type: integer
+        CHECK_SUMS:
+          type: integer
+        ErrorPOSITION:
+          $ref: "#/components/schemas/ErrorCoordinates"
+        FieldCount:
+          type: integer
+        Fields:
+          type: array
+          items:
+            $ref: "#/components/schemas/FieldItem"
+        STRINGS_DISTANCE:
+          type: integer
+        STRINGS_INTERVAL:
+          type: integer
+        STRING_FILLING:
+          type: integer
+        STRING_POSITION:
+          type: integer
+        SYMBOLS_PARAM:
+          type: integer
+        SizeError_ALIGNMENT:
+          type: integer
+        SizeError_DISTANCE:
+          type: integer
+        SizeError_INTERVAL:
+          type: integer
+        StringAngle:
+          type: integer
+        StringBorders:
+          $ref: "./common.yml#/components/schemas/RectangleCoordinates"
+        SymbolsCount:
+          type: integer
+        SymbolsEstimations:
+          type: array
+          items:
+            $ref: "#/components/schemas/SymbolEstimationItem"
+
+    SymbolEstimationItem:
+      title: "SymbolEstimationItem"
+      type: object
+      required:
+        - ALIGNMENT_NEAREST_SYMBOLS
+        - CONTRAST_PRINT
+        - CONTRAST_SYMBOL
+        - CharSymbol
+        - EDGE
+        - EMPTINESS
+        - STAIN
+        - SYMBOLS_INTERVAL
+        - SYMBOL_PARAM
+        - SYMBOL_SIZE
+        - SizeErrorAlignWithNext
+        - SizeErrorAlignWithPrev
+        - SizeErrorIntervWithNext
+        - SizeErrorIntervWithPrev
+        - SizeErrorSymbolHeight
+        - SizeErrorSymbolWidth
+        - SymbolBounds
+      properties:
+        ALIGNMENT_NEAREST_SYMBOLS:
+          type: integer
+        CONTRAST_PRINT:
+          type: integer
+        CONTRAST_SYMBOL:
+          type: integer
+        CharSymbol:
+          type: integer
+        EDGE:
+          type: integer
+        EMPTINESS:
+          type: integer
+        STAIN:
+          type: integer
+        SYMBOLS_INTERVAL:
+          type: integer
+        SYMBOL_PARAM:
+          type: integer
+        SYMBOL_SIZE:
+          type: integer
+        SizeErrorAlignWithNext:
+          type: integer
+        SizeErrorAlignWithPrev:
+          type: integer
+        SizeErrorIntervWithNext:
+          type: integer
+        SizeErrorIntervWithPrev:
+          type: integer
+        SizeErrorSymbolHeight:
+          type: integer
+        SizeErrorSymbolWidth:
+          type: integer
+        SymbolBounds:
+          $ref: "./common.yml#/components/schemas/RectangleCoordinates"
+
+    FieldItem:
+      title: "FieldItem"
+      type: object
+      required:
+        - FieldLength
+        - FieldPos
+        - FieldType
+        - TEST_RESULT
+        - ValidCheckSum
+        - reserved
+      properties:
+        FieldLength:
+          type: integer
+        FieldPos:
+          type: integer
+        FieldType:
+          type: integer
+        TEST_RESULT:
+          type: integer
+        ValidCheckSum:
+          type: integer
+        reserved:
+          type: integer
+
+    ErrorCoordinates:
+      title: "ErrorPosition"
+      type: object
+      required:
+        - left
+        - top
+        - right
+        - bottom
+      properties:
+        Left:
+          type: integer
+        Top:
+          type: integer
+        Right:
+          type: integer
+        Bottom:
+          type: integer
