@@ -1,4 +1,7 @@
 openapi: 3.1.1
+info:
+  version: 7.4.0
+  title: Regula Document Reader Web API
 components:
   schemas:
     ContainerType:
@@ -139,6 +142,43 @@ components:
           type: integer
         result_type:
           $ref: "#/components/schemas/ContainerType"
+      discriminator:
+        propertyName: result_type
+        mapping:
+          1: "DocumentImageResult"
+          3: "TextDataResult"
+          5: "DocBarCodeInfo"
+          6: "GraphicsResult"
+          7: "MRZTestQualityResult"
+          8: "DocumentTypesCandidatesResult"
+          9: "ChosenDocumentTypeResult"
+          15: "LexicalAnalysisResult"
+          16: "DocumentImageResult"
+          17: "TextDataResult"
+          18: "TextDataResult"
+          19: "GraphicsResult"
+          20: "AuthenticityResult"
+          26: "TextDataResult"
+          30: "ImageQualityResult"
+          32: "GraphicsResult"
+          33: "StatusResult"
+          34: "AuthenticityResult"
+          35: "GraphicsResult"
+          36: "TextResult"
+          37: "ImagesResult"
+          38: "GraphicsResult"
+          39: "AuthenticityResult"
+          49: "EncryptedRCLResult"
+          50: "LicenseResult"
+          61: "MRZPositionResult"
+          62: "DocumentPositionResult"
+          85: "DocumentPositionResult"
+          87: "MRZDetectorResult"
+          97: "FaceDetectionResult"
+          102: "TextDataResult"
+          103: "GraphicsResult"
+          104: "DocumentBinaryInfoResult"
+          109: "ByteArrayResult"
 
     ContainerList:
       title: "ContainerList"
@@ -176,43 +216,6 @@ components:
               - $ref: "#/components/schemas/MRZDetectorResult"
               - $ref: "#/components/schemas/MRZPositionResult"
               - $ref: "#/components/schemas/MRZTestQualityResult"
-            discriminator:
-              propertyName: result_type
-              mapping:
-                1: "DocumentImageResult"
-                3: "TextDataResult"
-                5: "DocBarCodeInfo"
-                6: "GraphicsResult"
-                7: "MRZTestQualityResult"
-                8: "DocumentTypesCandidatesResult"
-                9: "ChosenDocumentTypeResult"
-                15: "LexicalAnalysisResult"
-                16: "DocumentImageResult"
-                17: "TextDataResult"
-                18: "TextDataResult"
-                19: "GraphicsResult"
-                20: "AuthenticityResult"
-                26: "TextDataResult"
-                30: "ImageQualityResult"
-                32: "GraphicsResult"
-                33: "StatusResult"
-                34: "AuthenticityResult"
-                35: "GraphicsResult"
-                36: "TextResult"
-                37: "ImagesResult"
-                38: "GraphicsResult"
-                39: "AuthenticityResult"
-                49: "EncryptedRCLResult"
-                50: "LicenseResult"
-                61: "MRZPositionResult"
-                62: "DocumentPositionResult"
-                85: "DocumentPositionResult"
-                87: "MRZDetectorResult"
-                97: "FaceDetectionResult"
-                102: "TextDataResult"
-                103: "GraphicsResult"
-                104: "DocumentBinaryInfoResult"
-                109: "ByteArrayResult"
 
     StatusResult:
       $ref: "./rt-status.yml#/components/schemas/StatusResult"
