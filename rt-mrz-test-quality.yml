@@ -1,16 +1,6 @@
+openapi: 3.0.4
 components:
   schemas:
-    MRZTestQualityResult:
-      title: "MRZTestQualityResult"
-      allOf:
-        - type: object
-          required:
-            - MRZTestQuality
-          properties:
-            MRZTestQuality:
-              $ref: "#/components/schemas/MRZTestQuality"
-        - $ref: "./rt.yml#/components/schemas/ResultItem"
-
     MRZTestQuality:
       title: "MRZTestQuality"
       type: object

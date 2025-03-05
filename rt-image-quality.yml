@@ -1,16 +1,6 @@
+openapi: 3.0.4
 components:
   schemas:
-    ImageQualityResult:
-      title: "ImageQualityResult"
-      allOf:
-        - type: object
-          required:
-            - ImageQualityCheckList
-          properties:
-            ImageQualityCheckList:
-              $ref: "#/components/schemas/ImageQualityCheckList"
-        - $ref: "./rt.yml#/components/schemas/ResultItem"
-
     ImageQualityCheckList:
       title: "ImageQualityCheckList"
       type: object

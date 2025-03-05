@@ -1,16 +1,6 @@
+openapi: 3.0.4
 components:
   schemas:
-    FaceDetectionResult:
-      title: "FaceDetectionResult"
-      allOf:
-        - type: object
-          required:
-            - FaceDetection
-          properties:
-            FaceDetection:
-              $ref: "#/components/schemas/FaceDetection"
-        - $ref: "./rt.yml#/components/schemas/ResultItem"
-
     FaceDetection:
       title: "FaceDetection"
       type: object

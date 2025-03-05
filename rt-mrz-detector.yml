@@ -1,16 +1,6 @@
+openapi: 3.0.4
 components:
   schemas:
-    MRZDetectorResult:
-      title: "MRZDetectorResult"
-      allOf:
-        - type: object
-          required:
-            - ResultMRZDetector
-          properties:
-            ResultMRZDetector:
-              $ref: "#/components/schemas/ResultMRZDetector"
-        - $ref: "./rt.yml#/components/schemas/ResultItem"
-
     ResultMRZDetector:
       title: "ResultMRZDetector"
       type: object

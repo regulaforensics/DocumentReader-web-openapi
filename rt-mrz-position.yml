@@ -1,16 +1,6 @@
+openapi: 3.0.4
 components:
   schemas:
-    MRZPositionResult:
-      title: "MRZPositionResult"
-      allOf:
-        - type: object
-          required:
-            - MrzPosition
-          properties:
-            MrzPosition:
-              $ref: "#/components/schemas/MrzPosition"
-        - $ref: "./rt.yml#/components/schemas/ResultItem"
-
     MrzPosition:
       title: "MrzPosition"
       type: object

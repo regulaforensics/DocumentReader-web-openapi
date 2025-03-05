@@ -1,18 +1,6 @@
+openapi: 3.0.4
 components:
   schemas:
-    TextDataResult:
-      title: "TextDataResult"
-      description: "Text fields extracted from one document source.
-      Contains results of specific source for each provided page."
-      allOf:
-        - type: object
-          required:
-            - DocVisualExtendedInfo
-          properties:
-            DocVisualExtendedInfo:
-              $ref: "#/components/schemas/DocVisualExtendedInfo"
-        - $ref: "./rt.yml#/components/schemas/ResultItem"
-
     DocVisualExtendedInfo:
       title: "DocVisualExtendedInfo"
       type: object

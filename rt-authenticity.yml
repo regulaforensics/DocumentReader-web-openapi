@@ -1,16 +1,6 @@
+openapi: 3.0.4
 components:
   schemas:
-    AuthenticityResult:
-      title: "AuthenticityResult"
-      allOf:
-        - type: object
-          required:
-            - AuthenticityCheckList
-          properties:
-            AuthenticityCheckList:
-              $ref: "#/components/schemas/AuthenticityCheckList"
-        - $ref: "./rt.yml#/components/schemas/ResultItem"
-
     AuthenticityCheckList:
       title: "AuthenticityCheckList"
       type: object

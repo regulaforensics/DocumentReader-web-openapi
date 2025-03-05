@@ -1,17 +1,6 @@
+openapi: 3.0.4
 components:
   schemas:
-    DocBarCodeInfo:
-      title: "DocBarCodeInfo"
-      description: "Raw data from BarCodes"
-      allOf:
-        - type: object
-          required:
-            - DocBarCodeInfo
-          properties:
-            DocBarCodeInfo:
-              $ref: "#/components/schemas/DocBarCodeInfoFieldsList"
-        - $ref: "./rt.yml#/components/schemas/ResultItem"
-
     DocBarCodeInfoFieldsList:
       title: "DocBarCodeInfoFieldsList"
       type: object

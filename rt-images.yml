@@ -1,16 +1,6 @@
+openapi: 3.0.4
 components:
   schemas:
-    ImagesResult:
-      title: "ImagesResult"
-      allOf:
-        - type: object
-          required:
-            - Images
-          properties:
-            Images:
-              $ref: "#/components/schemas/Images"
-        - $ref: "./rt.yml#/components/schemas/ResultItem"
-
     Images:
       title: "Images"
       type: object

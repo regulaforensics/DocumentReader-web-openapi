@@ -1,16 +1,6 @@
+openapi: 3.0.4
 components:
   schemas:
-    TextResult:
-      title: "TextResult"
-      allOf:
-        - type: object
-          required:
-            - Text
-          properties:
-            Text:
-              $ref: "#/components/schemas/Text"
-        - $ref: "./rt.yml#/components/schemas/ResultItem"
-
     Text:
       title: "Text"
       type: object

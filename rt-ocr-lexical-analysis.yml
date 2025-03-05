@@ -1,21 +1,6 @@
+openapi: 3.0.4
 components:
   schemas:
-    LexicalAnalysisResult:
-      title: "LexicalAnalysisResult"
-      description: |
-        Lexical data analysis allows you to compare the results of reading the text data of the MRZ,
-        the document filling area, barcodes and data from the memory of the RFID chip for an additional
-        assessment of the authenticity of the document. Single result for all pages.
-        Consider using Result.TEXT type for more simplicity.
-      allOf:
-        - type: object
-          required:
-            - ListVerifiedFields
-          properties:
-            ListVerifiedFields:
-              $ref: "#/components/schemas/ListVerifiedFields"
-        - $ref: "./rt.yml#/components/schemas/ResultItem"
-
     ListVerifiedFields:
       title: "ListVerifiedFields"
       type: object

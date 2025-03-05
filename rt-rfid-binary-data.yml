@@ -1,18 +1,6 @@
+openapi: 3.0.4
 components:
   schemas:
-    DocumentBinaryInfoResult:
-      title: "DocumentBinaryInfoResult"
-      allOf:
-        - type: object
-          description: "Structure is used to store the data reading results from the RFID-chip in
-          a form of a list of the logically separated data groups."
-          required:
-            - TDocBinaryInfo
-          properties:
-            TDocBinaryInfo:
-              $ref: "#/components/schemas/TDocBinaryInfo"
-        - $ref: "./rt.yml#/components/schemas/ResultItem"
-
     TDocBinaryInfo:
       title: "TDocBinaryInfo"
       type: object

@@ -1,18 +1,6 @@
+openapi: 3.0.4
 components:
   schemas:
-    GraphicsResult:
-      title: "GraphicsResult"
-      description: "Graphic fields extracted from one of the document sources.
-      Returns separate results for each provided page."
-      required:
-        - DocGraphicsInfo
-      allOf:
-        - type: object
-          properties:
-            DocGraphicsInfo:
-              $ref: "#/components/schemas/GraphicFieldsList"
-        - $ref: "./rt.yml#/components/schemas/ResultItem"
-
     GraphicFieldsList:
       title: "GraphicFieldsList"
       type: object

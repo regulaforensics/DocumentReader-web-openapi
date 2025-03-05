@@ -1,16 +1,6 @@
+openapi: 3.0.4
 components:
   schemas:
-    StatusResult:
-      title: "StatusResult"
-      allOf:
-        - type: object
-          required:
-            - Status
-          properties:
-            Status:
-              $ref: "#/components/schemas/Status"
-        - $ref: "./rt.yml#/components/schemas/ResultItem"
-
     Status:
       title: "Status"
       type: object
