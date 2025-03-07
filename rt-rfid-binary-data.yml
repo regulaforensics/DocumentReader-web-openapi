@@ -378,7 +378,7 @@ components:
           description: "List of remarks arisen during the analysis of SO data structure."
           type: array
           items:
-            $ref: "./e-parsing-error-codes.yml#/components/schemas/ParsingErrorCodes"
+            $ref: "./e-parsing-notification-codes.yml#/components/schemas/ParsingNotificationCodes"
         SignerInfos:
           description: "List of containers to store information about digital signature objects contained in the SO"
           type: array
@@ -438,7 +438,9 @@ components:
           description: "Binary data array used to calculate the hash value for digital signature verification. Base64 encoded."
           type: string
         Notifications:
-          $ref: "./e-parsing-error-codes.yml#/components/schemas/ParsingErrorCodes"
+          type: array
+          items:
+            $ref: "./e-parsing-notification-codes.yml#/components/schemas/ParsingNotificationCodes"
 
     RfidCertificateEx:
       title: "RfidCertificateEx"
@@ -490,7 +492,7 @@ components:
           structure and its validity verification."
           type: array
           items:
-            $ref: "./e-parsing-error-codes.yml#/components/schemas/ParsingErrorCodes"
+            $ref: "./e-parsing-notification-codes.yml#/components/schemas/ParsingNotificationCodes"
         Origin:
           $ref: "#/components/schemas/RfidCertificateOrigin"
         Type:
@@ -703,7 +705,7 @@ components:
           description: "List of remarks arisen when reading data from the memory of the chip and analysing their ASN.1-structure."
           type: array
           items:
-            $ref: "./e-parsing-error-codes.yml#/components/schemas/ParsingErrorCodes"
+            $ref: "./e-parsing-notification-codes.yml#/components/schemas/ParsingNotificationCodes"
         DocFields_Text:
           description: "List of document text fields formed on the basis of the file contents"
           type: array
@@ -748,6 +750,7 @@ components:
           type: array
           items:
             type: integer
+            format: int64
 
     TrfFtBytes:
       title: "TrfFtBytes"
@@ -795,7 +798,7 @@ components:
           description: "List of remarks arisen during the procedure."
           type: array
           items:
-            $ref: "./e-parsing-error-codes.yml#/components/schemas/ParsingErrorCodes"
+            $ref: "./e-parsing-notification-codes.yml#/components/schemas/ParsingNotificationCodes"
         AccessControlOptions:
           description: "List of structures with are used to describe the variants of the authentication or secure data access procedure
           performance within the context of the communication session with electronic document"
