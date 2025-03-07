@@ -4,11 +4,13 @@ components:
     TDocBinaryInfo:
       title: "TDocBinaryInfo"
       type: object
-      required:
-        - RFID_BINARY_DATA
       properties:
         RFID_BINARY_DATA:
           $ref: "#/components/schemas/BinaryData"
+        RFID_RAW_DATA:
+          type: array
+          items:
+            $ref: "#/components/schemas/RfidRawData"
 
     BinaryData:
       title: "BinaryData"
@@ -283,10 +285,6 @@ components:
       session with electronic document"
       type: object
       required:
-        - VirtualMode
-        - SDKVersion
-        - DriverVersion
-        - FirmwareVersion
         - Applications
         - AccessControls
         - CardProperties
@@ -303,12 +301,16 @@ components:
         VirtualMode:
           description: "Sign of virtual session when working with loaded data from a previous communication session
           with the electronic document"
+          type: string
         SDKVersion:
           description: "Text SDKVersion value in format A.B (e.g. 3.1)"
+          type: string
         DriverVersion:
           description: "Text DriverVersion value in format A.B.C.D (e.g. 6.2.5.4)"
+          type: string
         FirmwareVersion:
           description: "Text FirmwareVersion value in format A.B (e.g. 5.19)"
+          type: string
         Applications:
           description: "List of containers to store information about the involved applications of electronic document"
           type: array
@@ -348,6 +350,8 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/RfidSecurityObject"
+        Status:
+          $ref: "./common.yml#/components/schemas/CheckResult"
 
     RfidSecurityObject:
       title: "RfidSecurityObject"
@@ -582,21 +586,14 @@ components:
       data groups."
       type: object
       required:
-        - Type
-        - Status
-        - Format
         - Data
       properties:
         Type:
-          oneOf:
-            - $ref: "./e-graphic-field-type.yml#/components/schemas/GraphicFieldType"
-            - $ref: "./e-text-field-type.yml#/components/schemas/TextFieldType"
+          type: integer
         Status:
           description: "Result of logical analysis of compliance of the contents of the field
           with the requirements of the specification"
-          oneOf:
-            - $ref: "./e-parsing-notification-codes.yml#/components/schemas/ParsingNotificationCodes"
-            - $ref: "./e-parsing-error-codes.yml#/components/schemas/ParsingErrorCodes"
+          type: integer
         Format:
           description: "Mask of format of text information (for example, «YYMMDD» for date of birth)"
           type: string
@@ -687,12 +684,6 @@ components:
       required:
         - Type
         - ReadingStatus
-        - ReadingTime
-        - PA_Status
-        - Notifications
-        - DocFields_Text
-        - DocFields_Graphics
-        - DocFields_Originals
       properties:
         FileID:
           description: "File identifier. Each byte of FileID represented by its hexadecimal value. The individual bytes are separated by spaces (e.g. 01 1E)"
@@ -728,6 +719,35 @@ components:
           type: array
           items:
             $ref: "./e-graphic-field-type.yml#/components/schemas/GraphicFieldType"
+        ParsedData:
+          $ref: "#/components/schemas/ParsedData"
+        SecurityObject_Certificates:
+          $ref: "#/components/schemas/SecurityObjectCertificates"
+
+    SecurityObjectCertificates:
+      type: object
+      properties:
+        Certificate_Data:
+          $ref: "#/components/schemas/CertificateData"
+
+    CertificateData:
+      type: object
+      required:
+        - Data
+        - Length
+      properties:
+        Data:
+          type: string
+        Length:
+          type: string
+
+    ParsedData:
+      title: "ParsedData"
+      properties:
+        ParsingNotifications:
+          type: array
+          items:
+            type: integer
 
     TrfFtBytes:
       title: "TrfFtBytes"
@@ -741,9 +761,7 @@ components:
       properties:
         Type:
           description: "Logical type of the field"
-          oneOf:
-            - $ref: "./e-graphic-field-type.yml#/components/schemas/GraphicFieldType"
-            - $ref: "./e-text-field-type.yml#/components/schemas/TextFieldType"
+          type: integer
         Status:
           description: "Result of logical analysis of compliance of the contents of the field
           with the requirements of the specification"
@@ -754,6 +772,7 @@ components:
         Data:
           description: "Binary data array. Base64 encoded."
           type: string
+          nullable: true
 
     RfidAccessControlInfo:
       title: "RfidAccessControlInfo"
@@ -1131,3 +1150,15 @@ components:
         - "DEV_LS"
         - "DEF_LS"
         - "BLS"
+
+    RfidRawData:
+      title: "RfidRawData"
+      type: object
+      required:
+        - Data
+        - FieldType
+      properties:
+        Data:
+          type: string
+        FieldType:
+          type: integer

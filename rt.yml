@@ -172,9 +172,11 @@ components:
           85: "DocumentPositionResult"
           87: "MRZDetectorResult"
           97: "FaceDetectionResult"
+          101: "DocumentBinaryInfoResult"
           102: "TextDataResult"
           103: "GraphicsResult"
           104: "DocumentBinaryInfoResult"
+          105: "RFIDGraphicsInfoResult"
           109: "ByteArrayResult"
 
     ContainerList:
@@ -213,6 +215,7 @@ components:
               - $ref: "#/components/schemas/MRZDetectorResult"
               - $ref: "#/components/schemas/MRZPositionResult"
               - $ref: "#/components/schemas/MRZTestQualityResult"
+              - $ref: "#/components/schemas/RFIDGraphicsInfoResult"
 
     StatusResult:
       title: "StatusResult"
@@ -463,4 +466,15 @@ components:
           properties:
             MRZTestQuality:
               $ref: "./rt-mrz-test-quality.yml#/components/schemas/MRZTestQuality"
+        - $ref: "#/components/schemas/ResultItem"
+
+    RFIDGraphicsInfoResult:
+      title: "RFIDGraphicsInfoResult"
+      allOf:
+        - type: object
+          required:
+            - TOriginalRFIDGraphicsInfo
+          properties:
+            TOriginalRFIDGraphicsInfo:
+              $ref: "./rt-rfid-graphics-info.yml#/components/schemas/TOriginalRFIDGraphicsInfo"
         - $ref: "#/components/schemas/ResultItem"
