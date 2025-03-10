@@ -1,6 +1,15 @@
 openapi: 3.0.4
 components:
   schemas:
+    TextItem:
+      title: "TextItem"
+      type: object
+      required:
+        - Text
+      properties:
+        Text:
+          $ref: "#/components/schemas/Text"
+
     Text:
       title: "Text"
       type: object

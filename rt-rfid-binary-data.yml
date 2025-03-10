@@ -1,6 +1,15 @@
 openapi: 3.0.4
 components:
   schemas:
+    TDocBinaryInfoItem:
+      title: "TDocBinaryInfoItem"
+      type: object
+      required:
+        - TDocBinaryInfo
+      properties:
+        TDocBinaryInfo:
+          $ref: "#/components/schemas/TDocBinaryInfo"
+
     TDocBinaryInfo:
       title: "TDocBinaryInfo"
       type: object

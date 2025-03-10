@@ -1,6 +1,15 @@
 openapi: 3.0.4
 components:
   schemas:
+    TOriginalRFIDGraphicsInfoItem:
+      title: "TOriginalRFIDGraphicsInfoItem"
+      type: object
+      required:
+        - TOriginalRFIDGraphicsInfo
+      properties:
+        TOriginalRFIDGraphicsInfo:
+          $ref: "#/components/schemas/TOriginalRFIDGraphicsInfo"
+
     TOriginalRFIDGraphicsInfo:
       title: "TOriginalRFIDGraphicsInfo"
       type: object

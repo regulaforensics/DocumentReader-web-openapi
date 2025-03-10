@@ -1,6 +1,15 @@
 openapi: 3.0.4
 components:
   schemas:
+    DocVisualExtendedInfoItem:
+      title: "DocVisualExtendedInfoItem"
+      type: object
+      required:
+        - DocVisualExtendedInfo
+      properties:
+        DocVisualExtendedInfo:
+          $ref: "#/components/schemas/DocVisualExtendedInfo"
+
     DocVisualExtendedInfo:
       title: "DocVisualExtendedInfo"
       type: object

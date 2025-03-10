@@ -1,0 +1,11 @@
+openapi: 3.0.4
+components:
+  schemas:
+    RawImageContainerItem:
+      title: "RawImageContainerItem"
+      type: object
+      required:
+        - RawImageContainer
+      properties:
+        RawImageContainer:
+          $ref: "./common.yml#/components/schemas/ImageData"

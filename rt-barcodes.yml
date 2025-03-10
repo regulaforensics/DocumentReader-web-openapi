@@ -1,6 +1,15 @@
 openapi: 3.0.4
 components:
   schemas:
+    DocBarCodeInfoItem:
+      title: "DocBarCodeInfoItem"
+      type: object
+      required:
+        - DocBarCodeInfo
+      properties:
+        DocBarCodeInfo:
+          $ref: "#/components/schemas/DocBarCodeInfoFieldsList"
+
     DocBarCodeInfoFieldsList:
       title: "DocBarCodeInfoFieldsList"
       type: object

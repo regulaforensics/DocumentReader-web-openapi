@@ -1,6 +1,15 @@
 openapi: 3.0.4
 components:
   schemas:
+    DocumentPositionItem:
+      title: "DocumentPositionItem"
+      type: object
+      required:
+        - DocumentPosition
+      properties:
+        DocumentPosition:
+          $ref: "#/components/schemas/DocumentPosition"
+
     DocumentPosition:
       title: "DocumentPosition"
       type: object

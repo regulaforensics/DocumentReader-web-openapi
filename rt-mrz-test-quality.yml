@@ -1,6 +1,15 @@
 openapi: 3.0.4
 components:
   schemas:
+    MRZTestQualityItem:
+      title: "MRZTestQualityItem"
+      type: object
+      required:
+        - MRZTestQuality
+      properties:
+        MRZTestQuality:
+          $ref: "#/components/schemas/MRZTestQuality"
+
     MRZTestQuality:
       title: "MRZTestQuality"
       type: object

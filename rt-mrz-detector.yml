@@ -1,6 +1,15 @@
 openapi: 3.0.4
 components:
   schemas:
+    ResultMRZDetectorItem:
+      title: "ResultMRZDetectorItem"
+      type: object
+      required:
+        - ResultMRZDetector
+      properties:
+        ResultMRZDetector:
+          $ref: "#/components/schemas/ResultMRZDetector"
+
     ResultMRZDetector:
       title: "ResultMRZDetector"
       type: object

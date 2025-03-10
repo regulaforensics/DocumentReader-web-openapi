@@ -1,6 +1,15 @@
 openapi: 3.0.4
 components:
   schemas:
+    ListVerifiedFieldsItem:
+      title: "ListVerifiedFields"
+      type: object
+      required:
+        - ListVerifiedFields
+      properties:
+        ListVerifiedFields:
+          $ref: "#/components/schemas/ListVerifiedFields"
+
     ListVerifiedFields:
       title: "ListVerifiedFields"
       type: object

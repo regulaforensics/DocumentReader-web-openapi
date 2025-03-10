@@ -1,6 +1,15 @@
 openapi: 3.0.4
 components:
   schemas:
+    ImagesItem:
+      title: "ImagesItem"
+      type: object
+      required:
+        - Images
+      properties:
+        Images:
+          $ref: "#/components/schemas/Images"
+
     Images:
       title: "Images"
       type: object

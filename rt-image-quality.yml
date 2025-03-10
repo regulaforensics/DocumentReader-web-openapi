@@ -1,6 +1,15 @@
 openapi: 3.0.4
 components:
   schemas:
+    ImageQualityCheckListItem:
+      title: "ImageQualityCheckListItem"
+      type: object
+      required:
+        - ImageQualityCheckList
+      properties:
+        ImageQualityCheckList:
+          $ref: "#/components/schemas/ImageQualityCheckList"
+
     ImageQualityCheckList:
       title: "ImageQualityCheckList"
       type: object

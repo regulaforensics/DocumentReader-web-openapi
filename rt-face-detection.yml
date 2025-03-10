@@ -1,6 +1,15 @@
 openapi: 3.0.4
 components:
   schemas:
+    FaceDetectionItem:
+      title: "FaceDetectionItem"
+      type: object
+      required:
+        - FaceDetection
+      properties:
+        FaceDetection:
+          $ref: "#/components/schemas/FaceDetection"
+
     FaceDetection:
       title: "FaceDetection"
       type: object

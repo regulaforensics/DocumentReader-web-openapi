@@ -1,6 +1,15 @@
 openapi: 3.0.4
 components:
   schemas:
+    DocGraphicsInfoItem:
+      title: "DocGraphicsInfoItem"
+      type: object
+      required:
+        - DocGraphicsInfo
+      properties:
+        DocGraphicsInfo:
+          $ref: "#/components/schemas/GraphicFieldsList"
+
     GraphicFieldsList:
       title: "GraphicFieldsList"
       type: object

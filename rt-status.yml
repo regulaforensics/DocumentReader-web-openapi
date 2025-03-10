@@ -1,6 +1,15 @@
 openapi: 3.0.4
 components:
   schemas:
+    StatusItem:
+      title: "StatusItem"
+      type: object
+      required:
+        - Status
+      properties:
+        Status:
+          $ref: "#/components/schemas/Status"
+
     Status:
       title: "Status"
       type: object

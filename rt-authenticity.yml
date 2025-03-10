@@ -1,6 +1,15 @@
 openapi: 3.0.4
 components:
   schemas:
+    AuthenticityCheckListItem:
+      title: "AuthenticityCheckListItem"
+      type: object
+      required:
+        - AuthenticityCheckList
+      properties:
+        AuthenticityCheckList:
+          $ref: "#/components/schemas/AuthenticityCheckList"
+
     AuthenticityCheckList:
       title: "AuthenticityCheckList"
       type: object

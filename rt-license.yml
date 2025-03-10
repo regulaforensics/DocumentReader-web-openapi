@@ -1,0 +1,11 @@
+openapi: 3.0.4
+components:
+  schemas:
+    LicenseItem:
+      title: "LicenseItem"
+      type: object
+      required:
+        - License
+      properties:
+        License:
+          $ref: "./common.yml#/components/schemas/License"

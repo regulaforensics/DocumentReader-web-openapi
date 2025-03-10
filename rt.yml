@@ -220,110 +220,63 @@ components:
     StatusResult:
       title: "StatusResult"
       allOf:
-        - type: object
-          required:
-            - Status
-          properties:
-            Status:
-              $ref: "./rt-status.yml#/components/schemas/Status"
         - $ref: "#/components/schemas/ResultItem"
+        - $ref: "./rt-status.yml#/components/schemas/StatusItem"
 
     TextResult:
       title: "TextResult"
       allOf:
-        - type: object
-          required:
-            - Text
-          properties:
-            Text:
-              $ref: "./rt-text.yml#/components/schemas/Text"
         - $ref: "#/components/schemas/ResultItem"
+        - $ref: "./rt-text.yml#/components/schemas/TextItem"
 
     DocumentImageResult:
       title: "DocumentImageResult"
       description: "Contains document image."
       allOf:
-        - type: object
-          required:
-            - RawImageContainer
-          properties:
-            RawImageContainer:
-              $ref: "./common.yml#/components/schemas/ImageData"
         - $ref: "#/components/schemas/ResultItem"
+        - $ref: "./rt-raw-image.yml#/components/schemas/RawImageContainerItem"
 
     ImagesResult:
       title: "ImagesResult"
       allOf:
-        - type: object
-          required:
-            - Images
-          properties:
-            Images:
-              $ref: "./rt-images.yml#/components/schemas/Images"
         - $ref: "#/components/schemas/ResultItem"
+        - $ref: "./rt-images.yml#/components/schemas/ImagesItem"
 
     ChosenDocumentTypeResult:
       title: "ChosenDocumentTypeResult"
       description: "Contains information about the type of document that was determined
       based on the analysis of the provided image"
       allOf:
-        - type: object
-          required:
-            - OneCandidate
-          properties:
-            OneCandidate:
-              $ref: "./rt-doc-type-old.yml#/components/schemas/OneCandidate"
-            XML_buffer:
-              type: string
-              readOnly: true
         - $ref: "#/components/schemas/ResultItem"
+        - $ref: "./rt-doc-type-old.yml#/components/schemas/OneCandidateItem"
 
     DocumentTypesCandidatesResult:
       title: "DocumentTypesCandidatesResult"
       allOf:
-        - type: object
-          properties:
-            CandidatesList:
-              $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentTypesCandidatesList"
         - $ref: "#/components/schemas/ResultItem"
+        - $ref: "./rt-doc-type-old.yml#/components/schemas/CandidatesListItem"
 
     TextDataResult:
       title: "TextDataResult"
       description: "Text fields extracted from one document source.
       Contains results of specific source for each provided page."
       allOf:
-        - type: object
-          required:
-            - DocVisualExtendedInfo
-          properties:
-            DocVisualExtendedInfo:
-              $ref: "./rt-text-data.yml#/components/schemas/DocVisualExtendedInfo"
         - $ref: "#/components/schemas/ResultItem"
+        - $ref: "./rt-text-data.yml#/components/schemas/DocVisualExtendedInfoItem"
 
     GraphicsResult:
       title: "GraphicsResult"
       description: "Graphic fields extracted from one of the document sources.
       Returns separate results for each provided page."
-      required:
-        - DocGraphicsInfo
       allOf:
-        - type: object
-          properties:
-            DocGraphicsInfo:
-              $ref: "./rt-image-data.yml#/components/schemas/GraphicFieldsList"
         - $ref: "#/components/schemas/ResultItem"
+        - $ref: "./rt-image-data.yml#/components/schemas/DocGraphicsInfoItem"
 
     ByteArrayResult:
       title: "ByteArrayResult"
       allOf:
-        - type: object
-          required:
-            - ByteArray
-          properties:
-            ByteArray:
-              description: "Byte array in base64"
-              type: string
         - $ref: "#/components/schemas/ResultItem"
+        - $ref: "./rt-byte-array-data.yml#/components/schemas/ByteArrayItem"
 
     LexicalAnalysisResult:
       title: "LexicalAnalysisResult"
@@ -333,148 +286,83 @@ components:
         assessment of the authenticity of the document. Single result for all pages.
         Consider using Result.TEXT type for more simplicity.
       allOf:
-        - type: object
-          required:
-            - ListVerifiedFields
-          properties:
-            ListVerifiedFields:
-              $ref: "./rt-ocr-lexical-analysis.yml#/components/schemas/ListVerifiedFields"
         - $ref: "#/components/schemas/ResultItem"
+        - $ref: "./rt-ocr-lexical-analysis.yml#/components/schemas/ListVerifiedFieldsItem"
 
     AuthenticityResult:
       title: "AuthenticityResult"
       allOf:
-        - type: object
-          required:
-            - AuthenticityCheckList
-          properties:
-            AuthenticityCheckList:
-              $ref: "./rt-authenticity.yml#/components/schemas/AuthenticityCheckList"
         - $ref: "#/components/schemas/ResultItem"
+        - $ref: "./rt-authenticity.yml#/components/schemas/AuthenticityCheckListItem"
 
     ImageQualityResult:
       title: "ImageQualityResult"
       allOf:
-        - type: object
-          required:
-            - ImageQualityCheckList
-          properties:
-            ImageQualityCheckList:
-              $ref: "./rt-image-quality.yml#/components/schemas/ImageQualityCheckList"
         - $ref: "#/components/schemas/ResultItem"
+        - $ref: "./rt-image-quality.yml#/components/schemas/ImageQualityCheckListItem"
 
     DocumentPositionResult:
       title: "DocumentPositionResult"
       description: "Contains information about document position on the input image, its center, angle, etc"
       allOf:
-        - type: object
-          required:
-            - DocumentPosition
-          properties:
-            DocumentPosition:
-              $ref: "./rt-document-position.yml#/components/schemas/DocumentPosition"
         - $ref: "#/components/schemas/ResultItem"
+        - $ref: "./rt-document-position.yml#/components/schemas/DocumentPositionItem"
 
     DocBarCodeInfo:
       title: "DocBarCodeInfo"
       description: "Raw data from BarCodes"
       allOf:
-        - type: object
-          required:
-            - DocBarCodeInfo
-          properties:
-            DocBarCodeInfo:
-              $ref: "./rt-barcodes.yml#/components/schemas/DocBarCodeInfoFieldsList"
         - $ref: "#/components/schemas/ResultItem"
+        - $ref: "./rt-barcodes.yml#/components/schemas/DocBarCodeInfoItem"
 
     LicenseResult:
       title: "LicenseResult"
+      description: "Contains license"
       allOf:
-        - type: object
-          description: "Contains license"
-          required:
-            - License
-          properties:
-            License:
-              $ref: "./common.yml#/components/schemas/License"
         - $ref: "#/components/schemas/ResultItem"
+        - $ref: "./rt-license.yml#/components/schemas/LicenseItem"
 
     EncryptedRCLResult:
       title: "EncryptedRCLResult"
+      description: "Contains encrypted result container list"
       allOf:
-        - type: object
-          description: "Contains encrypted result container list"
-          required:
-            - EncryptedRCL
-          properties:
-            EncryptedRCL:
-              $ref: "./common.yml#/components/schemas/EncryptedRCL"
         - $ref: "#/components/schemas/ResultItem"
+        - $ref: "./rt-encrypted-rcl.yml#/components/schemas/EncryptedRCLItem"
 
     DocumentBinaryInfoResult:
       title: "DocumentBinaryInfoResult"
+      description: "Structure is used to store the data reading results from the RFID-chip in
+      a form of a list of the logically separated data groups."
       allOf:
-        - type: object
-          description: "Structure is used to store the data reading results from the RFID-chip in
-          a form of a list of the logically separated data groups."
-          required:
-            - TDocBinaryInfo
-          properties:
-            TDocBinaryInfo:
-              $ref: "./rt-rfid-binary-data.yml#/components/schemas/TDocBinaryInfo"
         - $ref: "#/components/schemas/ResultItem"
+        - $ref: "./rt-rfid-binary-data.yml#/components/schemas/TDocBinaryInfoItem"
 
     FaceDetectionResult:
       title: "FaceDetectionResult"
       allOf:
-        - type: object
-          required:
-            - FaceDetection
-          properties:
-            FaceDetection:
-              $ref: "./rt-face-detection.yml#/components/schemas/FaceDetection"
         - $ref: "#/components/schemas/ResultItem"
+        - $ref: "./rt-face-detection.yml#/components/schemas/FaceDetectionItem"
 
     MRZDetectorResult:
       title: "MRZDetectorResult"
       allOf:
-        - type: object
-          required:
-            - ResultMRZDetector
-          properties:
-            ResultMRZDetector:
-              $ref: "./rt-mrz-detector.yml#/components/schemas/ResultMRZDetector"
         - $ref: "#/components/schemas/ResultItem"
+        - $ref: "./rt-mrz-detector.yml#/components/schemas/ResultMRZDetectorItem"
 
     MRZPositionResult:
       title: "MRZPositionResult"
       allOf:
-        - type: object
-          required:
-            - MrzPosition
-          properties:
-            MrzPosition:
-              $ref: "./rt-mrz-position.yml#/components/schemas/MrzPosition"
         - $ref: "#/components/schemas/ResultItem"
+        - $ref: "./rt-mrz-position.yml#/components/schemas/MrzPositionItem"
 
     MRZTestQualityResult:
       title: "MRZTestQualityResult"
       allOf:
-        - type: object
-          required:
-            - MRZTestQuality
-          properties:
-            MRZTestQuality:
-              $ref: "./rt-mrz-test-quality.yml#/components/schemas/MRZTestQuality"
         - $ref: "#/components/schemas/ResultItem"
+        - $ref: "./rt-mrz-test-quality.yml#/components/schemas/MRZTestQualityItem"
 
     RFIDGraphicsInfoResult:
       title: "RFIDGraphicsInfoResult"
       allOf:
-        - type: object
-          required:
-            - TOriginalRFIDGraphicsInfo
-          properties:
-            TOriginalRFIDGraphicsInfo:
-              $ref: "./rt-rfid-graphics-info.yml#/components/schemas/TOriginalRFIDGraphicsInfo"
         - $ref: "#/components/schemas/ResultItem"
+        - $ref: "./rt-rfid-graphics-info.yml#/components/schemas/TOriginalRFIDGraphicsInfoItem"

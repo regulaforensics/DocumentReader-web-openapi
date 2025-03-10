@@ -1,6 +1,15 @@
 openapi: 3.0.4
 components:
   schemas:
+    MrzPositionItem:
+      title: "MrzPositionItem"
+      type: object
+      required:
+        - MrzPosition
+      properties:
+        MrzPosition:
+          $ref: "#/components/schemas/MrzPosition"
+
     MrzPosition:
       title: "MrzPosition"
       type: object

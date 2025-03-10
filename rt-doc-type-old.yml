@@ -1,6 +1,25 @@
 openapi: 3.0.4
 components:
   schemas:
+    CandidatesListItem:
+      title: "CandidatesListItem"
+      type: object
+      properties:
+        CandidatesList:
+          $ref: "#/components/schemas/DocumentTypesCandidatesList"
+
+    OneCandidateItem:
+      title: "OneCandidateItem"
+      type: object
+      required:
+        - OneCandidate
+      properties:
+        OneCandidate:
+          $ref: "#/components/schemas/OneCandidate"
+        XML_buffer:
+          type: string
+          readOnly: true
+
     DocumentTypesCandidatesList:
       title: "DocumentTypesCandidatesList"
       type: object

@@ -1,0 +1,11 @@
+openapi: 3.0.4
+components:
+  schemas:
+    EncryptedRCLItem:
+      title: "EncryptedRCLItem"
+      type: object
+      required:
+        - EncryptedRCL
+      properties:
+        EncryptedRCL:
+          $ref: "./common.yml#/components/schemas/EncryptedRCL"
