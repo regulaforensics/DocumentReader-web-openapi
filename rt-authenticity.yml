@@ -45,26 +45,41 @@ components:
           type: array
           items:
             oneOf:
-              - $ref: "./authenticity/rt-security-feature.yml#/components/schemas/SecurityFeatureResult"
-              - $ref: "./authenticity/rt-ident.yml#/components/schemas/IdentResult"
-              - $ref: "./authenticity/rt-fiber.yml#/components/schemas/FiberResult"
-              - $ref: "./authenticity/rt-ocr-security-text.yml#/components/schemas/OCRSecurityTextResult"
-              - $ref: "./authenticity/rt-photo-ident.yml#/components/schemas/PhotoIdentResult"
+              - $ref: "#/components/schemas/SecurityFeatureResult"
+              - $ref: "#/components/schemas/IdentResult"
+              - $ref: "#/components/schemas/FiberResult"
+              - $ref: "#/components/schemas/OCRSecurityTextResult"
+              - $ref: "#/components/schemas/PhotoIdentResult"
 
     SecurityFeatureResult:
-      $ref: "./authenticity/rt-security-feature.yml#/components/schemas/SecurityFeatureResult"
+      title: "SecurityFeatureResult"
+      allOf:
+        - $ref: "#/components/schemas/AuthenticityCheckResultItem"
+        - $ref: "./authenticity/rt-security-feature.yml#/components/schemas/SecurityFeatureItem"
 
     IdentResult:
-      $ref: "./authenticity/rt-ident.yml#/components/schemas/IdentResult"
+      title: "IdentResult"
+      allOf:
+        - $ref: "#/components/schemas/AuthenticityCheckResultItem"
+        - $ref: "./authenticity/rt-ident.yml#/components/schemas/IdentItem"
 
     FiberResult:
-      $ref: "./authenticity/rt-fiber.yml#/components/schemas/FiberResult"
+      title: "FiberResult"
+      allOf:
+        - $ref: "#/components/schemas/AuthenticityCheckResultItem"
+        - $ref: "./authenticity/rt-fiber.yml#/components/schemas/FiberItem"
 
     OCRSecurityTextResult:
-      $ref: "./authenticity/rt-ocr-security-text.yml#/components/schemas/OCRSecurityTextResult"
+      title: "OCRSecurityTextResult"
+      allOf:
+        - $ref: "#/components/schemas/AuthenticityCheckResultItem"
+        - $ref: "./authenticity/rt-ocr-security-text.yml#/components/schemas/OCRSecurityTextItem"
 
     PhotoIdentResult:
-      $ref: "./authenticity/rt-photo-ident.yml#/components/schemas/PhotoIdentResult"
+      title: "PhotoIdentResult"
+      allOf:
+        - $ref: "#/components/schemas/AuthenticityCheckResultItem"
+        - $ref: "./authenticity/rt-photo-ident.yml#/components/schemas/PhotoIdentItem"
 
     AuthenticityType:
       title: "AuthenticityType"

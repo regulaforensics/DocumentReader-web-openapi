@@ -1,41 +1,39 @@
 openapi: 3.0.4
 components:
   schemas:
-    OCRSecurityTextResult:
-      title: "OCRSecurityTextResult"
-      allOf:
-        - $ref: "../rt-authenticity.yml#/components/schemas/AuthenticityCheckResultItem"
-        - type: object
-          required:
-            - CriticalFlag
-            - LightType
-            - FieldRect
-            - EtalonResultType
-            - EtalonFieldType
-            - EtalonLightType
-            - EtalonFieldRect
-            - SecurityTextResultOCR
-            - EtalonResultOCR
-          properties:
-            CriticalFlag:
-              $ref: "./e-critical.yml#/components/schemas/Critical"
-            LightType:
-              $ref: "../common.yml#/components/schemas/Light"
-            FieldRect:
-              $ref: "../common.yml#/components/schemas/RectangleCoordinates"
-            EtalonResultType:
-              type: integer
-            EtalonFieldType:
-              type: integer
-            EtalonLightType:
-              type: integer
-            EtalonFieldRect:
-              $ref: "../common.yml#/components/schemas/RectangleCoordinates"
-            SecurityTextResultOCR:
-              type: string
-            EtalonResultOCR:
-              type: string
-            Reserved1:
-              type: integer
-            Reserved2:
-              type: integer
+    OCRSecurityTextItem:
+      title: "OCRSecurityTextItem"
+      type: object
+      required:
+        - CriticalFlag
+        - LightType
+        - FieldRect
+        - EtalonResultType
+        - EtalonFieldType
+        - EtalonLightType
+        - EtalonFieldRect
+        - SecurityTextResultOCR
+        - EtalonResultOCR
+      properties:
+        CriticalFlag:
+          $ref: "./e-critical.yml#/components/schemas/Critical"
+        LightType:
+          $ref: "../common.yml#/components/schemas/Light"
+        FieldRect:
+          $ref: "../common.yml#/components/schemas/RectangleCoordinates"
+        EtalonResultType:
+          type: integer
+        EtalonFieldType:
+          type: integer
+        EtalonLightType:
+          type: integer
+        EtalonFieldRect:
+          $ref: "../common.yml#/components/schemas/RectangleCoordinates"
+        SecurityTextResultOCR:
+          type: string
+        EtalonResultOCR:
+          type: string
+        Reserved1:
+          type: integer
+        Reserved2:
+          type: integer

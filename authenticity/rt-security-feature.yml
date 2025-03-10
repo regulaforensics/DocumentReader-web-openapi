@@ -1,26 +1,24 @@
 openapi: 3.0.4
 components:
   schemas:
-    SecurityFeatureResult:
-      title: "SecurityFeatureResult"
-      allOf:
-        - $ref: "../rt-authenticity.yml#/components/schemas/AuthenticityCheckResultItem"
-        - type: object
-          required:
-            - ElementType
-            - ElementRect
-            - Visibility
-            - CriticalFlag
-          properties:
-            ElementType:
-              $ref: "../e-security-feature-type.yml#/components/schemas/SecurityFeatureType"
-            ElementRect:
-              $ref: "../common.yml#/components/schemas/RectangleCoordinates"
-            Visibility:
-              $ref: "./e-visibility.yml#/components/schemas/Visibility"
-            CriticalFlag:
-              $ref: "./e-critical.yml#/components/schemas/Critical"
-            AreaList:
-              $ref: "../rt-authenticity.yml#/components/schemas/AreaContainer"
-            Reserved2:
-              type: integer
+    SecurityFeatureItem:
+      title: "SecurityFeatureItem"
+      type: object
+      required:
+        - ElementType
+        - ElementRect
+        - Visibility
+        - CriticalFlag
+      properties:
+        ElementType:
+          $ref: "../e-security-feature-type.yml#/components/schemas/SecurityFeatureType"
+        ElementRect:
+          $ref: "../common.yml#/components/schemas/RectangleCoordinates"
+        Visibility:
+          $ref: "./e-visibility.yml#/components/schemas/Visibility"
+        CriticalFlag:
+          $ref: "./e-critical.yml#/components/schemas/Critical"
+        AreaList:
+          $ref: "../rt-authenticity.yml#/components/schemas/AreaContainer"
+        Reserved2:
+          type: integer

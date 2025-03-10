@@ -1,26 +1,24 @@
 openapi: 3.0.4
 components:
   schemas:
-    IdentResult:
-      title: "IdentResult"
-      allOf:
-        - $ref: "../rt-authenticity.yml#/components/schemas/AuthenticityCheckResultItem"
-        - type: object
-          required:
-            - ElementType
-            - LightIndex
-            - Image
-            - EtalonImage
-          properties:
-            ElementType:
-              $ref: "../e-security-feature-type.yml#/components/schemas/SecurityFeatureType"
-            LightIndex:
-              $ref: "../common.yml#/components/schemas/Light"
-            Area:
-              $ref: "../common.yml#/components/schemas/RectangleCoordinates"
-            Image: # Original image
-              $ref: "../common.yml#/components/schemas/ImageData"
-            EtalonImage: # Reference image
-              $ref: "../common.yml#/components/schemas/ImageData"
-            AreaList:
-              $ref: "../rt-authenticity.yml#/components/schemas/AreaContainer"
+    IdentItem:
+      title: "IdentItem"
+      type: object
+      required:
+        - ElementType
+        - LightIndex
+        - Image
+        - EtalonImage
+      properties:
+        ElementType:
+          $ref: "../e-security-feature-type.yml#/components/schemas/SecurityFeatureType"
+        LightIndex:
+          $ref: "../common.yml#/components/schemas/Light"
+        Area:
+          $ref: "../common.yml#/components/schemas/RectangleCoordinates"
+        Image: # Original image
+          $ref: "../common.yml#/components/schemas/ImageData"
+        EtalonImage: # Reference image
+          $ref: "../common.yml#/components/schemas/ImageData"
+        AreaList:
+          $ref: "../rt-authenticity.yml#/components/schemas/AreaContainer"

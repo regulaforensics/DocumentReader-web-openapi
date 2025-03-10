@@ -28,38 +28,45 @@ components:
               - $ref: "#/components/schemas/DocVisualExtendedFieldRect"
               - $ref: "#/components/schemas/DocVisualExtendedFieldRfid"
 
-    DocVisualExtendedFieldRfid:
-      title: "DocVisualExtendedFieldRfid"
-      description: "Structure and serves for storing information from one text data field.
-      Variant with field logical type and RFID data."
-      allOf:
-        - type: object
-          required:
-            - RFID_OriginDG
-            - RFID_OriginTagEntry
-          properties:
-            RFID_OriginDG:
-              $ref: "./e-rfid-data-group-type-tag.yml#/components/schemas/RfidDataGroupTypeTag"
-            RFID_OriginDGTag:
-              type: integer
-            RFID_OriginTagEntry:
-              description: "Record index of the text field source in the data group"
-              type: number
-            RFID_OriginEntryView:
-              type: integer
-        - $ref: "#/components/schemas/DocVisualExtendedField"
-
     DocVisualExtendedFieldRect:
       title: "DocVisualExtendedFieldRect"
       description: "Structure and serves for storing information from one text data field.
       Variant with field logical type and field rectangular area coordinates on the image."
       allOf:
-        - type: object
-          properties:
-            FieldRect: # Coordinates of the text field in the normalized image of the document. Only for Result.VISUAL_TEXT and Result.MRZ_TEXT results.
-              $ref: "./common.yml#/components/schemas/RectangleCoordinates"
         - $ref: "#/components/schemas/DocVisualExtendedField"
+        - $ref: "#/components/schemas/DocVisualExtendedFieldRectItem"
 
+    DocVisualExtendedFieldRfid:
+      title: "DocVisualExtendedFieldRfid"
+      description: "Structure and serves for storing information from one text data field.
+      Variant with field logical type and RFID data."
+      allOf:
+        - $ref: "#/components/schemas/DocVisualExtendedField"
+        - $ref: "#/components/schemas/DocVisualExtendedFieldRfidItem"
+
+    DocVisualExtendedFieldRectItem:
+      title: "DocVisualExtendedFieldRectItem"
+      type: object
+      properties:
+        FieldRect: # Coordinates of the text field in the normalized image of the document. Only for Result.VISUAL_TEXT and Result.MRZ_TEXT results.
+          $ref: "./common.yml#/components/schemas/RectangleCoordinates"
+
+    DocVisualExtendedFieldRfidItem:
+      title: "DocVisualExtendedFieldRfidItem"
+      type: object
+      required:
+        - RFID_OriginDG
+        - RFID_OriginTagEntry
+      properties:
+        RFID_OriginDG:
+          $ref: "./e-rfid-data-group-type-tag.yml#/components/schemas/RfidDataGroupTypeTag"
+        RFID_OriginDGTag:
+          type: integer
+        RFID_OriginTagEntry:
+          description: "Record index of the text field source in the data group"
+          type: number
+        RFID_OriginEntryView:
+          type: integer
 
     DocVisualExtendedField:
       title: "DocVisualExtendedField"
@@ -108,7 +115,6 @@ components:
           type: integer
         Reserved3:
           type: integer
-
 
     StringRecognitionResult:
       title: "StringRecognitionResult"
