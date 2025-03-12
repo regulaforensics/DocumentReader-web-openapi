@@ -30,7 +30,7 @@ components:
         boundingQuadrangle:
           type: array
           items:
-            type: integer
+            type: number
 
     MRZRowsItem:
       title: "MRZRowsItem"

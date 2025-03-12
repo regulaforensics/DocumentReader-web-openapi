@@ -93,13 +93,13 @@ components:
         SYMBOLS_PARAM:
           type: integer
         SizeError_ALIGNMENT:
-          type: integer
+          type: number
         SizeError_DISTANCE:
-          type: integer
+          type: number
         SizeError_INTERVAL:
-          type: integer
+          type: number
         StringAngle:
-          type: integer
+          type: number
         StringBorders:
           $ref: "./common.yml#/components/schemas/RectangleCoordinates"
         SymbolsCount:
@@ -152,17 +152,17 @@ components:
         SYMBOL_SIZE:
           type: integer
         SizeErrorAlignWithNext:
-          type: integer
+          type: number
         SizeErrorAlignWithPrev:
-          type: integer
+          type: number
         SizeErrorIntervWithNext:
-          type: integer
+          type: number
         SizeErrorIntervWithPrev:
-          type: integer
+          type: number
         SizeErrorSymbolHeight:
-          type: integer
+          type: number
         SizeErrorSymbolWidth:
-          type: integer
+          type: number
         SymbolBounds:
           $ref: "./common.yml#/components/schemas/RectangleCoordinates"
 
@@ -200,10 +200,10 @@ components:
         - bottom
       properties:
         Left:
-          type: integer
+          type: number
         Top:
-          type: integer
+          type: number
         Right:
-          type: integer
+          type: number
         Bottom:
-          type: integer
+          type: number

@@ -184,7 +184,6 @@ components:
       type: object
       description: "List with various objects, containing processing results"
       required:
-        - Count
         - List
       properties:
         Count:
