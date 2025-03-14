@@ -173,7 +173,7 @@ components:
           87: "MRZDetectorResult"
           97: "FaceDetectionResult"
           101: "DocumentBinaryInfoResult"
-          102: "TextDataResult"
+          102: "RFIDTextDataResult"
           103: "GraphicsResult"
           104: "DocumentBinaryInfoResult"
           105: "RFIDGraphicsInfoResult"
@@ -215,6 +215,7 @@ components:
               - $ref: "#/components/schemas/MRZPositionResult"
               - $ref: "#/components/schemas/MRZTestQualityResult"
               - $ref: "#/components/schemas/RFIDGraphicsInfoResult"
+              - $ref: "#/components/schemas/RFIDTextDataResult"
 
     StatusResult:
       title: "StatusResult"
@@ -365,3 +366,9 @@ components:
       allOf:
         - $ref: "#/components/schemas/ResultItem"
         - $ref: "./rt-rfid-graphics-info.yml#/components/schemas/TOriginalRFIDGraphicsInfoItem"
+
+    RFIDTextDataResult:
+      title: "RFIDTextDataResult"
+      allOf:
+        - $ref: "#/components/schemas/ResultItem"
+        - $ref: "./rt-rfid-text-data.yml#/components/schemas/RFIDDocVisualExtendedInfoItem"

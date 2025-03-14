@@ -211,13 +211,13 @@ components:
     TransactionProcessResponse:
       title: "TransactionProcessResponse"
       allOf:
+        - $ref: "./p-process.yml#/components/schemas/ProcessResponse"
         - type: object
           required:
             - CoreLibResultCode
           properties:
             CoreLibResultCode:
               type: integer
-        - $ref: "./p-process.yml#/components/schemas/ProcessResponse"
 
     TransactionProcessGetResponse:
       title: "TransactionProcessGetResponse"
