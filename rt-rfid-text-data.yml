@@ -28,20 +28,23 @@ components:
 
     RFIDDocVisualExtendedField:
       title: "RFIDDocVisualExtendedField"
+      allOf:
+        - $ref: "./common.yml#/components/schemas/VisualExtendedFieldItem"
+        - $ref: "#/components/schemas/RFIDDocVisualExtendedFieldItem"
+
+    RFIDDocVisualExtendedFieldItem:
+      title: "RFIDDocVisualExtendedFieldItem"
       type: object
       required:
         - OriginDG
         - OriginTagEntry
-      allOf:
-        - $ref: "./common.yml#/components/schemas/DocVisualExtendedFieldItem"
-        - type: object
-          properties:
-            OriginDG:
-              type: integer
-            OriginDGTag:
-              type: integer
-            OriginTagEntry:
-              description: "Record index of the text field source in the data group"
-              type: number
-            OriginEntryView:
-              type: integer
+      properties:
+        OriginDG:
+          type: integer
+        OriginDGTag:
+          type: integer
+        OriginTagEntry:
+          description: "Record index of the text field source in the data group"
+          type: number
+        OriginEntryView:
+          type: integer
