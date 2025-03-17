@@ -588,7 +588,7 @@ components:
 #          default: false
         checkSecurityText:
           type: boolean
-          description: "This parameter is used to check the security text in either visible or both visible and UV lights and perform cross-comparison"
+          description: "This parameter is used to enable Security text check"
           # default: true
 
 
@@ -613,7 +613,7 @@ components:
 #          default: true
         checkBlackAndWhiteCopy:
           type: boolean
-          description: "This parameter is used to determine if the image is black and white or contains color information"
+          description: "This parameter is used to enable Black and white copy check"
           # default: true
 
     MeasureSystem:
