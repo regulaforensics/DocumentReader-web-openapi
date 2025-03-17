@@ -586,6 +586,10 @@ components:
           type: boolean
           description: "This parameter is used to enable LetterScreen check"
 #          default: false
+        checkSecurityText:
+          type: boolean
+          description: "This parameter is used to enable Security text check"
+          # default: true
 
 
     LivenessParams:
@@ -607,6 +611,10 @@ components:
           type: boolean
           description: "This parameter is used to enable Electronic device detection"
 #          default: true
+        checkBlackAndWhiteCopy:
+          type: boolean
+          description: "This parameter is used to enable Black and white copy check"
+          # default: true
 
     MeasureSystem:
       type: integer
