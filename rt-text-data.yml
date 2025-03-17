@@ -29,8 +29,6 @@ components:
     DocVisualExtendedField:
       title: "DocVisualExtendedField"
       type: object
-      required:
-        - FieldRect
       allOf:
         - $ref: "./common.yml#/components/schemas/VisualExtendedFieldItem"
         - $ref: "#/components/schemas/DocVisualExtendedFieldItem"
@@ -39,7 +37,7 @@ components:
       title: "DocVisualExtendedFieldItem"
       type: object
       required:
-        -FieldRect
+        - FieldRect
       properties:
         FieldRect: # Coordinates of the text field in the normalized image of the document. Only for Result.VISUAL_TEXT and Result.MRZ_TEXT results.
           $ref: "./common.yml#/components/schemas/RectangleCoordinates"
