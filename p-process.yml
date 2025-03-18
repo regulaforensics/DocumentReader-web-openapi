@@ -615,6 +615,10 @@ components:
           type: boolean
           description: "This parameter is used to enable Black and white copy check"
           # default: true
+        checkDynaprint:
+          type: boolean
+          description: "This parameter is used to enable Dynaprint check"
+          # default: true
 
     MeasureSystem:
       type: integer
