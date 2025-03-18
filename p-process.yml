@@ -586,9 +586,15 @@ components:
           type: boolean
           description: "This parameter is used to enable LetterScreen check"
 #          default: false
+
         checkSecurityText:
           type: boolean
           description: "This parameter is used to enable Security text check"
+          # default: true
+
+        checkDynaprint:
+          type: boolean
+          description: "This parameter is used to enable Dynaprint check"
           # default: true
 
 
