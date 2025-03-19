@@ -646,6 +646,8 @@ components:
         - 690
         - 691
         - 692
+        - 693
+        - 694
       x-enum-descriptions:
         - "Document class code"
         - "Issuing state code"
@@ -1289,6 +1291,8 @@ components:
         - "Digital Travel Authorization Number"
         - "Date of First Positive Test Result"
         - "EF.CardAccess"
+        - "Short flight number"
+        - "Airline code"
       x-enum-varnames:
         - "DOCUMENT_CLASS_CODE"
         - "ISSUING_STATE_CODE"
@@ -1932,3 +1936,5 @@ components:
         - "FT_DIGITAL_TRAVEL_AUTHORIZATION_NUMBER"
         - "FT_DATE_OF_FIRST_POSITIVE_TEST_RESULT"
         - "EF_CARD_ACCESS"
+        - "SHORT_FLIGHT_NUMBER"
+        - "AIRLINE_CODE"
