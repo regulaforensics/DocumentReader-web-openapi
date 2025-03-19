@@ -34,7 +34,14 @@ components:
     Healthcheck:
       title: "Healthcheck"
       type: object
-      required: [app, licenseId, licenseType, licenseSerial, licenseValidUntil, scenarios, version]
+      required:
+        - app
+        - licenseId
+        - licenseType
+        - licenseSerial
+        - licenseValidUntil
+        - scenarios
+        - version
       properties:
         app:
           description: Application name.
@@ -72,7 +79,11 @@ components:
         documentsDatabase:
           description: Database information.
           type: object
-          required: [id, version, exportDate, description]
+          required:
+            - id
+            - version
+            - exportDate
+            - description
           properties:
             id:
               description: Database identifier.
@@ -85,7 +96,6 @@ components:
             exportDate:
               description: Date of database creation.
               type: string
-              format: date
               nullable: true
             description:
               description: Description of the database contents, such as the list of supported countries and documents.
