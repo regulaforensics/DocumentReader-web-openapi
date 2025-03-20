@@ -80,7 +80,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TransactionProcessResponse'
+                $ref: "./p-process.yml#/components/schemas/ProcessResponse"
         "400":
           description: "Bad request. Check your input data."
         "403":
@@ -207,21 +207,6 @@ components:
         transactionId:
           type: string
           format: uuid
-
-    TransactionProcessResponse:
-      title: "TransactionProcessResponse"
-      allOf:
-        - $ref: "./p-process.yml#/components/schemas/ProcessResponse"
-        - $ref: "#/components/schemas/TransactionProcessResponseItem"
-
-    TransactionProcessResponseItem:
-      title: "TransactionProcessResponseItem"
-      type: object
-      required:
-        - CoreLibResultCode
-      properties:
-        CoreLibResultCode:
-          type: integer
 
     TransactionProcessGetResponse:
       title: "TransactionProcessGetResponse"
