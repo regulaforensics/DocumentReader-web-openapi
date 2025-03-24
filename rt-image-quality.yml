@@ -40,6 +40,7 @@ components:
         - 5
         - 7
         - 9
+        - 10
       x-enum-varnames:
         - "ImageGlares"
         - "ImageFocus"
@@ -49,6 +50,7 @@ components:
         - "Bounds"
         - "Portrait"
         - "Brightness"
+        - "Occlusion"
       x-enum-descriptions:
         - "Signals glare presence on the image"
         - "Signals whether image is in focus"
@@ -58,6 +60,7 @@ components:
         - "Signals if document is not fully present in the image"
         - "Signals if the portrait is present"
         - "Signals if the document image is bright enough"
+        - "Signals if the document image has occlusion"
 
     InputImageQualityChecks:
       type: string
@@ -71,6 +74,7 @@ components:
         - "documentPosition"
         - "portraitCheck"
         - "brightnessCheck"
+        - "occlusionCheck"
       x-enum-varnames:
         - "Glares"
         - "Focus"
@@ -80,6 +84,7 @@ components:
         - "Bounds"
         - "Portrait"
         - "Brightness"
+        - "Occlusion"
       x-enum-descriptions:
         - "Signals glare presence on the image"
         - "Signals whether image is in focus"
@@ -89,6 +94,7 @@ components:
         - "Signals if document is not fully present in the image"
         - "Signals if the portrait is present"
         - "Signals if the document image is bright enough"
+        - "Signals if the document image has occlusion"
 
 
     AreaArray:
