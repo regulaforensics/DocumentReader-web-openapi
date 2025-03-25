@@ -142,11 +142,6 @@ components:
       required:
         - processParam
       properties:
-        lcidFilter:
-          type: array
-          description: "The list of LCID types to recognize. If empty, values with all LCID types will be extracted. Empty by default."
-          items:
-            $ref: "./e-lcid.yml#/components/schemas/LCID"
         processParam:
           $ref: "#/components/schemas/ProcessParams"
         List:
@@ -189,6 +184,11 @@ components:
           description: "URLs to the document images for processing."
           items:
             type: string
+        lcidFilter:
+          type: array
+          description: "The list of LCID types to recognize. If empty, values with all LCID types will be extracted. Empty by default."
+          items:
+            $ref: "./e-lcid.yml#/components/schemas/LCID"
 
     ProcessParams:
       title: "ProcessParams"
