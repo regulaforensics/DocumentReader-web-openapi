@@ -1,6 +1,6 @@
 openapi: 3.0.4
 info:
-  version: 7.4.0
+  version: 7.6.0
   title: Regula Document Reader Web API
   x-logo:
     url: "https://static-content.regulaforensics.com/Icons/Logos/Regula-logo.svg"
