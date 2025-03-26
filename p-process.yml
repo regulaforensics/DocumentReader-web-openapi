@@ -396,12 +396,8 @@ components:
           type: array
           items:
             $ref: "./e-document-type.yml#/components/schemas/DocumentType"
-        processAuth:
-          description: "Authenticity checks that should be performed regardless of the document type.
-          The available checks are listed in the eRPRM_Authenticity enum.
-          Note that only supported by your license checks can be added. "
-          type: integer
-          format: int64
+        processAuth: # Authenticity checks that should be performed regardless of the document type. The available checks are listed in the eRPRM_Authenticity enum. Note that only supported by your license checks can be added.
+          $ref: "./authenticity/e-result-type.yml#/components/schemas/AuthenticityResultType"
         deviceId:
           description: "This parameter is used to specify the document reader device type from which input images were captured. Default 0."
           type: integer
