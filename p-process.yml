@@ -454,6 +454,10 @@ components:
           type: array
           items:
             $ref: "./e-input-barcode-type.yml#/components/schemas/InputBarcodeType"
+        strictDLCategoryExpiry:
+          description: "Set to force DL categories expiry date status to either valid or not. By default, if the DL category expiry date is correct, its status will be `wasNotDone`, otherwise `error`"
+          type: boolean
+#          default: false
       required:
         - scenario
 
