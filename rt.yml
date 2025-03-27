@@ -138,7 +138,7 @@ components:
         page_idx:
           type: integer
         result_type:
-          $ref: "#/components/schemas/ContainerType"
+          $ref: "#/components/schemas/Result"
       discriminator:
         propertyName: result_type
         mapping:

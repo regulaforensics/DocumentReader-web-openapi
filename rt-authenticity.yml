@@ -81,12 +81,6 @@ components:
         - $ref: "#/components/schemas/AuthenticityCheckResultItem"
         - $ref: "./authenticity/rt-photo-ident.yml#/components/schemas/PhotoIdentItem"
 
-    AuthenticityType:
-      title: "AuthenticityType"
-      type: integer
-      description: "Same as authenticity result type, but used for safe parsing of not-described values: https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/development/enums/authenticity-result-type/"
-      default: 0
-
     AuthenticityCheckResultItem:
       title: "AuthenticityCheckResultItem"
       description: "Common fields for all authenticity result objects"
@@ -95,7 +89,7 @@ components:
         - Type
       properties:
         Type:
-          $ref: "#/components/schemas/AuthenticityType"
+          $ref: "./authenticity/e-result-type.yml#/components/schemas/AuthenticityResultType"
         ElementResult:
           $ref: "./common.yml#/components/schemas/CheckResult"
         ElementDiagnose:
