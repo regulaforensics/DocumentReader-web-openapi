@@ -1,52 +1,46 @@
-openapi: 3.0.3
+openapi: 3.0.4
 components:
   schemas:
-
-    GraphicsResult:
-      title: "Graphics (legacy)"
-      description: "Graphic fields extracted from one of the document sources.
-      Returns separate results for each provided page."
+    DocGraphicsInfoItem:
+      title: "DocGraphicsInfoItem"
+      type: object
       required:
         - DocGraphicsInfo
-      allOf:
-        - type: object
-          properties:
-            DocGraphicsInfo:
-              $ref: "#/components/schemas/GraphicFieldsList"
-        - $ref: "./rt.yml#/components/schemas/ResultItem"
+      properties:
+        DocGraphicsInfo:
+          $ref: "#/components/schemas/GraphicFieldsList"
 
     GraphicFieldsList:
+      title: "GraphicFieldsList"
       type: object
       required:
         - pArrayFields
+        - nFields
       properties:
         pArrayFields:
           type: array
           items:
             $ref: "#/components/schemas/GraphicField"
+        nFields:
+          description: "Number of pArrayFields array elements"
+          type: number
 
     GraphicField:
+      title: "GraphicField"
+      description: "Information about one graphic field - abstract class"
       type: object
       required:
+        - FieldRect
         - FieldType
+        - FieldName
         - image
       properties:
+        FieldRect:
+          $ref: "./common.yml#/components/schemas/RectangleCoordinates"
         FieldType:
           $ref: "./e-graphic-field-type.yml#/components/schemas/GraphicFieldType"
+        FieldName:
+          description: "Graphic field symbolic name"
+          type: string
         image:
           $ref: "./common.yml#/components/schemas/ImageData"
-        FieldRect:
-          description: "Coordinates of the graphic field in the normalized image of the document"
-          $ref: "./common.yml#/components/schemas/RectangleCoordinates"
-        RFID_OriginDG:
-          description: "Source data group file. Only for Result.RFID_GRAPHICS result."
-          type: integer
-        RFID_OriginDGTag:
-          description: "Index of the source record of the image with biometric information in the information data group. Only for Result.RFID_GRAPHICS result."
-          type: integer
-        RFID_OriginTagEntry:
-          type: integer
-          description: "Index of the template in the record with biometric data. Only for Result.RFID_GRAPHICS result."
-        RFID_OriginEntryView:
-          type: integer
-          description: "Index of the variant of the biometric data template. Only for Result.RFID_GRAPHICS result."

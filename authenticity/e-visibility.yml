@@ -1,7 +1,8 @@
-openapi: 3.0.3
+openapi: 3.0.4
 components:
   schemas:
     Visibility:
+      title: "Visibility"
       type: integer
       description: "Enumeration contains visibility status of the security element"
       enum:

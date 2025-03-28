@@ -1,0 +1,61 @@
+openapi: 3.0.4
+components:
+  schemas:
+    ResultMRZDetectorItem:
+      title: "ResultMRZDetectorItem"
+      type: object
+      required:
+        - ResultMRZDetector
+      properties:
+        ResultMRZDetector:
+          $ref: "#/components/schemas/ResultMRZDetector"
+
+    ResultMRZDetector:
+      title: "ResultMRZDetector"
+      type: object
+      required:
+        - MRZFormat
+        - MRZRows
+        - MRZRowsNum
+        - boundingQuadrangle
+      properties:
+        MRZFormat:
+          type: integer
+        MRZRows:
+          type: array
+          items:
+            $ref: "#/components/schemas/MRZRowsItem"
+        MRZRowsNum:
+          type: integer
+        boundingQuadrangle:
+          type: array
+          items:
+            type: number
+
+    MRZRowsItem:
+      title: "MRZRowsItem"
+      type: object
+      required:
+        - length
+        - maxLength
+        - symbols
+      properties:
+        length:
+          type: integer
+        maxLength:
+          type: integer
+        symbols:
+          type: array
+          items:
+            $ref: "#/components/schemas/Symbol"
+
+    Symbol:
+      title: "Symbol"
+      type: object
+      required:
+        - boundingRect
+      properties:
+        boundingRect:
+          type: array
+          items:
+            type: integer
