@@ -822,6 +822,7 @@ components:
         "UserName": "user"
 
     DocumentsDatabase:
+      title: "DocumentsDatabase"
       type: object
       description: "Document database information"
       properties:

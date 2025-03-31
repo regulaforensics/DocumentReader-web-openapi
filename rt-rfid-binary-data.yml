@@ -736,12 +736,14 @@ components:
           $ref: "#/components/schemas/SecurityObjectCertificates"
 
     SecurityObjectCertificates:
+      title: "SecurityObjectCertificates"
       type: object
       properties:
         Certificate_Data:
           $ref: "#/components/schemas/CertificateData"
 
     CertificateData:
+      title: "CertificateData"
       type: object
       required:
         - Data
