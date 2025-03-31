@@ -1,8 +1,8 @@
-openapi: 3.0.3
+openapi: 3.0.4
 components:
   schemas:
-
     LCID:
+      title: "LCID"
       description: |
         Locale id. Used to tag same typed fields declared in several languages.
         For example: name can be provided in both native and latin variants.
@@ -36,10 +36,15 @@ components:
         - 1026
         - 1109
         - 1027
+        - 3076
+        - 5124
         - 2052
+        - 4100
+        - 1028
         - 1050
         - 1029
         - 1030
+        - 1125
         - 2067
         - 1043
         - 3081
@@ -134,6 +139,7 @@ components:
         - 1089
         - 1053
         - 2077
+        - 1114
         - 1097
         - 1092
         - 1098
@@ -197,10 +203,15 @@ components:
         - "BULGARIAN"
         - "BURMESE"
         - "CATALAN"
+        - "CHINESE_HONGKONG_SAR"
+        - "CHINESE_MACAO_SAR"
         - "CHINESE"
+        - "CHINESE_SINGAPORE"
+        - "CHINESE_TAIWAN"
         - "CROATIAN"
         - "CZECH"
         - "DANISH"
+        - "DIVEHI"
         - "DUTCH_BELGIUM"
         - "DUTCH_NETHERLANDS"
         - "ENGLISH_AUSTRALIA"
@@ -295,6 +306,7 @@ components:
         - "SWAHILI"
         - "SWEDISH"
         - "SWEDISH_FINLAND"
+        - "SYRIAC"
         - "TAMIL"
         - "TATAR"
         - "TELUGU"
@@ -309,9 +321,9 @@ components:
         - "VIETNAMESE"
         - "CTC_SIMPLIFIED"
         - "CTC_TRADITIONAL"
-        - "BengaliBangladesh"
-        - "BengaliIndia"
-        - "Assamese"
+        - "BENGALI_BANGLADESH"
+        - "BENGALI_INDIA"
+        - "ASSAMESE"
         - "ORIYA"
         - "MALAYALAM"
         - "LAO"
@@ -358,10 +370,15 @@ components:
         - "Bulgarian"
         - "Burmese"
         - "Catalan"
+        - "Chinese (HongKong S.A.R.)"
+        - "Chinese (Macao S.A.R.)"
         - "Chinese"
+        - "Chinese (Singapore)"
+        - "Chinese (Taiwan)"
         - "Croatian"
         - "Czech"
         - "Danish"
+        - "Divehi"
         - "Dutch (Belgium)"
         - "Dutch (Netherlands)"
         - "English (Australia)"
@@ -456,6 +473,7 @@ components:
         - "Swahili"
         - "Swedish"
         - "Swedish (Finland)"
+        - "Syriac"
         - "Tamil"
         - "Tatar"
         - "Telugu"

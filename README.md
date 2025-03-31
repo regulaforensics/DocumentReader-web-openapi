@@ -23,37 +23,31 @@
 * **rt - \*.yml** - files describing results types
 * **p - \*.yml** - files describing endpoints
 
-
 ## Updating clients according to the current spec
 
-To update clients, use `update clients` GitHub action. Specify title PR and press run. For each client **PR** with changes will be created.
+When changes are added, the `update clients` action is automatically triggered. For each client **PR** with changes will be created.
 
-:warning: NOTE: Static typed clients, such as Java or C#, require adding all new **enums** to `update-models.sh` ENUM_MAPPINGS section.
+:warning: NOTE: Before working with a client, read `dev.md` which is available in each client repository.
 
-:warning: NOTE: For some clients generator produces not-valid client code. See `update-models.sh` for ad-hocks fixing generator issues.   
+:warning: NOTE: Do **not edit** generated code. Create wrappers, decorators, etc. in ext folder.
 
-:warning: NOTE: Do **not edit** generated code. Create wrappers, decorators, etc in ext folder.
-
-:bulb: All clients have RawResultItem container that is used for deserialization for undescribed types. This container is a simple map/dict. 
+:bulb: All clients have RawResultItem and AuthenticityCheckResultItem containers that are used for deserialization oneOf schemas. These containers are a simple map/dict. 
 
 
 ##  Spec validation
-```
-docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli validate --recommend -i /local/index.yml 
+
+```bash
+docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli validate --recommend -i /local/index.yml
 ```
 
 ## Building Redoc single page html documentation
 
-Edit **rt.yml** - remove **components.schemas.ResultItem.discriminator** node
-
-Edit **rt-authenticity.yml** - remove **components.schemas.AuthenticityCheckResultItem.discriminator**
-
-Then run next command:
-```
+```bash
 npx @redocly/cli build-docs index.yml -o=document-reader-static-doc.html
 ```
 
 ## Bundle scheme to single .json file
+
 ```bash
-npx openapi-generator-cli generate -i index.yml  -g openapi  --skip-validate-spec
+npx @openapitools/openapi-generator-cli generate -i index.yml -g openapi --skip-validate-spec
 ```
