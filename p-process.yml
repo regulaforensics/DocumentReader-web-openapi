@@ -454,6 +454,10 @@ components:
           type: array
           items:
             $ref: "./e-input-barcode-type.yml#/components/schemas/InputBarcodeType"
+        strictDLCategoryExpiry:
+          description: "Set to force DL categories expiry date to affect the overall status or not. As documents usually have their own date of expiry, which might be less or greater than category expiry date, this might be handy for specific cases."
+          type: boolean
+#          default: false
       required:
         - scenario
 
@@ -586,6 +590,10 @@ components:
           type: boolean
           description: "This parameter is used to enable LetterScreen check"
 #          default: false
+        checkSecurityText:
+          type: boolean
+          description: "This parameter is used to enable Security text check"
+          # default: true
 
 
     LivenessParams:
@@ -607,6 +615,14 @@ components:
           type: boolean
           description: "This parameter is used to enable Electronic device detection"
 #          default: true
+        checkBlackAndWhiteCopy:
+          type: boolean
+          description: "This parameter is used to enable Black and white copy check"
+          # default: true
+        checkDynaprint:
+          type: boolean
+          description: "This parameter is used to enable Dynaprint check"
+          # default: true
 
     MeasureSystem:
       type: integer
