@@ -536,6 +536,7 @@ components:
       properties:
         SymbolCode:
           type: integer
+          format: int64
           description: "Unicode symbol code"
         SymbolProbability:
           type: integer
