@@ -108,13 +108,10 @@ components:
           32: "IdentResult"
           64: "OCRSecurityTextResult"
           128: "PhotoIdentResult"
-          256: "PhotoIdentResult"
           512: "SecurityFeatureResult"
           1024: "IdentResult"
-          2048: "IdentResult"
           4096: "SecurityFeatureResult"
           8192: "SecurityFeatureResult"
-          16384: "FiberResult"
           32768: "IdentResult"
           65536: "SecurityFeatureResult"
           131072: "IdentResult"
@@ -125,7 +122,6 @@ components:
           4194304: "SecurityFeatureResult"
           8388608: "SecurityFeatureResult"
           16777216: "OCRSecurityTextResult"
-          2147483648: "SecurityFeatureResult"
 
     AreaContainer:
       title: "AreaContainer"

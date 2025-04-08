@@ -7,7 +7,6 @@ components:
       format: int64
       description: "Enumeration describes available authenticity checks: https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/development/enums/authenticity-result-type/."
       enum:
-        - 0
         - 1
         - 2
         - 4
@@ -16,13 +15,10 @@ components:
         - 32
         - 64
         - 128
-        - 256
         - 512
         - 1024
-        - 2048
         - 4096
         - 8192
-        - 16384
         - 32768
         - 65536
         - 131072
@@ -33,7 +29,6 @@ components:
         - 4194304
         - 8388608
         - 16777216
-        - 2147483648
       x-enum-descriptions:
         - "No authenticity control procedure"
         - "Document luminescence check in UV light"
@@ -63,7 +58,6 @@ components:
         - "Encrypted IPI"
         - "Flag for status-only authenticity"
       x-enum-varnames:
-        - "NONE"
         - "UV_LUMINESCENCE"
         - "IR_B900"
         - "IMAGE_PATTERN"
@@ -72,13 +66,10 @@ components:
         - "IR_VISIBILITY"
         - "OCR_SECURITY_TEXT"
         - "IPI"
-        - "IR_PHOTO"
         - "PHOTO_EMBED_TYPE"
         - "OVI"
-        - "IR_LUMINESCENCE"
         - "HOLOGRAMS"
         - "PHOTO_AREA"
-        - "UV_BACKGROUND"
         - "PORTRAIT_COMPARISON"
         - "BARCODE_FORMAT_CHECK"
         - "KINEGRAM"
@@ -89,4 +80,3 @@ components:
         - "EXTENDED_OCR_CHECK"
         - "EXTENDED_MRZ_CHECK"
         - "ENCRYPTED_IPI"
-        - "STATUS_ONLY"
