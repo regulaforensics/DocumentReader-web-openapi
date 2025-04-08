@@ -121,7 +121,11 @@ components:
           262144: "IdentResult"
           524288: "IdentResult"
           1048576: "IdentResult"
+          2097152: "IdentResult"
+          4194304: "SecurityFeatureResult"
           8388608: "SecurityFeatureResult"
+          16777216: "OCRSecurityTextResult"
+          2147483648: "SecurityFeatureResult"
 
     AreaContainer:
       title: "AreaContainer"
