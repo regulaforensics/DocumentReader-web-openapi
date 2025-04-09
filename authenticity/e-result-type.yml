@@ -30,7 +30,6 @@ components:
         - 8388608
         - 16777216
       x-enum-descriptions:
-        - "No authenticity control procedure"
         - "Document luminescence check in UV light"
         - "B900 ink MRZ contrast check in IR light"
         - "Image patterns presence/absence check (position, shape, color)"
@@ -39,13 +38,10 @@ components:
         - "Document elements visibility check in IR light"
         - "OCR for the text field in UV light comparison with other text sources check"
         - "Invisible Personal Information (IPI) visualization"
-        - "Document photo check in IR light"
         - "Owner's photo embedding check (is photo printed or sticked)"
         - "OVI check. Deprecated, use Document liveness check instead"
-        - "IR luminescence check"
         - "Hologram presence check. Deprecated"
         - "Owner's photo area advanced check (photo shape, size, position, etc.)"
-        - "UV background check"
         - "Portrait comparison check (document printed vs chip vs live)"
         - "Barcode format check (code metadata, data format, contents format, etc.)"
         - "Kinegram check"
@@ -56,7 +52,6 @@ components:
         - "Extended OCR Check"
         - "Extended MRZ check"
         - "Encrypted IPI"
-        - "Flag for status-only authenticity"
       x-enum-varnames:
         - "UV_LUMINESCENCE"
         - "IR_B900"
