@@ -266,6 +266,15 @@ components:
           type: array
           items:
             $ref: "./p-process.yml#/components/schemas/ProcessRequestImage"
+        tag:
+          type: string
+          description: "Session ID"
+        tenant:
+          type: string
+          description: "Customer name"
+        env:
+          type: string
+          description: "Environment type"
         livePortrait:
           type: string
           format: base64
