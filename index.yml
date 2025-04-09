@@ -100,3 +100,5 @@ components:
       $ref: "./rt-doc-type-old.yml#/components/schemas/OneCandidate"
     RFIDPKDResourceType:
       $ref: "./e-rfid-pkd-resourcetype.yml#/components/schemas/RFIDPKDResourceType"
+    ParsingErrorCodes:
+      $ref: "./e-parsing-error-codes.yml#/components/schemas/ParsingErrorCodes"
