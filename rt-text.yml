@@ -91,7 +91,6 @@ components:
           items:
             $ref: "#/components/schemas/CrossSourceValueComparison"
 
-    # todo originalValidity очень путает, может в validityList сделать validityList = originalValidity && validityList
     TextFieldValue:
       title: "TextFieldValue"
       type: object
