@@ -125,8 +125,6 @@ components:
     ImageData:
       title: "ImageData"
       type: object
-      required:
-        - image
       properties:
         image:
           $ref: "#/components/schemas/ImageBase64"
