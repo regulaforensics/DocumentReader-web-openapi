@@ -22,3 +22,7 @@ components:
           $ref: "../common.yml#/components/schemas/ImageData"
         AreaList:
           $ref: "../rt-authenticity.yml#/components/schemas/AreaContainer"
+        ElementID:
+          type: integer
+        Result:
+          type: integer

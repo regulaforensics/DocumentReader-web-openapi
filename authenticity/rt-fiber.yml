@@ -50,3 +50,5 @@ components:
           type: array
           items:
             type: integer
+        ErrorCode:
+          type: integer

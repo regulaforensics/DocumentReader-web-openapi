@@ -28,9 +28,7 @@ components:
           type: integer
         Angle:
           type: integer
-        Reserved1:
-          type: integer
-        Reserved2:
+        Result:
           type: integer
         Reserved3:
           type: integer

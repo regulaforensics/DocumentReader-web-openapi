@@ -20,5 +20,7 @@ components:
           $ref: "./e-critical.yml#/components/schemas/Critical"
         AreaList:
           $ref: "../rt-authenticity.yml#/components/schemas/AreaContainer"
+        Result:
+          type: integer
         Reserved2:
           type: integer
