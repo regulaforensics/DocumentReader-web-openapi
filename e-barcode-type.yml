@@ -1,7 +1,8 @@
-openapi: 3.0.3
+openapi: 3.0.4
 components:
   schemas:
     BarcodeType:
+      title: "BarcodeType"
       type: integer
       description: "Enumeration contains the types of barcodes that can be processed"
       enum:

@@ -1,8 +1,10 @@
-openapi: 3.0.3
+openapi: 3.0.4
 components:
   schemas:
     AuthenticityResultType:
+      title: "AuthenticityResultType"
       type: integer
+      format: int64
       description: "Enumeration describes available authenticity checks: https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/development/enums/authenticity-result-type/."
       enum:
         - 1

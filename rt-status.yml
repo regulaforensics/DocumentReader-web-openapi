@@ -1,53 +1,44 @@
-openapi: 3.0.3
+openapi: 3.0.4
 components:
   schemas:
+    StatusItem:
+      title: "StatusItem"
+      type: object
+      required:
+        - Status
+      properties:
+        Status:
+          $ref: "#/components/schemas/Status"
 
-    StatusResult:
-      title: "Status"
-      allOf:
-        - type: object
-          required:
-            - Status
-          properties:
-            Status:
-              $ref: "#/components/schemas/Status"
-        - $ref: "./rt.yml#/components/schemas/ResultItem"
-
-
-    # $ref with description doesnt work right now, waiting for OAS 3.1 (comming soon)
-    # allOf should be used here to replace description from CheckResult
-    # see https://github.com/OAI/OpenAPI-Specification/issues/556#issuecomment-192007034
-    # but java codegen produce invalid code for allOf `int complete=null`
     Status:
+      title: "Status"
       type: object
       required:
         - overallStatus
         - optical
+        - portrait
+        - rfid
+        - stopList
         - detailsOptical
       properties:
-        overallStatus:
-          description: "Overall checks status. Root status."
+        overallStatus: # Overall checks status. Rootx status
           $ref: "./common.yml#/components/schemas/CheckResult"
-        optical:
-          description: "Overall optical checks combined status"
+        optical: # Overall optical checks combined status
           $ref: "./common.yml#/components/schemas/CheckResult"
-        portrait:
-          description: "Portrait comparison status"
+        portrait: # Portrait comparison status
           $ref: "./common.yml#/components/schemas/CheckResult"
-        rfid:
-          description: "Overall RFID checks combined status"
+        rfid: # Overall RFID checks combined status
           $ref: "./common.yml#/components/schemas/CheckResult"
-        stopList:
-          description: "Stop list check status"
+        stopList: # Stop list check status
           $ref: "./common.yml#/components/schemas/CheckResult"
         detailsRFID:
-          description: "Details on performed RFID checks"
           $ref: "#/components/schemas/detailsRFID"
         detailsOptical:
-          description: "Details on performed optical checks"
           $ref: "#/components/schemas/detailsOptical"
 
     detailsOptical:
+      title: "detailsOptical"
+      description: "Details on performed optical checks"
       type: object
       required:
         - overallStatus
@@ -59,32 +50,29 @@ components:
         - security
         - text
       properties:
-        overallStatus:
-          description: "Overall optical checks combined status"
+        overallStatus: # Overall optical checks combined status
           $ref: "./common.yml#/components/schemas/CheckResult"
-        docType:
-          description: "Status of document type recognition"
+        docType: # Status of document type recognition
           $ref: "./common.yml#/components/schemas/CheckResult"
-        expiry:
-          description: "Status of document expiration"
+        expiry: # Status of document expiration
           $ref: "./common.yml#/components/schemas/CheckResult"
-        imageQA:
-          description: "Status of document image quality check"
+        imageQA: # Status of document image quality check
           $ref: "./common.yml#/components/schemas/CheckResult"
-        mrz:
-          description: "Status of document MRZ"
+        mrz: # Status of document MRZ
           $ref: "./common.yml#/components/schemas/CheckResult"
         pagesCount:
           description: "Number of processed pages in the document"
           type: integer
-        security:
-          description: "Authenticity verification status"
+        security: # Authenticity verification status
           $ref: "./common.yml#/components/schemas/CheckResult"
-        text:
-          description: "Status of text fields analysis"
+        text: # Status of text fields analysis
           $ref: "./common.yml#/components/schemas/CheckResult"
+        vds:
+          type: integer
 
     detailsRFID:
+      title: "detailsRFID"
+      description: "Details on performed RFID checks"
       type: object
       required:
         - overallStatus
@@ -95,24 +83,17 @@ components:
         - PACE
         - TA
       properties:
-        overallStatus:
-          description: "Overall RFID checks combined status"
+        overallStatus: # Overall RFID checks combined status
           $ref: "./common.yml#/components/schemas/CheckResult"
-        AA:
-          description: "Active Authentication status"
+        AA: # Active Authentication status
           $ref: "./common.yml#/components/schemas/CheckResult"
-        BAC:
-          description: "Basic Access Control (BAC) status"
+        BAC: # Basic Access Control (BAC) status
           $ref: "./common.yml#/components/schemas/CheckResult"
-        CA:
-          description: "Chip Authentication status"
+        CA: # Chip Authentication status
           $ref: "./common.yml#/components/schemas/CheckResult"
-        PA:
-          description: "Passive Authentication status"
+        PA: # Passive Authentication status
           $ref: "./common.yml#/components/schemas/CheckResult"
-        PACE:
-          description: "Password Authenticated Connection Establishment (PACE) status"
+        PACE: # Password Authenticated Connection Establishment (PACE) status
           $ref: "./common.yml#/components/schemas/CheckResult"
-        TA:
-          description: "Terminal Authentication status"
+        TA: # Terminal Authentication status
           $ref: "./common.yml#/components/schemas/CheckResult"

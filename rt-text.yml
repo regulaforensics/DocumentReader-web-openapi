@@ -1,37 +1,36 @@
-openapi: 3.0.3
+openapi: 3.0.4
 components:
   schemas:
-
-    TextResult:
-      title: "Text"
-      allOf:
-        - type: object
-          required:
-            - Text
-          properties:
-            Text:
-              $ref: "#/components/schemas/Text"
-        - $ref: "./rt.yml#/components/schemas/ResultItem"
+    TextItem:
+      title: "TextItem"
+      type: object
+      required:
+        - Text
+      properties:
+        Text:
+          $ref: "#/components/schemas/Text"
 
     Text:
+      title: "Text"
       type: object
       description: "Contains all document text fields data with validity and cross-source compare checks"
       required:
         - status
         - validityStatus
         - comparisonStatus
+        - dateFormat
         - fieldList
         - availableSourceList
       properties:
-        status:
-          description: "Overall status of all checks from all text fields"
+        status: # Overall status of all checks from all text fields
           $ref: "./common.yml#/components/schemas/CheckResult"
-        validityStatus:
-          description: "Overall status of validity from all text fields from all sources"
+        validityStatus: # Overall status of validity from all text fields from all sources
           $ref: "./common.yml#/components/schemas/CheckResult"
-        comparisonStatus:
-          description: "Overall status of data comparison from different sources for each text field"
+        comparisonStatus: # Overall status of data comparison from different sources for each text field
           $ref: "./common.yml#/components/schemas/CheckResult"
+        dateFormat:
+          description: "Date format"
+          type: string
         fieldList:
           type: array
           items:
@@ -42,10 +41,12 @@ components:
             $ref: "#/components/schemas/TextAvailableSource"
 
     TextField:
+      title: "TextField"
       type: object
       required:
         - fieldType
         - fieldName
+        - lcid
         - status
         - validityStatus
         - comparisonStatus
@@ -61,14 +62,14 @@ components:
           type: string
         lcid:
           $ref: "./e-lcid.yml#/components/schemas/LCID"
-        status:
-          description: "Overall status of all checks from all values"
+        lcidName:
+          description: "LCID name"
+          type: string
+        status: # Overall status of all checks from all values
           $ref: "./common.yml#/components/schemas/CheckResult"
-        validityStatus:
-          description: "Overall status of validity from all values"
+        validityStatus: # Overall status of validity from all values
           $ref: "./common.yml#/components/schemas/CheckResult"
-        comparisonStatus:
-          description: "Overall status of data comparison from different sources"
+        comparisonStatus: # Overall status of data comparison from different sources
           $ref: "./common.yml#/components/schemas/CheckResult"
         value:
           description: "The most confidence value, selected from valueList"
@@ -90,13 +91,15 @@ components:
           items:
             $ref: "#/components/schemas/CrossSourceValueComparison"
 
-    # todo originalValidity очн путает, может в validityList сделать validityList = originalValidity && validityList
     TextFieldValue:
+      title: "TextFieldValue"
       type: object
       required:
         - value
         - pageIndex
         - source
+        - originalValidity
+        - probability
       properties:
         source:
           $ref: "./common.yml#/components/schemas/Source"
@@ -106,6 +109,8 @@ components:
         originalValue:
           description: "Original value as seen in the document"
           type: string
+        originalValidity:
+          $ref: "./common.yml#/components/schemas/CheckResult"
         originalSymbols:
           type: array
           items:
@@ -117,15 +122,19 @@ components:
           type: integer
           minimum: 0
           maximum: 100
-        fieldRect:
-          description: "Only for visual and mrz results. Coordinates of the rectangle region on a document image(result type 1). Represented by two points - (left, top) + (right, bottom)"
+        fieldRect: # Only for visual and mrz results. Coordinates of the rectangle region on a document image(result type 1). Represented by two points - (left, top) + (right, bottom)
           $ref: "./common.yml#/components/schemas/RectangleCoordinates"
-        rfidOrigin:
-          description: "Only for rfid images. Text location in rfid chip."
+        rfidOrigin: # Only for rfid images. Text location in rfid chip.
           $ref: "./common.yml#/components/schemas/RfidOrigin"
+        containerType:
+          $ref: "./rt.yml#/components/schemas/ContainerType"
 
     OriginalSymbol:
+      title: "OriginalSymbol"
       type: object
+      required:
+        - code
+        - probability
       properties:
         code:
           description: "Unicode symbol code"
@@ -140,6 +149,7 @@ components:
           $ref: "./common.yml#/components/schemas/RectangleCoordinates"
 
     SourceValidity:
+      title: "SourceValidity"
       type: object
       required:
         - source
@@ -151,6 +161,7 @@ components:
           $ref: "./common.yml#/components/schemas/CheckResult"
 
     CrossSourceValueComparison:
+      title: "CrossSourceValueComparison"
       type: object
       required:
         - sourceLeft
@@ -165,6 +176,7 @@ components:
           $ref: "./common.yml#/components/schemas/CheckResult"
 
     TextAvailableSource:
+      title: "TextAvailableSource"
       type: object
       required:
         - source
@@ -172,8 +184,7 @@ components:
       properties:
         source:
           $ref: "./common.yml#/components/schemas/Source"
-        validityStatus:
-          description: "Overall status of validity from all fields for given source"
+        validityStatus: # Overall status of validity from all fields for given source
           $ref: "./common.yml#/components/schemas/CheckResult"
         containerType:
           $ref: "./rt.yml#/components/schemas/ContainerType"

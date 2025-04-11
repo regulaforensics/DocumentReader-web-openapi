@@ -1,21 +1,20 @@
-openapi: 3.0.3
+openapi: 3.0.4
 components:
   schemas:
-
-    AuthenticityResult:
-      title: "Authenticity Checks"
-      allOf:
-        - type: object
-          required:
-            - AuthenticityCheckList
-          properties:
-            AuthenticityCheckList:
-              $ref: "#/components/schemas/AuthenticityCheckList"
-        - $ref: "./rt.yml#/components/schemas/ResultItem"
-
-    AuthenticityCheckList:
+    AuthenticityCheckListItem:
+      title: "AuthenticityCheckListItem"
       type: object
       required:
+        - AuthenticityCheckList
+      properties:
+        AuthenticityCheckList:
+          $ref: "#/components/schemas/AuthenticityCheckList"
+
+    AuthenticityCheckList:
+      title: "AuthenticityCheckList"
+      type: object
+      required:
+        - Count
         - List
       properties:
         Count:
@@ -28,6 +27,7 @@ components:
             $ref: "#/components/schemas/AuthenticityCheckResult"
 
     AuthenticityCheckResult:
+      title: "AuthenticityCheckResult"
       type: object
       required:
         - Type
@@ -38,29 +38,58 @@ components:
           $ref: "./authenticity/e-result-type.yml#/components/schemas/AuthenticityResultType"
         Result:
           $ref: "./common.yml#/components/schemas/CheckResult"
+        Count:
+          type: integer
+          description: "Count of items in List"
         List:
           type: array
           items:
-            anyOf:
+            oneOf:
               - $ref: "#/components/schemas/SecurityFeatureResult"
               - $ref: "#/components/schemas/IdentResult"
               - $ref: "#/components/schemas/FiberResult"
               - $ref: "#/components/schemas/OCRSecurityTextResult"
               - $ref: "#/components/schemas/PhotoIdentResult"
 
-    AuthenticityType:
-      type: integer
-      description: "Same as authenticity result type, but used for safe parsing of not-described values: https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/development/enums/authenticity-result-type/"
-      default: 0
+    SecurityFeatureResult:
+      title: "SecurityFeatureResult"
+      allOf:
+        - $ref: "#/components/schemas/AuthenticityCheckResultItem"
+        - $ref: "./authenticity/rt-security-feature.yml#/components/schemas/SecurityFeatureItem"
+
+    IdentResult:
+      title: "IdentResult"
+      allOf:
+        - $ref: "#/components/schemas/AuthenticityCheckResultItem"
+        - $ref: "./authenticity/rt-ident.yml#/components/schemas/IdentItem"
+
+    FiberResult:
+      title: "FiberResult"
+      allOf:
+        - $ref: "#/components/schemas/AuthenticityCheckResultItem"
+        - $ref: "./authenticity/rt-fiber.yml#/components/schemas/FiberItem"
+
+    OCRSecurityTextResult:
+      title: "OCRSecurityTextResult"
+      allOf:
+        - $ref: "#/components/schemas/AuthenticityCheckResultItem"
+        - $ref: "./authenticity/rt-ocr-security-text.yml#/components/schemas/OCRSecurityTextItem"
+
+    PhotoIdentResult:
+      title: "PhotoIdentResult"
+      allOf:
+        - $ref: "#/components/schemas/AuthenticityCheckResultItem"
+        - $ref: "./authenticity/rt-photo-ident.yml#/components/schemas/PhotoIdentItem"
 
     AuthenticityCheckResultItem:
+      title: "AuthenticityCheckResultItem"
       description: "Common fields for all authenticity result objects"
       type: object
       required:
         - Type
       properties:
         Type:
-          $ref: "#/components/schemas/AuthenticityType"
+          $ref: "./authenticity/e-result-type.yml#/components/schemas/AuthenticityResultType"
         ElementResult:
           $ref: "./common.yml#/components/schemas/CheckResult"
         ElementDiagnose:
@@ -79,40 +108,29 @@ components:
           32: "IdentResult"
           64: "OCRSecurityTextResult"
           128: "PhotoIdentResult"
-          256: "PhotoIdentResult"
           512: "SecurityFeatureResult"
           1024: "IdentResult"
-          2048: "IdentResult"
           4096: "SecurityFeatureResult"
           8192: "SecurityFeatureResult"
-          16384: "FiberResult"
           32768: "IdentResult"
           65536: "SecurityFeatureResult"
           131072: "IdentResult"
           262144: "IdentResult"
           524288: "IdentResult"
           1048576: "IdentResult"
+          2097152: "IdentResult"
+          4194304: "SecurityFeatureResult"
           8388608: "SecurityFeatureResult"
-
-
-    SecurityFeatureResult:
-      $ref: "./authenticity/rt-security-feature.yml#/components/schemas/SecurityFeatureResult"
-
-    IdentResult:
-      $ref: "./authenticity/rt-ident.yml#/components/schemas/IdentResult"
-
-    FiberResult:
-      $ref: "./authenticity/rt-fiber.yml#/components/schemas/FiberResult"
-
-    OCRSecurityTextResult:
-      $ref: "./authenticity/rt-ocr-security-text.yml#/components/schemas/OCRSecurityTextResult"
-
-    PhotoIdentResult:
-      $ref: "./authenticity/rt-photo-ident.yml#/components/schemas/PhotoIdentResult"
+          16777216: "OCRSecurityTextResult"
 
     AreaContainer:
+      title: "AreaContainer"
       description: "Checked fragment coordinates"
       type: object
+      required:
+        - Count
+        - List
+        - Points
       properties:
         Count:
           type: integer
@@ -126,7 +144,10 @@ components:
             $ref: "#/components/schemas/PointsContainer"
 
     PointsContainer:
+      title: "PointsContainer"
       type: object
+      required:
+        - PointsList
       properties:
         PointCount:
           type: integer

@@ -1,17 +1,17 @@
 openapi: 3.0.4
 components:
   schemas:
-    DocumentPositionItem:
-      title: "DocumentPositionItem"
+    MrzPositionItem:
+      title: "MrzPositionItem"
       type: object
       required:
-        - DocumentPosition
+        - MrzPosition
       properties:
-        DocumentPosition:
-          $ref: "#/components/schemas/DocumentPosition"
+        MrzPosition:
+          $ref: "#/components/schemas/MrzPosition"
 
-    DocumentPosition:
-      title: "DocumentPosition"
+    MrzPosition:
+      title: "MrzPosition"
       type: object
       required:
         - docFormat
