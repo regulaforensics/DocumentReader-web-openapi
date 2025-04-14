@@ -59,6 +59,7 @@ components:
         - 51
         - 52
         - 53
+        - 54
       x-enum-descriptions:
         - "Blank element"
         - "Personalization element"
@@ -113,6 +114,7 @@ components:
         - "Contact chip check"
         - "Head position check"
         - "Black and white copy check"
+        - "Liveness dynaprint"
       x-enum-varnames:
         - "BLANK"
         - "FILL"
@@ -167,3 +169,4 @@ components:
         - "CONTACT_CHIP_CLASSIFICATION"
         - "HEAD_POSITION_CHECK"
         - "LIVENESS_BLACK_AND_WHITE_COPY_CHECK"
+        - "LIVENESS_DYNAPRINT"
