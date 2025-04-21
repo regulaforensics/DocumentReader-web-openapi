@@ -610,6 +610,10 @@ components:
           type: boolean
           description: "This parameter is used to enable Dynaprint check"
           # default: true
+        checkGeometry:
+          type: boolean
+          description: "This parameter is used to enable Geometry check"
+          # default: true
 
     MeasureSystem:
       title: "MeasureSystem"
