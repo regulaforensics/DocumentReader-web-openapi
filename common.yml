@@ -253,6 +253,12 @@ components:
         - 1048576
         - 2097152
         - 4194304
+        - 134
+        - 67108870
+        - 1073741824
+        - 1073741830
+        - 1073741952
+        - 1073741848
       x-enum-descriptions:
         - "Lighting schemes are off"
         - "OVI scheme"
@@ -296,6 +302,12 @@ components:
         - "UVB 313 (mod. 88X0)"
         - "White oblique light"
         - "For internal use"
+        - "White UV"
+        - "White full hologram"
+        - "HR light"
+        - "HR white"
+        - "HR UV"
+        - "HR IR"
       x-enum-varnames:
         - "OFF"
         - "OVI"
@@ -339,6 +351,12 @@ components:
         - "UVB"
         - "WHITE_OBL"
         - "WHITE_SPECIAL"
+        - "WHITE_UV"
+        - "WHITE_FULL_HOLO"
+        - "HR_LIGHT"
+        - "HR_WHITE"
+        - "HR_UV"
+        - "HR_IR"
 
     Point:
       title: "Point"
