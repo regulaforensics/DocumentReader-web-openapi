@@ -81,6 +81,7 @@ components:
         - "CreditCard"
         - "Capture"
         - "DTC"
+        - "RFID"
       x-enum-varnames:
         - "MRZ"
         - "BARCODE"
@@ -101,6 +102,7 @@ components:
         - "CREDIT_CARD"
         - "CAPTURE"
         - "DTC"
+        - "RFID"
       x-enum-descriptions:
         - "Processing scenario for obtaining MRZ data"
         - "Processing scenario for obtaining barcode data"
@@ -121,6 +123,7 @@ components:
         - "Processing scenario for obtaining bank card data"
         - "Scenario for obtaining an original image without any processing"
         - "Processing scenario for Digital Travel Credentials (DTC-VC) data processing"
+        - "Processing scenario for RFID chip processing"
 
     ImageData:
       title: "ImageData"
