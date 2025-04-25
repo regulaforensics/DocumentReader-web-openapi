@@ -523,7 +523,6 @@ components:
       type: object
       description: "Describes a single character recognition results in the text field line"
       required:
-        - SymbolRect
         - CandidatesCount
         - ListOfCandidates
       properties:
