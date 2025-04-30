@@ -4,8 +4,6 @@ components:
     FaceDetectionItem:
       title: "FaceDetectionItem"
       type: object
-      required:
-        - FaceDetection
       properties:
         FaceDetection:
           $ref: "#/components/schemas/FaceDetection"
