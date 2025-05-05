@@ -460,6 +460,9 @@ components:
         generateAlpha2Codes:
           description: "Set to generate Alpha-2 codes for nationality and issuing state fields."
           type: boolean
+        pdfPagesLimit:
+          description: "Limits the number of pages to be processed from a PDF file."
+          type: integer
 
     MRZFormat:
       title: "MRZFormat"
