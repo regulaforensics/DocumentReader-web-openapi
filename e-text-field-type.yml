@@ -1298,8 +1298,8 @@ components:
         - "Short flight number"
         - "Airline code"
         - "MVC Agency"
-        - "Issuing state code alpha"
-        - "Nationality code alpha"
+        - "Issuing state code (Alpha-2)"
+        - "Nationality code (Alpha-2)"
       x-enum-varnames:
         - "DOCUMENT_CLASS_CODE"
         - "ISSUING_STATE_CODE"
