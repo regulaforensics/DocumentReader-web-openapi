@@ -53,12 +53,10 @@ components:
       type: object
       description: "Contains information about one document type candidate"
       required:
-        - DocumentName
         - ID
         - P
         - Rotated180
         - RFID_Presence
-        - FDSIDList
         - NecessaryLights
         - CheckAuthenticity
         - UVExp
