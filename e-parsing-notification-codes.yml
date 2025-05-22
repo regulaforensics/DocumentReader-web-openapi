@@ -229,6 +229,8 @@ components:
         - 2415919697
         - 139289
         - 2415919698
+        - 2415919699
+        - 2415919700
       x-enum-descriptions:
         - "ASN certificate: Incorrect version"
         - "ASN certificate: Non-matching signature algorithm"
@@ -452,6 +454,8 @@ components:
         - "Country Codes from certificate and visual MRZ don't match"
         - "Incorrect MRZ, country code doesn't match codes from Visual MRZ"
         - "Country Codes from certificate and DG1 MRZ don't match"
+        - "ICAO certificate: Issuer country non upper case"
+        - "ICAO certificate: Subject country non upper case"
       x-enum-varnames:
         - "ntfLDS_ASN_Certificate_IncorrectVersion"
         - "ntfLDS_ASN_Certificate_NonMatchingSignatureAlgorithm"
@@ -675,3 +679,5 @@ components:
         - "ntfLDS_ICAO_Certificate_VisualMrz_Country_NonMatching"
         - "ntfLDS_MRZ_CountryCode_VisualMrz_NonMatching"
         - "ntfLDS_ICAO_Certificate_MRZ_Country_NonMatching"
+        - "ntfLDS_ICAO_Certificate_Issuer_CountryNonUpperCase"
+        - "ntfLDS_ICAO_Certificate_Subject_CountryNonUpperCase"
