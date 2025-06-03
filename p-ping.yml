@@ -24,19 +24,58 @@ components:
       type: object
       properties:
         app-name:
+          description: Application name.
           type: string
         version:
+          description: Product version.
           type: string
         license-id:
+          description: Unique license identifier.
           type: string
         license-serial:
+          description: License serial number.
+          type: string
+        license-type:
           type: string
         valid-until:
+          description: License validity date.
           type: string
           format: date-time
         server-time:
           type: string
-          format: date-time
+        supported-scenarios:
+          description: List of supported scenarios.
+          type: array
+          items:
+            type: string
+        metadata:
+          type: object
+          additionalProperties: true
+        documents-database:
+          description: Database information.
+          type: object
+          required:
+            - id
+            - version
+            - export-date
+            - description
+          properties:
+            id:
+              description: Database identifier.
+              type: string
+              nullable: true
+            version:
+              description: Database version.
+              type: string
+              nullable: true
+            export-date:
+              description: Date of database creation.
+              type: string
+              nullable: true
+            description:
+              description: Description of the database contents, such as the list of supported countries and documents.
+              type: string
+              nullable: true
       example:
         app-name: "Regula Process Manager Service"
         version: "5.3.104980.123"
