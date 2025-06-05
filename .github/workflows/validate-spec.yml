@@ -17,16 +17,16 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 14
+          node-version: 20
           registry-url: https://registry.npmjs.org/
 
       - name: Install redoc
         run: |
-          npm install -g redoc-cli
-          redoc-cli bundle index.yml
+          npm install -g @redocly/cli
+          redocly build-docs index.yml
 
       - name: Revert changes
         if: ${{ false }}
         run: |
           npm install -g @openapitools/openapi-generator-cli
-          openapi-generator-cli validate -i index.yml
+          openapi-generator-cli validate --recommend -i index.yml
