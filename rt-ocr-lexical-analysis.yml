@@ -53,8 +53,6 @@ components:
           type: string
         Matrix:
           $ref: "#/components/schemas/ComparisonMatrix"
-        FieldType:
-          type: integer
       example:
         {FieldType: 185, Field_MRZ: "37", Field_Visual: "37", Matrix: [1,0,0,0,0,3,0,0,0,0]}
 
