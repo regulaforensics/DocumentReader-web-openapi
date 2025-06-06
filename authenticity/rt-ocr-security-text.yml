@@ -22,11 +22,11 @@ components:
         FieldRect:
           $ref: "../common.yml#/components/schemas/RectangleCoordinates"
         EtalonResultType:
-          type: integer
+          $ref: "../rt.yml#/components/schemas/ContainerType"
         EtalonFieldType:
-          type: integer
+          $ref: "../e-text-field-type.yml#/components/schemas/TextFieldType"
         EtalonLightType:
-          type: integer
+          $ref: "../common.yml#/components/schemas/Light"
         EtalonFieldRect:
           $ref: "../common.yml#/components/schemas/RectangleCoordinates"
         SecurityTextResultOCR:

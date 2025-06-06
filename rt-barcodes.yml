@@ -56,7 +56,7 @@ components:
         bcTextDecoderTypes:
           type: integer
         bcTextFieldType:
-          type: integer
+          $ref: "./e-text-field-type.yml#/components/schemas/TextFieldType"
         bcType_DECODE:
           $ref: "./e-barcode-type.yml#/components/schemas/BarcodeType"
         bcType_DETECT:

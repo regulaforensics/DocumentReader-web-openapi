@@ -184,11 +184,6 @@ components:
           description: "URLs to the document images for processing."
           items:
             type: string
-        lcidFilter:
-          type: array
-          description: "The list of LCID types to recognize. If empty, values with all LCID types will be extracted. Empty by default."
-          items:
-            $ref: "./e-lcid.yml#/components/schemas/LCID"
 
     ProcessParams:
       title: "ProcessParams"
@@ -397,7 +392,8 @@ components:
           items:
             $ref: "./e-document-type.yml#/components/schemas/DocumentType"
         processAuth: # Authenticity checks that should be performed regardless of the document type. The available checks are listed in the eRPRM_Authenticity enum. Note that only supported by your license checks can be added.
-          $ref: "./authenticity/e-result-type.yml#/components/schemas/AuthenticityResultType"
+          type: integer
+          format: int64
         deviceId:
           description: "This parameter is used to specify the document reader device type from which input images were captured. Default 0."
           type: integer
