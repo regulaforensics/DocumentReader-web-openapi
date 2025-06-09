@@ -28,8 +28,6 @@ components:
           type: integer
         Angle:
           type: integer
-        Result:
-          type: integer
         Reserved3:
           type: integer
 

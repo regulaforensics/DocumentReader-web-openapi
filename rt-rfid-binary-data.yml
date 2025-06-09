@@ -752,7 +752,7 @@ components:
         Data:
           type: string
         Length:
-          type: string
+          type: integer
 
     ParsedData:
       title: "ParsedData"
@@ -830,6 +830,7 @@ components:
         - 5
         - 6
         - 10
+        - 11
       x-enum-descriptions:
         - "Type is not defined"
         - "BAC/BAP"
@@ -839,6 +840,7 @@ components:
         - "AA"
         - "RI"
         - "Card info"
+        - "DTC info"
       x-enum-varnames:
         - "UNDEFINED"
         - "BAC"
@@ -848,6 +850,7 @@ components:
         - "AA"
         - "RI"
         - "CARD_INFO"
+        - "DTC_INFO"
 
     RfidCardPropertiesExt:
       title: "RfidCardPropertiesExt"
@@ -965,18 +968,27 @@ components:
         - 2
         - 4
         - 8
+        - 16
+        - 32
+        - 64
       x-enum-descriptions:
         - "Unknown"
         - "106 bits/s"
         - "212 bits/s"
         - "424 bits/s"
         - "848 bits/s"
+        - "1695 bits/s"
+        - "3390 bits/s"
+        - "6780 bits/s"
       x-enum-varnames:
         - "UNKNOWN"
         - "RFBR_106"
         - "RFBR_212"
         - "RFBR_424"
         - "RFBR_848"
+        - "RFBR_1695"
+        - "RFBR_3390"
+        - "RFBR_6780"
 
     RfidAccessKey:
       title: "RfidAccessKey"
@@ -1013,6 +1025,7 @@ components:
         - 4
         - 5
         - 6
+        - 7
       x-enum-descriptions:
         - "Unknown type"
         - "MRZ"
@@ -1021,6 +1034,7 @@ components:
         - "PUK"
         - "eSign-PIN"
         - "Scanning Area Identifier (for eDL application)"
+        - "MRZ hash"
       x-enum-varnames:
         - "UNKNOWN"
         - "MRZ"
@@ -1029,6 +1043,7 @@ components:
         - "PUK"
         - "PIN_E_SIGN"
         - "SAI"
+        - "MRZ_HASH"
 
     RfidTerminal:
       title: "RfidTerminal"
@@ -1146,6 +1161,10 @@ components:
         - 5
         - 6
         - 7
+        - 8
+        - 9
+        - 10
+        - 11
       x-enum-descriptions:
         - "Type is not defined"
         - "CSCA"
@@ -1155,6 +1174,10 @@ components:
         - "Deviaton List signer"
         - "Defect List signer"
         - "Black List signer"
+        - "LDS 2"
+        - "Barcode signer (VDS)"
+        - "Barcode signer (VDS for non-constrained environment)"
+        - "DTC signer"
       x-enum-varnames:
         - "UNDEFINED"
         - "CSCA"
@@ -1164,6 +1187,10 @@ components:
         - "DEV_LS"
         - "DEF_LS"
         - "BLS"
+        - "LDS2"
+        - "BCS"
+        - "BCS_NC"
+        - "DTCS"
 
     RfidRawData:
       title: "RfidRawData"

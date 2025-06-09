@@ -37,6 +37,14 @@ components:
         - 2147483685
         - 2147483686
         - 2147483687
+        - 2147483712
+        - 2147483713
+        - 2147483714
+        - 2147483715
+        - 2147483716
+        - 2147483717
+        - 2147483718
+        - 2147483719
         - 2147483696
         - 2147483697
         - 2147483698
@@ -164,6 +172,14 @@ components:
         - "ASN Signer info: Sign algorithms incorrect data"
         - "ASN Signer info: Signature incorrect data"
         - "ASN Signer info: Unsigned attributes incorrect data"
+        - "ASN DTC Signer info: Incorrect data"
+        - "ASN DTC Signer info: Certificate incorrect data"
+        - "ASN DTC Signer info: Digest algorithms incorrect data"
+        - "ASN DTC Signer info: Signed attributes incorrect data"
+        - "ASN DTC Signer info: Sign algorithms incorrect data"
+        - "ASN DTC Signer info: Signature incorrect data"
+        - "ASN DTC Security info: Incorrect data"
+        - "ASN DTC Content info: Incorrect data"
         - "ICAO LDS object: Unsupported digest algorithm"
         - "ICAO Signed data: Signer info empty"
         - "ICAO Signer info: Unsupported digest algorithm"
@@ -291,6 +307,14 @@ components:
         - "errLDS_ASN_SignerInfo_SignAlg_IncorrectData"
         - "errLDS_ASN_SignerInfo_Signature_IncorrectData"
         - "errLDS_ASN_SignerInfo_UnsignedAttrs_IncorrectData"
+        - "errLDS_ASN_DTC_SignerInfo_IncorrectData"
+        - "errLDS_ASN_DTC_SignerInfo_Certificate_IncorrectData"
+        - "errLDS_ASN_DTC_SignerInfo_DigestAlg_IncorrectData"
+        - "errLDS_ASN_DTC_SignerInfo_SignedAttrs_IncorrectData"
+        - "errLDS_ASN_DTC_SignerInfo_SignAlg_IncorrectData"
+        - "errLDS_ASN_DTC_SignerInfo_Signature_IncorrectData"
+        - "errLDS_ASN_DTC_SecurityInfo_IncorrectData"
+        - "errLDS_ASN_DTC_ContentInfo_IncorrectData"
         - "errLDS_ICAO_LDSObject_UnsupportedDigestAlgorithm"
         - "errLDS_ICAO_SignedData_SignerInfos_Empty"
         - "errLDS_ICAO_SignerInfo_UnsupportedDigestAlgorithm"

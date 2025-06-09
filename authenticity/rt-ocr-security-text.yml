@@ -33,8 +33,6 @@ components:
           type: string
         EtalonResultOCR:
           type: string
-        ResultCode:
-          type: integer
         Reserved1:
           type: integer
         Reserved2:

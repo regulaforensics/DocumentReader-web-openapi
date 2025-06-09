@@ -391,7 +391,8 @@ components:
           type: array
           items:
             $ref: "./e-document-type.yml#/components/schemas/DocumentType"
-        processAuth: # Authenticity checks that should be performed regardless of the document type. The available checks are listed in the eRPRM_Authenticity enum. Note that only supported by your license checks can be added.
+        processAuth:
+          description: "Authenticity checks that should be performed regardless of the document type. The available checks are listed in the eRPRM_Authenticity enum. Note that only supported by your license checks can be added."
           type: integer
           format: int64
         deviceId:

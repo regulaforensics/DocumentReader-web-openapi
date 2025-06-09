@@ -213,22 +213,28 @@ components:
       description: "Image light index"
       enum:
         - 0
+        - 2
+        - 4
         - 6
         - 24
         - 128
         - 3072
       x-enum-descriptions:
         - "No Light"
+        - "Upper/lower lighters of white light scheme"
+        - "Side lighters of white light scheme"
         - "White"
         - "Infrared"
         - "Ultraviolet"
-        - "Right and left lighters of white coaxial light scheme"
+        - "White coaxial"
       x-enum-varnames:
         - "OFF"
+        - "WHITE_TOP"
+        - "WHITE_SIDE"
         - "WHITE"
         - "IR"
         - "UV"
-        - "AXIAL_WHITE_FULL"
+        - "AXIAL_WHITE"
 
     Point:
       title: "Point"
@@ -317,7 +323,6 @@ components:
       title: "VisualExtendedFieldItem"
       type: object
       required:
-        - FieldType
         - wFieldType
         - FieldName
         - StringsCount
@@ -325,8 +330,6 @@ components:
         - Buf_Length
         - Buf_Text
       properties:
-        FieldType:
-          type: integer
         wFieldType:
           $ref: "./e-text-field-type.yml#/components/schemas/TextFieldType"
         FieldName:
@@ -409,8 +412,6 @@ components:
         BaseLineBottom:
           type: integer
         BaseLineTop:
-          type: integer
-        Reserved:
           type: integer
 
     SymbolCandidate:

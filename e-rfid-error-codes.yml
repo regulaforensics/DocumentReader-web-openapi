@@ -118,9 +118,11 @@ components:
         - 2248147719
         - 2248147720
         - 2248147721
-        - -1
+        - 4294967295
         - 1
         - 2
+        - 2147549191
+        - 2147510016
       x-enum-descriptions:
         - "LAYER6: Reading beyond EOF / Unexpected EOF"
         - "LAYER6: PWD deactivated"
@@ -236,6 +238,8 @@ components:
         - "RFID: Failed"
         - "RFID: No error"
         - "RFID: The requested operation is already performed"
+        - "RFID: Not enough data"
+        - "RFID: Layer 6 - Wrong data length"
       x-enum-varnames:
         - "RFID_ERROR_LAYER6_FILE_EOF1"
         - "RFID_ERROR_LAYER6_PWD_DEACTIVATED"
@@ -351,3 +355,5 @@ components:
         - "RFID_ERROR_FAILED"
         - "RFID_ERROR_NO_ERROR"
         - "RFID_ERROR_ALREADY_DONE"
+        - "RFID_ERROR_NOT_ENOUGH_DATA"
+        - "RFID_LAYER6_WRONG_LENGTH"

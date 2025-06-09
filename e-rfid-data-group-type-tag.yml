@@ -27,6 +27,11 @@ components:
         - 111
         - 112
         - 119
+        - 113
+        - 114
+        - 115
+        - 116
+        - 98
         - 97
         - 98
         - 99
@@ -50,7 +55,7 @@ components:
         - 117
         - 96
         - 119
-        - 119
+        - 83
         - 97
         - 107
         - 108
@@ -83,6 +88,11 @@ components:
         - "Data Group 15"
         - "Data Group 16"
         - "Security Object Document"
+        - "Data Group 17"
+        - "Data Group 18"
+        - "Data Group 22"
+        - "Data Group 23"
+        - "Data Group 24"
         - "eID, Data Group 1"
         - "eID, Data Group 2"
         - "eID, Data Group 3"
@@ -139,6 +149,11 @@ components:
         - "DG15"
         - "DG16"
         - "SOD"
+        - "DG17"
+        - "DG18"
+        - "DG22"
+        - "DG23"
+        - "DG24"
         - "EID_DG1"
         - "EID_DG2"
         - "EID_DG3"

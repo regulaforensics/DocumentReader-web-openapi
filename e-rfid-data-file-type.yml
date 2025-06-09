@@ -82,22 +82,30 @@ components:
         - 301
         - 302
         - 400
+        - 401
         - 500
         - 501
         - 600
         - 601
         - 602
         - 603
+        - 604
         - 700
         - 701
         - 702
         - 703
+        - 704
         - 710
         - 711
         - 712
         - 713
         - 714
         - 715
+        - 800
+        - 832
+        - 900
+        - 901
+        - 902
         - 1000
       x-enum-varnames:
         - "UNSPECIFIED"
@@ -175,20 +183,28 @@ components:
         - "MIFARE_VALIDITY"
         - "AUTHENTICITY_V2"
         - "ATR"
+        - "DIR"
         - "_E_SIGN_PK"
         - "_E_SIGN_SIGNED_DATA"
         - "CERTIFICATE"
         - "MASTER_LIST"
         - "DEFECT_LIST"
+        - "DEVIATION_LIST"
         - "BLACK_LIST"
         - "APP_DIRECTORY"
         - "SESSION"
         - "LOG_DATA"
         - "CHIP_PROPERTIES"
+        - "DTC_INFO"
         - "POST_CA_RESPONSE"
         - "POST_CA_PUBLIC_KEY"
         - "POST_CA_INFO"
         - "POST_CA_D_PARAMS"
         - "POST_CA_CHECK_PK"
         - "POST_CA_CHECK_SK"
+        - "SAM_DATA"
+        - "SAM_DATA_MAX"
+        - "VDS"
+        - "VDS_NC"
+        - "DS"
         - "USER_DEFINED"
