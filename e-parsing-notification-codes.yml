@@ -96,6 +96,11 @@ components:
         - 2415919693
         - 2415919694
         - 2415919695
+        - 2415919696
+        - 2415919697
+        - 2415919698
+        - 2415919699
+        - 2415919700
         - 2415919136
         - 2415919137
         - 2415919138
@@ -161,6 +166,7 @@ components:
         - 139286
         - 139287
         - 139288
+        - 139289
         - 2415984640
         - 2416050176
         - 2416115712
@@ -172,6 +178,7 @@ components:
         - 2416508928
         - 2416574464
         - 2416640000
+        - 2416705536
         - 2416967680
         - 2417033216
         - 2417098752
@@ -183,6 +190,104 @@ components:
         - 2417491968
         - 2417557504
         - 2417623040
+        - 2449539072
+        - 2449604608
+        - 2449670144
+        - 2449735680
+        - 2449801232
+        - 2449801248
+        - 2449801264
+        - 2449801265
+        - 2449801266
+        - 2449801280
+        - 2449801281
+        - 2449801282
+        - 2449801283
+        - 2449801284
+        - 2449801285
+        - 2449801286
+        - 2449801287
+        - 2449801288
+        - 2449801289
+        - 2449801290
+        - 2449801291
+        - 2449801292
+        - 2449801293
+        - 2449801294
+        - 2449801295
+        - 2449801296
+        - 2449801297
+        - 2449801298
+        - 2449801312
+        - 2449801313
+        - 2449801314
+        - 2449801315
+        - 2449801316
+        - 2449801328
+        - 2449801329
+        - 2449801330
+        - 2449801331
+        - 2449801344
+        - 2449801345
+        - 2449801346
+        - 2449801347
+        - 2449801348
+        - 2449801349
+        - 2449801350
+        - 2449801351
+        - 2449801360
+        - 2449801361
+        - 2449801362
+        - 2449801363
+        - 2449801364
+        - 2449801365
+        - 2449801366
+        - 2449801367
+        - 2449801368
+        - 2449801369
+        - 2449801370
+        - 2449801371
+        - 2449801372
+        - 2449801373
+        - 2449801374
+        - 2449801375
+        - 2449801376
+        - 2449801377
+        - 2449801378
+        - 2449801379
+        - 2449801380
+        - 2449801381
+        - 2449801382
+        - 2449801392
+        - 2449801408
+        - 2449801424
+        - 2449801425
+        - 2449801426
+        - 2449801427
+        - 2449801440
+        - 2449801441
+        - 2449801442
+        - 2449801443
+        - 2449801444
+        - 2449801445
+        - 2449801446
+        - 2449801447
+        - 2449801448
+        - 2449801449
+        - 2449801450
+        - 2449801451
+        - 2449801452
+        - 2449801453
+        - 2449801454
+        - 2449801456
+        - 2449801457
+        - 2449801458
+        - 2449801459
+        - 2449801460
+        - 2449801461
+        - 2449801462
+        - 2449801463
+        - 2415919872
         - 2432696320
         - 2432696321
         - 2432696322
@@ -225,12 +330,6 @@ components:
         - 2449473815
         - 2449473816
         - 2449473817
-        - 2415919696
-        - 2415919697
-        - 139289
-        - 2415919698
-        - 2415919699
-        - 2415919700
       x-enum-descriptions:
         - "ASN certificate: Incorrect version"
         - "ASN certificate: Non-matching signature algorithm"
@@ -240,7 +339,7 @@ components:
         - "ASN certificate: Empty subject"
         - "ASN certificate: Unsupported critical extension"
         - "ASN certificate: Forced default CSCA role"
-        - "ASN certificate: Forced Default DS role"
+        - "ASN certificate: Forced default DS role"
         - "ASN certificate: Incorrect issuer subject DS"
         - "ASN certificate: Duplicating extensions"
         - "ICAO certificate: Version missed"
@@ -271,8 +370,8 @@ components:
         - "ICAO certificate extension: Ext key usage incorrect usage"
         - "ICAO certificate extension: Ext key usage incorrect data"
         - "ICAO certificate extension Auth key: ID missed"
-        - "ICAO certificate extension Auth key: Incorrect data"
-        - "ICAO certificate extension Auth key: Key ID missed"
+        - "ICAO certificate extension Auth key: ID incorrect data"
+        - "ICAO certificate extension Auth key: ID key ID missed"
         - "ICAO certificate extension: Subject key ID missed"
         - "ICAO certificate extension: Subject key ID incorrect data"
         - "ICAO certificate extension: Private key UP missed"
@@ -299,7 +398,7 @@ components:
         - "ICAO certificate extension Doc type list: Version"
         - "ICAO certificate extension Doc type list: Doc types"
         - "ICAO certificate extension Doc type list: Doc types empty"
-        - "ICAO certificate extension: Dert policies incorrect data"
+        - "ICAO certificate extension: Cert policies incorrect data"
         - "ICAO certificate extension: Cert policies empty"
         - "ICAO certificate extension: Cert policies policy ID missed"
         - "ICAO certificate extension: CRL dist point missed"
@@ -316,11 +415,16 @@ components:
         - "ICAO certificate extension: Name change incorrect data"
         - "ICAO certificate extension: Name change non-compliant"
         - "ICAO certificate extension: Name change critical"
-        - "ICAO certificate extension Doc type list: non-compliant"
+        - "ICAO certificate extension Doc type list: Non-compliant"
         - "ICAO certificate extension Doc type list: Critical"
         - "ICAO certificate extension: Optional critical"
         - "ICAO certificate: Subject non-compliant"
         - "ICAO certificate: Subject common name non-compliant"
+        - "ICAO certificate: Chain country non-matching"
+        - "ICAO certificate: Visual MRZ country non-matching"
+        - "ICAO certificate: MRZ country non-matching"
+        - "ICAO certificate: Issuer country non-uppercase"
+        - "ICAO certificate: Subject country non-uppercase"
         - "ICAO COM: LDS version incorrect"
         - "ICAO COM: LDS version missing"
         - "ICAO COM: Unicode version incorrect"
@@ -348,8 +452,8 @@ components:
         - "ICAO LDS object: DG hash extra"
         - "ICAO LDS object: Version incorrect"
         - "ICAO master list: Version incorrect"
-        - "ICAO Deviation list: Version incorrect"
-        - "BSI: Defect  list version incorrect"
+        - "ICAO deviation list: Version incorrect"
+        - "BSI: Defect list version incorrect"
         - "BSI: Black list version incorrect"
         - "ASN signer info: Version incorrect"
         - "ASN signer info: SID incorrect choice"
@@ -386,6 +490,7 @@ components:
         - "MRZ: Optional data incorrect checksum"
         - "MRZ: Incorrect checksum"
         - "MRZ: Incorrect"
+        - "MRZ: Country code visual MRZ non-matching"
         - "Biometrics: Format owner missing"
         - "Biometrics: Format owner incorrect"
         - "Biometrics: Format type missing"
@@ -397,65 +502,158 @@ components:
         - "Biometrics: BDB format ID incorrect"
         - "Biometrics: BDB version incorrect"
         - "Biometrics: BDB data length incorrect"
-        - "Biometrics: BDB Data Gender"
-        - "Biometrics: BDB Data Eye Color"
-        - "Biometrics: BDB Data Hair Color"
-        - "Biometrics: BDB Data Pose Angle Yaw"
-        - "Biometrics: BDB Data Pose Angle Pitch"
-        - "Biometrics: BDB Data Pose Angle Roll"
-        - "Biometrics: BDB Data Pose Angle U Yaw"
-        - "Biometrics: BDB Data Pose Angle U Pitch"
-        - "Biometrics: BDB Data Pose Angle U Roll"
-        - "Biometrics: BDB Data Face Image Type"
-        - "Biometrics: BDB Data Image Data Type"
-        - "SI: PACE Info Unsupported Std Parameters"
-        - "SI: PACE Info Deprecated Version"
-        - "SI: PACE Domain Params Using Std Ref"
-        - "SI: PACE Domain Params Unsupported Algorithm"
-        - "SI: CA Info Incorrect Version"
-        - "SI: CA PublicKey Unsupported Algorithm"
-        - "SI: CA Domain Params Unsupported Algorithm"
-        - "SI: TA Info Incorrect Version"
-        - "SI: TA Info File ID For Version 2"
-        - "SI: eID Security Unsupported Digest Algorithm"
+        - "Biometrics: BDB data incorrect"
+        - "Biometrics: BDB data gender"
+        - "Biometrics: BDB data eye color"
+        - "Biometrics: BDB data hair color"
+        - "Biometrics: BDB data pose angle yaw"
+        - "Biometrics: BDB data pose angle pitch"
+        - "Biometrics: BDB data pose angle roll"
+        - "Biometrics: BDB data pose angle U yaw"
+        - "Biometrics: BDB data pose angle U pitch"
+        - "Biometrics: BDB data pose angle U roll"
+        - "Biometrics: BDB data face image type"
+        - "Biometrics: BDB data image data type"
+        - "Biometrics: RB data incorrect"
+        - "Biometrics: RB item incorrect"
+        - "Biometrics: RB item missing"
+        - "Biometrics: RB item unexpected"
+        - "Biometrics: RB RID incorrect"
+        - "Biometrics: RB image R incorrect"
+        - "Biometrics: RB image item incorrect"
+        - "Biometrics: RB image item missing"
+        - "Biometrics: RB image item unexpected"
+        - "Biometrics: RB image info item incorrect"
+        - "Biometrics: RB image info item missing"
+        - "Biometrics: RB image info item unexpected"
+        - "Biometrics: RB image info format incorrect"
+        - "Biometrics: RB image info format unsupported"
+        - "Biometrics: RB image info kind incorrect"
+        - "Biometrics: RB image info kind unsupported"
+        - "Biometrics: RB image info post APB incorrect"
+        - "Biometrics: RB image info lossy TA incorrect"
+        - "Biometrics: RB image info lossy TA unsupported"
+        - "Biometrics: RB image info cam 2 subj unsupported"
+        - "Biometrics: RB image info sens diag unsupported"
+        - "Biometrics: RB image info lens F unsupported"
+        - "Biometrics: RB image info im size incorrect"
+        - "Biometrics: RB image info im size unsupported"
+        - "Biometrics: RB image info im meas incorrect"
+        - "Biometrics: RB image info color incorrect"
+        - "Biometrics: RB image info color unsupported"
+        - "Biometrics: RB image info color map incorrect"
+        - "Biometrics: RB image capt item incorrect"
+        - "Biometrics: RB image capt item unexpected"
+        - "Biometrics: RB image capt spectral unsupported"
+        - "Biometrics: RB image capt tech code incorrect"
+        - "Biometrics: RB image capt tech code unsupported"
+        - "Biometrics: RB date item incorrect"
+        - "Biometrics: RB date item missing"
+        - "Biometrics: RB date item unexpected"
+        - "Biometrics: RB date incorrect"
+        - "Biometrics: RB quality item incorrect"
+        - "Biometrics: RB quality item missing"
+        - "Biometrics: RB quality item unexpected"
+        - "Biometrics: RB quality alg ID item incorrect"
+        - "Biometrics: RB quality SoE item incorrect"
+        - "Biometrics: RB quality score item incorrect"
+        - "Biometrics: RB quality error item incorrect"
+        - "Biometrics: RB quality error item unsupported"
+        - "Biometrics: RB PAD item incorrect"
+        - "Biometrics: RB PAD item unexpected"
+        - "Biometrics: RB PAD decision item incorrect"
+        - "Biometrics: RB PAD decision item unsupported"
+        - "Biometrics: RB PAD score item incorrect"
+        - "Biometrics: RB PAD score reg ID item incorrect"
+        - "Biometrics: RB PAD SoE item incorrect"
+        - "Biometrics: RB PAD SoE score item incorrect"
+        - "Biometrics: RB PAD SoE error item incorrect"
+        - "Biometrics: RB PAD SoE error item unsupported"
+        - "Biometrics: RB PAD external data item incorrect"
+        - "Biometrics: RB PAD external data type item incorrect"
+        - "Biometrics: RB PAD context item incorrect"
+        - "Biometrics: RB PAD context item unsupported"
+        - "Biometrics: RB PAD S level item incorrect"
+        - "Biometrics: RB PAD S level item unsupported"
+        - "Biometrics: RB PAD risk level item incorrect"
+        - "Biometrics: RB PAD criteria item incorrect"
+        - "Biometrics: RB PAD criteria item unsupported"
+        - "Biometrics: RB PAD date item incorrect"
+        - "Biometrics: RB PAD date item missing"
+        - "Biometrics: RB PAD date item unexpected"
+        - "Biometrics: RB PAD date incorrect"
+        - "Biometrics: RB session ID incorrect"
+        - "Biometrics: RB derived incorrect"
+        - "Biometrics: RB device incorrect"
+        - "Biometrics: RB device item unexpected"
+        - "Biometrics: RB device model ID item incorrect"
+        - "Biometrics: RB device cert ID item incorrect"
+        - "Biometrics: RB metadata item incorrect"
+        - "Biometrics: RB metadata item unexpected"
+        - "Biometrics: RB metadata gender item incorrect"
+        - "Biometrics: RB metadata gender item unsupported"
+        - "Biometrics: RB metadata eye item incorrect"
+        - "Biometrics: RB metadata eye item unsupported"
+        - "Biometrics: RB metadata hair item incorrect"
+        - "Biometrics: RB metadata hair item unsupported"
+        - "Biometrics: RB metadata height item incorrect"
+        - "Biometrics: RB metadata props item incorrect"
+        - "Biometrics: RB metadata props item unexpected"
+        - "Biometrics: RB metadata express item incorrect"
+        - "Biometrics: RB metadata express item unexpected"
+        - "Biometrics: RB metadata pose item incorrect"
+        - "Biometrics: RB metadata pose item unexpected"
+        - "Biometrics: RB landmark item incorrect"
+        - "Biometrics: RB landmark item missing"
+        - "Biometrics: RB landmark item unexpected"
+        - "Biometrics: RB landmark kind item incorrect"
+        - "Biometrics: RB landmark mpeg4 item incorrect"
+        - "Biometrics: RB landmark mpeg4 item unsupported"
+        - "Biometrics: RB landmark antr L item incorrect"
+        - "Biometrics: RB landmark coordinate item incorrect"
+        - "DTC content info: Version incorrect"
+        - "SI: PACE info unsupported std parameters"
+        - "SI: PACE info deprecated version"
+        - "SI: PACE domain params using std ref"
+        - "SI: PACE domain params unsupported algorithm"
+        - "SI: CA info incorrect version"
+        - "SI: CA public key unsupported algorithm"
+        - "SI: CA domain params unsupported algorithm"
+        - "SI: TA info incorrect version"
+        - "SI: TA info file ID for version 2"
+        - "SI: eID security unsupported digest algorithm"
         - "SI: RI info incorrect version"
         - "SI: RI domain params unsupported algorithm"
         - "SI: AA info incorrect version"
         - "SI: AA info unsupported algorithm"
         - "SI: AA info inconsistent algorithm reference"
-        - "SI: PACE Info Not Available"
-        - "SI: PACE Info No Std Parameters"
-        - "SI: PACE Info No Matching Domain Params"
-        - "SI: CA Info Not Available"
-        - "SI: CA Domain Params No Required Option"
-        - "SI: CA Domain Params Not Available"
-        - "SI: CA Anonymous Infos"
-        - "SI: CA Info No Matching Domain Params"
-        - "SI: CA Info No Matching Public Key"
-        - "SI: CA Incorrect Infos Quantity"
-        - "SI: TA Info Not Available"
-        - "SI: Card Info Locator Multiple Entries"
-        - "SI: eID Security Info Multiple Entries"
-        - "SI: Privileged TI Multiple Entries"
-        - "SI: Privileged TI Incorrect Usage"
-        - "SI: RI domain params multiple entries"
-        - "SI: Storage PACE Info Non Consistant"
-        - "CV Certificate: Profile incorrect version"
-        - "CV Certificate: Validity"
-        - "CV Certificate: Non CVCA domain parameters"
-        - "CV Certificate: Private key incorrect version"
+        - "SI: storage PACE info not available"
+        - "SI: storage PACE info no std parameters"
+        - "SI: storage PACE info no matching domain params"
+        - "SI: storage CA info not available"
+        - "SI: storage CA domain params no required option"
+        - "SI: storage CA domain params not available"
+        - "SI: storage CA anonymous infos"
+        - "SI: storage CA info no matching domain params"
+        - "SI: storage CA info no matching public key"
+        - "SI: storage CA incorrect infos quantity"
+        - "SI: storage TA info not available"
+        - "SI: storage card info locator multiple entries"
+        - "SI: storage eID security info multiple entries"
+        - "SI: storage privileged TI multiple entries"
+        - "SI: storage privileged TI incorrect usage"
+        - "SI: storage RI domain params multiple entries"
+        - "SI: storage PACE infos non consistent"
+        - "CV certificate: Profile incorrect version"
+        - "CV certificate: Validity"
+        - "CV certificate: non CVCA domain parameters"
+        - "CV certificate: private key incorrect version"
         - "TA: PACE static binding used"
         - "Auth ML signer info: Certificate validity"
         - "Auth ML signer info: Certificate root is not trusted"
-        - "Auth ML signer info: Certificate cannot find CSCA"
+        - "Auth ML signer info: Certificate can't find CSCA"
         - "Auth ML signer info: Certificate revoked"
         - "Auth ML signer info: Certificate signature invalid"
-        - "Country Codes from certificate chain don't match"
-        - "Country Codes from certificate and visual MRZ don't match"
-        - "Incorrect MRZ, country code doesn't match codes from Visual MRZ"
-        - "Country Codes from certificate and DG1 MRZ don't match"
-        - "ICAO certificate: Issuer country non upper case"
-        - "ICAO certificate: Subject country non upper case"
       x-enum-varnames:
         - "ntfLDS_ASN_Certificate_IncorrectVersion"
         - "ntfLDS_ASN_Certificate_NonMatchingSignatureAlgorithm"
@@ -546,6 +744,11 @@ components:
         - "ntfLDS_ICAO_Certificate_Ext_Optional_Critical"
         - "ntfLDS_ICAO_Certificate_Subject_NonCompliant"
         - "ntfLDS_ICAO_Certificate_Subject_CommonNameNonCompliant"
+        - "ntfLDS_ICAO_Certificate_Chain_Country_NonMatching"
+        - "ntfLDS_ICAO_Certificate_VisualMrz_Country_NonMatching"
+        - "ntfLDS_ICAO_Certificate_MRZ_Country_NonMatching"
+        - "ntfLDS_ICAO_Certificate_Issuer_CountryNonUpperCase"
+        - "ntfLDS_ICAO_Certificate_Subject_CountryNonUpperCase"
         - "ntfLDS_ICAO_COM_LDS_Version_Incorrect"
         - "ntfLDS_ICAO_COM_LDS_Version_Missing"
         - "ntfLDS_ICAO_COM_Unicode_Version_Incorrect"
@@ -611,6 +814,7 @@ components:
         - "ntfLDS_MRZ_OptionalData_IncorrectChecksum"
         - "ntfLDS_MRZ_IncorrectChecksum"
         - "ntfLDS_MRZ_Incorrect"
+        - "ntfLDS_MRZ_CountryCode_VisualMrz_NonMatching"
         - "ntfLDS_Biometrics_FormatOwner_Missing"
         - "ntfLDS_Biometrics_FormatOwner_Incorrect"
         - "ntfLDS_Biometrics_FormatType_Missing"
@@ -622,6 +826,7 @@ components:
         - "ntfLDS_Biometrics_BDB_FormatID_Incorrect"
         - "ntfLDS_Biometrics_BDB_Version_Incorrect"
         - "ntfLDS_Biometrics_BDB_DataLength_Incorrect"
+        - "ntfLDS_Biometrics_BDB_Data_Incorrect"
         - "ntfLDS_Biometrics_BDB_Data_Gender"
         - "ntfLDS_Biometrics_BDB_Data_EyeColor"
         - "ntfLDS_Biometrics_BDB_Data_HairColor"
@@ -633,6 +838,104 @@ components:
         - "ntfLDS_Biometrics_BDB_Data_PoseAngleU_Roll"
         - "ntfLDS_Biometrics_BDB_Data_FaceImageType"
         - "ntfLDS_Biometrics_BDB_Data_ImageDataType"
+        - "ntfLDS_Biometrics_RB_Data_Incorrect"
+        - "ntfLDS_Biometrics_RB_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_Item_Missing"
+        - "ntfLDS_Biometrics_RB_Item_Unexpected"
+        - "ntfLDS_Biometrics_RB_RID_Incorrect"
+        - "ntfLDS_Biometrics_RB_ImageR_Incorrect"
+        - "ntfLDS_Biometrics_RB_Image_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_Image_Item_Missing"
+        - "ntfLDS_Biometrics_RB_Image_Item_Unexpected"
+        - "ntfLDS_Biometrics_RB_Image_Info_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_Image_Info_Item_Missing"
+        - "ntfLDS_Biometrics_RB_Image_Info_Item_Unexpected"
+        - "ntfLDS_Biometrics_RB_Image_Info_Format_Incorrect"
+        - "ntfLDS_Biometrics_RB_Image_Info_Format_Unsupported"
+        - "ntfLDS_Biometrics_RB_Image_Info_Kind_Incorrect"
+        - "ntfLDS_Biometrics_RB_Image_Info_Kind_Unsupported"
+        - "ntfLDS_Biometrics_RB_Image_Info_PostAPB_Incorrect"
+        - "ntfLDS_Biometrics_RB_Image_Info_LossyTA_Incorrect"
+        - "ntfLDS_Biometrics_RB_Image_Info_LossyTA_Unsupported"
+        - "ntfLDS_Biometrics_RB_Image_Info_Cam2Subj_Unsupported"
+        - "ntfLDS_Biometrics_RB_Image_Info_SensDiag_Unsupported"
+        - "ntfLDS_Biometrics_RB_Image_Info_LensF_Unsupported"
+        - "ntfLDS_Biometrics_RB_Image_Info_ImSize_Incorrect"
+        - "ntfLDS_Biometrics_RB_Image_Info_ImSize_Unsupported"
+        - "ntfLDS_Biometrics_RB_Image_Info_ImMeas_Incorrect"
+        - "ntfLDS_Biometrics_RB_Image_Info_Color_Incorrect"
+        - "ntfLDS_Biometrics_RB_Image_Info_Color_Unsupported"
+        - "ntfLDS_Biometrics_RB_Image_Info_ColorMap_Incorrect"
+        - "ntfLDS_Biometrics_RB_Image_Capt_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_Image_Capt_Item_Unexpected"
+        - "ntfLDS_Biometrics_RB_Image_Capt_Spectral_Unsupported"
+        - "ntfLDS_Biometrics_RB_Image_Capt_TechCode_Incorrect"
+        - "ntfLDS_Biometrics_RB_Image_Capt_TechCode_Unsupported"
+        - "ntfLDS_Biometrics_RB_Date_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_Date_Item_Missing"
+        - "ntfLDS_Biometrics_RB_Date_Item_Unexpected"
+        - "ntfLDS_Biometrics_RB_Date_Incorrect"
+        - "ntfLDS_Biometrics_RB_Quality_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_Quality_Item_Missing"
+        - "ntfLDS_Biometrics_RB_Quality_Item_Unexpected"
+        - "ntfLDS_Biometrics_RB_Quality_AlgID_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_Quality_SoE_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_Quality_Score_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_Quality_Error_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_Quality_Error_Item_Unsupported"
+        - "ntfLDS_Biometrics_RB_PAD_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_PAD_Item_Unexpected"
+        - "ntfLDS_Biometrics_RB_PAD_Decision_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_PAD_Decision_Item_Unsupported"
+        - "ntfLDS_Biometrics_RB_PAD_Score_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_PAD_Score_RegID_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_PAD_SoE_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_PAD_SoE_Score_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_PAD_SoE_Error_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_PAD_SoE_Error_Item_Unsupported"
+        - "ntfLDS_Biometrics_RB_PAD_ExtData_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_PAD_ExtData_Type_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_PAD_Context_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_PAD_Context_Item_Unsupported"
+        - "ntfLDS_Biometrics_RB_PAD_SLevel_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_PAD_SLevel_Item_Unsupported"
+        - "ntfLDS_Biometrics_RB_PAD_RiskLevel_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_PAD_Criteria_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_PAD_Criteria_Item_Unsupported"
+        - "ntfLDS_Biometrics_RB_PAD_Date_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_PAD_Date_Item_Missing"
+        - "ntfLDS_Biometrics_RB_PAD_Date_Item_Unexpected"
+        - "ntfLDS_Biometrics_RB_PAD_Date_Incorrect"
+        - "ntfLDS_Biometrics_RB_SessionID_Incorrect"
+        - "ntfLDS_Biometrics_RB_Derived_Incorrect"
+        - "ntfLDS_Biometrics_RB_Device_Incorrect"
+        - "ntfLDS_Biometrics_RB_Device_Item_Unexpected"
+        - "ntfLDS_Biometrics_RB_Device_ModelID_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_Device_CertID_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_Metadata_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_Metadata_Item_Unexpected"
+        - "ntfLDS_Biometrics_RB_Metadata_Gender_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_Metadata_Gender_Item_Unsupported"
+        - "ntfLDS_Biometrics_RB_Metadata_Eye_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_Metadata_Eye_Item_Unsupported"
+        - "ntfLDS_Biometrics_RB_Metadata_Hair_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_Metadata_Hair_Item_Unsupported"
+        - "ntfLDS_Biometrics_RB_Metadata_Height_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_Metadata_Props_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_Metadata_Props_Item_Unexpected"
+        - "ntfLDS_Biometrics_RB_Metadata_Express_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_Metadata_Express_Item_Unexpected"
+        - "ntfLDS_Biometrics_RB_Metadata_Pose_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_Metadata_Pose_Item_Unexpected"
+        - "ntfLDS_Biometrics_RB_LandMark_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_LandMark_Item_Missing"
+        - "ntfLDS_Biometrics_RB_LandMark_Item_Unexpected"
+        - "ntfLDS_Biometrics_RB_LandMark_Kind_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_LandMark_Mpeg4_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_LandMark_Mpeg4_Item_Unsupported"
+        - "ntfLDS_Biometrics_RB_LandMark_AntrL_Item_Incorrect"
+        - "ntfLDS_Biometrics_RB_LandMark_Coord_Item_Incorrect"
+        - "ntfLDS_DTC_ContentInfo_Version_Incorrect"
         - "ntfLDS_SI_PACE_Info_UnsupportedStdParameters"
         - "ntfLDS_SI_PACE_Info_DeprecatedVersion"
         - "ntfLDS_SI_PACE_DomainParams_UsingStdRef"
@@ -675,9 +978,3 @@ components:
         - "ntfLDS_Auth_MLSignerInfo_Certificate_CantFindCSCA"
         - "ntfLDS_Auth_MLSignerInfo_Certificate_Revoked"
         - "ntfLDS_Auth_MLSignerInfo_Certificate_SignatureInvalid"
-        - "ntfLDS_ICAO_Certificate_Chain_Country_NonMatching"
-        - "ntfLDS_ICAO_Certificate_VisualMrz_Country_NonMatching"
-        - "ntfLDS_MRZ_CountryCode_VisualMrz_NonMatching"
-        - "ntfLDS_ICAO_Certificate_MRZ_Country_NonMatching"
-        - "ntfLDS_ICAO_Certificate_Issuer_CountryNonUpperCase"
-        - "ntfLDS_ICAO_Certificate_Subject_CountryNonUpperCase"
