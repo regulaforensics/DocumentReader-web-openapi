@@ -26,19 +26,19 @@ components:
         - TEXTUAL_FILLING
       properties:
         CHECK_SUMS:
-          type: integer
+          $ref: "./common.yml#/components/schemas/CheckResult"
         CONTRAST_PRINT:
-          type: integer
+          $ref: "./common.yml#/components/schemas/CheckResult"
         DOC_FORMAT:
           type: integer
         MRZ_FORMAT:
           type: integer
         PRINT_POSITION:
-          type: integer
+          $ref: "./common.yml#/components/schemas/CheckResult"
         STAIN_MRZ:
-          type: integer
+          $ref: "./common.yml#/components/schemas/CheckResult"
         SYMBOLS_PARAM:
-          type: integer
+          $ref: "./common.yml#/components/schemas/CheckResult"
         StrCount:
           type: integer
         Strings:
@@ -46,7 +46,7 @@ components:
           items:
             $ref: "#/components/schemas/StringItem"
         TEXTUAL_FILLING:
-          type: integer
+          $ref: "./common.yml#/components/schemas/CheckResult"
 
     StringItem:
       title: "StringItem"
@@ -71,9 +71,9 @@ components:
         - SymbolsEstimations
       properties:
         ALIGNMENT_SYMBOLS_IN_STRING:
-          type: integer
+          $ref: "./common.yml#/components/schemas/CheckResult"
         CHECK_SUMS:
-          type: integer
+          $ref: "./common.yml#/components/schemas/CheckResult"
         ErrorPOSITION:
           $ref: "#/components/schemas/ErrorCoordinates"
         FieldCount:
@@ -83,15 +83,15 @@ components:
           items:
             $ref: "#/components/schemas/FieldItem"
         STRINGS_DISTANCE:
-          type: integer
+          $ref: "./common.yml#/components/schemas/CheckResult"
         STRINGS_INTERVAL:
-          type: integer
+          $ref: "./common.yml#/components/schemas/CheckResult"
         STRING_FILLING:
-          type: integer
-        STRING_POSITION:
-          type: integer
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        STRINGS_POSITION:
+          $ref: "./common.yml#/components/schemas/CheckResult"
         SYMBOLS_PARAM:
-          type: integer
+          $ref: "./common.yml#/components/schemas/CheckResult"
         SizeError_ALIGNMENT:
           type: number
         SizeError_DISTANCE:

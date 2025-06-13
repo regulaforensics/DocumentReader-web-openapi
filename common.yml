@@ -221,12 +221,12 @@ components:
         - 3072
       x-enum-descriptions:
         - "No Light"
-        - "Upper/lower lighters of white light scheme"
-        - "Side lighters of white light scheme"
+        - "Upper/lower white"
+        - "Side white"
         - "White"
         - "Infrared"
         - "Ultraviolet"
-        - "White coaxial"
+        - "Axial white"
       x-enum-varnames:
         - "OFF"
         - "WHITE_TOP"
@@ -358,7 +358,7 @@ components:
         InComparison:
           type: integer
         wLCID:
-          type: integer
+          $ref: "./e-lcid.yml#/components/schemas/LCID"
         Reserved2:
           type: integer
         Reserved3:
@@ -434,4 +434,67 @@ components:
         Class:
           type: integer
         SubClass:
+          type: integer
+
+    RawImageContainerList:
+      title: "RawImageContainerList"
+      type: object
+      required:
+        - Count
+        - Images
+      properties:
+        Count:
+          type: integer
+        Images:
+          type: array
+          items:
+            $ref: "#/components/schemas/ImageData"
+
+    DocumentPosition:
+      title: "DocumentPosition"
+      type: object
+      required:
+        - docFormat
+        - Angle
+        - Width
+        - Height
+        - Center
+        - LeftBottom
+        - LeftTop
+        - RightBottom
+        - RightTop
+        - Dpi
+      properties:
+        docFormat:
+          $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentFormat"
+        Angle:
+          description: "Document rotation angle"
+          type: number
+        Width:
+          description: "Document width"
+          type: integer
+        Height:
+          description: "Document height"
+          type: integer
+        Center:
+          $ref: "./common.yml#/components/schemas/Point"
+        LeftBottom:
+          $ref: "./common.yml#/components/schemas/Point"
+        LeftTop:
+          $ref: "./common.yml#/components/schemas/Point"
+        RightBottom:
+          $ref: "./common.yml#/components/schemas/Point"
+        RightTop:
+          $ref: "./common.yml#/components/schemas/Point"
+        Dpi:
+          type: integer
+        Inverse:
+          type: integer
+        ObjArea:
+          type: integer
+        ObjIntAngleDev:
+          type: integer
+        PerspectiveTr:
+          type: integer
+        ResultStatus:
           type: integer

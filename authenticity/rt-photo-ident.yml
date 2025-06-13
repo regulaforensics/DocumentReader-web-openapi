@@ -17,7 +17,7 @@ components:
         SourceImage:
           $ref: "../common.yml#/components/schemas/ImageData"
         ResultImages:
-          $ref: "#/components/schemas/RawImageContainerList"
+          $ref: "../common.yml#/components/schemas/RawImageContainerList"
         FieldTypesCount:
           type: integer
         FieldTypesList:
@@ -30,17 +30,3 @@ components:
           type: integer
         Reserved3:
           type: integer
-
-    RawImageContainerList:
-      title: "RawImageContainerList"
-      type: object
-      required:
-        - Count
-        - Images
-      properties:
-        Count:
-          type: integer
-        Images:
-          type: array
-          items:
-            $ref: "../common.yml#/components/schemas/ImageData"
