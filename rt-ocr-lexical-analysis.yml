@@ -1,32 +1,39 @@
-openapi: 3.0.3
+openapi: 3.0.4
 components:
   schemas:
-
-    LexicalAnalysisResult:
-      title: "Lexical Analysis"
-      description: |
-        Lexical data analysis allows you to compare the results of reading the text data of the MRZ,
-        the document filling area, barcodes and data from the memory of the RFID chip for an additional
-        assessment of the authenticity of the document. Single result for all pages.
-        Consider using Result.TEXT type for more simplicity.
-      allOf:
-        - type: object
-          properties:
-            ListVerifiedFields:
-              $ref: "#/components/schemas/ListVerifiedFields"
-        - $ref: "./rt.yml#/components/schemas/ResultItem"
-
+    ListVerifiedFieldsItem:
+      title: "ListVerifiedFields"
+      type: object
+      required:
+        - ListVerifiedFields
+      properties:
+        ListVerifiedFields:
+          $ref: "#/components/schemas/ListVerifiedFields"
 
     ListVerifiedFields:
+      title: "ListVerifiedFields"
       type: object
+      required:
+        - Count
+        - pFieldMaps
       properties:
+        Count:
+          description: "Number of pFieldMaps array elements"
+          type: number
         pFieldMaps:
           type: array
           items:
             $ref: "#/components/schemas/VerifiedFieldMap"
+        pDateFormat:
+          type: string
 
     VerifiedFieldMap:
+      title: "VerifiedFieldMap"
       type: object
+      required:
+        - wFieldType
+        - wLCID
+        - Matrix
       properties:
         wFieldType:
           $ref: "./e-text-field-type.yml#/components/schemas/TextFieldType"
@@ -46,11 +53,11 @@ components:
           type: string
         Matrix:
           $ref: "#/components/schemas/ComparisonMatrix"
-
       example:
         {FieldType: 185, Field_MRZ: "37", Field_Visual: "37", Matrix: [1,0,0,0,0,3,0,0,0,0]}
 
     ComparisonMatrix:
+      title: "ComparisonMatrix"
       type: array
       minItems: 10
       maxItems: 10
@@ -74,6 +81,7 @@ components:
       example: [1,0,0,0,0,3,0,0,0,0]
 
     VerificationResult:
+      title: "VerificationResult"
       type: integer
       enum:
         - 0

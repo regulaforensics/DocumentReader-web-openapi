@@ -1,6 +1,4 @@
-openapi: 3.0.3
-
-
+openapi: 3.0.4
 components:
   parameters:
     x-request:
@@ -12,10 +10,12 @@ components:
 
   schemas:
     PageIndex:
+      title: "PageIndex"
       description: "Page index of the image from input list"
       type: integer
 
     Source:
+      title: "Source"
       description: "Document data sources"
       type: string
       enum:
@@ -24,20 +24,24 @@ components:
         - "BARCODE"
         - "RFID"
         - "MAGNETIC"
+        - "EXTERNAL"
       x-enum-varnames:
         - "MRZ"
         - "VISUAL"
         - "BARCODE"
         - "RFID"
         - "MAGNETIC"
+        - "EXTERNAL"
       x-enum-descriptions:
         - "Machine readable zone (MRZ)"
         - "Visual zone"
         - "Barcode"
         - "RFID"
         - "Magnetic"
+        - "External"
 
     CheckResult:
+      title: "CheckResult"
       type: integer
       description: "0 - result is negative; 1 - result is positive; 2 - сheck was not performed"
       enum:
@@ -53,8 +57,8 @@ components:
         - "Check was performed and result is POSITIVE"
         - "Check was NOT PERFORMED"
 
-    # todo update x-enum-descriptions
     Scenario:
+      title: "Scenario"
       type: string
       description: "Document processing scenario"
       enum:
@@ -77,6 +81,7 @@ components:
         - "CreditCard"
         - "Capture"
         - "DTC"
+        - "RFID"
       x-enum-varnames:
         - "MRZ"
         - "BARCODE"
@@ -97,6 +102,7 @@ components:
         - "CREDIT_CARD"
         - "CAPTURE"
         - "DTC"
+        - "RFID"
       x-enum-descriptions:
         - "Processing scenario for obtaining MRZ data"
         - "Processing scenario for obtaining barcode data"
@@ -117,11 +123,11 @@ components:
         - "Processing scenario for obtaining bank card data"
         - "Scenario for obtaining an original image without any processing"
         - "Processing scenario for Digital Travel Credentials (DTC-VC) data processing"
+        - "Processing scenario for RFID chip processing"
 
     ImageData:
+      title: "ImageData"
       type: object
-      required:
-        - image
       properties:
         image:
           $ref: "#/components/schemas/ImageBase64"
@@ -130,18 +136,21 @@ components:
           type: string
 
     ImageTransactionData:
+      title: "ImageTransactionData"
       type: object
       properties:
         image:
           $ref: './rt-images.yml#/components/schemas/ImagesFieldValue'
 
     ImageBase64:
+      title: "ImageBase64"
       description: "Base64 encoded image"
       type: string
       format: base64
       example: "Base64 encoded image"
 
     RectangleCoordinates:
+      title: "RectangleCoordinates"
       description: "Coordinates of the rectangle region on a document image(result type 1). Represented by two points - (left, top) + (right, bottom)"
       type: object
       required:
@@ -160,6 +169,7 @@ components:
           type: integer
 
     RfidLocation:
+      title: "RfidLocation"
       type: integer
       description: "Determines the presence and location of an RFID chip in a document. 0 - no rfid chip; 1 - chip is located in the document data page; 2 - chip is located in the back page or inlay of the document"
       enum:
@@ -176,10 +186,14 @@ components:
         - "BACK_PAGE"
 
     RfidOrigin:
+      title: "RfidOrigin"
       type: object
       description: "Location of data in RFID chip"
       required:
         - dg
+        - dgTag
+        - tagEntry
+        - entryView
       properties:
         dg:
           description: "Source data group file"
@@ -199,22 +213,35 @@ components:
       description: "Image light index"
       enum:
         - 0
+        - 2
+        - 4
         - 6
         - 24
         - 128
+        - 3072
       x-enum-descriptions:
         - "No Light"
+        - "Upper/lower white"
+        - "Side white"
         - "White"
         - "Infrared"
         - "Ultraviolet"
+        - "Axial white"
       x-enum-varnames:
         - "OFF"
+        - "WHITE_TOP"
+        - "WHITE_SIDE"
         - "WHITE"
         - "IR"
         - "UV"
+        - "AXIAL_WHITE"
 
     Point:
+      title: "Point"
       type: object
+      required:
+        - x
+        - y
       properties:
         x:
           type: integer
@@ -222,18 +249,21 @@ components:
           type: integer
 
     License:
+      title: "License"
       description: "Base64 encoded data"
       type: string
       format: byte
       example: "Base64 encoded data"
 
     EncryptedRCL:
+      title: "EncryptedRCL"
       description: "Base64 encoded data"
       type: string
       format: byte
       example: "Base64 encoded data"
 
     FaceApi:
+      title: "FaceApi"
       type: object
       properties:
         url:
@@ -252,7 +282,8 @@ components:
               type: integer
               description: "The maximum number of results to be returned."
             threshold:
-              type: float
+              type: number
+              format: float
               description: "The similarity threshold."
             group_ids:
               type: array
@@ -287,3 +318,183 @@ components:
           type: integer
           example: 5
           description: "Estimated duration of validity for a child's passport, years. Default: 5."
+
+    VisualExtendedFieldItem:
+      title: "VisualExtendedFieldItem"
+      type: object
+      required:
+        - wFieldType
+        - FieldName
+        - StringsCount
+        - StringsResult
+        - Buf_Length
+        - Buf_Text
+      properties:
+        wFieldType:
+          $ref: "./e-text-field-type.yml#/components/schemas/TextFieldType"
+        FieldName:
+          description: "Field symbolic name (null-terminated string)"
+          type: string
+        StringsCount:
+          description: "Number of StringsResult array elements"
+          type: number
+        StringsResult:
+          type: array
+          description: "Array of recognizing probabilities for a each line of text field.
+          Only for Result.VISUAL_TEXT and Result.MRZ_TEXT results."
+          items:
+            $ref: "#/components/schemas/StringRecognitionResult"
+        Buf_Length:
+          description: "Buf_Text text string length"
+          type: number
+        Buf_Text:
+          type: string
+          description: "Text field data in UTF8 format.
+          Results of reading different lines of a multi-line field are separated by '^'"
+        FieldMask:
+          type: string
+        Validity:
+          type: integer
+        InComparison:
+          type: integer
+        wLCID:
+          $ref: "./e-lcid.yml#/components/schemas/LCID"
+        Reserved2:
+          type: integer
+        Reserved3:
+          type: integer
+
+    StringRecognitionResult:
+      title: "StringRecognitionResult"
+      type: object
+      description: "Describes single row recognition results in multi-line text field of a document"
+      required:
+        - SymbolsCount
+        - StringResult
+      properties:
+        SymbolsCount:
+          description: "Number of StringResult array elements"
+          type: number
+        StringResult:
+          type: array
+          description: "Array of recognition results for individual characters of a string"
+          items:
+            $ref: "#/components/schemas/SymbolRecognitionResult"
+        Buf_Length:
+          description: "Buf_Text text string length"
+          type: number
+        Buf_Text:
+          type: string
+          description: "Text field data in UTF8 format.
+          Results of reading different lines of a multi-line field are separated by '^'"
+        Reserved:
+          type: integer
+
+    SymbolRecognitionResult:
+      title: "SymbolRecognitionResult"
+      type: object
+      description: "Describes a single character recognition results in the text field line"
+      required:
+        - CandidatesCount
+        - ListOfCandidates
+      properties:
+        SymbolRect: # Coordinates of the symbol in the normalized image of the document
+          $ref: "#/components/schemas/RectangleCoordinates"
+        CandidatesCount:
+          description: "Number of significant elements of ListOfCandidates array"
+          type: number
+        ListOfCandidates:
+          type: array
+          description: "Array of candidate characters. Sorted in descending order of recognition probabilities
+          (the first element has highest probability)"
+          items:
+            $ref: "#/components/schemas/SymbolCandidate"
+        BaseLineBottom:
+          type: integer
+        BaseLineTop:
+          type: integer
+
+    SymbolCandidate:
+      title: "SymbolCandidate"
+      required:
+        - SymbolCode
+        - SymbolProbability
+      type: object
+      description: "Describes an individual character recognition candidate"
+      properties:
+        SymbolCode:
+          type: integer
+          format: int64
+          description: "Unicode symbol code"
+        SymbolProbability:
+          type: integer
+          description: "character recognition probability (0–100,%)"
+          minimum: 0
+          maximum: 100
+        Class:
+          type: integer
+        SubClass:
+          type: integer
+
+    RawImageContainerList:
+      title: "RawImageContainerList"
+      type: object
+      required:
+        - Count
+        - Images
+      properties:
+        Count:
+          type: integer
+        Images:
+          type: array
+          items:
+            $ref: "#/components/schemas/ImageData"
+
+    DocumentPosition:
+      title: "DocumentPosition"
+      type: object
+      required:
+        - docFormat
+        - Angle
+        - Width
+        - Height
+        - Center
+        - LeftBottom
+        - LeftTop
+        - RightBottom
+        - RightTop
+        - Dpi
+      properties:
+        docFormat:
+          $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentFormat"
+        Angle:
+          description: "Document rotation angle"
+          type: number
+        Width:
+          description: "Document width"
+          type: integer
+        Height:
+          description: "Document height"
+          type: integer
+        Center:
+          $ref: "./common.yml#/components/schemas/Point"
+        LeftBottom:
+          $ref: "./common.yml#/components/schemas/Point"
+        LeftTop:
+          $ref: "./common.yml#/components/schemas/Point"
+        RightBottom:
+          $ref: "./common.yml#/components/schemas/Point"
+        RightTop:
+          $ref: "./common.yml#/components/schemas/Point"
+        Dpi:
+          type: integer
+        Inverse:
+          type: integer
+        ObjArea:
+          type: integer
+        ObjIntAngleDev:
+          type: integer
+        PerspectiveTr:
+          type: integer
+        ResultStatus:
+          type: integer

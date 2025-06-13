@@ -1,15 +1,11 @@
-openapi: 3.0.3
+openapi: 3.0.4
 components:
   schemas:
-
-    DocumentImageResult:
-      title: "Document Image"
-      description: "Contains document image."
-      allOf:
-        - type: object
-          required:
-            - RawImageContainer
-          properties:
-            RawImageContainer:
-              $ref: "./common.yml#/components/schemas/ImageData"
-        - $ref: "./rt.yml#/components/schemas/ResultItem"
+    RawImageContainerItem:
+      title: "RawImageContainerItem"
+      type: object
+      required:
+        - RawImageContainer
+      properties:
+        RawImageContainer:
+          $ref: "./common.yml#/components/schemas/ImageData"

@@ -1,8 +1,4 @@
-openapi: 3.0.3
-info:
-  version: 6.9.0
-  title: Regula Document Reader Web API
-
+openapi: 3.0.4
 paths:
   /transaction/{transactionId}/process:
     post:
@@ -29,17 +25,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  OutData:
-                    $ref: '#/components/schemas/OutData'
-                  InData:
-                    $ref: '#/components/schemas/InData'
-                  tag:
-                    type: string
-                  transactionId:
-                    type: string
-                    format: uuid
+                $ref: '#/components/schemas/TransactionProcessResult'
         "400":
           description: "Bad request. Check your input data."
         "403":
@@ -84,9 +70,6 @@ paths:
           name: withImages
           schema:
             type: boolean
-            enum:
-              - true
-              - false
           description: With base64 images or url
       summary: Get Reprocess transaction result
       tags:
@@ -97,35 +80,12 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  ChipPage:
-                    $ref: "./common.yml#/components/schemas/RfidLocation"
-                  ProcessingFinished:
-                    $ref: "./p-process.yml#/components/schemas/ProcessingStatus"
-                  ContainerList:
-                    $ref: "./rt.yml#/components/schemas/ContainerList"
-                  TransactionInfo:
-                    $ref: "./p-process.yml#/components/schemas/TransactionInfo"
-                  log:
-                    description: "Base64 encoded transaction processing log"
-                    type: string
-                  passBackObject:
-                    type: object
-                    description: "Free-form object provided in request. See passBackObject property of ProcessRequest."
-                    additionalProperties: true
-                  morePagesAvailable:
-                    type: integer
-                  elapsedTime:
-                    type: integer
-                    description: "Time the document processing has taken, ms."
-                  CoreLibResultCode:
-                    type: integer
-
+                $ref: "./p-process.yml#/components/schemas/ProcessResponse"
         "400":
           description: "Bad request. Check your input data."
         "403":
           description: "Bad license. Either server or request does not contain valid license."
+
   /transaction/{transactionId}/file:
     get:
       parameters:
@@ -155,6 +115,7 @@ paths:
                 format: binary
         "404":
           description: "File not found"
+
   /tag/{tagId}:
     delete:
       parameters:
@@ -178,6 +139,7 @@ paths:
           description: "Bad request. Check your input data."
         "403":
           description: "Bad license. Either server or request does not contain valid license."
+
   /tag/{tagId}/transactions:
     get:
       parameters:
@@ -205,6 +167,7 @@ paths:
 components:
   schemas:
     ListTransactionsByTagResponse:
+      title: "ListTransactionsByTagResponse"
       type: object
       properties:
         items:
@@ -214,7 +177,9 @@ components:
         metadata:
           type: object
           additionalProperties: true
+
     GetTransactionsByTagResponse:
+      title: "GetTransactionsByTagResponse"
       type: object
       properties:
         id:
@@ -228,7 +193,23 @@ components:
           type: string
           format: 'date-time'
           description: "Last time updated"
+
+    TransactionProcessResult:
+      title: "TransactionProcessResult"
+      type: object
+      properties:
+        OutData:
+          $ref: '#/components/schemas/OutData'
+        InData:
+          $ref: '#/components/schemas/InData'
+        tag:
+          type: string
+        transactionId:
+          type: string
+          format: uuid
+
     TransactionProcessGetResponse:
+      title: "TransactionProcessGetResponse"
       type: object
       properties:
         transactionId:
@@ -242,6 +223,7 @@ components:
           $ref: '#/components/schemas/InData'
 
     OutData:
+      title: "OutData"
       type: object
       properties:
         url:
@@ -253,6 +235,7 @@ components:
             $ref: "#/components/schemas/OutDataTransactionImagesFieldValue"
 
     InData:
+      title: "InData"
       type: object
       properties:
         video:
@@ -272,7 +255,10 @@ components:
             $ref: "#/components/schemas/InDataTransactionImagesFieldValue"
 
     TransactionProcessRequest:
+      title: "TransactionProcessRequest"
       type: object
+      required:
+        - processParam
       properties:
         processParam:
           $ref: "./p-process.yml#/components/schemas/ProcessParams"
@@ -280,6 +266,15 @@ components:
           type: array
           items:
             $ref: "./p-process.yml#/components/schemas/ProcessRequestImage"
+        tag:
+          type: string
+          description: "Session ID"
+        tenant:
+          type: string
+          description: "Customer name"
+        env:
+          type: string
+          description: "Environment type"
         livePortrait:
           type: string
           format: base64
@@ -302,10 +297,9 @@ components:
         dtc:
           type: string
           description: "Digital Travel Credential (DTC-VC) data in base64 format for processing"
-      required:
-        - processParam
 
     InDataTransactionImagesFieldValue:
+      title: "InDataTransactionImagesFieldValue"
       type: object
       properties:
         light:
@@ -319,6 +313,7 @@ components:
           description: "Image url"
 
     OutDataTransactionImagesFieldValue:
+      title: "OutDataTransactionImagesFieldValue"
       type: object
       properties:
         fieldType:
@@ -334,6 +329,7 @@ components:
           description: "Image url"
 
     TransactionScenarioRequest:
+      title: "TransactionScenarioRequest"
       type: object
       properties:
         scenario:

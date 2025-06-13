@@ -1,40 +1,32 @@
-openapi: 3.0.3
+openapi: 3.0.4
 components:
   schemas:
-
-    PhotoIdentResult:
-      title: "Photo Ident Check"
-      allOf:
-        - $ref: "../rt-authenticity.yml#/components/schemas/AuthenticityCheckResultItem"
-        - type: object
-          properties:
-            LightIndex:
-              $ref: "../common.yml#/components/schemas/Light"
-            Area:
-              $ref: "../common.yml#/components/schemas/RectangleCoordinates"
-            SourceImage:
-              $ref: "../common.yml#/components/schemas/ImageData"
-            ResultImages:
-              $ref: "#/components/schemas/RawImageContainerList"
-            FieldTypesCount:
-              type: integer
-            FieldTypesList:
-              type: array
-              items:
-                type: integer
-            Step:
-              type: integer
-            Angle:
-              type: integer
-            Reserved3:
-              type: integer
-
-    RawImageContainerList:
+    PhotoIdentItem:
+      title: "PhotoIdentItem"
       type: object
+      required:
+        - LightIndex
+        - Area
+        - SourceImage
+        - ResultImages
       properties:
-        Count:
+        LightIndex:
+          $ref: "../common.yml#/components/schemas/Light"
+        Area:
+          $ref: "../common.yml#/components/schemas/RectangleCoordinates"
+        SourceImage:
+          $ref: "../common.yml#/components/schemas/ImageData"
+        ResultImages:
+          $ref: "../common.yml#/components/schemas/RawImageContainerList"
+        FieldTypesCount:
           type: integer
-        Images:
+        FieldTypesList:
           type: array
           items:
-            $ref: "../common.yml#/components/schemas/ImageData"
+            type: integer
+        Step:
+          type: integer
+        Angle:
+          type: integer
+        Reserved3:
+          type: integer

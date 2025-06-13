@@ -1,7 +1,8 @@
-openapi: 3.0.3
+openapi: 3.0.4
 components:
   schemas:
     Critical:
+      title: "Critical"
       type: integer
       description: "Enumeration contains identifiers determining the criticality of the security element"
       enum:
