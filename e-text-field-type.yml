@@ -1,7 +1,8 @@
-openapi: 3.0.3
+openapi: 3.0.4
 components:
   schemas:
     TextFieldType:
+      title: "TextFieldType"
       type: integer
       enum:
         - 0
@@ -648,6 +649,9 @@ components:
         - 692
         - 693
         - 694
+        - 695
+        - 696
+        - 697
       x-enum-descriptions:
         - "Document class code"
         - "Issuing state code"
@@ -1293,6 +1297,9 @@ components:
         - "EF.CardAccess"
         - "Short flight number"
         - "Airline code"
+        - "MVC Agency"
+        - "Issuing state code (Alpha-2)"
+        - "Nationality code (Alpha-2)"
       x-enum-varnames:
         - "DOCUMENT_CLASS_CODE"
         - "ISSUING_STATE_CODE"
@@ -1938,3 +1945,6 @@ components:
         - "EF_CARD_ACCESS"
         - "SHORT_FLIGHT_NUMBER"
         - "AIRLINE_CODE"
+        - "FT_MVC_AGENCY"
+        - "FT_ISSUING_STATE_CODE_ALPHA2"
+        - "FT_NATIONALITY_CODE_ALPHA2"

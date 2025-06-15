@@ -1,48 +1,52 @@
-openapi: 3.0.3
+openapi: 3.0.4
 components:
   schemas:
-
-    FiberResult:
-      title: "Fibers Check"
-      allOf:
-        - $ref: "../rt-authenticity.yml#/components/schemas/AuthenticityCheckResultItem"
-        - type: object
-          properties:
-            RectCount:
-              description: "For UV_Fibers authenticity result type"
-              type: integer
-            ExpectedCount:
-              description: "Expected fibers number. For UV_Fibers authentication result type"
-              type: integer
-            LightValue:
-              description: "For UV_Background authentication result type"
-              $ref: "../common.yml#/components/schemas/Light"
-            LightDisp:
-              description: "For UV_Background authentication result type"
-              type: integer
-            RectArray:
-              description: "Coordinates of located areas for defined fibers type"
-              type: array
-              items:
-                $ref: "../common.yml#/components/schemas/RectangleCoordinates"
-            Width:
-              description: "Fibers width value for located areas (in pixels)"
-              type: array
-              items:
-                type: integer
-            Length:
-              description: "Fibers length value for located areas (in pixels)"
-              type: array
-              items:
-                type: integer
-            Area:
-              description: "Fibers value for areas (in pixels)"
-              type: array
-              items:
-                type: integer
-            ColorValues:
-              description: "Fibers color value"
-              example: [BLUE, GREEN, RED]
-              type: array
-              items:
-                type: integer
+    FiberItem:
+      title: "FiberItem"
+      type: object
+      required:
+        - RectCount
+        - ExpectedCount
+        - RectArray
+        - Width
+        - Length
+        - Area
+        - ColorValues
+      properties:
+        RectCount:
+          description: "For UV_Fibers authenticity result type"
+          type: integer
+        ExpectedCount:
+          description: "Expected fibers number. For UV_Fibers authentication result type"
+          type: integer
+        LightValue: # For UV_Background authentication result type
+          $ref: "../common.yml#/components/schemas/Light"
+        LightDisp:
+          description: "For UV_Background authentication result type"
+          type: integer
+        RectArray:
+          description: "Coordinates of located areas for defined fibers type"
+          type: array
+          items:
+            $ref: "../common.yml#/components/schemas/RectangleCoordinates"
+        Width:
+          description: "Fibers width value for located areas (in pixels)"
+          type: array
+          items:
+            type: integer
+        Length:
+          description: "Fibers length value for located areas (in pixels)"
+          type: array
+          items:
+            type: integer
+        Area:
+          description: "Fibers value for areas (in pixels)"
+          type: array
+          items:
+            type: integer
+        ColorValues:
+          description: "Fibers color value"
+          example: [BLUE, GREEN, RED]
+          type: array
+          items:
+            type: integer
