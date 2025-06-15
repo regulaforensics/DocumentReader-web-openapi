@@ -1,0 +1,62 @@
+openapi: 3.0.4
+components:
+  schemas:
+    FaceDetectionItem:
+      title: "FaceDetectionItem"
+      type: object
+      properties:
+        FaceDetection:
+          $ref: "#/components/schemas/FaceDetection"
+
+    FaceDetection:
+      title: "FaceDetection"
+      type: object
+      required:
+        - Count
+        - CountFalseDetection
+        - Res
+      properties:
+        Count:
+          type: integer
+        CountFalseDetection:
+          type: integer
+        Res:
+          type: array
+          items:
+            $ref: "#/components/schemas/FaceItem"
+        Reserved1:
+          type: integer
+        Reserved2:
+          type: integer
+
+    FaceItem:
+      title: "FaceItem"
+      type: object
+      required:
+        - CoincidenceToPhotoArea
+        - FaceRect
+        - FieldRect
+        - GraphFieldNumber
+        - Landmarks
+        - LightType
+        - Orientation
+        - Probability
+      properties:
+        CoincidenceToPhotoArea:
+          type: integer
+        FaceRect:
+          $ref: "./common.yml#/components/schemas/RectangleCoordinates"
+        FieldRect:
+          $ref: "./common.yml#/components/schemas/RectangleCoordinates"
+        GraphFieldNumber:
+          type: integer
+        Landmarks:
+          type: array
+          items:
+            $ref: "./common.yml#/components/schemas/Point"
+        LightType:
+          $ref: "./common.yml#/components/schemas/Light"
+        Orientation:
+          type: integer
+        Probability:
+          type: integer

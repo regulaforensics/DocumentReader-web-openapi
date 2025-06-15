@@ -1,36 +1,30 @@
-openapi: 3.0.3
+openapi: 3.0.4
 components:
   schemas:
-
-    ChosenDocumentTypeResult:
-      title: "Chosen Document Type"
-      description: "Contains information about the type of document that was determined
-      based on the analysis of the provided image"
-      allOf:
-        - type: object
-          properties:
-            OneCandidate:
-              $ref: "#/components/schemas/OneCandidate"
-            XML_buffer:
-              type: string
-              readOnly: true
-        - $ref: "./rt.yml#/components/schemas/ResultItem"
-
-    DocumentTypesCandidatesResult:
-      title: "Document Types Candidates"
-      allOf:
-        - type: object
-          properties:
-            CandidatesList:
-              $ref: "#/components/schemas/DocumentTypesCandidatesList"
-        - $ref: "./rt.yml#/components/schemas/ResultItem"
-
-
-    DocumentTypesCandidatesList:
+    CandidatesListItem:
+      title: "CandidatesListItem"
       type: object
       properties:
-        RecResult:
-          description: "Overall recognition result"
+        CandidatesList:
+          $ref: "#/components/schemas/DocumentTypesCandidatesList"
+
+    OneCandidateItem:
+      title: "OneCandidateItem"
+      type: object
+      required:
+        - OneCandidate
+      properties:
+        OneCandidate:
+          $ref: "#/components/schemas/OneCandidate"
+        XML_buffer:
+          type: string
+          readOnly: true
+
+    DocumentTypesCandidatesList:
+      title: "DocumentTypesCandidatesList"
+      type: object
+      properties:
+        RecResult: # Overall recognition result
           $ref: "#/components/schemas/DocumentTypeRecognitionResult"
         Candidates:
           type: array
@@ -38,6 +32,7 @@ components:
             $ref: "#/components/schemas/OneCandidate"
 
     DocumentTypeRecognitionResult:
+      title: "DocumentTypeRecognitionResult"
       type: integer
       enum:
         - 0
@@ -54,8 +49,19 @@ components:
 
 
     OneCandidate:
+      title: "OneCandidate"
       type: object
       description: "Contains information about one document type candidate"
+      required:
+        - ID
+        - P
+        - Rotated180
+        - RFID_Presence
+        - NecessaryLights
+        - CheckAuthenticity
+        - UVExp
+        - AuthenticityNecessaryLights
+        - OVIExp
       properties:
         DocumentName:
           type: string
@@ -69,8 +75,11 @@ components:
           example: 0.9913095831871032
           minimum: 0
           maximum: 1
+        Rotated180:
+          description: "Indicates if the document of the given type is rotated by 180 degrees"
+          type: integer
         RFID_Presence:
-          description: "Indication of the presence of an RFID chip in the document (electronic document indicator)"
+          description: # Indication of the presence of an RFID chip in the document (electronic document indicator)
           $ref: "./common.yml#/components/schemas/RfidLocation"
         FDSIDList:
           $ref: "#/components/schemas/FDSIDList"
@@ -88,16 +97,35 @@ components:
           type: integer
           description: "Combination of lighting scheme identifiers (combination of Light enum) needed
            to perform all authenticity checks specified in CheckAuthenticity"
+        OVIExp:
+          description: "Camera exposure value necessary when obtaining document images of the given type for AXIAL lighting scheme"
+          type: number
+        RotationAngle:
+          type: integer
 
     FDSIDList:
+      title: "FDSIDList"
       description: "Extended document type info and Regula's 'Information Reference Systems' links"
       type: object
+      required:
+        - ICAOCode
+        - Count
+        - List
+        - dType
+        - dFormat
+        - dMRZ
+        - dYear
+        - dCountryName
+        - isDeprecated
       properties:
         ICAOCode:
           type: string
           minLength: 3
           maxLength: 3
           description: "ICAO code of the issuing country"
+        Count:
+          description: "Number of elements in the List"
+          type: number
         List:
           type: array
           items:
@@ -130,9 +158,11 @@ components:
           description: "Whether the document is deprecated"
 
     DocumentFormat:
+      title: "DocumentFormat"
       type: integer
       description: "Defining the geometric format of documents in accordance with ISO / IEC 7810"
       enum:
+        - -1
         - 0
         - 1
         - 2
@@ -147,6 +177,7 @@ components:
         - 1000
         - 1002
       x-enum-descriptions:
+        - "Unknown document format"
         - "ID1 document format"
         - "ID2 document format"
         - "ID3 document format"
@@ -161,6 +192,7 @@ components:
         - "Arbitrary format"
         - "Flexible format. Standard formats can be resized during cropping, depending on various factors: light, background..."
       x-enum-varnames:
+        - "UNKNOWN"
         - "ID1"
         - "ID2"
         - "ID3"

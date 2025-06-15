@@ -1,13 +1,13 @@
-openapi: 3.0.3
+openapi: 3.0.4
 info:
-  version: 7.2.0
+  version: 8.1.0
   title: Regula Document Reader Web API
   x-logo:
     url: "https://static-content.regulaforensics.com/Icons/Logos/Regula-logo.svg"
     href: "https://regulaforensics.com"
   description: |
     Documents recognition as easy as reading two bytes.
-
+     
     # Clients:
     * [JavaScript](https://github.com/regulaforensics/DocumentReader-web-js-client) client for the browser and node.js based on axios
     * [Java](https://github.com/regulaforensics/DocumentReader-web-java-client) client compatible with jvm and android
@@ -26,17 +26,17 @@ paths:
   /api/process:
     $ref: "./p-process.yml#/paths/~1process"
   /api/v2/transaction/{transactionId}/process:
-    $ref: "./p-transaction.yml#/paths/~1transaction~1{transactionId}~1process"
+    $ref: "./p-transaction.yml#/paths/~1transaction~1%7BtransactionId%7D~1process"
   /api/v2/transaction/{transactionId}:
-    $ref: "./p-transaction.yml#/paths/~1transaction~1{transactionId}"
+    $ref: "./p-transaction.yml#/paths/~1transaction~1%7BtransactionId%7D"
   /api/v2/transaction/{transactionId}/results:
-    $ref: "./p-transaction.yml#/paths/~1transaction~1{transactionId}~1results"
+    $ref: "./p-transaction.yml#/paths/~1transaction~1%7BtransactionId%7D~1results"
   /api/v2/transaction/{transactionId}/file:
-    $ref: "./p-transaction.yml#/paths/~1transaction~1{transactionId}~1file"
+    $ref: "./p-transaction.yml#/paths/~1transaction~1%7BtransactionId%7D~1file"
   /api/v2/tag/{tagId}:
-    $ref: "./p-transaction.yml#/paths/~1tag~1{tagId}"
+    $ref: "./p-transaction.yml#/paths/~1tag~1%7BtagId%7D"
   /api/v2/tag/{tagId}/transactions:
-    $ref: "./p-transaction.yml#/paths/~1tag~1{tagId}~1transactions"
+    $ref: "./p-transaction.yml#/paths/~1tag~1%7BtagId%7D~1transactions"
   /api/ping:
     $ref: "./p-ping.yml#/paths/~1ping"
   /api/healthz:
@@ -46,7 +46,7 @@ paths:
 
 tags:
   - name: process
-    description: Everything about perfoming request and parsing response
+    description: Everything about performing request and parsing response
   - name: status_model
     x-displayName: Status Model
     description: |
@@ -65,7 +65,7 @@ tags:
   - name: document_model
     x-displayName: Document Model
     description: |
-      **Choosen Document model:**
+      **Chosen Document model:**
       <SchemaDefinition schemaRef="#/components/schemas/ChosenDocumentType" />
       **Candidates model:**
       <SchemaDefinition schemaRef="#/components/schemas/DocumentTypesCandidates" />
@@ -73,7 +73,6 @@ tags:
     x-displayName: Authenticity Model
     description: |
       <SchemaDefinition schemaRef="#/components/schemas/AuthenticityCheckResult" />
-
 
 x-tagGroups:
   - name: Requests
@@ -91,12 +90,6 @@ x-tagGroups:
 
 components:
   schemas:
-    Status:
-      $ref: "./rt-status.yml#/components/schemas/Status"
-    Text:
-      $ref: "./rt-text.yml#/components/schemas/Text"
-    Images:
-      $ref: "./rt-images.yml#/components/schemas/Images"
     DocumentImage:
       $ref: "./common.yml#/components/schemas/ImageData"
     TransactionImage:
@@ -105,7 +98,7 @@ components:
       $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentTypesCandidatesList"
     ChosenDocumentType:
       $ref: "./rt-doc-type-old.yml#/components/schemas/OneCandidate"
-    AuthenticityCheckResult:
-      $ref: "./rt-authenticity.yml#/components/schemas/AuthenticityCheckResult"
-    AuthenticityResultType:
-      $ref: "./authenticity/e-result-type.yml#/components/schemas/AuthenticityResultType"
+    RFIDPKDResourceType:
+      $ref: "./e-rfid-pkd-resourcetype.yml#/components/schemas/RFIDPKDResourceType"
+    ParsingErrorCodes:
+      $ref: "./e-parsing-error-codes.yml#/components/schemas/ParsingErrorCodes"

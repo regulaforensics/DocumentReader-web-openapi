@@ -1,105 +1,43 @@
-openapi: 3.0.3
+openapi: 3.0.4
 components:
   schemas:
-
-    TextDataResult:
-      title: "Text Data (legacy)"
-      description: "Text fields extracted from one document source.
-      Contains results of specific source for each provided page."
-      allOf:
-        - type: object
-          properties:
-            DocVisualExtendedInfo:
-              $ref: "#/components/schemas/DocVisualExtendedInfo"
-        - $ref: "./rt.yml#/components/schemas/ResultItem"
+    DocVisualExtendedInfoItem:
+      title: "DocVisualExtendedInfoItem"
+      type: object
+      required:
+        - DocVisualExtendedInfo
+      properties:
+        DocVisualExtendedInfo:
+          $ref: "#/components/schemas/DocVisualExtendedInfo"
 
     DocVisualExtendedInfo:
+      title: "DocVisualExtendedInfo"
       type: object
       description: "Container for extracted text fields. Fields are identified by type and language"
       required:
+        - nFields
         - pArrayFields
       properties:
+        nFields:
+          description: "Number of pArrayFields array elements"
+          type: number
         pArrayFields:
           type: array
           items:
             $ref: "#/components/schemas/DocVisualExtendedField"
 
     DocVisualExtendedField:
+      title: "DocVisualExtendedField"
+      type: object
+      allOf:
+        - $ref: "./common.yml#/components/schemas/VisualExtendedFieldItem"
+        - $ref: "#/components/schemas/DocVisualExtendedFieldItem"
+
+    DocVisualExtendedFieldItem:
+      title: "DocVisualExtendedFieldItem"
       type: object
       required:
-        - wFieldType
-        - FieldName
-        - wLCID
+        - FieldRect
       properties:
-        wFieldType:
-          $ref: "./e-text-field-type.yml#/components/schemas/TextFieldType"
-        FieldName:
-          description: "Field name. Only use to search values for fields with fieldType=50(other). In general, use wFieldType for lookup."
-          type: string
-        wLCID:
-          $ref: "./e-lcid.yml#/components/schemas/LCID"
-        StringsResult:
-          type: array
-          description: "Array of recognizing probabilities for a each line of text field.
-          Only for Result.VISUAL_TEXT and Result.MRZ_TEXT results."
-          items:
-            $ref: "#/components/schemas/StringRecognitionResult"
-        Buf_Text:
-          type: string
-          description: "Text field data in UTF8 format.
-          Results of reading different lines of a multi-line field are separated by '^'"
-        FieldRect:
-          description: "Coordinates of the text field in the normalized image of the document.
-          Only for Result.VISUAL_TEXT and Result.MRZ_TEXT results."
+        FieldRect: # Coordinates of the text field in the normalized image of the document. Only for Result.VISUAL_TEXT and Result.MRZ_TEXT results.
           $ref: "./common.yml#/components/schemas/RectangleCoordinates"
-        RFID_OriginDG:
-          description: "Origin data group information. Only for Result.RFID_TEXT results."
-          type: integer
-        RFID_OriginTagEntry:
-          type: integer
-          description: "Index of the text field record in origin data group. Only for Result.RFID_TEXT results."
-
-    StringRecognitionResult:
-      type: object
-      description: "Describes single row recognition results in multi-line text field of a document"
-      required:
-        - StringResult
-      properties:
-        StringResult:
-          type: array
-          description: "Array of recognition results for individual characters of a string"
-          items:
-            $ref: "#/components/schemas/SymbolRecognitionResult"
-
-    SymbolRecognitionResult:
-      type: object
-      description: "Describes a single character recognition results in the text field line"
-      required:
-        - SymbolRect
-        - ListOfCandidates
-      properties:
-        SymbolRect:
-          description: "Coordinates of the symbol in the normalized image of the document"
-          $ref: "./common.yml#/components/schemas/RectangleCoordinates"
-        ListOfCandidates:
-          type: array
-          description: "Array of candidate characters. Sorted in descending order of recognition probabilities
-          (the first element has highest probability)"
-          items:
-            $ref: "#/components/schemas/SymbolCandidate"
-
-    SymbolCandidate:
-      required:
-        - SymbolCode
-        - SymbolProbability
-      type: object
-      description: "Describes an individual character recognition candidate"
-      properties:
-        SymbolCode:
-          type: integer
-          description: "Unicode symbol code"
-        SymbolProbability:
-          type: integer
-          description: "character recognition probability (0–100,%)"
-          minimum: 0
-          maximum: 100

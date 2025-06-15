@@ -1,0 +1,1205 @@
+openapi: 3.0.4
+components:
+  schemas:
+    TDocBinaryInfoItem:
+      title: "TDocBinaryInfoItem"
+      type: object
+      required:
+        - TDocBinaryInfo
+      properties:
+        TDocBinaryInfo:
+          $ref: "#/components/schemas/TDocBinaryInfo"
+
+    TDocBinaryInfo:
+      title: "TDocBinaryInfo"
+      type: object
+      properties:
+        RFID_BINARY_DATA:
+          $ref: "#/components/schemas/BinaryData"
+        RFID_RAW_DATA:
+          type: array
+          items:
+            $ref: "#/components/schemas/RfidRawData"
+
+    BinaryData:
+      title: "BinaryData"
+      description: "Structure is used for storing the results of one bar-code module reading."
+      type: object
+      properties:
+        RFID_Authentication_Info:
+          type: object
+          additionalProperties: true
+        RFID_MIFARE_Data_Validity:
+          type: object
+          additionalProperties: true
+        RFID_MIFARE_Data:
+          type: object
+          additionalProperties: true
+        RFID_EF_COM:
+          type: object
+          additionalProperties: true
+        RFID_DG1:
+          $ref: "#/components/schemas/RfidDG1"
+        RFID_DG2:
+          type: object
+          additionalProperties: true
+        RFID_DG3:
+          type: object
+          additionalProperties: true
+        RFID_DG4:
+          type: object
+          additionalProperties: true
+        RFID_DG5:
+          type: object
+          additionalProperties: true
+        RFID_DG6:
+          type: object
+          additionalProperties: true
+        RFID_DG7:
+          type: object
+          additionalProperties: true
+        RFID_DG8:
+          type: object
+          additionalProperties: true
+        RFID_DG9:
+          type: object
+          additionalProperties: true
+        RFID_DG10:
+          type: object
+          additionalProperties: true
+        RFID_DG11:
+          type: object
+          additionalProperties: true
+        RFID_DG12:
+          type: object
+          additionalProperties: true
+        RFID_DG13:
+          type: object
+          additionalProperties: true
+        RFID_DG14:
+          type: object
+          additionalProperties: true
+        RFID_DG15:
+          type: object
+          additionalProperties: true
+        RFID_DG16:
+          type: object
+          additionalProperties: true
+        RFID_EF_SOD:
+          type: object
+          additionalProperties: true
+        eID_DG1:
+          type: object
+          additionalProperties: true
+        eID_DG2:
+          type: object
+          additionalProperties: true
+        eID_DG3:
+          type: object
+          additionalProperties: true
+        eID_DG4:
+          type: object
+          additionalProperties: true
+        eID_DG5:
+          type: object
+          additionalProperties: true
+        eID_DG6:
+          type: object
+          additionalProperties: true
+        eID_DG7:
+          type: object
+          additionalProperties: true
+        eID_DG8:
+          type: object
+          additionalProperties: true
+        eID_DG9:
+          type: object
+          additionalProperties: true
+        eID_DG10:
+          type: object
+          additionalProperties: true
+        eID_DG11:
+          type: object
+          additionalProperties: true
+        eID_DG12:
+          type: object
+          additionalProperties: true
+        eID_DG13:
+          type: object
+          additionalProperties: true
+        eID_DG14:
+          type: object
+          additionalProperties: true
+        eID_DG15:
+          type: object
+          additionalProperties: true
+        eID_DG16:
+          type: object
+          additionalProperties: true
+        eID_DG17:
+          type: object
+          additionalProperties: true
+        eID_DG18:
+          type: object
+          additionalProperties: true
+        eID_DG19:
+          type: object
+          additionalProperties: true
+        eID_DG20:
+          type: object
+          additionalProperties: true
+        eID_DG21:
+          type: object
+          additionalProperties: true
+        eDL_COM:
+          type: object
+          additionalProperties: true
+        eDL_SOD:
+          type: object
+          additionalProperties: true
+        eDL_DG1:
+          type: object
+          additionalProperties: true
+        eDL_DG2:
+          type: object
+          additionalProperties: true
+        eDL_DG3:
+          type: object
+          additionalProperties: true
+        eDL_DG4:
+          type: object
+          additionalProperties: true
+        eDL_DG5:
+          type: object
+          additionalProperties: true
+        eDL_DG6:
+          type: object
+          additionalProperties: true
+        eDL_DG7:
+          type: object
+          additionalProperties: true
+        eDL_DG8:
+          type: object
+          additionalProperties: true
+        eDL_DG9:
+          type: object
+          additionalProperties: true
+        eDL_DG10:
+          type: object
+          additionalProperties: true
+        eDL_DG11:
+          type: object
+          additionalProperties: true
+        eDL_DG12:
+          type: object
+          additionalProperties: true
+        eDL_DG13:
+          type: object
+          additionalProperties: true
+        eDL_DG14:
+          type: object
+          additionalProperties: true
+        Visible_Digital_Seal:
+          type: object
+          additionalProperties: true
+        Visible_Digital_Seal_NC:
+          type: object
+          additionalProperties: true
+        Digital_Signature:
+          type: object
+          additionalProperties: true
+        RFID_Session_Data:
+          $ref: "#/components/schemas/RfidSessionData"
+        RFID_Session_Data_Status:
+          $ref: "./rt-status.yml#/components/schemas/detailsRFID"
+        RFID_ePassp_Directory:
+          description: Indexes of groups that aren't read
+          type: array
+          items:
+            $ref: "./e-rfid-data-file-type.yml#/components/schemas/RfidDataFileType"
+
+    RfidDG1:
+      title: "RfidDG1"
+      description: "Structure used to store the contents of EF.DG1 informational data group of
+      ePassport application – document MRZ data"
+      type: object
+      required:
+        - Type
+        - DocumentID
+        - DocumentType
+        - State
+        - Holder
+        - DocumentNumber
+        - CheckDigitDocumentNumber
+        - Nationality
+        - Birthday
+        - CheckDigitBirthday
+        - Sex
+        - ExpiryDate
+        - CheckDigitExpiryDate
+        - OptionalData
+        - CheckDigitOptionalData
+        - CheckDigitComposite
+      properties:
+        Type:
+          $ref: "./e-rfid-data-group-type-tag.yml#/components/schemas/RfidDataGroupTypeTag"
+        DocumentID:
+          $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentFormat"
+        DocumentType:
+          description: "Symbolic code of document type"
+          type: string
+        State:
+          description: "Symbolic code of document issuing state"
+          type: string
+        Holder:
+          description: "DO’s name and surname"
+          type: string
+        DocumentNumber:
+          description: "Document number"
+          type: string
+        CheckDigitDocumentNumber:
+          description: "Check digit of document number"
+          type: number
+        Nationality:
+          description: "Symbolic code of DO’s nationality"
+          type: string
+        Birthday:
+          description: "DO’s date of birth"
+          type: string
+        CheckDigitBirthday:
+          description: "Check digit of DO’s date of birth"
+          type: number
+        Sex:
+          description: "DO’s sex"
+          type: string
+        ExpiryDate:
+          description: "Term of validity of the document"
+          type: string
+        CheckDigitExpiryDate:
+          description: "Check digit of term of validity of the document"
+          type: number
+        OptionalData:
+          description: "DO’s personal number or other additional data"
+          type: string
+        CheckDigitOptionalData:
+          description: "Check digit of additional data"
+          type: number
+        CheckDigitComposite:
+          description: "General check digit"
+          type: number
+
+    RfidSessionData:
+      title: "RfidSessionData"
+      description: "Structure is used to describe the results of work with the SDK within the context of the current communication
+      session with electronic document"
+      type: object
+      required:
+        - Applications
+        - AccessControls
+        - CardProperties
+        - ExtLeSupport
+        - ProcessTime
+        - RootFiles
+        - TotalBytesSent
+        - TotalBytesReceived
+        - Session_key
+        - Session_terminal
+        - Session_procedure
+        - SecurityObjects
+      properties:
+        VirtualMode:
+          description: "Sign of virtual session when working with loaded data from a previous communication session
+          with the electronic document"
+          type: string
+        SDKVersion:
+          description: "Text SDKVersion value in format A.B (e.g. 3.1)"
+          type: string
+        DriverVersion:
+          description: "Text DriverVersion value in format A.B.C.D (e.g. 6.2.5.4)"
+          type: string
+        FirmwareVersion:
+          description: "Text FirmwareVersion value in format A.B (e.g. 5.19)"
+          type: string
+        Applications:
+          description: "List of containers to store information about the involved applications of electronic document"
+          type: array
+          items:
+            $ref: "#/components/schemas/RfidApplication"
+        AccessControls:
+          description: "List of containers to store information about the supported procedures of authentication and secure data access
+          within the context of the session"
+          type: array
+          items:
+            $ref: "#/components/schemas/RfidAccessControlInfo"
+        CardProperties:
+          $ref: "#/components/schemas/RfidCardPropertiesExt"
+        ExtLeSupport:
+          $ref: "./e-rfid-error-codes.yml#/components/schemas/RFIDErrorCodes"
+        ProcessTime:
+          description: "Time of processing, milliseconds"
+          type: number
+        RootFiles:
+          description: "List of containers to store information about the read files of the root Master File"
+          type: array
+          items: {}
+        TotalBytesSent:
+          description: "Total number of bytes transmitted to the RFID-chip during the whole session"
+          type: number
+        TotalBytesReceived:
+          description: "Total number of bytes received from the RFID-chip during the whole session"
+          type: number
+        Session_key:
+          $ref: "#/components/schemas/RfidAccessKey"
+        Session_terminal:
+          $ref: "#/components/schemas/RfidTerminal"
+        Session_procedure:
+          $ref: "#/components/schemas/RfidAuthenticationProcedureType"
+        SecurityObjects:
+          description: "List of containers to store information about the detected document security objects"
+          type: array
+          items:
+            $ref: "#/components/schemas/RfidSecurityObject"
+        Status:
+          $ref: "./common.yml#/components/schemas/CheckResult"
+
+    RfidSecurityObject:
+      title: "RfidSecurityObject"
+      description: "Structure is used to describe the contents of a single document security object (SO) and the results of its check
+      within the context of the communication session with electronic document"
+      type: object
+      required:
+        - Version
+        - ObjectType
+        - FileReference
+        - Notifications
+        - SignerInfos
+      properties:
+        Version:
+          description: "Security object version"
+          type: number
+        ObjectType:
+          description: "Identifier of the security object"
+          type: string
+        FileReference:
+          description: "Reference to the source file of the security object data"
+          type: number
+        Notifications:
+          description: "List of remarks arisen during the analysis of SO data structure."
+          type: array
+          items:
+            $ref: "./e-parsing-notification-codes.yml#/components/schemas/ParsingNotificationCodes"
+        SignerInfos:
+          description: "List of containers to store information about digital signature objects contained in the SO"
+          type: array
+          items:
+            $ref: "#/components/schemas/RfidSignerInfoEx"
+
+    RfidSignerInfoEx:
+      title: "RfidSignerInfoEx"
+      description: "Structure is used to describe the contents of a single copy of
+      digital signature of the document security object and the results of its check within the
+      context of the communication session with electronic document"
+      type: object
+      required:
+        - Version
+        - Issuer
+        - SerialNumber
+        - SubjectKeyIdentifier
+        - DigestAlgorithm
+        - SignedAttributes
+        - SignatureAlgorithm
+        - Signature
+        - PA_Status
+        - CertificateChain
+        - DataToHash
+        - Notifications
+      properties:
+        Version:
+          description: "Version of SignerInfo ASN.1 structure"
+          type: number
+        Issuer:
+          $ref: "#/components/schemas/RfidDistinguishedName"
+        SerialNumber:
+          $ref: "#/components/schemas/TrfFtBytes"
+        SubjectKeyIdentifier:
+          $ref: "#/components/schemas/TrfFtBytes"
+        DigestAlgorithm:
+          description: "Hash algorithm identifier (OID) for digital signature generation"
+          type: string
+        SignedAttributes:
+          description: "List of the signed attributes"
+          type: array
+          items:
+            $ref: "#/components/schemas/RfidAttributeData"
+        SignatureAlgorithm:
+          description: "Digital signature algorithm identifier (OID)"
+          type: string
+        Signature:
+          $ref: "#/components/schemas/TrfFtBytes"
+        PA_Status:
+          $ref: "./e-rfid-error-codes.yml#/components/schemas/RFIDErrorCodes"
+        CertificateChain:
+          description: "Certificate chain, used for the digital signature verification."
+          type: array
+          items:
+            $ref: "#/components/schemas/RfidCertificateEx"
+        DataToHash:
+          description: "Binary data array used to calculate the hash value for digital signature verification. Base64 encoded."
+          type: string
+        Notifications:
+          type: array
+          items:
+            $ref: "./e-parsing-notification-codes.yml#/components/schemas/ParsingNotificationCodes"
+
+    RfidCertificateEx:
+      title: "RfidCertificateEx"
+      description: "Structure is used to describe the certificate contents used for the digital signature verification
+      of the document security object within the context of the communication session with electronic document."
+      type: object
+      required:
+        - Version
+        - SerialNumber
+        - SignatureAlgorithm
+        - Issuer
+        - Validity
+        - Subject
+        - SubjectPKAlgorithm
+        - Extensions
+        - Notifications
+        - Origin
+        - Type
+        - FileName
+        - PA_Status
+      properties:
+        Version:
+          description: "Version of Certificate ASN.1 structure"
+          type: number
+        SerialNumber:
+          description: "Certificate serial number. Base64 encoded."
+          type: string
+        SignatureAlgorithm:
+          description: "Certificate digital signature algorithm identifier (OID);
+          String in the format S1 (S2), where S1 – algorithm name, S2 – identifier (OID string)."
+          type: string
+        Issuer:
+          $ref: "#/components/schemas/RfidDistinguishedName"
+        Validity:
+          $ref: "#/components/schemas/RfidValidity"
+        Subject:
+          $ref: "#/components/schemas/RfidDistinguishedName"
+        SubjectPKAlgorithm:
+          description: "Certificate public key algorithm identifier (OID);
+          String in the format S1 (S2), where S1 – algorithm name, S2 – identifier (OID string)."
+          type: string
+        Extensions:
+          description: "List of the certificate extensions"
+          type: array
+          items:
+            $ref: "#/components/schemas/RfidPkiExtension"
+        Notifications:
+          description: "List of remarks arisen during the analysis of the certificate data
+          structure and its validity verification."
+          type: array
+          items:
+            $ref: "./e-parsing-notification-codes.yml#/components/schemas/ParsingNotificationCodes"
+        Origin:
+          $ref: "#/components/schemas/RfidCertificateOrigin"
+        Type:
+          $ref: "#/components/schemas/RfidCertificateType"
+        FileName:
+          $ref: "#/components/schemas/TrfFtString"
+        PA_Status:
+          $ref: "./e-rfid-error-codes.yml#/components/schemas/RFIDErrorCodes"
+
+    RfidPkiExtension:
+      title: "RfidPkiExtension"
+      description: "Extension identifier (OID, ASCII string);
+      Contents of the identifier in the format S1 (S2), where S1 – attribute name, S2 – identifier (OID string)"
+      type: object
+      required:
+        - Type
+        - Data
+      properties:
+        Type:
+          description: "Extension identifier (OID, ASCII string);
+          Contents of the identifier in the format S1 (S2), where S1 – attribute name, S2 – identifier (OID string)"
+          type: string
+        Data:
+          description: "Extension binary data. Base64 encoded."
+          type: string
+
+    RfidValidity:
+      title: "RfidValidity"
+      description: "Structure contains information on a certificate validity."
+      type: object
+      required:
+        - NotBefore
+        - NotAfter
+      properties:
+        NotBefore:
+          $ref: "#/components/schemas/TrfFtString"
+        NotAfter:
+          $ref: "#/components/schemas/TrfFtString"
+
+    RfidAttributeData:
+      title: "RfidAttributeData"
+      description: "Structure contains the data of one attribute of the digital signature object."
+      type: object
+      required:
+        - Type
+        - Data
+      properties:
+        Type:
+          description: "Contents of the identifier in the format S1 (S2), where S1 – attribute name, S2 – identifier (OID string)"
+          type: string
+        Data:
+          description: "Attribute binary data. Base64 encoded."
+          type: string
+
+    RfidDistinguishedName:
+      title: "RfidDistinguishedName"
+      description: "Contents of the identifier in binary form. Base64 encoded."
+      type: object
+      required:
+        - Data
+        - FriendlyName
+        - Attributes
+      properties:
+        Data:
+          description: "Contents of the identifier in binary form. Base64 encoded."
+          type: string
+        FriendlyName:
+          $ref: "#/components/schemas/TrfFtString"
+        Attributes:
+          description: "List of individual attributes contained in the identifier"
+          type: array
+          items:
+            $ref: "#/components/schemas/RfidAttributeName"
+
+    RfidAttributeName:
+      title: "RfidAttributeName"
+      description: "Structure contains information that serves as the distinguished name (identifier) of an object."
+      type: object
+      required:
+        - Type
+        - Value
+      properties:
+        Type:
+          description: "Attribute identifier (OID ASCII string); contents of the identifier in the format S1 (S2),
+          where S1 – attribute name, S2 – identifier (OID string)"
+          type: string
+        Value:
+          $ref: "#/components/schemas/TrfFtString"
+
+    TrfFtString:
+      title: "TrfFtString"
+      description: "Structure is used to store information about the numeric field (4 bytes) that is a part of one of the informational
+      data groups."
+      type: object
+      required:
+        - Data
+      properties:
+        Type:
+          type: integer
+        Status:
+          description: "Result of logical analysis of compliance of the contents of the field
+          with the requirements of the specification"
+          type: integer
+        Format:
+          description: "Mask of format of text information (for example, «YYMMDD» for date of birth)"
+          type: string
+        Data:
+          description: "Numeric value."
+          type: string
+
+    RfidApplication:
+      title: "RfidApplication"
+      description: "Structure is used to describe the contents of a single LDS application and their analysis within the context
+      of the communication session with electronic document"
+      type: object
+      required:
+        - Type
+        - Status
+        - ApplicationID
+        - Version
+        - UnicodeVersion
+        - DataHashAlgorithm
+        - Files
+      properties:
+        Type:
+          $ref: "#/components/schemas/RfidApplicationType"
+        Status:
+          $ref: "./e-rfid-error-codes.yml#/components/schemas/RFIDErrorCodes"
+        ApplicationID:
+          description: "Application identifier"
+          type: string
+        Version:
+          description: "Version of the application"
+          type: string
+        UnicodeVersion:
+          description: "Unicode version for application"
+          type: string
+        DataHashAlgorithm:
+          description: "Algorithm for calculating hash values for files for the procedure of PA"
+          type: string
+        Files:
+          description: "List of containers to store information about the read files of the application"
+          type: array
+          items:
+            $ref: "#/components/schemas/RfidDataFile"
+
+    RfidApplicationType:
+      title: "RfidApplicationType"
+      type: integer
+      description: "Enumeration contains a set of constants that define the type
+      of application within the context of the communication session with electronic document"
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+        - 0
+      x-enum-descriptions:
+        - "Not defined"
+        - "ePassport application"
+        - "eID application"
+        - "eSign application"
+        - "eDL application"
+        - "TravelRecords application"
+        - "VisaRecords application"
+        - "AddBiometrics application"
+        - "Digital Travel Credentials"
+        - "Master File"
+      x-enum-varnames:
+        - "UNSPECIFIED"
+        - "E_PASSPORT"
+        - "E_ID"
+        - "E_SIGN"
+        - "E_DL"
+        - "LDS2_TravelRecords"
+        - "LDS2_VisaRecords"
+        - "LDS2_AddBiometrics"
+        - "eDTC_PC"
+        - "ROOT_FILES"
+
+    RfidDataFile:
+      title: "RfidDataFile"
+      description: "Structure is used to describe the contents of a single file of the LDS of electronic document and the analysis
+      of its contents within the context of the communication session with electronic document"
+      type: object
+      required:
+        - Type
+        - ReadingStatus
+      properties:
+        FileID:
+          description: "File identifier. Each byte of FileID represented by its hexadecimal value. The individual bytes are separated by spaces (e.g. 01 1E)"
+          type: string
+        Type:
+          $ref: "./e-rfid-data-file-type.yml#/components/schemas/RfidDataFileType"
+        FileData:
+          $ref: "#/components/schemas/TrfFtBytes"
+        ReadingStatus:
+          $ref: "./e-rfid-error-codes.yml#/components/schemas/RFIDErrorCodes"
+        ReadingTime:
+          description: "Time of reading, milliseconds"
+          type: number
+        PA_Status:
+          $ref: "./e-rfid-error-codes.yml#/components/schemas/RFIDErrorCodes"
+        Notifications:
+          description: "List of remarks arisen when reading data from the memory of the chip and analysing their ASN.1-structure."
+          type: array
+          items:
+            $ref: "./e-parsing-notification-codes.yml#/components/schemas/ParsingNotificationCodes"
+        DocFields_Text:
+          description: "List of document text fields formed on the basis of the file contents"
+          type: array
+          items:
+            $ref: "./e-text-field-type.yml#/components/schemas/TextFieldType"
+        DocFields_Graphics:
+          description: "List of document graphic fields formed on the basis of the file contents"
+          type: array
+          items:
+            $ref: "./e-graphic-field-type.yml#/components/schemas/GraphicFieldType"
+        DocFields_Originals:
+          description: "List of the original binary representation of graphic document fields formed on the basis of the file contents"
+          type: array
+          items:
+            $ref: "./e-graphic-field-type.yml#/components/schemas/GraphicFieldType"
+        ParsedData:
+          $ref: "#/components/schemas/ParsedData"
+        SecurityObject_Certificates:
+          $ref: "#/components/schemas/SecurityObjectCertificates"
+
+    SecurityObjectCertificates:
+      title: "SecurityObjectCertificates"
+      type: object
+      properties:
+        Certificate_Data:
+          $ref: "#/components/schemas/CertificateData"
+
+    CertificateData:
+      title: "CertificateData"
+      type: object
+      required:
+        - Data
+        - Length
+      properties:
+        Data:
+          type: string
+        Length:
+          type: integer
+
+    ParsedData:
+      title: "ParsedData"
+      properties:
+        ParsingNotifications:
+          type: array
+          items:
+            type: integer
+            format: int64
+
+    TrfFtBytes:
+      title: "TrfFtBytes"
+      description: "Structure is used to store an array of binary information that is a part of one of the informational data groups"
+      type: object
+      required:
+        - Type
+        - Status
+        - Length
+        - Data
+      properties:
+        Type:
+          description: "Logical type of the field"
+          type: integer
+        Status:
+          description: "Result of logical analysis of compliance of the contents of the field
+          with the requirements of the specification"
+          type: number
+        Length:
+          description: "Length of Data array"
+          type: number
+        Data:
+          description: "Binary data array. Base64 encoded."
+          type: string
+          nullable: true
+
+    RfidAccessControlInfo:
+      title: "RfidAccessControlInfo"
+      description: "Structure is used to describe the results of a single authentication procedure or a procedure of secure data access
+      within the context of the communication session with electronic document"
+      type: object
+      required:
+        - Type
+        - Status
+        - Notifications
+      properties:
+        Type:
+          $ref: "#/components/schemas/RfidAccessControlProcedureType"
+        Status:
+          $ref: "./e-rfid-error-codes.yml#/components/schemas/RFIDErrorCodes"
+        ActiveOptionIdx:
+          description: "Index of the active variant of the procedure"
+          type: number
+        Notifications:
+          description: "List of remarks arisen during the procedure."
+          type: array
+          items:
+            $ref: "./e-parsing-notification-codes.yml#/components/schemas/ParsingNotificationCodes"
+        AccessControlOptions:
+          description: "List of structures with are used to describe the variants of the authentication or secure data access procedure
+          performance within the context of the communication session with electronic document"
+          type: array
+          items: {}
+
+    RfidAccessControlProcedureType:
+      title: "RfidAccessControlProcedureType"
+      type: integer
+      description: "Enumeration contains a set of constants that
+      define the type of authentication or secure data access procedure"
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 10
+        - 11
+      x-enum-descriptions:
+        - "Type is not defined"
+        - "BAC/BAP"
+        - "PACE"
+        - "CA"
+        - "TA"
+        - "AA"
+        - "RI"
+        - "Card info"
+        - "DTC info"
+      x-enum-varnames:
+        - "UNDEFINED"
+        - "BAC"
+        - "PACE"
+        - "CA"
+        - "TA"
+        - "AA"
+        - "RI"
+        - "CARD_INFO"
+        - "DTC_INFO"
+
+    RfidCardPropertiesExt:
+      title: "RfidCardPropertiesExt"
+      description: "Structure is used to store extended information about the
+      characteristics of the RFID-chip located in the scope of the reader"
+      type: object
+      required:
+        - RFID_Type
+        - Baudrate1
+        - Baudrate2
+        - Support_4
+        - ChipType_A
+        - Support_Mifare
+        - MifareMemory
+        - UID
+        - ATQ_A
+        - SAK
+        - ATQ_B
+        - BitRateS
+        - BitRateR
+        - ATR
+      properties:
+        RFID_Type:
+          $ref: "#/components/schemas/RfidType"
+        Baudrate1:
+          description: "Numeric Baudrate1 value in hexadecimal format (e.g. 0x0000000F)"
+          type: string
+        Baudrate2:
+          description: "Numeric Baudrate2 value in hexadecimal format"
+          type: string
+        Support_4:
+          description: "Boolean Support_4 value"
+          type: boolean
+        ChipType_A:
+          $ref: "#/components/schemas/RfidAChip"
+        Support_Mifare:
+          description: "Sign of support for ISO/IEC 14443-3 data exchange protocol"
+          type: boolean
+        MifareMemory:
+          description: "Amount of operational memory MIFARE® of the chip, kilobytes"
+          type: number
+        UID:
+          description: "UID contents in text format. Each byte is represented by its hexadecimal value. The individual bytes are separated
+          by spaces (e.g. F9 4F 41 60)"
+          type: string
+        ATQ_A:
+          description: "Reply of the «A» type chip to «REQA» command of ISO/IEC 14443-3
+          protocol (Answer To Request, Type A – ATQA) – for the internal use by
+          the main control library"
+        SAK:
+          description: "Response of type-A RFID-chip to SELECT command of ISO/IEC 14443-3 protocol (Select Acknowledge, SAK)."
+        ATQ_B:
+          description: "ATQ_B contents in text format. Each byte is represented by its hexadecimal value. The individual bytes are
+          separated by spaces (e.g. 50 F9 4F 41 60 00 00 00 00 77 81 81)"
+        BitRateS:
+          $ref: "#/components/schemas/RfidBaudRate"
+        BitRateR:
+          $ref: "#/components/schemas/RfidBaudRate"
+        ATR:
+          description: "ATR-string of RFID-chip"
+          type: string
+
+    RfidType:
+      title: "RfidType"
+      type: integer
+      description: "Enumeration contains a set of constants specifying the type of the RFID-chip
+      by the physical parameters of connection between antennas of the chip and the reader"
+      enum:
+        - 0
+        - 1
+        - 2
+      x-enum-descriptions:
+        - "Unknown"
+        - "Type A"
+        - "Type B"
+      x-enum-varnames:
+        - "UNKNOWN"
+        - "A"
+        - "B"
+
+    RfidAChip:
+      title: "RfidAChip"
+      type: integer
+      description: "Enumeration contains a set of constants specifying the type of the RFIDchip from MIFARE® family
+      (for chips of type A)"
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+      x-enum-descriptions:
+        - "Unknown"
+        - "MIFARE® 1K"
+        - "MIFARE® 4K"
+        - "MIFARE® Ultralight"
+        - "MIFARE® DESFire"
+        - "MIFARE® ProX or SmartMX xD(T)"
+      x-enum-varnames:
+        - "UNKNOWN"
+        - "MIFARE_1K"
+        - "MIFARE_4K"
+        - "MIFARE_ULTRALIGHT"
+        - "MIFARE_DES_FIRE"
+        - "MIFARE_PROX"
+
+    RfidBaudRate:
+      title: "RfidBaudRate"
+      type: integer
+      description: "Enumeration contains a set of constants specifying the rate of data exchange between the reader and the RFID-chip"
+      enum:
+        - 0
+        - 1
+        - 2
+        - 4
+        - 8
+        - 16
+        - 32
+        - 64
+      x-enum-descriptions:
+        - "Unknown"
+        - "106 bits/s"
+        - "212 bits/s"
+        - "424 bits/s"
+        - "848 bits/s"
+        - "1695 bits/s"
+        - "3390 bits/s"
+        - "6780 bits/s"
+      x-enum-varnames:
+        - "UNKNOWN"
+        - "RFBR_106"
+        - "RFBR_212"
+        - "RFBR_424"
+        - "RFBR_848"
+        - "RFBR_1695"
+        - "RFBR_3390"
+        - "RFBR_6780"
+
+    RfidAccessKey:
+      title: "RfidAccessKey"
+      description: "Structure is used to describe the contents of secure data access key within
+      the context of the communication session with electronic document"
+      type: object
+      required:
+        - AccessKey
+        - KeyType
+        - AccessType
+        - CheckFullKeyMatching
+      properties:
+        AccessKey:
+          description: "Key contents"
+          type: string
+        KeyType:
+          $ref: "#/components/schemas/RfidPasswordType"
+        AccessType:
+          $ref: "#/components/schemas/RfidAccessControlProcedureType"
+        CheckFullKeyMatching:
+          description: "Logical sign of the need for a full comparison of AccessKey
+          contents with the contents of DG1 (MRZ) data group"
+          type: boolean
+
+    RfidPasswordType:
+      title: "RfidPasswordType"
+      type: integer
+      description: "Enumeration contains a set of constants specifying the rate of data exchange between the reader and the RFID-chip"
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+      x-enum-descriptions:
+        - "Unknown type"
+        - "MRZ"
+        - "CAN"
+        - "PIN"
+        - "PUK"
+        - "eSign-PIN"
+        - "Scanning Area Identifier (for eDL application)"
+        - "MRZ hash"
+      x-enum-varnames:
+        - "UNKNOWN"
+        - "MRZ"
+        - "CAN"
+        - "PIN"
+        - "PUK"
+        - "PIN_E_SIGN"
+        - "SAI"
+        - "MRZ_HASH"
+
+    RfidTerminal:
+      title: "RfidTerminal"
+      description: "Structure is used to describe the terminal type within the context of the
+      communication session with electronic document"
+      type: object
+      required:
+        - TermType
+        - AuthReq
+        - AuthReq2
+      properties:
+        TermType:
+          $ref: "#/components/schemas/RfidTerminalType"
+        AuthReq:
+          description: "Declared (set) combination of flags of access rights to the functionality of the document (combination of
+          eRfidTerminalAuthorizationRequirement values)"
+          type: number
+        AuthReq2:
+          description: "Declared (set) combination of flags of access rights to the functionality of the document (combination of
+          RfidTerminalAuthorizationRequirement values)"
+          type: number
+
+    RfidTerminalType:
+      title: "RfidTerminalType"
+      type: integer
+      description: "Enumeration contains a set of constants that define the type
+      of terminal within the context of the communication session with electronic document"
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+      x-enum-descriptions:
+        - "Not defined"
+        - "Inspection system"
+        - "Authentication terminal"
+        - "Signature terminal"
+        - "Unauthenticated terminal"
+      x-enum-varnames:
+        - "UNDEFINED"
+        - "INSPECTION_SYSTEM"
+        - "AUTHENTICATION_TERMINAL"
+        - "SIGNATURE_TERMINAL"
+        - "UNAUTHENTICATED_TERMINAL"
+
+    RfidAuthenticationProcedureType:
+      title: "RfidAuthenticationProcedureType"
+      type: integer
+      description: "Enumeration contains a set of constants that define the type of performed procedure of document authentication
+      within the current session"
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+      x-enum-descriptions:
+        - "Not defined"
+        - "Standard authentication procedure"
+        - "Advanced authentication procedure"
+        - "General authentication procedure"
+      x-enum-varnames:
+        - "UNDEFINED"
+        - "STANDARD"
+        - "ADVANCED"
+        - "GENERAL"
+
+    RfidCertificateOrigin:
+      title: "RfidCertificateOrigin"
+      type: integer
+      description: "Enumeration contains a set of constants that define the source of certificate used in the procedure
+      of document security object digital signature verification"
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+      x-enum-descriptions:
+        - "The source is not defined"
+        - "Local PKD"
+        - "Document security object"
+        - "User-defined"
+        - "Contents of the Master List"
+        - "Security object of the Master List"
+        - "Security object of the Defect List"
+        - "Security object of the Deviation List"
+        - "Security object of the Black List"
+      x-enum-varnames:
+        - "UNDEFINED"
+        - "PKD"
+        - "SECURITY_OBJECT"
+        - "USER_DEFINED"
+        - "MASTER_LIST_PKD"
+        - "MASTER_LIST_SO"
+        - "DEFECT_LIST_SO"
+        - "DEVIATION_LIST_SO"
+        - "BLACK_LIST_SO"
+
+    RfidCertificateType:
+      title: "RfidCertificateType"
+      type: integer
+      description: "Enumeration contains a set of constants that define the type
+      of certificate used in the procedure of document security object digital signature verification"
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+        - 9
+        - 10
+        - 11
+      x-enum-descriptions:
+        - "Type is not defined"
+        - "CSCA"
+        - "CSCA-link"
+        - "DS"
+        - "Master List signer"
+        - "Deviaton List signer"
+        - "Defect List signer"
+        - "Black List signer"
+        - "LDS 2"
+        - "Barcode signer (VDS)"
+        - "Barcode signer (VDS for non-constrained environment)"
+        - "DTC signer"
+      x-enum-varnames:
+        - "UNDEFINED"
+        - "CSCA"
+        - "CSCA_LINK"
+        - "DS"
+        - "MLS"
+        - "DEV_LS"
+        - "DEF_LS"
+        - "BLS"
+        - "LDS2"
+        - "BCS"
+        - "BCS_NC"
+        - "DTCS"
+
+    RfidRawData:
+      title: "RfidRawData"
+      type: object
+      required:
+        - Data
+        - FieldType
+      properties:
+        Data:
+          type: string
+        FieldType:
+          type: integer
