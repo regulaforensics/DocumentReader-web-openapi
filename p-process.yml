@@ -1,5 +1,4 @@
-openapi: 3.0.3
-
+openapi: 3.0.4
 paths:
   /process:
     parameters:
@@ -135,13 +134,13 @@ paths:
 
 components:
   schemas:
-
     #############################
     ############################# Requests objects
-
-    # todo different image input types
     ProcessRequest:
+      title: "ProcessRequest"
       type: object
+      required:
+        - processParam
       properties:
         processParam:
           $ref: "#/components/schemas/ProcessParams"
@@ -185,11 +184,12 @@ components:
           description: "URLs to the document images for processing."
           items:
             type: string
-      required:
-        - processParam
 
     ProcessParams:
+      title: "ProcessParams"
       type: object
+      required:
+        - scenario
       properties:
         generateDTCVC:
           type: boolean
@@ -198,12 +198,15 @@ components:
           description: "The list of LCID types to recognize. If empty, values with all LCID types will be extracted. Empty by default."
           type: array
           items:
-            type: integer
+            $ref: "./e-lcid.yml#/components/schemas/LCID"
+        checkLiveness:
+          description: "This parameter is used to enable document liveness check."
+          type: boolean
         lcidIgnoreFilter:
           description: "The list of LCID types to ignore during the recognition. If empty, values with all LCID types will be extracted. Narrowing down the list can reduce processing time. Empty by default."
           type: array
           items:
-            type: integer
+            $ref: "./e-lcid.yml#/components/schemas/LCID"
         oneShotIdentification:
           type: boolean
           description: "This parameter allows processing an image that contains a person and a document and compare the portrait photo from the document with the person's face"
@@ -255,9 +258,7 @@ components:
           By default it is set to system locale default (where the service is running)."
           type: string
           example: "MM/dd/yyyy"
-        measureSystem:
-          description: "This option allows you to set the system of measurement used for converting original values 
-          in document to output result values. Metric by default."
+        measureSystem: # This option allows you to set the system of measurement used for converting original values in document to output result values. Metric by default.
           $ref: "#/components/schemas/MeasureSystem"
         imageDpiOutMax:
           description: "This parameter controls maximum resolution in dpi of output images.
@@ -285,8 +286,7 @@ components:
           description: "When enabled, results will contain transaction processing log. Disabled by default"
           type: boolean
           # default false
-        logLevel:
-          description: "When used together with 'log' parameter enabled, sets the level of logs detalization. 'INFO' by default."
+        logLevel: # When used together with 'log' parameter enabled, sets the level of logs detalization. 'INFO' by default.
           $ref: "#/components/schemas/LogLevel"
           # default: "INFO"
         forceDocID:
@@ -329,8 +329,7 @@ components:
           type: boolean
           deprecated: true
           # default: false
-        forceDocFormat:
-          description: "Force use of specified document format when locating and recognizing document to reduce the number of candidates."
+        forceDocFormat: # Force use of specified document format when locating and recognizing document to reduce the number of candidates.
           $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentFormat"
         noGraphics:
           description: "When enabled, no graphic fields will be cropped from document image. Disabled by default."
@@ -375,8 +374,7 @@ components:
           description: "This option can be disabled to stop parsing after barcode is read. Enabled by default."
           type: boolean
           # default true
-        convertCase:
-          description: "This option allows output text case transformation. No changes applied by default to original values."
+        convertCase: # This option allows output text case transformation. No changes applied by default to original values.
           $ref: "#/components/schemas/TextPostProcessing"
         splitNames:
           description: "When enabled, the Surname and GivenNames fields from MRZ will be divided into
@@ -394,9 +392,7 @@ components:
           items:
             $ref: "./e-document-type.yml#/components/schemas/DocumentType"
         processAuth:
-          description: "Authenticity checks that should be performed regardless of the document type.
-          The available checks are listed in the eRPRM_Authenticity enum.
-          Note that only supported by your license checks can be added. "
+          description: "Authenticity checks that should be performed regardless of the document type. The available checks are listed in the eRPRM_Authenticity enum. Note that only supported by your license checks can be added."
           type: integer
           format: int64
         deviceId:
@@ -424,7 +420,7 @@ components:
           type: object
           description: "Params for the RFID chip data reprocessing"
           properties:
-            paSensitiveCodesDisable:
+            paIgnoreNotificationCodes:
               description: "A list of notification codes that should be ignored during passive authentication (PA)"
               type: array
               items:
@@ -432,7 +428,7 @@ components:
         checkAuth:
           type: boolean
           description: "This parameter is used to enable authenticity checks"
-#          default: true
+          # default: true
         authParams:
           $ref: '#/components/schemas/AuthParams'
         mrzDetectMode:
@@ -440,15 +436,15 @@ components:
         generateNumericCodes:
           type: boolean
           description: "This parameter is used to generate numeric representation for issuing state and nationality codes"
-#          default: false
+          # default: false
         strictBarcodeDigitalSignatureCheck:
           type: boolean
           description: "This parameter if enabled will require all necessary certificates to verify digital signature in barcode data to be present in order for the Barcode format check to succeed."
-#          default: false
+          # default: false
         selectLongestNames:
           type: boolean
           description: "Select the longest value from the different value sources and write it to the value field if comparison is done successfully. The parameter applies this logic to the personal names, such as given name, surname, surname and given name, middle name and etc."
-#          default: false
+          # default: false
         doBarcodes:
           description: "Set the types of barcodes to process."
           type: array
@@ -457,11 +453,16 @@ components:
         strictDLCategoryExpiry:
           description: "Set to force DL categories expiry date to affect the overall status or not. As documents usually have their own date of expiry, which might be less or greater than category expiry date, this might be handy for specific cases."
           type: boolean
-#          default: false
-      required:
-        - scenario
+          # default: false
+        generateAlpha2Codes:
+          description: "Set to generate Alpha-2 codes for nationality and issuing state fields."
+          type: boolean
+        pdfPagesLimit:
+          description: "Limits the number of pages to be processed from a PDF file."
+          type: integer
 
     MRZFormat:
+      title: "MRZFormat"
       type: string
       enum:
         - "1x30"
@@ -486,6 +487,7 @@ components:
         - "2x30"
 
     TextPostProcessing:
+      title: "TextPostProcessing"
       type: integer
       enum:
         - 0
@@ -504,6 +506,7 @@ components:
         - "Capital"
 
     mrzDetectModeEnum:
+      title: "mrzDetectModeEnum"
       type: integer
       description: "Make better MRZ detection on complex noisy backgrounds, like BW photocopy of some documents."
       enum:
@@ -516,105 +519,92 @@ components:
         - "eMDM_BlurBeforeBinarization"
 
     AuthParams:
+      title: "AuthParams"
       type: object
       properties:
         checkLiveness:
           type: boolean
           description: "This parameter is used to enable document liveness check"
-#          default: true
-
+          # default: true
         livenessParams:
           $ref: '#/components/schemas/LivenessParams'
-
         checkUVLuminiscence:
           type: boolean
           description: "This parameter is used to enable Document luminescence check in UV light"
-#          default: true
-
+          # default: true
         checkIRB900:
           type: boolean
           description: "This parameter is used to enable B900 ink MRZ contrast check in IR light"
-#          default: true
-
+          # default: true
         checkImagePatterns:
           type: boolean
           description: "This parameter is used to enable Image patterns presence/absence check (position, shape, color)"
-#          default: true
-
+          # default: true
         checkFibers:
           type: boolean
           description: "This parameter is used to enable Fibers detection"
-#          default: true
-
+          # default: true
         checkExtMRZ:
           type: boolean
           description: "This parameter is used to enable Extended MRZ Check"
-#          default: true
-
+          # default: true
         checkExtOCR:
           type: boolean
           description: "This parameter is used to enable Extended OCR Check"
-#          default: true
-
+          # default: true
         checkAxial:
           type: boolean
           description: "This parameter is used to enable laminate integrity check in axial light"
-#          default: true
-
+          # default: true
         checkBarcodeFormat:
           type: boolean
           description: "This parameter is used to enable Barcode format check (code metadata, data format, contents format, etc.)"
-#          default: true
-
+          # default: true
         checkIRVisibility:
           type: boolean
           description: "This parameter is used to enable Document elements visibility check in IR light"
-#          default: true
-
+          # default: true
         checkIPI:
           type: boolean
           description: "This parameter is used to enable Invisible Personal Information (IPI) check"
-#          default: true
-
+          # default: true
         checkPhotoEmbedding:
           type: boolean
           description: "This parameter is used to enable Owner's photo embedding check (is photo printed or sticked)"
-#          default: true
-
+          # default: true
         checkPhotoComparison:
           type: boolean
           description: "This parameter is used to enable Portrait comparison check"
-#          default: true
-
+          # default: true
         checkLetterScreen:
           type: boolean
           description: "This parameter is used to enable LetterScreen check"
-#          default: false
+          # default: false
         checkSecurityText:
           type: boolean
           description: "This parameter is used to enable Security text check"
           # default: true
 
-
     LivenessParams:
+      title: "LivenessParams"
       type: object
       properties:
         checkOVI:
           type: boolean
           description: "This parameter is used to enable OVI check"
-#         default: true
+          # default: true
         checkMLI:
           type: boolean
           description: "This parameter is used to enable MLI check"
-#          default: true
+          # default: true
         checkHolo:
           type: boolean
           description: "This parameter is used to enable Hologram detection"
-#          default: true
+          # default: true
         checkED:
           type: boolean
           description: "This parameter is used to enable Electronic device detection"
-#          default: true
+          # default: true
         checkBlackAndWhiteCopy:
           type: boolean
           description: "This parameter is used to enable Black and white copy check"
@@ -623,8 +613,13 @@ components:
           type: boolean
           description: "This parameter is used to enable Dynaprint check"
           # default: true
+        checkGeometry:
+          type: boolean
+          description: "This parameter is used to enable Geometry check"
+          # default: true
 
     MeasureSystem:
+      title: "MeasureSystem"
       type: integer
       example: 0
       enum:
@@ -638,6 +633,7 @@ components:
         - "IMPERIAL"
 
     LogLevel:
+      title: "LogLevel"
       type: string
       enum:
         - FatalError
@@ -658,8 +654,8 @@ components:
         - "Info"
         - "Debug"
 
-
     PerDocumentConfig:
+      title: "PerDocumentConfig"
       type: object
       properties:
         docID:
@@ -672,8 +668,8 @@ components:
           type: integer
           example: 2
 
-
     ImageQA:
+      title: "ImageQA"
       type: object
       properties:
         brightnessThreshold:
@@ -702,6 +698,9 @@ components:
           description: "This option enables colorness check while performing image quality validation."
           type: boolean
           # default: false
+        moireCheck:
+          description: "This option enables screen capture (moire patterns) check while performing image quality validation."
+          type: boolean
         documentPositionIndent:
           description: "This parameter specifies the necessary margin. Default 0."
           type: integer
@@ -713,6 +712,7 @@ components:
             $ref: "./rt-image-quality.yml#/components/schemas/InputImageQualityChecks"
 
     ProcessRequestImage:
+      title: "ProcessRequestImage"
       type: object
       properties:
         ImageData:
@@ -730,6 +730,7 @@ components:
           image: "<base64 image>"
 
     ProcessSystemInfo:
+      title: "ProcessSystemInfo"
       type: object
       properties:
         license:
@@ -742,14 +743,20 @@ components:
     #############################
     ############################# Response objects
     ProcessResponse:
+      title: "ProcessResponse"
       type: object
       required:
+        - ChipPage
         - ProcessingFinished
         - ContainerList
         - TransactionInfo
+        - morePagesAvailable
+        - elapsedTime
       properties:
         ChipPage:
           $ref: "./common.yml#/components/schemas/RfidLocation"
+        CoreLibResultCode:
+          type: integer
         ProcessingFinished:
           $ref: "#/components/schemas/ProcessingStatus"
         ContainerList:
@@ -768,8 +775,12 @@ components:
         elapsedTime:
           type: integer
           description: "Time the document processing has taken, ms."
+        metadata:
+          type: object
+          additionalProperties: true
 
     ProcessingStatus:
+      title: "ProcessingStatus"
       type: integer
       enum:
         - 0
@@ -785,6 +796,7 @@ components:
         - "TIMEOUT"
 
     TransactionInfo:
+      title: "TransactionInfo"
       type: object
       properties:
         ComputerName:
@@ -817,6 +829,7 @@ components:
         "UserName": "user"
 
     DocumentsDatabase:
+      title: "DocumentsDatabase"
       type: object
       description: "Document database information"
       properties:

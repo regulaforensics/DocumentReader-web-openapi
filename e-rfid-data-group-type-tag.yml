@@ -1,0 +1,193 @@
+openapi: 3.0.4
+components:
+  schemas:
+    RfidDataGroupTypeTag:
+      title: "RfidDataGroupTypeTag"
+      type: integer
+      description: "Enumeration representing RFID Data Group Types.
+      Constants with prefix  correspond to the informational data groups of ePassport
+      application, with prefix EID_ – those of eID application, with prefix EDL_ –
+      eDL application"
+      enum:
+        - 96
+        - 97
+        - 117
+        - 99
+        - 118
+        - 101
+        - 102
+        - 103
+        - 104
+        - 105
+        - 106
+        - 107
+        - 108
+        - 109
+        - 110
+        - 111
+        - 112
+        - 119
+        - 113
+        - 114
+        - 115
+        - 116
+        - 98
+        - 97
+        - 98
+        - 99
+        - 100
+        - 101
+        - 102
+        - 103
+        - 104
+        - 105
+        - 106
+        - 107
+        - 108
+        - 109
+        - 110
+        - 111
+        - 112
+        - 113
+        - 114
+        - 115
+        - 116
+        - 117
+        - 96
+        - 119
+        - 83
+        - 97
+        - 107
+        - 108
+        - 101
+        - 103
+        - 117
+        - 99
+        - 118
+        - 112
+        - 109
+        - 113
+        - 111
+        - 110
+      x-enum-descriptions:
+        - "Common Data Element"
+        - "Data Group 1"
+        - "Data Group 2"
+        - "Data Group 3"
+        - "Data Group 4"
+        - "Data Group 5"
+        - "Data Group 6"
+        - "Data Group 7"
+        - "Data Group 8"
+        - "Data Group 9"
+        - "Data Group 10"
+        - "Data Group 11"
+        - "Data Group 12"
+        - "Data Group 13"
+        - "Data Group 14"
+        - "Data Group 15"
+        - "Data Group 16"
+        - "Security Object Document"
+        - "Data Group 17"
+        - "Data Group 18"
+        - "Data Group 22"
+        - "Data Group 23"
+        - "Data Group 24"
+        - "eID, Data Group 1"
+        - "eID, Data Group 2"
+        - "eID, Data Group 3"
+        - "eID, Data Group 4"
+        - "eID, Data Group 5"
+        - "eID, Data Group 6"
+        - "eID, Data Group 7"
+        - "eID, Data Group 8"
+        - "eID, Data Group 9"
+        - "eID, Data Group 10"
+        - "eID, Data Group 11"
+        - "eID, Data Group 12"
+        - "eID, Data Group 13"
+        - "eID, Data Group 14"
+        - "eID, Data Group 15"
+        - "eID, Data Group 16"
+        - "eID, Data Group 17"
+        - "eID, Data Group 18"
+        - "eID, Data Group 19"
+        - "eID, Data Group 20"
+        - "eID, Data Group 21"
+        - "eDL, Common Data Element"
+        - "eDL, Security Object Document"
+        - "eDL, Card Entitlement"
+        - "eDL, Data Group 1"
+        - "eDL, Data Group 2"
+        - "eDL, Data Group 3"
+        - "eDL, Data Group 4"
+        - "eDL, Data Group 5"
+        - "eDL, Data Group 6"
+        - "eDL, Data Group 7"
+        - "eDL, Data Group 8"
+        - "eDL, Data Group 9"
+        - "eDL, Data Group 11"
+        - "eDL, Data Group 12"
+        - "eDL, Data Group 13"
+        - "eDL, Data Group 14"
+      x-enum-varnames:
+        - "COM"
+        - "DG1"
+        - "DG2"
+        - "DG3"
+        - "DG4"
+        - "DG5"
+        - "DG6"
+        - "DG7"
+        - "DG8"
+        - "DG9"
+        - "DG10"
+        - "DG11"
+        - "DG12"
+        - "DG13"
+        - "DG14"
+        - "DG15"
+        - "DG16"
+        - "SOD"
+        - "DG17"
+        - "DG18"
+        - "DG22"
+        - "DG23"
+        - "DG24"
+        - "EID_DG1"
+        - "EID_DG2"
+        - "EID_DG3"
+        - "EID_DG4"
+        - "EID_DG5"
+        - "EID_DG6"
+        - "EID_DG7"
+        - "EID_DG8"
+        - "EID_DG9"
+        - "EID_DG10"
+        - "EID_DG11"
+        - "EID_DG12"
+        - "EID_DG13"
+        - "EID_DG14"
+        - "EID_DG15"
+        - "EID_DG16"
+        - "EID_DG17"
+        - "EID_DG18"
+        - "EID_DG19"
+        - "EID_DG20"
+        - "EID_DG21"
+        - "EDL_COM"
+        - "EDL_SOD"
+        - "EDL_CE"
+        - "EDL_DG1"
+        - "EDL_DG2"
+        - "EDL_DG3"
+        - "EDL_DG4"
+        - "EDL_DG5"
+        - "EDL_DG6"
+        - "EDL_DG7"
+        - "EDL_DG8"
+        - "EDL_DG9"
+        - "EDL_DG11"
+        - "EDL_DG12"
+        - "EDL_DG13"
+        - "EDL_DG14"

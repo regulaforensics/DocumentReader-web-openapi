@@ -1,25 +1,28 @@
-openapi: 3.0.3
+openapi: 3.0.4
 components:
   schemas:
-
-    ImagesResult:
-      title: "Images"
-      allOf:
-        - type: object
-          required:
-            - Images
-          properties:
-            Images:
-              $ref: "#/components/schemas/Images"
-        - $ref: "./rt.yml#/components/schemas/ResultItem"
-
+    ImagesItem:
+      title: "ImagesItem"
+      type: object
+      required:
+        - Images
+      properties:
+        Images:
+          $ref: "#/components/schemas/Images"
 
     Images:
+      title: "Images"
       type: object
       required:
         - availableSourceList
         - fieldList
       properties:
+        fieldCount:
+          type: integer
+          description: "Fields count"
+        availableSourceCount:
+          type: integer
+          description: "Available sources count"
         availableSourceList:
           type: array
           items:
@@ -30,10 +33,11 @@ components:
             $ref: "#/components/schemas/ImagesField"
 
     ImagesAvailableSource:
+      title: "ImagesAvailableSource"
       type: object
       required:
+        - containerType
         - source
-        - sourceName
       properties:
         containerType:
           $ref: "./rt.yml#/components/schemas/ContainerType"
@@ -41,6 +45,7 @@ components:
           $ref: "./common.yml#/components/schemas/Source"
 
     ImagesField:
+      title: "ImagesField"
       type: object
       required:
         - fieldName
@@ -55,22 +60,24 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/ImagesFieldValue"
+        valueCount:
+          description: "Field value count"
+          type: number
 
     ImagesFieldValue:
+      title: "ImagesFieldValue"
       type: object
       required:
         - containerType
         - lightIndex
         - pageIndex
         - source
-        - value
       properties:
         source:
           $ref: "./common.yml#/components/schemas/Source"
         value:
           $ref: "./common.yml#/components/schemas/ImageBase64"
-        originalValue:
-          description: "Only for images from RFID. Image as was originally stored in the RFID chip."
+        originalValue: # Only for images from RFID. Image as was originally stored in the RFID chip.
           $ref: "./common.yml#/components/schemas/ImageBase64"
         originalPageIndex:
           description: "Original page index"
@@ -81,9 +88,8 @@ components:
           $ref: "./common.yml#/components/schemas/Light"
         containerType:
           $ref: "./rt.yml#/components/schemas/ContainerType"
-        fieldRect:
-          description: "Only for images from VISUAL. Coordinates of the image in the normalized image of the document."
+        fieldRect: # Only for images from VISUAL. Coordinates of the image in the normalized image of the document.
           $ref: "./common.yml#/components/schemas/RectangleCoordinates"
         rfidOrigin:
-          description: "Only for images from RFID. Image location in RFID chip."
+          description: # Only for images from RFID. Image location in RFID chip.
           $ref: "./common.yml#/components/schemas/RfidOrigin"

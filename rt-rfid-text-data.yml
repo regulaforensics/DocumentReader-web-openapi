@@ -1,0 +1,50 @@
+openapi: 3.0.4
+components:
+  schemas:
+    RFIDDocVisualExtendedInfoItem:
+      title: "RFIDDocVisualExtendedInfoItem"
+      type: object
+      required:
+        - DocVisualExtendedInfo
+      properties:
+        DocVisualExtendedInfo:
+          $ref: "#/components/schemas/RFIDDocVisualExtendedInfo"
+
+    RFIDDocVisualExtendedInfo:
+      title: "RFIDDocVisualExtendedInfo"
+      type: object
+      description: "Container for extracted text fields. Fields are identified by type and language"
+      required:
+        - nFields
+        - pArrayFields
+      properties:
+        nFields:
+          description: "Number of pArrayFields array elements"
+          type: number
+        pArrayFields:
+          type: array
+          items:
+            $ref: "#/components/schemas/RFIDDocVisualExtendedField"
+
+    RFIDDocVisualExtendedField:
+      title: "RFIDDocVisualExtendedField"
+      allOf:
+        - $ref: "./common.yml#/components/schemas/VisualExtendedFieldItem"
+        - $ref: "#/components/schemas/RFIDDocVisualExtendedFieldItem"
+
+    RFIDDocVisualExtendedFieldItem:
+      title: "RFIDDocVisualExtendedFieldItem"
+      type: object
+      required:
+        - OriginDG
+        - OriginTagEntry
+      properties:
+        OriginDG:
+          type: integer
+        OriginDGTag:
+          type: integer
+        OriginTagEntry:
+          description: "Record index of the text field source in the data group"
+          type: number
+        OriginEntryView:
+          type: integer

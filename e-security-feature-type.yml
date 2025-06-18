@@ -1,7 +1,8 @@
-openapi: 3.0.3
+openapi: 3.0.4
 components:
   schemas:
     SecurityFeatureType:
+      title: "SecurityFeatureType"
       type: integer
       description: "Enumeration contains identifiers determining type of features for a document authenticity checks: https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/development/enums/security-feature-type/"
       enum:
@@ -58,6 +59,8 @@ components:
         - 51
         - 52
         - 53
+        - 54
+        - 55
       x-enum-descriptions:
         - "Blank element"
         - "Personalization element"
@@ -112,6 +115,8 @@ components:
         - "Contact chip check"
         - "Head position check"
         - "Black and white copy check"
+        - "Liveness dynaprint"
+        - "Liveness geometry check"
       x-enum-varnames:
         - "BLANK"
         - "FILL"
@@ -166,3 +171,5 @@ components:
         - "CONTACT_CHIP_CLASSIFICATION"
         - "HEAD_POSITION_CHECK"
         - "LIVENESS_BLACK_AND_WHITE_COPY_CHECK"
+        - "LIVENESS_DYNAPRINT"
+        - "LIVENESS_GEOMETRY_CHECK"

@@ -1,0 +1,61 @@
+openapi: 3.0.4
+components:
+  schemas:
+    TOriginalRFIDGraphicsInfoItem:
+      title: "TOriginalRFIDGraphicsInfoItem"
+      type: object
+      required:
+        - TOriginalRFIDGraphicsInfo
+      properties:
+        TOriginalRFIDGraphicsInfo:
+          $ref: "#/components/schemas/TOriginalRFIDGraphicsInfo"
+
+    TOriginalRFIDGraphicsInfo:
+      title: "TOriginalRFIDGraphicsInfo"
+      type: object
+      required:
+        - RFID_ORIGINAL_GRAPH_DATA
+      properties:
+        RFID_ORIGINAL_GRAPH_DATA:
+          type: array
+          items:
+            $ref: "#/components/schemas/GraphData"
+
+    GraphData:
+      title: "GraphData"
+      type: object
+      required:
+        - FieldType
+        - File_Image
+        - GraphicsType
+        - OriginDG
+        - OriginDGTag
+        - OriginEntryView
+        - OriginTagEntry
+      properties:
+        FieldType:
+          type: integer
+        File_Image:
+          $ref: "#/components/schemas/FileImage"
+        GraphicsType:
+          type: integer
+        OriginDG:
+          type: integer
+        OriginDGTag:
+          type: integer
+        OriginEntryView:
+          type: integer
+        OriginTagEntry:
+          type: integer
+
+    FileImage:
+      title: "FileImage"
+      type: object
+      required:
+        - Data
+        - Length
+      properties:
+        Data:
+          type: string
+        Length:
+          type: integer
