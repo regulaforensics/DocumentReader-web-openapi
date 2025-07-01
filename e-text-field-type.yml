@@ -652,6 +652,8 @@ components:
         - 695
         - 696
         - 697
+        - 698
+        - 699
       x-enum-descriptions:
         - "Document class code"
         - "Issuing state code"
@@ -1300,6 +1302,8 @@ components:
         - "MVC Agency"
         - "Issuing state code (Alpha-2)"
         - "Nationality code (Alpha-2)"
+        - "First issue date check digit"
+        - "First issue date checksum"
       x-enum-varnames:
         - "DOCUMENT_CLASS_CODE"
         - "ISSUING_STATE_CODE"
@@ -1948,3 +1952,5 @@ components:
         - "FT_MVC_AGENCY"
         - "FT_ISSUING_STATE_CODE_ALPHA2"
         - "FT_NATIONALITY_CODE_ALPHA2"
+        - "FT_FIRST_ISSUE_DATE_CHECK_DIGIT"
+        - "FT_FIRST_ISSUE_DATE_CHECKSUM"
