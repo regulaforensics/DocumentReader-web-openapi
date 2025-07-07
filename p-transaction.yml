@@ -198,9 +198,9 @@ components:
       title: "TransactionProcessResult"
       type: object
       properties:
-        OutData:
+        outData:
           $ref: '#/components/schemas/OutData'
-        InData:
+        inData:
           $ref: '#/components/schemas/InData'
         tag:
           type: string
