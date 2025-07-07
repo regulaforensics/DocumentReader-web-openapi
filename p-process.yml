@@ -460,6 +460,10 @@ components:
         pdfPagesLimit:
           description: "Limits the number of pages to be processed from a PDF file."
           type: integer
+        disableAuthResolutionFilter:
+          description: "This parameter if enabled will ignore the minimum barcode resolution needed to start processing."
+          type: boolean
+          # default: false
 
     MRZFormat:
       title: "MRZFormat"
