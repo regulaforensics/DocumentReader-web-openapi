@@ -760,8 +760,7 @@ components:
         ParsingNotifications:
           type: array
           items:
-            type: integer
-            format: int64
+            $ref: "./e-parsing-notification-codes.yml#/components/schemas/ParsingNotificationCodes"
 
     TrfFtBytes:
       title: "TrfFtBytes"
