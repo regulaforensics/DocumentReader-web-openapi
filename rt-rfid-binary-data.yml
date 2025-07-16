@@ -384,10 +384,10 @@ components:
           description: "Reference to the source file of the security object data"
           type: number
         Notifications:
-          description: "List of remarks arisen during the analysis of SO data structure."
+          description: "List of remarks arisen during the analysis of SO data structure. Can be ParsingErrorCodes or ParsingNotificationCodes enum."
           type: array
           items:
-            $ref: "./e-parsing-error-codes.yml#/components/schemas/ParsingErrorCodes"
+            type: integer
         SignerInfos:
           description: "List of containers to store information about digital signature objects contained in the SO"
           type: array
@@ -447,9 +447,10 @@ components:
           description: "Binary data array used to calculate the hash value for digital signature verification. Base64 encoded."
           type: string
         Notifications:
+          description: "Can be ParsingErrorCodes or ParsingNotificationCodes enum."
           type: array
           items:
-            $ref: "./e-parsing-error-codes.yml#/components/schemas/ParsingErrorCodes"
+            type: integer
 
     RfidCertificateEx:
       title: "RfidCertificateEx"
@@ -498,10 +499,10 @@ components:
             $ref: "#/components/schemas/RfidPkiExtension"
         Notifications:
           description: "List of remarks arisen during the analysis of the certificate data
-          structure and its validity verification."
+          structure and its validity verification. Can be ParsingErrorCodes or ParsingNotificationCodes enum."
           type: array
           items:
-            $ref: "./e-parsing-error-codes.yml#/components/schemas/ParsingErrorCodes"
+            type: integer
         Origin:
           $ref: "#/components/schemas/RfidCertificateOrigin"
         Type:
@@ -711,10 +712,11 @@ components:
         PA_Status:
           $ref: "./e-rfid-error-codes.yml#/components/schemas/RFIDErrorCodes"
         Notifications:
-          description: "List of remarks arisen when reading data from the memory of the chip and analysing their ASN.1-structure."
+          description: "List of remarks arisen when reading data from the memory of the chip and analysing their ASN.1-structure.
+          Can be ParsingErrorCodes or ParsingNotificationCodes enum."
           type: array
           items:
-            $ref: "./e-parsing-error-codes.yml#/components/schemas/ParsingErrorCodes"
+            type: integer
         DocFields_Text:
           description: "List of document text fields formed on the basis of the file contents"
           type: array
@@ -805,10 +807,10 @@ components:
           description: "Index of the active variant of the procedure"
           type: number
         Notifications:
-          description: "List of remarks arisen during the procedure."
+          description: "List of remarks arisen during the procedure. Can be ParsingErrorCodes or ParsingNotificationCodes enum."
           type: array
           items:
-            $ref: "./e-parsing-error-codes.yml#/components/schemas/ParsingErrorCodes"
+            type: integer
         AccessControlOptions:
           description: "List of structures with are used to describe the variants of the authentication or secure data access procedure
           performance within the context of the communication session with electronic document"
