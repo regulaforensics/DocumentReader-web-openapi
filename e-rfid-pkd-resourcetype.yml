@@ -25,8 +25,8 @@ components:
         - "DEFL"
         - "DEVL"
         - "BL"
-        - "EAC_LDIF"
-        - "EAC_ML"
+        - "LDIF_TA"
+        - "ML_TA"
       x-enum-descriptions:
         - "Certificate file contents (.pem, .cer, .crt, .der)"
         - "Certificate file contents (.cvcert) and private key file contents (.pkcs8)"
