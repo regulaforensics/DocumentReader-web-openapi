@@ -310,7 +310,7 @@ components:
         VirtualMode:
           description: "Sign of virtual session when working with loaded data from a previous communication session
           with the electronic document"
-          type: string
+          type: boolean
         SDKVersion:
           description: "Text SDKVersion value in format A.B (e.g. 3.1)"
           type: string
