@@ -55,7 +55,7 @@ components:
         fieldName:
           $ref: "./e-graphic-field-type.yml#/components/schemas/GraphicFieldName"
         fieldType:
-          description: "The value can be from GraphicFieldType or TextFieldType enum."
+          description: "Values from GraphicFieldType enum."
           type: integer
         valueList:
           type: array
