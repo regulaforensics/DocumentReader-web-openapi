@@ -55,7 +55,8 @@ components:
         fieldName:
           $ref: "./e-graphic-field-type.yml#/components/schemas/GraphicFieldName"
         fieldType:
-          $ref: "./e-graphic-field-type.yml#/components/schemas/GraphicFieldType"
+          description: "The value can be from GraphicFieldType or TextFieldType enum."
+          type: integer
         valueList:
           type: array
           items:
@@ -90,6 +91,5 @@ components:
           $ref: "./rt.yml#/components/schemas/ContainerType"
         fieldRect: # Only for images from VISUAL. Coordinates of the image in the normalized image of the document.
           $ref: "./common.yml#/components/schemas/RectangleCoordinates"
-        rfidOrigin:
-          description: # Only for images from RFID. Image location in RFID chip.
+        rfidOrigin: # Only for images from RFID. Image location in RFID chip.
           $ref: "./common.yml#/components/schemas/RfidOrigin"

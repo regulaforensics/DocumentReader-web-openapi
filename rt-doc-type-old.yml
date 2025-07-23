@@ -78,8 +78,7 @@ components:
         Rotated180:
           description: "Indicates if the document of the given type is rotated by 180 degrees"
           type: integer
-        RFID_Presence:
-          description: # Indication of the presence of an RFID chip in the document (electronic document indicator)
+        RFID_Presence: # Indication of the presence of an RFID chip in the document (electronic document indicator)
           $ref: "./common.yml#/components/schemas/RfidLocation"
         FDSIDList:
           $ref: "#/components/schemas/FDSIDList"
