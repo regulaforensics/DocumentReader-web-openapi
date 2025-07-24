@@ -109,12 +109,9 @@ components:
       type: object
       required:
         - ICAOCode
-        - Count
-        - List
         - dType
         - dFormat
         - dMRZ
-        - dYear
         - dCountryName
         - isDeprecated
       properties:
