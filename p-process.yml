@@ -464,6 +464,9 @@ components:
           description: "This parameter if enabled will ignore the minimum barcode resolution needed to start processing."
           type: boolean
           # default: false
+        strictSecurityChecks:
+          description: "When enabled, this parameter marks security checks that don’t meet minimum requirements as 'Failed' (instead of 'WasNotDone'), which causes the overall security status to be 'Failed'."
+          type: boolean
 
     MRZFormat:
       title: "MRZFormat"
