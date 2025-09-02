@@ -85,6 +85,7 @@ components:
         - 131
         - 132
         - 133
+        - 134
         - 140
         - 141
         - 142
@@ -211,6 +212,7 @@ components:
         - "TEXT_COLOR_SHOULD_BE_GREEN"
         - "TEXT_COLOR_SHOULD_BE_RED"
         - "TEXT_SHOULD_BE_BLACK"
+        - "TEXT_IS_ABSENT"
         - "BARCODE_WAS_READ_WITH_ERRORS"
         - "BARCODE_DATA_FORMAT_ERROR"
         - "BARCODE_SIZE_PARAMS_ERROR"
