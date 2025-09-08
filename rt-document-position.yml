@@ -4,8 +4,6 @@ components:
     DocumentPositionItem:
       title: "DocumentPositionItem"
       type: object
-      required:
-        - DocumentPosition
       properties:
         DocumentPosition:
           $ref: "./common.yml#/components/schemas/DocumentPosition"
