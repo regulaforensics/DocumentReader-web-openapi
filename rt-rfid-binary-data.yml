@@ -242,7 +242,7 @@ components:
         - CheckDigitComposite
       properties:
         Type:
-          $ref: "./e-rfid-data-group-type-tag.yml#/components/schemas/RfidDataGroupTypeTag"
+          type: integer
         DocumentID:
           $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentFormat"
         DocumentType:
@@ -628,7 +628,7 @@ components:
         - Files
       properties:
         Type:
-          $ref: "#/components/schemas/RfidApplicationType"
+          type: integer
         Status:
           $ref: "./e-rfid-error-codes.yml#/components/schemas/RFIDErrorCodes"
         ApplicationID:
@@ -648,42 +648,6 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/RfidDataFile"
-
-    RfidApplicationType:
-      title: "RfidApplicationType"
-      type: integer
-      description: "Enumeration contains a set of constants that define the type
-      of application within the context of the communication session with electronic document"
-      enum:
-        - 0
-        - 1
-        - 2
-        - 3
-        - 4
-        - 5
-        - 6
-        - 7
-        - 8
-      x-enum-descriptions:
-        - "Not defined or Master File"
-        - "ePassport application"
-        - "eID application"
-        - "eSign application"
-        - "eDL application"
-        - "TravelRecords application"
-        - "VisaRecords application"
-        - "AddBiometrics application"
-        - "Digital Travel Credentials"
-      x-enum-varnames:
-        - "UNSPECIFIED__ROOT_FILES"
-        - "E_PASSPORT"
-        - "E_ID"
-        - "E_SIGN"
-        - "E_DL"
-        - "LDS2_TravelRecords"
-        - "LDS2_VisaRecords"
-        - "LDS2_AddBiometrics"
-        - "eDTC_PC"
 
     RfidDataFile:
       title: "RfidDataFile"
