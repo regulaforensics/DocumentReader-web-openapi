@@ -664,9 +664,8 @@ components:
         - 6
         - 7
         - 8
-        - 0
       x-enum-descriptions:
-        - "Not defined"
+        - "Not defined or Master File"
         - "ePassport application"
         - "eID application"
         - "eSign application"
@@ -675,9 +674,8 @@ components:
         - "VisaRecords application"
         - "AddBiometrics application"
         - "Digital Travel Credentials"
-        - "Master File"
       x-enum-varnames:
-        - "UNSPECIFIED"
+        - "UNSPECIFIED__ROOT_FILES"
         - "E_PASSPORT"
         - "E_ID"
         - "E_SIGN"
@@ -686,7 +684,6 @@ components:
         - "LDS2_VisaRecords"
         - "LDS2_AddBiometrics"
         - "eDTC_PC"
-        - "ROOT_FILES"
 
     RfidDataFile:
       title: "RfidDataFile"
