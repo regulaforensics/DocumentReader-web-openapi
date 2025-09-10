@@ -628,7 +628,7 @@ components:
         - Files
       properties:
         Type:
-          type: integer
+          $ref: "#/components/schemas/RfidApplicationType"
         Status:
           $ref: "./e-rfid-error-codes.yml#/components/schemas/RFIDErrorCodes"
         ApplicationID:
