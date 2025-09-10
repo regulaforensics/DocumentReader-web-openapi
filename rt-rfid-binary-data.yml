@@ -649,6 +649,43 @@ components:
           items:
             $ref: "#/components/schemas/RfidDataFile"
 
+    RfidApplicationType:
+      title: "RfidApplicationType"
+      type: integer
+      description: "Enumeration contains a set of constants that define the type
+      of application within the context of the communication session with electronic document"
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+        - 4
+        - 5
+        - 6
+        - 7
+        - 8
+      x-enum-descriptions:
+        - "Not defined or root files"
+        - "ePassport application"
+        - "eID application"
+        - "eSign application"
+        - "eDL application"
+        - "TravelRecords application"
+        - "VisaRecords application"
+        - "AddBiometrics application"
+        - "Digital Travel Credentials"
+        - "Master File"
+      x-enum-varnames:
+        - "UNSPECIFIED_OR_ROOT_FILES"
+        - "E_PASSPORT"
+        - "E_ID"
+        - "E_SIGN"
+        - "E_DL"
+        - "LDS2_TravelRecords"
+        - "LDS2_VisaRecords"
+        - "LDS2_AddBiometrics"
+        - "eDTC_PC"
+
     RfidDataFile:
       title: "RfidDataFile"
       description: "Structure is used to describe the contents of a single file of the LDS of electronic document and the analysis
