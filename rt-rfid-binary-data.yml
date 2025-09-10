@@ -242,7 +242,7 @@ components:
         - CheckDigitComposite
       properties:
         Type:
-          $ref: "./e-rfid-data-group-type-tag.yml#/components/schemas/RfidDataGroupTypeTag"
+          type: integer
         DocumentID:
           $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentFormat"
         DocumentType:
@@ -664,9 +664,8 @@ components:
         - 6
         - 7
         - 8
-        - 0
       x-enum-descriptions:
-        - "Not defined"
+        - "Root files"
         - "ePassport application"
         - "eID application"
         - "eSign application"
@@ -677,7 +676,7 @@ components:
         - "Digital Travel Credentials"
         - "Master File"
       x-enum-varnames:
-        - "UNSPECIFIED"
+        - "ROOT_FILES"
         - "E_PASSPORT"
         - "E_ID"
         - "E_SIGN"
@@ -686,7 +685,6 @@ components:
         - "LDS2_VisaRecords"
         - "LDS2_AddBiometrics"
         - "eDTC_PC"
-        - "ROOT_FILES"
 
     RfidDataFile:
       title: "RfidDataFile"
