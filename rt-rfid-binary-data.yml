@@ -665,7 +665,7 @@ components:
         - 7
         - 8
       x-enum-descriptions:
-        - "Not defined or root files"
+        - "Root files"
         - "ePassport application"
         - "eID application"
         - "eSign application"
@@ -676,7 +676,7 @@ components:
         - "Digital Travel Credentials"
         - "Master File"
       x-enum-varnames:
-        - "UNSPECIFIED_OR_ROOT_FILES"
+        - "ROOT_FILES"
         - "E_PASSPORT"
         - "E_ID"
         - "E_SIGN"
