@@ -1,0 +1,11 @@
+openapi: 3.0.4
+components:
+  schemas:
+    BarcodePositionItem:
+      title: "BarcodePositionItem"
+      type: object
+      required:
+        - BarcodePosition
+      properties:
+        BarcodePosition:
+          $ref: "./common.yml#/components/schemas/DocumentPosition"

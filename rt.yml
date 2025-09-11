@@ -168,7 +168,7 @@ components:
           49: "EncryptedRCLResult"
           50: "LicenseResult"
           61: "MRZPositionResult"
-          62: "DocumentPositionResult"
+          62: "BarcodePositionResult"
           85: "DocumentPositionResult"
           87: "MRZDetectorResult"
           97: "FaceDetectionResult"
@@ -204,6 +204,7 @@ components:
               - $ref: "#/components/schemas/LexicalAnalysisResult"
               - $ref: "#/components/schemas/AuthenticityResult"
               - $ref: "#/components/schemas/ImageQualityResult"
+              - $ref: "#/components/schemas/BarcodePositionResult"
               - $ref: "#/components/schemas/DocumentPositionResult"
               - $ref: "#/components/schemas/DocBarCodeInfo"
               - $ref: "#/components/schemas/LicenseResult"
@@ -300,6 +301,13 @@ components:
       allOf:
         - $ref: "#/components/schemas/ResultItem"
         - $ref: "./rt-image-quality.yml#/components/schemas/ImageQualityCheckListItem"
+
+    BarcodePositionResult:
+      title: "BarcodePositionResult"
+      description: "Contains information about barcode position on the input image, its center, angle, etc"
+      allOf:
+        - $ref: "#/components/schemas/ResultItem"
+        - $ref: "./rt-barcode-position.yml#/components/schemas/BarcodePositionItem"
 
     DocumentPositionResult:
       title: "DocumentPositionResult"
