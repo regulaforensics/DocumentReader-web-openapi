@@ -302,7 +302,6 @@ components:
         - RootFiles
         - TotalBytesSent
         - TotalBytesReceived
-        - Session_key
         - Session_terminal
         - Session_procedure
         - SecurityObjects
