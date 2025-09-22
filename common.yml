@@ -25,6 +25,8 @@ components:
         - "RFID"
         - "MAGNETIC"
         - "EXTERNAL"
+        - "LIVE"
+        - "FINGERPRINT"
       x-enum-varnames:
         - "MRZ"
         - "VISUAL"
@@ -32,6 +34,8 @@ components:
         - "RFID"
         - "MAGNETIC"
         - "EXTERNAL"
+        - "LIVE"
+        - "FINGERPRINT"
       x-enum-descriptions:
         - "Machine readable zone (MRZ)"
         - "Visual zone"
@@ -39,6 +43,8 @@ components:
         - "RFID"
         - "Magnetic"
         - "External"
+        - "Live"
+        - "Fingerprint"
 
     CheckResult:
       title: "CheckResult"
@@ -328,7 +334,6 @@ components:
         - StringsCount
         - StringsResult
         - Buf_Length
-        - Buf_Text
       properties:
         wFieldType:
           $ref: "./e-text-field-type.yml#/components/schemas/TextFieldType"
