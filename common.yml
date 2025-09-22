@@ -294,7 +294,7 @@ components:
             group_ids:
               type: array
               items:
-                type: integer
+                type: string
               description: " The groups where to conduct the search."
         threshold:
           type: integer
