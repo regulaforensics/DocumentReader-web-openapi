@@ -61,6 +61,8 @@ components:
         - 53
         - 54
         - 55
+        - 56
+        - 57
       x-enum-descriptions:
         - "Blank element"
         - "Personalization element"
@@ -117,6 +119,8 @@ components:
         - "Black and white copy check"
         - "Liveness dynaprint"
         - "Liveness geometry check"
+        - "Age comparison visual vs. face"
+        - "Sex comparison visual vs. face"
       x-enum-varnames:
         - "BLANK"
         - "FILL"
@@ -173,3 +177,5 @@ components:
         - "LIVENESS_BLACK_AND_WHITE_COPY_CHECK"
         - "LIVENESS_DYNAPRINT"
         - "LIVENESS_GEOMETRY_CHECK"
+        - "AGE_COMPARISON_VISUAL_VS_FACE"
+        - "SEX_COMPARISON_VISUAL_VS_FACE"
