@@ -25,7 +25,7 @@ jobs:
       - name: Verify update Python client
         working-directory: python-client
         run: |
-          ./update-models.sh
+          ./update-models.sh strict
           ./setup.sh
 
   verify-csharp:
@@ -45,7 +45,7 @@ jobs:
       - name: Verify update CSharp client
         working-directory: csharp-client
         run: |
-          ./update-models.sh
+          ./update-models.sh strict
           ./setup.sh
 
   verify-js:
@@ -92,5 +92,5 @@ jobs:
       - name: Verify update Java client
         working-directory: java-client
         run: |
-          ./update-models.sh
+          ./update-models.sh strict
           ./gradlew clean :example:run
