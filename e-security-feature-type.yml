@@ -119,8 +119,8 @@ components:
         - "Black and white copy check"
         - "Liveness dynaprint"
         - "Liveness geometry check"
-        - "Age comparison visual vs. face"
-        - "Sex comparison visual vs. face"
+        - "Age check"
+        - "Sex check"
       x-enum-varnames:
         - "BLANK"
         - "FILL"
@@ -177,5 +177,5 @@ components:
         - "LIVENESS_BLACK_AND_WHITE_COPY_CHECK"
         - "LIVENESS_DYNAPRINT"
         - "LIVENESS_GEOMETRY_CHECK"
-        - "AGE_COMPARISON_VISUAL_VS_FACE"
-        - "SEX_COMPARISON_VISUAL_VS_FACE"
+        - "AGE_CHECK"
+        - "SEX_CHECK"
