@@ -1956,4 +1956,4 @@ components:
         - "FT_NATIONALITY_CODE_ALPHA2"
         - "FT_FIRST_ISSUE_DATE_CHECK_DIGIT"
         - "FT_FIRST_ISSUE_DATE_CHECKSUM"
-        - "FR_AGE_OVER_NN"
+        - "FT_AGE_OVER_NN"
