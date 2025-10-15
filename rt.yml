@@ -86,8 +86,8 @@ components:
         - "Contains RFID binary data"
         - "Contains RFID original graphics data"
         - "Digital Travel Credential data"
-        - "Contains MDL device raw response"
-        - "Contains MDL device parsed response"
+        - "Contains mDL raw response"
+        - "Contains mDL parsed response"
       x-enum-varnames:
         - "DOCUMENT_IMAGE"
         - "MRZ_TEXT"
