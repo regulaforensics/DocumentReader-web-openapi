@@ -503,3 +503,18 @@ components:
           type: integer
         ResultStatus:
           type: integer
+
+    GlaresCheckParams:
+      title: "GlaresCheckParams"
+      type: object
+      properties:
+        imgMarginPart:
+          type: number
+          format: float
+          description: "Margin from the edges of the image. 0.35 = 35%"
+          example: 0.35
+        maxGlaringPart:
+          type: number
+          format: float
+          description: "The maximum allowable part of the area occupied by the glare. The same: 0.06 = 6%"
+          example: 0.0
