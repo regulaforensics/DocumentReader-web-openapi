@@ -175,6 +175,7 @@ components:
         - 10011
         - 10012
         - 10560
+        - 9999
       x-enum-varnames:
         - "LATIN"
         - "AFRIKAANS"
@@ -342,6 +343,7 @@ components:
         - "ABKHAZIAN"
         - "KARAKALPAK"
         - "URDU_DETECTION"
+        - "CUSTOM"
       x-enum-descriptions:
         - "Latin"
         - "Afrikaans"
@@ -509,3 +511,4 @@ components:
         - "Abkhazian (Cyrillic)"
         - "Karakalpak (Latin)"
         - "Urdu Detection"
+        - "Custom"
