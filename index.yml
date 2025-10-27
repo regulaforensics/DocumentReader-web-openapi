@@ -43,24 +43,15 @@ paths:
     $ref: "./p-healthcheck.yml#/paths/~1healthz"
   /api/readyz:
     $ref: "./p-healthcheck.yml#/paths/~1readyz"
+  /api/doclist:
+    $ref: "./p-doclist.yml#/paths/~1doclist"
 
 tags:
   - name: process
     description: Everything about performing request and parsing response
-  - name: status_model
-    x-displayName: Status Model
-    description: |
-      <SchemaDefinition schemaRef="#/components/schemas/Status" />
-  - name: text_model
-    x-displayName: Text Model
-    description: |
-      <SchemaDefinition schemaRef="#/components/schemas/Text" />
   - name: images_model
     x-displayName: Images Model
     description: |
-      **Images model:**
-      <SchemaDefinition schemaRef="#/components/schemas/Images" />
-      **Document image model:**
       <SchemaDefinition schemaRef="#/components/schemas/DocumentImage" />
   - name: document_model
     x-displayName: Document Model
@@ -69,10 +60,6 @@ tags:
       <SchemaDefinition schemaRef="#/components/schemas/ChosenDocumentType" />
       **Candidates model:**
       <SchemaDefinition schemaRef="#/components/schemas/DocumentTypesCandidates" />
-  - name: authenticity_model
-    x-displayName: Authenticity Model
-    description: |
-      <SchemaDefinition schemaRef="#/components/schemas/AuthenticityCheckResult" />
 
 x-tagGroups:
   - name: Requests
@@ -82,11 +69,8 @@ x-tagGroups:
       - healthcheck
   - name: Models
     tags:
-      - status_model
-      - text_model
       - images_model
       - document_model
-      - authenticity_model
 
 components:
   schemas:
