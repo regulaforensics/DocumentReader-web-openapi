@@ -52,8 +52,7 @@ components:
           description: "Date when the document description was created in the database."
           type: string
         doc_type:
-          description: "Document type."
-          type: integer
+          $ref: "./e-document-type.yml#/components/schemas/DocumentType"
         document:
           description: "Document name."
           type: string
@@ -85,5 +84,5 @@ components:
           description: "Guardian country."
           type: string
         deprecated:
-          description: "Whether the document has been withdrawn from circulation."
+          description: "Whether the document is no longer in circulation."
           type: boolean
