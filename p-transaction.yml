@@ -10,6 +10,12 @@ paths:
             format: uuid
           required: true
           description: Transaction id
+        - in: query
+          name: useCache
+          schema:
+            type: boolean
+            default: false
+          description: Get processed values from storage in case transaction has already processed.
       summary: Reprocess
       tags:
         - transaction
