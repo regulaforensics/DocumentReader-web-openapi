@@ -67,6 +67,7 @@ x-tagGroups:
       - process
       - transaction
       - healthcheck
+      - resources
   - name: Models
     tags:
       - images_model
