@@ -1,0 +1,88 @@
+openapi: 3.0.4
+paths:
+  /doclist:
+    get:
+      summary: "Returns the list of documents stored in the database that the Web Service API is running with."
+      operationId: doclist
+      responses:
+        200:
+          description: "The list of documents stored in the database."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DatabaseDocumentList"
+
+components:
+  schemas:
+    DatabaseDocumentList:
+      title: "DatabaseDocumentList"
+      type: object
+      required:
+        - items
+      properties:
+        items:
+          description: "The list of documents stored in the database."
+          type: array
+          items:
+            $ref: "#/components/schemas/DatabaseDocument"
+
+    DatabaseDocument:
+      title: "DatabaseDocument"
+      type: object
+      required:
+        - barcode_fields
+        - country
+        - createad
+        - doc_type
+        - document
+        - graphic_fields
+        - id
+        - mrz
+        - rfid_chip
+        - text_fields
+        - updated
+      properties:
+        barcode_fields:
+          description: "Whether the document has a barcode."
+          type: boolean
+        country:
+          description: "Country name."
+          type: string
+        createad:
+          description: "Date when the document description was created in the database."
+          type: string
+        doc_type:
+          $ref: "./e-document-type.yml#/components/schemas/DocumentType"
+        document:
+          description: "Document name."
+          type: string
+        graphic_fields:
+          description: "The presence of graphic fields in the document."
+          type: boolean
+        id:
+          description: "Document code."
+          type: integer
+        mrz:
+          description: "The document has an MRZ."
+          type: boolean
+        region:
+          description: "Country region."
+          type: string
+        rfid_chip:
+          description: "The document has an RFID chip."
+          type: boolean
+        text_fields:
+          description: "The presence of text fields in the document."
+          type: boolean
+        updated:
+          description: "Date when the document description was updated in the database."
+          type: string
+        year:
+          description: "The year when the document was issued."
+          type: string
+        sovereignty:
+          description: "Guardian country."
+          type: string
+        deprecated:
+          description: "Whether the document is no longer in circulation."
+          type: boolean
