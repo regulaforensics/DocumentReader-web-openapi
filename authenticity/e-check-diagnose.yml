@@ -56,6 +56,8 @@ components:
         - 84
         - 85
         - 86
+        - 87
+        - 88
         - 90
         - 91
         - 92
@@ -183,6 +185,8 @@ components:
         - "FIELD_POS_CORRECTOR_FACE_PRESENCE_CHECK_ERROR"
         - "FIELD_POS_CORRECTOR_FACE_ABSENCE_CHECK_ERROR"
         - "FIELD_POS_CORRECTOR_INCORRECT_HEAD_POSITION"
+        - "FIELD_POS_CORRECTOR_AGE_CHECK_ERROR"
+        - "FIELD_POS_CORRECTOR_SEX_CHECK_ERROR"
         - "OVI_IR_INVISIBLE"
         - "OVI_INSUFFICIENT_AREA"
         - "OVI_COLOR_INVARIABLE"
