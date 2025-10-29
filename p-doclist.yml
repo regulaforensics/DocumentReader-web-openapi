@@ -4,6 +4,8 @@ paths:
     get:
       summary: "Returns the list of documents stored in the database that the Web Service API is running with."
       operationId: doclist
+      tags:
+        - resources
       responses:
         200:
           description: "The list of documents stored in the database."
