@@ -536,64 +536,123 @@ components:
           type: boolean
           description: "This parameter is used to enable document liveness check"
           # default: true
+        checkLivenessFilter:
+          $ref: "#/components/schemas/CheckAuthFilter"
         livenessParams:
-          $ref: '#/components/schemas/LivenessParams'
+          $ref: "#/components/schemas/LivenessParams"
         checkUVLuminiscence:
           type: boolean
           description: "This parameter is used to enable Document luminescence check in UV light"
           # default: true
+        checkUVLuminiscenceFilter:
+          $ref: "#/components/schemas/CheckAuthFilter"
         checkIRB900:
           type: boolean
           description: "This parameter is used to enable B900 ink MRZ contrast check in IR light"
           # default: true
+        checkIRB900Filter:
+          $ref: "#/components/schemas/CheckAuthFilter"
         checkImagePatterns:
           type: boolean
           description: "This parameter is used to enable Image patterns presence/absence check (position, shape, color)"
           # default: true
+        checkImagePatternsFilter:
+          $ref: "#/components/schemas/CheckAuthFilter"
         checkFibers:
           type: boolean
           description: "This parameter is used to enable Fibers detection"
           # default: true
+        checkFibersFilter:
+          $ref: "#/components/schemas/CheckAuthFilter"
         checkExtMRZ:
           type: boolean
           description: "This parameter is used to enable Extended MRZ Check"
           # default: true
+        checkExtMRZFilter:
+          $ref: "#/components/schemas/CheckAuthFilter"
         checkExtOCR:
           type: boolean
           description: "This parameter is used to enable Extended OCR Check"
           # default: true
+        checkExtOCRFilter:
+          $ref: "#/components/schemas/CheckAuthFilter"
         checkAxial:
           type: boolean
           description: "This parameter is used to enable laminate integrity check in axial light"
           # default: true
+        checkAxialFilter:
+          $ref: "#/components/schemas/CheckAuthFilter"
         checkBarcodeFormat:
           type: boolean
           description: "This parameter is used to enable Barcode format check (code metadata, data format, contents format, etc.)"
           # default: true
+        checkBarcodeFormatFilter:
+          $ref: "#/components/schemas/CheckAuthFilter"
         checkIRVisibility:
           type: boolean
           description: "This parameter is used to enable Document elements visibility check in IR light"
           # default: true
+        checkIRVisibilityFilter:
+          $ref: "#/components/schemas/CheckAuthFilter"
         checkIPI:
           type: boolean
           description: "This parameter is used to enable Invisible Personal Information (IPI) check"
           # default: true
+        checkIPIFilter:
+          $ref: "#/components/schemas/CheckAuthFilter"
         checkPhotoEmbedding:
           type: boolean
           description: "This parameter is used to enable Owner's photo embedding check (is photo printed or sticked)"
           # default: true
+        checkPhotoEmbeddingFilter:
+          $ref: "#/components/schemas/CheckAuthFilter"
         checkPhotoComparison:
           type: boolean
           description: "This parameter is used to enable Portrait comparison check"
           # default: true
+        checkPhotoComparisonFilter:
+          $ref: "#/components/schemas/CheckAuthFilter"
         checkLetterScreen:
           type: boolean
           description: "This parameter is used to enable LetterScreen check"
           # default: false
+        checkLetterScreenFilter:
+          $ref: "#/components/schemas/CheckAuthFilter"
         checkSecurityText:
           type: boolean
           description: "This parameter is used to enable Security text check"
           # default: true
+        checkSecurityTextFilter:
+          $ref: "#/components/schemas/CheckAuthFilter"
+
+    CheckAuthFilter:
+      title: "CheckAuthFilter"
+      type: object
+      properties:
+        docIDs:
+          type: array
+          items:
+            type: integer
+        excludeDocIDs:
+          type: array
+          items:
+            type: integer
+        docFormats:
+          $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentFormat"
+        excludeDocFormats:
+          $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentFormat"
+        docCategories:
+          $ref: "./e-document-type.yml#/components/schemas/DocumentType"
+        excludeDocCategories:
+          $ref: "./e-document-type.yml#/components/schemas/DocumentType"
+        docCountries:
+          type: array
+          items:
+            type: string
+        excludeDocCountries:
+          type: array
+          items:
+            type: string
 
     LivenessParams:
       title: "LivenessParams"
