@@ -429,6 +429,8 @@ components:
           type: boolean
           description: "This parameter is used to enable authenticity checks"
           # default: true
+        checkAuthFilter:
+          $ref: "#/components/schemas/CheckAuthFilter"
         authParams:
           $ref: '#/components/schemas/AuthParams'
         mrzDetectMode:
@@ -662,30 +664,44 @@ components:
           type: boolean
           description: "This parameter is used to enable OVI check"
           # default: true
+        checkOVIFilter:
+          $ref: "#/components/schemas/CheckAuthFilter"
         checkMLI:
           type: boolean
           description: "This parameter is used to enable MLI check"
           # default: true
+        checkMLIFilter:
+          $ref: "#/components/schemas/CheckAuthFilter"
         checkHolo:
           type: boolean
           description: "This parameter is used to enable Hologram detection"
           # default: true
+        checkHoloFilter:
+          $ref: "#/components/schemas/CheckAuthFilter"
         checkED:
           type: boolean
           description: "This parameter is used to enable Electronic device detection"
           # default: true
+        checkEDFilter:
+          $ref: "#/components/schemas/CheckAuthFilter"
         checkBlackAndWhiteCopy:
           type: boolean
           description: "This parameter is used to enable Black and white copy check"
           # default: true
+        checkBlackAndWhiteCopyFilter:
+          $ref: "#/components/schemas/CheckAuthFilter"
         checkDynaprint:
           type: boolean
           description: "This parameter is used to enable Dynaprint check"
           # default: true
+        checkDynaprintFilter:
+          $ref: "#/components/schemas/CheckAuthFilter"
         checkGeometry:
           type: boolean
           description: "This parameter is used to enable Geometry check"
           # default: true
+        checkGeometryFilter:
+          $ref: "#/components/schemas/CheckAuthFilter"
 
     MeasureSystem:
       title: "MeasureSystem"
