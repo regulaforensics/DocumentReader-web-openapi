@@ -172,6 +172,7 @@ components:
         - 13
         - 14
         - 1000
+        - 1001
         - 1002
       x-enum-descriptions:
         - "Unknown document format"
@@ -187,6 +188,7 @@ components:
         - "ID2 format document rotated 90 °"
         - "ID3 format document rotated 180 °"
         - "Arbitrary format"
+        - "Photo for document"
         - "Flexible format. Standard formats can be resized during cropping, depending on various factors: light, background..."
       x-enum-varnames:
         - "UNKNOWN"
@@ -202,4 +204,5 @@ components:
         - "ID2_180"
         - "ID3_180"
         - "CUSTOM"
+        - "PHOTO"
         - "FLEXIBLE"
