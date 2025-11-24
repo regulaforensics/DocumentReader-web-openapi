@@ -184,7 +184,7 @@ components:
           104: "DocumentBinaryInfoResult"
           105: "RFIDGraphicsInfoResult"
           109: "ByteArrayResult"
-          124: "VDSNCDataItem"
+          124: "VDSNCDataResult"
           125: "VDSDataResult"
 
     ContainerList:
