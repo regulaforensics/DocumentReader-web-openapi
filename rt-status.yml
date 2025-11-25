@@ -35,6 +35,12 @@ components:
           $ref: "#/components/schemas/detailsRFID"
         detailsOptical:
           $ref: "#/components/schemas/detailsOptical"
+        age:
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        detailsAge:
+          $ref: "#/components/schemas/DetailsAge"
+        mDL:
+          $ref: "./common.yml#/components/schemas/CheckResult"
 
     detailsOptical:
       title: "detailsOptical"
@@ -96,4 +102,19 @@ components:
         PACE: # Password Authenticated Connection Establishment (PACE) status
           $ref: "./common.yml#/components/schemas/CheckResult"
         TA: # Terminal Authentication status
+          $ref: "./common.yml#/components/schemas/CheckResult"
+
+    DetailsAge:
+      title: "DetailsAge"
+      description: "Details age"
+      type: object
+      properties:
+        threshold:
+          description: "Threshold value"
+          type: string
+        overThreshold:
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        over18:
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        over21:
           $ref: "./common.yml#/components/schemas/CheckResult"
