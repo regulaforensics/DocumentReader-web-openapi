@@ -87,3 +87,9 @@ components:
       $ref: "./e-rfid-pkd-resourcetype.yml#/components/schemas/RFIDPKDResourceType"
     ParsingErrorCodes:
       $ref: "./e-parsing-error-codes.yml#/components/schemas/ParsingErrorCodes"
+    MDLDeviceEngagement:
+      $ref: "./common.yml#/components/schemas/MDLDeviceEngagement"
+    MDLDeviceRetrieval:
+      $ref: "./common.yml#/components/schemas/MDLDeviceRetrieval"
+    MDLServerRetrieval:
+      $ref: "./common.yml#/components/schemas/MDLServerRetrieval"
