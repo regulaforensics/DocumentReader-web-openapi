@@ -520,43 +520,33 @@ components:
           example: 0.0
 
     MDLDeviceEngagement:
+      title: "MDLDeviceEngagement"
       type: integer
-      description: "Device engagement"
       enum:
         - 0
         - 1
-      x-enum-descriptions:
-        - "mDL DE QR"
-        - "mDL DE NFC"
       x-enum-varnames:
-        - "MDLDE_QR"
-        - "MDLDE_NFC"
+        - "QR"
+        - "NFC"
 
     MDLDeviceRetrieval:
+      title: "MDLDeviceRetrieval"
       type: integer
-      description: "Device retrieval"
       enum:
         - 1
         - 2
         - 3
-      x-enum-descriptions:
-        - "mDL DR NFC"
-        - "mDL DR BLE"
-        - "mDL DR WiFi Aware"
       x-enum-varnames:
-        - "MDLDR_NFC"
-        - "MDLDR_BLE"
-        - "MDLDR_WIFI_AVARE"
+        - "NFC"
+        - "BLE"
+        - "WIFI_AVARE"
 
     MDLServerRetrieval:
+      title: "MDLServerRetrieval"
       type: integer
-      description: "Server retrieval"
       enum:
         - 0
         - 1
-      x-enum-descriptions:
-        - "mDL SR WebAPI"
-        - "mDL SR OIDC"
       x-enum-varnames:
-        - "MDLSR_WEBAPI"
-        - "MDLSR_OIDC"
+        - "WEB_API"
+        - "OIDC"

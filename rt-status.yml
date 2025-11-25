@@ -106,11 +106,9 @@ components:
 
     DetailsAge:
       title: "DetailsAge"
-      description: "Details age"
       type: object
       properties:
         threshold:
-          description: "Threshold value"
           type: string
         overThreshold:
           $ref: "./common.yml#/components/schemas/CheckResult"

@@ -94,8 +94,8 @@ components:
         - "Contains mDL device parsed response"
         - "Contains mDL server raw response"
         - "Contains mDL server parsed response"
-        - "Contains VDS NC result"
-        - "Contains VDS result"
+        - "Contains result of VDS NC"
+        - "Contains result of VDS"
       x-enum-varnames:
         - "DOCUMENT_IMAGE"
         - "MRZ_TEXT"
@@ -137,8 +137,8 @@ components:
         - "MDL_DEVICE_PARSED_RESPONSE"
         - "MDL_SERVER_RAW_RESPONSE"
         - "MDL_SERVER_PARSED_RESPONSE"
-        - "VDS_NC_RESULT"
-        - "VDS_RESULT"
+        - "VDS_NC"
+        - "VDS"
 
     ResultItem:
       title: "ResultItem"
