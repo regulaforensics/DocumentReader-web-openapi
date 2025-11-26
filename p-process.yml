@@ -248,7 +248,7 @@ components:
         fieldTypesIgnoreFilter:
           description: "If a document contains a Visual zone, you can specify a list of field types that should be excluded from extraction.
           All field types listed in this array are skipped during processing, while the remaining fields are recognized.
-          This filter is not applicable to the MRZ, barcode or RFID. If the fieldTypesFilter is empty, all fields are extracted."
+          This filter is not applicable to the MRZ, barcode or RFID. If the fieldTypesIgnoreFilter is empty, all fields are extracted."
           type: array
           items:
             $ref: "./e-text-field-type.yml#/components/schemas/TextFieldType"
