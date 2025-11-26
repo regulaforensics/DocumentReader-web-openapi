@@ -20,6 +20,9 @@ components:
         - rfid
         - stopList
         - detailsOptical
+        - age
+        - detailsAge
+        - mDL
       properties:
         overallStatus: # Overall checks status. Rootx status
           $ref: "./common.yml#/components/schemas/CheckResult"
@@ -107,6 +110,11 @@ components:
     DetailsAge:
       title: "DetailsAge"
       type: object
+      required:
+        - threshold
+        - overThreshold
+        - over18
+        - over21
       properties:
         threshold:
           type: string
