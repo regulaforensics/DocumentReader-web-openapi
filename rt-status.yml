@@ -115,6 +115,8 @@ components:
         - overThreshold
         - over18
         - over21
+        - over25
+        - over65
       properties:
         threshold:
           type: string
@@ -123,4 +125,8 @@ components:
         over18:
           $ref: "./common.yml#/components/schemas/CheckResult"
         over21:
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        over25:
+          $ref: "./common.yml#/components/schemas/CheckResult"
+        over65:
           $ref: "./common.yml#/components/schemas/CheckResult"
