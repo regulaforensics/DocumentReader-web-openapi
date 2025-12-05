@@ -119,7 +119,7 @@ components:
         - over65
       properties:
         threshold:
-          type: string
+          type: integer
         overThreshold:
           $ref: "./common.yml#/components/schemas/CheckResult"
         over18:
