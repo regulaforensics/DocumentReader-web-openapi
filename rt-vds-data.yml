@@ -1,0 +1,60 @@
+openapi: 3.0.4
+components:
+  schemas:
+    VDSDataItem:
+      title: "VDSDataItem"
+      type: object
+      required:
+        - dftVDS
+      properties:
+        dftVDS:
+          $ref: "#/components/schemas/VDSData"
+
+    VDSData:
+      title: "VDSData"
+      type: object
+      properties:
+        Certificate:
+          type: string
+        CertificateChain:
+          type: array
+          items:
+            $ref: "./rt-rfid-binary-data.yml#/components/schemas/RfidCertificateEx"
+        DocFeatures:
+          type: array
+          items:
+            $ref: "#/components/schemas/DocFeature"
+        DocIssueDate:
+          type: string
+        DocType:
+          type: integer
+        FeatureRef:
+          type: integer
+        IssuingCountry:
+          type: string
+        Notifications:
+          type: array
+          items:
+            type: integer
+        Signature:
+          $ref: "./rt-rfid-binary-data.yml#/components/schemas/TrfFtBytes"
+        SignatureDate:
+          type: string
+        Signer:
+          type: string
+        Type:
+          type: integer
+        Version:
+          type: integer
+
+    DocFeature:
+      title: "DocFeature"
+      type: object
+      required:
+        - Type
+        - Data
+      properties:
+        Type:
+          type: number
+        Data:
+          $ref: "./rt-rfid-binary-data.yml#/components/schemas/TrfFtBytes"

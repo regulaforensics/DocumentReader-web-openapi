@@ -47,6 +47,12 @@ components:
         - 104
         - 105
         - 109
+        - 120
+        - 121
+        - 122
+        - 123
+        - 124
+        - 125
       x-enum-descriptions:
         - "Contains cropped and rotated with perspective compensation image of document. Single input image can contain multiple document side/pages, which will be returned as separated results. Most of coordinates in other types defined on that image"
         - "Contains MRZ OCR results"
@@ -84,6 +90,12 @@ components:
         - "Contains RFID binary data"
         - "Contains RFID original graphics data"
         - "Digital Travel Credential data"
+        - "Contains mDL device raw response"
+        - "Contains mDL device parsed response"
+        - "Contains mDL server raw response"
+        - "Contains mDL server parsed response"
+        - "Contains result of VDS NC"
+        - "Contains result of VDS"
       x-enum-varnames:
         - "DOCUMENT_IMAGE"
         - "MRZ_TEXT"
@@ -121,6 +133,12 @@ components:
         - "RFID_BINARY_DATA"
         - "RFID_ORIGINAL_GRAPHICS"
         - "DTC_VC"
+        - "MDL_DEVICE_RAW_RESPONSE"
+        - "MDL_DEVICE_PARSED_RESPONSE"
+        - "MDL_SERVER_RAW_RESPONSE"
+        - "MDL_SERVER_PARSED_RESPONSE"
+        - "VDS_NC"
+        - "VDS"
 
     ResultItem:
       title: "ResultItem"
@@ -178,6 +196,8 @@ components:
           104: "DocumentBinaryInfoResult"
           105: "RFIDGraphicsInfoResult"
           109: "ByteArrayResult"
+          124: "VDSNCDataResult"
+          125: "VDSDataResult"
 
     ContainerList:
       title: "ContainerList"
@@ -217,6 +237,8 @@ components:
               - $ref: "#/components/schemas/MRZTestQualityResult"
               - $ref: "#/components/schemas/RFIDGraphicsInfoResult"
               - $ref: "#/components/schemas/RFIDTextDataResult"
+              - $ref: "#/components/schemas/VDSNCDataResult"
+              - $ref: "#/components/schemas/VDSDataResult"
 
     StatusResult:
       title: "StatusResult"
@@ -380,3 +402,15 @@ components:
       allOf:
         - $ref: "#/components/schemas/ResultItem"
         - $ref: "./rt-rfid-text-data.yml#/components/schemas/RFIDDocVisualExtendedInfoItem"
+
+    VDSNCDataResult:
+      title: "VDSNCDataResult"
+      allOf:
+        - $ref: "#/components/schemas/ResultItem"
+        - $ref: "./rt-vds-nc-data.yml#/components/schemas/VDSNCDataItem"
+
+    VDSDataResult:
+      title: "VDSDataResult"
+      allOf:
+        - $ref: "#/components/schemas/ResultItem"
+        - $ref: "./rt-vds-data.yml#/components/schemas/VDSDataItem"

@@ -1,0 +1,94 @@
+openapi: 3.0.4
+components:
+  schemas:
+    VDSNCDataItem:
+      title: "VDSNCDataItem"
+      type: object
+      required:
+        - dftVDS_NC
+      properties:
+        dftVDS_NC:
+          $ref: "#/components/schemas/VDSNCData"
+
+    VDSNCData:
+      title: "VDSNCData"
+      type: object
+      properties:
+        Certificate:
+          $ref: "./rt-rfid-binary-data.yml#/components/schemas/TrfFtBytes"
+        CertificateChain:
+          type: array
+          items:
+            $ref: "./rt-rfid-binary-data.yml#/components/schemas/RfidCertificateEx"
+        IssuingCountry:
+          type: string
+        Message:
+          $ref: "#/components/schemas/Message"
+        Notifications:
+          type: array
+          items:
+            type: integer
+        Signature:
+          $ref: "./rt-rfid-binary-data.yml#/components/schemas/TrfFtBytes"
+        SignatureAlg:
+          type: string
+        Type:
+          type: string
+        Version:
+          type: integer
+
+    Message:
+      title: "Message"
+      type: object
+      properties:
+        pid:
+          $ref: "#/components/schemas/PID"
+        uvci:
+          type: string
+        ve:
+          type: array
+          items:
+            $ref: "#/components/schemas/VEItem"
+
+    PID:
+      title: "PID"
+      type: object
+      properties:
+        dob:
+          type: string
+        i:
+          type: string
+        n:
+          type: string
+        sex:
+          type: string
+
+    VEItem:
+      title: "VEItem"
+      type: object
+      properties:
+        des:
+          type: string
+        dis:
+          type: string
+        nam:
+          type: string
+        vd:
+          type: array
+          items:
+            $ref: "#/components/schemas/VDItem"
+
+    VDItem:
+      title: "VDItem"
+      type: object
+      properties:
+        adm:
+          type: string
+        ctr:
+          type: string
+        dvc:
+          type: string
+        lot:
+          type: string
+        seq:
+          type: integer

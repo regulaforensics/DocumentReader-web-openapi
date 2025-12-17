@@ -518,3 +518,35 @@ components:
           format: float
           description: "The maximum allowable part of the area occupied by the glare. The same: 0.06 = 6%"
           example: 0.0
+
+    MDLDeviceEngagement:
+      title: "MDLDeviceEngagement"
+      type: integer
+      enum:
+        - 0
+        - 1
+      x-enum-varnames:
+        - "QR"
+        - "NFC"
+
+    MDLDeviceRetrieval:
+      title: "MDLDeviceRetrieval"
+      type: integer
+      enum:
+        - 1
+        - 2
+        - 3
+      x-enum-varnames:
+        - "NFC"
+        - "BLE"
+        - "WIFI_AWARE"
+
+    MDLServerRetrieval:
+      title: "MDLServerRetrieval"
+      type: integer
+      enum:
+        - 0
+        - 1
+      x-enum-varnames:
+        - "WEB_API"
+        - "OIDC"

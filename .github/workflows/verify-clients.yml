@@ -24,6 +24,8 @@ jobs:
 
       - name: Verify update Python client
         working-directory: python-client
+        env:
+          API_BASE_PATH: ${{ github.base_ref == 'develop' && 'https://nightly-api.regulaforensics.com' || 'https://rc-api.regulaforensics.com' }}
         run: |
           ./update-models.sh strict
           ./setup.sh
@@ -44,6 +46,8 @@ jobs:
 
       - name: Verify update CSharp client
         working-directory: csharp-client
+        env:
+          API_BASE_PATH: ${{ github.base_ref == 'develop' && 'https://nightly-api.regulaforensics.com' || 'https://rc-api.regulaforensics.com' }}
         run: |
           ./update-models.sh strict
           ./setup.sh
@@ -91,6 +95,8 @@ jobs:
 
       - name: Verify update Java client
         working-directory: java-client
+        env:
+          API_BASE_PATH: ${{ github.base_ref == 'develop' && 'https://nightly-api.regulaforensics.com' || 'https://rc-api.regulaforensics.com' }}
         run: |
           ./update-models.sh strict
           ./gradlew clean :example:run
