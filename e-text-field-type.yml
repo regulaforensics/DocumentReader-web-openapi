@@ -654,6 +654,9 @@ components:
         - 697
         - 698
         - 699
+        - 701
+        - 702
+        - 703
       x-enum-descriptions:
         - "Document class code"
         - "Issuing state code"
@@ -1304,6 +1307,9 @@ components:
         - "Nationality code (Alpha-2)"
         - "First issue date check digit"
         - "First issue date checksum"
+        - "Commercial indicator"
+        - "Non domiciled indicator"
+        - "Jurisdiction specific data"
       x-enum-varnames:
         - "DOCUMENT_CLASS_CODE"
         - "ISSUING_STATE_CODE"
@@ -1954,3 +1960,6 @@ components:
         - "FT_NATIONALITY_CODE_ALPHA2"
         - "FT_FIRST_ISSUE_DATE_CHECK_DIGIT"
         - "FT_FIRST_ISSUE_DATE_CHECKSUM"
+        - "FT_COMMERCIAL_INDICATOR"
+        - "FT_NON_DOMICILED_INDICATOR"
+        - "FT_JURISDICTION_SPECIFIC_DATA"
