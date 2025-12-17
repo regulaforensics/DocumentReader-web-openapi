@@ -596,8 +596,6 @@ components:
       description: "Structure is used to store information about the numeric field (4 bytes) that is a part of one of the informational
       data groups."
       type: object
-      required:
-        - Data
       properties:
         Type:
           type: integer
