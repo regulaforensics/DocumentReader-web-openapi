@@ -539,7 +539,7 @@ components:
       x-enum-varnames:
         - "NFC"
         - "BLE"
-        - "WIFI_AVARE"
+        - "WIFI_AWARE"
 
     MDLServerRetrieval:
       title: "MDLServerRetrieval"
