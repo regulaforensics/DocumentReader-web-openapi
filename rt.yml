@@ -196,6 +196,7 @@ components:
           104: "DocumentBinaryInfoResult"
           105: "RFIDGraphicsInfoResult"
           109: "ByteArrayResult"
+          121: "MDLResult"
           124: "VDSNCDataResult"
           125: "VDSDataResult"
 
@@ -239,6 +240,7 @@ components:
               - $ref: "#/components/schemas/RFIDTextDataResult"
               - $ref: "#/components/schemas/VDSNCDataResult"
               - $ref: "#/components/schemas/VDSDataResult"
+              - $ref: "#/components/schemas/MDLResult"
 
     StatusResult:
       title: "StatusResult"
@@ -414,3 +416,9 @@ components:
       allOf:
         - $ref: "#/components/schemas/ResultItem"
         - $ref: "./rt-vds-data.yml#/components/schemas/VDSDataItem"
+
+    MDLResult:
+      title: "MDLResult"
+      allOf:
+        - $ref: "#/components/schemas/ResultItem"
+        - $ref: "./rt-mdl.yml#/components/schemas/MDLItem"
