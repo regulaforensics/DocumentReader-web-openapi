@@ -1,0 +1,12 @@
+openapi: 3.0.4
+components:
+  schemas:
+    MDLItem:
+      title: "MDLItem"
+      type: object
+      required:
+        - MDLParsedResponse
+      properties:
+        MDLParsedResponse:
+          type: object
+          additionalProperties: true
