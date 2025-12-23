@@ -386,6 +386,7 @@ components:
           description: "List of remarks arisen during the analysis of SO data structure. Can be ParsingErrorCodes or ParsingNotificationCodes enum."
           type: array
           items:
+            format: int64
             type: integer
         SignerInfos:
           description: "List of containers to store information about digital signature objects contained in the SO"
@@ -449,6 +450,7 @@ components:
           description: "Can be ParsingErrorCodes or ParsingNotificationCodes enum."
           type: array
           items:
+            format: int64
             type: integer
 
     RfidCertificateEx:
@@ -501,6 +503,7 @@ components:
           structure and its validity verification. Can be ParsingErrorCodes or ParsingNotificationCodes enum."
           type: array
           items:
+            format: int64
             type: integer
         Origin:
           $ref: "#/components/schemas/RfidCertificateOrigin"
@@ -711,6 +714,7 @@ components:
           Can be ParsingErrorCodes or ParsingNotificationCodes enum."
           type: array
           items:
+            format: int64
             type: integer
         DocFields_Text:
           description: "List of document text fields formed on the basis of the file contents"
@@ -805,6 +809,7 @@ components:
           description: "List of remarks arisen during the procedure. Can be ParsingErrorCodes or ParsingNotificationCodes enum."
           type: array
           items:
+            format: int64
             type: integer
         AccessControlOptions:
           description: "List of structures with are used to describe the variants of the authentication or secure data access procedure

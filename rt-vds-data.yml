@@ -35,6 +35,7 @@ components:
         Notifications:
           type: array
           items:
+            format: int64
             type: integer
         Signature:
           $ref: "./rt-rfid-binary-data.yml#/components/schemas/TrfFtBytes"
