@@ -1,0 +1,11 @@
+openapi: 3.0.4
+components:
+  schemas:
+    BSIV2Item:
+      title: "BSIV2Item"
+      type: object
+      required:
+        - XML_buffer
+      properties:
+        XML_buffer:
+          type: string
