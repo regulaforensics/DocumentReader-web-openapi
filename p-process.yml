@@ -480,6 +480,9 @@ components:
         returnTransliteratedFields:
           description: "Allows transliteration to be turned on or off; by default, it is enabled."
           type: boolean
+        checkHoldersSignature:
+          description: "Set to true to enable detection of the document holder’s signature."
+          type: boolean
 
     MRZFormat:
       title: "MRZFormat"
