@@ -480,6 +480,9 @@ components:
         returnTransliteratedFields:
           description: "Allows transliteration to be turned on or off; by default, it is enabled."
           type: boolean
+        bsiTr03135Results:
+          description: "When enabled, returns processing results in accordance with the BSI TR-03135 standard in addition to the existing processing results."
+          type: boolean
         checkHoldersSignature:
           description: "Set to true to enable detection of the document holder’s signature."
           type: boolean

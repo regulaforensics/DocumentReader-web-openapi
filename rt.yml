@@ -38,6 +38,7 @@ components:
         - 50
         - 61
         - 62
+        - 73
         - 85
         - 87
         - 97
@@ -78,6 +79,7 @@ components:
         - "Contains license"
         - "Contains result of MRZ position"
         - "Contains result of barcode position"
+        - "Contains results in accordance with the BSI TR-03135 standard"
         - "Contains information about document position on the input image, its center, angle, etc"
         - "Contains result of MRZDetectorResult"
         - "Contains result of FaceDetection"
@@ -118,6 +120,7 @@ components:
         - "LICENSE"
         - "MRZ_POSITION"
         - "BARCODE_POSITION"
+        - "BSI_XML_V2"
         - "DOCUMENT_POSITION"
         - "MRZ_DETECTOR"
         - "FACE_DETECTION"
@@ -178,6 +181,7 @@ components:
           50: "LicenseResult"
           61: "MRZPositionResult"
           62: "BarcodePositionResult"
+          73: "BSIV2Result"
           85: "DocumentPositionResult"
           87: "MRZDetectorResult"
           97: "FaceDetectionResult"
@@ -232,6 +236,7 @@ components:
               - $ref: "#/components/schemas/VDSNCDataResult"
               - $ref: "#/components/schemas/VDSDataResult"
               - $ref: "#/components/schemas/MDLResult"
+              - $ref: "#/components/schemas/BSIV2Result"
 
     StatusResult:
       title: "StatusResult"
@@ -413,3 +418,9 @@ components:
       allOf:
         - $ref: "#/components/schemas/ResultItem"
         - $ref: "./rt-mdl.yml#/components/schemas/MDLItem"
+
+    BSIV2Result:
+      title: "BSIV2Result"
+      allOf:
+        - $ref: "#/components/schemas/ResultItem"
+        - $ref: "./rt-bsi-v2.yml#/components/schemas/BSIV2Item"
