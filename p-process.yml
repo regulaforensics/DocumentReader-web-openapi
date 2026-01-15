@@ -484,7 +484,7 @@ components:
           description: "When enabled, returns processing results in accordance with the BSI TR-03135 standard in addition to the existing processing results."
           type: boolean
         checkHoldersSignature:
-          description: "When enabled, activates detection of presence of the document holder's signature."
+          description: "When enabled, activates detection of the document holder’s signature presence."
           type: boolean
 
     MRZFormat:
