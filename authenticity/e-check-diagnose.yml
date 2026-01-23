@@ -127,6 +127,7 @@ components:
         - 239
         - 240
         - 241
+        - 242
         - 243
         - 244
         - 245
@@ -256,6 +257,7 @@ components:
         - "DOC_LIVENESS_BLACK_AND_WHITE_COPY_DETECTED"
         - "DOC_LIVENESS_ELECTRONIC_DEVICE_DETECTED"
         - "DOC_LIVENESS_INVALID_BARCODE_BACKGROUND"
+        - "DOC_LIVENESS_VIRTUAL_CAMERA_DETECTED"
         - "CHD_ICAO_IDB_BASE32_ERROR"
         - "CHD_ICAO_IDB_ZIPPED_ERROR"
         - "CHD_ICAO_IDB_MESSAGE_ZONE_EMPTY"
