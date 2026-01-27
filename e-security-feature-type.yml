@@ -63,6 +63,10 @@ components:
         - 55
         - 56
         - 57
+        - 58
+        - 59
+        - 60
+        - 61
       x-enum-descriptions:
         - "Blank element"
         - "Personalization element"
@@ -121,6 +125,10 @@ components:
         - "Liveness geometry check"
         - "Age check"
         - "Sex check"
+        - "RFID vs ghost portrait comparison"
+        - "Barcode vs ghost portrait comparison"
+        - "Ghost vs live camera portrait comparison"
+        - "External vs ghost portrait comparison"
       x-enum-varnames:
         - "BLANK"
         - "FILL"
@@ -179,3 +187,7 @@ components:
         - "LIVENESS_GEOMETRY_CHECK"
         - "AGE_CHECK"
         - "SEX_CHECK"
+        - "PORTRAIT_COMPARISON_RFID_VS_GHOST"
+        - "PORTRAIT_COMPARISON_BARCODE_VS_GHOST"
+        - "PORTRAIT_COMPARISON_GHOST_VS_LIVE"
+        - "PORTRAIT_COMPARISON_EXT_VS_GHOST"
