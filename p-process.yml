@@ -480,7 +480,14 @@ components:
         returnTransliteratedFields:
           description: "Allows transliteration to be turned on or off; by default, it is enabled."
           type: boolean
-        bsiTr03135Results:
+        bsi:
+          $ref: "#/components/schemas/BSI"
+
+    BSI:
+      title: "BSI"
+      type: object
+      properties:
+        generateResult:
           description: "When enabled, returns processing results in accordance with the BSI TR-03135 standard in addition to the existing processing results."
           type: boolean
 
