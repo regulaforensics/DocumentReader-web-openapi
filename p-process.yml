@@ -480,11 +480,11 @@ components:
         returnTransliteratedFields:
           description: "Allows transliteration to be turned on or off; by default, it is enabled."
           type: boolean
-        bsi:
-          $ref: "#/components/schemas/BSI"
+        bsiTr03135:
+          $ref: "#/components/schemas/BsiTr03135"
 
-    BSI:
-      title: "BSI"
+    BsiTr03135:
+      title: "BsiTr03135"
       type: object
       properties:
         generateResult:
