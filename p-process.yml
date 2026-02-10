@@ -482,6 +482,9 @@ components:
           type: boolean
         bsiTr03135:
           $ref: "#/components/schemas/BsiTr03135"
+        checkVDS:
+          description: "This parameter is used to enable Visible Digital Seal check."
+          type: boolean
 
     BsiTr03135:
       title: "BsiTr03135"
