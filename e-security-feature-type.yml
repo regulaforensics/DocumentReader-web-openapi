@@ -67,6 +67,7 @@ components:
         - 59
         - 60
         - 61
+        - 62
       x-enum-descriptions:
         - "Blank element"
         - "Personalization element"
@@ -129,6 +130,7 @@ components:
         - "Barcode vs ghost portrait comparison"
         - "Ghost vs live camera portrait comparison"
         - "External vs ghost portrait comparison"
+        - "Signature presence"
       x-enum-varnames:
         - "BLANK"
         - "FILL"
@@ -191,3 +193,4 @@ components:
         - "PORTRAIT_COMPARISON_BARCODE_VS_GHOST"
         - "PORTRAIT_COMPARISON_GHOST_VS_LIVE"
         - "PORTRAIT_COMPARISON_EXT_VS_GHOST"
+        - "SIGNATURE_PRESENCE"
