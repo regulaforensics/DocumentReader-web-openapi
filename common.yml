@@ -88,6 +88,7 @@ components:
         - "Capture"
         - "DTC"
         - "RFID"
+        - "mDL"
       x-enum-varnames:
         - "MRZ"
         - "BARCODE"
@@ -109,6 +110,7 @@ components:
         - "CAPTURE"
         - "DTC"
         - "RFID"
+        - "MDL"
       x-enum-descriptions:
         - "Processing scenario for obtaining MRZ data"
         - "Processing scenario for obtaining barcode data"
@@ -130,6 +132,7 @@ components:
         - "Scenario for obtaining an original image without any processing"
         - "Processing scenario for Digital Travel Credentials (DTC-VC) data processing"
         - "Processing scenario for RFID chip processing"
+        - "Processing scenario for mDL chip processing"
 
     ImageData:
       title: "ImageData"
