@@ -617,6 +617,19 @@ components:
           type: boolean
           description: "This parameter is used to enable Security text check"
           # default: true
+        checkProperties:
+          type: boolean
+          description: "Set to true to enable detection of the document properties, such as holder's signature and other attributes."
+        propertiesParams:
+          $ref: '#/components/schemas/PropertiesParams'
+
+    PropertiesParams:
+      title: "PropertiesParams"
+      type: object
+      properties:
+        checkHoldersSignature:
+          type: boolean
+          description: "Set to true to enable detection of the document holder’s signature."
 
     LivenessParams:
       title: "LivenessParams"
