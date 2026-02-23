@@ -483,7 +483,7 @@ components:
         bsiTr03135:
           $ref: "#/components/schemas/BsiTr03135"
         strictExpiryDate:
-          description: "When disabled, date of expiry doesn't affect the mrz and text statuses."
+          description: "When disabled, date of expiry doesn't affect the MRZ and text statuses."
           type: boolean
         checkVDS:
           description: "This parameter is used to enable Visible Digital Seal check. Disabled by default."
