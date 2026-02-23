@@ -132,7 +132,7 @@ components:
         - "Scenario for obtaining an original image without any processing"
         - "Scenario for Digital Travel Credentials (DTC-VC) data processing"
         - "Scenario for RFID chip processing"
-        - "Scenario for mDL chip processing"
+        - "Scenario for mDL processing"
 
     ImageData:
       title: "ImageData"
