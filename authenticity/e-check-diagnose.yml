@@ -135,6 +135,9 @@ components:
         - 247
         - 248
         - 250
+        - 260
+        - 261
+        - 262
       x-enum-varnames:
         - "UNKNOWN"
         - "PASS"
@@ -265,3 +268,6 @@ components:
         - "CHD_ICAO_IDB_SIGNATURE_MUST_NOT_BE_PRESENT"
         - "CHD_ICAO_IDB_CERTIFICATE_MUST_NOT_BE_PRESENT"
         - "CHD_INCORRECT_OBJECT_COLOR"
+        - "PROPERTY_NO_SIGNATURE"
+        - "PROPERTY_TEXT_AS_SIGNATURE"
+        - "PROPERTY_FINGERPRINT_AS_SIGNATURE"
