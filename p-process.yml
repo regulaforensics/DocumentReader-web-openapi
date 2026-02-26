@@ -482,6 +482,12 @@ components:
           type: boolean
         bsiTr03135:
           $ref: "#/components/schemas/BsiTr03135"
+        strictExpiryDate:
+          description: "When disabled, date of expiry doesn't affect the MRZ and text statuses."
+          type: boolean
+        checkVDS:
+          description: "This parameter is used to enable Visible Digital Seal check. Disabled by default."
+          type: boolean
 
     BsiTr03135:
       title: "BsiTr03135"
@@ -614,6 +620,19 @@ components:
           type: boolean
           description: "This parameter is used to enable Security text check"
           # default: true
+        checkProperties:
+          type: boolean
+          description: "Set to true to enable detection of the document properties, such as holder's signature and other attributes."
+        propertiesParams:
+          $ref: '#/components/schemas/PropertiesParams'
+
+    PropertiesParams:
+      title: "PropertiesParams"
+      type: object
+      properties:
+        checkHoldersSignature:
+          type: boolean
+          description: "Set to true to enable detection of the document holder’s signature."
 
     LivenessParams:
       title: "LivenessParams"
