@@ -88,3 +88,9 @@ components:
         deprecated:
           description: "Whether the document is no longer in circulation."
           type: boolean
+        icao_code:
+          description: "ICAO country code."
+          type: string
+        doc_codes:
+          description: "Document codes."
+          type: string
