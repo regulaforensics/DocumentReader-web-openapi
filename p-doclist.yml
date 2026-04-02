@@ -34,7 +34,7 @@ components:
       required:
         - barcode_fields
         - country
-        - createad
+        - created
         - doc_type
         - document
         - graphic_fields
@@ -50,7 +50,7 @@ components:
         country:
           description: "Country name."
           type: string
-        createad:
+        created:
           description: "Date when the document description was created in the database."
           type: string
         doc_type:
