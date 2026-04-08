@@ -488,6 +488,9 @@ components:
         checkVDS:
           description: "This parameter is used to enable Visible Digital Seal check. Disabled by default."
           type: boolean
+        strictAgeCheck:
+          description: "When enabled, the age check status affects the overall status."
+          type: boolean
 
     BsiTr03135:
       title: "BsiTr03135"
