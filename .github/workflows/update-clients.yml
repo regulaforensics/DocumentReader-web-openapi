@@ -64,7 +64,13 @@ jobs:
           fi
 
           git add --all
-          git commit -m "Commit: ${{ needs.title.outputs.title }}" -a
+          
+          if ! git diff-index --quiet --cached HEAD; then
+            git commit -m "Commit: ${{ needs.title.outputs.title }}" -a
+          else
+            echo "No staged changes to commit."
+            exit 0
+          fi
 
           if [ $? -eq 0 ]; then
             git push --set-upstream origin ${GITHUB_SHA::8}
@@ -119,7 +125,13 @@ jobs:
           fi
 
           git add --all
-          git commit -m "Commit: ${{ needs.title.outputs.title }}" -a
+          
+          if ! git diff-index --quiet --cached HEAD; then
+            git commit -m "Commit: ${{ needs.title.outputs.title }}" -a
+          else
+            echo "No staged changes to commit."
+            exit 0
+          fi
 
           if [ $? -eq 0 ]; then
             git push --set-upstream origin ${GITHUB_SHA::8}
@@ -167,7 +179,13 @@ jobs:
           fi
 
           git add --all
-          git commit -m "Commit: ${{ needs.title.outputs.title }}" -a
+          
+          if ! git diff-index --quiet --cached HEAD; then
+            git commit -m "Commit: ${{ needs.title.outputs.title }}" -a
+          else
+            echo "No staged changes to commit."
+            exit 0
+          fi
 
           if [ $? -eq 0 ]; then
             git push --set-upstream origin ${GITHUB_SHA::8}
@@ -215,7 +233,13 @@ jobs:
           fi
 
           git add --all
-          git commit -m "Commit: ${{ needs.title.outputs.title }}" -a
+          
+          if ! git diff-index --quiet --cached HEAD; then
+            git commit -m "Commit: ${{ needs.title.outputs.title }}" -a
+          else
+            echo "No staged changes to commit."
+            exit 0
+          fi
 
           if [ $? -eq 0 ]; then
             git push --set-upstream origin ${GITHUB_SHA::8}
