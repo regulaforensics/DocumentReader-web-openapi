@@ -64,13 +64,20 @@ jobs:
           fi
 
           git add --all
-          git commit -m "Commit: ${{ needs.title.outputs.title }}" -a
+          
+          if ! git diff-index --quiet --cached HEAD; then
+            git commit -m "Commit: ${{ needs.title.outputs.title }}" -a
+          else
+            echo "No staged changes to commit."
+            exit 0
+          fi
 
           if [ $? -eq 0 ]; then
             git push --set-upstream origin ${GITHUB_SHA::8}
             gh pr create --fill --base develop
           else
             echo "Nothing to commit."
+            exit 0
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
@@ -118,13 +125,20 @@ jobs:
           fi
 
           git add --all
-          git commit -m "Commit: ${{ needs.title.outputs.title }}" -a
+          
+          if ! git diff-index --quiet --cached HEAD; then
+            git commit -m "Commit: ${{ needs.title.outputs.title }}" -a
+          else
+            echo "No staged changes to commit."
+            exit 0
+          fi
 
           if [ $? -eq 0 ]; then
             git push --set-upstream origin ${GITHUB_SHA::8}
             gh pr create --fill --base develop
           else
             echo "Nothing to commit."
+            exit 0
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
@@ -165,13 +179,20 @@ jobs:
           fi
 
           git add --all
-          git commit -m "Commit: ${{ needs.title.outputs.title }}" -a
+          
+          if ! git diff-index --quiet --cached HEAD; then
+            git commit -m "Commit: ${{ needs.title.outputs.title }}" -a
+          else
+            echo "No staged changes to commit."
+            exit 0
+          fi
 
           if [ $? -eq 0 ]; then
             git push --set-upstream origin ${GITHUB_SHA::8}
             gh pr create --fill --base develop
           else
             echo "Nothing to commit."
+            exit 0
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
@@ -212,13 +233,20 @@ jobs:
           fi
 
           git add --all
-          git commit -m "Commit: ${{ needs.title.outputs.title }}" -a
+          
+          if ! git diff-index --quiet --cached HEAD; then
+            git commit -m "Commit: ${{ needs.title.outputs.title }}" -a
+          else
+            echo "No staged changes to commit."
+            exit 0
+          fi
 
           if [ $? -eq 0 ]; then
             git push --set-upstream origin ${GITHUB_SHA::8}
             gh pr create --fill --base develop
           else
             echo "Nothing to commit."
+            exit 0
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
