@@ -71,6 +71,7 @@ jobs:
             gh pr create --fill --base develop
           else
             echo "Nothing to commit."
+            exit 0
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
@@ -125,6 +126,7 @@ jobs:
             gh pr create --fill --base develop
           else
             echo "Nothing to commit."
+            exit 0
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
@@ -172,6 +174,7 @@ jobs:
             gh pr create --fill --base develop
           else
             echo "Nothing to commit."
+            exit 0
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
@@ -219,6 +222,7 @@ jobs:
             gh pr create --fill --base develop
           else
             echo "Nothing to commit."
+            exit 0
           fi
         env:
           GITHUB_TOKEN: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
