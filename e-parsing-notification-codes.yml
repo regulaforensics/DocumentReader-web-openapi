@@ -190,6 +190,8 @@ components:
         - 2417491968
         - 2417557504
         - 2417623040
+        - 2432696593
+        - 2432696594
         - 2449539072
         - 2449604608
         - 2449670144
@@ -514,6 +516,8 @@ components:
         - "Biometrics: BDB data pose angle U roll"
         - "Biometrics: BDB data face image type"
         - "Biometrics: BDB data image data type"
+        - "Notification - SI: Storage CS Non Consistant"
+        - "Notification - SI: Storage CS PACE CAM key missing"
         - "Biometrics: RB data incorrect"
         - "Biometrics: RB item incorrect"
         - "Biometrics: RB item missing"
@@ -838,6 +842,8 @@ components:
         - "ntfLDS_Biometrics_BDB_Data_PoseAngleU_Roll"
         - "ntfLDS_Biometrics_BDB_Data_FaceImageType"
         - "ntfLDS_Biometrics_BDB_Data_ImageDataType"
+        - "ntfLDS_SI_Storage_CS_NonConsistant"
+        - "ntfLDS_SI_Storage_CS_PACE_CAM_Key_Missing"
         - "ntfLDS_Biometrics_RB_Data_Incorrect"
         - "ntfLDS_Biometrics_RB_Item_Incorrect"
         - "ntfLDS_Biometrics_RB_Item_Missing"
