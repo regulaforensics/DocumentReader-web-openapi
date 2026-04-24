@@ -57,6 +57,7 @@ components:
         - 119
         - 120
         - 121
+        - 122
         - 150
         - 151
         - 152
@@ -158,6 +159,7 @@ components:
         - "ID_DG19"
         - "ID_DG20"
         - "ID_DG21"
+        - "ID_DG22"
         - "DL_COM"
         - "DL_DG1"
         - "DL_DG2"
