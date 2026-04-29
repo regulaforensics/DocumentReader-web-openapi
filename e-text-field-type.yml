@@ -659,6 +659,7 @@ components:
         - 702
         - 703
         - 704
+        - 705
       x-enum-descriptions:
         - "Document class code"
         - "Issuing state code"
@@ -1314,6 +1315,7 @@ components:
         - "Non domiciled indicator"
         - "Jurisdiction specific data"
         - "Date of data expiry"
+        - "Consul"
       x-enum-varnames:
         - "DOCUMENT_CLASS_CODE"
         - "ISSUING_STATE_CODE"
@@ -1969,3 +1971,4 @@ components:
         - "FT_NON_DOMICILED_INDICATOR"
         - "FT_JURISDICTION_SPECIFIC_DATA"
         - "FT_DATA_DATE_OF_EXPIRY"
+        - "FT_CONSUL"
