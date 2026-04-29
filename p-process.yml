@@ -666,6 +666,10 @@ components:
           type: boolean
           description: "This parameter is used to enable Geometry check"
           # default: true
+        checkBarcodeBackground:
+          type: boolean
+          description: "This parameter is used to enable Barcode background check as part of the Liveness checks"
+          # default: true
 
     MeasureSystem:
       title: "MeasureSystem"
