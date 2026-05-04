@@ -374,12 +374,6 @@ components:
           type: array
           items:
             $ref: "#/components/schemas/MRZFormat"
-        forceReadMrzBeforeLocate:
-          description: "When enabled, make sure that in series processing MRZ is located fully inside the result document image, 
-          if present on the document. Enabling this option may add extra processing time, by disabling optimizations,
-          but allows more stability in output image quality. Disabled by default."
-          type: boolean
-          # default false
         parseBarcodes:
           description: "This option can be disabled to stop parsing after barcode is read. Enabled by default."
           type: boolean
@@ -487,6 +481,9 @@ components:
           type: boolean
         checkVDS:
           description: "This parameter is used to enable Visible Digital Seal check. Disabled by default."
+          type: boolean
+        strictAgeCheck:
+          description: "When enabled, the age check status affects the overall status."
           type: boolean
 
     BsiTr03135:
@@ -665,6 +662,10 @@ components:
         checkGeometry:
           type: boolean
           description: "This parameter is used to enable Geometry check"
+          # default: true
+        checkBarcodeBackground:
+          type: boolean
+          description: "This parameter is used to enable Barcode background check as part of the Liveness checks"
           # default: true
 
     MeasureSystem:
