@@ -6,13 +6,22 @@ info:
     url: "https://static-content.regulaforensics.com/Icons/Logos/Regula-logo.svg"
     href: "https://regulaforensics.com"
   description: |
-    Documents recognition as easy as reading two bytes.
+    Fast and reliable identity document verification for on-premises installation or cloud integration.
      
     # Clients:
     * [JavaScript](https://github.com/regulaforensics/DocumentReader-web-js-client) client for the browser and node.js based on axios
     * [Java](https://github.com/regulaforensics/DocumentReader-web-java-client) client compatible with jvm and android
     * [Python](https://github.com/regulaforensics/DocumentReader-web-python-client) 3.5+ client
     * [C#](https://github.com/regulaforensics/DocumentReader-web-csharp-client) client for .NET & .NET Core
+
+    # Documentation
+    Go to [Regula Developer Documentation](https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service) to read the technologies description, licensing information, release notes, and instructions on the integration, installation, migration, etc.
+
+    # Technical Support
+    To submit a request to the Support Team, visit [Regula Help Center](https://support.regulaforensics.com/hc/en-us/requests/new).
+
+    # Business Enquiries
+    To discuss business opportunities, fill the [Enquiry Form](https://explore.regula.app/docs-support-request) and specify your scenarios, applications, and technical requirements.
 
 servers:
   - url: https://api.regulaforensics.com/
@@ -49,17 +58,6 @@ paths:
 tags:
   - name: process
     description: Everything about performing request and parsing response
-  - name: images_model
-    x-displayName: Images Model
-    description: |
-      <SchemaDefinition schemaRef="#/components/schemas/DocumentImage" />
-  - name: document_model
-    x-displayName: Document Model
-    description: |
-      **Chosen Document model:**
-      <SchemaDefinition schemaRef="#/components/schemas/ChosenDocumentType" />
-      **Candidates model:**
-      <SchemaDefinition schemaRef="#/components/schemas/DocumentTypesCandidates" />
 
 x-tagGroups:
   - name: Requests
@@ -68,10 +66,6 @@ x-tagGroups:
       - transaction
       - healthcheck
       - resources
-  - name: Models
-    tags:
-      - images_model
-      - document_model
 
 components:
   schemas:
