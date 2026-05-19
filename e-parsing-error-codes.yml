@@ -113,6 +113,8 @@ components:
         - 2164260963
         - 2164260964
         - 2164260965
+        - 2164261163
+        - 2164261167
         - 2164261216
         - 2164261217
         - 2164261218
@@ -248,6 +250,8 @@ components:
         - "CV Certificate: CHAT unsupported terminal type"
         - "CV Certificate: Private key unsupported"
         - "CV Certificate: Private key invalid params"
+        - "PACE: CAM usage data incorrect"
+        - "PACE: IM mapping data incorrect"
         - "CV Certificate: Incorrect data"
         - "CV Certificate: CPI incorrect data"
         - "CV Certificate: CAR incorrect data"
@@ -383,6 +387,8 @@ components:
         - "errLDS_CV_Certificate_CHAT_UnsupportedTerminalType"
         - "errLDS_CV_Certificate_PrivateKey_Unsupported"
         - "errLDS_CV_Certificate_PrivateKey_InvalidParams"
+        - "errLDS_PACE_CAM_Data_Usage_Incorrect"
+        - "errLDS_PACE_IM_MappingData_Incorrect"
         - "errLDS_CV_Certificate_IncorrectData"
         - "errLDS_CV_Certificate_CPI_IncorrectData"
         - "errLDS_CV_Certificate_CAR_IncorrectData"

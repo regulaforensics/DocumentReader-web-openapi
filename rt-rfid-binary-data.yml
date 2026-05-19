@@ -1166,6 +1166,8 @@ components:
         - 9
         - 10
         - 11
+        - 12
+        - 13
       x-enum-descriptions:
         - "Type is not defined"
         - "CSCA"
@@ -1179,6 +1181,8 @@ components:
         - "Barcode signer (VDS)"
         - "Barcode signer (VDS for non-constrained environment)"
         - "DTC signer"
+        - "Separate CA for Barcode signer (VDS-NC)"
+        - "mDL signer"
       x-enum-varnames:
         - "UNDEFINED"
         - "CSCA"
@@ -1192,6 +1196,8 @@ components:
         - "BCS"
         - "BCS_NC"
         - "DTCS"
+        - "CA"
+        - "MDLS"
 
     RfidRawData:
       title: "RfidRawData"

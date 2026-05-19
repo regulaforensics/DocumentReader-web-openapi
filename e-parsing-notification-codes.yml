@@ -17,6 +17,7 @@ components:
         - 2415919118
         - 2415919119
         - 2415919120
+        - 2415919121
         - 2415919127
         - 2415919616
         - 2415919617
@@ -151,6 +152,10 @@ components:
         - 2415919384
         - 2415919385
         - 2415919386
+        - 2415920128
+        - 2415920129
+        - 2415920130
+        - 2415920131
         - 139272
         - 139273
         - 139274
@@ -343,6 +348,7 @@ components:
         - "ASN certificate: Forced default CSCA role"
         - "ASN certificate: Forced default DS role"
         - "ASN certificate: Incorrect issuer subject DS"
+        - "ASN certificate: non-matching DS role"
         - "ASN certificate: Duplicating extensions"
         - "ICAO certificate: Version missed"
         - "ICAO certificate: Version incorrect"
@@ -477,6 +483,10 @@ components:
         - "Auth signer info: Certificate revoked"
         - "Auth signer info: Certificate signature invalid"
         - "Notification: Unsupported image format"
+        - "mDL certificate: Chain SoP non-matching"
+        - "mDL certificate: Unsupported public key algorithm"
+        - "mDL certificate: Unsupported signature algorithm"
+        - "mDL certificate: Unsupported public key params"
         - "MRZ: Document type unknown"
         - "MRZ: Issuing state syntax error"
         - "MRZ: Name is void"
@@ -669,6 +679,7 @@ components:
         - "ntfLDS_ASN_Certificate_ForcedDefaultCSCARole"
         - "ntfLDS_ASN_Certificate_ForcedDefaultDSRole"
         - "ntfLDS_ASN_Certificate_IncorrectIssuerSubjectDS"
+        - "ntfLDS_ASN_Certificate_NonMatchingDSRole"
         - "ntfLDS_ASN_Certificate_DuplicatingExtensions"
         - "ntfLDS_ICAO_Certificate_Version_Missed"
         - "ntfLDS_ICAO_Certificate_Version_Incorrect"
@@ -803,6 +814,10 @@ components:
         - "ntfLDS_Auth_SignerInfo_Certificate_Revoked"
         - "ntfLDS_Auth_SignerInfo_Certificate_SignatureInvalid"
         - "ntfLDS_UnsupportedImageFormat"
+        - "ntfLDS_MDL_Certificate_Chain_SoP_NonMatching"
+        - "ntfLDS_MDL_Certificate_UnsupportedPublicKeyAlgorithm"
+        - "ntfLDS_MDL_Certificate_UnsupportedSignatureAlgorithm"
+        - "ntfLDS_MDL_Certificate_UnsupportedPublicKeyParams"
         - "ntfLDS_MRZ_DocumentType_Unknown"
         - "ntfLDS_MRZ_IssuingState_SyntaxError"
         - "ntfLDS_MRZ_Name_IsVoid"
