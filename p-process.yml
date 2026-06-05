@@ -383,9 +383,9 @@ components:
           type: boolean
           # default false
         disablePerforationOCR:
-          description: "When enabled, OCR of perforated fields in the document template will not be performed. Disabled by default."
+          description: "When enabled, OCR of perforated fields in the document template will not be performed. Enabled by default."
           type: boolean
-          # default false
+          # default true
         documentGroupFilter:
           description: "List of specific eligible document types from DocumentType enum to recognize from. 
           You may, for example, specify only passports to be recognized by setting this property. Empty by default."
