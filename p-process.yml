@@ -367,7 +367,8 @@ components:
           type: boolean
           # default false
         mrzFormatsFilter:
-          description: "This option allows limiting MRZ formats to be recognized by specifying them in array."
+          description: "This option allows limiting MRZ formats to be recognized by specifying them in array.
+          If left empty, all MRZ formats will be recognized, except for 2x30, which is disabled by default."
           type: array
           items:
             $ref: "#/components/schemas/MRZFormat"
