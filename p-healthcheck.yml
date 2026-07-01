@@ -76,6 +76,11 @@ components:
         metadata:
           type: object
           additionalProperties: true
+        countryFilter:
+          description: The list of country identifiers that are defined for processing in the license. If the array is empty, there are no restrictions for processing.
+          type: array
+          items:
+            type: string
         documentsDatabase:
           description: Database information.
           type: object
