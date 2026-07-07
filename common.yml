@@ -6,7 +6,7 @@ components:
       name: X-RequestID
       schema:
         type: string
-        description: It allows the client and server to correlate each HTTP request. HTTP requests with an identifier are sent from the client to the server and back again. 
+        description: It allows the client and server to correlate each HTTP request. HTTP requests with an identifier are sent from the client to the server and back again.
 
   schemas:
     PageIndex:
@@ -327,6 +327,9 @@ components:
           type: integer
           example: 5
           description: "Estimated duration of validity for a child's passport, years. Default: 5."
+        livenessTransactionId:
+          type: string
+          description: "This parameter allows you to use a liveness transaction id instead of a selfie photo."
 
     VisualExtendedFieldItem:
       title: "VisualExtendedFieldItem"
