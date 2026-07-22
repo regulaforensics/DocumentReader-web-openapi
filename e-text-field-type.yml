@@ -660,6 +660,9 @@ components:
         - 703
         - 704
         - 705
+        - 706
+        - 707
+        - 708
       x-enum-descriptions:
         - "Document class code"
         - "Issuing state code"
@@ -1316,6 +1319,9 @@ components:
         - "Jurisdiction specific data"
         - "Date of data expiry"
         - "Consul"
+        - "DL category B3 valid from"
+        - "DL category B3 valid to"
+        - "DL category B3 codes"
       x-enum-varnames:
         - "DOCUMENT_CLASS_CODE"
         - "ISSUING_STATE_CODE"
@@ -1972,3 +1978,6 @@ components:
         - "FT_JURISDICTION_SPECIFIC_DATA"
         - "FT_DATA_DATE_OF_EXPIRY"
         - "FT_CONSUL"
+        - "DL_CLASS_CODE_B3_FROM"
+        - "DL_CLASS_CODE_B3_TO"
+        - "DL_CLASS_CODE_B3_NOTES"
