@@ -228,6 +228,7 @@ components:
         - 24
         - 128
         - 3072
+        - 4194304
       x-enum-descriptions:
         - "No Light"
         - "Upper/lower white"
@@ -236,6 +237,7 @@ components:
         - "Infrared"
         - "Ultraviolet"
         - "Axial white"
+        - "White special"
       x-enum-varnames:
         - "OFF"
         - "WHITE_TOP"
@@ -244,6 +246,7 @@ components:
         - "IR"
         - "UV"
         - "AXIAL_WHITE"
+        - "WHITE_SPECIAL"
 
     Point:
       title: "Point"
