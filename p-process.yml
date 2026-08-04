@@ -759,6 +759,8 @@ components:
             $ref: "./rt-image-quality.yml#/components/schemas/InputImageQualityChecks"
         glaresCheckParams:
           $ref: "./common.yml#/components/schemas/GlaresCheckParams"
+        occlusionCheckParams:
+          $ref: "./common.yml#/components/schemas/OcclusionCheckParams"
 
     ProcessRequestImage:
       title: "ProcessRequestImage"
