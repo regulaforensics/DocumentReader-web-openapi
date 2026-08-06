@@ -759,6 +759,10 @@ components:
             $ref: "./rt-image-quality.yml#/components/schemas/InputImageQualityChecks"
         glaresCheckParams:
           $ref: "./common.yml#/components/schemas/GlaresCheckParams"
+        occlusionCheck:
+          description: "This option enables the occlusion detection to identify cases where parts of a document are covered by fingers, hands, or other objects during image capture."
+          type: boolean
+          # default: false
         occlusionCheckParams:
           $ref: "./common.yml#/components/schemas/OcclusionCheckParams"
 
