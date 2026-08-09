@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf8" />
+  <title>{{title}}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    /* Enum definitions use their Markdown table as the complete presentation. */
+    [data-section-id^="schema/"] > div:nth-child(2) > div > div:nth-child(2),
+    [data-section-id^="schema/"] > div:nth-child(2) > div > div:first-child > div > div > div:first-child,
+    .operation-type.schema {
+      display: none !important;
+    }
+
+    .operation-type.schema + span {
+      width: 100% !important;
+    }
+
+    [data-section-id^="schema/"] > div:nth-child(2) {
+      padding-top: 0 !important;
+    }
+  </style>
+  {{{redocHead}}}
+  {{#unless disableGoogleFont}}<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">{{/unless}}
+</head>
+
+<body>
+  {{{redocHTML}}}
+</body>
+
+</html>

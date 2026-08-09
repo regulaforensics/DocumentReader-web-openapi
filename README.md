@@ -43,7 +43,7 @@ docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli validate -
 ## Building Redoc single page html documentation
 
 ```bash
-npx @redocly/cli build-docs index.yml -o=document-reader-static-doc.html
+./scripts/build-docs.sh
 ```
 
 ## Bundle scheme to single .json file

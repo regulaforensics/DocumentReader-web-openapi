@@ -1,0 +1,5 @@
+plugins:
+  - ./plugins/enum-tables.js
+
+decorators:
+  enum-tables/for-redoc: on
