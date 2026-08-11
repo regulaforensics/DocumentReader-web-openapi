@@ -525,6 +525,16 @@ components:
           description: "The maximum allowable part of the area occupied by the glare. The same: 0.06 = 6%"
           example: 0.0
 
+    OcclusionCheckParams:
+      title: "OcclusionCheckParams"
+      type: object
+      properties:
+        maxOcclusionPart:
+          type: number
+          format: float
+          description: "The maximum size for the occluded area of a document; only those exceeding this size will be validated"
+          example: 0.01
+
     MDLDeviceEngagement:
       title: "MDLDeviceEngagement"
       type: integer
