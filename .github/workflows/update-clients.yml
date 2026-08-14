@@ -32,13 +32,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Specification Repo
-        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           path: 'DocumentReader-web-openapi'
           ref: ${{ github.event.inputs.branch }}
 
       - name: Checkout JS Client Repo
-        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           repository: 'regulaforensics/DocumentReader-web-js-client'
           token: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
@@ -94,13 +94,13 @@ jobs:
           java-package: jdk
 
       - name: Checkout Specification Repo
-        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           path: 'DocumentReader-web-openapi'
           ref: ${{ github.event.inputs.branch }}
 
       - name: Checkout Java Client Repo
-        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           repository: 'regulaforensics/DocumentReader-web-java-client'
           token: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
@@ -148,13 +148,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Specification Repo
-        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           path: "DocumentReader-web-openapi"
           ref: ${{ github.event.inputs.branch }}
 
       - name: Checkout Python Client Repo
-        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           repository: 'regulaforensics/DocumentReader-web-python-client'
           token: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
@@ -202,13 +202,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Specification Repo
-        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           path: 'DocumentReader-web-openapi'
           ref: ${{ github.event.inputs.branch }}
 
       - name: Checkout C# Client Repo
-        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           repository: 'regulaforensics/DocumentReader-web-csharp-client'
           token: ${{ secrets.REGULA_GITHUB_PUSH_TOKEN }}
