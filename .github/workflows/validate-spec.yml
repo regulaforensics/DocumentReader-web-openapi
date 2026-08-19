@@ -17,13 +17,13 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: 22
           registry-url: https://registry.npmjs.org/
 
       - name: Install redoc
         run: |
           npm install -g @redocly/cli
-          redocly build-docs index.yml
+          ./scripts/build-docs.sh /tmp/document-reader-static-doc.html
 
       - name: Revert changes
         if: ${{ false }}
