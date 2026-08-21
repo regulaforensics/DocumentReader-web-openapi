@@ -303,7 +303,7 @@ components:
         - "Post CA response"
         - "Post CA public key"
         - "Post CA info"
-        - "Post CA d params"
+        - "Post CA params"
         - "Post CA check PK"
         - "Post CA check SK"
         - "SAM data"
