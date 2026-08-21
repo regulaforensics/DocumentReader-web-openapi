@@ -1,5 +1,6 @@
 const ENUM_TABLE_MARKER = '| Value | Name | Description |';
 const ENUM_TAG = 'Enums';
+const SCHEMA_REF_PREFIX = '#/components/schemas/';
 
 function escapeTableCell(value) {
   return String(value)
@@ -11,7 +12,8 @@ function escapeTableCell(value) {
 function enumReference(name, schema) {
   const reference = {
     type: schema.type,
-    description: `See [${name}](#schema/${encodeURIComponent(name)}) enumeration values.`,
+    title: name,
+    description: enumLink(name),
   };
 
   if (schema.format) {
@@ -23,6 +25,10 @@ function enumReference(name, schema) {
   }
 
   return reference;
+}
+
+function enumLink(name) {
+  return `See [${name}](#schema/${encodeURIComponent(name)}) enumeration values.`;
 }
 
 function addEnumTable(schema) {
@@ -62,11 +68,25 @@ function replaceEnumReferences(node, enumSchemas, visited = new WeakSet()) {
 
   visited.add(node);
 
-  if (typeof node.$ref === 'string') {
-    const prefix = '#/components/schemas/';
+  if (node.type === 'array' && typeof node.items?.$ref === 'string') {
+    const name = node.items.$ref.startsWith(SCHEMA_REF_PREFIX)
+      ? decodeURIComponent(node.items.$ref.slice(SCHEMA_REF_PREFIX.length))
+      : null;
 
-    if (node.$ref.startsWith(prefix)) {
-      const name = decodeURIComponent(node.$ref.slice(prefix.length));
+    if (name && enumSchemas.has(name)) {
+      const link = enumLink(name);
+
+      if (!node.description?.includes(link)) {
+        node.description = node.description
+          ? `${node.description}\n\n${link}`
+          : link;
+      }
+    }
+  }
+
+  if (typeof node.$ref === 'string') {
+    if (node.$ref.startsWith(SCHEMA_REF_PREFIX)) {
+      const name = decodeURIComponent(node.$ref.slice(SCHEMA_REF_PREFIX.length));
       const enumSchema = enumSchemas.get(name);
 
       if (enumSchema) {
