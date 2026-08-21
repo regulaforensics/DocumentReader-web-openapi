@@ -5,7 +5,7 @@ components:
       title: "AuthenticityResultType"
       type: integer
       format: int64
-      description: "Enumeration describes available authenticity checks: https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/development/enums/authenticity-result-type/."
+      description: "Enumeration contains identifiers determining the possibility of performing different authenticity control procedures using the images for definite lighting schemes."
       enum:
         - 1
         - 2
