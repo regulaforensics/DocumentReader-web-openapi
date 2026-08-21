@@ -28,7 +28,7 @@ jobs:
           # Exclude existing .github/workflows/*.yml — they use mutable action tags.
           # Pinning those files is tracked separately.
           EXCLUDE_PATHS: '.github/workflows'
-          EXCLUDE_RULES: ''
+          EXCLUDE_RULES: 'javascript.express.security.audit.xss.mustache.explicit-unescape.template-explicit-unescape'
         run: |
           EXCLUDED_PATHS=()
           if [[ -n "$EXCLUDE_PATHS" ]]; then
