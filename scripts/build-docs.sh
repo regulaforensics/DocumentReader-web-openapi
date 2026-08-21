@@ -2,7 +2,7 @@
 
 set -eu
 
-output=${1:-document-reader-static-doc.html}
+output=${1:-doc.html}
 bundle_dir=$(mktemp -d "${TMPDIR:-/tmp}/document-reader-docs.XXXXXX")
 normalized_dir="$bundle_dir/normalized"
 source_bundle="$bundle_dir/source.yml"
