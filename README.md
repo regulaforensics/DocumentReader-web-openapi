@@ -46,6 +46,9 @@ docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli validate -
 ./scripts/build-docs.sh
 ```
 
+The build script normalizes multiline quoted YAML strings in a temporary directory.
+Source YAML files are not modified during the build.
+
 ## Bundle scheme to single .json file
 
 ```bash
