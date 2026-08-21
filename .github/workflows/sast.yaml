@@ -1,0 +1,47 @@
+# This repository is public and cannot call reusable workflows from a private
+# repository (regulaforensics/reusable-workflows). The logic below is a local
+# copy that mirrors the reusable workflow exactly. SHA pins are kept up-to-date
+# by Renovate (see renovate.json).
+name: SAST
+
+on:
+  pull_request:
+    branches:
+      - develop
+      - staging
+      - production
+      - stable
+      - main
+      - master
+
+jobs:
+  semgrep:
+    name: semgrep-oss/scan
+    runs-on: ubuntu-latest
+    container:
+      image: semgrep/semgrep@sha256:65dcd4408adda7c183a6b4550cb1e9b19f7f627a6fbb7e0559bd466bedc44d7b
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Scan
+        shell: bash
+        env:
+          # Exclude existing .github/workflows/*.yml — they use mutable action tags.
+          # Pinning those files is tracked separately.
+          EXCLUDE_PATHS: '.github/workflows'
+          EXCLUDE_RULES: ''
+        run: |
+          EXCLUDED_PATHS=()
+          if [[ -n "$EXCLUDE_PATHS" ]]; then
+            for path in $EXCLUDE_PATHS; do
+              EXCLUDED_PATHS+=("--exclude" "$path")
+            done
+          fi
+
+          EXCLUDED_RULES=()
+          if [[ -n "$EXCLUDE_RULES" ]]; then
+            for rule in $EXCLUDE_RULES; do
+              EXCLUDED_RULES+=("--exclude-rule" "$rule")
+            done
+          fi
+
+          semgrep scan --config auto "${EXCLUDED_PATHS[@]}" "${EXCLUDED_RULES[@]}" --error --verbose
