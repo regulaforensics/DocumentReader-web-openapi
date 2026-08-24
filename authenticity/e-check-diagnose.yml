@@ -4,7 +4,7 @@ components:
     CheckDiagnose:
       title: "CheckDiagnose"
       type: integer
-      description: "Enumeration contains identifiers which determine the result of the text field comparison from the different sources."
+      description: "Enumeration contains identifiers which determinate the single document element authenticity check outcome reason: https://docs.regulaforensics.com/develop/doc-reader-sdk/web-service/development/enums/check-diagnose/"
       enum:
         - 0
         - 1
