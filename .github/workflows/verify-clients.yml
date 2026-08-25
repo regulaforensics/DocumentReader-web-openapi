@@ -12,12 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Specification Repo
-        uses: actions/checkout@v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           path: 'DocumentReader-web-openapi'
 
       - name: Checkout Python Client Repo
-        uses: actions/checkout@v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           repository: 'regulaforensics/DocumentReader-web-python-client'
           path: 'python-client'
@@ -34,12 +34,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Specification Repo
-        uses: actions/checkout@v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           path: 'DocumentReader-web-openapi'
 
       - name: Checkout CSharp Client Repo
-        uses: actions/checkout@v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           repository: 'regulaforensics/DocumentReader-web-csharp-client'
           path: 'csharp-client'
@@ -56,12 +56,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Specification Repo
-        uses: actions/checkout@v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           path: 'DocumentReader-web-openapi'
 
       - name: Checkout JS Client Repo
-        uses: actions/checkout@v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           repository: 'regulaforensics/DocumentReader-web-js-client'
           path: 'js-client'
@@ -76,19 +76,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Specify Java Version
-        uses: actions/setup-java@v5
+        uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5
         with:
           distribution: 'zulu'
           java-version: 11
           java-package: jdk
 
       - name: Checkout Specification Repo
-        uses: actions/checkout@v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           path: 'DocumentReader-web-openapi'
 
       - name: Checkout Java Client Repo
-        uses: actions/checkout@v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
         with:
           repository: 'regulaforensics/DocumentReader-web-java-client'
           path: 'java-client'
