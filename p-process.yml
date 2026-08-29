@@ -229,12 +229,8 @@ components:
           items:
             $ref: "./rt.yml#/components/schemas/Result"
         doublePageSpread:
-          description: "Enable this option if the image you provide contains double page spread
-          of the passport and you want to process both pages in one go. It makes sense to use it for documents
-          that have meaningful information on both pages, like Russian domestic passport, or some others.
-          Disabled by default."
+          description: "This option can be set to true if the image you provide contains double page spread of the passport and you want to process both pages in one go. It makes sense to use it for documents that have meaningful information on both pages."
           type: boolean
-          deprecated: true
           # default false
         generateDoublePageSpreadImage:
           description: 'When enabled together with "doublePageSpread" and there is a passport with two pages
