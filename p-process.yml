@@ -229,9 +229,9 @@ components:
           items:
             $ref: "./rt.yml#/components/schemas/Result"
         doublePageSpread:
-          description: "This option can be set to true if the image you provide contains double page spread of the passport and you want to process both pages in one go. It makes sense to use it for documents that have meaningful information on both pages."
+          description: "This option can be set to true if the image you provide contains double page spread of the passport and you want to process both pages in one go. It makes sense to use it for documents that have meaningful information on both pages. If disabled, only one page is extracted."
           type: boolean
-          # default false
+          # default true
         generateDoublePageSpreadImage:
           description: 'When enabled together with "doublePageSpread" and there is a passport with two pages
           spread in the image, pages will be cropped, straightened and aligned together, as if the document was captured
