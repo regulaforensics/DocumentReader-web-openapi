@@ -87,3 +87,5 @@ components:
       $ref: "./common.yml#/components/schemas/MDLDeviceRetrieval"
     MDLServerRetrieval:
       $ref: "./common.yml#/components/schemas/MDLServerRetrieval"
+    RfidAccessControl:
+      $ref: "./rt-rfid-binary-data.yml#/components/schemas/RfidAccessControl"
