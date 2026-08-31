@@ -543,6 +543,10 @@ components:
         - "eMDM_Default"
         - "eMDM_ResizeBinarizeWindow"
         - "eMDM_BlurBeforeBinarization"
+      x-enum-descriptions:
+        - "Default detection mode"
+        - "Apply window resizing for image binarization"
+        - "Apply blur image processing before binarization"
 
     AuthParams:
       title: "AuthParams"
