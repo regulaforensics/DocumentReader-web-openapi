@@ -538,6 +538,7 @@ components:
     MDLDeviceEngagement:
       title: "MDLDeviceEngagement"
       type: integer
+      description: "Enumeration contains possible data engagement methods with mDL"
       enum:
         - 0
         - 1
@@ -551,6 +552,7 @@ components:
     MDLDeviceRetrieval:
       title: "MDLDeviceRetrieval"
       type: integer
+      description: "Enumeration contains possible data retrieval methods from mDL"
       enum:
         - 1
         - 2
