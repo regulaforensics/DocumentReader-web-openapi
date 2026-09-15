@@ -668,6 +668,7 @@ components:
     MeasureSystem:
       title: "MeasureSystem"
       type: integer
+      description: "Enumeration contains a pool of constants that identify the system for measuring distances and weight"
       example: 0
       enum:
         - 0
@@ -682,6 +683,7 @@ components:
     LogLevel:
       title: "LogLevel"
       type: string
+      description: "Enumeration contains identificators which determinate the level of logs detalization"
       enum:
         - FatalError
         - Error
@@ -837,6 +839,7 @@ components:
     ProcessingStatus:
       title: "ProcessingStatus"
       type: integer
+      description: "Enumeration contains a set of constants that define scanning process completion status"
       enum:
         - 0
         - 1
