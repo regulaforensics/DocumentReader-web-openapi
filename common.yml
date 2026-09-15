@@ -610,16 +610,21 @@ components:
     MDLDeviceEngagement:
       title: "MDLDeviceEngagement"
       type: integer
+      description: "Enumeration contains possible data engagement methods with mDL"
       enum:
         - 0
         - 1
       x-enum-varnames:
         - "QR"
         - "NFC"
+      x-enum-descriptions:
+        - "Device Engagement using the QR code"
+        - "Device Engagement using the NFC module"
 
     MDLDeviceRetrieval:
       title: "MDLDeviceRetrieval"
       type: integer
+      description: "Enumeration contains possible data retrieval methods from mDL"
       enum:
         - 1
         - 2
@@ -628,6 +633,10 @@ components:
         - "NFC"
         - "BLE"
         - "WIFI_AWARE"
+      x-enum-descriptions:
+        - "Device Retrieval using the NFC module"
+        - "Device Retrieval using the Bluetooth module"
+        - "Device Retrieval using the Wi-Fi Aware module"
 
     MDLServerRetrieval:
       title: "MDLServerRetrieval"
@@ -638,3 +647,6 @@ components:
       x-enum-varnames:
         - "WEB_API"
         - "OIDC"
+      x-enum-descriptions:
+        - "Retrieval using the Web API"
+        - "Retrieval using OpenID Connect"

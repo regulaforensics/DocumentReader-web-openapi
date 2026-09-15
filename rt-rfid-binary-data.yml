@@ -664,6 +664,8 @@ components:
         - 6
         - 7
         - 8
+        - 50
+        - 100
       x-enum-descriptions:
         - "Root files"
         - "ePassport application"
@@ -675,6 +677,8 @@ components:
         - "AddBiometrics application"
         - "Digital Travel Credentials"
         - "Master File"
+        - "Applet root"
+        - "User defined"
       x-enum-varnames:
         - "ROOT_FILES"
         - "E_PASSPORT"
@@ -685,6 +689,8 @@ components:
         - "LDS2_VisaRecords"
         - "LDS2_AddBiometrics"
         - "eDTC_PC"
+        - "APPLET_ROOT"
+        - "USER_DEFINED"
 
     RfidDataFile:
       title: "RfidDataFile"
@@ -1027,6 +1033,7 @@ components:
         - 5
         - 6
         - 7
+        - 8
       x-enum-descriptions:
         - "Unknown type"
         - "MRZ"
@@ -1036,6 +1043,7 @@ components:
         - "eSign-PIN"
         - "Scanning Area Identifier (for eDL application)"
         - "MRZ hash"
+        - "PIN (local)"
       x-enum-varnames:
         - "UNKNOWN"
         - "MRZ"
@@ -1045,6 +1053,26 @@ components:
         - "PIN_E_SIGN"
         - "SAI"
         - "MRZ_HASH"
+        - "PIN_LOCAL"
+
+    RfidAccessControl:
+      title: "RfidAccessControl"
+      type: integer
+      enum:
+        - 0
+        - 1
+        - 2
+        - 3
+      x-enum-descriptions:
+        - "Default"
+        - "Chip access BAC"
+        - "Chip access PACE"
+        - "Local PIN"
+      x-enum-varnames:
+        - "DEFAULT"
+        - "CHIP_ACCESS_BAC"
+        - "CHIP_ACCESS_PACE"
+        - "LOCAL_PIN"
 
     RfidTerminal:
       title: "RfidTerminal"
