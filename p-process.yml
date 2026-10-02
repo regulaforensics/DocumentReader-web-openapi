@@ -261,8 +261,10 @@ components:
           By default it is set to system locale default (where the service is running)."
           type: string
           example: "MM/dd/yyyy"
-        measureSystem: # This option allows you to set the system of measurement used for converting original values in document to output result values. Metric by default.
-          $ref: "#/components/schemas/MeasureSystem"
+        measureSystem:
+          allOf:
+            - $ref: "#/components/schemas/MeasureSystem"
+          description: "This option allows you to set the system of measurement used for converting original values in document to output result values. Metric by default."
         imageDpiOutMax:
           description: "This parameter controls maximum resolution in dpi of output images.
           Resolution will remain original in case 0 is supplied. By default is set to return images in response with
@@ -289,8 +291,10 @@ components:
           description: "When enabled, results will contain transaction processing log. Disabled by default"
           type: boolean
           # default false
-        logLevel: # When used together with 'log' parameter enabled, sets the level of logs detalization. 'INFO' by default.
-          $ref: "#/components/schemas/LogLevel"
+        logLevel:
+          allOf:
+            - $ref: "#/components/schemas/LogLevel"
+          description: "When used together with 'log' parameter enabled, sets the level of logs detalization. 'INFO' by default."
           # default: "INFO"
         forceDocID:
           description: "Force use of specific template ID and skip document type identification step."
@@ -332,8 +336,10 @@ components:
           type: boolean
           deprecated: true
           # default: false
-        forceDocFormat: # Force use of specified document format when locating and recognizing document to reduce the number of candidates.
-          $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentFormat"
+        forceDocFormat:
+          allOf:
+            - $ref: "./rt-doc-type-old.yml#/components/schemas/DocumentFormat"
+          description: "Force use of specified document format when locating and recognizing document to reduce the number of candidates."
         noGraphics:
           description: "When enabled, no graphic fields will be cropped from document image. Disabled by default."
           type: boolean
@@ -371,8 +377,10 @@ components:
           description: "This option can be disabled to stop parsing after barcode is read. Enabled by default."
           type: boolean
           # default true
-        convertCase: # This option allows output text case transformation. No changes applied by default to original values.
-          $ref: "#/components/schemas/TextPostProcessing"
+        convertCase:
+          allOf:
+            - $ref: "#/components/schemas/TextPostProcessing"
+          description: "This option allows output text case transformation. No changes applied by default to original values."
         splitNames:
           description: "When enabled, the Surname and GivenNames fields from MRZ will be divided into
           ft_First_Name, ft_Second_Name, ft_Third_Name, ft_Fourth_Name, ft_Last_Name fields. Disabled by default."

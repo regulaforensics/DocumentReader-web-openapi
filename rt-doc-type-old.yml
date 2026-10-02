@@ -24,8 +24,10 @@ components:
       title: "DocumentTypesCandidatesList"
       type: object
       properties:
-        RecResult: # Overall recognition result
-          $ref: "#/components/schemas/DocumentTypeRecognitionResult"
+        RecResult:
+          allOf:
+            - $ref: "#/components/schemas/DocumentTypeRecognitionResult"
+          description: "Overall recognition result"
         Candidates:
           type: array
           items:
@@ -79,8 +81,9 @@ components:
           description: "Indicates if the document of the given type is rotated by 180 degrees"
           type: integer
         RFID_Presence:
-          description: # Indication of the presence of an RFID chip in the document (electronic document indicator)
-          $ref: "./common.yml#/components/schemas/RfidLocation"
+          allOf:
+            - $ref: "./common.yml#/components/schemas/RfidLocation"
+          description: "Indication of the presence of an RFID chip in the document (electronic document indicator)"
         FDSIDList:
           $ref: "#/components/schemas/FDSIDList"
         NecessaryLights:
@@ -166,6 +169,7 @@ components:
         - 3
         - 4
         - 5
+        - 6
         - 10
         - 11
         - 12
@@ -181,10 +185,11 @@ components:
         - "Undefined document format"
         - "A4 document format"
         - "ID3 double document format"
+        - "Turkey ID2 card"
         - "ID1 format document rotated 90 °"
         - "ID1 format document rotated 180 °"
         - "ID1 format document rotated 270 °"
-        - "ID2 format document rotated 90 °"
+        - "ID2 format document rotated 180 °"
         - "ID3 format document rotated 180 °"
         - "Arbitrary format"
         - "Flexible format. Standard formats can be resized during cropping, depending on various factors: light, background..."
@@ -196,6 +201,7 @@ components:
         - "NON"
         - "A4"
         - "ID3_X2"
+        - "ID2_TURKEY"
         - "ID1_90"
         - "ID1_180"
         - "ID1_270"
