@@ -225,8 +225,6 @@ components:
         - 2
         - 4
         - 6
-        - 8
-        - 16
         - 24
         - 32
         - 64
@@ -251,8 +249,6 @@ components:
         - "Upper/lower white"
         - "Side white"
         - "White"
-        - "Upper/lower lighters of IR light scheme"
-        - "Side lighters of IR light scheme"
         - "Infrared"
         - "Transmitted"
         - "Transmitted IR"
@@ -277,8 +273,6 @@ components:
         - "WHITE_TOP"
         - "WHITE_SIDE"
         - "WHITE"
-        - "IR_TOP"
-        - "IR_SIDE"
         - "IR"
         - "TRANSMITTED"
         - "TRANSMITTED_IR"
