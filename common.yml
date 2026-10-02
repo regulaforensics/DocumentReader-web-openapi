@@ -226,24 +226,72 @@ components:
         - 4
         - 6
         - 24
+        - 32
+        - 64
         - 128
+        - 134
+        - 256
         - 3072
+        - 4096
+        - 8192
+        - 65536
+        - 524288
+        - 1048576
+        - 2097152
+        - 4194304
+        - 67108864
+        - 268435456
+        - 1073741830
+        - 1073741848
+        - 1073741952
       x-enum-descriptions:
         - "No Light"
         - "Upper/lower white"
         - "Side white"
         - "White"
         - "Infrared"
+        - "Transmitted"
+        - "Transmitted IR"
         - "Ultraviolet"
+        - "White UV"
+        - "IR luminescence"
         - "Axial white"
+        - "IR720"
+        - "IR940"
+        - "Transmitted AntiStokes"
+        - "UVС 254 (mod. 88X0)"
+        - "UVB 313 (mod. 88X0)"
+        - "White oblique light"
+        - "For internal use"
+        - "OVD light for hologram visualization"
+        - "Light IR 870 oblique"
+        - "HR white"
+        - "HR IR"
+        - "HR UV"
       x-enum-varnames:
         - "OFF"
         - "WHITE_TOP"
         - "WHITE_SIDE"
         - "WHITE"
         - "IR"
+        - "TRANSMITTED"
+        - "TRANSMITTED_IR"
         - "UV"
+        - "WHITE_UV"
+        - "IR_LUMINESCENCE"
         - "AXIAL_WHITE"
+        - "IR_720"
+        - "IR_940"
+        - "ANTI_STOKES"
+        - "UVC"
+        - "UVB"
+        - "WHITE_OBL"
+        - "WHITE_SPECIAL"
+        - "OVD"
+        - "IR_870_OBL"
+        - "HR_WHITE"
+        - "HR_IR"
+        - "HR_UV"
 
     Point:
       title: "Point"
