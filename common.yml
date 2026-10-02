@@ -222,7 +222,6 @@ components:
       description: "Image light index"
       enum:
         - 0
-        - 1
         - 2
         - 4
         - 6
@@ -234,9 +233,6 @@ components:
         - 128
         - 134
         - 256
-        - 512
-        - 1024
-        - 2048
         - 3072
         - 4096
         - 8192
@@ -245,8 +241,6 @@ components:
         - 1048576
         - 2097152
         - 4194304
-        - 8388608
-        - 16777216
         - 67108864
         - 268435456
         - 1073741830
@@ -254,7 +248,6 @@ components:
         - 1073741952
       x-enum-descriptions:
         - "No Light"
-        - "OVI scheme"
         - "Upper/lower white"
         - "Side white"
         - "White"
@@ -266,9 +259,6 @@ components:
         - "Ultraviolet"
         - "White UV"
         - "IR luminescence"
-        - "Coaxial white light without separate control of left and right lighters scheme"
-        - "Left lighter of white coaxial light scheme"
-        - "Right lighter of white coaxial light scheme"
         - "Axial white"
         - "IR720"
         - "IR940"
@@ -277,8 +267,6 @@ components:
         - "UVB 313 (mod. 88X0)"
         - "White oblique light"
         - "For internal use"
-        - "General white light without separate control of side and upper/lower lighters scheme"
-        - "General IR light without separate control of side and upper/lower lighters scheme"
         - "OVD light for hologram visualization"
         - "Light IR 870 oblique"
         - "HR white"
@@ -286,7 +274,6 @@ components:
         - "HR UV"
       x-enum-varnames:
         - "OFF"
-        - "OVI"
         - "WHITE_TOP"
         - "WHITE_SIDE"
         - "WHITE"
@@ -298,9 +285,6 @@ components:
         - "UV"
         - "WHITE_UV"
         - "IR_LUMINESCENCE"
-        - "AXIAL_WHITE_FRONT"
-        - "AXIAL_WHITE_LEFT"
-        - "AXIAL_WHITE_RIGHT"
         - "AXIAL_WHITE"
         - "IR_720"
         - "IR_940"
@@ -309,8 +293,6 @@ components:
         - "UVB"
         - "WHITE_OBL"
         - "WHITE_SPECIAL"
-        - "WHITE_FRONT"
-        - "IR_FRONT"
         - "OVD"
         - "IR_870_OBL"
         - "HR_WHITE"
