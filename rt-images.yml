@@ -77,8 +77,10 @@ components:
           $ref: "./common.yml#/components/schemas/Source"
         value:
           $ref: "./common.yml#/components/schemas/ImageBase64"
-        originalValue: # Only for images from RFID. Image as was originally stored in the RFID chip.
-          $ref: "./common.yml#/components/schemas/ImageBase64"
+        originalValue:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/ImageBase64"
+          description: "Only for images from RFID. Image as was originally stored in the RFID chip."
         originalPageIndex:
           description: "Original page index"
           type: integer
@@ -88,8 +90,11 @@ components:
           $ref: "./common.yml#/components/schemas/Light"
         containerType:
           $ref: "./rt.yml#/components/schemas/ContainerType"
-        fieldRect: # Only for images from VISUAL. Coordinates of the image in the normalized image of the document.
-          $ref: "./common.yml#/components/schemas/RectangleCoordinates"
+        fieldRect:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/RectangleCoordinates"
+          description: "Only for images from VISUAL. Coordinates of the image in the normalized image of the document."
         rfidOrigin:
-          description: # Only for images from RFID. Image location in RFID chip.
-          $ref: "./common.yml#/components/schemas/RfidOrigin"
+          allOf:
+            - $ref: "./common.yml#/components/schemas/RfidOrigin"
+          description: "Only for images from RFID. Image location in RFID chip."

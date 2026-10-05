@@ -457,8 +457,10 @@ components:
         - CandidatesCount
         - ListOfCandidates
       properties:
-        SymbolRect: # Coordinates of the symbol in the normalized image of the document
-          $ref: "#/components/schemas/RectangleCoordinates"
+        SymbolRect:
+          allOf:
+            - $ref: "#/components/schemas/RectangleCoordinates"
+          description: "Coordinates of the symbol in the normalized image of the document"
         CandidatesCount:
           description: "Number of significant elements of ListOfCandidates array"
           type: number
