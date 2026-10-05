@@ -22,12 +22,18 @@ components:
         - fieldList
         - availableSourceList
       properties:
-        status: # Overall status of all checks from all text fields
-          $ref: "./common.yml#/components/schemas/CheckResult"
-        validityStatus: # Overall status of validity from all text fields from all sources
-          $ref: "./common.yml#/components/schemas/CheckResult"
-        comparisonStatus: # Overall status of data comparison from different sources for each text field
-          $ref: "./common.yml#/components/schemas/CheckResult"
+        status:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/CheckResult"
+          description: "Overall status of all checks from all text fields"
+        validityStatus:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/CheckResult"
+          description: "Overall status of validity from all text fields from all sources"
+        comparisonStatus:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/CheckResult"
+          description: "Overall status of data comparison from different sources for each text field"
         dateFormat:
           description: "Date format"
           type: string
@@ -65,12 +71,18 @@ components:
         lcidName:
           description: "LCID name"
           type: string
-        status: # Overall status of all checks from all values
-          $ref: "./common.yml#/components/schemas/CheckResult"
-        validityStatus: # Overall status of validity from all values
-          $ref: "./common.yml#/components/schemas/CheckResult"
-        comparisonStatus: # Overall status of data comparison from different sources
-          $ref: "./common.yml#/components/schemas/CheckResult"
+        status:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/CheckResult"
+          description: "Overall status of all checks from all values"
+        validityStatus:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/CheckResult"
+          description: "Overall status of validity from all values"
+        comparisonStatus:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/CheckResult"
+          description: "Overall status of data comparison from different sources"
         value:
           description: "The most confidence value, selected from valueList"
           type: string
@@ -122,10 +134,14 @@ components:
           type: integer
           minimum: 0
           maximum: 100
-        fieldRect: # Only for visual and mrz results. Coordinates of the rectangle region on a document image(result type 1). Represented by two points - (left, top) + (right, bottom)
-          $ref: "./common.yml#/components/schemas/RectangleCoordinates"
-        rfidOrigin: # Only for rfid images. Text location in rfid chip.
-          $ref: "./common.yml#/components/schemas/RfidOrigin"
+        fieldRect:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/RectangleCoordinates"
+          description: "Only for visual and mrz results. Coordinates of the rectangle region on a document image(result type 1). Represented by two points - (left, top) + (right, bottom)"
+        rfidOrigin:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/RfidOrigin"
+          description: "Only for RFID images. Text location in RFID chip."
         containerType:
           $ref: "./rt.yml#/components/schemas/ContainerType"
 
@@ -184,7 +200,9 @@ components:
       properties:
         source:
           $ref: "./common.yml#/components/schemas/Source"
-        validityStatus: # Overall status of validity from all fields for given source
-          $ref: "./common.yml#/components/schemas/CheckResult"
+        validityStatus:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/CheckResult"
+          description: "Overall status of validity from all fields for given source"
         containerType:
           $ref: "./rt.yml#/components/schemas/ContainerType"
