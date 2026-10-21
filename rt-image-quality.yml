@@ -18,8 +18,10 @@ components:
         - List
         - Count
       properties:
-        result: # Overall image quality status, combined from check statuses in the list.
-          $ref: "./common.yml#/components/schemas/CheckResult"
+        result:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/CheckResult"
+          description: "Overall image quality status, combined from check statuses in the list."
         List:
           type: array
           items:

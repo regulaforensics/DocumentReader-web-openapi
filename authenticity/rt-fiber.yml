@@ -19,8 +19,10 @@ components:
         ExpectedCount:
           description: "Expected fibers number. For UV_Fibers authentication result type"
           type: integer
-        LightValue: # For UV_Background authentication result type
-          $ref: "../common.yml#/components/schemas/Light"
+        LightValue:
+          allOf:
+            - $ref: "../common.yml#/components/schemas/Light"
+          description: "For UV_Background authentication result type"
         LightDisp:
           description: "For UV_Background authentication result type"
           type: integer
@@ -45,8 +47,8 @@ components:
           items:
             type: integer
         ColorValues:
-          description: "Fibers color value"
-          example: [BLUE, GREEN, RED]
+          description: "Fibers color value. Example: [BLUE, GREEN, RED]"
+          example: [233, 120, 201]
           type: array
           items:
             type: integer

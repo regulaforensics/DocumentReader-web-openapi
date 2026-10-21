@@ -54,7 +54,7 @@ components:
         Matrix:
           $ref: "#/components/schemas/ComparisonMatrix"
       example:
-        {FieldType: 185, Field_MRZ: "37", Field_Visual: "37", Matrix: [1,0,0,0,0,3,0,0,0,0]}
+        {wFieldType: 185, wLCID: 2052, Field_MRZ: "37", Field_Visual: "37", Matrix: [1,0,0,0,0,3,0,0,0,0]}
 
     ComparisonMatrix:
       title: "ComparisonMatrix"

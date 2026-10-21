@@ -676,7 +676,6 @@ components:
         - "VisaRecords application"
         - "AddBiometrics application"
         - "Digital Travel Credentials"
-        - "Master File"
         - "Applet root"
         - "User defined"
       x-enum-varnames:

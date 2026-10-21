@@ -24,16 +24,26 @@ components:
         - detailsAge
         - mDL
       properties:
-        overallStatus: # Overall checks status. Rootx status
-          $ref: "./common.yml#/components/schemas/CheckResult"
-        optical: # Overall optical checks combined status
-          $ref: "./common.yml#/components/schemas/CheckResult"
-        portrait: # Portrait comparison status
-          $ref: "./common.yml#/components/schemas/CheckResult"
-        rfid: # Overall RFID checks combined status
-          $ref: "./common.yml#/components/schemas/CheckResult"
-        stopList: # Stop list check status
-          $ref: "./common.yml#/components/schemas/CheckResult"
+        overallStatus:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/CheckResult"
+          description: "Overall checks status. Rootx status"
+        optical:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/CheckResult"
+          description: "Overall optical checks combined status"
+        portrait:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/CheckResult"
+          description: "Portrait comparison status"
+        rfid:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/CheckResult"
+          description: "Overall RFID checks combined status"
+        stopList:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/CheckResult"
+          description: "Stop list check status"
         detailsRFID:
           $ref: "#/components/schemas/detailsRFID"
         detailsOptical:
@@ -59,23 +69,37 @@ components:
         - security
         - text
       properties:
-        overallStatus: # Overall optical checks combined status
-          $ref: "./common.yml#/components/schemas/CheckResult"
-        docType: # Status of document type recognition
-          $ref: "./common.yml#/components/schemas/CheckResult"
-        expiry: # Status of document expiration
-          $ref: "./common.yml#/components/schemas/CheckResult"
-        imageQA: # Status of document image quality check
-          $ref: "./common.yml#/components/schemas/CheckResult"
-        mrz: # Status of document MRZ
-          $ref: "./common.yml#/components/schemas/CheckResult"
+        overallStatus:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/CheckResult"
+          description: "Overall optical checks combined status"
+        docType:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/CheckResult"
+          description: "Status of document type recognition"
+        expiry:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/CheckResult"
+          description: "Status of document expiration"
+        imageQA:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/CheckResult"
+          description: "Status of document image quality check"
+        mrz:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/CheckResult"
+          description: "Status of document MRZ"
         pagesCount:
           description: "Number of processed pages in the document"
           type: integer
-        security: # Authenticity verification status
-          $ref: "./common.yml#/components/schemas/CheckResult"
-        text: # Status of text fields analysis
-          $ref: "./common.yml#/components/schemas/CheckResult"
+        security:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/CheckResult"
+          description: "Authenticity verification status"
+        text:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/CheckResult"
+          description: "Status of text fields analysis"
         vds:
           type: integer
 
@@ -92,20 +116,34 @@ components:
         - PACE
         - TA
       properties:
-        overallStatus: # Overall RFID checks combined status
-          $ref: "./common.yml#/components/schemas/CheckResult"
-        AA: # Active Authentication status
-          $ref: "./common.yml#/components/schemas/CheckResult"
-        BAC: # Basic Access Control (BAC) status
-          $ref: "./common.yml#/components/schemas/CheckResult"
-        CA: # Chip Authentication status
-          $ref: "./common.yml#/components/schemas/CheckResult"
-        PA: # Passive Authentication status
-          $ref: "./common.yml#/components/schemas/CheckResult"
-        PACE: # Password Authenticated Connection Establishment (PACE) status
-          $ref: "./common.yml#/components/schemas/CheckResult"
-        TA: # Terminal Authentication status
-          $ref: "./common.yml#/components/schemas/CheckResult"
+        overallStatus:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/CheckResult"
+          description: "Overall RFID checks combined status"
+        AA:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/CheckResult"
+          description: "Active Authentication status"
+        BAC:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/CheckResult"
+          description: "Basic Access Control (BAC) status"
+        CA:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/CheckResult"
+          description: "Chip Authentication status"
+        PA:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/CheckResult"
+          description: "Passive Authentication status"
+        PACE:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/CheckResult"
+          description: "Password Authenticated Connection Establishment (PACE) status"
+        TA:
+          allOf:
+            - $ref: "./common.yml#/components/schemas/CheckResult"
+          description: "Terminal Authentication status"
 
     DetailsAge:
       title: "DetailsAge"

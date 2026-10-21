@@ -16,10 +16,14 @@ components:
           $ref: "../common.yml#/components/schemas/Light"
         Area:
           $ref: "../common.yml#/components/schemas/RectangleCoordinates"
-        Image: # Original image
-          $ref: "../common.yml#/components/schemas/ImageData"
-        EtalonImage: # Reference image
-          $ref: "../common.yml#/components/schemas/ImageData"
+        Image:
+          allOf:
+            - $ref: "../common.yml#/components/schemas/ImageData"
+          description: "Original image"
+        EtalonImage:
+          allOf:
+            - $ref: "../common.yml#/components/schemas/ImageData"
+          description: "Reference image"
         AreaList:
           $ref: "../rt-authenticity.yml#/components/schemas/AreaContainer"
         ElementID:
