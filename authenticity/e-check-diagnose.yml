@@ -138,6 +138,8 @@ components:
         - 260
         - 261
         - 262
+        - 263
+        - 264
       x-enum-varnames:
         - "UNKNOWN"
         - "PASS"
@@ -271,6 +273,8 @@ components:
         - "PROPERTY_NO_SIGNATURE"
         - "PROPERTY_TEXT_AS_SIGNATURE"
         - "PROPERTY_FINGERPRINT_AS_SIGNATURE"
+        - "PROPERTY_DOCUMENT_DAMAGED"
+        - "PROPERTY_DOCUMENT_CANCELLED"
       x-enum-descriptions:
         - "Check was not performed"
         - "Check was OK"
@@ -404,3 +408,5 @@ components:
         - "No signature"
         - "Text as signature"
         - "Fingerprint as signature"
+        - "Document damaged"
+        - "Document cancelled"
