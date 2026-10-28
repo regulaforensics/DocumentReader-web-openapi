@@ -635,6 +635,9 @@ components:
         checkHoldersSignature:
           type: boolean
           description: "Set to true to enable detection of the document holder’s signature."
+        checkDocumentDamage:
+          type: boolean
+          description: "Set to true to enable detection of damaged or defaced documents."
 
     LivenessParams:
       title: "LivenessParams"
