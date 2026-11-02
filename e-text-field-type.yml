@@ -664,6 +664,7 @@ components:
         - 707
         - 708
         - 709
+        - 710
       x-enum-descriptions:
         - "Document class code"
         - "Issuing state code"
@@ -1324,6 +1325,7 @@ components:
         - "DL category B3 valid to"
         - "DL category B3 codes"
         - "Post office"
+        - "Address (Lot)"
       x-enum-varnames:
         - "DOCUMENT_CLASS_CODE"
         - "ISSUING_STATE_CODE"
@@ -1984,3 +1986,4 @@ components:
         - "DL_CLASS_CODE_B3_TO"
         - "DL_CLASS_CODE_B3_NOTES"
         - "FT_ADDRESS_POST_OFFICE"
+        - "FT_ADDRESS_LOT"
