@@ -25,6 +25,8 @@ paths:
           description: "Bad request. Check your input data."
         "403":
           description: "Bad license. Either server or request does not contain valid license."
+        "413":
+          description: "Request limits exceeded. The request was rejected by configured limits."
       x-codeSamples:
         - lang: 'JavaScript'
           source: |
