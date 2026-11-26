@@ -122,6 +122,7 @@ components:
           4194304: "SecurityFeatureResult"
           8388608: "SecurityFeatureResult"
           16777216: "OCRSecurityTextResult"
+          33554432: "SecurityFeatureResult"
 
     AreaContainer:
       title: "AreaContainer"
